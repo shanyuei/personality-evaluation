@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
+import { ref, computed } from 'vue'
 
-// Define a store using the composition API approach
 export const useCounterStore = defineStore('counter', () => {
   // State
   const count = ref(0)
@@ -41,29 +41,3 @@ export const useCounterStore = defineStore('counter', () => {
     setTitle
   }
 })
-
-// Optional: If you prefer the Options API approach, here's an alternative example
-// export const useCounterOptionsStore = defineStore('counterOptions', {
-//   state: () => ({
-//     count: 0,
-//     title: 'Pinia Counter Options API'
-//   }),
-//   getters: {
-//     doubleCount: (state) => state.count * 2,
-//     titleWithCount: (state) => `${state.title}: ${state.count}`
-//   },
-//   actions: {
-//     increment() {
-//       this.count++
-//     },
-//     decrement() {
-//       this.count--
-//     },
-//     reset() {
-//       this.count = 0
-//     },
-//     setTitle(newTitle) {
-//       this.title = newTitle
-//     }
-//   }
-// })
