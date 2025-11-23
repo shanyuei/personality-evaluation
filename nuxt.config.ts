@@ -24,20 +24,11 @@ export default defineNuxtConfig({
 
   // @nuxt/ui theme configuration
   ui: {
-    fonts: false,
+    // fonts: false,
   },
   // Additional configuration to disable font loading
   css: ['~/assets/css/main.css'],
   build: {
     transpile: [],
   },
-  vite: {
-    css: {
-      preprocessorOptions: {
-        less: {
-          javascriptEnabled: true
-        }
-      }
-    }
-  }
 })
