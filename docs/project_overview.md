@@ -4,7 +4,7 @@
 - 框架：Nuxt 4（`nuxt`: `^4.2.1`）
 - 源目录：`app/`（`nuxt.config.ts:3` 通过 `srcDir` 默认约定）
 - 开发工具：`devtools.enabled=true`（`nuxt.config.ts:4`）
-- 模块：`@unocss/nuxt`、`pinia-plugin-persistedstate/nuxt`、`@pinia/nuxt`、`@nuxt/ui`（`nuxt.config.ts:16-21`）
+- 模块：`pinia-plugin-persistedstate/nuxt`、`@pinia/nuxt`、`@nuxt/ui`（`nuxt.config.ts:16-21`）
 - 约束：禁用字体与图标的自动加载（`nuxt.config.ts:71-75`），`autoImports` 关闭（`nuxt.config.ts:12-15`）
 
 ## 结构
@@ -16,7 +16,7 @@
 - `app/components/icons/*`：图标组件（ChevronDown/Globe/ArrowUpRight）
 - `app/stores/modules/*`：`counter.ts`、`user.ts` 示例；持久化键 `ceping_%id`（`nuxt.config.ts:25-27`）
 - `public/robots.txt`：静态 robots 文件
-- `uno.config.ts`：UnoCSS 配置
+- 已移除 `uno.config.ts`（UnoCSS 集成）
 - `tsconfig.json`：TypeScript 配置
 - `nuxt.config.ts`：核心配置与主题扩展
 
@@ -24,7 +24,8 @@
 - `@nuxt/ui.theme.extend.colors`：`primary/secondary/accent/danger/warning/success/info/dark`（`nuxt.config.ts:38-47`）
 - `fontFamily.inter` 使用系统字体（`nuxt.config.ts:49-51`）
 - `borderRadius` 多档位（`nuxt.config.ts:52-62`）
-- UnoCSS DevTools 开启（`nuxt.config.ts:29-32`）
+- 已移除 UnoCSS 配置与 DevTools
+ - 已启用 Less 预处理（`nuxt.config.ts:83-91`），SFC 可使用 `<style lang="less">`
 
 ## 约定与注意
 - 页面与布局需放在 `app/pages`、`app/layouts` 下；`@` 指向 `app/`
