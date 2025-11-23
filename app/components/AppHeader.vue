@@ -2,7 +2,7 @@
   <header class="app-header">
     <UHeader>
       <template #title>
-        <Logo class="h-6 w-auto" />
+        <!-- <Logo class="h-6 w-auto" /> -->
       </template>
     </UHeader>
     <!-- logo -->
@@ -27,7 +27,7 @@ const toggleMenu = () => {
 };
 </script>
 
-<style lang="less" scoped>
+<style  scoped>
 .app-header {
   /* 自动布局子元素 */
   position: static;
