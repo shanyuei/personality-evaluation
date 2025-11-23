@@ -25,7 +25,8 @@
 - `fontFamily.inter` 使用系统字体（`nuxt.config.ts:49-51`）
 - `borderRadius` 多档位（`nuxt.config.ts:52-62`）
 - 已移除 UnoCSS 配置与 DevTools
- - 已启用 Less 预处理（`nuxt.config.ts:83-91`），SFC 可使用 `<style lang="less">`
+- 已启用 Less 预处理（`nuxt.config.ts:35-42`），SFC 可使用 `<style lang="less">`
+- 全局样式已注入：`nuxt.config.ts:30` -> `@/assets/less/main.less`
 
 ## 约定与注意
 - 页面与布局需放在 `app/pages`、`app/layouts` 下；`@` 指向 `app/`

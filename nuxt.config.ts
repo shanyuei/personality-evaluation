@@ -27,7 +27,7 @@ export default defineNuxtConfig({
     fonts: false,
   },
   // Additional configuration to disable font loading
-  css: [],
+  css: ['~/assets/css/main.css'],
   build: {
     transpile: [],
   },
