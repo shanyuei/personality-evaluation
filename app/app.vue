@@ -1,9 +1,9 @@
 <template>
-  <!-- 使用默认布局 -->
-  <NuxtLayout>
-    <!-- 渲染页面内容 -->
+  <UApp>
+      <NuxtLayout>
     <NuxtPage />
-  </NuxtLayout>
+      </NuxtLayout>
+  </UApp>
 </template>
 
 <script setup lang="ts">
