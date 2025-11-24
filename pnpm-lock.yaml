@@ -69,6 +69,9 @@ importers:
       eslint-plugin-nuxt:
         specifier: ^4.0.0
         version: 4.0.0(eslint@9.39.1(jiti@2.6.1))
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
       vue-eslint-parser:
         specifier: ^10.2.0
         version: 10.2.0(eslint@9.39.1(jiti@2.6.1))
