@@ -13,6 +13,7 @@ export default defineNuxtConfig({
     'pinia-plugin-persistedstate/nuxt',
     '@pinia/nuxt',
     '@nuxt/ui',
+    '@nuxtjs/i18n',
     '@unocss/nuxt',
     '@nuxt/image',
     '@nuxt/eslint',
@@ -28,6 +29,32 @@ export default defineNuxtConfig({
   // @nuxt/ui theme configuration
   ui: {
     fonts: false,
+  },
+  i18n: {
+    locales: [
+      { code: 'en', name: 'English' },
+      { code: 'zh', name: '中文' }
+    ],
+    defaultLocale: 'en',
+    strategy: 'no_prefix',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root'
+    },
+    vueI18n: {
+      legacy: false,
+      locale: 'en',
+      messages: {
+        en: { start: 'Start', get_started: 'Get Started' },
+        zh: { start: '开始', get_started: '开始使用' }
+      }
+    }
+  },
+  imports: {
+    presets: [
+      { from: 'vue-i18n', imports: ['useI18n'] }
+    ]
   },
   // Additional configuration to disable font loading
   css: ['~/assets/css/main.css'],

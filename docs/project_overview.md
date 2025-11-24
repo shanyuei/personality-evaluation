@@ -4,8 +4,8 @@
 - 框架：Nuxt 4（`nuxt`: `^4.2.1`）
 - 源目录：`app/`（`nuxt.config.ts:3` 通过 `srcDir` 默认约定）
 - 开发工具：`devtools.enabled=true`（`nuxt.config.ts:4`）
-- 模块：`pinia-plugin-persistedstate/nuxt`、`@pinia/nuxt`、`@nuxt/ui`（`nuxt.config.ts:16-21`）
-- 约束：禁用字体与图标的自动加载（`nuxt.config.ts:71-75`），`autoImports` 关闭（`nuxt.config.ts:12-15`）
+- 模块：`pinia-plugin-persistedstate/nuxt`、`@pinia/nuxt`、`@nuxt/ui`、`@nuxtjs/i18n`（`nuxt.config.ts:12-19`）
+- 约束：禁用字体与图标的自动加载（`nuxt.config.ts:30-31`）
 
 ## 结构
 - `app/app.vue`：应用根
@@ -21,12 +21,9 @@
 - `nuxt.config.ts`：核心配置与主题扩展
 
 ## 主题与样式
-- `@nuxt/ui.theme.extend.colors`：`primary/secondary/accent/danger/warning/success/info/dark`（`nuxt.config.ts:38-47`）
-- `fontFamily.inter` 使用系统字体（`nuxt.config.ts:49-51`）
-- `borderRadius` 多档位（`nuxt.config.ts:52-62`）
-- 已移除 UnoCSS 配置与 DevTools
-- 已启用 Less 预处理（`nuxt.config.ts:35-42`），SFC 可使用 `<style lang="less">`
-- 全局样式已注入：`nuxt.config.ts:30` -> `@/assets/less/main.less`
+- UI 字体禁用（`nuxt.config.ts:30-31`）
+- 全局样式（CSS/LESS）按需注入：`nuxt.config.ts:33`
+- 已启用 Less 预处理（`nuxt.config.ts` Vite CSS 预处理）
 
 ## 约定与注意
 - 页面与布局需放在 `app/pages`、`app/layouts` 下；`@` 指向 `app/`
@@ -40,3 +37,8 @@
 
 ---
 本文件将随每次任务执行进行更新，以反映最新结构与约定。
+## 国际化（i18n）
+- 模块：`@nuxtjs/i18n`（`nuxt.config.ts:12-19`）
+- 语言：`en`、`zh`；默认 `en`；`strategy: 'no_prefix'`
+- 浏览器语言检测：使用 Cookie `i18n_redirected`（`nuxt.config.ts:i18n.detectBrowserLanguage`）
+- 内置消息：`start` / `get_started`（`nuxt.config.ts:i18n.vueI18n.messages`）
