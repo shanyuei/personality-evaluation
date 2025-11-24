@@ -3,7 +3,7 @@
     <!-- 导航栏 -->
     <template #left>
       <!-- logo -->
-      <image src="/theme/logo.png" alt="logo" class="h-6 w-auto" />
+      <img src="/theme/logo.png" alt="logo" class="h-6 w-auto" />
       <!-- 导航栏 -->
       <UHeaderNav>
         <UHeaderNavItem to="/">首页</UHeaderNavItem>
@@ -23,8 +23,8 @@
 </template>
 
 <script setup lang="ts">
-import { withDefaults, defineProps, ref } from "vue";
-import { useRouter } from "vue-router";
+import { withDefaults, defineProps, ref } from 'vue';
+import { useRouter } from 'vue-router';
 
 const router = useRouter();
 const go = (to?: string) => {

@@ -1,5 +1,5 @@
-import { defineConfig, presetUno, presetAttributify, presetIcons } from 'unocss'
-import { transformerDirectives, transformerVariantGroup } from 'unocss'
+import { defineConfig, presetUno, presetAttributify, presetIcons } from 'unocss';
+import { transformerDirectives, transformerVariantGroup } from 'unocss';
 
 export default defineConfig({
   // 启用预设
@@ -85,18 +85,18 @@ export default defineConfig({
   variants: [
     // 响应式变体
     (matcher) => {
-      if (!matcher.startsWith('hover:')) return matcher
+      if (!matcher.startsWith('hover:')) return matcher;
       return {
         matcher: matcher.slice(6),
         selector: s => `${s}:hover`,
-      }
+      };
     },
     (matcher) => {
-      if (!matcher.startsWith('focus:')) return matcher
+      if (!matcher.startsWith('focus:')) return matcher;
       return {
         matcher: matcher.slice(6),
         selector: s => `${s}:focus`,
-      }
+      };
     },
   ],
   
@@ -131,4 +131,4 @@ export default defineConfig({
       // 可选择的别名配置
     },
   },
-})
+});

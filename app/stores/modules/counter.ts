@@ -1,30 +1,30 @@
-import { defineStore } from 'pinia'
-import { ref, computed } from 'vue'
+import { defineStore } from 'pinia';
+import { ref, computed } from 'vue';
 
 export const useCounterStore = defineStore('counter', () => {
   // State
-  const count = ref(0)
-  const title = ref('Pinia Counter Example')
+  const count = ref(0);
+  const title = ref('Pinia Counter Example');
 
   // Getters
-  const doubleCount = computed(() => count.value * 2)
-  const titleWithCount = computed(() => `${title.value}: ${count.value}`)
+  const doubleCount = computed(() => count.value * 2);
+  const titleWithCount = computed(() => `${title.value}: ${count.value}`);
 
   // Actions
   function increment() {
-    count.value++
+    count.value++;
   }
 
   function decrement() {
-    count.value--
+    count.value--;
   }
 
   function reset() {
-    count.value = 0
+    count.value = 0;
   }
 
   function setTitle(newTitle: string) {
-    title.value = newTitle
+    title.value = newTitle;
   }
 
   return {
@@ -39,5 +39,5 @@ export const useCounterStore = defineStore('counter', () => {
     decrement,
     reset,
     setTitle
-  }
-})
+  };
+});

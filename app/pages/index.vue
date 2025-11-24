@@ -1,33 +1,6 @@
 <template>
   <div class="min-h-screen bg-gray-50">
-    <!-- 导航栏 - 测试响应式和主题颜色 -->
-    <header :class="['fixed top-0 left-0 right-0 z-50 transition-all-300', isScrolled ? 'bg-white shadow-md py-3' : 'bg-transparent py-5']">
-      <div class="container mx-auto px-4 md:px-6">
-        <div class="flex items-center justify-between">
-          <div class="text-xl font-bold text-primary">性格测评</div>
-          
-          <!-- 桌面菜单 -->
-          <nav class="hidden md:flex items-center space-x-6">
-            <a href="#home" class="text-gray-700 hover:text-primary transition-all-300">首页</a>
-            <a href="#features" class="text-gray-700 hover:text-primary transition-all-300">功能</a>
-            <a href="#testimonials" class="text-gray-700 hover:text-primary transition-all-300">评价</a>
-            <a href="#contact" class="text-gray-700 hover:text-primary transition-all-300">联系我们</a>
-          </nav>
-          
-          <!-- 行动按钮 -->
-          <button class="bg-primary text-white px-5 py-2 rounded-full hover:bg-primary/90 transition-all-300 shadow-sm">
-            开始测试
-          </button>
-          
-          <!-- 移动端菜单按钮 -->
-          <button class="md:hidden text-gray-700" @click="toggleMenu">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-            </svg>
-          </button>
-        </div>
-      </div>
-    </header>
+
     
     <!-- 移动端菜单 -->
     <div :class="['fixed inset-0 bg-black/50 z-40 transition-opacity duration-300', mobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none']" @click="closeMenu"></div>
@@ -216,68 +189,68 @@
 
 <script setup lang="ts">
 // 首页组件逻辑
-import { ref, onMounted, nextTick } from 'vue'
+import { ref, onMounted, nextTick } from 'vue';
 
 // 页面状态管理
-const isScrolled = ref(false)
-const mobileMenuOpen = ref(false)
-const visibleSections = ref<Record<string, boolean>>({})
+const isScrolled = ref(false);
+const mobileMenuOpen = ref(false);
+const visibleSections = ref<Record<string, boolean>>({});
 
 // 切换移动端菜单
 const toggleMenu = () => {
-  mobileMenuOpen.value = !mobileMenuOpen.value
+  mobileMenuOpen.value = !mobileMenuOpen.value;
   // 防止滚动时关闭菜单
   if (mobileMenuOpen.value) {
-    document.body.style.overflow = 'hidden'
+    document.body.style.overflow = 'hidden';
   } else {
-    document.body.style.overflow = ''
+    document.body.style.overflow = '';
   }
-}
+};
 
 // 关闭移动端菜单
 const closeMenu = () => {
-  mobileMenuOpen.value = false
-  document.body.style.overflow = ''
-}
+  mobileMenuOpen.value = false;
+  document.body.style.overflow = '';
+};
 
 // 监听滚动事件，用于导航栏样式变化和滚动动画
 onMounted(() => {
   const handleScroll = () => {
     // 导航栏滚动效果
-    isScrolled.value = window.scrollY > 50
+    isScrolled.value = window.scrollY > 50;
     
     // 检测元素是否进入视口，触发动画
-    const sections = document.querySelectorAll('section')
+    const sections = document.querySelectorAll('section');
     sections.forEach((section) => {
-      const rect = section.getBoundingClientRect()
-      const isVisible = rect.top < window.innerHeight * 0.75 && rect.bottom > 0
-      visibleSections.value[section.id] = isVisible
+      const rect = section.getBoundingClientRect();
+      const isVisible = rect.top < window.innerHeight * 0.75 && rect.bottom > 0;
+      visibleSections.value[section.id] = isVisible;
       
       if (isVisible && !section.classList.contains('animate-visible')) {
-        section.classList.add('animate-visible')
+        section.classList.add('animate-visible');
       }
-    })
-  }
+    });
+  };
   
   // 初始化时执行一次滚动检测
   nextTick(() => {
-    handleScroll()
-  })
+    handleScroll();
+  });
   
-  window.addEventListener('scroll', handleScroll)
+  window.addEventListener('scroll', handleScroll);
   return () => {
-    window.removeEventListener('scroll', handleScroll)
-  }
-})
+    window.removeEventListener('scroll', handleScroll);
+  };
+});
 
 // 平滑滚动到指定区域
 const scrollToSection = (id: string) => {
-  closeMenu()
-  const element = document.getElementById(id)
+  closeMenu();
+  const element = document.getElementById(id);
   if (element) {
-    element.scrollIntoView({ behavior: 'smooth' })
+    element.scrollIntoView({ behavior: 'smooth' });
   }
-}
+};
 
 // 定义颜色主题
 const themeColors = {
@@ -285,7 +258,7 @@ const themeColors = {
   secondary: '#10B981',
   tertiary: '#F59E0B',
   quaternary: '#EC4899'
-}
+};
 </script>
 
 <style scoped>

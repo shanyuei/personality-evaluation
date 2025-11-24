@@ -10,10 +10,12 @@ export default defineNuxtConfig({
   },
 
   modules: [
-    "pinia-plugin-persistedstate/nuxt",
-    "@pinia/nuxt",
-    "@nuxt/ui",
-    "@unocss/nuxt"
+    'pinia-plugin-persistedstate/nuxt',
+    '@pinia/nuxt',
+    '@nuxt/ui',
+    '@unocss/nuxt',
+    '@nuxt/image',
+    '@nuxt/eslint',
   ],
   pinia: {
 
@@ -32,4 +34,4 @@ export default defineNuxtConfig({
   build: {
     transpile: [],
   },
-})
+});
