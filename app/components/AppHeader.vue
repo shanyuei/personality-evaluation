@@ -1,16 +1,25 @@
 <template>
-  <header class="app-header">
-    <UHeader>
-      <template #title>
-        <!-- <Logo class="h-6 w-auto" /> -->
-      </template>
-    </UHeader>
-    <!-- logo -->
+  <UHeader>
+    <!-- 导航栏 -->
+    <template #left>
+      <!-- logo -->
+      <image src="/theme/logo.png" alt="logo" class="h-6 w-auto" />
+      <!-- 导航栏 -->
+      <UHeaderNav>
+        <UHeaderNavItem to="/">首页</UHeaderNavItem>
+        <UHeaderNavItem to="/about">关于我们</UHeaderNavItem>
+        <UHeaderNavItem to="/services">服务</UHeaderNavItem>
+        <UHeaderNavItem to="/contact">联系我们</UHeaderNavItem>
+      </UHeaderNav>
+    </template>
 
-    <!-- menu -->
-    <!-- Get Started -->
-    <!-- 多语言 -->
-  </header>
+    <template #right>
+      <!-- Get Started -->
+      <UHeaderNavItem to="/get-started">开始使用</UHeaderNavItem>
+      <!-- 多语言 -->
+      <UHeaderNavItem to="/language">多语言</UHeaderNavItem>
+    </template>
+  </UHeader>
 </template>
 
 <script setup lang="ts">
