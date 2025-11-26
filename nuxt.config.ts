@@ -2,6 +2,8 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
+  alias: {
+  },
   // Configure app settings to disable font loading
   app: {
     head: {
@@ -29,7 +31,11 @@ export default defineNuxtConfig({
     fonts: false,
   },
   i18n: {
-  
+    langDir: '../app/i18n/modules',
+    defaultLocale: 'en',
+    locales: [
+      { code: 'en', name: 'English', file: 'en.json' },
+    ]
   },
 
   imports: {
