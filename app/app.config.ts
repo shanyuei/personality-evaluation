@@ -3,9 +3,6 @@ export default defineAppConfig({
     // family: 'Inter, sans-serif'
   },
   ui: {
-    colors: {
-      primary: 'green',
-      neutral: 'slate'
-    }
+  
   }
 });

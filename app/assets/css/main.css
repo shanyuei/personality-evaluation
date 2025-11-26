@@ -2,15 +2,64 @@
 @import "@nuxt/ui";
 
 
-*,
-:root {
-    /* 配色定义 */
-
-
-    /* --ui-primary: var(--color-green-1); */
-    /* 字体定义 */
+* {
     font-family: 'Outfit', sans-serif;
     /* 鼠标 指针 */
     cursor: default;
+}
+
+/* 配色定义 - 与Nuxt UI主题兼容 */
+:root {
+  /* 绿色系列 */
+  --color-green-1: #009D77;
+  --color-green-2: #39EDC1;
+  --color-green-3: #BEF6E7;
+  --color-green-4: #DCFFB2;
+  --color-green-5: #E8EFA5;
+  --color-green-6: #FFDF99;
+
+  /* 粉色系列 */
+  --color-pink-1: #EA4C89;
+  --color-pink-2: #FDA9C0;
+  --color-pink-3: #FFF5F9;
+  --color-pink-4: #FFF8FB;
+
+  /* 紫色系列 */
+  --color-purple-1: #932EFA;
+  --color-purple-2: #B273F2;
+  --color-purple-3: #DEC4FA;
+  --color-purple-4: #EEEEFD;
+  --color-purple-5: #FAF5FF;
+
+  /* 黄色/米色系列 */
+  --color-yellow-1: #FBECCO;
+  --color-yellow-2: #FCEEDF;
+  --color-yellow-3: #FFD3E1;
+  --color-yellow-4: #BDF1E5;
+
+  /* 灰色系列 */
+  --color-gray-1: #0181B1;
+  --color-gray-2: #323233;
+  --color-gray-3: #4E5235;
+  --color-gray-4: #8D8E8F;
+  --color-gray-5: #818282;
+  --color-gray-6: #DDDDDD;
+  --color-gray-7: #E7E7E8;
+  --color-gray-8: #F0F0F0;
+  --color-gray-9: #F8F8F8;
+  --color-white: #FFFFFF;
+
+  /* Nuxt UI主题变量 */
+  --ui-primary: var(--color-green-1);
+  --ui-primary-foreground: #FFFFFF;
+  --ui-secondary: var(--color-purple-1);
+  --ui-secondary-foreground: #FFFFFF;
+  --ui-background: var(--color-white);
+  --ui-foreground: var(--color-gray-2);
+  --ui-border: var(--color-gray-6);
+  --ui-input: var(--color-gray-8);
+  --ui-muted: var(--color-gray-7);
+  --ui-muted-foreground: var(--color-gray-4);
+
 }
 
