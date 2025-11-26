@@ -24,33 +24,14 @@ export default defineNuxtConfig({
   piniaPluginPersistedstate: {
     key: 'ceping_%id',
   },
-
-
   // @nuxt/ui theme configuration
   ui: {
     fonts: false,
   },
   i18n: {
-    locales: [
-      { code: 'en', name: 'English', file: 'en-US.json' },
-      { code: 'zh', name: '中文', file: 'zh-CN.json' }
-    ],
-    defaultLocale: 'en',
-    strategy: 'no_prefix',
-    detectBrowserLanguage: {
-      useCookie: true,
-      cookieKey: 'i18n_redirected',
-      redirectOn: 'root',
-      alwaysRedirect: false,
-      cookieSecure: true,
-      cookieCrossOrigin: false,
-      cookieDomain: null,
-      cookieSameSite: 'lax'
-    },
-    lazy: true,
-    langDir: 'app/i18n/',
-    vueI18n: './i18n.config.ts'
+  
   },
+
   imports: {
     presets: [
       { from: 'vue-i18n', imports: ['useI18n'] }
