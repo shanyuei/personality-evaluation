@@ -49,27 +49,7 @@ export default defineNuxtConfig({
     },
     lazy: true,
     langDir: 'app/i18n/',
-    vueI18n: {
-      legacy: false,
-      locale: 'en',
-      fallbackLocale: 'en',
-      globalInjection: true,
-      availableLocales: ['en', 'zh'],
-      datetimeFormats: {
-        en: {
-          short: { year: 'numeric', month: 'short', day: 'numeric' },
-          long: { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' }
-        },
-        zh: {
-          short: { year: 'numeric', month: 'short', day: 'numeric' },
-          long: { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' }
-        }
-      },
-      numberFormats: {
-        en: { currency: { style: 'currency', currency: 'USD' } },
-        zh: { currency: { style: 'currency', currency: 'CNY' } }
-      }
-    }
+    vueI18n: './i18n.config.ts'
   },
   imports: {
     presets: [
