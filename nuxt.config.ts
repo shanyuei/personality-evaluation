@@ -4,7 +4,6 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   // 别名
   alias: {
-    '~': '/app',
 
   },
   // Configure app settings to disable font loading
