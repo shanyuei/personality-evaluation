@@ -1,4 +1,3 @@
-import i18n from './modules/i18n' // 导入i18n配置
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
@@ -14,7 +13,7 @@ export default defineNuxtConfig({
     'pinia-plugin-persistedstate/nuxt',
     '@pinia/nuxt',
     '@nuxt/ui',
-    '@nuxtjs/i18n/vue3', // Vue 3兼容版本
+    '@nuxtjs/i18n', // Vue 3兼容版本
     '@unocss/nuxt',
     '@nuxt/image',
     '@nuxt/eslint',
@@ -31,7 +30,47 @@ export default defineNuxtConfig({
   ui: {
     fonts: false,
   },
-  i18n, // i18n配置
+  i18n: {
+    locales: [
+      { code: 'en', name: 'English', file: 'en-US.json' },
+      { code: 'zh', name: '中文', file: 'zh-CN.json' }
+    ],
+    defaultLocale: 'en',
+    strategy: 'no_prefix',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root',
+      alwaysRedirect: false,
+      cookieSecure: true,
+      cookieCrossOrigin: false,
+      cookieDomain: null,
+      cookieSameSite: 'lax'
+    },
+    lazy: true,
+    langDir: 'app/i18n/',
+    vueI18n: {
+      legacy: false,
+      locale: 'en',
+      fallbackLocale: 'en',
+      globalInjection: true,
+      availableLocales: ['en', 'zh'],
+      datetimeFormats: {
+        en: {
+          short: { year: 'numeric', month: 'short', day: 'numeric' },
+          long: { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' }
+        },
+        zh: {
+          short: { year: 'numeric', month: 'short', day: 'numeric' },
+          long: { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' }
+        }
+      },
+      numberFormats: {
+        en: { currency: { style: 'currency', currency: 'USD' } },
+        zh: { currency: { style: 'currency', currency: 'CNY' } }
+      }
+    }
+  },
   imports: {
     presets: [
       { from: 'vue-i18n', imports: ['useI18n'] }
