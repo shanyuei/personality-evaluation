@@ -34,7 +34,9 @@ export default defineNuxtConfig({
   },
   i18n: {
     locales: [
-      { code: 'en', name: 'English',file: 'en.json' }
+      { code: 'en', language: 'en', name: 'English',file: 'en.json' },
+      { code: 'zh', language: 'zh', name: '中文',file: 'zh.json' },
+      { code: 'ja', language: 'ja', name: '日本語',file: 'ja.json' },
     ],
     defaultLocale: 'en',
     strategy: 'no_prefix',
@@ -47,7 +49,6 @@ export default defineNuxtConfig({
       cookieCrossOrigin: false
     },
     langDir: '../app/i18n/modules',
-    vueI18n: 'app/i18n/i18n.config.ts'
   },
   imports: {
     presets: [

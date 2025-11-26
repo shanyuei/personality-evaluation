@@ -7,15 +7,18 @@
         <NuxtImg src="/theme/logo.png" alt="logo" width="175px" height="40px" />
       </div>
       <!-- 导航栏 -->
-     <UNavigationMenu :items="items" class="w-full justify-center" />
+      <UNavigationMenu :items="items" class="w-full justify-center" />
 
     </template>
 
     <template #right>
       <!-- Get Started -->
-      <div>
-        Get Started
-
+      <div
+        class="h-[48px] flex justify-center items-center flex-row gap-3 py-1 pr-1 pl-[20px] border-solid border-[#011813] border rounded-[100px]">
+        <span class="text-[#011813] font-['Outfit'] font-medium">
+          {{ $t("header.GetStarted") }}
+        </span>
+        <NuxtImg src="/images/header/go-icon-1.png" alt="go-icon-1" width="40px" height="40px" />
       </div>
       <!-- 多语言 -->
       <I18nSelect />
@@ -23,7 +26,7 @@
   </UHeader>
 </template>
 <script setup lang="ts">
-import { withDefaults, defineProps, ref } from "vue";
+import { ref } from "vue";
 import { useRouter } from "vue-router";
 import I18nSelect from "~/components/I18nSelect.vue";
 

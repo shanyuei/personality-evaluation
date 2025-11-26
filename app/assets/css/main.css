@@ -1,2 +1,16 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
+
+
+*,
+:root {
+    /* 配色定义 */
+
+
+    /* --ui-primary: var(--color-green-1); */
+    /* 字体定义 */
+    font-family: 'Outfit', sans-serif;
+    /* 鼠标 指针 */
+    cursor: default;
+}
+
