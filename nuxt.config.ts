@@ -1,3 +1,4 @@
+import i18n from './modules/i18n' // 导入i18n配置
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
@@ -13,7 +14,7 @@ export default defineNuxtConfig({
     'pinia-plugin-persistedstate/nuxt',
     '@pinia/nuxt',
     '@nuxt/ui',
-    '@nuxtjs/i18n',
+    '@nuxtjs/i18n/vue3', // Vue 3兼容版本
     '@unocss/nuxt',
     '@nuxt/image',
     '@nuxt/eslint',
@@ -30,27 +31,7 @@ export default defineNuxtConfig({
   ui: {
     fonts: false,
   },
-  i18n: {
-    locales: [
-      { code: 'en', name: 'English' },
-      { code: 'zh', name: '中文' }
-    ],
-    defaultLocale: 'en',
-    strategy: 'no_prefix',
-    detectBrowserLanguage: {
-      useCookie: true,
-      cookieKey: 'i18n_redirected',
-      redirectOn: 'root'
-    },
-    vueI18n: {
-      legacy: false,
-      locale: 'en',
-      messages: {
-        en: { start: 'Start', get_started: 'Get Started' },
-        zh: { start: '开始', get_started: '开始使用' }
-      }
-    }
-  },
+  i18n, // i18n配置
   imports: {
     presets: [
       { from: 'vue-i18n', imports: ['useI18n'] }

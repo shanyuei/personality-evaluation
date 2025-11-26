@@ -1,0 +1,20 @@
+{
+  "header": {
+    "home": "首页",
+    "courses": "课程",
+    "mentors": "导师",
+    "blog": "博客",
+    "about_us": "关于我们"
+  },
+  "common": {
+    "start": "开始",
+    "get_started": "开始使用",
+    "language": "语言",
+    "english": "English",
+    "chinese": "中文",
+    "welcome": "欢迎使用我们的平台"
+  },
+  "footer": {
+    "copyright": "© 2024 我们的公司。保留所有权利。"
+  }
+}
