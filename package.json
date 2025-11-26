@@ -9,7 +9,8 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint . --ext .ts,.js,.vue",
-    "lint:fix": "eslint . --ext .ts,.js,.vue --fix"
+    "lint:fix": "eslint . --ext .ts,.js,.vue --fix",
+    "typecheck": "vue-tsc --noEmit"
   },
   "dependencies": {
     "@iconify-json/lucide": "^1.2.73",

@@ -1,0 +1,9 @@
+import { collectMessages } from "./uitls"
+
+export default defineI18nConfig(() => {
+    return {
+        legacy: false,
+        locale: 'en',
+        messages: collectMessages() 
+    } as any
+})

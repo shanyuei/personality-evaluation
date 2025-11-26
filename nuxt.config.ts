@@ -2,8 +2,6 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  alias: {
-  },
   // Configure app settings to disable font loading
   app: {
     head: {
@@ -31,11 +29,21 @@ export default defineNuxtConfig({
     fonts: false,
   },
   i18n: {
-    langDir: '../app/i18n/modules',
-    defaultLocale: 'en',
     locales: [
-      { code: 'en', name: 'English', file: 'en.json' },
-    ]
+      { code: 'en', name: 'English',file: 'en.json' }
+    ],
+    defaultLocale: 'en',
+    strategy: 'no_prefix',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root',
+      alwaysRedirect: false,
+      cookieSecure: true,
+      cookieCrossOrigin: false
+    },
+    langDir: '../app/i18n/modules',
+    vueI18n: 'app/i18n/i18n.config.ts'
   },
 
   imports: {
