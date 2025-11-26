@@ -13,13 +13,19 @@
 
     <template #right>
       <!-- Get Started -->
+      <div>
+        Get Started
+
+      </div>
       <!-- 多语言 -->
+      <I18nSelect />
     </template>
   </UHeader>
 </template>
 <script setup lang="ts">
 import { withDefaults, defineProps, ref } from "vue";
 import { useRouter } from "vue-router";
+import I18nSelect from "~/components/I18nSelect.vue";
 
 const router = useRouter();
 const go = (to?: string) => {

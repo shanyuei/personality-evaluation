@@ -2,6 +2,11 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
+  // 别名
+  alias: {
+    '~': '/app',
+
+  },
   // Configure app settings to disable font loading
   app: {
     head: {
@@ -45,7 +50,6 @@ export default defineNuxtConfig({
     langDir: '../app/i18n/modules',
     vueI18n: 'app/i18n/i18n.config.ts'
   },
-
   imports: {
     presets: [
       { from: 'vue-i18n', imports: ['useI18n'] }
