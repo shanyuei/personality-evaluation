@@ -1,14 +1,13 @@
 <template>
   <div class="w-full relative">
-    <div class="w-full h-full absolute bottom-0 left-0 z-[1]">
-      <NuxtPicture src="/theme/layout/footer-bg-1440.png" :sources="[
-        { srcset: '/theme/layout/footer-bg-1920px.png', media: '(max-width: 1920px)' },
-        { srcset: '/theme/layout/footer-bg-1440.png', media: '(max-width: 1440px)' }
-      ]" :img-attrs="{ class: 'w-full h-471px', alt: 'footer' }" />
+    <div class="w-full absolute bottom-0 left-0 z-[1]">
+      <NuxtPicture src="/theme/layout/footer-bg-1920.png" :sources="[
+        { srcset: '/theme/layout/footer-bg-1920.png' }
+      ]" :img-attrs="{ class: 'w-full h-[471px] object-cover object-center', alt: 'footer' }" />
     </div>
-    <div class="w-full h-full top-0 left-0 z-[2] absolute">
+    <div class="w-full h-full top-0 left-0 z-[2] relative">
       <UFooter :ui="{
-        container: 'py-80px px-0 gap-0 z-[2] relative max-w-[1440px] mx-auto items-start md:max-w-[1200px] sm:max-w-full sm:px-40px',
+        container: 'py-80px px-40px xl:px-0 gap-0 z-[2] relative max-w-[1440px] mx-auto items-start max-md:max-w-[1200px] max-sm:max-w-full max-sm:flex-col-reverse max-sm:flex max-sm:gap-32px max-sm:py-0 max-sm:p-b-24px',
         left: 'flex-none',
         right: 'flex-none',
         center: 'flex-none',
@@ -96,17 +95,20 @@
         </template>
         <template #bottom>
           <!-- 分割线 -->
-          <div class="w-full flex justify-center max-w-[1440px] m-b-32px mx-auto px-0 md:max-w-[1200px] sm:w-full sm:px-40px">
+          <div
+            class="w-full flex justify-center max-w-[1440px] m-b-32px mx-auto px-40px xl:px-0 max-md:max-w-[1200px] sm:w-full">
             <NuxtImg src="/images/footer/line.png" alt="line" width="100%" height="1px" object-fit="contain" />
           </div>
           <div
-            class="w-full max-w-[1440px]  mx-auto flex items-center justify-between md:max-w-[1200px] sm:max-w-full sm:px-40px">
-            <div class="text-[#011813] font-['Outfit'] text-center text-16px">
+            class="w-full max-w-[1440px] mx-auto px-40px xl:px-0 flex items-center justify-between max-md:max-w-[1200px] max-sm:max-w-full max-sm:flex-col max-sm:items-start max-sm:gap-16px max-xs:gap-12px">
+            <div class="text-[#011813] font-['Outfit'] text-center text-16px max-sm:text-14px max-xs:text-12px">
               {{ $t('footer.copyright') }}
             </div>
             <!-- 支付方式 -->
-            <div class="flex items-center gap-12px flex-wrap justify-center">
-              <span class="text-[#011813] font-['Outfit'] mr-12px">{{ $t('footer.payments') }}:</span>
+            <div class="flex items-center gap-12px flex-wrap justify-center max-sm:gap-8px max-xs:gap-6px">
+              <span
+                class="text-[#011813] font-['Outfit'] mr-12px max-sm:mr-8px max-xs:mr-6px max-sm:text-14px max-xs:text-12px">{{
+                  $t('footer.payments') }}:</span>
               <NuxtImg src="/images/footer/payments-logo-1.png" alt="Visa" width="36px" height="24px" />
               <NuxtImg src="/images/footer/payments-logo-2.png" alt="Mastercard" width="36px" height="24px" />
               <NuxtImg src="/images/footer/payments-logo-3.png" alt="UnionPay" width="36px" height="24px" />
@@ -123,20 +125,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const items = ref([
-  {
-    label: 'Figma Kit',
-    to: 'https://go.nuxt.com/figma-ui',
-    target: '_blank'
-  }, {
-    label: 'Playground',
-    to: 'https://stackblitz.com/edit/nuxt-ui',
-    target: '_blank'
-  }, {
-    label: 'Releases',
-    to: 'https://github.com/nuxt/ui/releases',
-    target: '_blank'
-  }
-])
+
 </script>
 <style scoped></style>
