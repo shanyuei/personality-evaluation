@@ -1,6 +1,6 @@
 <template>
-  <div class="w-full relative overflow-hidden">
-    <div class="w-full h-full relative top-0 left-0 z-[1]">
+  <div class="w-full relative">
+    <div class="w-full h-full absolute bottom-0 left-0 z-[1]">
       <NuxtPicture src="/theme/layout/footer-bg-1440.png" :sources="[
         { srcset: '/theme/layout/footer-bg-1920px.png', media: '(max-width: 1920px)' },
         { srcset: '/theme/layout/footer-bg-1440.png', media: '(max-width: 1440px)' }
