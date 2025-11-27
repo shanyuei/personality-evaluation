@@ -36,39 +36,35 @@
 
         </template>
 
-        <template #center>
+        <template #default>
           <!-- 导航 -->
           <div class="grid grid-cols-2 gap-40px">
             <div>
-              <h3 class="text-[#011813] text-xl font-['Outfit'] font-medium mb-16px">{{ $t('footer.pagesText') }}</h3>
+              <h3 class="text-[#011813] text-2xl font-['Outfit'] font-semibold mb-16px">{{ $t('footer.pagesText') }}</h3>
               <ul class="space-y-12px">
-                <li><a href="/" class="text-[#4E5255] font-['Outfit'] text-sm hover:text-[#011813]">Home 1</a></li>
-                <li><a href="/" class="text-[#4E5255] font-['Outfit'] text-sm hover:text-[#011813]">Home 2</a></li>
-                <li><a href="/" class="text-[#4E5255] font-['Outfit'] text-sm hover:text-[#011813]">Home 3</a></li>
-                <li><a href="/about" class="text-[#4E5255] font-['Outfit'] text-sm hover:text-[#011813]">About Us</a></li>
-                <li><a href="/courses" class="text-[#4E5255] font-['Outfit'] text-sm hover:text-[#011813]">Courses</a></li>
+                <li><a href="/" class="text-[#011813] font-['Outfit'] hover:text-[#4E5255]">Home 1</a></li>
+                <li><a href="/" class="text-[#011813] font-['Outfit'] hover:text-[#4E5255]">Home 2</a></li>
+                <li><a href="/" class="text-[#011813] font-['Outfit'] hover:text-[#4E5255]">Home 3</a></li>
+                <li><a href="/about" class="text-[#011813] font-['Outfit'] hover:text-[#4E5255]">About Us</a></li>
+                <li><a href="/courses" class="text-[#011813] font-['Outfit'] hover:text-[#4E5255]">Courses</a></li>
               </ul>
             </div>
             <div>
-              <h3 class="text-[#011813] text-xl font-['Outfit'] font-medium mb-16px">{{ $t('footer.othersText') }}</h3>
+              <h3 class="text-[#011813] text-2xl font-['Outfit'] font-semibold mb-16px">{{ $t('footer.othersText') }}</h3>
               <ul class="space-y-12px">
-                <li><a href="/mentors" class="text-[#4E5255] font-['Outfit'] text-sm hover:text-[#011813]">Mentors</a></li>
-                <li><a href="#" class="text-[#4E5255] font-['Outfit'] text-sm hover:text-[#011813]">Contact Us</a></li>
-                <li><a href="/blog" class="text-[#4E5255] font-['Outfit'] text-sm hover:text-[#011813]">Blog</a></li>
-                <li><a href="#" class="text-[#4E5255] font-['Outfit'] text-sm hover:text-[#011813]">Privacy Policy</a></li>
-                <li><a href="#" class="text-[#4E5255] font-['Outfit'] text-sm hover:text-[#011813]">Terms & Conditions</a></li>
+                <li><a href="/mentors" class="text-[#011813] font-['Outfit'] hover:text-[#4E5255]">Mentors</a></li>
+                <li><a href="#" class="text-[#011813] font-['Outfit'] hover:text-[#4E5255]">Contact Us</a></li>
+                <li><a href="/blog" class="text-[#011813] font-['Outfit'] hover:text-[#4E5255]">Blog</a></li>
+                <li><a href="#" class="text-[#011813] font-['Outfit'] hover:text-[#4E5255]">Privacy Policy</a></li>
+                <li><a href="#" class="text-[#011813] font-['Outfit'] hover:text-[#4E5255]">Terms & Conditions</a></li>
               </ul>
             </div>
           </div>
         </template>
 
         <template #right>
-          <UButton icon="i-simple-icons-discord" color="neutral" variant="ghost" to="https://go.nuxt.com/discord"
-            target="_blank" aria-label="Discord" />
-          <UButton icon="i-simple-icons-x" color="neutral" variant="ghost" to="https://go.nuxt.com/x" target="_blank"
-            aria-label="X" />
-          <UButton icon="i-simple-icons-github" color="neutral" variant="ghost" to="https://github.com/nuxt/nuxt"
-            target="_blank" aria-label="GitHub" />
+          <!-- 关于我 -->
+           
         </template>
         <template #bottom>
           <div class="w-full " />
