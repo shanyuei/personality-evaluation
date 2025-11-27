@@ -4,26 +4,28 @@
     <template #left>
       <!-- logo -->
       <div class="m-r-59px">
-        <NuxtImg src="/theme/logo.png" alt="logo" width="175px" height="40px" />
+        <NuxtPicture src="/theme/logo.png" :sources="[
+          { srcset: '/theme/logo.png' }
+        ]" :img-attrs="{ class: 'w-170px h-[40px] max-sm:w-105px max-sm:h-[25px]', alt: 'footer' }" />
       </div>
       <!-- 导航栏 -->
-      <UNavigationMenu :ui="{link:'before:bg-[transparent!important] font-[`Outfit`] text-center font-medium text-[#011813] data-[active]:text-[--color-pink-1] hover:text-[--color-pink-1]'}" :items="items" class="w-full justify-center"  />
+      <UNavigationMenu
+        :ui="{ link: 'before:bg-[transparent!important] font-[`Outfit`] text-center font-medium text-[#011813] data-[active]:text-[--color-pink-1] hover:text-[--color-pink-1]' }"
+        :items="items" class="w-full justify-center max-sm:hidden" />
 
     </template>
 
     <template #right>
-      <!-- Get Started -->
       <div
-        class="h-[48px] flex justify-center items-center flex-row gap-3 py-1 pr-1 pl-[20px] border-solid border-[#011813] border rounded-[100px]">
-        <span class="text-[#011813] font-['Outfit'] font-medium">
-          {{ $t("header.GetStarted") }}
-        </span>
+        class="h-[48px] flex justify-center items-center flex-row gap-3 py-1 pr-1 pl-[20px] border-solid border-[#011813] border rounded-[100px] max-sm:hidden">
+        <span class="text-[#011813] font-['Outfit'] font-medium">{{ $t("header.GetStarted") }}</span>
         <NuxtImg src="/images/header/go-icon-1.png" alt="go-icon-1" width="40px" height="40px" />
       </div>
       <!-- 多语言 -->
       <I18nSelect />
     </template>
   </UHeader>
+
 </template>
 <script setup lang="ts">
 import { ref } from "vue";
@@ -33,7 +35,6 @@ const router = useRouter();
 const go = (to?: string) => {
   if (to) router.push(to);
 };
-const menuOpen = ref(false);
 const items = ref([
   {
     label: 'Home',

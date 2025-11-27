@@ -1,14 +1,14 @@
 <template>
     <UPopover arrow mode="click" :dismissible="false" :ui="{ content: '' }">
-        <div w-137px h-40px flex items-center gap-4px justify-center>
+        <div w-137px h-40px flex items-center gap-4px justify-center class="max-sm:w-auto max-sm:px-8px max-sm:gap-2px">
             <!-- 地区图标 -->
             <NuxtImg src="/images/i18nSelect/en.png" alt="en" width="20px" height="20px" />
             <!-- 区域文字 -->
-            <span class="w-[54px] text-[#000000] text-sm font-['Outfit'] text-center font-medium leading-[22px]">
+            <span class="min-w-[54px] max-sm:w-auto max-sm:min-w-auto text-[#000000] text-sm font-['Outfit'] text-center font-medium leading-[22px]">
                 {{ languageName }}
             </span>
             <!-- 箭头 -->
-            <NuxtImg src="/images/i18nSelect/arrow-down.png" alt="arrow-down" width="16px" height="16px" />
+            <NuxtImg src="/images/i18nSelect/arrow-down.png" alt="arrow-down" width="16px" height="16px" class="max-sm:hidden" />
         </div>
 
         <template #content>
