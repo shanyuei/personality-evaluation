@@ -7,7 +7,7 @@
         <NuxtImg src="/theme/logo.png" alt="logo" width="175px" height="40px" />
       </div>
       <!-- 导航栏 -->
-      <UNavigationMenu :items="items" class="w-full justify-center" :ui="UNavigationMenuUi" />
+      <UNavigationMenu :ui="{link:'before:bg-[transparent!important] font-[`Outfit`] text-center font-medium text-[#011813] data-[active]:text-[--color-pink-1] hover:text-[--color-pink-1]'}" :items="items" class="w-full justify-center"  />
 
     </template>
 
@@ -29,7 +29,6 @@
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 import I18nSelect from "~/components/I18nSelect.vue";
-import UNavigationMenuUi from "~/theme/UNavigationMenu";
 const router = useRouter();
 const go = (to?: string) => {
   if (to) router.push(to);

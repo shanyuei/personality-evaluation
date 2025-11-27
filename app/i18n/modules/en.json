@@ -1,5 +1,11 @@
 {
     "header": {
         "GetStarted": "Get Started"
+    },
+    "footer": {
+        "introduction": "Unlock knowledge with expert-led online courses.",
+        "stayConnected": "Stay connected",
+        "pagesText": "Pages",
+        "othersText": "Others"
     }
 }

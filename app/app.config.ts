@@ -1,8 +1,8 @@
+import UNavigationMenuUi from "~/theme/UNavigationMenu";
 export default defineAppConfig({
-  font: {
-    // family: 'Inter, sans-serif'
-  },
   ui: {
-  
+    navigationMenu: {
+      ...UNavigationMenuUi as any,
+    }
   }
-});
+})

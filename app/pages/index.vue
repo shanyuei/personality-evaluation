@@ -1,5 +1,6 @@
 <template>
   <main class="min-h-screen bg-white">
+    
     <!-- Hero Section -->
     <section class="relative py-20 px-6 md:px-12 lg:px-24">
       <div class="max-w-7xl mx-auto text-center">
