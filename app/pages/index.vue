@@ -202,33 +202,33 @@
                 <!-- 右侧：三个步骤卡片 -->
                     <div class="w-full md:w-1/2">
                         <div class="flex justify-start items-start flex-col gap-6">
-                            <div style="flex-shrink: 0" class="flex justify-start items-center flex-row gap-3 py-[20px] pr-[24px] pl-4 bg-[#FFFFFF] border-solid border-[#F0F0F0] border rounded-lg shadow-[10px_30px_50px_0px_rgba(0,157,119,0.08)]">
-                                <div style="flex: none" class="w-[64px] h-[64px] flex justify-center items-center flex-row gap-2 p-4 bg-[#E8FAF5] rounded-[32px]">
-                                    <span class="text-[#009D77] text-4xl font-['Outfit'] font-medium leading-[1.36]">1</span>
+                            <div style="flex-shrink: 0" class="flex justify-start items-center flex-row gap-6 py-24px px-24px bg-[#FFFFFF] rounded-2xl shadow-[0_20px_40px_0_rgba(0,157,119,0.08)]">
+                                <div style="flex: none" class="w-[56px] h-[56px] flex justify-center items-center p-4 bg-[#E8FAF5] rounded-[28px]">
+                                    <span class="text-[#009D77] text-4xl font-['Outfit'] font-semibold leading-[1.36]">1</span>
                                 </div>
-                                <div class="flex justify-start items-start flex-col gap-1">
-                                    <p class="self-stretch text-[#011813] text-2xl font-['Outfit'] font-medium">Prepare yourself</p>
-                                    <p class="w-[370px] text-[#4E5255] font-['Outfit']">Ensure you're in a relaxed setting conducive to concentration for the test.</p>
-                                </div>
-                            </div>
-
-                            <div style="flex-shrink: 0" class="flex justify-start items-center flex-row gap-3 py-[20px] pr-[24px] pl-4 bg-[#FFFFFF] border-solid border-[#F0F0F0] border rounded-lg shadow-[10px_30px_50px_0px_rgba(0,157,119,0.08)]">
-                                <div style="flex: none" class="w-[64px] h-[64px] flex justify-center items-center flex-row gap-2 p-4 bg-[#FFF5F9] rounded-[32px]">
-                                    <span class="text-[#EA4C89] text-4xl font-['Outfit'] font-medium leading-[1.36]">2</span>
-                                </div>
-                                <div class="flex justify-start items-start flex-col gap-1">
-                                    <span class="text-[#011813] text-2xl font-['Outfit'] font-medium">10+ Useful inner pages</span>
-                                    <p class="w-[370px] text-[#4E5255] font-['Outfit']">Meta has 10+ inner pages that are needed for your business. You can fully customize these.</p>
+                                <div class="flex justify-start items-start flex-col gap-2">
+                                    <p class="text-[#011813] text-2xl font-['Outfit'] font-semibold">Prepare yourself</p>
+                                    <p class="w-[370px] max-sm:w-full text-[#4E5255] font-['Outfit']">Ensure you're in a relaxed setting conducive to concentration for the test.</p>
                                 </div>
                             </div>
 
-                            <div style="flex-shrink: 0" class="flex justify-start items-center flex-row gap-3 py-[20px] pr-[24px] pl-4 bg-[#FFFFFF] border-solid border-[#F0F0F0] border rounded-lg shadow-[10px_30px_50px_0px_rgba(0,157,119,0.08)]">
-                                <div style="flex: none" class="w-[64px] h-[64px] flex justify-center items-center flex-row gap-2 p-4 bg-[#F5EFFC] rounded-[32px]">
-                                    <span class="text-[#932EFA] text-4xl font-['Outfit'] font-medium leading-[1.36]">3</span>
+                            <div style="flex-shrink: 0" class="flex justify-start items-center flex-row gap-6 py-24px px-24px bg-[#FFFFFF] rounded-2xl shadow-[0_20px_40px_0_rgba(0,157,119,0.08)]">
+                                <div style="flex: none" class="w-[56px] h-[56px] flex justify-center items-center p-4 bg-[#FFF5F9] rounded-[28px]">
+                                    <span class="text-[#EA4C89] text-4xl font-['Outfit'] font-semibold leading-[1.36]">2</span>
                                 </div>
-                                <div class="flex justify-start items-start flex-col gap-1">
-                                    <span class="text-[#011813] text-2xl font-['Outfit'] font-medium">30+ Details sections</span>
-                                    <p class="w-[370px] text-[#4E5255] font-['Outfit']">Meta has 40+ stunning sections which will help you build a portfolio website as per your needs.</p>
+                                <div class="flex justify-start items-start flex-col gap-2">
+                                    <span class="text-[#011813] text-2xl font-['Outfit'] font-semibold">10+ Useful inner pages</span>
+                                    <p class="w-[370px] max-sm:w-full text-[#4E5255] font-['Outfit']">Meta has 10+ inner pages that are needed for your business. You can fully customize these.</p>
+                                </div>
+                            </div>
+
+                            <div style="flex-shrink: 0" class="flex justify-start items-center flex-row gap-6 py-24px px-24px bg-[#FFFFFF] rounded-2xl shadow-[0_20px_40px_0_rgba(0,157,119,0.08)]">
+                                <div style="flex: none" class="w-[56px] h-[56px] flex justify-center items-center p-4 bg-[#F5EFFC] rounded-[28px]">
+                                    <span class="text-[#932EFA] text-4xl font-['Outfit'] font-semibold leading-[1.36]">3</span>
+                                </div>
+                                <div class="flex justify-start items-start flex-col gap-2">
+                                    <span class="text-[#011813] text-2xl font-['Outfit'] font-semibold">30+ Details sections</span>
+                                    <p class="w-[370px] max-sm:w-full text-[#4E5255] font-['Outfit']">Meta has 40+ stunning sections which will help you build a portfolio website as per your needs.</p>
                                 </div>
                             </div>
                         </div>
