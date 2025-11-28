@@ -248,42 +248,39 @@
 
                 <!-- 六个卡片布局 -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="bg-white rounded-3xl shadow-lg p-24px border border-[#E7E7E8]">
-                        <div class="flex flex-col items-center text-center gap-12px">
+                    <div class="relative">
+                        <div class="bg-white rounded-2xl shadow-lg p-24px border border-[#E7E7E8] flex flex-col items-center text-center gap-12px relative z-[1] w-full min-h-[220px]">
                             <NuxtImg src="/images/home/7.png" alt="Comprehensive Personality Report" width="72" height="72" />
                             <h3 class="text-xl font-['Outfit'] font-bold">Comprehensive Personality Report</h3>
                             <p class="text-gray-600">The to der ealie, der ealie, the to over mear for queen, for please</p>
                         </div>
-                        <div class="w-full h-[1px] bg-[#E7E7E8] my-16px"></div>
-                        <div class="flex flex-col items-center text-center gap-12px">
+                        <div class="bg-white rounded-2xl shadow-lg p-24px border border-[#E7E7E8] flex flex-col items-center text-center gap-12px relative z-[3] w-full min-h-[220px] m-t-[-20px] ml-0">
                             <NuxtImg src="/images/home/10.png" alt="Practical Daily Challenges" width="72" height="72" />
                             <h3 class="text-xl font-['Outfit'] font-bold">Practical Daily Challenges</h3>
                             <p class="text-gray-600">The colu we easily in der ealie, even for moquen, for please</p>
                         </div>
                     </div>
 
-                    <div class="bg-white rounded-3xl shadow-lg p-24px border border-[#E7E7E8]">
-                        <div class="flex flex-col items-center text-center gap-12px">
+                    <div class="relative">
+                        <div class="bg-white rounded-2xl shadow-lg p-24px border border-[#E7E7E8] flex flex-col items-center text-center gap-12px relative z-[1] w-full min-h-[220px]">
                             <NuxtImg src="/images/home/8.png" alt="Personalized Course Recommendations" width="72" height="72" />
                             <h3 class="text-xl font-['Outfit'] font-bold">Personalized Course Recommendations</h3>
                             <p class="text-gray-600">Reveal it everything overing overing the best!</p>
                         </div>
-                        <div class="w-full h-[1px] bg-[#E7E7E8] my-16px"></div>
-                        <div class="flex flex-col items-center text-center gap-12px">
+                        <div class="bg-white rounded-2xl shadow-lg p-24px border border-[#E7E7E8] flex flex-col items-center text-center gap-12px relative z-[3] w-full min-h-[220px] m-t-[-20px] ml-0">
                             <NuxtImg src="/images/home/11.png" alt="Learning and Development Library" width="72" height="72" />
                             <h3 class="text-xl font-['Outfit'] font-bold">Learning and Development Library</h3>
                             <p class="text-gray-600">Reveal in everything overing overing bad policy of the test for the great</p>
                         </div>
                     </div>
 
-                    <div class="bg-white rounded-3xl shadow-lg p-24px border border-[#E7E7E8]">
-                        <div class="flex flex-col items-center text-center gap-12px">
+                    <div class="relative">
+                        <div class="bg-white rounded-2xl shadow-lg p-24px border border-[#E7E7E8] flex flex-col items-center text-center gap-12px relative z-[1] w-full min-h-[220px]">
                             <NuxtImg src="/images/home/9.png" alt="Skill Assessment Tests" width="72" height="72" />
                             <h3 class="text-xl font-['Outfit'] font-bold">Skill Assessment Tests</h3>
                             <p class="text-gray-600">Where centred for date, control over thought, through teacher effectiveness</p>
                         </div>
-                        <div class="w-full h-[1px] bg-[#E7E7E8] my-16px"></div>
-                        <div class="flex flex-col items-center text-center gap-12px">
+                        <div class="bg-white rounded-2xl shadow-lg p-24px border border-[#E7E7E8] flex flex-col items-center text-center gap-12px relative z-[3] w-full min-h-[220px] m-t-[-20px] ml-0">
                             <NuxtImg src="/images/home/12.png" alt="Certificates of Achievement" width="72" height="72" />
                             <h3 class="text-xl font-['Outfit'] font-bold">Certificates of Achievement</h3>
                             <p class="text-gray-600">Where centred for date, control over thought, through teacher effectiveness</p>
