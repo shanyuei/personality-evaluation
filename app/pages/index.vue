@@ -2,7 +2,7 @@
     <!-- 首页 -->
     <main class="mx-auto pt-128px">
         <!-- 第一块区域 -->
-        <div class="relative rounded-xl mx-auto max-w-4xl border border-transparent ">
+        <div class="relative rounded-xl mx-auto max-w-[1200px] border border-transparent ">
             <!-- 内容区域 -->
             <div class="flex justify-start items-center flex-col   ">
                 <div class="flex justify-start items-center flex-col gap-16px">
@@ -28,8 +28,8 @@
             </div>
         </div>
         <!-- 第二块区域 hero -->
-        <div class="hero-section w-full py-20">
-            <div class="container mx-auto px-4">
+        <div class="hero-section w-full py-20 mx-auto max-w-[1200px]">
+            <div class="container mx-auto ">
                 <div class="flex justify-center items-center flex-wrap gap-24px">
                     <!-- 六个卡通人物头像 -->
                     <div
@@ -60,6 +60,35 @@
                 </div>
             </div>
         </div>
+        <!-- 第三块 数据统计区域 -->
+        <div class="data-stats bg-[#F5F8FF] py-12">
+            <div class="container mx-auto  mx-auto max-w-[1200px]">
+                <div class="flex justify-between items-center flex-wrap">
+                    <!-- 统计项1 -->
+                    <div class="text-center p-6">
+
+                        <div class="text-[#009D77] text-4xl font-['Outfit'] font-bold">241K+</div>
+                        <div class="text-[#4E5255] text-sm mt-2">Tests taken today</div>
+                    </div>
+                    <!-- 统计项2 -->
+                    <div class="text-center p-6">
+                        <div class="text-[#E86B8A] text-4xl font-['Outfit'] font-bold">172M+</div>
+                        <div class="text-[#4E5255] text-sm mt-2">Tests taken in US</div>
+                    </div>
+                    <!-- 统计项3 -->
+                    <div class="text-center p-6">
+                        <div class="text-[#5EC2A5] text-4xl font-['Outfit'] font-bold">1460M+</div>
+                        <div class="text-[#4E5255] text-sm mt-2">Total tests taken</div>
+                    </div>
+                    <!-- 统计项4 -->
+                    <div class="text-center p-6">
+                        <div class="text-[#9A6EFF] text-4xl font-['Outfit'] font-bold">91.2%</div>
+                        <div class="text-[#4E5255] text-sm mt-2">Results rated accurate or very accurate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
     </main>
 </template>
