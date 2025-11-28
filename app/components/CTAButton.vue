@@ -1,26 +1,7 @@
 <template>
-  <button
-    class="cta-button inline-flex items-center gap-3 px-6 py-3 bg-black rounded-full text-white font-medium hover:bg-gray-800 transition-all duration-300"
-    :disabled="disabled"
-    @click="onClick"
-  >
-    <span>{{ text || $t('common.getStarted') }}</span>
-    <span class="w-8 h-8 inline-flex items-center justify-center rounded-full border border-white/40">
-      <svg
-        class="w-4 h-4 text-white"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M14 5l7 7m0 0l-7 7m7-7H3"
-        ></path>
-      </svg>
-    </span>
+  <button :class="btnClass" :style="finalStyle" :disabled="disabled" @click="onClick">
+    <span :class="textClass" :style="textStyle">{{ text || $t('common.getStarted') }}</span>
+    <NuxtImg src="/images/common/go-arrow-1.png" alt="btn-icon" :width="iconSize" :height="iconSize" />
   </button>
 </template>
 
@@ -28,10 +9,25 @@
 interface Props {
   text?: string;
   disabled?: boolean;
+
+  iconSizePx?: number | null;
+  bgColor?: string;
+  hoverBgColor?: string;
+  activeBgColor?: string;
+
+  fontClass?: string;
+  btnClass?: string;
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  disabled: false
+  text: '',
+  disabled: false,
+  iconSizePx: null,
+  bgColor: '#009D77',
+  hoverBgColor: '#008A68',
+  activeBgColor: '#007759',
+  fontClass: '',
+  btnClass: ''
 });
 
 const emit = defineEmits<{
@@ -43,11 +39,49 @@ const onClick = (event: MouseEvent) => {
     emit('click', event);
   }
 };
+
+// removed unused size maps
+
+const btnClass = computed(() => {
+  const base = 'cta-button flex justify-center items-center flex-row gap-[18px] rounded-[149.99px] transition-all duration-300 hover:shadow-lg active:scale-[0.98]';
+  const pad = 'py-4 pr-3 pl-[48px]';
+  return `${base} ${pad} ${props.btnClass}`.trim();
+});
+
+const textClass = computed(() => {
+  const base = "text-[#FFFFFF] font-['Outfit']  leading-normal";
+  const defaultSize = props.fontClass ? '' : 'text-[32px]';
+  return `${base} ${defaultSize} ${props.fontClass}`.trim();
+});
+const iconSize = computed(() => props.iconSizePx ?? 72);
+
+const btnStyle = computed(() => {
+  const style: Record<string, string> = {}
+  return style
+})
+
+const btnVars = computed(() => ({
+  '--bg-color': props.bgColor,
+  '--hover-bg-color': props.hoverBgColor,
+  '--active-bg-color': props.activeBgColor
+} as Record<string, string>))
+
+const finalStyle = computed(() => Object.assign({}, btnStyle.value, btnVars.value))
+
+const textStyle = computed(() => ({}))
 </script>
 
 <style scoped>
 .cta-button {
-  /* 基础样式已在模板中使用原子类定义 */
+  background-color: var(--bg-color);
+}
+
+.cta-button:hover {
+  background-color: var(--hover-bg-color);
+}
+
+.cta-button:active {
+  background-color: var(--active-bg-color);
 }
 
 .cta-button:disabled {

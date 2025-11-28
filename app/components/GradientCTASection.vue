@@ -18,7 +18,7 @@
         {{ description || $t('home.accuracy.description') }}
       </p>
 
-      <CTAButton :text="buttonText" :disabled="buttonDisabled" @click="$emit('button-click', $event)" />
+      <CTAButton :text="buttonText" :disabled="buttonDisabled" btn-class="w-[168px] h-[56px]" bg-color="#011813" hover-bg-color="#02221D" active-bg-color="#02221D" font-class="text-[#FFFFFF] font-['Outfit'] font-medium" :icon-size-px="44"  @click="$emit('button-click', $event)" />
     </div>
 
   </div>
