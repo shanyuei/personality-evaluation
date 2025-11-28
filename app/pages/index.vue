@@ -137,7 +137,7 @@
                     <!-- 三个小介绍卡片 -->
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <!-- 卡片1 -->
-                        <div class="bg-white rounded-xl shadow-lg p-6">
+                        <div class="bg-[#F8F8F8] border-solid border-[#E7E7E8] border rounded-3xl p-24px shadow-lg relative">
                             <div class="mb-4 text-amber-500">
                                 <!-- 图标 -->
                                 <NuxtImg src="/images/home/3.png" alt="Better decision-making icon" width="56"
@@ -151,7 +151,7 @@
                         </div>
 
                         <!-- 卡片2 -->
-                        <div class="bg-white rounded-xl shadow-lg p-6">
+                        <div class="bg-[#F8F8F8] border-solid border-[#E7E7E8] border rounded-3xl p-24px shadow-lg relative">
                             <div class="mb-4 text-pink-500">
                                 <!-- 图标 -->
                                 <NuxtImg src="/images/home/4.png" alt="Enhanced relationships icon" width="56"
@@ -165,7 +165,7 @@
                         </div>
 
                         <!-- 卡片3 -->
-                        <div class="bg-white rounded-xl shadow-lg p-6">
+                        <div class="bg-[#F8F8F8] border-solid border-[#E7E7E8] border rounded-3xl p-24px shadow-lg relative">
                             <div class="mb-4 text-indigo-500">
                                 <!-- 图标 -->
                                 <NuxtImg src="/images/home/5.png" alt="Career satisfaction icon" width="56"
