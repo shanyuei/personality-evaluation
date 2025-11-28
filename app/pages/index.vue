@@ -298,78 +298,11 @@
             :reviews="reviews"
         />
 
-        <!-- 第七块 常见问题模块 -->
-        <div class="faq-section py-24 bg-gray-50">
-            <div class="container mx-auto max-w-[1200px]">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-['Outfit'] font-bold mb-4">Frequently Asked Questions</h2>
-                    <p class="text-gray-600 max-w-3xl mx-auto">
-                        Frequently Asked Questions offers a quick answers to common queries, guiding users through
-                        features and functionalities efficiently.
-                    </p>
-                </div>
-
-                <!-- FAQ 列表 -->
-                <div class="max-w-3xl mx-auto">
-                    <!-- FAQ 项目 1 (默认展开) -->
-                    <div class="border border-gray-200 rounded-xl mb-4 overflow-hidden">
-                        <button
-                            class="w-full flex justify-between items-center p-6 bg-green-50 hover:bg-green-100 transition-colors text-left">
-                            <span class="font-['Outfit'] font-semibold text-lg text-green-800">Can I Track My
-                                Assignments and Grades?</span>
-                            <span class="text-green-800">-</span>
-                        </button>
-                        <div class="p-6 bg-white border-t border-gray-200">
-                            <p class="text-gray-600">
-                                Yes, the LMS offers a "Gradebook" where students can view their grades, mentor feedback
-                                on assignments, and class attendance data. You can view your grade and comments for each
-                                submission.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- FAQ 项目 2 -->
-                    <div class="border border-gray-200 rounded-xl mb-4 overflow-hidden">
-                        <button
-                            class="w-full flex justify-between items-center p-6 hover:bg-gray-50 transition-colors text-left">
-                            <span class="font-['Outfit'] font-semibold text-lg">Does the LMS support video lessons and
-                                live classes?</span>
-                            <span>+</span>
-                        </button>
-                    </div>
-
-                    <!-- FAQ 项目 3 -->
-                    <div class="border border-gray-200 rounded-xl mb-4 overflow-hidden">
-                        <button
-                            class="w-full flex justify-between items-center p-6 hover:bg-gray-50 transition-colors text-left">
-                            <span class="font-['Outfit'] font-semibold text-lg">How can I communicate with my
-                                instructor?</span>
-                            <span>+</span>
-                        </button>
-                    </div>
-
-                    <!-- FAQ 项目 4 -->
-                    <div class="border border-gray-200 rounded-xl mb-4 overflow-hidden">
-                        <button
-                            class="w-full flex justify-between items-center p-6 hover:bg-gray-50 transition-colors text-left">
-                            <span class="font-['Outfit'] font-semibold text-lg">What support is available for students
-                                and instructors?</span>
-                            <span>+</span>
-                        </button>
-                    </div>
-
-                    <!-- FAQ 项目 5 -->
-                    <div class="border border-gray-200 rounded-xl mb-4 overflow-hidden">
-                        <button
-                            class="w-full flex justify-between items-center p-6 hover:bg-gray-50 transition-colors text-left">
-                            <span class="font-['Outfit'] font-semibold text-lg">Are there interactive features for
-                                students?</span>
-                            <span>+</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <FAQSection
+            :title="'Frequently Asked Questions'"
+            :description="'Frequently Asked Questions offers a quick answers to common queries, guiding users through features and functionalities efficiently.'"
+            :items="faqItems"
+        />
 
         <!-- CTA 区域 - 渐变背景卡片 -->
         <div class="mx-auto max-w-[1200px] mb-24">
@@ -383,6 +316,7 @@
 <script setup lang="ts">
 import GradientCTASection from '../components/GradientCTASection.vue';
 import TestimonialsSection from '../components/TestimonialsSection.vue';
+import FAQSection from '../components/FAQSection.vue';
 
 const baseText = 'An exceptional platform for career development. The current curriculum, skilled instructors, and hands-on learning are truly rewarding.'
 
@@ -396,6 +330,31 @@ const reviews: Array<{ text: string; avatarUrl: string; name: string; role: stri
 const handleCTAClick = () => {
   console.log('CTA button clicked')
 }
+
+const faqItems: Array<{ question: string; answer: string; expanded?: boolean }> = [
+  {
+    question: 'Can I Track My Assignments and Grades?',
+    answer:
+      'Yes, the LMS offers a "Gradebook" where students can view their grades, mentor feedback on assignments, and class attendance data. You can view your grade and comments for each submission.',
+    expanded: true
+  },
+  {
+    question: 'Does the LMS support video lessons and live classes?',
+    answer: 'Yes, it supports both pre-recorded video lessons and live classes with interactive features.'
+  },
+  {
+    question: 'How can I communicate with my instructor?',
+    answer: 'You can use messaging tools, discussion boards, and scheduled office hours to communicate.'
+  },
+  {
+    question: 'What support is available for students and instructors?',
+    answer: 'Help center articles, email support, and live chat are available for both students and instructors.'
+  },
+  {
+    question: 'Are there interactive features for students?',
+    answer: 'Quizzes, assignments, polls, and peer discussions are available to enhance engagement.'
+  }
+]
 </script>
 
 <style scoped>
