@@ -291,189 +291,12 @@
         </div>
 
         <!-- 第六块 客户评价模块 -->
-        <div class="testimonials-section py-24 bg-white">
-            <div class="container mx-auto max-w-[1200px]">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-['Outfit'] font-bold mb-4">Trusted by 20,000+ customers</h2>
-                    <p class="text-gray-600 max-w-3xl mx-auto">
-                        Be always were in form of volunteers range time is mediatingappositive the in our affidavit how
-                        solitary saw more in his not
-                    </p>
-                    <!-- 五星评分 -->
-                    <div class="flex justify-center mt-6 text-yellow-400">
-                        <span class="text-xl">★★★★★</span>
-                    </div>
-                </div>
-
-                <!-- 评价卡片网格 -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-                    <!-- 评价卡片1 -->
-                    <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100">
-                        <p class="text-gray-600 mb-6 text-sm">
-                            An exceptional platform for career development. The current curriculum, skilled instructors,
-                            and hands-on learning are truly rewarding.
-                        </p>
-                        <div class="flex items-center">
-                            <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center mr-3">
-                                <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Brandon Michael"
-                                    class="w-full h-full rounded-full object-cover" />
-                            </div>
-                            <div>
-                                <h4 class="font-['Outfit'] font-bold">Brandon Michael</h4>
-                                <p class="text-gray-500 text-xs">UX/UI Designer</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 评价卡片2 -->
-                    <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100">
-                        <p class="text-gray-600 mb-6 text-sm">
-                            An exceptional platform for career development. The current curriculum, skilled instructors,
-                            and hands-on learning are truly rewarding.
-                        </p>
-                        <div class="flex items-center">
-                            <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center mr-3">
-                                <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="Brandon Michael"
-                                    class="w-full h-full rounded-full object-cover" />
-                            </div>
-                            <div>
-                                <h4 class="font-['Outfit'] font-bold">Brandon Michael</h4>
-                                <p class="text-gray-500 text-xs">UX/UI Designer</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 评价卡片3 -->
-                    <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100">
-                        <p class="text-gray-600 mb-6 text-sm">
-                            An exceptional platform for career development. The current curriculum, skilled instructors,
-                            and hands-on learning are truly rewarding.
-                        </p>
-                        <div class="flex items-center">
-                            <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center mr-3">
-                                <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Brandon Michael"
-                                    class="w-full h-full rounded-full object-cover" />
-                            </div>
-                            <div>
-                                <h4 class="font-['Outfit'] font-bold">Brandon Michael</h4>
-                                <p class="text-gray-500 text-xs">UX/UI Designer</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 评价卡片4 -->
-                    <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100">
-                        <p class="text-gray-600 mb-6 text-sm">
-                            An exceptional platform for career development. The current curriculum, skilled instructors,
-                            and hands-on learning are truly rewarding.
-                        </p>
-                        <div class="flex items-center">
-                            <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center mr-3">
-                                <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Brandon Michael"
-                                    class="w-full h-full rounded-full object-cover" />
-                            </div>
-                            <div>
-                                <h4 class="font-['Outfit'] font-bold">Brandon Michael</h4>
-                                <p class="text-gray-500 text-xs">UX/UI Designer</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 评价卡片5 -->
-                    <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100">
-                        <p class="text-gray-600 mb-6 text-sm">
-                            An exceptional platform for career development. The current curriculum, skilled instructors,
-                            and hands-on learning are truly rewarding.
-                        </p>
-                        <div class="flex items-center">
-                            <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center mr-3">
-                                <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Brandon Michael"
-                                    class="w-full h-full rounded-full object-cover" />
-                            </div>
-                            <div>
-                                <h4 class="font-['Outfit'] font-bold">Brandon Michael</h4>
-                                <p class="text-gray-500 text-xs">UX/UI Designer</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 第二行评价卡片 -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
-                    <!-- 评价卡片6 -->
-                    <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100">
-                        <p class="text-gray-600 mb-6 text-sm">
-                            An exceptional platform for career development. The current curriculum, skilled instructors,
-                            and hands-on learning are truly rewarding.
-                        </p>
-                        <div class="flex items-center">
-                            <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center mr-3">
-                                <img src="https://randomuser.me/api/portraits/men/4.jpg" alt="Brandon Michael"
-                                    class="w-full h-full rounded-full object-cover" />
-                            </div>
-                            <div>
-                                <h4 class="font-['Outfit'] font-bold">Brandon Michael</h4>
-                                <p class="text-gray-500 text-xs">UX/UI Designer</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 评价卡片7 -->
-                    <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100">
-                        <p class="text-gray-600 mb-6 text-sm">
-                            An exceptional platform for career development. The current curriculum, skilled instructors,
-                            and hands-on learning are truly rewarding.
-                        </p>
-                        <div class="flex items-center">
-                            <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center mr-3">
-                                <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="Brandon Michael"
-                                    class="w-full h-full rounded-full object-cover" />
-                            </div>
-                            <div>
-                                <h4 class="font-['Outfit'] font-bold">Brandon Michael</h4>
-                                <p class="text-gray-500 text-xs">UX/UI Designer</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 评价卡片8 -->
-                    <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100">
-                        <p class="text-gray-600 mb-6 text-sm">
-                            An exceptional platform for career development. The current curriculum, skilled instructors,
-                            and hands-on learning are truly rewarding.
-                        </p>
-                        <div class="flex items-center">
-                            <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center mr-3">
-                                <img src="https://randomuser.me/api/portraits/men/5.jpg" alt="Brandon Michael"
-                                    class="w-full h-full rounded-full object-cover" />
-                            </div>
-                            <div>
-                                <h4 class="font-['Outfit'] font-bold">Brandon Michael</h4>
-                                <p class="text-gray-500 text-xs">UX/UI Designer</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 评价卡片9 -->
-                    <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100">
-                        <p class="text-gray-600 mb-6 text-sm">
-                            An exceptional platform for career development. The current curriculum, skilled instructors,
-                            and hands-on learning are truly rewarding.
-                        </p>
-                        <div class="flex items-center">
-                            <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center mr-3">
-                                <img src="https://randomuser.me/api/portraits/women/4.jpg" alt="Brandon Michael"
-                                    class="w-full h-full rounded-full object-cover" />
-                            </div>
-                            <div>
-                                <h4 class="font-['Outfit'] font-bold">Brandon Michael</h4>
-                                <p class="text-gray-500 text-xs">UX/UI Designer</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <TestimonialsSection
+            :title="'Trusted by 20,000+ customers'"
+            :description="'Be always were in form of volunteers range time is mediatingappositive the in our affidavit how solitary saw more in his not'"
+            :rating="5"
+            :reviews="reviews"
+        />
 
         <!-- 第七块 常见问题模块 -->
         <div class="faq-section py-24 bg-gray-50">
@@ -558,13 +381,78 @@
 </template>
 
 <script setup lang="ts">
-// Home page component
 import GradientCTASection from '../components/GradientCTASection.vue';
+import TestimonialsSection from '../components/TestimonialsSection.vue';
+
+const reviews: Array<{ text: string; avatarUrl: string; name: string; role: string }> = [
+  {
+    text:
+      'An exceptional platform for career development. The current curriculum, skilled instructors, and hands-on learning are truly rewarding.',
+    avatarUrl: 'https://randomuser.me/api/portraits/men/1.jpg',
+    name: 'Brandon Michael',
+    role: 'UX/UI Designer'
+  },
+  {
+    text:
+      'An exceptional platform for career development. The current curriculum, skilled instructors, and hands-on learning are truly rewarding.',
+    avatarUrl: 'https://randomuser.me/api/portraits/men/2.jpg',
+    name: 'Brandon Michael',
+    role: 'UX/UI Designer'
+  },
+  {
+    text:
+      'An exceptional platform for career development. The current curriculum, skilled instructors, and hands-on learning are truly rewarding.',
+    avatarUrl: 'https://randomuser.me/api/portraits/men/3.jpg',
+    name: 'Brandon Michael',
+    role: 'UX/UI Designer'
+  },
+  {
+    text:
+      'An exceptional platform for career development. The current curriculum, skilled instructors, and hands-on learning are truly rewarding.',
+    avatarUrl: 'https://randomuser.me/api/portraits/women/1.jpg',
+    name: 'Brandon Michael',
+    role: 'UX/UI Designer'
+  },
+  {
+    text:
+      'An exceptional platform for career development. The current curriculum, skilled instructors, and hands-on learning are truly rewarding.',
+    avatarUrl: 'https://randomuser.me/api/portraits/women/2.jpg',
+    name: 'Brandon Michael',
+    role: 'UX/UI Designer'
+  },
+  {
+    text:
+      'An exceptional platform for career development. The current curriculum, skilled instructors, and hands-on learning are truly rewarding.',
+    avatarUrl: 'https://randomuser.me/api/portraits/men/4.jpg',
+    name: 'Brandon Michael',
+    role: 'UX/UI Designer'
+  },
+  {
+    text:
+      'An exceptional platform for career development. The current curriculum, skilled instructors, and hands-on learning are truly rewarding.',
+    avatarUrl: 'https://randomuser.me/api/portraits/women/3.jpg',
+    name: 'Brandon Michael',
+    role: 'UX/UI Designer'
+  },
+  {
+    text:
+      'An exceptional platform for career development. The current curriculum, skilled instructors, and hands-on learning are truly rewarding.',
+    avatarUrl: 'https://randomuser.me/api/portraits/men/5.jpg',
+    name: 'Brandon Michael',
+    role: 'UX/UI Designer'
+  },
+  {
+    text:
+      'An exceptional platform for career development. The current curriculum, skilled instructors, and hands-on learning are truly rewarding.',
+    avatarUrl: 'https://randomuser.me/api/portraits/women/4.jpg',
+    name: 'Brandon Michael',
+    role: 'UX/UI Designer'
+  }
+]
 
 const handleCTAClick = () => {
-    console.log('CTA button clicked');
-    // 可以在这里添加跳转逻辑
-};
+  console.log('CTA button clicked')
+}
 </script>
 
 <style scoped>
