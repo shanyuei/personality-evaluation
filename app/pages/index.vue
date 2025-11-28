@@ -63,38 +63,546 @@
         <!-- 第三块 数据统计区域 -->
         <div class="data-stats bg-[#F5F8FF] py-12">
             <div class="container mx-auto  mx-auto max-w-[1200px]">
-                <div class="flex justify-between items-center flex-wrap">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
                     <!-- 统计项1 -->
                     <div class="text-center p-6">
 
-                        <div class="text-[#009D77] text-4xl font-['Outfit'] font-bold">241K+</div>
-                        <div class="text-[#4E5255] text-sm mt-2">Tests taken today</div>
+                        <div class="text-[#009D77] text-5xl font-['Outfit'] font-semibold m-b-4px">241K+</div>
+                        <div class="text-[#4E5255] text-lg font-['Outfit']">Tests taken today</div>
                     </div>
                     <!-- 统计项2 -->
                     <div class="text-center p-6">
-                        <div class="text-[#E86B8A] text-4xl font-['Outfit'] font-bold">172M+</div>
-                        <div class="text-[#4E5255] text-sm mt-2">Tests taken in US</div>
+                        <div class="text-[#EA4C89] text-5xl font-['Outfit'] font-semibold m-b-4px">172M+</div>
+                        <div class="text-[#4E5255] text-lg font-['Outfit']">Tests taken in US</div>
                     </div>
                     <!-- 统计项3 -->
                     <div class="text-center p-6">
-                        <div class="text-[#5EC2A5] text-4xl font-['Outfit'] font-bold">1460M+</div>
-                        <div class="text-[#4E5255] text-sm mt-2">Total tests taken</div>
+                        <div class="text-[#FD9AC0] text-5xl font-['Outfit'] font-semibold m-b-4px">1460M+</div>
+                        <div class="text-[#4E5255] text-lg font-['Outfit']">Total tests taken</div>
                     </div>
                     <!-- 统计项4 -->
                     <div class="text-center p-6">
-                        <div class="text-[#9A6EFF] text-4xl font-['Outfit'] font-bold">91.2%</div>
-                        <div class="text-[#4E5255] text-sm mt-2">Results rated accurate or very accurate</div>
+                        <div class="text-[#B273F2] text-5xl font-['Outfit'] font-semibold m-b-4px">91.2%</div>
+                        <div class="text-[#4E5255] text-lg font-['Outfit']">Results rated accurate or very accurate
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 第四块 介绍区域 -->
+        <div class="intro-section py-24">
+            <div class="container mx-auto max-w-[1200px]">
+                <!-- Why You Should Take the Test 部分 -->
+                <div class="mb-24">
+                    <h2 class="text-[#011813] text-5xl font-['Outfit'] text-center font-semibold m-b-12px">Why You
+                        Should Take the Test?</h2>
+                    <p class="text-[#4E5255] font-['Outfit'] text-center">
+                        Connect with the most expert mentors, guiding you with personalized advice through guided
+                        questions and proven expertise.
+                    </p>
+
+                    <!-- 主要介绍卡片 -->
+                    <div
+                        class=" shadow-lg mb-12 w-[70%] bg-[#F8F8F8] border-solid border-[#E7E7E8] border rounded-3xl p-24px relative">
+                        <!-- 装饰图片 -->
+                        <NuxtImg src="/images/home/2.png" alt="decor" width="56" height="56"
+                            class="relative top-[0] left-246px" />
+
+                        <div class="flex gap-40px">
+                            <div class="w-full md:w-[24%] pt-24px">
+                                <h3 class="text-2xl font-['Outfit'] font-bold mb-4">Improved self-awareness</h3>
+                                <p class="text-gray-600 mb-6">
+                                    Gain UI design mastery with hands-on expert mentorship, refining your skills through
+                                    personalized guidance and feedback.
+                                </p>
+                                <!-- 分割线 -->
+                                <div class="w-full h-[1px] bg-[#E7E7E8] my-6"></div>
+                                <UButton :ui="{
+                                    base: 'flex justify-center items-center flex-row gap-2 px-6 py-3 bg-[#009D77] rounded-full text-white hover:bg-[#008A68] transition-all duration-300'
+                                }">
+                                    <span>Get Started</span>
+                                    <NuxtImg src="/images/common/go-arrow-1.png" alt="arrow" width="16px" height="16px"
+                                        class="w-4 h-4" />
+                                </UButton>
+                            </div>
+                            <div class="w-full md:w-[76%]  relative top-[-6px]">
+                                <!-- 图片 -->
+                                <NuxtImg src="/images/home/1.png" alt="Self-awareness illustration" width="564"
+                                    height="376" class=" rounded-lg w-100%" />
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 三个小介绍卡片 -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- 卡片1 -->
+                        <div class="bg-white rounded-xl shadow-lg p-6">
+                            <div class="mb-4 text-amber-500">
+                                <!-- 图标 -->
+                                <NuxtImg src="/images/home/3.png" alt="Better decision-making icon" width="56"
+                                    height="56" class="" />
+                            </div>
+                            <h3 class="text-xl font-['Outfit'] font-bold mb-3">Better decision-making</h3>
+                            <p class="text-gray-600">
+                                Gain UI design mastery with hands-on expert mentorship, refining your skills through
+                                personalized guidance and feedback.
+                            </p>
+                        </div>
+
+                        <!-- 卡片2 -->
+                        <div class="bg-white rounded-xl shadow-lg p-6">
+                            <div class="mb-4 text-pink-500">
+                                <!-- 图标 -->
+                                <NuxtImg src="/images/home/4.png" alt="Enhanced relationships icon" width="56"
+                                    height="56" />
+                            </div>
+                            <h3 class="text-xl font-['Outfit'] font-bold mb-3">Enhanced relationships</h3>
+                            <p class="text-gray-600">
+                                Gain UI design mastery with hands-on expert mentorship, refining your skills through
+                                personalized guidance and feedback.
+                            </p>
+                        </div>
+
+                        <!-- 卡片3 -->
+                        <div class="bg-white rounded-xl shadow-lg p-6">
+                            <div class="mb-4 text-indigo-500">
+                                <!-- 图标 -->
+                                <NuxtImg src="/images/home/5.png" alt="Career satisfaction icon" width="56"
+                                    height="56" />
+                            </div>
+                            <h3 class="text-xl font-['Outfit'] font-bold mb-3">Career satisfaction</h3>
+                            <p class="text-gray-600">
+                                Gain UI design mastery with hands-on expert mentorship, refining your skills through
+                                personalized guidance and feedback.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- How Does It Work 部分 -->
+                <div class="flex flex-col md:flex-row gap-12 items-center">
+                    <!-- 左侧：标题、描述和按钮 -->
+                    <div class="w-full md:w-1/2">
+                        <h2 class="text-4xl font-['Outfit'] font-bold mb-8">How Does It Work?</h2>
+                        <p class="text-gray-600 mb-12">
+                            Meta webflow template includes 7 pages in total, with more than 30+ sections and 2 different
+                            home page layouts featuring
+                        </p>
+
+                        <UButton :ui="{
+                            base: 'flex justify-center items-center flex-row gap-2 px-6 py-3 bg-[#009D77] rounded-full text-white hover:bg-[#008A68] transition-all duration-300'
+                        }">
+                            <span>Get Started</span>
+                            <NuxtImg src="/images/common/go-arrow-1.png" alt="arrow" width="16px" height="16px"
+                                class="w-4 h-4" />
+                        </UButton>
+                    </div>
+
+                    <!-- 右侧：三个步骤卡片 -->
+                    <div class="w-full md:w-1/2">
+                        <!-- 步骤1 -->
+                        <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-green-400 mb-6">
+                            <div class="mb-4 flex items-center">
+                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                    <span class="font-bold text-green-500">1</span>
+                                </div>
+                                <h3 class="text-xl font-['Outfit'] font-bold">Prepare yourself</h3>
+                            </div>
+                            <p class="text-gray-600">
+                                Ensure you're in a relaxed setting conducive to concentration for the test.
+                            </p>
+                        </div>
+
+                        <!-- 步骤2 -->
+                        <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-pink-400 mb-6">
+                            <div class="mb-4 flex items-center">
+                                <div class="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center mr-3">
+                                    <span class="font-bold text-pink-500">2</span>
+                                </div>
+                                <h3 class="text-xl font-['Outfit'] font-bold">10+ Useful inner pages</h3>
+                            </div>
+                            <p class="text-gray-600">
+                                Meta has 10+ inner pages that are needed for your business, you can fully customize
+                                them.
+                            </p>
+                        </div>
+
+                        <!-- 步骤3 -->
+                        <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-purple-400">
+                            <div class="mb-4 flex items-center">
+                                <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3">
+                                    <span class="font-bold text-purple-500">3</span>
+                                </div>
+                                <h3 class="text-xl font-['Outfit'] font-bold">30+ Details sections</h3>
+                            </div>
+                            <p class="text-gray-600">
+                                Meta has 30+ details sections that will help you build a perfect website for your needs.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- 第五块 What You Will Receive 区域 -->
+        <div class="receive-section py-24 bg-gray-50">
+            <div class="container mx-auto max-w-[1200px]">
+                <h2 class="text-4xl font-['Outfit'] font-bold text-center mb-4">What You Will Receive</h2>
+                <p class="text-center text-gray-600 mb-16 max-w-3xl mx-auto">
+                    Be always were in form of volunteers range time is mediatingappositive the in our affidavit how
+                    solitary saw more in his not
+                </p>
 
+                <!-- 六个卡片布局 -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- 卡片1 -->
+                    <div class="bg-white rounded-xl shadow-md p-8 border border-gray-100">
+                        <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <span class="text-amber-500 text-2xl">📊</span>
+                        </div>
+                        <h3 class="text-xl font-['Outfit'] font-bold text-center mb-4">Comprehensive Personality Report
+                        </h3>
+                        <p class="text-gray-600 text-center">
+                            The to der ealie, der ealie, the to over mear for queen, for please
+                        </p>
+                    </div>
+
+                    <!-- 卡片2 -->
+                    <div class="bg-white rounded-xl shadow-md p-8 border border-gray-100">
+                        <div class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <span class="text-pink-500 text-2xl">📚</span>
+                        </div>
+                        <h3 class="text-xl font-['Outfit'] font-bold text-center mb-4">Personalized Course
+                            Recommendations</h3>
+                        <p class="text-gray-600 text-center">
+                            Reveal it everything overing overing the best!
+                        </p>
+                    </div>
+
+                    <!-- 卡片3 -->
+                    <div class="bg-white rounded-xl shadow-md p-8 border border-gray-100">
+                        <div class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <span class="text-teal-500 text-2xl">🧪</span>
+                        </div>
+                        <h3 class="text-xl font-['Outfit'] font-bold text-center mb-4">Skill Assessment Tests</h3>
+                        <p class="text-gray-600 text-center">
+                            Where centred for date, control over thought, through teacher effectiveness
+                        </p>
+                    </div>
+
+                    <!-- 卡片4 -->
+                    <div class="bg-white rounded-xl shadow-md p-8 border border-gray-100">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <span class="text-blue-500 text-2xl">🎯</span>
+                        </div>
+                        <h3 class="text-xl font-['Outfit'] font-bold text-center mb-4">Practical Daily Challenges</h3>
+                        <p class="text-gray-600 text-center">
+                            The colu we easily in der ealie, even for moquen, for please
+                        </p>
+                    </div>
+
+                    <!-- 卡片5 -->
+                    <div class="bg-white rounded-xl shadow-md p-8 border border-gray-100">
+                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <span class="text-purple-500 text-2xl">📚</span>
+                        </div>
+                        <h3 class="text-xl font-['Outfit'] font-bold text-center mb-4">Learning and Development Library
+                        </h3>
+                        <p class="text-gray-600 text-center">
+                            Reveal in everything overing overing bad policy of the test for the great
+                        </p>
+                    </div>
+
+                    <!-- 卡片6 -->
+                    <div class="bg-white rounded-xl shadow-md p-8 border border-gray-100">
+                        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <span class="text-orange-500 text-2xl">🏆</span>
+                        </div>
+                        <h3 class="text-xl font-['Outfit'] font-bold text-center mb-4">Certificates of Achievement</h3>
+                        <p class="text-gray-600 text-center">
+                            Where centred for date, control over thought, through teacher effectiveness
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第六块 客户评价模块 -->
+        <div class="testimonials-section py-24 bg-white">
+            <div class="container mx-auto max-w-[1200px]">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-['Outfit'] font-bold mb-4">Trusted by 20,000+ customers</h2>
+                    <p class="text-gray-600 max-w-3xl mx-auto">
+                        Be always were in form of volunteers range time is mediatingappositive the in our affidavit how
+                        solitary saw more in his not
+                    </p>
+                    <!-- 五星评分 -->
+                    <div class="flex justify-center mt-6 text-yellow-400">
+                        <span class="text-xl">★★★★★</span>
+                    </div>
+                </div>
+
+                <!-- 评价卡片网格 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+                    <!-- 评价卡片1 -->
+                    <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100">
+                        <p class="text-gray-600 mb-6 text-sm">
+                            An exceptional platform for career development. The current curriculum, skilled instructors,
+                            and hands-on learning are truly rewarding.
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center mr-3">
+                                <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Brandon Michael"
+                                    class="w-full h-full rounded-full object-cover" />
+                            </div>
+                            <div>
+                                <h4 class="font-['Outfit'] font-bold">Brandon Michael</h4>
+                                <p class="text-gray-500 text-xs">UX/UI Designer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 评价卡片2 -->
+                    <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100">
+                        <p class="text-gray-600 mb-6 text-sm">
+                            An exceptional platform for career development. The current curriculum, skilled instructors,
+                            and hands-on learning are truly rewarding.
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center mr-3">
+                                <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="Brandon Michael"
+                                    class="w-full h-full rounded-full object-cover" />
+                            </div>
+                            <div>
+                                <h4 class="font-['Outfit'] font-bold">Brandon Michael</h4>
+                                <p class="text-gray-500 text-xs">UX/UI Designer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 评价卡片3 -->
+                    <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100">
+                        <p class="text-gray-600 mb-6 text-sm">
+                            An exceptional platform for career development. The current curriculum, skilled instructors,
+                            and hands-on learning are truly rewarding.
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center mr-3">
+                                <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Brandon Michael"
+                                    class="w-full h-full rounded-full object-cover" />
+                            </div>
+                            <div>
+                                <h4 class="font-['Outfit'] font-bold">Brandon Michael</h4>
+                                <p class="text-gray-500 text-xs">UX/UI Designer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 评价卡片4 -->
+                    <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100">
+                        <p class="text-gray-600 mb-6 text-sm">
+                            An exceptional platform for career development. The current curriculum, skilled instructors,
+                            and hands-on learning are truly rewarding.
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center mr-3">
+                                <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Brandon Michael"
+                                    class="w-full h-full rounded-full object-cover" />
+                            </div>
+                            <div>
+                                <h4 class="font-['Outfit'] font-bold">Brandon Michael</h4>
+                                <p class="text-gray-500 text-xs">UX/UI Designer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 评价卡片5 -->
+                    <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100">
+                        <p class="text-gray-600 mb-6 text-sm">
+                            An exceptional platform for career development. The current curriculum, skilled instructors,
+                            and hands-on learning are truly rewarding.
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center mr-3">
+                                <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Brandon Michael"
+                                    class="w-full h-full rounded-full object-cover" />
+                            </div>
+                            <div>
+                                <h4 class="font-['Outfit'] font-bold">Brandon Michael</h4>
+                                <p class="text-gray-500 text-xs">UX/UI Designer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 第二行评价卡片 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
+                    <!-- 评价卡片6 -->
+                    <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100">
+                        <p class="text-gray-600 mb-6 text-sm">
+                            An exceptional platform for career development. The current curriculum, skilled instructors,
+                            and hands-on learning are truly rewarding.
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center mr-3">
+                                <img src="https://randomuser.me/api/portraits/men/4.jpg" alt="Brandon Michael"
+                                    class="w-full h-full rounded-full object-cover" />
+                            </div>
+                            <div>
+                                <h4 class="font-['Outfit'] font-bold">Brandon Michael</h4>
+                                <p class="text-gray-500 text-xs">UX/UI Designer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 评价卡片7 -->
+                    <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100">
+                        <p class="text-gray-600 mb-6 text-sm">
+                            An exceptional platform for career development. The current curriculum, skilled instructors,
+                            and hands-on learning are truly rewarding.
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center mr-3">
+                                <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="Brandon Michael"
+                                    class="w-full h-full rounded-full object-cover" />
+                            </div>
+                            <div>
+                                <h4 class="font-['Outfit'] font-bold">Brandon Michael</h4>
+                                <p class="text-gray-500 text-xs">UX/UI Designer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 评价卡片8 -->
+                    <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100">
+                        <p class="text-gray-600 mb-6 text-sm">
+                            An exceptional platform for career development. The current curriculum, skilled instructors,
+                            and hands-on learning are truly rewarding.
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center mr-3">
+                                <img src="https://randomuser.me/api/portraits/men/5.jpg" alt="Brandon Michael"
+                                    class="w-full h-full rounded-full object-cover" />
+                            </div>
+                            <div>
+                                <h4 class="font-['Outfit'] font-bold">Brandon Michael</h4>
+                                <p class="text-gray-500 text-xs">UX/UI Designer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 评价卡片9 -->
+                    <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100">
+                        <p class="text-gray-600 mb-6 text-sm">
+                            An exceptional platform for career development. The current curriculum, skilled instructors,
+                            and hands-on learning are truly rewarding.
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center mr-3">
+                                <img src="https://randomuser.me/api/portraits/women/4.jpg" alt="Brandon Michael"
+                                    class="w-full h-full rounded-full object-cover" />
+                            </div>
+                            <div>
+                                <h4 class="font-['Outfit'] font-bold">Brandon Michael</h4>
+                                <p class="text-gray-500 text-xs">UX/UI Designer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第七块 常见问题模块 -->
+        <div class="faq-section py-24 bg-gray-50">
+            <div class="container mx-auto max-w-[1200px]">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-['Outfit'] font-bold mb-4">Frequently Asked Questions</h2>
+                    <p class="text-gray-600 max-w-3xl mx-auto">
+                        Frequently Asked Questions offers a quick answers to common queries, guiding users through
+                        features and functionalities efficiently.
+                    </p>
+                </div>
+
+                <!-- FAQ 列表 -->
+                <div class="max-w-3xl mx-auto">
+                    <!-- FAQ 项目 1 (默认展开) -->
+                    <div class="border border-gray-200 rounded-xl mb-4 overflow-hidden">
+                        <button
+                            class="w-full flex justify-between items-center p-6 bg-green-50 hover:bg-green-100 transition-colors text-left">
+                            <span class="font-['Outfit'] font-semibold text-lg text-green-800">Can I Track My
+                                Assignments and Grades?</span>
+                            <span class="text-green-800">-</span>
+                        </button>
+                        <div class="p-6 bg-white border-t border-gray-200">
+                            <p class="text-gray-600">
+                                Yes, the LMS offers a "Gradebook" where students can view their grades, mentor feedback
+                                on assignments, and class attendance data. You can view your grade and comments for each
+                                submission.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 项目 2 -->
+                    <div class="border border-gray-200 rounded-xl mb-4 overflow-hidden">
+                        <button
+                            class="w-full flex justify-between items-center p-6 hover:bg-gray-50 transition-colors text-left">
+                            <span class="font-['Outfit'] font-semibold text-lg">Does the LMS support video lessons and
+                                live classes?</span>
+                            <span>+</span>
+                        </button>
+                    </div>
+
+                    <!-- FAQ 项目 3 -->
+                    <div class="border border-gray-200 rounded-xl mb-4 overflow-hidden">
+                        <button
+                            class="w-full flex justify-between items-center p-6 hover:bg-gray-50 transition-colors text-left">
+                            <span class="font-['Outfit'] font-semibold text-lg">How can I communicate with my
+                                instructor?</span>
+                            <span>+</span>
+                        </button>
+                    </div>
+
+                    <!-- FAQ 项目 4 -->
+                    <div class="border border-gray-200 rounded-xl mb-4 overflow-hidden">
+                        <button
+                            class="w-full flex justify-between items-center p-6 hover:bg-gray-50 transition-colors text-left">
+                            <span class="font-['Outfit'] font-semibold text-lg">What support is available for students
+                                and instructors?</span>
+                            <span>+</span>
+                        </button>
+                    </div>
+
+                    <!-- FAQ 项目 5 -->
+                    <div class="border border-gray-200 rounded-xl mb-4 overflow-hidden">
+                        <button
+                            class="w-full flex justify-between items-center p-6 hover:bg-gray-50 transition-colors text-left">
+                            <span class="font-['Outfit'] font-semibold text-lg">Are there interactive features for
+                                students?</span>
+                            <span>+</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA 区域 - 渐变背景卡片 -->
+        <div class="mx-auto max-w-[1200px] mb-24">
+            <GradientCTASection title="Curious how accurate we are about you?"
+                description="Connect with a network of term professionals, gain valuable insights, and access resources that prepare you for your dream career."
+                buttonText="Get Started" @button-click="handleCTAClick" />
+        </div>
     </main>
 </template>
 
 <script setup lang="ts">
 // Home page component
+import GradientCTASection from '../components/GradientCTASection.vue';
+
+const handleCTAClick = () => {
+    console.log('CTA button clicked');
+    // 可以在这里添加跳转逻辑
+};
 </script>
 
 <style scoped>
