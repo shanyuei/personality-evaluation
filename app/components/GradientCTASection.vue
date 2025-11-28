@@ -1,20 +1,26 @@
 <template>
-  <div class="gradient-cta-section p-12 rounded-xl text-center relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-r from-blue-50 via-purple-50 to-pink-50 -z-10"></div>
-    
-    <h2 class="text-2xl md:text-3xl font-bold mb-4 text-gray-900">
-      {{ title || $t('home.accuracy.title') }}
-    </h2>
-    
-    <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
-      {{ description || $t('home.accuracy.description') }}
-    </p>
-    
-    <CTAButton
-      :text="buttonText"
-      :disabled="buttonDisabled"
-      @click="$emit('button-click', $event)"
-    />
+  <div class="gradient-cta-section relative w-[1344px] h-[528px] p-72px flex items-center justify-center">
+    <!-- 背景 -->
+    <NuxtImg src="/theme/home/cat-bg.png" alt="" aria-hidden="true"
+      class="absolute inset-0 -z-10 pointer-events-none object-cover w-[100%] h-[100%]" width="100%" height="100%"
+      preload />
+    <!-- 内容 -->
+    <div
+      class="relative z-10 relative py-56px flex flex-col items-center rounded-[48px] overflow-hidden w-1200px h-384px px-196px">
+      <NuxtImg src="/theme/home/cat-bg-2.png" alt="" aria-hidden="true"
+        class="absolute inset-0 -z-10 pointer-events-none object-cover w-[100%] h-[100%]" width="100%" height="100%"
+        preload />
+      <h2 class="text-[#0F172A] font-['Outfit'] font-bold text-3xl md:text-5xl mb-4 text-center">
+        {{ title || $t('home.accuracy.title') }}
+      </h2>
+
+      <p class="text-[#4E5255] max-w-[720px] mx-auto mb-10 text-center">
+        {{ description || $t('home.accuracy.description') }}
+      </p>
+
+      <CTAButton :text="buttonText" :disabled="buttonDisabled" @click="$emit('button-click', $event)" />
+    </div>
+
   </div>
 </template>
 
@@ -38,19 +44,5 @@ defineEmits<{
 </script>
 
 <style scoped>
-.gradient-cta-section {
-  border-radius: 12px;
-  position: relative;
-  z-index: 1;
-}
-
-/* 确保渐变背景能够正确显示 */
-.gradient-cta-section::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(240, 244, 255, 0.8) 0%, rgba(245, 235, 255, 0.8) 100%);
-  border-radius: 12px;
-  -z-index: -1;
-}
+.gradient-cta-section {}
 </style>

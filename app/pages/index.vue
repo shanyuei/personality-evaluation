@@ -116,7 +116,7 @@
                                     personalized guidance and feedback.
                                 </p>
                                 <!-- 分割线 -->
-                                <div class="w-full h-[1px] bg-[#E7E7E8] my-6"></div>
+                                <div class="w-full h-[1px] bg-[#E7E7E8] my-6"/>
                                 <UButton :ui="{
                                     base: 'flex justify-center items-center flex-row gap-2 px-6 py-3 bg-[#009D77] rounded-full text-white hover:bg-[#008A68] transition-all duration-300'
                                 }">
@@ -308,7 +308,7 @@
         <div class="mx-auto max-w-[1200px] mb-24">
             <GradientCTASection title="Curious how accurate we are about you?"
                 description="Connect with a network of term professionals, gain valuable insights, and access resources that prepare you for your dream career."
-                buttonText="Get Started" @button-click="handleCTAClick" />
+                button-text="Get Started" @button-click="handleCTAClick" />
         </div>
     </main>
 </template>
