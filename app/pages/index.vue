@@ -384,71 +384,14 @@
 import GradientCTASection from '../components/GradientCTASection.vue';
 import TestimonialsSection from '../components/TestimonialsSection.vue';
 
-const reviews: Array<{ text: string; avatarUrl: string; name: string; role: string }> = [
-  {
-    text:
-      'An exceptional platform for career development. The current curriculum, skilled instructors, and hands-on learning are truly rewarding.',
-    avatarUrl: 'https://randomuser.me/api/portraits/men/1.jpg',
-    name: 'Brandon Michael',
-    role: 'UX/UI Designer'
-  },
-  {
-    text:
-      'An exceptional platform for career development. The current curriculum, skilled instructors, and hands-on learning are truly rewarding.',
-    avatarUrl: 'https://randomuser.me/api/portraits/men/2.jpg',
-    name: 'Brandon Michael',
-    role: 'UX/UI Designer'
-  },
-  {
-    text:
-      'An exceptional platform for career development. The current curriculum, skilled instructors, and hands-on learning are truly rewarding.',
-    avatarUrl: 'https://randomuser.me/api/portraits/men/3.jpg',
-    name: 'Brandon Michael',
-    role: 'UX/UI Designer'
-  },
-  {
-    text:
-      'An exceptional platform for career development. The current curriculum, skilled instructors, and hands-on learning are truly rewarding.',
-    avatarUrl: 'https://randomuser.me/api/portraits/women/1.jpg',
-    name: 'Brandon Michael',
-    role: 'UX/UI Designer'
-  },
-  {
-    text:
-      'An exceptional platform for career development. The current curriculum, skilled instructors, and hands-on learning are truly rewarding.',
-    avatarUrl: 'https://randomuser.me/api/portraits/women/2.jpg',
-    name: 'Brandon Michael',
-    role: 'UX/UI Designer'
-  },
-  {
-    text:
-      'An exceptional platform for career development. The current curriculum, skilled instructors, and hands-on learning are truly rewarding.',
-    avatarUrl: 'https://randomuser.me/api/portraits/men/4.jpg',
-    name: 'Brandon Michael',
-    role: 'UX/UI Designer'
-  },
-  {
-    text:
-      'An exceptional platform for career development. The current curriculum, skilled instructors, and hands-on learning are truly rewarding.',
-    avatarUrl: 'https://randomuser.me/api/portraits/women/3.jpg',
-    name: 'Brandon Michael',
-    role: 'UX/UI Designer'
-  },
-  {
-    text:
-      'An exceptional platform for career development. The current curriculum, skilled instructors, and hands-on learning are truly rewarding.',
-    avatarUrl: 'https://randomuser.me/api/portraits/men/5.jpg',
-    name: 'Brandon Michael',
-    role: 'UX/UI Designer'
-  },
-  {
-    text:
-      'An exceptional platform for career development. The current curriculum, skilled instructors, and hands-on learning are truly rewarding.',
-    avatarUrl: 'https://randomuser.me/api/portraits/women/4.jpg',
-    name: 'Brandon Michael',
-    role: 'UX/UI Designer'
-  }
-]
+const baseText = 'An exceptional platform for career development. The current curriculum, skilled instructors, and hands-on learning are truly rewarding.'
+
+const reviews: Array<{ text: string; avatarUrl: string; name: string; role: string }> = Array.from({ length: 30 }, (_, i) => ({
+  text: baseText,
+  avatarUrl: `https://randomuser.me/api/portraits/${i % 2 === 0 ? 'men' : 'women'}/${(i % 99) + 1}.jpg`,
+  name: 'Brandon Michael',
+  role: 'UX/UI Designer'
+}))
 
 const handleCTAClick = () => {
   console.log('CTA button clicked')
