@@ -248,73 +248,46 @@
 
                 <!-- 六个卡片布局 -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- 卡片1 -->
-                    <div class="bg-white rounded-xl shadow-md p-8 border border-gray-100">
-                        <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mb-6 mx-auto">
-                            <span class="text-amber-500 text-2xl">📊</span>
+                    <div class="bg-white rounded-3xl shadow-lg p-24px border border-[#E7E7E8]">
+                        <div class="flex flex-col items-center text-center gap-12px">
+                            <NuxtImg src="/images/home/7.png" alt="Comprehensive Personality Report" width="72" height="72" />
+                            <h3 class="text-xl font-['Outfit'] font-bold">Comprehensive Personality Report</h3>
+                            <p class="text-gray-600">The to der ealie, der ealie, the to over mear for queen, for please</p>
                         </div>
-                        <h3 class="text-xl font-['Outfit'] font-bold text-center mb-4">Comprehensive Personality Report
-                        </h3>
-                        <p class="text-gray-600 text-center">
-                            The to der ealie, der ealie, the to over mear for queen, for please
-                        </p>
+                        <div class="w-full h-[1px] bg-[#E7E7E8] my-16px"></div>
+                        <div class="flex flex-col items-center text-center gap-12px">
+                            <NuxtImg src="/images/home/10.png" alt="Practical Daily Challenges" width="72" height="72" />
+                            <h3 class="text-xl font-['Outfit'] font-bold">Practical Daily Challenges</h3>
+                            <p class="text-gray-600">The colu we easily in der ealie, even for moquen, for please</p>
+                        </div>
                     </div>
 
-                    <!-- 卡片2 -->
-                    <div class="bg-white rounded-xl shadow-md p-8 border border-gray-100">
-                        <div class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mb-6 mx-auto">
-                            <span class="text-pink-500 text-2xl">📚</span>
+                    <div class="bg-white rounded-3xl shadow-lg p-24px border border-[#E7E7E8]">
+                        <div class="flex flex-col items-center text-center gap-12px">
+                            <NuxtImg src="/images/home/8.png" alt="Personalized Course Recommendations" width="72" height="72" />
+                            <h3 class="text-xl font-['Outfit'] font-bold">Personalized Course Recommendations</h3>
+                            <p class="text-gray-600">Reveal it everything overing overing the best!</p>
                         </div>
-                        <h3 class="text-xl font-['Outfit'] font-bold text-center mb-4">Personalized Course
-                            Recommendations</h3>
-                        <p class="text-gray-600 text-center">
-                            Reveal it everything overing overing the best!
-                        </p>
+                        <div class="w-full h-[1px] bg-[#E7E7E8] my-16px"></div>
+                        <div class="flex flex-col items-center text-center gap-12px">
+                            <NuxtImg src="/images/home/11.png" alt="Learning and Development Library" width="72" height="72" />
+                            <h3 class="text-xl font-['Outfit'] font-bold">Learning and Development Library</h3>
+                            <p class="text-gray-600">Reveal in everything overing overing bad policy of the test for the great</p>
+                        </div>
                     </div>
 
-                    <!-- 卡片3 -->
-                    <div class="bg-white rounded-xl shadow-md p-8 border border-gray-100">
-                        <div class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mb-6 mx-auto">
-                            <span class="text-teal-500 text-2xl">🧪</span>
+                    <div class="bg-white rounded-3xl shadow-lg p-24px border border-[#E7E7E8]">
+                        <div class="flex flex-col items-center text-center gap-12px">
+                            <NuxtImg src="/images/home/9.png" alt="Skill Assessment Tests" width="72" height="72" />
+                            <h3 class="text-xl font-['Outfit'] font-bold">Skill Assessment Tests</h3>
+                            <p class="text-gray-600">Where centred for date, control over thought, through teacher effectiveness</p>
                         </div>
-                        <h3 class="text-xl font-['Outfit'] font-bold text-center mb-4">Skill Assessment Tests</h3>
-                        <p class="text-gray-600 text-center">
-                            Where centred for date, control over thought, through teacher effectiveness
-                        </p>
-                    </div>
-
-                    <!-- 卡片4 -->
-                    <div class="bg-white rounded-xl shadow-md p-8 border border-gray-100">
-                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto">
-                            <span class="text-blue-500 text-2xl">🎯</span>
+                        <div class="w-full h-[1px] bg-[#E7E7E8] my-16px"></div>
+                        <div class="flex flex-col items-center text-center gap-12px">
+                            <NuxtImg src="/images/home/12.png" alt="Certificates of Achievement" width="72" height="72" />
+                            <h3 class="text-xl font-['Outfit'] font-bold">Certificates of Achievement</h3>
+                            <p class="text-gray-600">Where centred for date, control over thought, through teacher effectiveness</p>
                         </div>
-                        <h3 class="text-xl font-['Outfit'] font-bold text-center mb-4">Practical Daily Challenges</h3>
-                        <p class="text-gray-600 text-center">
-                            The colu we easily in der ealie, even for moquen, for please
-                        </p>
-                    </div>
-
-                    <!-- 卡片5 -->
-                    <div class="bg-white rounded-xl shadow-md p-8 border border-gray-100">
-                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6 mx-auto">
-                            <span class="text-purple-500 text-2xl">📚</span>
-                        </div>
-                        <h3 class="text-xl font-['Outfit'] font-bold text-center mb-4">Learning and Development Library
-                        </h3>
-                        <p class="text-gray-600 text-center">
-                            Reveal in everything overing overing bad policy of the test for the great
-                        </p>
-                    </div>
-
-                    <!-- 卡片6 -->
-                    <div class="bg-white rounded-xl shadow-md p-8 border border-gray-100">
-                        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-6 mx-auto">
-                            <span class="text-orange-500 text-2xl">🏆</span>
-                        </div>
-                        <h3 class="text-xl font-['Outfit'] font-bold text-center mb-4">Certificates of Achievement</h3>
-                        <p class="text-gray-600 text-center">
-                            Where centred for date, control over thought, through teacher effectiveness
-                        </p>
                     </div>
                 </div>
             </div>
