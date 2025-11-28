@@ -2,31 +2,73 @@
   <div class="faq-section py-24 bg-gray-50">
     <div class="container mx-auto max-w-[1200px]">
       <div class="text-center mb-16">
-        <h2 class="text-4xl font-['Outfit'] font-bold mb-4">{{ title }}</h2>
+        <h2 class="text-4xl font-['Outfit'] font-bold mb-3">{{ title }}</h2>
         <p v-if="description" class="text-gray-600 max-w-3xl mx-auto">{{ description }}</p>
       </div>
 
       <div class="max-w-3xl mx-auto">
-        <div
-          v-for="(item, idx) in localItems"
-          :key="idx"
-          class="border border-gray-200 rounded-xl mb-4 overflow-hidden"
-        >
-          <button
-            class="w-full flex justify-between items-center p-6 hover:bg-gray-50 transition-colors text-left"
-            :class="item.expanded ? 'bg-green-50' : ''"
-            @click="toggle(idx)"
-          >
-            <span
-              class="font-['Outfit'] font-semibold text-lg"
-              :class="item.expanded ? 'text-green-800' : ''"
-            >
-              {{ item.question }}
-            </span>
-            <span :class="item.expanded ? 'text-green-800' : ''">{{ item.expanded ? '-' : '+' }}</span>
-          </button>
-          <div v-if="item.expanded" class="p-6 bg-white border-t border-gray-200">
-            <p class="text-gray-600">{{ item.answer }}</p>
+        <div v-for="(item, idx) in localItems" :key="idx"
+          class="w-[792px] rounded-lg mb-4 overflow-hidden transition-shadow relative"
+          :class="isExpanded(idx) ? 'item-expanded' : 'item-collapsed'">
+          <div
+            v-if="isExpanded(idx)"
+            aria-hidden="true"
+            style="flex: none; background: linear-gradient(90deg, rgba(234,76,137,0.12) 0%, rgba(0,157,119,0.38) 49%, rgba(147,46,250,0.12) 100%); left: calc(100% - 792px + 0px); top: calc(100% - 157px + -1px); pointer-events: none;"
+            class="w-[792px] h-[160px] rounded-[48px] shadow-[blur(48px)] absolute"
+          ></div>
+          <div v-if="isExpanded(idx)">
+            <!-- background: linear-gradient(90deg, rgba(234,76,137,0.12) 0%, rgba(0,157,119,0.38) 49%, rgba(147,46,250,0.12) 100%); -->
+            <div class="flex justify-start items-start flex-col relative">
+              <div class="flex self-stretch justify-start items-start flex-col gap-3 py-[20px] px-[24px] bg-[#FFFFFF]">
+                <div style="flex-shrink: 0" class="w-full flex justify-between items-center flex-row"
+                  @click="toggle(idx)">
+                  <p class="text-[#009D77] text-2xl font-['Outfit'] text-center font-medium">
+                    {{ item.question }}
+                  </p>
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none"
+                    version="1.1" width="24" height="24" viewBox="0 0 24 24">
+                    <defs>
+                      <clipPath id="master_svg0_0_17743">
+                        <rect x="0" y="0" width="24" height="24" rx="0" />
+                      </clipPath>
+                    </defs>
+                    <g clip-path="url(#master_svg0_0_17743)">
+                      <g>
+                        <path
+                          d="M6,13L18,13L18,12.99980003Q18.098471,12.99979997,18.195050000000002,12.98058909Q18.291629999999998,12.96137822,18.382607,12.92369473Q18.473582,12.88601124,18.555459,12.8313033Q18.637335,12.776595350000001,18.706965,12.70696533Q18.776595999999998,12.6373353,18.831304,12.55545908Q18.886011,12.47358286,18.923695000000002,12.38260686Q18.961378,12.29163089,18.980589000000002,12.1950513Q18.9998,12.098471709,18.9998,12Q18.9998,11.901528291,18.980589000000002,11.8049487Q18.961378,11.70836911,18.923693999999998,11.61739314Q18.886011,11.52641714,18.831303,11.44454092Q18.776594,11.3626647,18.706964,11.29303467Q18.637334,11.223404649999999,18.555458,11.16869676Q18.473581,11.11398882,18.382606,11.07630533Q18.291629999999998,11.03862178,18.195050000000002,11.01941091Q18.098471,11.00020003,18,11.00019997L18,11L6,11L6,11.00019997Q5.901528291,11.00020003,5.8049487,11.01941091Q5.70836911,11.03862178,5.61739314,11.07630527Q5.52641714,11.11398876,5.44454092,11.1686967Q5.3626647,11.223404649999999,5.29303467,11.29303467Q5.22340465,11.3626647,5.16869676,11.44454092Q5.11398882,11.52641714,5.07630533,11.61739314Q5.03862178,11.70836911,5.0194109099999995,11.8049487Q5.00020003,11.901528291,5.00019997,12Q5.00020003,12.098471709,5.0194109099999995,12.1950513Q5.03862178,12.29163089,5.07630527,12.38260686Q5.11398876,12.47358286,5.1686967,12.55545908Q5.22340465,12.6373353,5.29303467,12.70696533Q5.3626647,12.776595350000001,5.44454092,12.83130324Q5.52641714,12.88601118,5.61739314,12.92369467Q5.70836911,12.96137822,5.8049487,12.98058909Q5.901528291,12.99979997,6,12.99980003L6,13Z"
+                          fill-rule="evenodd" fill="#009D77" fill-opacity="1" />
+                      </g>
+                    </g>
+                  </svg>
+                </div>
+                <p style="flex-shrink: 0" class="self-stretch text-[#4E5255] font-['Outfit']">
+                  {{ item.answer }}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div v-else>
+            <div class="flex justify-between items-center flex-row py-[20px] px-[24px] bg-[#FFFFFF]"
+              @click="toggle(idx)">
+              <span class="text-[#011813] text-2xl font-['Outfit'] font-medium">
+                {{ item.question }}
+              </span>
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none"
+                version="1.1" width="24" height="24" viewBox="0 0 24 24">
+                <defs>
+                  <clipPath id="master_svg0_0_17747">
+                    <rect x="0" y="0" width="24" height="24" rx="0" />
+                  </clipPath>
+                </defs>
+                <g clip-path="url(#master_svg0_0_17747)">
+                  <g>
+                    <path
+                      d="M11.0001998,6Q11.0001993,5.901528291,11.0194101,5.8049487Q11.0386209,5.70836911,11.0763044,5.61739314Q11.1139879,5.52641714,11.1686959,5.44454092Q11.223403900000001,5.3626647,11.2930346,5.29303467Q11.362664200000001,5.22340465,11.444540499999999,5.16869676Q11.5264168,5.11398882,11.617392500000001,5.07630533Q11.7083683,5.03862178,11.8049483,5.0194109099999995Q11.9015284,5.00020003,12,5.00019997Q12.0984716,5.00020003,12.1950507,5.0194109099999995Q12.291630699999999,5.03862178,12.3826065,5.07630527Q12.4735823,5.11398876,12.5554585,5.1686967Q12.6373348,5.22340465,12.706965,5.29303467Q12.7765946,5.3626647,12.8313026,5.44454092Q12.886010200000001,5.52641714,12.923694099999999,5.61739314Q12.961378100000001,5.70836911,12.9805889,5.8049487Q12.9997997,5.901528291,12.9998002,6L13,6L13,11L18,11L18,11.0001998Q18.098471,11.0001998,18.195050000000002,11.0194106Q18.291629999999998,11.0386214,18.382607,11.0763049Q18.473582,11.1139884,18.555459,11.1686964Q18.637335,11.2234044,18.706965,11.2930346Q18.776595999999998,11.362664200000001,18.831304,11.444540499999999Q18.886011,11.5264168,18.923695000000002,11.617392500000001Q18.961378,11.7083683,18.980589000000002,11.8049483Q18.9998,11.9015284,18.9998,12Q18.9998,12.0984716,18.980589000000002,12.1950507Q18.961378,12.291630699999999,18.923693999999998,12.3826065Q18.886011,12.4735823,18.831303,12.5554585Q18.776594,12.6373348,18.706964,12.706965Q18.637334,12.7765946,18.555458,12.8313026Q18.473581,12.886010200000001,18.382606,12.923694099999999Q18.291629999999998,12.961378100000001,18.195050000000002,12.9805889Q18.098471,12.9997997,18,12.9998002L18,13L13,13L13,18L12.9998002,18Q12.9997997,18.098471,12.9805889,18.195050000000002Q12.961378100000001,18.291629999999998,12.923694099999999,18.382607Q12.886010599999999,18.473582,12.8313026,18.555459Q12.7765951,18.637335,12.7069654,18.706965Q12.6373348,18.776595999999998,12.5554585,18.831304Q12.4735823,18.886011,12.3826065,18.923695000000002Q12.291630699999999,18.961378,12.1950507,18.980589000000002Q12.0984716,18.9998,12,18.9998Q11.9015284,18.9998,11.8049483,18.980589000000002Q11.7083683,18.961378,11.617392500000001,18.923693999999998Q11.5264168,18.886011,11.444540499999999,18.831303Q11.362664200000001,18.776594,11.2930346,18.706964Q11.223403900000001,18.637334,11.1686959,18.555458Q11.1139879,18.473581,11.0763044,18.382606Q11.0386209,18.291629999999998,11.0194101,18.195050000000002Q11.0001993,18.098471,11.0001998,18L11,18L11,13L6,13L6,12.9998002Q5.901528291,12.9997997,5.8049487,12.9805889Q5.70836911,12.961378100000001,5.61739314,12.923694099999999Q5.52641714,12.886010599999999,5.44454092,12.8313026Q5.3626647,12.7765951,5.29303467,12.7069654Q5.22340465,12.6373348,5.16869676,12.5554585Q5.11398882,12.4735823,5.07630533,12.3826065Q5.03862178,12.291630699999999,5.0194109099999995,12.1950507Q5.00020003,12.0984716,5.00019997,12Q5.00020003,11.9015284,5.0194109099999995,11.8049483Q5.03862178,11.7083683,5.07630527,11.617392500000001Q5.11398876,11.5264168,5.1686967,11.444540499999999Q5.22340465,11.362664200000001,5.29303467,11.2930346Q5.3626647,11.2234044,5.44454092,11.1686964Q5.52641714,11.1139884,5.61739314,11.0763049Q5.70836911,11.0386214,5.8049487,11.0194106Q5.901528291,11.0001998,6,11.0001998L6,11L11,11L11,6L11.0001998,6Z"
+                      fill-rule="evenodd" fill="#011813" fill-opacity="1" />
+                  </g>
+                </g>
+              </svg>
+            </div>
           </div>
         </div>
       </div>
@@ -38,28 +80,45 @@
 interface FAQItem {
   question: string
   answer: string
-  expanded?: boolean
 }
 
 interface Props {
   title?: string
   description?: string
   items: FAQItem[]
+  accordion?: boolean
+  defaultExpandedIndex?: number | null
 }
 
 const props = withDefaults(defineProps<Props>(), {
   title: 'Frequently Asked Questions',
-  description: ''
+  description: '',
+  accordion: true,
+  defaultExpandedIndex: 0
 })
 
-const localItems = ref<FAQItem[]>(props.items.map(i => ({ ...i, expanded: i.expanded ?? false })))
+const expandedIndex = ref<number | null>(props.defaultExpandedIndex)
+const localItems = computed(() => props.items)
+const isExpanded = (i: number) => expandedIndex.value === i
 
 const toggle = (i: number) => {
-  const item = localItems.value[i]
-  if (item) item.expanded = !item.expanded
+  if (props.accordion) {
+    expandedIndex.value = expandedIndex.value === i ? null : i
+  } else {
+    expandedIndex.value = expandedIndex.value === i ? null : i
+  }
 }
 </script>
 
 <style scoped>
-</style>
+.item-collapsed {
+  border: 1px solid #E7E7E8;
+  background: #FFFFFF;
+}
 
+.item-expanded {
+  border: 1px solid #E7E7E8;
+  background: #FFFFFF;
+  box-shadow: 0 12px 24px rgba(0, 157, 119, 0.12);
+}
+</style>

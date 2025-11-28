@@ -331,12 +331,11 @@ const handleCTAClick = () => {
   console.log('CTA button clicked')
 }
 
-const faqItems: Array<{ question: string; answer: string; expanded?: boolean }> = [
+const faqItems: Array<{ question: string; answer: string }> = [
   {
     question: 'Can I Track My Assignments and Grades?',
     answer:
-      'Yes, the LMS offers a "Gradebook" where students can view their grades, mentor feedback on assignments, and class attendance data. You can view your grade and comments for each submission.',
-    expanded: true
+      'Yes, the LMS offers a "Gradebook" where students can view their grades, mentor feedback on assignments, and class attendance data. You can view your grade and comments for each submission.'
   },
   {
     question: 'Does the LMS support video lessons and live classes?',
