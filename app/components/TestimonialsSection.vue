@@ -1,16 +1,17 @@
 <template>
-  <div class="testimonials-section py-24 bg-white w-[1200px] mx-auto overflow-hidden">
-    <div class="mx-auto max-w-[1200px]">
+  <div class="testimonials-section py-16 sm:py-20 md:py-24 bg-white w-full mx-auto overflow-hidden">
+    <div class="mx-auto max-w-[1200px] px-4">
       <div class="text-center mb-16">
         <h2 class="text-4xl font-['Outfit'] font-bold mb-4">{{ title }}</h2>
         <p class="text-gray-600 max-w-3xl mx-auto">{{ description }}</p>
       </div>
 
       <ClientOnly>
-        <Swiper v-if="firstRow.length" :modules="[Autoplay]" :slides-per-view="3" :space-between="24" :loop="true"
-          :speed="800" :autoplay="{ delay: 2500, disableOnInteraction: false }">
+        <Swiper v-if="firstRow.length" :modules="[Autoplay]" :slides-per-view="1" :space-between="16" :loop="true"
+          :speed="800" :autoplay="{ delay: 2500, disableOnInteraction: false }"
+          :breakpoints="{ 640: { slidesPerView: 2, spaceBetween: 20 }, 1024: { slidesPerView: 3, spaceBetween: 24 } }">
           <SwiperSlide v-for="(item, idx) in firstRow" :key="'f-' + idx">
-            <div class="bg-white rounded-2xl shadow-md p-6 border border-[#E7E7E8] w-[384px]">
+            <div class="bg-white rounded-2xl shadow-md p-6 border border-[#E7E7E8] w-full max-w-[384px]">
               <div class="flex items-center gap-1 mb-4 text-amber-400">
                 <span v-for="n in 5" :key="n" class="text-base">★</span>
               </div>
@@ -31,11 +32,12 @@
 
       <ClientOnly>
         <div class="mt-0 ">
-          <div class="relative left-48px">
-            <Swiper v-if="secondRow.length" :modules="[Autoplay]" :slides-per-view="3" :space-between="24" :loop="true"
-              :speed="800" :autoplay="{ delay: 2500, disableOnInteraction: false, reverseDirection: true }">
+          <div class="relative left-0 sm:left-12 md:left-48px">
+            <Swiper v-if="secondRow.length" :modules="[Autoplay]" :slides-per-view="1" :space-between="16" :loop="true"
+              :speed="800" :autoplay="{ delay: 2500, disableOnInteraction: false, reverseDirection: true }"
+              :breakpoints="{ 640: { slidesPerView: 2, spaceBetween: 20 }, 1024: { slidesPerView: 3, spaceBetween: 24 } }">
               <SwiperSlide v-for="(item, idx) in secondRow" :key="'s-' + idx">
-                <div class="bg-white rounded-2xl shadow-md p-6 border border-[#E7E7E8] w-[384px]">
+                <div class="bg-white rounded-2xl shadow-md p-6 border border-[#E7E7E8] w-full max-w-[384px]">
                   <div class="flex items-center gap-1 mb-4 text-amber-400">
                     <span v-for="n in 5" :key="n" class="text-base">★</span>
                   </div>

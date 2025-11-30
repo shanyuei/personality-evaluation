@@ -1,21 +1,21 @@
 <template>
-  <div class="faq-section py-24 bg-gray-50">
-    <div class="container mx-auto max-w-[1200px]">
+  <div class="faq-section py-16 sm:py-20 md:py-24 bg-gray-50">
+    <div class="container mx-auto max-w-[1200px] px-4">
       <div class="text-center mb-16">
         <h2 class="text-4xl font-['Outfit'] font-bold mb-3">{{ title }}</h2>
         <p v-if="description" class="text-gray-600 max-w-3xl mx-auto">{{ description }}</p>
       </div>
 
-      <div class="max-w-3xl mx-auto">
+      <div class="max-w-3xl w-full mx-auto">
         <div v-for="(item, idx) in localItems" :key="idx"
-          class="w-[792px] rounded-lg mb-4 overflow-hidden transition-shadow relative"
+          class="w-full rounded-lg mb-4 overflow-hidden transition-shadow relative"
           :class="isExpanded(idx) ? 'item-expanded' : 'item-collapsed'">
           <div
             v-if="isExpanded(idx)"
             aria-hidden="true"
-            style="flex: none; background: linear-gradient(90deg, rgba(234,76,137,0.12) 0%, rgba(0,157,119,0.38) 49%, rgba(147,46,250,0.12) 100%); left: calc(100% - 792px + 0px); top: calc(100% - 157px + -1px); pointer-events: none;"
-            class="w-[792px] h-[160px] rounded-[48px] shadow-[blur(48px)] absolute"
-          ></div>
+            style="flex: none; background: linear-gradient(90deg, rgba(234,76,137,0.12) 0%, rgba(0,157,119,0.38) 49%, rgba(147,46,250,0.12) 100%); left: 0; right: 0; margin: 0 auto; pointer-events: none;"
+            class="hidden md:block w-full h-[160px] rounded-[48px] shadow-[blur(48px)] absolute"
+          />
           <div v-if="isExpanded(idx)">
             <!-- background: linear-gradient(90deg, rgba(234,76,137,0.12) 0%, rgba(0,157,119,0.38) 49%, rgba(147,46,250,0.12) 100%); -->
             <div class="flex justify-start items-start flex-col relative">
