@@ -17,14 +17,7 @@
 
 
                 <!-- 测试按钮 -->
-                <UButton :ui="{
-                    base: 'flex justify-center items-center flex-row gap-[18px] py-4 pr-3 pl-[48px] bg-[#009D77] rounded-[149.99px] m-t-72px hover:bg-[#008A68] active:bg-[#007759] transition-all duration-300 hover:shadow-lg active:scale-[0.98]',
-                }">
-                    <span class="text-[#FFFFFF] text-[32px] font-['Outfit'] font-medium leading-normal">
-                        Take the Test
-                    </span>
-                    <NuxtImg src="/images/common/go-arrow-1.png" alt="btn-icon" width="72px" height="72px" />
-                </UButton>
+                <CTAButton :text="$t('common.getStarted')" btn-class="m-t-72px" size="lg" rounded="pill" bg-color="#009D77" hover-bg-color="#008A68" active-bg-color="#007759" />
             </div>
         </div>
         <!-- 第二块区域 hero -->
@@ -68,23 +61,22 @@
                     <div class="text-center p-6">
 
                         <div class="text-[#009D77] text-5xl font-['Outfit'] font-semibold m-b-4px">241K+</div>
-                        <div class="text-[#4E5255] text-lg font-['Outfit']">Tests taken today</div>
+                        <div class="text-[#4E5255] text-lg font-['Outfit']">{{ $t('home.stats.testsToday') }}</div>
                     </div>
                     <!-- 统计项2 -->
                     <div class="text-center p-6">
                         <div class="text-[#EA4C89] text-5xl font-['Outfit'] font-semibold m-b-4px">172M+</div>
-                        <div class="text-[#4E5255] text-lg font-['Outfit']">Tests taken in US</div>
+                        <div class="text-[#4E5255] text-lg font-['Outfit']">{{ $t('home.stats.testsUS') }}</div>
                     </div>
                     <!-- 统计项3 -->
                     <div class="text-center p-6">
                         <div class="text-[#FD9AC0] text-5xl font-['Outfit'] font-semibold m-b-4px">1460M+</div>
-                        <div class="text-[#4E5255] text-lg font-['Outfit']">Total tests taken</div>
+                        <div class="text-[#4E5255] text-lg font-['Outfit']">{{ $t('home.stats.totalTests') }}</div>
                     </div>
                     <!-- 统计项4 -->
                     <div class="text-center p-6">
                         <div class="text-[#B273F2] text-5xl font-['Outfit'] font-semibold m-b-4px">91.2%</div>
-                        <div class="text-[#4E5255] text-lg font-['Outfit']">Results rated accurate or very accurate
-                        </div>
+                        <div class="text-[#4E5255] text-lg font-['Outfit']">{{ $t('home.stats.accurateRate') }}</div>
                     </div>
                 </div>
             </div>
@@ -94,11 +86,9 @@
             <div class="container mx-auto max-w-[1200px]">
                 <!-- Why You Should Take the Test 部分 -->
                 <div class="mb-24">
-                    <h2 class="text-[#011813] text-5xl font-['Outfit'] text-center font-semibold m-b-12px">Why You
-                        Should Take the Test?</h2>
+                    <h2 class="text-[#011813] text-5xl font-['Outfit'] text-center font-semibold m-b-12px">{{ $t('home.why.title') }}</h2>
                     <p class="text-[#4E5255] font-['Outfit'] text-center">
-                        Connect with the most expert mentors, guiding you with personalized advice through guided
-                        questions and proven expertise.
+                        {{ $t('home.why.desc') }}
                     </p>
 
                     <!-- 主要介绍卡片 -->
@@ -110,20 +100,11 @@
 
                         <div class="flex gap-40px">
                             <div class="w-full md:w-[24%] pt-24px">
-                                <h3 class="text-2xl font-['Outfit'] font-bold mb-4">Improved self-awareness</h3>
-                                <p class="text-gray-600 mb-6">
-                                    Gain UI design mastery with hands-on expert mentorship, refining your skills through
-                                    personalized guidance and feedback.
-                                </p>
+                                <h3 class="text-2xl font-['Outfit'] font-bold mb-4">{{ $t('home.why.main.title') }}</h3>
+                                <p class="text-gray-600 mb-6">{{ $t('home.why.main.desc') }}</p>
                                 <!-- 分割线 -->
                                 <div class="w-full h-[1px] bg-[#E7E7E8] my-6"/>
-                                <UButton :ui="{
-                                    base: 'flex justify-center items-center flex-row gap-2 px-6 py-3 bg-[#009D77] rounded-full text-white hover:bg-[#008A68] transition-all duration-300'
-                                }">
-                                    <span>Get Started</span>
-                                    <NuxtImg src="/images/common/go-arrow-1.png" alt="arrow" width="16px" height="16px"
-                                        class="w-4 h-4" />
-                                </UButton>
+                                <CTAButton :text="$t('common.getStarted')" size="sm" rounded="full" bg-color="#009D77" hover-bg-color="#008A68" active-bg-color="#007759" />
                             </div>
                             <div class="w-full md:w-[76%]  relative top-[-6px]">
                                 <!-- 图片 -->
@@ -143,11 +124,8 @@
                                 <NuxtImg src="/images/home/3.png" alt="Better decision-making icon" width="56"
                                     height="56" class="" />
                             </div>
-                            <h3 class="text-xl font-['Outfit'] font-bold mb-3">Better decision-making</h3>
-                            <p class="text-gray-600">
-                                Gain UI design mastery with hands-on expert mentorship, refining your skills through
-                                personalized guidance and feedback.
-                            </p>
+                            <h3 class="text-xl font-['Outfit'] font-bold mb-3">{{ $t('home.why.small1.title') }}</h3>
+                            <p class="text-gray-600">{{ $t('home.why.small1.desc') }}</p>
                         </div>
 
                         <!-- 卡片2 -->
@@ -157,11 +135,8 @@
                                 <NuxtImg src="/images/home/4.png" alt="Enhanced relationships icon" width="56"
                                     height="56" />
                             </div>
-                            <h3 class="text-xl font-['Outfit'] font-bold mb-3">Enhanced relationships</h3>
-                            <p class="text-gray-600">
-                                Gain UI design mastery with hands-on expert mentorship, refining your skills through
-                                personalized guidance and feedback.
-                            </p>
+                            <h3 class="text-xl font-['Outfit'] font-bold mb-3">{{ $t('home.why.small2.title') }}</h3>
+                            <p class="text-gray-600">{{ $t('home.why.small2.desc') }}</p>
                         </div>
 
                         <!-- 卡片3 -->
@@ -171,11 +146,8 @@
                                 <NuxtImg src="/images/home/5.png" alt="Career satisfaction icon" width="56"
                                     height="56" />
                             </div>
-                            <h3 class="text-xl font-['Outfit'] font-bold mb-3">Career satisfaction</h3>
-                            <p class="text-gray-600">
-                                Gain UI design mastery with hands-on expert mentorship, refining your skills through
-                                personalized guidance and feedback.
-                            </p>
+                            <h3 class="text-xl font-['Outfit'] font-bold mb-3">{{ $t('home.why.small3.title') }}</h3>
+                            <p class="text-gray-600">{{ $t('home.why.small3.desc') }}</p>
                         </div>
                     </div>
                 </div>
@@ -184,19 +156,10 @@
                 <div class="flex flex-col md:flex-row gap-12 items-center">
                     <!-- 左侧：标题、描述和按钮 -->
                     <div class="w-full md:w-1/2">
-                        <h2 class="text-4xl font-['Outfit'] font-bold mb-8">How Does It Work?</h2>
-                        <p class="text-gray-600 mb-12">
-                            Meta webflow template includes 7 pages in total, with more than 30+ sections and 2 different
-                            home page layouts featuring
-                        </p>
+                        <h2 class="text-4xl font-['Outfit'] font-bold mb-8">{{ $t('home.how.title') }}</h2>
+                        <p class="text-gray-600 mb-12">{{ $t('home.how.desc') }}</p>
 
-                        <UButton :ui="{
-                            base: 'flex justify-center items-center flex-row gap-2 px-6 py-3 bg-[#009D77] rounded-full text-white hover:bg-[#008A68] transition-all duration-300'
-                        }">
-                            <span>Get Started</span>
-                            <NuxtImg src="/images/common/go-arrow-1.png" alt="arrow" width="16px" height="16px"
-                                class="w-4 h-4" />
-                        </UButton>
+                        <CTAButton :text="$t('common.getStarted')" size="sm" rounded="full" bg-color="#009D77" hover-bg-color="#008A68" active-bg-color="#007759" />
                     </div>
 
                 <!-- 右侧：三个步骤卡片 -->
@@ -207,8 +170,8 @@
                                     <span class="text-[#009D77] text-4xl font-['Outfit'] font-semibold leading-[1.36]">1</span>
                                 </div>
                                 <div class="flex justify-start items-start flex-col gap-2">
-                                    <p class="text-[#011813] text-2xl font-['Outfit'] font-semibold">Prepare yourself</p>
-                                    <p class="w-[370px] max-sm:w-full text-[#4E5255] font-['Outfit']">Ensure you're in a relaxed setting conducive to concentration for the test.</p>
+                                    <p class="text-[#011813] text-2xl font-['Outfit'] font-semibold">{{ $t('home.how.step1.title') }}</p>
+                                    <p class="w-[370px] max-sm:w-full text-[#4E5255] font-['Outfit']">{{ $t('home.how.step1.desc') }}</p>
                                 </div>
                             </div>
 
@@ -217,8 +180,8 @@
                                     <span class="text-[#EA4C89] text-4xl font-['Outfit'] font-semibold leading-[1.36]">2</span>
                                 </div>
                                 <div class="flex justify-start items-start flex-col gap-2">
-                                    <span class="text-[#011813] text-2xl font-['Outfit'] font-semibold">10+ Useful inner pages</span>
-                                    <p class="w-[370px] max-sm:w-full text-[#4E5255] font-['Outfit']">Meta has 10+ inner pages that are needed for your business. You can fully customize these.</p>
+                                    <span class="text-[#011813] text-2xl font-['Outfit'] font-semibold">{{ $t('home.how.step2.title') }}</span>
+                                    <p class="w-[370px] max-sm:w-full text-[#4E5255] font-['Outfit']">{{ $t('home.how.step2.desc') }}</p>
                                 </div>
                             </div>
 
@@ -227,8 +190,8 @@
                                     <span class="text-[#932EFA] text-4xl font-['Outfit'] font-semibold leading-[1.36]">3</span>
                                 </div>
                                 <div class="flex justify-start items-start flex-col gap-2">
-                                    <span class="text-[#011813] text-2xl font-['Outfit'] font-semibold">30+ Details sections</span>
-                                    <p class="w-[370px] max-sm:w-full text-[#4E5255] font-['Outfit']">Meta has 40+ stunning sections which will help you build a portfolio website as per your needs.</p>
+                                    <span class="text-[#011813] text-2xl font-['Outfit'] font-semibold">{{ $t('home.how.step3.title') }}</span>
+                                    <p class="w-[370px] max-sm:w-full text-[#4E5255] font-['Outfit']">{{ $t('home.how.step3.desc') }}</p>
                                 </div>
                             </div>
                         </div>
@@ -240,50 +203,47 @@
         <!-- 第五块 What You Will Receive 区域 -->
         <div class="receive-section py-24 bg-gray-50">
             <div class="container mx-auto max-w-[1200px]">
-                <h2 class="text-4xl font-['Outfit'] font-bold text-center mb-4">What You Will Receive</h2>
-                <p class="text-center text-gray-600 mb-16 max-w-3xl mx-auto">
-                    Be always were in form of volunteers range time is mediatingappositive the in our affidavit how
-                    solitary saw more in his not
-                </p>
+                <h2 class="text-4xl font-['Outfit'] font-bold text-center mb-4">{{ $t('home.receive.title') }}</h2>
+                <p class="text-center text-gray-600 mb-16 max-w-3xl mx-auto">{{ $t('home.receive.desc') }}</p>
 
                 <!-- 六个卡片布局 -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="relative">
                         <div class="bg-white rounded-2xl shadow-lg p-24px border border-[#E7E7E8] flex flex-col items-center text-center gap-12px relative z-[1] w-full min-h-[220px]">
                             <NuxtImg src="/images/home/7.png" alt="Comprehensive Personality Report" width="72" height="72" />
-                            <h3 class="text-xl font-['Outfit'] font-bold">Comprehensive Personality Report</h3>
-                            <p class="text-gray-600">The to der ealie, der ealie, the to over mear for queen, for please</p>
+                            <h3 class="text-xl font-['Outfit'] font-bold">{{ $t('home.receive.card1.title') }}</h3>
+                            <p class="text-gray-600">{{ $t('home.receive.card1.desc') }}</p>
                         </div>
                         <div class="bg-white rounded-2xl shadow-lg p-24px border border-[#E7E7E8] flex flex-col items-center text-center gap-12px relative z-[3] w-full min-h-[220px] m-t-[-20px] ml-0">
                             <NuxtImg src="/images/home/10.png" alt="Practical Daily Challenges" width="72" height="72" />
-                            <h3 class="text-xl font-['Outfit'] font-bold">Practical Daily Challenges</h3>
-                            <p class="text-gray-600">The colu we easily in der ealie, even for moquen, for please</p>
+                            <h3 class="text-xl font-['Outfit'] font-bold">{{ $t('home.receive.card2.title') }}</h3>
+                            <p class="text-gray-600">{{ $t('home.receive.card2.desc') }}</p>
                         </div>
                     </div>
 
                     <div class="relative">
                         <div class="bg-white rounded-2xl shadow-lg p-24px border border-[#E7E7E8] flex flex-col items-center text-center gap-12px relative z-[1] w-full min-h-[220px]">
                             <NuxtImg src="/images/home/8.png" alt="Personalized Course Recommendations" width="72" height="72" />
-                            <h3 class="text-xl font-['Outfit'] font-bold">Personalized Course Recommendations</h3>
-                            <p class="text-gray-600">Reveal it everything overing overing the best!</p>
+                            <h3 class="text-xl font-['Outfit'] font-bold">{{ $t('home.receive.card3.title') }}</h3>
+                            <p class="text-gray-600">{{ $t('home.receive.card3.desc') }}</p>
                         </div>
                         <div class="bg-white rounded-2xl shadow-lg p-24px border border-[#E7E7E8] flex flex-col items-center text-center gap-12px relative z-[3] w-full min-h-[220px] m-t-[-20px] ml-0">
                             <NuxtImg src="/images/home/11.png" alt="Learning and Development Library" width="72" height="72" />
-                            <h3 class="text-xl font-['Outfit'] font-bold">Learning and Development Library</h3>
-                            <p class="text-gray-600">Reveal in everything overing overing bad policy of the test for the great</p>
+                            <h3 class="text-xl font-['Outfit'] font-bold">{{ $t('home.receive.card4.title') }}</h3>
+                            <p class="text-gray-600">{{ $t('home.receive.card4.desc') }}</p>
                         </div>
                     </div>
 
                     <div class="relative">
                         <div class="bg-white rounded-2xl shadow-lg p-24px border border-[#E7E7E8] flex flex-col items-center text-center gap-12px relative z-[1] w-full min-h-[220px]">
                             <NuxtImg src="/images/home/9.png" alt="Skill Assessment Tests" width="72" height="72" />
-                            <h3 class="text-xl font-['Outfit'] font-bold">Skill Assessment Tests</h3>
-                            <p class="text-gray-600">Where centred for date, control over thought, through teacher effectiveness</p>
+                            <h3 class="text-xl font-['Outfit'] font-bold">{{ $t('home.receive.card5.title') }}</h3>
+                            <p class="text-gray-600">{{ $t('home.receive.card5.desc') }}</p>
                         </div>
                         <div class="bg-white rounded-2xl shadow-lg p-24px border border-[#E7E7E8] flex flex-col items-center text-center gap-12px relative z-[3] w-full min-h-[220px] m-t-[-20px] ml-0">
                             <NuxtImg src="/images/home/12.png" alt="Certificates of Achievement" width="72" height="72" />
-                            <h3 class="text-xl font-['Outfit'] font-bold">Certificates of Achievement</h3>
-                            <p class="text-gray-600">Where centred for date, control over thought, through teacher effectiveness</p>
+                            <h3 class="text-xl font-['Outfit'] font-bold">{{ $t('home.receive.card6.title') }}</h3>
+                            <p class="text-gray-600">{{ $t('home.receive.card6.desc') }}</p>
                         </div>
                     </div>
                 </div>
@@ -314,6 +274,7 @@
 </template>
 
 <script setup lang="ts">
+import CTAButton from '../components/CTAButton.vue'
 import GradientCTASection from '../components/GradientCTASection.vue';
 import TestimonialsSection from '../components/TestimonialsSection.vue';
 import FAQSection from '../components/FAQSection.vue';

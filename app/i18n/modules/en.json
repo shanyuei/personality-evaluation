@@ -10,8 +10,85 @@
         "copyright": "2024 ©Design Monks. All rights reserved.",
         "payments": "Payments:"
     },
-    "home": {
-        "title": "Discover who you truly are with the Personality test",
-        "description": "With this, you will find out your exact personality type."
+  "home": {
+    "title": "Discover who you truly are with the Personality test",
+    "description": "With this, you will find out your exact personality type.",
+    "accuracy": {
+      "title": "Curious how accurate we are about you?",
+      "description": "Connect with a network of driven professionals, gain valuable insights, and access resources that propel you toward your dream career."
+    },
+    "stats": {
+      "testsToday": "Tests taken today",
+      "testsUS": "Tests taken in US",
+      "totalTests": "Total tests taken",
+      "accurateRate": "Results rated accurate or very accurate"
+    },
+    "why": {
+      "title": "Why You Should Take the Test?",
+      "desc": "Connect with the most expert mentors, guiding you with personalized advice through guided questions and proven expertise.",
+      "main": {
+        "title": "Improved self-awareness",
+        "desc": "Gain UI design mastery with hands-on expert mentorship, refining your skills through personalized guidance and feedback."
+      },
+      "small1": {
+        "title": "Better decision-making",
+        "desc": "Gain UI design mastery with hands-on expert mentorship, refining your skills through personalized guidance and feedback."
+      },
+      "small2": {
+        "title": "Enhanced relationships",
+        "desc": "Gain UI design mastery with hands-on expert mentorship, refining your skills through personalized guidance and feedback."
+      },
+      "small3": {
+        "title": "Career satisfaction",
+        "desc": "Gain UI design mastery with hands-on expert mentorship, refining your skills through personalized guidance and feedback."
+      }
+    },
+    "how": {
+      "title": "How Does It Work?",
+      "desc": "Meta webflow template includes 7 pages in total, with more than 30+ sections and 2 different home page layouts featuring",
+      "step1": {
+        "title": "Prepare yourself",
+        "desc": "Ensure you're in a relaxed setting conducive to concentration for the test."
+      },
+      "step2": {
+        "title": "10+ Useful inner pages",
+        "desc": "Meta has 10+ inner pages that are needed for your business. You can fully customize these."
+      },
+      "step3": {
+        "title": "30+ Details sections",
+        "desc": "Meta has 40+ stunning sections which will help you build a portfolio website as per your needs."
+      }
+    },
+    "receive": {
+      "title": "What You Will Receive",
+      "desc": "Be always were in form of volunteers range time is mediatingappositive the in our affidavit how solitary saw more in his not",
+      "card1": {
+        "title": "Comprehensive Personality Report",
+        "desc": "The to der ealie, der ealie, the to over mear for queen, for please"
+      },
+      "card2": {
+        "title": "Practical Daily Challenges",
+        "desc": "The colu we easily in der ealie, even for moquen, for please"
+      },
+      "card3": {
+        "title": "Personalized Course Recommendations",
+        "desc": "Reveal it everything overing overing the best!"
+      },
+      "card4": {
+        "title": "Learning and Development Library",
+        "desc": "Reveal in everything overing overing bad policy of the test for the great"
+      },
+      "card5": {
+        "title": "Skill Assessment Tests",
+        "desc": "Where centred for date, control over thought, through teacher effectiveness"
+      },
+      "card6": {
+        "title": "Certificates of Achievement",
+        "desc": "Where centred for date, control over thought, through teacher effectiveness"
+      }
     }
+  },
+  "common": {
+    "getStarted": "Get Started"
+  }
 }
