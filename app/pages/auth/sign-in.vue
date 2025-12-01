@@ -1,43 +1,41 @@
 <template>
-  <div class="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-50 to-purple-50">
-    <div class="w-full max-w-md px-6 py-8">
+  <div class="relative flex items-center justify-center py-24 sm:py-32">
+    <div class="w-full max-w-[720px] px-6 sm:px-10">
       <!-- 登录表单 -->
-      <div class="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg p-8">
-        <h1 class="text-3xl font-bold text-center mb-8">Sign In</h1>
+      <div class="rounded-[24px] p-8 sm:p-10">
+        <h1 class="text-center mb-10 text-[#0F172A] font-['Outfit'] font-bold text-4xl sm:text-5xl">Sign In</h1>
         
         <!-- Email Input -->
         <div class="mb-6">
           <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
           <input 
-            type="email" 
-            id="email" 
-            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all"
+            id="email"
+            type="email"
+            class="w-full px-4 py-3 border border-gray-300 rounded-[16px] focus:outline-none focus:ring-2 focus:ring-[#009D77] focus:border-transparent transition-all shadow-sm"
             placeholder="Email Address"
-          />
+          >
         </div>
         
         <!-- Password Input -->
         <div class="mb-8">
           <label for="password" class="block text-sm font-medium text-gray-700 mb-2">Password</label>
           <input 
-            type="password" 
-            id="password" 
-            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all"
+            id="password"
+            type="password"
+            class="w-full px-4 py-3 border border-gray-300 rounded-[16px] focus:outline-none focus:ring-2 focus:ring-[#009D77] focus:border-transparent transition-all shadow-sm"
             placeholder="Password"
-          />
+          >
         </div>
         
         <!-- Get Started Button -->
-        <button class="w-full bg-green-600 text-white font-medium py-3 px-4 rounded-lg hover:bg-green-700 transition-colors duration-300 mb-6">
+        <button class="w-full bg-[#009D77] text-white font-['Outfit'] font-medium py-4 px-4 rounded-[16px] hover:bg-[#0AA17F] transition-colors duration-300 mb-6" @click="handleSignIn">
           Get Started
         </button>
         
         <!-- Sign Up Link -->
-        <div class="text-center">
-          <p class="text-gray-600">
-            Don't have an account? 
-            <a href="/auth/sign-up" class="text-blue-600 hover:underline font-medium">Sign Up</a>
-          </p>
+        <div class="flex items-center justify-between text-gray-600">
+          <p>Don't have an account?</p>
+          <a href="/auth/sign-up" class="text-[#0F172A] underline underline-offset-4 font-medium">Sign Up</a>
         </div>
       </div>
     </div>

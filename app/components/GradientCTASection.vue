@@ -1,32 +1,20 @@
 <template>
   <div
-    class="gradient-cta-section relative w-full flex items-center justify-center mx-auto max-w-[342px] sm:max-w-[680px] md:max-w-[960px] lg:max-w-[1200px] min-h-[280px] sm:min-h-[320px] md:min-h-[528px] px-0 sm:px-8 md:px-12 py-12 sm:py-16 md:py-20">
+    class="gradient-cta-section relative w-full flex items-center justify-center   my-20">
     <!-- 背景 -->
-    <NuxtPicture
-      :sources="[
-        { srcset: '/theme/home/cat-bg-h5.png', media: '(max-width: 639px)' },
-        { srcset: '/theme/home/cat-bg-pc.png', media: '(min-width: 640px)' }
-      ]"
-      src="/theme/home/cat-bg-pc.png"
-      alt=""
-      aria-hidden="true"
-      class="absolute inset-0 -z-10 pointer-events-none object-cover top-15px"
-      preload
-    />
+    <NuxtImg src="/theme/home/cat-bg-h5.png" alt="" aria-hidden="true" width="342px" height="438px"
+      class="absolute inset-0 -z-10 pointer-events-none object-cover object-center  block md:hidden" preload />
+    <NuxtImg src="/theme/home/cat-bg-pc.png" alt="" aria-hidden="true" width="1200px" height="384px"
+      class="absolute inset-0 -z-10 pointer-events-none object-cover object-center  hidden md:block" preload />
     <!-- 内容 -->
     <div
-      class="relative z-10 flex flex-col items-center rounded-[32px] sm:rounded-[48px] overflow-hidden w-full max-w-[342px] sm:max-w-[680px] md:max-w-[960px] lg:max-w-[1200px] h-auto min-h-[280px] sm:min-h-[320px] md:min-h-[384px] px-0 sm:px-8 md:px-12 lg:px-24 py-12 sm:py-16 md:py-20">
-      <NuxtPicture
-        :sources="[
-          { srcset: '/theme/home/cat-bg-box-h5.png', media: '(max-width: 639px)' },
-          { srcset: '/theme/home/cat-bg-box-pc.png', media: '(min-width: 640px)' }
-        ]"
-        src="/theme/home/cat-bg-box-pc.png"
-        alt=""
-        aria-hidden="true"
-        class="absolute inset-0 -z-10 pointer-events-none object-cover w-[100%] h-[100%]"
-        preload
-      />
+      class="relative z-10 flex flex-col items-center rounded-[32px] sm:rounded-[48px] overflow-hidden w-full  px-0 sm:px-8 md:px-12 lg:px-24 py-12 sm:py-16 md:py-20">
+      <NuxtImg src="/theme/home/cat-bg-box-h5.png" alt="" aria-hidden="true"
+        class="absolute inset-0 -z-10 pointer-events-none object-cover object-center w-[100%] h-[100%] block md:hidden"
+        preload />
+      <NuxtImg src="/theme/home/cat-bg-box-pc.png" alt="" aria-hidden="true"
+        class="absolute inset-0 -z-10 pointer-events-none object-cover object-center w-[100%] h-[100%] hidden md:block"
+        preload />
       <h2 class="text-[#0F172A] font-['Outfit'] font-bold text-3xl sm:text-4xl md:text-5xl mb-4 text-center">
         {{ title || $t('home.accuracy.title') }}
       </h2>

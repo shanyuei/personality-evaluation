@@ -11,8 +11,9 @@
     <app-header />
     <!-- 主要内容区域 -->
     <main class="flex-1 mx-auto py-8 z-10 w-full">
-
-      <NuxtPage />
+      <slot>
+        <NuxtPage />
+      </slot>
     </main>
     <!-- 底部 -->
     <app-footer />
