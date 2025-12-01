@@ -26,27 +26,27 @@
                 <div class="flex justify-center items-center flex-wrap gap-4 sm:gap-6 md:gap-8">
                     <!-- 六个卡通人物头像 -->
                     <div
-                        class="hero-avatar relative w-24 h-40 sm:w-32 sm:h-48 md:w-40 md:h-64 overflow-hidden flex items-center justify-center">
+                        class="hero-avatar relative w-10 h-20 sm:w-32 sm:h-48 md:w-40 md:h-64 overflow-hidden flex items-center justify-center">
                         <!-- 卡通人物1 -->
                         <NuxtImg src="/images/home/hero/hero-1.png" alt="卡通人物1" class="w-full h-full object-contain" />
                     </div>
-                    <div class="hero-avatar relative w-24 h-40 sm:w-32 sm:h-48 md:w-40 md:h-64 overflow-hidden flex items-center justify-center">
+                    <div class="hero-avatar relative w-10 h-20 sm:w-32 sm:h-48 md:w-40 md:h-64 overflow-hidden flex items-center justify-center">
                         <!-- 卡通人物2 -->
                         <NuxtImg src="/images/home/hero/hero-2.png" alt="卡通人物2" class="w-full h-full object-contain" />
                     </div>
-                    <div class="hero-avatar relative w-24 h-40 sm:w-32 sm:h-48 md:w-40 md:h-64 overflow-hidden flex items-center justify-center">
+                    <div class="hero-avatar relative w-10 h-20 sm:w-32 sm:h-48 md:w-40 md:h-64 overflow-hidden flex items-center justify-center">
                         <!-- 卡通人物3 -->
                         <NuxtImg src="/images/home/hero/hero-3.png" alt="卡通人物3" class="w-full h-full object-contain" />
                     </div>
-                    <div class="hero-avatar relative w-24 h-40 sm:w-32 sm:h-48 md:w-40 md:h-64 overflow-hidden flex items-center justify-center">
+                    <div class="hero-avatar relative w-10 h-20 sm:w-32 sm:h-48 md:w-40 md:h-64 overflow-hidden flex items-center justify-center">
                         <!-- 卡通人物4 -->
                         <NuxtImg src="/images/home/hero/hero-4.png" alt="卡通人物4" class="w-full h-full object-contain" />
                     </div>
-                    <div class="hero-avatar relative w-24 h-40 sm:w-32 sm:h-48 md:w-40 md:h-64 overflow-hidden flex items-center justify-center">
+                    <div class="hero-avatar relative w-10 h-20 sm:w-32 sm:h-48 md:w-40 md:h-64 overflow-hidden flex items-center justify-center">
                         <!-- 卡通人物5 -->
                         <NuxtImg src="/images/home/hero/hero-5.png" alt="卡通人物5" class="w-full h-full object-contain" />
                     </div>
-                    <div class="hero-avatar relative w-24 h-40 sm:w-32 sm:h-48 md:w-40 md:h-64 overflow-hidden flex items-center justify-center">
+                    <div class="hero-avatar relative w-10 h-20 sm:w-32 sm:h-48 md:w-40 md:h-64 overflow-hidden flex items-center justify-center">
                         <!-- 卡通人物6 -->
                         <NuxtImg src="/images/home/hero/hero-6.png" alt="卡通人物6" class="w-full h-full object-contain" />
                     </div>
@@ -56,27 +56,27 @@
         <!-- 第三块 数据统计区域 -->
         <div class="data-stats bg-[#F5F8FF] py-10 sm:py-12">
             <div class="container mx-auto max-w-[1200px] px-4">
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
                     <!-- 统计项1 -->
                     <div class="text-center p-6">
 
-                        <div class="text-[#009D77] text-5xl font-['Outfit'] font-semibold m-b-4px">241K+</div>
-                        <div class="text-[#4E5255] text-lg font-['Outfit']">{{ $t('home.stats.testsToday') }}</div>
+                        <div class="text-[#009D77] text-3xl sm:text-4xl md:text-5xl font-['Outfit'] font-semibold m-b-4px">241K+</div>
+                        <div class="text-[#4E5255] text-sm sm:text-base md:text-lg font-['Outfit']">{{ $t('home.stats.testsToday') }}</div>
                     </div>
                     <!-- 统计项2 -->
                     <div class="text-center p-6">
-                        <div class="text-[#EA4C89] text-5xl font-['Outfit'] font-semibold m-b-4px">172M+</div>
-                        <div class="text-[#4E5255] text-lg font-['Outfit']">{{ $t('home.stats.testsUS') }}</div>
+                        <div class="text-[#EA4C89] text-3xl sm:text-4xl md:text-5xl font-['Outfit'] font-semibold m-b-4px">172M+</div>
+                        <div class="text-[#4E5255] text-sm sm:text-base md:text-lg font-['Outfit']">{{ $t('home.stats.testsUS') }}</div>
                     </div>
                     <!-- 统计项3 -->
                     <div class="text-center p-6">
-                        <div class="text-[#FD9AC0] text-5xl font-['Outfit'] font-semibold m-b-4px">1460M+</div>
-                        <div class="text-[#4E5255] text-lg font-['Outfit']">{{ $t('home.stats.totalTests') }}</div>
+                        <div class="text-[#FD9AC0] text-3xl sm:text-4xl md:text-5xl font-['Outfit'] font-semibold m-b-4px">1460M+</div>
+                        <div class="text-[#4E5255] text-sm sm:text-base md:text-lg font-['Outfit']">{{ $t('home.stats.totalTests') }}</div>
                     </div>
                     <!-- 统计项4 -->
                     <div class="text-center p-6">
-                        <div class="text-[#B273F2] text-5xl font-['Outfit'] font-semibold m-b-4px">91.2%</div>
-                        <div class="text-[#4E5255] text-lg font-['Outfit']">{{ $t('home.stats.accurateRate') }}</div>
+                        <div class="text-[#B273F2] text-3xl sm:text-4xl md:text-5xl font-['Outfit'] font-semibold m-b-4px">91.2%</div>
+                        <div class="text-[#4E5255] text-sm sm:text-base md:text-lg font-['Outfit']">{{ $t('home.stats.accurateRate') }}</div>
                     </div>
                 </div>
             </div>
@@ -98,7 +98,7 @@
                         <NuxtImg src="/images/home/2.png" alt="decor" width="56" height="56"
                             class="hidden md:block relative top-[0] md:left-246px" />
 
-                        <div class="flex gap-6 md:gap-10">
+                        <div class="flex flex-col md:flex-row gap-6 md:gap-10">
                             <div class="w-full md:w-[24%] pt-24px">
                                 <h3 class="text-2xl font-['Outfit'] font-bold mb-4">{{ $t('home.why.main.title') }}</h3>
                                 <p class="text-gray-600 mb-6">{{ $t('home.why.main.desc') }}</p>
@@ -106,7 +106,7 @@
                                 <div class="w-full h-[1px] bg-[#E7E7E8] my-6"/>
                                 <CTAButton :text="$t('common.getStarted')" size="sm" rounded="full" bg-color="#009D77" hover-bg-color="#008A68" active-bg-color="#007759" />
                             </div>
-                            <div class="w-full md:w-[76%]  relative top-[-6px]">
+                            <div class="w-full md:w-[76%]  relative md:top-[-6px]">
                                 <!-- 图片 -->
                                 <NuxtImg src="/images/home/1.png" alt="Self-awareness illustration" width="564"
                                     height="376" class=" rounded-lg w-100%" />
@@ -208,13 +208,13 @@
 
                 <!-- 六个卡片布局 -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-                    <div class="relative">
+                    <div class="relative ">
                         <div class="bg-white rounded-2xl shadow-lg p-24px border border-[#E7E7E8] flex flex-col items-center text-center gap-12px relative z-[1] w-full min-h-[220px]">
                             <NuxtImg src="/images/home/7.png" alt="Comprehensive Personality Report" width="72" height="72" />
                             <h3 class="text-xl font-['Outfit'] font-bold">{{ $t('home.receive.card1.title') }}</h3>
                             <p class="text-gray-600">{{ $t('home.receive.card1.desc') }}</p>
                         </div>
-                        <div class="bg-white rounded-2xl shadow-lg p-24px border border-[#E7E7E8] flex flex-col items-center text-center gap-12px relative z-[3] w-full min-h-[220px] m-t-[-20px] ml-0">
+                        <div class="bg-white rounded-2xl shadow-lg p-24px border border-[#E7E7E8] flex flex-col items-center text-center gap-12px relative z-[3] w-full min-h-[220px] m-t-16px md:m-t-[-20px] ml-0">
                             <NuxtImg src="/images/home/10.png" alt="Practical Daily Challenges" width="72" height="72" />
                             <h3 class="text-xl font-['Outfit'] font-bold">{{ $t('home.receive.card2.title') }}</h3>
                             <p class="text-gray-600">{{ $t('home.receive.card2.desc') }}</p>
@@ -227,20 +227,20 @@
                             <h3 class="text-xl font-['Outfit'] font-bold">{{ $t('home.receive.card3.title') }}</h3>
                             <p class="text-gray-600">{{ $t('home.receive.card3.desc') }}</p>
                         </div>
-                        <div class="bg-white rounded-2xl shadow-lg p-24px border border-[#E7E7E8] flex flex-col items-center text-center gap-12px relative z-[3] w-full min-h-[220px] m-t-[-20px] ml-0">
+                        <div class="bg-white rounded-2xl shadow-lg p-24px border border-[#E7E7E8] flex flex-col items-center text-center gap-12px relative z-[3] w-full min-h-[220px] m-t-16px md:m-t-[-20px] ml-0">
                             <NuxtImg src="/images/home/11.png" alt="Learning and Development Library" width="72" height="72" />
                             <h3 class="text-xl font-['Outfit'] font-bold">{{ $t('home.receive.card4.title') }}</h3>
                             <p class="text-gray-600">{{ $t('home.receive.card4.desc') }}</p>
                         </div>
                     </div>
 
-                    <div class="relative">
+                    <div class="relative hidden md:block">
                         <div class="bg-white rounded-2xl shadow-lg p-24px border border-[#E7E7E8] flex flex-col items-center text-center gap-12px relative z-[1] w-full min-h-[220px]">
                             <NuxtImg src="/images/home/9.png" alt="Skill Assessment Tests" width="72" height="72" />
                             <h3 class="text-xl font-['Outfit'] font-bold">{{ $t('home.receive.card5.title') }}</h3>
                             <p class="text-gray-600">{{ $t('home.receive.card5.desc') }}</p>
                         </div>
-                        <div class="bg-white rounded-2xl shadow-lg p-24px border border-[#E7E7E8] flex flex-col items-center text-center gap-12px relative z-[3] w-full min-h-[220px] m-t-[-20px] ml-0">
+                        <div class="bg-white rounded-2xl shadow-lg p-24px border border-[#E7E7E8] flex flex-col items-center text-center gap-12px relative z-[3] w-full min-h-[220px] m-t-16px md:m-t-[-20px] ml-0">
                             <NuxtImg src="/images/home/12.png" alt="Certificates of Achievement" width="72" height="72" />
                             <h3 class="text-xl font-['Outfit'] font-bold">{{ $t('home.receive.card6.title') }}</h3>
                             <p class="text-gray-600">{{ $t('home.receive.card6.desc') }}</p>

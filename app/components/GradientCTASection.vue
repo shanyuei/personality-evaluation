@@ -1,12 +1,12 @@
 <template>
-  <div class="gradient-cta-section relative w-full max-w-[1200px] min-h-[320px] px-4 sm:px-8 md:px-12 py-12 sm:py-16 md:py-20 flex items-center justify-center mx-auto">
+  <div class="gradient-cta-section relative w-full max-w-[1200px] min-h-[320px] sm:max-w-[342px]  px-4 py-12 sm:px-[0px] sm:py-[40px]  flex items-center justify-center mx-auto">
     <!-- 背景 -->
     <NuxtImg src="/theme/home/cat-bg.png" alt="" aria-hidden="true"
       class="absolute inset-0 -z-10 pointer-events-none object-cover w-[100%] h-[100%]" width="100%" height="100%"
       preload />
     <!-- 内容 -->
     <div
-      class="relative z-10 flex flex-col items-center rounded-[32px] sm:rounded-[48px] overflow-hidden w-full max-w-[1200px] px-6 sm:px-12 lg:px-24 py-8 sm:py-12">
+      class="relative z-10 flex flex-col items-center rounded-[32px] sm:rounded-[48px] overflow-hidden w-full  px-6 sm:px-12 lg:px-24 py-8 sm:py-12">
       <NuxtImg src="/theme/home/cat-bg-2.png" alt="" aria-hidden="true"
         class="absolute inset-0 -z-10 pointer-events-none object-cover w-[100%] h-[100%]" width="100%" height="100%"
         preload />
