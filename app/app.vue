@@ -7,7 +7,8 @@
 </template>
 
 <script setup lang="ts">
-// app.vue 现在仅负责路由和布局渲染
+const i18nHead = useLocaleHead({ seo: true })
+useHead(i18nHead)
 </script>
 
 <style scoped>
