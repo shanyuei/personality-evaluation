@@ -91,4 +91,14 @@
   "common": {
     "getStarted": "Get Started"
   }
+  ,
+  "routeGuide": {
+    "title": "Route Guide",
+    "intro": "Below are all available routes in the system. Click to navigate.",
+    "stats": "There are {count} available routes in the system",
+    "pathLabel": "Path",
+    "visit": "Visit",
+    "empty": "No available routes found",
+    "back": "Back to Home"
+  }
 }

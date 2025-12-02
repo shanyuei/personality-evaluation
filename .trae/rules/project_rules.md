@@ -67,8 +67,11 @@ Nuxt 项目约定
 - 颜色使用：不在组件中直接写十六进制值，统一走 CSS 变量或 Tailwind 语义色
 
 多语言与国际化
-- 默认语言中文，需支持英文；所有用户可见文案避免硬编码在组件
+- 默认语言中文，需支持英文；所有用户可见文案避免硬编码
 - 文案资源建议放置 `app/locales/zh.json` 与 `app/locales/en.json`，键命名采用 `page.section.key`
 - 使用方式：若已启用 `@nuxtjs/i18n`/`vue-i18n`，统一使用 `t('...')`；未启用时可暂用轻量 `useLocale()` 封装从 JSON 读取
 - 路由策略：简版可不加前缀；如启用多语言路由，采用 `/en/*` 前缀并确保 SEO 友好
 - 组件规范：按钮、标题、占位符等均从字典读取，确保语言切换一致
+ - 任务规范：每次新增页面/组件/区块，必须同步在 `app/i18n/modules/{en,zh,ja}.json` 创建对应键，并在模板内以 `$t('...')` 引用；键名建议 `routeGuide.title`、`routeGuide.intro` 这类按页面为命名空间的格式
+ - 变量占位：涉及动态数字或文本使用插值（如 `{count}`），在模板中以 `$t('routeGuide.stats', { count })` 方式传参
+ - 配置一致性：`nuxt.config.ts` 统一设置 `srcDir: 'app'` 与 `i18n.langDir: 'i18n/modules'`，保证 `app/pages` 与 `app/i18n` 路径生效

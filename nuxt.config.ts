@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
+  srcDir: 'app',
   // 别名
   alias: {
 
@@ -36,7 +37,6 @@ export default defineNuxtConfig({
     locales: [
       { code: 'en', language: 'en', name: 'English',file: 'en.json' },
       { code: 'zh', language: 'zh', name: '中文',file: 'zh.json' },
-      { code: 'ja', language: 'ja', name: '日本語',file: 'ja.json' },
     ],
     defaultLocale: 'en',
     strategy: 'no_prefix',

@@ -80,7 +80,17 @@
           }
         }
     },
-    "common": {
-      "getStarted": "开始"
-    }
+  "common": {
+    "getStarted": "开始"
+  }
+  ,
+  "routeGuide": {
+    "title": "路由引导页面",
+    "intro": "下面是系统中所有可用的路由页面，点击即可导航到相应页面",
+    "stats": "系统中共有 {count} 个可用路由",
+    "pathLabel": "路径",
+    "visit": "点击访问",
+    "empty": "未找到任何可用路由",
+    "back": "返回首页"
+  }
 }

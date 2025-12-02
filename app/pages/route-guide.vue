@@ -4,10 +4,10 @@
       <!-- 页面标题 -->
       <div class="text-center mb-8 sm:mb-12">
         <h1 class="text-2xl sm:text-3xl md:text-4xl font-['Outfit'] font-bold text-gray-900 mb-4">
-          路由引导页面
+          {{ $t('routeGuide.title') }}
         </h1>
         <p class="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
-          下面是系统中所有可用的路由页面，点击即可导航到相应页面
+          {{ $t('routeGuide.intro') }}
         </p>
       </div>
 
@@ -16,7 +16,7 @@
         <!-- 路由统计信息 -->
         <div class="mb-6 sm:mb-8 p-3 sm:p-4 bg-gray-50 rounded-xl">
           <p class="text-gray-700 font-medium">
-            系统中共有 <span class="text-green-600 font-bold">{{ routes.length }}</span> 个可用路由
+            {{ $t('routeGuide.stats', { count: routes.length }) }}
           </p>
         </div>
 
@@ -37,12 +37,12 @@
                     {{ formatRouteName(route.path) }}
                   </h3>
                   <p class="text-gray-500 text-xs sm:text-sm mt-1 truncate">
-                    路径: {{ route.path }}
+                    {{ $t('routeGuide.pathLabel') }}: {{ route.path }}
                   </p>
                 </div>
                 <div class="mt-2 md:mt-0 flex-shrink-0">
                   <span class="inline-flex items-center px-3 py-1 rounded-full text-xs sm:text-sm font-medium bg-green-100 text-green-800">
-                    点击访问
+                    {{ $t('routeGuide.visit') }}
                     <svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                     </svg>
@@ -60,7 +60,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
             </svg>
           </div>
-          <p class="text-gray-500">未找到任何可用路由</p>
+          <p class="text-gray-500">{{ $t('routeGuide.empty') }}</p>
         </div>
       </div>
 
@@ -73,7 +73,7 @@
           <svg class="w-4 h-4 sm:w-5 sm:h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V7a2 2 0 00-2-2M5 12V7a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
           </svg>
-          返回首页
+          {{ $t('routeGuide.back') }}
         </NuxtLink>
       </div>
     </div>

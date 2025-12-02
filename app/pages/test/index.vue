@@ -19,21 +19,21 @@
           <div class="space-y-4">
             <div class="flex items-start space-x-3">
               <div class="mt-1 w-8 h-8 flex-shrink-0">
-                <img src="/theme/test/step1.png" alt="Step 1" class="w-full h-full object-contain" />
+                <!-- <img src="/theme/test/step1.png" alt="Step 1" class="w-full h-full object-contain" /> -->
               </div>
               <p class="text-sm text-gray-600">Be yourself and answer honestly to find your personality type.</p>
             </div>
             
             <div class="flex items-start space-x-3">
               <div class="mt-1 w-8 h-8 flex-shrink-0">
-                <img src="/theme/test/step2.png" alt="Step 2" class="w-full h-full object-contain" />
+                <!-- <img src="/theme/test/step2.png" alt="Step 2" class="w-full h-full object-contain" /> -->
               </div>
               <p class="text-sm text-gray-600">Learn how your personality type influences many areas of your life.</p>
             </div>
             
             <div class="flex items-start space-x-3">
               <div class="mt-1 w-8 h-8 flex-shrink-0">
-                <img src="/theme/test/step3.png" alt="Step 3" class="w-full h-full object-contain" />
+                <!-- <img src="/theme/test/step3.png" alt="Step 3" class="w-full h-full object-contain" /> -->
               </div>
               <p class="text-sm text-gray-600">Find jobs that suit your personality and get career guidance that actually helps.</p>
             </div>
@@ -46,7 +46,7 @@
           <div class="bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl p-6 border border-pink-100 shadow-sm">
             <div class="flex items-center justify-center mb-4">
               <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm">
-                <img src="/theme/test/step1.png" alt="Step 1" class="w-10 h-10 object-contain" />
+                <!-- <img src="/theme/test/step1.png" alt="Step 1" class="w-10 h-10 object-contain" /> -->
               </div>
             </div>
             <h3 class="text-xl font-bold text-gray-900 mb-2 text-center font-['Outfit']">Complete the Test</h3>
@@ -57,7 +57,7 @@
           <div class="bg-gradient-to-br from-purple-50 to-violet-50 rounded-2xl p-6 border border-purple-100 shadow-sm">
             <div class="flex items-center justify-center mb-4">
               <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm">
-                <img src="/theme/test/step2.png" alt="Step 2" class="w-10 h-10 object-contain" />
+                <!-- <img src="/theme/test/step2.png" alt="Step 2" class="w-10 h-10 object-contain" /> -->
               </div>
             </div>
             <h3 class="text-xl font-bold text-gray-900 mb-2 text-center font-['Outfit']">View Detailed Results</h3>
@@ -68,7 +68,7 @@
           <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-6 border border-green-100 shadow-sm">
             <div class="flex items-center justify-center mb-4">
               <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm">
-                <img src="/theme/test/step3.png" alt="Step 3" class="w-10 h-10 object-contain" />
+                <!-- <img src="/theme/test/step3.png" alt="Step 3" class="w-10 h-10 object-contain" /> -->
               </div>
             </div>
             <h3 class="text-xl font-bold text-gray-900 mb-2 text-center font-['Outfit']">Unlock Your Potential</h3>
