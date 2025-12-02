@@ -47,7 +47,6 @@
 
 <script setup lang="ts">
 const error = useError()
-console.log("error", error)
 const handleError = () => clearError({ redirect: '/' })
 </script>
 
