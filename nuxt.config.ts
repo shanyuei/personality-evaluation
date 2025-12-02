@@ -37,7 +37,6 @@ export default defineNuxtConfig({
     locales: [
       { code: 'en', language: 'en-US', name: 'English', file: 'en.json' },
       { code: 'zh', language: 'zh-CN', name: '中文', file: 'zh.json' },
-      { code: 'ja', language: 'ja-JP', name: '日本語', file: 'ja.json' },
     ],
     defaultLocale: 'en',
     strategy: 'no_prefix',
@@ -49,7 +48,7 @@ export default defineNuxtConfig({
       cookieSecure: true,
       cookieCrossOrigin: false
     },
-    langDir: 'i18n/modules',
+    langDir: '../app/i18n/modules',
     baseUrl: 'https://example.com',
   },
   imports: {
