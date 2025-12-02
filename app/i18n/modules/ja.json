@@ -1,0 +1,33 @@
+{
+  "header": { "GetStarted": "開始" },
+  "home": {
+    "title": "性格テストで本当の自分を見つけよう",
+    "description": "このテストであなたの正確な性格タイプが分かります。"
+  },
+  "common": {
+    "siteDescription": "専門家のコースとツールで知識を解放しましょう。"
+  },
+  "routeGuide": {
+    "title": "ルートガイド",
+    "intro": "以下はシステム内の利用可能なルートです。クリックして移動できます。",
+    "stats": "システム内の利用可能なルートは {count} 件です",
+    "pathLabel": "パス",
+    "visit": "アクセス",
+    "empty": "利用可能なルートが見つかりません",
+    "back": "ホームへ戻る"
+  },
+  "pages": {
+    "about": { "title": "私たちについて", "description": "私たちの使命とチームについて。" },
+    "courses": { "title": "コース", "description": "専門家によるコースを閲覧。" },
+    "mentors": { "title": "メンター", "description": "経験豊富なメンターと講師を紹介。" },
+    "blog": { "title": "ブログ", "description": "チームの記事と最新情報。" },
+    "auth": { "signIn": { "title": "ログイン", "description": "安全にアカウントへアクセス。" } },
+    "orders": { "cancelSubscription": { "title": "サブスクリプションの解約", "description": "メンバーシップの管理と解約。" } },
+    "test": {
+      "title": "性格テスト", "description": "性格診断を開始します。",
+      "step": { "title": "テストステップ", "description": "段階的に質問に回答します。" },
+      "analyzing": { "title": "分析中", "description": "回答を分析しています。" },
+      "result": { "title": "テスト結果", "description": "レポートと次のアクションを確認。" }
+    }
+  }
+}

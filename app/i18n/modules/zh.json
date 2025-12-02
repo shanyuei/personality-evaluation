@@ -81,7 +81,8 @@
         }
     },
   "common": {
-    "getStarted": "开始"
+    "getStarted": "开始",
+    "siteDescription": "通过专家课程与工具，解锁知识与成长。"
   }
   ,
   "routeGuide": {
@@ -92,5 +93,52 @@
     "visit": "点击访问",
     "empty": "未找到任何可用路由",
     "back": "返回首页"
+  }
+  ,
+  "pages": {
+    "about": {
+      "title": "关于我们",
+      "description": "了解我们的使命与团队。"
+    },
+    "courses": {
+      "title": "课程",
+      "description": "浏览各领域的专家课程。"
+    },
+    "mentors": {
+      "title": "导师",
+      "description": "认识经验丰富的导师与讲师。"
+    },
+    "blog": {
+      "title": "博客",
+      "description": "阅读团队文章与最新动态。"
+    },
+    "auth": {
+      "signIn": {
+        "title": "登录",
+        "description": "安全访问你的账户。"
+      }
+    },
+    "orders": {
+      "cancelSubscription": {
+        "title": "取消订阅",
+        "description": "管理会员并按需取消。"
+      }
+    },
+    "test": {
+      "title": "性格测试",
+      "description": "开始你的性格测评。",
+      "step": {
+        "title": "测试步骤",
+        "description": "按步骤回答测试问题。"
+      },
+      "analyzing": {
+        "title": "分析中",
+        "description": "正在分析你的回答。"
+      },
+      "result": {
+        "title": "测试结果",
+        "description": "查看你的报告与下一步行动。"
+      }
+    }
   }
 }

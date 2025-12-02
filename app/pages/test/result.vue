@@ -33,9 +33,19 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { onMounted } from 'vue'
 import { useRouter } from 'vue-router'
+const { t } = useI18n()
+definePageMeta({
+  title: t('pages.test.result.title') as string
+})
+useSeoMeta({
+  title: () => t('pages.test.result.title') as string,
+  description: () => t('pages.test.result.description') as string,
+  ogTitle: () => t('pages.test.result.title') as string,
+  ogDescription: () => t('pages.test.result.description') as string
+})
 
 const router = useRouter()
 

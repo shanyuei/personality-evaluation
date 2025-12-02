@@ -352,7 +352,16 @@
 </template>
 
 <script setup lang="ts">
-// About Us page specific logic
+const { t } = useI18n()
+definePageMeta({
+  title: t('pages.about.title') as string
+})
+useSeoMeta({
+  title: () => t('pages.about.title') as string,
+  description: () => t('pages.about.description') as string,
+  ogTitle: () => t('pages.about.title') as string,
+  ogDescription: () => t('pages.about.description') as string
+})
 </script>
 
 <style scoped>

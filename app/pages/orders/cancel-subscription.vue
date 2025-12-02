@@ -67,6 +67,16 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+const { t } = useI18n()
+definePageMeta({
+  title: t('pages.orders.cancelSubscription.title') as string
+})
+useSeoMeta({
+  title: () => t('pages.orders.cancelSubscription.title') as string,
+  description: () => t('pages.orders.cancelSubscription.description') as string,
+  ogTitle: () => t('pages.orders.cancelSubscription.title') as string,
+  ogDescription: () => t('pages.orders.cancelSubscription.description') as string
+})
 const email = ref('')
 const reasons = ref<string[]>(['difficult'])
 const emailError = ref(false)
@@ -79,4 +89,3 @@ const submit = () => {
 </script>
 
 <style scoped></style>
-

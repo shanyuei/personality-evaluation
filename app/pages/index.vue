@@ -319,6 +319,16 @@ import CTAButton from '../components/CTAButton.vue'
 import GradientCTASection from '../components/GradientCTASection.vue';
 import TestimonialsSection from '../components/TestimonialsSection.vue';
 import FAQSection from '../components/FAQSection.vue';
+const { t } = useI18n()
+definePageMeta({
+  title: t('home.title') as string
+})
+useSeoMeta({
+  title: () => t('home.title') as string,
+  description: () => t('home.description') as string,
+  ogTitle: () => t('home.title') as string,
+  ogDescription: () => t('home.description') as string
+})
 
 const baseText = 'An exceptional platform for career development. The current curriculum, skilled instructors, and hands-on learning are truly rewarding.'
 

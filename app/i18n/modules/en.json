@@ -1,15 +1,15 @@
 {
-    "header": {
-        "GetStarted": "Get Started"
-    },
-    "footer": {
-        "introduction": "Unlock knowledge with expert-led online courses.",
-        "stayConnected": "Stay connected",
-        "pagesText": "Pages",
-        "othersText": "Others",
-        "copyright": "2024 ©Design Monks. All rights reserved.",
-        "payments": "Payments:"
-    },
+  "header": {
+    "GetStarted": "Get Started"
+  },
+  "footer": {
+    "introduction": "Unlock knowledge with expert-led online courses.",
+    "stayConnected": "Stay connected",
+    "pagesText": "Pages",
+    "othersText": "Others",
+    "copyright": "2024 ©Design Monks. All rights reserved.",
+    "payments": "Payments:"
+  },
   "home": {
     "title": "Discover who you truly are with the Personality test",
     "description": "With this, you will find out your exact personality type.",
@@ -89,9 +89,9 @@
     }
   },
   "common": {
-    "getStarted": "Get Started"
-  }
-  ,
+    "getStarted": "Get Started",
+    "siteDescription": "Unlock knowledge with expert-led online courses and tools."
+  },
   "routeGuide": {
     "title": "Route Guide",
     "intro": "Below are all available routes in the system. Click to navigate.",
@@ -100,5 +100,59 @@
     "visit": "Visit",
     "empty": "No available routes found",
     "back": "Back to Home"
+  },
+  "seo": {
+    "app": {
+      "title": "Route Guide",
+      "description": "Below are all available routes in the system. Click to navigate.",
+    },
+    "home": {}
+  }
+  ,
+  "pages": {
+    "about": {
+      "title": "About Us",
+      "description": "Learn about our mission and team."
+    },
+    "courses": {
+      "title": "Courses",
+      "description": "Browse expert-led courses across topics."
+    },
+    "mentors": {
+      "title": "Mentors",
+      "description": "Meet experienced mentors and instructors."
+    },
+    "blog": {
+      "title": "Blog",
+      "description": "Read articles and updates from our team."
+    },
+    "auth": {
+      "signIn": {
+        "title": "Sign In",
+        "description": "Access your account securely."
+      }
+    },
+    "orders": {
+      "cancelSubscription": {
+        "title": "Cancel Subscription",
+        "description": "Manage your membership and cancel if needed."
+      }
+    },
+    "test": {
+      "title": "Personality Test",
+      "description": "Start your personality assessment.",
+      "step": {
+        "title": "Test Step",
+        "description": "Answer test questions step by step."
+      },
+      "analyzing": {
+        "title": "Analyzing",
+        "description": "We are analyzing your answers."
+      },
+      "result": {
+        "title": "Test Result",
+        "description": "View your personality report and next actions."
+      }
+    }
   }
 }

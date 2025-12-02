@@ -75,6 +75,16 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue';
+const { t } = useI18n()
+definePageMeta({
+  title: t('pages.courses.title') as string
+})
+useSeoMeta({
+  title: () => t('pages.courses.title') as string,
+  description: () => t('pages.courses.description') as string,
+  ogTitle: () => t('pages.courses.title') as string,
+  ogDescription: () => t('pages.courses.description') as string
+})
 
 const activeFilter = ref('all');
 const sortOrder = ref('popular');
