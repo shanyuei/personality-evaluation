@@ -241,16 +241,16 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-const { t } = useI18n()
-definePageMeta({
-  title: t('pages.blog.title') as string
-})
-useSeoMeta({
-  title: () => t('pages.blog.title') as string,
-  description: () => t('pages.blog.description') as string,
-  ogTitle: () => t('pages.blog.title') as string,
-  ogDescription: () => t('pages.blog.description') as string
-})
+// const { t } = useI18n()
+// definePageMeta({
+//   title: t('pages.blog.title') as string
+// })
+// useSeoMeta({
+//   title: () => t('pages.blog.title') as string,
+//   description: () => t('pages.blog.description') as string,
+//   ogTitle: () => t('pages.blog.title') as string,
+//   ogDescription: () => t('pages.blog.description') as string
+// })
 
 const searchQuery = ref('');
 const activeCategory = ref('all');

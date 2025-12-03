@@ -159,16 +159,16 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-const { t } = useI18n()
-definePageMeta({
-  title: t('pages.mentors.title') as string
-})
-useSeoMeta({
-  title: () => t('pages.mentors.title') as string,
-  description: () => t('pages.mentors.description') as string,
-  ogTitle: () => t('pages.mentors.title') as string,
-  ogDescription: () => t('pages.mentors.description') as string
-})
+// const { t } = useI18n()
+// definePageMeta({
+//   title: t('pages.mentors.title') as string
+// })
+// useSeoMeta({
+//   title: () => t('pages.mentors.title') as string,
+//   description: () => t('pages.mentors.description') as string,
+//   ogTitle: () => t('pages.mentors.title') as string,
+//   ogDescription: () => t('pages.mentors.description') as string
+// })
 
 const searchQuery = ref('');
 const activeExpertise = ref('all');

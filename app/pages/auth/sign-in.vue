@@ -44,16 +44,16 @@
 
 <script setup lang="ts">
 // You can add authentication logic here
-const { t } = useI18n()
-definePageMeta({
-  title: t('pages.auth.signIn.title') as string
-})
-useSeoMeta({
-  title: () => t('pages.auth.signIn.title') as string,
-  description: () => t('pages.auth.signIn.description') as string,
-  ogTitle: () => t('pages.auth.signIn.title') as string,
-  ogDescription: () => t('pages.auth.signIn.description') as string
-})
+// const { t } = useI18n()
+// definePageMeta({
+//   title: t('pages.auth.signIn.title') as string
+// })
+// useSeoMeta({
+//   title: () => t('pages.auth.signIn.title') as string,
+//   description: () => t('pages.auth.signIn.description') as string,
+//   ogTitle: () => t('pages.auth.signIn.title') as string,
+//   ogDescription: () => t('pages.auth.signIn.description') as string
+// })
 // You can add authentication logic here
 const handleSignIn = () => {
   // Sign in logic will go here
