@@ -315,10 +315,10 @@
 </template>
 
 <script setup lang="ts">
-import CTAButton from '~/app/components/CTAButton.vue'
-import GradientCTASection from '~/app/components/GradientCTASection.vue';
-import TestimonialsSection from '~/app/components/TestimonialsSection.vue';
-import FAQSection from '~/app/components/FAQSection.vue';
+import CTAButton from '../../components/CTAButton.vue'
+import GradientCTASection from '../../components/GradientCTASection.vue';
+import TestimonialsSection from '../../components/TestimonialsSection.vue';
+import FAQSection from '../../components/FAQSection.vue';
 // const { t } = useI18n()
 // definePageMeta({
 //   title: t('home.title') as string
