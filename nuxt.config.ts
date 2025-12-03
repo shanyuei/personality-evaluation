@@ -49,7 +49,6 @@ export default defineNuxtConfig({
       cookieSecure: true,
       cookieCrossOrigin: false
     },
-    langDir: 'i18n/modules',
     baseUrl: 'https://example.com',
   },
   imports: {
