@@ -17,6 +17,92 @@
       "title": "Curious how accurate we are about you?",
       "description": "Connect with a network of driven professionals, gain valuable insights, and access resources that propel you toward your dream career."
     },
+    "account": {
+      "settings": {
+        "title": "Settings",
+        "description": "Edit your profile, change password, switch language, or delete your account.",
+        "profile": {
+          "title": "Profile details",
+          "namePlaceholder": "First and last name",
+          "emailPlaceholder": "Email address",
+          "submit": "Save profile",
+          "success": "Profile updated",
+          "fail": "Update failed. Please try again later."
+        },
+        "password": {
+          "title": "Change password",
+          "current": "Current password",
+          "new": "New password",
+          "repeat": "Repeat new password",
+          "submit": "Save password",
+          "mismatch": "Passwords do not match",
+          "success": "Password updated"
+        },
+        "language": {
+          "title": "Change Language",
+          "submit": "Save language",
+          "success": "Language preference saved"
+        },
+        "delete": {
+          "title": "Delete Account",
+          "action": "Delete Account",
+          "success": "Your deletion request has been submitted"
+        }
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "description": "Quick answers about the platform and the test. Use the left navigation to jump between sections.
+      ",
+      "nav": {
+        "general": "General FAQs",
+        "integration": "Integration",
+        "account": "Account & Security",
+        "billing": "Billing & Payments"
+      },
+      "sections": {
+        "general": {
+          "title": "General FAQs",
+          "desc": "Common questions about the test and reports.",
+          "q1": "How long does the test take?",
+          "a1": "Most users finish within 5–10 minutes. Answer honestly in a focused setting.",
+          "q2": "Will my report be saved?",
+          "a2": "Your report and history are stored in your account and available anytime.",
+          "q3": "Is mobile supported?",
+          "a3": "Yes, the experience is optimized for both mobile and desktop devices."
+        },
+        "integration": {
+          "title": "Integration",
+          "desc": "Connecting with LMS or enterprise systems.",
+          "q1": "Do you support LMS gradebook integration?",
+          "a1": "We can export results and integrate with common LMS platforms. Please contact support for details.",
+          "q2": "Is an API available?",
+          "a2": "REST APIs are available for read/write operations. An API key is required.",
+          "q3": "How do I sync users and courses?",
+          "a3": "Use bulk import or APIs with scheduled jobs for synchronization."
+        },
+        "account": {
+          "title": "Account & Security",
+          "desc": "Account management and privacy.",
+          "q1": "I forgot my password. What should I do?",
+          "a1": "Use the “Forgot Password” option on the sign-in page to reset it.",
+          "q2": "How can I delete my account and data?",
+          "a2": "Submit a deletion request in settings. We process it according to compliance requirements.",
+          "q3": "How is my data protected?",
+          "a3": "We use encrypted transport and access controls. See the Privacy Policy for details."
+        },
+        "billing": {
+          "title": "Billing & Payments",
+          "desc": "Orders, refunds, and invoices.",
+          "q1": "Which payment methods are supported?",
+          "a1": "We support major cards and popular third‑party payment providers.",
+          "q2": "Can I request a refund?",
+          "a2": "Refunds are available within the allowed period according to the Terms.",
+          "q3": "Do you provide invoices?",
+          "a3": "Invoices are supported. Provide your billing information after the order is completed."
+        }
+      }
+    },
     "stats": {
       "testsToday": "Tests taken today",
       "testsUS": "Tests taken in US",
@@ -112,7 +198,21 @@
   "pages": {
     "about": {
       "title": "About Us",
-      "description": "Learn about our mission and team."
+      "description": "Learn about our mission and team.",
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "desc": "Quick answers to common questions to help you understand our platform.",
+        "q1": "How can I reach your support team?",
+        "a1": "Use the contact information on this page to email or call us. We respond within 24 hours.",
+        "q2": "Do courses support live or recorded sessions?",
+        "a2": "We support both live and recorded formats. Check the course page for the specific delivery method.",
+        "q3": "Can I request a refund?",
+        "a3": "If a course hasn't started or doesn't meet expectations, submit a refund request within 7 days per policy.",
+        "q4": "Do you offer plans for organizations or schools?",
+        "a4": "Yes. We provide group and custom solutions. Contact us to discuss your needs.",
+        "q5": "Is there progress and grade tracking?",
+        "a5": "You can view learning progress and assessment results in your dashboard with detailed reports."
+      }
     },
     "courses": {
       "title": "Courses",
@@ -136,6 +236,15 @@
       "cancelSubscription": {
         "title": "Cancel Subscription",
         "description": "Manage your membership and cancel if needed."
+      },
+      "purchaseComplete": {
+        "title": "Thank you for your purchase!",
+        "description": "Click below to get started and access your report.",
+        "accessReport": "Access Report",
+        "downloadGuidebook": "Download Guidebook",
+        "accessNote": "Click the button above to open your report page.",
+        "downloadNote": "If download is unavailable, please check your email for the link later.",
+        "goHome": "Back to Home"
       }
     },
     "test": {
@@ -152,6 +261,71 @@
       "result": {
         "title": "Test Result",
         "description": "View your personality report and next actions."
+      }
+    }
+    ,
+    "legal": {
+      "privacy": {
+        "title": "Privacy Policy",
+        "description": "We respect your privacy. This page explains how we collect, use, and protect information.",
+        "nav": {
+          "general": "Overview",
+          "usage": "How We Use Information",
+          "sharing": "Data Sharing & Disclosure",
+          "cookies": "Cookies & Tracking",
+          "changes": "Changes to This Policy",
+          "contact": "Contact Us"
+        },
+        "sections": {
+          "general": {
+            "title": "Overview",
+            "body": "We collect and process data only for lawful, necessary, and explicit purposes, and apply reasonable safeguards to protect your information."
+          },
+          "usage": {
+            "title": "How We Use Information",
+            "desc": "Examples of how your information is used:",
+            "q1": "Provide and maintain services",
+            "a1": "Account creation, course access, assessments, and report generation.",
+            "q2": "Communications and support",
+            "a2": "Important notices, service updates, and support responses.",
+            "q3": "Improvement and analytics",
+            "a3": "Anonymous or aggregated analytics to improve product experience and performance."
+          },
+          "sharing": {
+            "title": "Data Sharing & Disclosure",
+            "desc": "We do not sell personal information. We may share only when necessary:",
+            "q1": "Service providers",
+            "a1": "Contracted providers for infrastructure and customer support.",
+            "q2": "Legal compliance",
+            "a2": "When required to comply with law, protect users, or prevent fraud."
+          },
+          "cookies": {
+            "title": "Cookies & Tracking",
+            "body": "We use cookies to remember preferences and perform site analytics. You can manage cookies in your browser—some features may be impacted."
+          },
+          "changes": {
+            "title": "Changes to This Policy",
+            "body": "We may update this policy from time to time. Significant changes will be communicated via in‑app notice or email."
+          },
+          "contact": {
+            "title": "Contact Us",
+            "body": "For privacy questions or requests, please reach out using the contact information provided on this page."
+          }
+        }
+      },
+      "terms": {
+        "title": "Terms of Service",
+        "description": "By using the service, you agree to the following terms and conditions.",
+        "sections": {
+          "accept": { "title": "Acceptance of Terms", "body": "Registering or using the service constitutes acceptance of this agreement." },
+          "use": { "title": "Use of Service", "body": "Use the service in accordance with applicable laws and this agreement. Do not abuse or disrupt the platform." },
+          "account": { "title": "Accounts & Security", "body": "Keep credentials secure and remain responsible for activities under your account. Notify us immediately of suspicious activity." },
+          "payments": { "title": "Payments", "body": "For paid courses or subscriptions, fees, billing, and refunds follow the policies described on the relevant pages." },
+          "content": { "title": "User Content", "body": "You retain ownership of your content while granting us necessary rights to process and display it to provide the service." },
+          "prohibited": { "title": "Prohibited Conduct", "body": "Including but not limited to unlawful content, infringement, attacks, or interference with platform operations." },
+          "termination": { "title": "Termination", "body": "We may suspend or terminate service for violations. You may stop using the service and request data export at any time." },
+          "disclaimer": { "title": "Disclaimers", "body": "The service is provided as‑is without warranties of fitness or uninterrupted operation to the fullest extent permitted by law." }
+        }
       }
     }
   }
