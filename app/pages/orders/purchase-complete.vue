@@ -44,15 +44,15 @@
 <script setup lang="ts">
 import CTAButton from '@/components/CTAButton.vue'
 const { t } = useI18n()
-definePageMeta({
-  title: () => t('pages.orders.purchaseComplete.title') as string
-})
-useSeoMeta({
-  title: () => t('pages.orders.purchaseComplete.title') as string,
-  description: () => t('pages.orders.purchaseComplete.description') as string,
-  ogTitle: () => t('pages.orders.purchaseComplete.title') as string,
-  ogDescription: () => t('pages.orders.purchaseComplete.description') as string
-})
+// definePageMeta({
+//   title: () => t('pages.orders.purchaseComplete.title') as string
+// })
+// useSeoMeta({
+//   title: () => t('pages.orders.purchaseComplete.title') as string,
+//   description: () => t('pages.orders.purchaseComplete.description') as string,
+//   ogTitle: () => t('pages.orders.purchaseComplete.title') as string,
+//   ogDescription: () => t('pages.orders.purchaseComplete.description') as string
+// })
 
 const goToReport = () => {
   navigateTo('/test/result')

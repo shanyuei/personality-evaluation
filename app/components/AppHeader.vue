@@ -32,11 +32,9 @@
         <NuxtImg src="/images/header/go-icon-1.png" alt="go-icon-1" width="40px" height="40px" />
       </div>
       <!-- 多语言 -->
-      <I18nSelect />
+      <!-- <I18nSelect /> -->
     </template>
-    <!-- <template #toggle>
-      <MobileMenu :items="items" />
-    </template> -->
+
     <template #body>
       <div
         class="flex flex-col items-start gap-4 p-24px bg-[#FFFFFF] border-[1px] border-[#F0F0F0] rounded-[16px] w-[374px]">
@@ -58,7 +56,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { useRouter } from "vue-router";
-import I18nSelect from "~/components/I18nSelect.vue";
+// import I18nSelect from "~/components/I18nSelect.vue";
 const router = useRouter();
 const go = (to?: string) => {
   if (to) router.push(to);

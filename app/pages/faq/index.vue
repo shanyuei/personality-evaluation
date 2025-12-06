@@ -19,7 +19,7 @@
         </aside>
 
         <section class="md:col-span-2 space-y-10">
-          <FAQSection
+          <!-- <FAQSection
             id="general"
             :title="$t('pages.faq.sections.general.title')"
             :description="$t('pages.faq.sections.general.desc')"
@@ -35,9 +35,9 @@
             :items="integrationItems"
             :accordion="true"
             :default-expanded-index="null"
-          />
+          /> -->
 
-          <FAQSection
+          <!-- <FAQSection
             id="account"
             :title="$t('pages.faq.sections.account.title')"
             :description="$t('pages.faq.sections.account.desc')"
@@ -53,7 +53,7 @@
             :items="billingItems"
             :accordion="true"
             :default-expanded-index="null"
-          />
+          /> -->
         </section>
       </div>
     </div>
@@ -62,40 +62,40 @@
 
 <script setup lang="ts">
 import FAQSection from '@/components/FAQSection.vue'
-const { t } = useI18n()
-definePageMeta({
-  title: () => t('pages.faq.title') as string
-})
-useSeoMeta({
-  title: () => t('pages.faq.title') as string,
-  description: () => t('pages.faq.description') as string,
-  ogTitle: () => t('pages.faq.title') as string,
-  ogDescription: () => t('pages.faq.description') as string
-})
+// const { t } = useI18n()
+// definePageMeta({
+//   title: () => t('pages.faq.title') as string
+// })
+// useSeoMeta({
+//   title: () => t('pages.faq.title') as string,
+//   description: () => t('pages.faq.description') as string,
+//   ogTitle: () => t('pages.faq.title') as string,
+//   ogDescription: () => t('pages.faq.description') as string
+// })
 
-const generalItems = [
-  { question: t('pages.faq.sections.general.q1'), answer: t('pages.faq.sections.general.a1') },
-  { question: t('pages.faq.sections.general.q2'), answer: t('pages.faq.sections.general.a2') },
-  { question: t('pages.faq.sections.general.q3'), answer: t('pages.faq.sections.general.a3') }
-]
+// const generalItems = [
+//   { question: t('pages.faq.sections.general.q1'), answer: t('pages.faq.sections.general.a1') },
+//   { question: t('pages.faq.sections.general.q2'), answer: t('pages.faq.sections.general.a2') },
+//   { question: t('pages.faq.sections.general.q3'), answer: t('pages.faq.sections.general.a3') }
+// ]
 
-const integrationItems = [
-  { question: t('pages.faq.sections.integration.q1'), answer: t('pages.faq.sections.integration.a1') },
-  { question: t('pages.faq.sections.integration.q2'), answer: t('pages.faq.sections.integration.a2') },
-  { question: t('pages.faq.sections.integration.q3'), answer: t('pages.faq.sections.integration.a3') }
-]
+// const integrationItems = [
+//   { question: t('pages.faq.sections.integration.q1'), answer: t('pages.faq.sections.integration.a1') },
+//   { question: t('pages.faq.sections.integration.q2'), answer: t('pages.faq.sections.integration.a2') },
+//   { question: t('pages.faq.sections.integration.q3'), answer: t('pages.faq.sections.integration.a3') }
+// ]
 
-const accountItems = [
-  { question: t('pages.faq.sections.account.q1'), answer: t('pages.faq.sections.account.a1') },
-  { question: t('pages.faq.sections.account.q2'), answer: t('pages.faq.sections.account.a2') },
-  { question: t('pages.faq.sections.account.q3'), answer: t('pages.faq.sections.account.a3') }
-]
+// const accountItems = [
+//   { question: t('pages.faq.sections.account.q1'), answer: t('pages.faq.sections.account.a1') },
+//   { question: t('pages.faq.sections.account.q2'), answer: t('pages.faq.sections.account.a2') },
+//   { question: t('pages.faq.sections.account.q3'), answer: t('pages.faq.sections.account.a3') }
+// ]
 
-const billingItems = [
-  { question: t('pages.faq.sections.billing.q1'), answer: t('pages.faq.sections.billing.a1') },
-  { question: t('pages.faq.sections.billing.q2'), answer: t('pages.faq.sections.billing.a2') },
-  { question: t('pages.faq.sections.billing.q3'), answer: t('pages.faq.sections.billing.a3') }
-]
+// const billingItems = [
+//   { question: t('pages.faq.sections.billing.q1'), answer: t('pages.faq.sections.billing.a1') },
+//   { question: t('pages.faq.sections.billing.q2'), answer: t('pages.faq.sections.billing.a2') },
+//   { question: t('pages.faq.sections.billing.q3'), answer: t('pages.faq.sections.billing.a3') }
+// ]
 </script>
 
 <style scoped>

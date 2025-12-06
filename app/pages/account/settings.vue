@@ -70,13 +70,13 @@ import I18nSelect from '@/components/I18nSelect.vue'
 import { useUserStore } from '@/stores/modules/user'
 
 const { t } = useI18n()
-definePageMeta({ title: () => t('pages.account.settings.title') as string })
-useSeoMeta({
-  title: () => t('pages.account.settings.title') as string,
-  description: () => t('pages.account.settings.description') as string,
-  ogTitle: () => t('pages.account.settings.title') as string,
-  ogDescription: () => t('pages.account.settings.description') as string
-})
+// definePageMeta({ title: () => t('pages.account.settings.title') as string })
+// useSeoMeta({
+//   title: () => t('pages.account.settings.title') as string,
+//   description: () => t('pages.account.settings.description') as string,
+//   ogTitle: () => t('pages.account.settings.title') as string,
+//   ogDescription: () => t('pages.account.settings.description') as string
+// })
 
 const userStore = useUserStore()
 const name = ref(userStore.user?.name || '')

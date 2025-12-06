@@ -66,15 +66,15 @@
  <script setup lang="ts">
  import FAQSection from '@/components/FAQSection.vue'
  const { t } = useI18n()
- definePageMeta({
-  title: () => t('pages.legal.privacy.title') as string
- })
- useSeoMeta({
-  title: () => t('pages.legal.privacy.title') as string,
-  description: () => t('pages.legal.privacy.description') as string,
-  ogTitle: () => t('pages.legal.privacy.title') as string,
-  ogDescription: () => t('pages.legal.privacy.description') as string
- })
+//  definePageMeta({
+//   title: () => t('pages.legal.privacy.title') as string
+//  })
+//  useSeoMeta({
+//   title: () => t('pages.legal.privacy.title') as string,
+//   description: () => t('pages.legal.privacy.description') as string,
+//   ogTitle: () => t('pages.legal.privacy.title') as string,
+//   ogDescription: () => t('pages.legal.privacy.description') as string
+//  })
 
  const usageItems = [
   { question: t('pages.legal.privacy.sections.usage.q1'), answer: t('pages.legal.privacy.sections.usage.a1') },
