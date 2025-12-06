@@ -101,6 +101,25 @@
           "a3": "Invoices are supported. Provide your billing information after the order is completed."
         }
       }
+      ,
+      "standout": {
+        "title": "Why Our Test Stands Out: Precision, Depth, and Clarity",
+        "desc": "Our team combines innovation, expertise, and a client‑centered approach, delivering projects with outstanding quality, meticulous attention to detail, and a focus on meaningful growth.",
+        "items": {
+          "precision": {
+            "title": "Precision",
+            "desc": "Learn from experienced professionals in fields like marketing, design, development, finance, and more."
+          },
+          "deep": {
+            "title": "Deep Insights",
+            "desc": "Tailor your journey with courses that align with your unique goals and pace."
+          },
+          "expert": {
+            "title": "Expert Guidance",
+            "desc": "Engage with multimedia content, quizzes, and assignments designed to make learning dynamic and enjoyable."
+          }
+        }
+      }
     },
     "stats": {
       "testsToday": "Tests taken today",
@@ -198,6 +217,10 @@
     "about": {
       "title": "About Us",
       "description": "Learn about our mission and team.",
+      "hero": {
+        "title": "Empowering Self‑Discovery Through Precision",
+        "desc": "At Renovex we believe in the power of collaboration to achieve outstanding results. With a team of skilled professionals and a commitment to quality, we work hand‑in‑hand with our clients to bring their ideas to life. Together, we create spaces and solutions that stand the test of time."
+      },
       "faq": {
         "title": "Frequently Asked Questions",
         "desc": "Quick answers to common questions to help you understand our platform.",
@@ -211,6 +234,37 @@
         "a4": "Yes. We provide group and custom solutions. Contact us to discuss your needs.",
         "q5": "Is there progress and grade tracking?",
         "a5": "You can view learning progress and assessment results in your dashboard with detailed reports."
+      }
+      ,
+      "content": {
+        "desc": "At Renovex we are committed to revolutionizing the construction industry with innovative, sustainable, and cost‑effective solutions. With a proven track record of delivering exceptional projects, we combine state‑of‑the‑art technology, skilled expertise, and customer‑centric approaches to bring visions to life."
+      },
+      "stats": {
+        "projects": { "value": "150+", "label": "Complete Projects" },
+        "team": { "value": "100+", "label": "Team Members" },
+        "reviews": { "value": "200+", "label": "Client Reviews" },
+        "awards": { "value": "30", "label": "Winning Award" }
+      }
+      ,
+      "sections": {
+        "mission": {
+          "badge": "Our Mission",
+          "title": "Unveiling the Layers of Your Personality",
+          "desc": "Our mission is to guide individuals on a journey of self‑understanding and growth. By leveraging the profound insights of our meticulously crafted personality test and report, we aim to illuminate the unique patterns that define each personality type. We believe in the transformative power of self‑knowledge and its ability to enhance personal and professional relationships, promote mental well‑being, and foster a fulfilling life.",
+          "list1": "Fostering Sustainable Growth and Green Development",
+          "list2": "Innovating for a Sustainable Future",
+          "list3": "Customer‑Centric Approach",
+          "list4": "Building Stronger Communities"
+        },
+        "vision": {
+          "badge": "Our Vision",
+          "title": "A Trusted Partner in Your Personal Growth Journey",
+          "desc": "We strive to be your trusted partner in self‑development, combining thoughtful methodology, modern tools, and human‑centered design to help you grow with clarity and confidence.",
+          "list1": "Inspiring Modern Architecture",
+          "list2": "Pioneering Sustainable Construction",
+          "list3": "Empowering Communities Through Innovation",
+          "list4": "Leading the Future of Building Solutions"
+        }
       }
     },
     "courses": {
