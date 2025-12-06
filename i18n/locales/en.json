@@ -52,8 +52,7 @@
     },
     "faq": {
       "title": "Frequently Asked Questions",
-      "description": "Quick answers about the platform and the test. Use the left navigation to jump between sections.
-      ",
+      "description": "Quick answers about the platform and the test. Use the left navigation to jump between sections.",
       "nav": {
         "general": "General FAQs",
         "integration": "Integration",
