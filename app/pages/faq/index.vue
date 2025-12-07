@@ -1,6 +1,6 @@
 <template>
   <main class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-12 px-6 md:px-10">
-    <div class="max-w-[1200px] mx-auto">
+    <div class="max-w-[80%] mx-auto">
       <div class="text-center mb-8">
         <h1 class="text-3xl md:text-4xl font-['Outfit'] font-bold text-gray-900">{{ $t('pages.faq.title') }}</h1>
         <p class="text-gray-600 max-w-2xl mx-auto mt-3">{{ $t('pages.faq.description') }}</p>
@@ -61,7 +61,6 @@
 </template>
 
 <script setup lang="ts">
-import FAQSection from '@/components/FAQSection.vue'
 // const { t } = useI18n()
 // definePageMeta({
 //   title: () => t('pages.faq.title') as string
@@ -100,4 +99,3 @@ import FAQSection from '@/components/FAQSection.vue'
 
 <style scoped>
 </style>
-

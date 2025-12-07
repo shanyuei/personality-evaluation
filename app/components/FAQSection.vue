@@ -1,6 +1,6 @@
 <template>
   <div class="faq-section py-16 sm:py-20 md:py-24 bg-gray-50">
-    <div class="container mx-auto max-w-[1200px] px-4">
+    <div class="container mx-auto max-w-[80%] px-4">
       <div class="text-center mb-16">
         <h2 class="text-4xl font-['Outfit'] font-bold mb-3">{{ title }}</h2>
         <p v-if="description" class="text-gray-600 max-w-3xl mx-auto">{{ description }}</p>

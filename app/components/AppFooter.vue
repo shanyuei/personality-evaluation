@@ -7,7 +7,7 @@
     </div>
     <div class="w-full h-full top-0 left-0 z-[2] relative">
       <UFooter :ui="{
-        container: 'py-80px px-40px xl:px-0 gap-0 z-[2] relative max-w-[1440px] mx-auto items-start max-md:max-w-[1200px] max-sm:max-w-full max-sm:flex-col-reverse max-sm:flex max-sm:gap-32px max-sm:py-0 max-sm:p-b-24px',
+        container: 'py-80px px-40px xl:px-0 gap-0 z-[2] relative max-w-[1440px] mx-auto items-start max-md:max-w-[80%] max-sm:max-w-full max-sm:flex-col-reverse max-sm:flex max-sm:gap-32px max-sm:py-0 max-sm:p-b-24px',
         left: 'flex-none',
         right: 'flex-none',
         center: 'flex-none',
@@ -96,11 +96,11 @@
         <template #bottom>
           <!-- 分割线 -->
           <div
-            class="w-full flex justify-center max-w-[1440px] m-b-32px mx-auto px-40px xl:px-0 max-md:max-w-[1200px] sm:w-full">
+            class="w-full flex justify-center max-w-[1440px] m-b-32px mx-auto px-40px xl:px-0 max-md:max-w-[80%] sm:w-full">
             <NuxtImg src="/images/footer/line.png" alt="line" width="100%" height="1px" object-fit="contain" />
           </div>
           <div
-            class="w-full max-w-[1440px] mx-auto px-40px xl:px-0 flex items-center justify-between max-md:max-w-[1200px] max-sm:max-w-full max-sm:flex-col max-sm:items-start max-sm:gap-16px max-xs:gap-12px">
+            class="w-full max-w-[1440px] mx-auto px-40px xl:px-0 flex items-center justify-between max-md:max-w-[80%] max-sm:max-w-full max-sm:flex-col max-sm:items-start max-sm:gap-16px max-xs:gap-12px">
             <div class="text-[#011813] font-['Outfit'] text-center text-16px max-sm:text-14px max-xs:text-12px">
               {{ $t('footer.copyright') }}
             </div>
@@ -123,7 +123,6 @@
   </div>
 </template>
 <script setup lang="ts">
-import { ref } from 'vue'
 
 
 </script>

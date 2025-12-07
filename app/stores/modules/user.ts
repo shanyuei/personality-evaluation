@@ -21,7 +21,7 @@ export const useUserStore = defineStore('user', () => {
   });
 
   // Actions
-  async function login(email: string, password: string) {
+  async function login(email: string, _password: string) {
     isLoading.value = true;
     error.value = null;
 
@@ -40,7 +40,8 @@ export const useUserStore = defineStore('user', () => {
       lastUpdated.value = new Date();
       
       return true;
-    } catch (err) {
+    } catch (_err) {
+      console.error(_err);
       error.value = 'Failed to login. Please try again.';
       return false;
     } finally {
@@ -70,7 +71,8 @@ export const useUserStore = defineStore('user', () => {
       lastUpdated.value = new Date();
       
       return true;
-    } catch (err) {
+    } catch (_err) {
+      console.error(_err);
       error.value = 'Failed to update profile.';
       return false;
     } finally {

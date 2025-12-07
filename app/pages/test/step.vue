@@ -18,7 +18,7 @@
 
     <!-- 主要内容区 -->
     <main class="px-6 md:px-10 py-6 flex-grow">
-      <div class="max-w-[1200px] mx-auto w-full">
+      <div class="max-w-[80%] mx-auto w-full">
         <!-- 测评标题和描述 -->
         <div class="text-center mb-8 md:mb-12">
           <h1 class="text-2xl md:text-4xl font-bold text-gray-900 mb-4 font-['Outfit']">Conscientiousness</h1>

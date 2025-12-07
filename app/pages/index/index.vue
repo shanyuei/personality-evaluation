@@ -2,7 +2,7 @@
     <!-- 首页 -->
     <main class="mx-auto pt-16 sm:pt-24 md:pt-32">
         <!-- 第一块区域 -->
-        <div class="relative rounded-xl mx-auto max-w-[1200px] border border-transparent px-4 sm:px-6 md:px-8">
+        <div class="relative rounded-xl mx-auto max-w-[80%] border border-transparent px-4 sm:px-6 md:px-8">
             <!-- 内容区域 -->
             <div class="flex justify-start items-center flex-col   ">
                 <div class="flex justify-start items-center flex-col gap-16px">
@@ -23,7 +23,7 @@
             </div>
         </div>
         <!-- 第二块区域 hero -->
-        <div class="hero-section w-full py-10 sm:py-16 md:py-20 mx-auto max-w-[1200px] px-4">
+        <div class="hero-section w-full py-10 sm:py-16 md:py-20 mx-auto max-w-[80%] px-4">
             <div class="container mx-auto ">
                 <div class="flex justify-center items-center flex-wrap gap-4 sm:gap-6 md:gap-8">
                     <!-- 六个卡通人物头像 -->
@@ -62,7 +62,7 @@
         </div>
         <!-- 第三块 数据统计区域 -->
         <div class="data-stats bg-[#F5F8FF] py-10 sm:py-12">
-            <div class="container mx-auto max-w-[1200px] px-4">
+            <div class="container mx-auto max-w-[80%] px-4">
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
                     <!-- 统计项1 -->
                     <div class="text-center p-6">
@@ -102,7 +102,7 @@
         </div>
         <!-- 第四块 介绍区域 -->
         <div class="intro-section py-16 sm:py-20 md:py-24">
-            <div class="container mx-auto max-w-[1200px] px-4">
+            <div class="container mx-auto max-w-[80%] px-4">
                 <!-- Why You Should Take the Test 部分 -->
                 <div class="mb-24">
                     <h2 class="text-[#011813] text-5xl font-['Outfit'] text-center font-semibold m-b-12px">{{
@@ -242,7 +242,7 @@
 
         <!-- 第五块 What You Will Receive 区域 -->
         <div class="receive-section py-16 sm:py-20 md:py-24 bg-gray-50">
-            <div class="container mx-auto max-w-[1200px] px-4">
+            <div class="container mx-auto max-w-[80%]  px-4">
                 <h2 class="text-4xl font-['Outfit'] font-bold text-center mb-4">{{ $t('home.receive.title') }}</h2>
                 <p class="text-center text-gray-600 mb-16 max-w-3xl mx-auto">{{ $t('home.receive.desc') }}</p>
 

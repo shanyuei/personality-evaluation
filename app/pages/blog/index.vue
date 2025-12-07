@@ -97,7 +97,7 @@
             <!-- Articles Grid -->
             <div class="space-y-8">
               <div 
-                v-for="article in filteredArticles" 
+                v-for="article in paginatedArticles" 
                 :key="article.id" 
                 class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-all duration-300 border"
               >

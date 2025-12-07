@@ -1,0 +1,29 @@
+{
+  "pages": {
+    "about": {
+      "standout": {
+        "title": "Why Our Test Stands Out",
+        "desc": "We focus on precision, depth, and practical clarity to deliver meaningful insights.
+",
+        "items": {
+          "precision": {
+            "title": "Precision",
+            "desc": "Rigorous methodology and consistent criteria ensure accurate results.",
+            "alt": "Precision icon"
+          },
+          "deep": {
+            "title": "Depth",
+            "desc": "Layered analysis explores patterns behind your choices.",
+            "alt": "Depth icon"
+          },
+          "expert": {
+            "title": "Expertise",
+            "desc": "Guidance built by experienced mentors and reviewed continuously.",
+            "alt": "Expert icon"
+          }
+        },
+        "imageAlt": "Illustration: why our test stands out"
+      }
+    }
+  }
+}

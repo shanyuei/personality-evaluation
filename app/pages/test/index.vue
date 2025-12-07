@@ -10,7 +10,7 @@
     <!-- 主要内容区 -->
     <main class="px-6 md:px-10 py-6 flex-grow">
       <!-- 中心容器 -->
-      <div class="max-w-[1200px] mx-auto w-full">
+      <div class="max-w-[80%] mx-auto w-full">
         <!-- 测评标题 -->
         <h1 class="text-2xl md:text-4xl font-bold text-gray-900 mb-4 md:mb-8 text-center font-['Outfit']">Free Personality Test</h1>
         

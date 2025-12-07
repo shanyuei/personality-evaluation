@@ -1,26 +1,27 @@
 <template>
   <UHeader :ui="{
-    body: 'bg-transparent p-0',
+    body: 'bg-transparent p-0 ',
     content: 'bg-transparent',
     header: 'bg-transparent h-[96px] border-none max-sm:h-[53px]',
     overlay: 'bg-transparent',
-    root:'h-[96px] border-none bg-transparent max-sm:h-[53px]'
+    root: 'h-[96px] border-none bg-transparent max-sm:h-[53px]',
+    container: 'max-w-[80%]'
   }">
     <!-- 导航栏 -->
     <template #left>
-   
-      <div flex gap-54px>
-           <!-- logo -->
-      <div class="min-w-175px">
-        <NuxtPicture src="/theme/logo.png" width="175px" height="40px"
-          :img-attrs="{ class: 'w-[175px] h-[40px] max-sm:w-[105px] max-sm:h-[24px]', alt: 'logo' }" />
-      </div>
-      <!-- 导航栏 -->
-        <UNavigationMenu :ui="{
-        link: 'before:bg-[transparent!important] font-[`Outfit`] text-center font-medium text-[#011813] data-[active]:text-[--color-pink-1] hover:text-[--color-pink-1]',
-        item: 'm-x-18px'
 
-      }" :items="items" class="w-full justify-center max-sm:hidden" />
+      <div flex gap-54px>
+        <!-- logo -->
+        <div class="min-w-175px">
+          <NuxtPicture src="/theme/logo.png" width="175px" height="40px"
+            :img-attrs="{ class: 'w-[175px] h-[40px] max-sm:w-[105px] max-sm:h-[24px]', alt: 'logo' }" />
+        </div>
+        <!-- 导航栏 -->
+        <UNavigationMenu :ui="{
+          link: 'before:bg-[transparent!important] font-[`Outfit`] text-center font-medium text-[#011813] data-[active]:text-[--color-pink-1] hover:text-[--color-pink-1]',
+          item: 'm-x-18px'
+
+        }" :items="items" class="w-full justify-center max-sm:hidden" />
       </div>
 
     </template>
@@ -55,12 +56,7 @@
 </template>
 <script setup lang="ts">
 import { ref } from "vue";
-import { useRouter } from "vue-router";
 // import I18nSelect from "~/components/I18nSelect.vue";
-const router = useRouter();
-const go = (to?: string) => {
-  if (to) router.push(to);
-};
 const items = ref([
   {
     label: 'Home',
@@ -80,12 +76,9 @@ const items = ref([
   },
   {
     label: 'About Us',
-    to: '/about-us',
+    to: '/about',
   },
 ]);
-const toggleMenu = () => {
-  menuOpen.value = !menuOpen.value;
-};
 </script>
 
 <style scoped></style>

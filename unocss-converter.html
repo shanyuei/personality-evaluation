@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UnoCSS 转换小工具</title>
+  <style>
+    :root{--bg:#0F172A;--fg:#0F172A;--muted:#64748B;--primary:#009D77;--hover:#0AA17F}
+    *{box-sizing:border-box}
+    body{font-family: Outfit, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";margin:0;background:linear-gradient(180deg,#fff,#f8fafc)}
+    .container{max-width:min(1200px,80%);margin:0 auto;padding:24px}
+    .card{background:#fff;border:1px solid #e5e7eb;border-radius:24px;padding:24px}
+    h1{font-size:28px;line-height:1.2;margin:0;color:var(--fg)}
+    .desc{color:var(--muted);margin-top:8px}
+    .grid{display:flex;flex-direction:column;gap:16px}
+    @media (min-width:768px){.grid{flex-direction:row}.col{width:50%}}
+    textarea{width:100%;min-height:220px;border:1px solid #e5e7eb;border-radius:16px;padding:12px;font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-size:14px}
+    .actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+    .btn{height:48px;padding:0 20px;border:1px solid #0F172A;border-radius:100px;background:#fff;color:#0F172A;display:inline-flex;align-items:center;gap:8px;font-weight:600}
+    .btn-primary{background:var(--primary);border-color:var(--primary);color:#fff}
+    .btn-primary:hover{background:var(--hover);border-color:var(--hover)}
+    .chips{display:flex;flex-wrap:wrap;gap:8px}
+    .chip{background:#0F172A;color:#fff;border-radius:100px;padding:8px 12px;font-size:13px}
+    .section-title{font-size:18px;font-weight:700;color:var(--fg);margin:16px 0 8px}
+    .muted{color:#64748B}
+    .mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
+    .output{border:1px solid #e5e7eb;border-radius:16px;padding:12px;min-height:120px}
+    .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--primary);color:#fff;padding:10px 16px;border-radius:999px;box-shadow:0 8px 16px rgba(0,0,0,.12);opacity:0;pointer-events:none;transition:opacity .2s, transform .2s}
+    .toast.show{opacity:1;transform:translateX(-50%) translateY(-4px)}
+  </style>
+</head>
+<body>
+  <main class="container">
+    <div class="card">
+      <h1>CSS → UnoCSS 转换</h1>
+      <p class="desc">输入标准 CSS 声明（如 "display:flex; justify-content:center; padding:24px"），转换为 UnoCSS 原子类。</p>
+      <div class="grid">
+        <div class="col">
+          <div class="section-title">输入 CSS</div>
+          <textarea id="cssInput">display:flex; justify-content:center; align-items:center; gap:16px; padding:24px; background-color:#009D77; color:white; font-size:18px; font-weight:700; border-radius:16px; width:80%; height:48px;</textarea>
+          <div class="actions">
+            <button class="btn btn-primary" id="convertBtn">转换</button>
+            <button class="btn" id="clearBtn">清空</button>
+            <button class="btn" id="exampleBtn">示例</button>
+          </div>
+        </div>
+        <div class="col">
+          <div class="section-title">输出 UnoCSS</div>
+          <div id="classOutput" class="output mono"></div>
+          <div class="actions">
+            <button class="btn" id="copyBtn">复制类名</button>
+          </div>
+          <div class="section-title">已识别</div>
+          <div id="chipOk" class="chips"></div>
+          <div class="section-title">未映射</div>
+          <div id="chipUnknown" class="chips"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite">复制成功</div>
+  <script>
+    const cssInput = document.getElementById('cssInput')
+    const convertBtn = document.getElementById('convertBtn')
+    const clearBtn = document.getElementById('clearBtn')
+    const exampleBtn = document.getElementById('exampleBtn')
+    const copyBtn = document.getElementById('copyBtn')
+    const classOutput = document.getElementById('classOutput')
+    const chipOk = document.getElementById('chipOk')
+    const chipUnknown = document.getElementById('chipUnknown')
+    const toast = document.getElementById('toast')
+
+    const namedColors = {
+      white:'#ffffff', black:'#000000', red:'#ff0000', green:'#00ff00', blue:'#0000ff',
+      gray:'#808080', silver:'#c0c0c0', yellow:'#ffff00', purple:'#800080', pink:'#ffc0cb',
+      orange:'#ffa500', brown:'#a52a2a'
+    }
+
+    const mapValue = {
+      display: v => ({flex:'flex', grid:'grid', block:'block', inline:'inline', 'inline-block':'inline-block', none:'hidden'}[v] || `display-[${v}]`),
+      position: v => ({absolute:'absolute', relative:'relative', fixed:'fixed', sticky:'sticky'}[v] || `position-[${v}]`),
+      'flex-direction': v => ({row:'flex-row', column:'flex-col'}[v] || `flex-[${v}]`),
+      'justify-content': v => ({center:'justify-center','space-between':'justify-between','space-around':'justify-around','flex-start':'justify-start','flex-end':'justify-end'}[v] || `justify-[${v}]`),
+      'align-items': v => ({center:'items-center','flex-start':'items-start','flex-end':'items-end',baseline:'items-baseline',stretch:'items-stretch'}[v] || `items-[${v}]`),
+      'text-align': v => ({left:'text-left', right:'text-right', center:'text-center', justify:'text-justify'}[v] || `text-[${v}]`),
+      'font-weight': v => ({'100':'font-thin','200':'font-extralight','300':'font-light','400':'font-normal','500':'font-medium','600':'font-semibold','700':'font-bold','800':'font-extrabold','900':'font-black'}[v] || `font-[${v}]`),
+      'font-size': v => `text-[${v}]`,
+      color: v => `text-[${normalizeColor(v)}]`,
+      'background': v => `bg-[${normalizeColor(v)}]`,
+      'background-color': v => `bg-[${normalizeColor(v)}]`,
+      opacity: v => `opacity-[${v}]`,
+      'z-index': v => `z-[${v}]`,
+      'line-height': v => `leading-[${v}]`,
+      'letter-spacing': v => `tracking-[${v}]`,
+      overflow: v => ({hidden:'overflow-hidden', auto:'overflow-auto', scroll:'overflow-scroll'}[v] || `overflow-[${v}]`),
+      gap: v => `gap-[${v}]`,
+      'row-gap': v => `gap-y-[${v}]`,
+      'column-gap': v => `gap-x-[${v}]`,
+      margin: v => `m-[${v}]`,
+      'margin-top': v => `mt-[${v}]`,
+      'margin-right': v => `mr-[${v}]`,
+      'margin-bottom': v => `mb-[${v}]`,
+      'margin-left': v => `ml-[${v}]`,
+      padding: v => `p-[${v}]`,
+      'padding-top': v => `pt-[${v}]`,
+      'padding-right': v => `pr-[${v}]`,
+      'padding-bottom': v => `pb-[${v}]`,
+      'padding-left': v => `pl-[${v}]`,
+      width: v => ({'100%':'w-full'}[v] || `w-[${v}]`),
+      height: v => ({'100%':'h-full'}[v] || `h-[${v}]`),
+      'min-width': v => `min-w-[${v}]`,
+      'min-height': v => `min-h-[${v}]`,
+      'max-width': v => `max-w-[${v}]`,
+      'max-height': v => `max-h-[${v}]`,
+      top: v => `top-[${v}]`,
+      right: v => `right-[${v}]`,
+      bottom: v => `bottom-[${v}]`,
+      left: v => `left-[${v}]`,
+      'border-radius': v => ({'50%':'rounded-full'}[v] || `rounded-[${v}]`),
+      border: v => {
+        const parts = v.split(/\s+/)
+        const size = parts.find(x=>/px|rem|em/.test(x))
+        const style = parts.find(x=>/(solid|dashed|dotted|double)/.test(x))
+        const color = parts.find(x=>/^#|rgb\(|hsl\(|var\(/.test(x))
+        const classes = ['border']
+        if(style) classes.push(`border-${style}`)
+        if(size) classes.push(`border-[${size}]`)
+        if(color) classes.push(`border-[${normalizeColor(color)}]`)
+        return classes.join(' ')
+      },
+      'border-color': v => `border-[${normalizeColor(v)}]`,
+      'border-width': v => `border-[${v}]`,
+      'box-shadow': v => `shadow-[${v}]`
+    }
+
+    function normalizeColor(v){
+      const x = v.trim().toLowerCase()
+      if(namedColors[x]) return namedColors[x]
+      return x
+    }
+
+    function parseDeclarations(input){
+      return input
+        .replace(/\n/g,' ')
+        .split(';')
+        .map(s=>s.trim())
+        .filter(Boolean)
+        .map(s=>{
+          const idx = s.indexOf(':')
+          if(idx<0) return null
+          const prop = s.slice(0,idx).trim().toLowerCase()
+          const val = s.slice(idx+1).trim()
+          return {prop,val}
+        })
+        .filter(Boolean)
+    }
+
+    function convert(css){
+      const decls = parseDeclarations(css)
+      const classes = new Set()
+      const ok = []
+      const unknown = []
+      for(const {prop,val} of decls){
+        const mapper = mapValue[prop]
+        if(mapper){
+          const cls = mapper(val)
+          if(cls){
+            cls.split(/\s+/).forEach(c=>classes.add(c))
+            ok.push(`${prop}: ${val}`)
+          } else {
+            unknown.push(`${prop}: ${val}`)
+          }
+        } else {
+          unknown.push(`${prop}: ${val}`)
+        }
+      }
+      return {classes: Array.from(classes).join(' '), ok, unknown}
+    }
+
+    function renderChips(list, root){
+      root.innerHTML = ''
+      list.forEach(text=>{
+        const el = document.createElement('span')
+        el.className = 'chip'
+        el.textContent = text
+        root.appendChild(el)
+      })
+    }
+
+    function doConvert(){
+      const {classes, ok, unknown} = convert(cssInput.value)
+      classOutput.textContent = classes
+      renderChips(ok, chipOk)
+      renderChips(unknown, chipUnknown)
+    }
+
+    function showToast(text){
+      if(!toast) return
+      toast.textContent = text
+      toast.classList.add('show')
+      setTimeout(()=>toast.classList.remove('show'), 1500)
+    }
+
+    convertBtn.addEventListener('click', doConvert)
+    clearBtn.addEventListener('click', () => {
+      cssInput.value = ''
+      classOutput.textContent = ''
+      chipOk.innerHTML = ''
+      chipUnknown.innerHTML = ''
+    })
+    exampleBtn.addEventListener('click', () => {
+      cssInput.value = 'display:flex; justify-content:space-between; align-items:center; flex-direction:row; gap:24px; padding:16px; margin-top:10px; width:100%; height:48px; background:#0AA17F; color:#fff; font-size:20px; font-weight:600; border:1px solid #F0F0F0; border-radius:24px; position:relative; z-index:10;'
+      doConvert()
+    })
+    copyBtn.addEventListener('click', async () => {
+      const text = classOutput.textContent || ''
+      try{
+        await navigator.clipboard.writeText(text)
+        showToast('复制成功')
+      }catch(e){
+        showToast('复制失败')
+      }
+    })
+
+    doConvert()
+  </script>
+</body>
+</html>

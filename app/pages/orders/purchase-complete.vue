@@ -43,7 +43,7 @@
 
 <script setup lang="ts">
 import CTAButton from '@/components/CTAButton.vue'
-const { t } = useI18n()
+// const { t } = useI18n()
 // definePageMeta({
 //   title: () => t('pages.orders.purchaseComplete.title') as string
 // })
@@ -65,4 +65,3 @@ const downloadGuidebook = () => {
 
 <style scoped>
 </style>
-
