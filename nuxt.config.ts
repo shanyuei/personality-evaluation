@@ -39,7 +39,6 @@ export default defineNuxtConfig({
       { code: 'zh', language: 'zh-CN', name: '中文', file: 'zh.json' },
       { code: 'ja', language: 'ja-JP', name: '日本語', file: 'ja.json' },
     ],
-    langDir: 'i18n/modules',
     defaultLocale: 'en',
     strategy: 'no_prefix',
     detectBrowserLanguage: {
