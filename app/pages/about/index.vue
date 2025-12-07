@@ -17,39 +17,39 @@
             <NuxtImg src="/images/about/1.png" alt="About hero" width="486" height="428" />
           </div>
         </div>
-      </div>
-    </section>
 
-    <section class="py-12 md:py-14">
-      <div class="max-w-[65%] mx-auto px-6 sm:px-10">
-        <p class="font-normal text-[24px] text-[#011813] leading-[34px] text-center w-80% mx-auto">
-          {{ $t('pages.about.content.desc') }}
-        </p>
-        <div class="mt-8 md:mt-10 bg-[#edfbff] rounded-[16px] px-6 md:px-10 py-8 md:py-10">
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 items-center text-center">
-            <div>
-              <div class="font-semibold text-[48px] text-[#011813] leading-[58px]">{{
-                $t('pages.about.stats.projects.value') }}</div>
-              <div class="mt-2 font-normal text-[18px] text-[#4e5255] leading-[27px]">{{
-                $t('pages.about.stats.projects.label') }}</div>
-            </div>
-            <div>
-              <div class="font-semibold text-[48px] text-[#011813] leading-[58px]">{{
-                $t('pages.about.stats.team.value') }}</div>
-              <div class="mt-2 font-normal text-[18px] text-[#4e5255] leading-[27px]">{{
-                $t('pages.about.stats.team.label') }}</div>
-            </div>
-            <div>
-              <div class="font-semibold text-[48px] text-[#011813] leading-[58px]">{{
-                $t('pages.about.stats.reviews.value') }}</div>
-              <div class="mt-2 font-normal text-[18px] text-[#4e5255] leading-[27px]">{{
-                $t('pages.about.stats.reviews.label') }}</div>
-            </div>
-            <div>
-              <div class="font-semibold text-[48px] text-[#011813] leading-[58px]">{{
-                $t('pages.about.stats.awards.value') }}</div>
-              <div class="mt-2 font-normal text-[18px] text-[#4e5255] leading-[27px]">{{
-                $t('pages.about.stats.awards.label') }}</div>
+        <div class="mt-12 md:mt-120px">
+          <div class="max-w-[74%] mx-auto">
+            <p class="font-normal text-[24px] text-[#011813] leading-[34px] text-center w-80% mx-auto">
+              {{ $t('pages.about.content.desc') }}
+            </p>
+            <div class="mt-8 md:mt-10 bg-[#edfbff] rounded-[16px] px-6 md:px-10 py-8 md:py-10">
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 items-center text-center">
+                <div>
+                  <div class="font-semibold text-[48px] text-[#011813] leading-[58px]">{{
+                    $t('pages.about.stats.projects.value') }}</div>
+                  <div class="mt-2 font-normal text-[18px] text-[#4e5255] leading-[27px]">{{
+                    $t('pages.about.stats.projects.label') }}</div>
+                </div>
+                <div>
+                  <div class="font-semibold text-[48px] text-[#011813] leading-[58px]">{{
+                    $t('pages.about.stats.team.value') }}</div>
+                  <div class="mt-2 font-normal text-[18px] text-[#4e5255] leading-[27px]">{{
+                    $t('pages.about.stats.team.label') }}</div>
+                </div>
+                <div>
+                  <div class="font-semibold text-[48px] text-[#011813] leading-[58px]">{{
+                    $t('pages.about.stats.reviews.value') }}</div>
+                  <div class="mt-2 font-normal text-[18px] text-[#4e5255] leading-[27px]">{{
+                    $t('pages.about.stats.reviews.label') }}</div>
+                </div>
+                <div>
+                  <div class="font-semibold text-[48px] text-[#011813] leading-[58px]">{{
+                    $t('pages.about.stats.awards.value') }}</div>
+                  <div class="mt-2 font-normal text-[18px] text-[#4e5255] leading-[27px]">{{
+                    $t('pages.about.stats.awards.label') }}</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -58,16 +58,18 @@
 
 
 
-    <section class="py-12 md:py-20">
+    <section class="py-12 md:py-20 bg-#f8f8f8">
       <div class="max-w-[80%] mx-auto px-6 sm:px-10">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <div>
-            <NuxtImg src="/images/about/3.png" alt="Mission" width="564px" height="440px" />
+        <div class="flex flex-col md:flex-row gap-10 items-center">
+          <div class="min-w-[564px]">
+            <NuxtImg src="/images/about/2.png" alt="Mission" width="564px" height="440px" />
           </div>
           <div>
-            <span
-              class="inline-flex items-center px-3 h-[32px] rounded-full bg-[var(--color-green-3)] text-[var(--color-green-1)] font-medium">{{
-                $t('pages.about.sections.mission.badge') }}</span>
+            <div class="flex justify-center items-center">
+              <span
+                class="px-16px py-8px bg-[#dfffea] rounded-8px font-medium text-[16px] text-[#011813] leading-[24px]">{{
+                  $t('pages.about.sections.mission.badge') }}</span>
+            </div>
             <h2 class="mt-4 text-3xl md:text-4xl font-['Outfit'] font-extrabold text-[var(--ui-foreground)]">{{
               $t('pages.about.sections.mission.title') }}</h2>
             <p class="mt-4 text-[var(--ui-muted-foreground)]">{{ $t('pages.about.sections.mission.desc') }}</p>
@@ -91,16 +93,14 @@
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <section class="py-6 md:py-10">
-      <div class="max-w-[80%] mx-auto px-6 sm:px-10">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div class="mt-10 flex flex-col md:flex-row gap-10 items-center">
           <div>
-            <span
-              class="inline-flex items-center px-3 h-[32px] rounded-full bg-[var(--color-pink-3)] text-[var(--color-pink-1)] font-medium">{{
-                $t('pages.about.sections.vision.badge') }}</span>
+            <div class="flex justify-center items-center">
+              <span
+                class="px-16px py-8px bg-[#ffd3e1] rounded-8px font-medium text-[16px] text-[#011813] leading-[24px] mx-auto">{{
+                  $t('pages.about.sections.vision.badge') }}</span>
+            </div>
             <h2 class="mt-4 text-3xl md:text-4xl font-['Outfit'] font-extrabold text-[var(--ui-foreground)]">{{
               $t('pages.about.sections.vision.title') }}</h2>
             <p class="mt-4 text-[var(--ui-muted-foreground)]">{{ $t('pages.about.sections.vision.desc') }}</p>
@@ -123,8 +123,8 @@
               </div>
             </div>
           </div>
-          <div>
-            <NuxtImg src="/images/about/4.png" alt="Vision" width="616px" height="560px" />
+          <div class="min-w-[564px]">
+            <NuxtImg src="/images/about/3.png" alt="Vision" width="564px" height="440px" />
           </div>
         </div>
       </div>
@@ -132,7 +132,7 @@
 
     <section class="py-12 md:py-20">
       <div class="max-w-[80%] mx-auto px-6 sm:px-10">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+        <div class="flex flex-col md:flex-row gap-10 items-start">
           <div>
             <h2 class="text-3xl md:text-5xl font-['Outfit'] font-extrabold text-[var(--ui-foreground)]">{{
               $t('pages.about.standout.title') }}</h2>
@@ -170,10 +170,9 @@
               </div>
             </div>
           </div>
-          <div>
-            <div class="rounded-[24px] overflow-hidden bg-[var(--color-purple-4)]">
-              <NuxtImg src="/images/about/2.png" alt="Stands Out" width="564px" height="440px" />
-            </div>
+
+          <div class="min-w-[616px]">
+            <NuxtImg src="/images/about/4.png" alt="Vision" width="616px" height="560px" />
           </div>
         </div>
       </div>

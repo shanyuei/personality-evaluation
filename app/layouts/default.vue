@@ -10,7 +10,7 @@
     <!-- 头部 -->
     <app-header />
     <!-- 主要内容区域 -->
-    <main class="flex-1 mx-auto py-8 z-10 w-full">
+    <main class="flex-1 mx-auto z-10 w-full">
       <slot>
         <NuxtPage />
       </slot>
