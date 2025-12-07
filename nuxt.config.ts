@@ -53,6 +53,9 @@ export default defineNuxtConfig({
     },
     baseUrl: 'https://example.com',
   },
+  unocss: {
+    nuxtLayers: true
+  },
   imports: {
     presets: [
       { from: 'vue-i18n', imports: ['useI18n'] }
