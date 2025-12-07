@@ -266,6 +266,25 @@
           "list4": "Leading the Future of Building Solutions"
         }
       }
+      ,
+      "standout": {
+        "title": "Why Our Test Stands Out: Precision, Depth, and Clarity",
+        "desc": "Our team combines innovation, expertise, and a client‑centered approach, delivering projects with outstanding quality, meticulous attention to detail, and a focus on meaningful growth.",
+        "items": {
+          "precision": {
+            "title": "Precision",
+            "desc": "Learn from experienced professionals in fields like marketing, design, development, finance, and more."
+          },
+          "deep": {
+            "title": "Deep Insights",
+            "desc": "Tailor your journey with courses that align with your unique goals and pace."
+          },
+          "expert": {
+            "title": "Expert Guidance",
+            "desc": "Engage with multimedia content, quizzes, and assignments designed to make learning dynamic and enjoyable."
+          }
+        }
+      }
     },
     "courses": {
       "title": "Courses",
