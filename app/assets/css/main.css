@@ -6,7 +6,6 @@
     font-family: 'Outfit', sans-serif;
     /* 鼠标 指针 */
     cursor: default;
-    padding: 0;
 }
 
 /* 配色定义 - 与Nuxt UI主题兼容 */
