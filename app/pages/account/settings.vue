@@ -1,62 +1,71 @@
 <template>
-  <main class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-12 px-6 md:px-10">
+  <main class=" py-12 px-6 md:px-10">
     <div class="max-w-[720px] mx-auto">
-      <h1 class="text-3xl md:text-4xl font-['Outfit'] font-bold text-center text-gray-900 mb-8">{{ $t('pages.account.settings.title') }}</h1>
+         <UInput v-model="name" />
+      <h1 class="text-3xl md:text-4xl font-['Outfit'] font-bold text-center text-gray-900 mb-8">{{
+        $t('pages.account.settings.title') }}</h1>
 
       <div class="bg-white rounded-[24px] shadow-sm border p-6 md:p-8 space-y-10">
         <!-- Profile details -->
         <section>
-          <h2 class="text-xl font-['Outfit'] font-semibold text-gray-900 mb-4">{{ $t('pages.account.settings.profile.title') }}</h2>
+          <h2 class="text-xl font-['Outfit'] font-semibold text-gray-900 mb-4">{{
+            $t('pages.account.settings.profile.title') }}</h2>
+
+       
           <div class="space-y-4">
-            <input
-              v-model="name"
-              type="text"
-              :placeholder="$t('pages.account.settings.profile.namePlaceholder')"
-              class="w-full h-[48px] rounded-[16px] border bg-[var(--ui-input)] px-4 font-['Outfit']"
-            />
-            <input
-              v-model="email"
-              type="email"
-              :placeholder="$t('pages.account.settings.profile.emailPlaceholder')"
-              class="w-full h-[48px] rounded-[16px] border bg-[var(--ui-input)] px-4 font-['Outfit']"
-            />
-            <CTAButton
-              :text="$t('pages.account.settings.profile.submit')"
-              rounded="pill"
-              size="md"
-              class="w-full"
-              @click="onSaveProfile"
-            />
+            <div>
+              <UInput v-model="name" type="text" :placeholder="$t('pages.account.settings.profile.namePlaceholder')" />
+            </div>
+            <div>
+              <UInput v-model="email" type="email"
+                :placeholder="$t('pages.account.settings.profile.emailPlaceholder')" />
+            </div>
+            <div>
+              <button
+                class="w-full h-[48px] rounded-[16px] bg-[var(--ui-primary)] text-white hover:bg-[var(--color-green-2)] font-['Outfit']"
+                @click="onSaveProfile">{{ $t('pages.account.settings.profile.submit') }}</button>
+            </div>
             <p v-if="profileMessage" class="text-sm text-green-700 mt-2">{{ profileMessage }}</p>
           </div>
         </section>
 
         <!-- Change password -->
         <section>
-          <h2 class="text-xl font-['Outfit'] font-semibold text-gray-900 mb-4">{{ $t('pages.account.settings.password.title') }}</h2>
+          <h2 class="text-xl font-['Outfit'] font-semibold text-gray-900 mb-4">{{
+            $t('pages.account.settings.password.title') }}</h2>
           <div class="space-y-4">
-            <input v-model="currentPassword" type="password" :placeholder="$t('pages.account.settings.password.current')" class="w-full h-[48px] rounded-[16px] border bg-[var(--ui-input)] px-4 font-['Outfit']" />
-            <input v-model="newPassword" type="password" :placeholder="$t('pages.account.settings.password.new')" class="w-full h-[48px] rounded-[16px] border bg-[var(--ui-input)] px-4 font-['Outfit']" />
-            <input v-model="repeatNewPassword" type="password" :placeholder="$t('pages.account.settings.password.repeat')" class="w-full h-[48px] rounded-[16px] border bg-[var(--ui-input)] px-4 font-['Outfit']" />
-            <CTAButton :text="$t('pages.account.settings.password.submit')" rounded="pill" size="md" class="w-full" @click="onChangePassword" />
-            <p v-if="passwordMessage" class="text-sm" :class="passwordSuccess ? 'text-green-700' : 'text-red-600'">{{ passwordMessage }}</p>
+            <UInput v-model="currentPassword" type="password"
+              :placeholder="$t('pages.account.settings.password.current')" />
+            <UInput v-model="newPassword" type="password" :placeholder="$t('pages.account.settings.password.new')" />
+            <UInput v-model="repeatNewPassword" type="password"
+              :placeholder="$t('pages.account.settings.password.repeat')" />
+            <button
+              class="w-full h-[48px] rounded-[16px] bg-[var(--ui-primary)] text-white hover:bg-[var(--color-green-2)] font-['Outfit']"
+              @click="onChangePassword">{{ $t('pages.account.settings.password.submit') }}</button>
+            <p v-if="passwordMessage" class="text-sm" :class="passwordSuccess ? 'text-green-700' : 'text-red-600'">{{
+              passwordMessage }}</p>
           </div>
         </section>
 
         <!-- Change language -->
         <section>
-          <h2 class="text-xl font-['Outfit'] font-semibold text-gray-900 mb-4">{{ $t('pages.account.settings.language.title') }}</h2>
-          <I18nSelect />
+          <h2 class="text-xl font-['Outfit'] font-semibold text-gray-900 mb-4">{{
+            $t('pages.account.settings.language.title') }}</h2>
+          <USelect v-model="language" :items="languageOptions" value-attribute="value" option-attribute="label" />
           <div class="mt-4">
-            <CTAButton :text="$t('pages.account.settings.language.submit')" rounded="pill" size="md" class="w-full" @click="onLanguageSaved" />
+            <button
+              class="w-full h-[48px] rounded-[16px] bg-[var(--ui-primary)] text-white hover:bg-[var(--color-green-2)] font-['Outfit']"
+              @click="onLanguageSaved">{{ $t('pages.account.settings.language.submit') }}</button>
             <p v-if="languageMessage" class="text-sm text-green-700 mt-2">{{ languageMessage }}</p>
           </div>
         </section>
 
         <!-- Delete account -->
         <section>
-          <h2 class="text-xl font-['Outfit'] font-semibold text-gray-900 mb-4">{{ $t('pages.account.settings.delete.title') }}</h2>
-          <button class="text-[var(--color-pink-1)] hover:underline font-['Outfit']" @click="onDeleteAccount">{{ $t('pages.account.settings.delete.action') }}</button>
+          <h2 class="text-xl font-['Outfit'] font-semibold text-gray-900 mb-4">{{
+            $t('pages.account.settings.delete.title') }}</h2>
+          <button class="text-[var(--color-pink-1)] hover:underline font-['Outfit']" @click="onDeleteAccount">{{
+            $t('pages.account.settings.delete.action') }}</button>
           <p v-if="deleteMessage" class="text-sm text-green-700 mt-2">{{ deleteMessage }}</p>
         </section>
       </div>
@@ -65,9 +74,8 @@
 </template>
 
 <script setup lang="ts">
-import CTAButton from '@/components/CTAButton.vue'
-import I18nSelect from '@/components/I18nSelect.vue'
 import { useUserStore } from '@/stores/modules/user'
+import { useLanguageStore } from '@/stores/modules/language'
 
 const { t } = useI18n()
 // definePageMeta({ title: () => t('pages.account.settings.title') as string })
@@ -91,6 +99,8 @@ const passwordSuccess = ref(false)
 
 const languageMessage = ref('')
 const deleteMessage = ref('')
+const languageStore = useLanguageStore()
+const { languageOptions, language } = storeToRefs(languageStore)
 
 const onSaveProfile = async () => {
   const ok = await userStore.updateProfile({ name: name.value, email: email.value })
@@ -112,6 +122,7 @@ const onChangePassword = async () => {
 }
 
 const onLanguageSaved = () => {
+  languageStore.changeLanguage(language.value as any)
   languageMessage.value = t('pages.account.settings.language.success') as string
 }
 
@@ -121,6 +132,4 @@ const onDeleteAccount = async () => {
 }
 </script>
 
-<style scoped>
-</style>
-
+<style scoped></style>

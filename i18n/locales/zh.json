@@ -189,6 +189,42 @@
     "siteDescription": "通过专家课程与工具，解锁知识与成长。"
   }
   ,
+  "pages": {
+    "account": {
+      "settings": {
+        "title": "设置",
+        "description": "编辑个人信息、修改密码、切换语言或删除账户。",
+        "profile": {
+          "title": "个人资料",
+          "namePlaceholder": "姓名",
+          "emailPlaceholder": "邮箱地址",
+          "submit": "开始",
+          "success": "资料已更新",
+          "fail": "更新失败，请稍后重试"
+        },
+        "password": {
+          "title": "修改密码",
+          "current": "当前密码",
+          "new": "新密码",
+          "repeat": "重复新密码",
+          "submit": "开始",
+          "mismatch": "两次输入的密码不一致",
+          "success": "密码已更新"
+        },
+        "language": {
+          "title": "切换语言",
+          "submit": "开始",
+          "success": "语言设置已保存"
+        },
+        "delete": {
+          "title": "删除账户",
+          "action": "删除账户",
+          "success": "你的删除请求已提交"
+        }
+      }
+    }
+  }
+  ,
   "routeGuide": {
     "title": "路由引导页面",
     "intro": "下面是系统中所有可用的路由页面，点击即可导航到相应页面",

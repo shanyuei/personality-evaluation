@@ -214,6 +214,39 @@
   }
   ,
   "pages": {
+    "account": {
+      "settings": {
+        "title": "Settings",
+        "description": "Edit your profile, change password, switch language, or delete your account.",
+        "profile": {
+          "title": "Profile details",
+          "namePlaceholder": "First and last name",
+          "emailPlaceholder": "Email address",
+          "submit": "Get Started",
+          "success": "Profile updated",
+          "fail": "Update failed. Please try again later."
+        },
+        "password": {
+          "title": "Change password",
+          "current": "Current password",
+          "new": "New password",
+          "repeat": "Repeat new password",
+          "submit": "Get Started",
+          "mismatch": "Passwords do not match",
+          "success": "Password updated"
+        },
+        "language": {
+          "title": "Change Language",
+          "submit": "Get Started",
+          "success": "Language preference saved"
+        },
+        "delete": {
+          "title": "Delete Account",
+          "action": "Delete Account",
+          "success": "Your deletion request has been submitted"
+        }
+      }
+    },
     "about": {
       "title": "About Us",
       "description": "Learn about our mission and team.",

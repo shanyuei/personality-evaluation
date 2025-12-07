@@ -19,6 +19,39 @@
     "back": "ホームへ戻る"
   },
   "pages": {
+    "account": {
+      "settings": {
+        "title": "設定",
+        "description": "プロフィール編集、パスワード変更、言語切替、アカウント削除ができます。",
+        "profile": {
+          "title": "プロフィール",
+          "namePlaceholder": "氏名",
+          "emailPlaceholder": "メールアドレス",
+          "submit": "開始",
+          "success": "プロフィールを更新しました",
+          "fail": "更新に失敗しました。しばらくしてから再試行してください。"
+        },
+        "password": {
+          "title": "パスワード変更",
+          "current": "現在のパスワード",
+          "new": "新しいパスワード",
+          "repeat": "新しいパスワードを再入力",
+          "submit": "開始",
+          "mismatch": "パスワードが一致しません",
+          "success": "パスワードを更新しました"
+        },
+        "language": {
+          "title": "言語の変更",
+          "submit": "開始",
+          "success": "言語設定を保存しました"
+        },
+        "delete": {
+          "title": "アカウント削除",
+          "action": "アカウントを削除",
+          "success": "削除リクエストを送信しました"
+        }
+      }
+    },
     "about": {
       "title": "私たちについて",
       "description": "私たちの使命とチームについて。",

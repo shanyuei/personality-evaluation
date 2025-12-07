@@ -4,27 +4,28 @@
     <section class="relative py-22 sm:py-32 ">
       <NuxtImg src="/images/about/icon-1.png" alt="decor"
         class="absolute left-1/2 -translate-x-1/2 top-4 w-47px h-36px" />
-      <div class="max-w-[80%] mx-auto px-6 sm:px-10">
+      <div class="max-w-full  md:max-w-[80%] mx-auto px-6 sm:px-10">
         <div class="flex flex-col md:flex-row items-center md:justify-between gap-72px ">
           <div class="text-center md:text-left md:w-1/2">
-            <h1 class="font-semibold text-[72px] text-[#011813] leading-[86px] text-left">
+            <h1 class="font-semibold text-4xl md:text-6xl text-[#011813] md:leading-[86px] text-left">
               {{ $t('pages.about.hero.title') }}</h1>
-            <p class="font-normal text-[18px] text-[#4e5255] leading-[27px] text-left m-t-16px">{{
+            <p class="font-normal text-[16px] md:text-[18px] text-[#4e5255] md:leading-[27px] text-left m-t-16px">{{
               $t('pages.about.hero.desc') }}
             </p>
           </div>
-          <div class="relative w-486px ">
-            <NuxtImg src="/images/about/1.png" alt="About hero" width="486" height="428" />
+          <div class="relative w-[320px] sm:w-[342px] md:w-[486px] mx-auto md:mx-0">
+            <NuxtImg src="/images/about/1.png" alt="About hero" width="486" height="428"
+              sizes="(min-width:768px) 486px, 320px" class="w-full h-auto" />
           </div>
         </div>
 
         <div class="mt-12 md:mt-120px">
-          <div class="max-w-[74%] mx-auto">
-            <p class="font-normal text-[24px] text-[#011813] leading-[34px] text-center w-80% mx-auto">
+          <div class="md:max-w-[74%] mx-auto">
+            <p class="font-normal text-[18px] md:text-[24px] text-[#011813] md:leading-[34px] text-center md:w-80% mx-auto">
               {{ $t('pages.about.content.desc') }}
             </p>
             <div class="mt-8 md:mt-10 bg-[#edfbff] rounded-[16px] px-6 md:px-10 py-8 md:py-10">
-              <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 items-center text-center">
+              <div class="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8 items-center text-center">
                 <div>
                   <div class="font-semibold text-[48px] text-[#011813] leading-[58px]">{{
                     $t('pages.about.stats.projects.value') }}</div>
@@ -59,10 +60,11 @@
 
 
     <section class="py-12 md:py-20 bg-#f8f8f8">
-      <div class="max-w-[80%] mx-auto px-6 sm:px-10">
+      <div class="max-w-full md:max-w-[80%] mx-auto px-6 sm:px-10">
         <div class="flex flex-col md:flex-row gap-10 items-center">
-          <div class="min-w-[564px]">
-            <NuxtImg src="/images/about/2.png" alt="Mission" width="564px" height="440px" />
+          <div class="md:w-1/2">
+            <NuxtImg src="/images/about/2.png" alt="Mission" width="564px" height="440px"
+              sizes="(min-width:768px) 564px, 342px" class="w-full h-auto" />
           </div>
           <div>
             <div class="flex justify-center items-center">
@@ -123,15 +125,16 @@
               </div>
             </div>
           </div>
-          <div class="min-w-[564px]">
-            <NuxtImg src="/images/about/3.png" alt="Vision" width="564px" height="440px" />
+          <div class="md:w-1/2">
+            <NuxtImg src="/images/about/3.png" alt="Vision" width="564px" height="440px"
+              sizes="(min-width:768px) 564px, 342px" class="w-full h-auto" />
           </div>
         </div>
       </div>
     </section>
 
     <section class="py-12 md:py-20">
-      <div class="max-w-[80%] mx-auto px-6 sm:px-10">
+      <div class="max-w-full md:max-w-[80%] mx-auto px-6 sm:px-10">
         <div class="flex flex-col md:flex-row gap-10 items-start">
           <div>
             <h2 class="text-3xl md:text-5xl font-['Outfit'] font-extrabold text-[var(--ui-foreground)]">{{
@@ -171,8 +174,9 @@
             </div>
           </div>
 
-          <div class="min-w-[616px]">
-            <NuxtImg src="/images/about/4.png" alt="Vision" width="616px" height="560px" />
+          <div class="w-[320px] sm:w-[342px] md:w-[616px] mx-auto md:mx-0">
+            <NuxtImg src="/images/about/4.png" alt="Vision" width="616px" height="560px"
+              sizes="(min-width:768px) 616px, 320px" class="w-full h-auto" />
           </div>
         </div>
       </div>

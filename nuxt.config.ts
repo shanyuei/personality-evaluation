@@ -15,14 +15,16 @@ export default defineNuxtConfig({
   },
 
   modules: [
+    '@nuxt/ui',
+    '@unocss/nuxt',
     'pinia-plugin-persistedstate/nuxt',
     '@pinia/nuxt',
-    '@nuxt/ui',
     '@nuxtjs/i18n', // Vue 3兼容版本
-    '@unocss/nuxt',
     '@nuxt/image',
     '@nuxt/eslint',
+    "@nuxt/devtools"
   ],
+  css: ['~/assets/css/main.css'],
   pinia: {
 
   },
@@ -57,7 +59,7 @@ export default defineNuxtConfig({
     ]
   },
   // Additional configuration to disable font loading
-  css: ['~/assets/css/main.css'],
+
   build: {
     transpile: [],
   },
