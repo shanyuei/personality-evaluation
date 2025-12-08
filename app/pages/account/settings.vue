@@ -1,18 +1,18 @@
 <template>
-  <main class=" py-12 px-6 md:px-10">
-    <div class="max-w-[720px] mx-auto">
+  <main class="uno-py-12 uno-px-6 md:uno-px-10">
+    <div class="uno-max-w-[720px] uno-mx-auto">
          <UInput v-model="name" />
-      <h1 class="text-3xl md:text-4xl font-['Outfit'] font-bold text-center text-gray-900 mb-8">{{
+      <h1 class="uno-text-3xl md:uno-text-4xl uno-font-['Outfit'] uno-font-bold uno-text-center uno-text-gray-900 uno-mb-8">{{
         $t('pages.account.settings.title') }}</h1>
 
-      <div class="bg-white rounded-[24px] shadow-sm border p-6 md:p-8 space-y-10">
+      <div class="uno-bg-white uno-rounded-[24px] uno-shadow-sm uno-border uno-p-6 md:uno-p-8 uno-space-y-10">
         <!-- Profile details -->
         <section>
-          <h2 class="text-xl font-['Outfit'] font-semibold text-gray-900 mb-4">{{
+          <h2 class="uno-text-xl uno-font-['Outfit'] uno-font-semibold uno-text-gray-900 uno-mb-4">{{
             $t('pages.account.settings.profile.title') }}</h2>
 
        
-          <div class="space-y-4">
+          <div class="uno-space-y-4">
             <div>
               <UInput v-model="name" type="text" :placeholder="$t('pages.account.settings.profile.namePlaceholder')" />
             </div>
@@ -22,51 +22,51 @@
             </div>
             <div>
               <button
-                class="w-full h-[48px] rounded-[16px] bg-[var(--ui-primary)] text-white hover:bg-[var(--color-green-2)] font-['Outfit']"
+                class="uno-w-full uno-h-[48px] uno-rounded-[16px] uno-bg-[var(--ui-primary)] uno-text-white hover:uno-bg-[var(--color-green-2)] uno-font-['Outfit']"
                 @click="onSaveProfile">{{ $t('pages.account.settings.profile.submit') }}</button>
             </div>
-            <p v-if="profileMessage" class="text-sm text-green-700 mt-2">{{ profileMessage }}</p>
+            <p v-if="profileMessage" class="uno-text-sm uno-text-green-700 uno-mt-2">{{ profileMessage }}</p>
           </div>
         </section>
 
         <!-- Change password -->
         <section>
-          <h2 class="text-xl font-['Outfit'] font-semibold text-gray-900 mb-4">{{
+          <h2 class="uno-text-xl uno-font-['Outfit'] uno-font-semibold uno-text-gray-900 uno-mb-4">{{
             $t('pages.account.settings.password.title') }}</h2>
-          <div class="space-y-4">
+          <div class="uno-space-y-4">
             <UInput v-model="currentPassword" type="password"
               :placeholder="$t('pages.account.settings.password.current')" />
             <UInput v-model="newPassword" type="password" :placeholder="$t('pages.account.settings.password.new')" />
             <UInput v-model="repeatNewPassword" type="password"
               :placeholder="$t('pages.account.settings.password.repeat')" />
             <button
-              class="w-full h-[48px] rounded-[16px] bg-[var(--ui-primary)] text-white hover:bg-[var(--color-green-2)] font-['Outfit']"
+              class="uno-w-full uno-h-[48px] uno-rounded-[16px] uno-bg-[var(--ui-primary)] uno-text-white hover:uno-bg-[var(--color-green-2)] uno-font-['Outfit']"
               @click="onChangePassword">{{ $t('pages.account.settings.password.submit') }}</button>
-            <p v-if="passwordMessage" class="text-sm" :class="passwordSuccess ? 'text-green-700' : 'text-red-600'">{{
+            <p v-if="passwordMessage" class="uno-text-sm" :class="uno-passwordSuccess ? 'text-green-700' : 'text-red-600'">{{
               passwordMessage }}</p>
           </div>
         </section>
 
         <!-- Change language -->
         <section>
-          <h2 class="text-xl font-['Outfit'] font-semibold text-gray-900 mb-4">{{
+          <h2 class="uno-text-xl uno-font-['Outfit'] uno-font-semibold uno-text-gray-900 uno-mb-4">{{
             $t('pages.account.settings.language.title') }}</h2>
           <USelect v-model="language" :items="languageOptions" value-attribute="value" option-attribute="label" />
-          <div class="mt-4">
+          <div class="uno-mt-4">
             <button
-              class="w-full h-[48px] rounded-[16px] bg-[var(--ui-primary)] text-white hover:bg-[var(--color-green-2)] font-['Outfit']"
+              class="uno-w-full uno-h-[48px] uno-rounded-[16px] uno-bg-[var(--ui-primary)] uno-text-white hover:uno-bg-[var(--color-green-2)] uno-font-['Outfit']"
               @click="onLanguageSaved">{{ $t('pages.account.settings.language.submit') }}</button>
-            <p v-if="languageMessage" class="text-sm text-green-700 mt-2">{{ languageMessage }}</p>
+            <p v-if="languageMessage" class="uno-text-sm uno-text-green-700 uno-mt-2">{{ languageMessage }}</p>
           </div>
         </section>
 
         <!-- Delete account -->
         <section>
-          <h2 class="text-xl font-['Outfit'] font-semibold text-gray-900 mb-4">{{
+          <h2 class="uno-text-xl uno-font-['Outfit'] uno-font-semibold uno-text-gray-900 uno-mb-4">{{
             $t('pages.account.settings.delete.title') }}</h2>
-          <button class="text-[var(--color-pink-1)] hover:underline font-['Outfit']" @click="onDeleteAccount">{{
+          <button class="uno-text-[var(--color-pink-1)] hover:uno-underline uno-font-['Outfit']" @click="onDeleteAccount">{{
             $t('pages.account.settings.delete.action') }}</button>
-          <p v-if="deleteMessage" class="text-sm text-green-700 mt-2">{{ deleteMessage }}</p>
+          <p v-if="deleteMessage" class="uno-text-sm uno-text-green-700 uno-mt-2">{{ deleteMessage }}</p>
         </section>
       </div>
     </div>

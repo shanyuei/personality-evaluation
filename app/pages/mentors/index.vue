@@ -1,30 +1,30 @@
 <template>
-  <main class="min-h-screen bg-white">
+  <main class="uno-min-h-screen uno-bg-white">
     <!-- Page Header -->
-    <section class="py-16 px-6 md:px-12 lg:px-24 bg-gray-50">
-      <div class="max-w-7xl mx-auto">
-        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Expert Mentors</h1>
-        <p class="text-lg text-gray-600 max-w-3xl">
+    <section class="uno-py-16 uno-px-6 md:uno-px-12 lg:uno-px-24 uno-bg-gray-50">
+      <div class="uno-max-w-7xl uno-mx-auto">
+        <h1 class="uno-text-3xl md:uno-text-4xl uno-font-bold uno-text-gray-900 uno-mb-4">Our Expert Mentors</h1>
+        <p class="uno-text-lg uno-text-gray-600 uno-max-w-3xl">
           Meet our team of experienced professionals who are passionate about guiding you on your learning journey.
         </p>
       </div>
     </section>
 
     <!-- Mentors Section -->
-    <section class="py-12 px-6 md:px-12 lg:px-24">
-      <div class="max-w-7xl mx-auto">
+    <section class="uno-py-12 uno-px-6 md:uno-px-12 lg:uno-px-24">
+      <div class="uno-max-w-7xl uno-mx-auto">
         <!-- Search and Filter -->
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-4">
+        <div class="uno-flex uno-flex-col md:uno-flex-row uno-justify-between uno-items-start md:uno-items-center uno-mb-12 uno-gap-4">
           <UInput 
             v-model="searchQuery" 
             placeholder="Search mentors..." 
-            class="w-full md:w-64"
+            class="uno-w-full md:uno-w-64"
             prefix="search"
           />
-          <div class="flex flex-wrap gap-2">
+          <div class="uno-flex uno-flex-wrap uno-gap-2">
             <UButton 
               variant="ghost" 
-              class="rounded-full" 
+              class="uno-rounded-full" 
               :pressed="activeExpertise === 'all'" 
               @click="activeExpertise = 'all'"
             >
@@ -32,7 +32,7 @@
             </UButton>
             <UButton 
               variant="ghost" 
-              class="rounded-full" 
+              class="uno-rounded-full" 
               :pressed="activeExpertise === 'programming'" 
               @click="activeExpertise = 'programming'"
             >
@@ -40,7 +40,7 @@
             </UButton>
             <UButton 
               variant="ghost" 
-              class="rounded-full" 
+              class="uno-rounded-full" 
               :pressed="activeExpertise === 'design'" 
               @click="activeExpertise = 'design'"
             >
@@ -48,7 +48,7 @@
             </UButton>
             <UButton 
               variant="ghost" 
-              class="rounded-full" 
+              class="uno-rounded-full" 
               :pressed="activeExpertise === 'business'" 
               @click="activeExpertise = 'business'"
             >
@@ -58,39 +58,39 @@
         </div>
 
         <!-- Mentors Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="uno-grid uno-grid-cols-1 sm:uno-grid-cols-2 lg:uno-grid-cols-3 uno-gap-8">
           <div 
             v-for="mentor in filteredMentors" 
             :key="mentor.id" 
-            class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+            class="uno-bg-white uno-rounded-lg uno-shadow-md uno-overflow-hidden hover:uno-shadow-lg uno-transition-all uno-duration-300 hover:uno--translate-y-1"
           >
-            <div class="p-6">
-              <div class="flex flex-col items-center text-center mb-6">
-                <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-md mb-4">
-                  <NuxtImg :src="mentor.avatar" :alt="mentor.name" class="w-full h-full object-cover" />
+            <div class="uno-p-6">
+              <div class="uno-flex uno-flex-col uno-items-center uno-text-center uno-mb-6">
+                <div class="uno-w-32 uno-h-32 uno-rounded-full uno-overflow-hidden uno-border-4 uno-border-white uno-shadow-md uno-mb-4">
+                  <NuxtImg :src="mentor.avatar" :alt="mentor.name" class="uno-w-full uno-h-full uno-object-cover" />
                 </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-1">{{ mentor.name }}</h3>
-                <p class="text-primary font-medium mb-2">{{ mentor.title }}</p>
-                <div class="flex items-center justify-center mb-4">
-                  <span class="text-amber-500 mr-1">★</span>
-                  <span class="text-sm font-medium">{{ mentor.rating }} ({{ mentor.students }} students)</span>
+                <h3 class="uno-text-xl uno-font-bold uno-text-gray-900 uno-mb-1">{{ mentor.name }}</h3>
+                <p class="uno-text-primary uno-font-medium uno-mb-2">{{ mentor.title }}</p>
+                <div class="uno-flex uno-items-center uno-justify-center uno-mb-4">
+                  <span class="uno-text-amber-500 uno-mr-1">★</span>
+                  <span class="uno-text-sm uno-font-medium">{{ mentor.rating }} ({{ mentor.students }} students)</span>
                 </div>
-                <div class="flex flex-wrap gap-2 justify-center mb-4">
+                <div class="uno-flex uno-flex-wrap uno-gap-2 uno-justify-center uno-mb-4">
                   <span 
                     v-for="skill in mentor.skills" 
                     :key="skill" 
-                    class="text-xs bg-gray-100 text-gray-800 px-3 py-1 rounded-full"
+                    class="uno-text-xs uno-bg-gray-100 uno-text-gray-800 uno-px-3 uno-py-1 uno-rounded-full"
                   >
                     {{ skill }}
                   </span>
                 </div>
               </div>
               
-              <p class="text-gray-600 text-sm mb-6 line-clamp-3">{{ mentor.bio }}</p>
+              <p class="uno-text-gray-600 uno-text-sm uno-mb-6 uno-line-clamp-3">{{ mentor.bio }}</p>
               
-              <div class="flex justify-between items-center">
-                <span class="text-sm text-gray-500">{{ mentor.courses }} courses</span>
-                <UButton class="bg-primary hover:bg-primary/90 text-white rounded-full">
+              <div class="uno-flex uno-justify-between uno-items-center">
+                <span class="uno-text-sm uno-text-gray-500">{{ mentor.courses }} courses</span>
+                <UButton class="uno-bg-primary hover:uno-bg-primary/90 uno-text-white uno-rounded-full">
                   View Profile
                 </UButton>
               </div>
@@ -99,9 +99,9 @@
         </div>
 
         <!-- No Mentors Found -->
-        <div v-if="filteredMentors.length === 0" class="text-center py-16">
-          <p class="text-gray-600 text-lg">No mentors found matching your criteria.</p>
-          <UButton class="mt-4 bg-primary hover:bg-primary/90 text-white rounded-full" @click="resetFilters">
+        <div v-if="filteredMentors.length === 0" class="uno-text-center uno-py-16">
+          <p class="uno-text-gray-600 uno-text-lg">No mentors found matching your criteria.</p>
+          <UButton class="uno-mt-4 uno-bg-primary hover:uno-bg-primary/90 uno-text-white uno-rounded-full" @click="resetFilters">
             Clear Filters
           </UButton>
         </div>
@@ -109,45 +109,45 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section class="py-16 px-6 md:px-12 lg:px-24 bg-gray-50">
-      <div class="max-w-7xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-12">Student Success Stories</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <div class="flex items-center mb-4">
-              <div class="text-amber-500 flex">
+    <section class="uno-py-16 uno-px-6 md:uno-px-12 lg:uno-px-24 uno-bg-gray-50">
+      <div class="uno-max-w-7xl uno-mx-auto">
+        <h2 class="uno-text-2xl md:uno-text-3xl uno-font-bold uno-text-center uno-text-gray-900 uno-mb-12">Student Success Stories</h2>
+        <div class="uno-grid uno-grid-cols-1 md:uno-grid-cols-2 uno-gap-8">
+          <div class="uno-bg-white uno-p-6 uno-rounded-lg uno-shadow-md">
+            <div class="uno-flex uno-items-center uno-mb-4">
+              <div class="uno-text-amber-500 uno-flex">
                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
               </div>
             </div>
-            <p class="text-gray-700 mb-4 italic">
+            <p class="uno-text-gray-700 uno-mb-4 uno-italic">
               "My mentor provided invaluable guidance throughout my learning journey. Their industry experience and personalized feedback helped me land my dream job."
             </p>
-            <div class="flex items-center">
-              <div class="w-10 h-10 rounded-full overflow-hidden mr-3">
-                <NuxtImg src="/images/students/alice.jpg" alt="Alice" class="w-full h-full object-cover" />
+            <div class="uno-flex uno-items-center">
+              <div class="uno-w-10 uno-h-10 uno-rounded-full uno-overflow-hidden uno-mr-3">
+                <NuxtImg src="/images/students/alice.jpg" alt="Alice" class="uno-w-full uno-h-full uno-object-cover" />
               </div>
               <div>
-                <p class="font-medium text-gray-900">Alice Thompson</p>
-                <p class="text-sm text-gray-600">Software Developer at TechCorp</p>
+                <p class="uno-font-medium uno-text-gray-900">Alice Thompson</p>
+                <p class="uno-text-sm uno-text-gray-600">Software Developer at TechCorp</p>
               </div>
             </div>
           </div>
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <div class="flex items-center mb-4">
-              <div class="text-amber-500 flex">
+          <div class="uno-bg-white uno-p-6 uno-rounded-lg uno-shadow-md">
+            <div class="uno-flex uno-items-center uno-mb-4">
+              <div class="uno-text-amber-500 uno-flex">
                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
               </div>
             </div>
-            <p class="text-gray-700 mb-4 italic">
+            <p class="uno-text-gray-700 uno-mb-4 uno-italic">
               "The mentorship program exceeded my expectations. My mentor was knowledgeable, supportive, and pushed me to achieve more than I thought possible."
             </p>
-            <div class="flex items-center">
-              <div class="w-10 h-10 rounded-full overflow-hidden mr-3">
-                <NuxtImg src="/images/students/bob.jpg" alt="Bob" class="w-full h-full object-cover" />
+            <div class="uno-flex uno-items-center">
+              <div class="uno-w-10 uno-h-10 uno-rounded-full uno-overflow-hidden uno-mr-3">
+                <NuxtImg src="/images/students/bob.jpg" alt="Bob" class="uno-w-full uno-h-full uno-object-cover" />
               </div>
               <div>
-                <p class="font-medium text-gray-900">Bob Johnson</p>
-                <p class="text-sm text-gray-600">UX Designer at CreativeStudio</p>
+                <p class="uno-font-medium uno-text-gray-900">Bob Johnson</p>
+                <p class="uno-text-sm uno-text-gray-600">UX Designer at CreativeStudio</p>
               </div>
             </div>
           </div>

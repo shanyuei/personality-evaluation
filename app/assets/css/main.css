@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
-
+/* @import "@unocss/reset/tailwind.css";
+@import "@unocss/reset/tailwind-compat.css"; */
 
 * {
     font-family: 'Outfit', sans-serif;

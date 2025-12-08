@@ -1,16 +1,16 @@
 <template>
-  <div class="min-h-screen flex flex-col relative">
+  <div class="uno-min-h-screen uno-flex uno-flex-col uno-relative">
     <!-- 页面顶部背景 -->
     <NuxtImg src="/theme/layout/bg-top.png" alt="bg-top" width="100%" height="100vh"
-      class="w-full h-auto max-h-100vh absolute top-0 left-0 z-0" />
+      class="uno-w-full uno-h-auto uno-max-h-100vh uno-absolute uno-top-0 uno-left-0 uno-z-0" />
     <NuxtImg src="/theme/layout/page-top-icon-1.png" width="124px" height="132px"
-      class="absolute top-331px right-67px z-1" />
+      class="uno-absolute uno-top-331px uno-right-67px uno-z-1" />
     <NuxtImg src="/theme/layout/page-top-icon-2.png" width="163px" height="170px"
-      class="absolute top-431px left-133px z-1" />
+      class="uno-absolute uno-top-431px uno-left-133px uno-z-1" />
     <!-- 头部 -->
     <app-header />
     <!-- 主要内容区域 -->
-    <main class="flex-1 mx-auto z-10 w-full">
+    <main class="uno-flex-1 uno-mx-auto uno-z-10 uno-w-full">
       <slot>
         <NuxtPage />
       </slot>

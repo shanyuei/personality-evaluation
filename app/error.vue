@@ -1,40 +1,40 @@
 <template>
     <UApp>
         <NuxtLayout>
-            <section class=" flex items-center justify-center px-6 py-40 ">
-                <div class="text-center max-w-[680px] mx-auto">
+            <section class="uno-flex uno-items-center uno-justify-center uno-px-6 uno-py-40">
+                <div class="uno-text-center uno-max-w-[680px] uno-mx-auto">
                     <template v-if="error?.statusCode === 404">
                         <!-- 引入404 图片 -->
-                        <img src="/theme/404.png" alt="" aria-hidden="true" class="mx-auto mb-8 w-[320px] sm:w-[480px]">
-                        <div class="flex justify-start items-center flex-col gap-10">
+                        <img src="/theme/404.png" alt="" aria-hidden="true" class="uno-mx-auto uno-mb-8 uno-w-[320px] sm:uno-w-[480px]">
+                        <div class="uno-flex uno-justify-start uno-items-center uno-flex-col uno-gap-10">
                             <div style="flex-shrink: 0"
-                                class="flex self-stretch justify-start items-center flex-col gap-3">
+                                class="uno-flex uno-self-stretch uno-justify-start uno-items-center uno-flex-col uno-gap-3">
                                 <p style="flex-shrink: 0"
-                                    class="self-stretch text-[#011813] text-[32px] font-['Outfit'] text-center font-semibold">
+                                    class="uno-self-stretch uno-text-[#011813] uno-text-[32px] uno-font-['Outfit'] uno-text-center uno-font-semibold">
                                     Oops! that page doesn’t exist
                                 </p>
                                 <p style="flex-shrink: 0"
-                                    class="self-stretch text-[#4E5255] font-['Outfit'] text-center">
+                                    class="uno-self-stretch uno-text-[#4E5255] uno-font-['Outfit'] uno-text-center">
                                     Oops! It seems the page you're looking for doesn’t exist. Let's get
                                     you back on track—click below to return to the home page.
                                 </p>
                             </div>
                             <div style="flex-shrink: 0"
-                                class="flex justify-center items-center flex-row gap-2 py-4 px-[24px] bg-[#EA4C89] rounded-[1000px]"
+                                class="uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-2 uno-py-4 uno-px-[24px] uno-bg-[#EA4C89] uno-rounded-[1000px]"
                                 @click="handleError">
-                                <span class="text-[#FFFFFF] font-['Outfit'] font-medium leading-normal">
+                                <span class="uno-text-[#FFFFFF] uno-font-['Outfit'] uno-font-medium uno-leading-normal">
                                     Back to Home
                                 </span>
                             </div>
                         </div>
                     </template>
                     <template v-else>
-                        <h1 class="text-4xl sm:text-5xl font-bold text-[#0F172A] mb-4">{{ error?.statusCode }} -
+                        <h1 class="uno-text-4xl sm:uno-text-5xl uno-font-bold uno-text-[#0F172A] uno-mb-4">{{ error?.statusCode }} -
                             Something went
                             wrong</h1>
-                        <p class="text-[#4E5255] mb-8 px-4">{{ error?.message }}</p>
+                        <p class="uno-text-[#4E5255] uno-mb-8 uno-px-4">{{ error?.message }}</p>
                         <button
-                            class="inline-flex items-center justify-center px-6 h-[48px] rounded-[16px] bg-[#009D77] text-white hover:bg-[#0AA17F]"
+                            class="uno-inline-flex uno-items-center uno-justify-center uno-px-6 uno-h-[48px] uno-rounded-[16px] uno-bg-[#009D77] uno-text-white hover:uno-bg-[#0AA17F]"
                             @click="handleError">
                             Back to Home
                         </button>

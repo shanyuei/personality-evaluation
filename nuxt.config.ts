@@ -54,7 +54,8 @@ export default defineNuxtConfig({
     baseUrl: 'https://example.com',
   },
   unocss: {
-    nuxtLayers: true
+    nuxtLayers: true,
+    
   },
   imports: {
     presets: [

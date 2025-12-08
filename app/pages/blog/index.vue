@@ -1,46 +1,46 @@
 <template>
-  <main class="min-h-screen bg-white">
+  <main class="uno-min-h-screen uno-bg-white">
     <!-- Page Header -->
-    <section class="py-16 px-6 md:px-12 lg:px-24 bg-gray-50">
-      <div class="max-w-7xl mx-auto">
-        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Blog</h1>
-        <p class="text-lg text-gray-600 max-w-3xl">
+    <section class="uno-py-16 uno-px-6 md:uno-px-12 lg:uno-px-24 uno-bg-gray-50">
+      <div class="uno-max-w-7xl uno-mx-auto">
+        <h1 class="uno-text-3xl md:uno-text-4xl uno-font-bold uno-text-gray-900 uno-mb-4">Our Blog</h1>
+        <p class="uno-text-lg uno-text-gray-600 uno-max-w-3xl">
           Stay updated with the latest trends, tutorials, and insights from our experts in the field.
         </p>
       </div>
     </section>
 
     <!-- Featured Post -->
-    <section class="py-12 px-6 md:px-12 lg:px-24 border-b">
-      <div class="max-w-7xl mx-auto">
-        <h2 class="text-xl font-semibold text-gray-900 mb-6">Featured Article</h2>
-        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300">
-          <div class="md:flex">
-            <div class="md:w-1/2">
+    <section class="uno-py-12 uno-px-6 md:uno-px-12 lg:uno-px-24 uno-border-b">
+      <div class="uno-max-w-7xl uno-mx-auto">
+        <h2 class="uno-text-xl uno-font-semibold uno-text-gray-900 uno-mb-6">Featured Article</h2>
+        <div class="uno-bg-white uno-rounded-lg uno-shadow-md uno-overflow-hidden hover:uno-shadow-lg uno-transition-all uno-duration-300">
+          <div class="md:uno-flex">
+            <div class="md:uno-w-1/2">
               <NuxtImg 
                 src="/images/blog/featured-article.jpg" 
                 alt="Featured Article" 
-                class="w-full h-64 md:h-full object-cover"
+                class="uno-w-full uno-h-64 md:uno-h-full uno-object-cover"
               />
             </div>
-            <div class="p-6 md:w-1/2">
-              <div class="flex items-center text-sm text-gray-500 mb-2">
-                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full mr-3">Development</span>
+            <div class="uno-p-6 md:uno-w-1/2">
+              <div class="uno-flex uno-items-center uno-text-sm uno-text-gray-500 uno-mb-2">
+                <span class="uno-bg-blue-100 uno-text-blue-800 uno-px-3 uno-py-1 uno-rounded-full uno-mr-3">Development</span>
                 <span>May 15, 2023</span>
               </div>
-              <h3 class="text-2xl font-bold text-gray-900 mb-3">
+              <h3 class="uno-text-2xl uno-font-bold uno-text-gray-900 uno-mb-3">
                 The Future of Web Development in 2023 and Beyond
               </h3>
-              <p class="text-gray-600 mb-4 line-clamp-3">
+              <p class="uno-text-gray-600 uno-mb-4 uno-line-clamp-3">
                 Explore the emerging trends and technologies that will shape the future of web development. From AI-powered tools to new frameworks, discover how these innovations are transforming the industry.
               </p>
-              <div class="flex items-center mb-4">
-                <div class="w-10 h-10 rounded-full overflow-hidden mr-3">
-                  <NuxtImg src="/images/instructors/john-doe.jpg" alt="John Doe" class="w-full h-full object-cover" />
+              <div class="uno-flex uno-items-center uno-mb-4">
+                <div class="uno-w-10 uno-h-10 uno-rounded-full uno-overflow-hidden uno-mr-3">
+                  <NuxtImg src="/images/instructors/john-doe.jpg" alt="John Doe" class="uno-w-full uno-h-full uno-object-cover" />
                 </div>
-                <span class="font-medium">John Doe</span>
+                <span class="uno-font-medium">John Doe</span>
               </div>
-              <UButton class="bg-primary hover:bg-primary/90 text-white rounded-full">
+              <UButton class="uno-bg-primary hover:uno-bg-primary/90 uno-text-white uno-rounded-full">
                 Read Article
               </UButton>
             </div>
@@ -50,18 +50,18 @@
     </section>
 
     <!-- Blog Content -->
-    <section class="py-12 px-6 md:px-12 lg:px-24">
-      <div class="max-w-7xl mx-auto">
-        <div class="flex flex-col lg:flex-row gap-8">
+    <section class="uno-py-12 uno-px-6 md:uno-px-12 lg:uno-px-24">
+      <div class="uno-max-w-7xl uno-mx-auto">
+        <div class="uno-flex uno-flex-col lg:uno-flex-row uno-gap-8">
           <!-- Main Content -->
-          <div class="lg:w-2/3">
+          <div class="lg:uno-w-2/3">
             <!-- Filters and Sorting -->
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
-              <h2 class="text-2xl font-bold text-gray-900">Latest Articles</h2>
-              <div class="flex gap-2">
+            <div class="uno-flex uno-flex-col md:uno-flex-row uno-justify-between uno-items-start md:uno-items-center uno-mb-8 uno-gap-4">
+              <h2 class="uno-text-2xl uno-font-bold uno-text-gray-900">Latest Articles</h2>
+              <div class="uno-flex uno-gap-2">
                 <UButton 
                   variant="ghost" 
-                  class="rounded-full" 
+                  class="uno-rounded-full" 
                   :pressed="activeCategory === 'all'" 
                   @click="activeCategory = 'all'"
                 >
@@ -69,7 +69,7 @@
                 </UButton>
                 <UButton 
                   variant="ghost" 
-                  class="rounded-full" 
+                  class="uno-rounded-full" 
                   :pressed="activeCategory === 'development'" 
                   @click="activeCategory = 'development'"
                 >
@@ -77,7 +77,7 @@
                 </UButton>
                 <UButton 
                   variant="ghost" 
-                  class="rounded-full" 
+                  class="uno-rounded-full" 
                   :pressed="activeCategory === 'design'" 
                   @click="activeCategory = 'design'"
                 >
@@ -85,7 +85,7 @@
                 </UButton>
                 <UButton 
                   variant="ghost" 
-                  class="rounded-full" 
+                  class="uno-rounded-full" 
                   :pressed="activeCategory === 'career'" 
                   @click="activeCategory = 'career'"
                 >
@@ -95,46 +95,41 @@
             </div>
 
             <!-- Articles Grid -->
-            <div class="space-y-8">
+            <div class="uno-space-y-8">
               <div 
                 v-for="article in paginatedArticles" 
                 :key="article.id" 
-                class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-all duration-300 border"
+                class="uno-bg-white uno-rounded-lg uno-shadow-sm uno-overflow-hidden hover:uno-shadow-md uno-transition-all uno-duration-300 uno-border"
               >
-                <div class="md:flex">
-                  <div class="md:w-1/3">
+                <div class="md:uno-flex">
+                  <div class="md:uno-w-1/3">
                     <NuxtImg 
                       :src="article.image" 
                       :alt="article.title" 
-                      class="w-full h-48 md:h-full object-cover"
+                      class="uno-w-full uno-h-48 md:uno-h-full uno-object-cover"
                     />
                   </div>
-                  <div class="p-6 md:w-2/3">
-                    <div class="flex items-center text-sm text-gray-500 mb-2">
+                  <div class="uno-p-6 md:uno-w-2/3">
+                    <div class="uno-flex uno-items-center uno-text-sm uno-text-gray-500 uno-mb-2">
                       <span 
-                        :class="[
-                          'px-3 py-1 rounded-full mr-3 text-xs font-medium',
-                          article.category === 'development' ? 'bg-blue-100 text-blue-800' :
-                          article.category === 'design' ? 'bg-purple-100 text-purple-800' :
-                          'bg-green-100 text-green-800'
-                        ]"
+                        :class="uno-[ 'px-3 uno-py-1 uno-rounded-full uno-mr-3 uno-text-xs uno-font-medium', uno-article.category === 'development' ? 'bg-blue-100 uno-text-blue-800' : uno-article.category === 'design' ? 'bg-purple-100 uno-text-purple-800' : 'bg-green-100 uno-text-green-800' ]"
                       >
                         {{ article.category.charAt(0).toUpperCase() + article.category.slice(1) }}
                       </span>
                       <span>{{ formatDate(article.date) }}</span>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2 hover:text-primary transition-colors duration-200">
+                    <h3 class="uno-text-xl uno-font-bold uno-text-gray-900 uno-mb-2 hover:uno-text-primary uno-transition-colors uno-duration-200">
                       <a :href="`/blog/${article.slug}`">{{ article.title }}</a>
                     </h3>
-                    <p class="text-gray-600 mb-4 line-clamp-2">{{ article.excerpt }}</p>
-                    <div class="flex justify-between items-center">
-                      <div class="flex items-center">
-                        <div class="w-8 h-8 rounded-full overflow-hidden mr-2">
-                          <NuxtImg :src="article.author.avatar" :alt="article.author.name" class="w-full h-full object-cover" />
+                    <p class="uno-text-gray-600 uno-mb-4 uno-line-clamp-2">{{ article.excerpt }}</p>
+                    <div class="uno-flex uno-justify-between uno-items-center">
+                      <div class="uno-flex uno-items-center">
+                        <div class="uno-w-8 uno-h-8 uno-rounded-full uno-overflow-hidden uno-mr-2">
+                          <NuxtImg :src="article.author.avatar" :alt="article.author.name" class="uno-w-full uno-h-full uno-object-cover" />
                         </div>
-                        <span class="text-sm font-medium">{{ article.author.name }}</span>
+                        <span class="uno-text-sm uno-font-medium">{{ article.author.name }}</span>
                       </div>
-                      <span class="text-sm text-gray-500">{{ article.readTime }} min read</span>
+                      <span class="uno-text-sm uno-text-gray-500">{{ article.readTime }} min read</span>
                     </div>
                   </div>
                 </div>
@@ -142,7 +137,7 @@
             </div>
 
             <!-- Pagination -->
-            <div class="mt-12 flex justify-center">
+            <div class="uno-mt-12 uno-flex uno-justify-center">
               <UPagination 
                 v-model="currentPage" 
                 :total="Math.ceil(filteredArticles.length / itemsPerPage)" 
@@ -152,63 +147,63 @@
           </div>
 
           <!-- Sidebar -->
-          <div class="lg:w-1/3">
+          <div class="lg:uno-w-1/3">
             <!-- Search Widget -->
-            <div class="bg-white rounded-lg shadow-sm p-6 mb-8 border">
-              <h3 class="text-lg font-semibold text-gray-900 mb-4">Search</h3>
-              <div class="relative">
+            <div class="uno-bg-white uno-rounded-lg uno-shadow-sm uno-p-6 uno-mb-8 uno-border">
+              <h3 class="uno-text-lg uno-font-semibold uno-text-gray-900 uno-mb-4">Search</h3>
+              <div class="uno-relative">
                 <UInput 
                   v-model="searchQuery" 
                   placeholder="Search articles..." 
-                  class="pr-10"
+                  class="uno-pr-10"
                   prefix="search"
                 />
               </div>
             </div>
 
             <!-- Categories Widget -->
-            <div class="bg-white rounded-lg shadow-sm p-6 mb-8 border">
-              <h3 class="text-lg font-semibold text-gray-900 mb-4">Categories</h3>
-              <ul class="space-y-2">
+            <div class="uno-bg-white uno-rounded-lg uno-shadow-sm uno-p-6 uno-mb-8 uno-border">
+              <h3 class="uno-text-lg uno-font-semibold uno-text-gray-900 uno-mb-4">Categories</h3>
+              <ul class="uno-space-y-2">
                 <li>
-                  <a href="#" class="flex justify-between items-center text-gray-700 hover:text-primary transition-colors duration-200">
+                  <a href="#" class="uno-flex uno-justify-between uno-items-center uno-text-gray-700 hover:uno-text-primary uno-transition-colors uno-duration-200">
                     <span>Development</span>
-                    <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full">24</span>
+                    <span class="uno-bg-gray-100 uno-text-gray-800 uno-text-xs uno-px-2 uno-py-1 uno-rounded-full">24</span>
                   </a>
                 </li>
                 <li>
-                  <a href="#" class="flex justify-between items-center text-gray-700 hover:text-primary transition-colors duration-200">
+                  <a href="#" class="uno-flex uno-justify-between uno-items-center uno-text-gray-700 hover:uno-text-primary uno-transition-colors uno-duration-200">
                     <span>Design</span>
-                    <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full">18</span>
+                    <span class="uno-bg-gray-100 uno-text-gray-800 uno-text-xs uno-px-2 uno-py-1 uno-rounded-full">18</span>
                   </a>
                 </li>
                 <li>
-                  <a href="#" class="flex justify-between items-center text-gray-700 hover:text-primary transition-colors duration-200">
+                  <a href="#" class="uno-flex uno-justify-between uno-items-center uno-text-gray-700 hover:uno-text-primary uno-transition-colors uno-duration-200">
                     <span>Career Advice</span>
-                    <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full">12</span>
+                    <span class="uno-bg-gray-100 uno-text-gray-800 uno-text-xs uno-px-2 uno-py-1 uno-rounded-full">12</span>
                   </a>
                 </li>
                 <li>
-                  <a href="#" class="flex justify-between items-center text-gray-700 hover:text-primary transition-colors duration-200">
+                  <a href="#" class="uno-flex uno-justify-between uno-items-center uno-text-gray-700 hover:uno-text-primary uno-transition-colors uno-duration-200">
                     <span>Tutorials</span>
-                    <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full">36</span>
+                    <span class="uno-bg-gray-100 uno-text-gray-800 uno-text-xs uno-px-2 uno-py-1 uno-rounded-full">36</span>
                   </a>
                 </li>
               </ul>
             </div>
 
             <!-- Recent Posts Widget -->
-            <div class="bg-white rounded-lg shadow-sm p-6 mb-8 border">
-              <h3 class="text-lg font-semibold text-gray-900 mb-4">Recent Posts</h3>
-              <ul class="space-y-4">
+            <div class="uno-bg-white uno-rounded-lg uno-shadow-sm uno-p-6 uno-mb-8 uno-border">
+              <h3 class="uno-text-lg uno-font-semibold uno-text-gray-900 uno-mb-4">Recent Posts</h3>
+              <ul class="uno-space-y-4">
                 <li v-for="recent in recentArticles" :key="recent.id">
-                  <a :href="`/blog/${recent.slug}`" class="flex gap-3 group">
-                    <div class="w-20 h-20 rounded overflow-hidden flex-shrink-0">
-                      <NuxtImg :src="recent.image" :alt="recent.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                  <a :href="`/blog/${recent.slug}`" class="uno-flex uno-gap-3 uno-group">
+                    <div class="uno-w-20 uno-h-20 uno-rounded uno-overflow-hidden uno-flex-shrink-0">
+                      <NuxtImg :src="recent.image" :alt="recent.title" class="uno-w-full uno-h-full uno-object-cover group-hover:uno-scale-105 uno-transition-transform uno-duration-300" />
                     </div>
                     <div>
-                      <h4 class="font-medium text-gray-900 group-hover:text-primary transition-colors duration-200 line-clamp-2">{{ recent.title }}</h4>
-                      <p class="text-sm text-gray-500 mt-1">{{ formatDate(recent.date) }}</p>
+                      <h4 class="uno-font-medium uno-text-gray-900 group-hover:uno-text-primary uno-transition-colors uno-duration-200 uno-line-clamp-2">{{ recent.title }}</h4>
+                      <p class="uno-text-sm uno-text-gray-500 uno-mt-1">{{ formatDate(recent.date) }}</p>
                     </div>
                   </a>
                 </li>
@@ -216,10 +211,10 @@
             </div>
 
             <!-- Newsletter Widget -->
-            <div class="bg-gray-50 rounded-lg p-6 border">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Subscribe to Newsletter</h3>
-              <p class="text-gray-600 text-sm mb-4">Stay updated with our latest articles and news.</p>
-              <form class="space-y-3">
+            <div class="uno-bg-gray-50 uno-rounded-lg uno-p-6 uno-border">
+              <h3 class="uno-text-lg uno-font-semibold uno-text-gray-900 uno-mb-2">Subscribe to Newsletter</h3>
+              <p class="uno-text-gray-600 uno-text-sm uno-mb-4">Stay updated with our latest articles and news.</p>
+              <form class="uno-space-y-3">
                 <UInput 
                   v-model="newsletterEmail" 
                   type="email" 
@@ -227,7 +222,7 @@
                   class=""
                   :rules="{ required: true, email: true }"
                 />
-                <UButton type="submit" class="w-full bg-primary hover:bg-primary/90 text-white rounded-full">
+                <UButton type="submit" class="uno-w-full uno-bg-primary hover:uno-bg-primary/90 uno-text-white uno-rounded-full">
                   Subscribe
                 </UButton>
               </form>

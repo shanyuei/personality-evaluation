@@ -1,9 +1,9 @@
 <template>
-  <div class="testimonials-section py-16 sm:py-20 md:py-24 bg-white w-full mx-auto overflow-hidden">
-    <div class="mx-auto max-w-[80%] px-4">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-['Outfit'] font-bold mb-4">{{ title }}</h2>
-        <p class="text-gray-600 max-w-3xl mx-auto">{{ description }}</p>
+  <div class="uno-testimonials-section uno-py-16 sm:uno-py-20 md:uno-py-24 uno-bg-white uno-w-full uno-mx-auto uno-overflow-hidden">
+    <div class="uno-mx-auto uno-max-w-[80%] uno-px-4">
+      <div class="uno-text-center uno-mb-16">
+        <h2 class="uno-text-4xl uno-font-['Outfit'] uno-font-bold uno-mb-4">{{ title }}</h2>
+        <p class="uno-text-gray-600 uno-max-w-3xl uno-mx-auto">{{ description }}</p>
       </div>
 
       <ClientOnly>
@@ -11,18 +11,18 @@
           :speed="800" :autoplay="{ delay: 2500, disableOnInteraction: false }"
           :breakpoints="{ 640: { slidesPerView: 2, spaceBetween: 20 }, 1024: { slidesPerView: 3, spaceBetween: 24 } }">
           <SwiperSlide v-for="(item, idx) in firstRow" :key="'f-' + idx">
-            <div class="bg-white rounded-2xl shadow-md p-6 border border-[#E7E7E8] w-full max-w-[384px]">
-              <div class="flex items-center gap-1 mb-4 text-amber-400">
-                <span v-for="n in 5" :key="n" class="text-base">★</span>
+            <div class="uno-bg-white uno-rounded-2xl uno-shadow-md uno-p-6 uno-border uno-border-[#E7E7E8] uno-w-full uno-max-w-[384px]">
+              <div class="uno-flex uno-items-center uno-gap-1 uno-mb-4 uno-text-amber-400">
+                <span v-for="n in 5" :key="n" class="uno-text-base">★</span>
               </div>
-              <p class="text-gray-600 mb-6 text-sm">{{ item.text }}</p>
-              <div class="flex items-center">
-                <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center mr-3">
-                  <img :src="item.avatarUrl" :alt="item.name" class="w-full h-full rounded-full object-cover">
+              <p class="uno-text-gray-600 uno-mb-6 uno-text-sm">{{ item.text }}</p>
+              <div class="uno-flex uno-items-center">
+                <div class="uno-w-10 uno-h-10 uno-rounded-full uno-bg-gray-200 uno-flex uno-items-center uno-justify-center uno-mr-3">
+                  <img :src="item.avatarUrl" :alt="item.name" class="uno-w-full uno-h-full uno-rounded-full uno-object-cover">
                 </div>
                 <div>
-                  <h4 class="font-['Outfit'] font-bold">{{ item.name }}</h4>
-                  <p class="text-gray-500 text-xs">{{ item.role }}</p>
+                  <h4 class="uno-font-['Outfit'] uno-font-bold">{{ item.name }}</h4>
+                  <p class="uno-text-gray-500 uno-text-xs">{{ item.role }}</p>
                 </div>
               </div>
             </div>
@@ -31,24 +31,24 @@
       </ClientOnly>
 
       <ClientOnly>
-        <div class="mt-0 ">
-          <div class="relative left-0 sm:left-12 md:left-48px">
+        <div class="uno-mt-0">
+          <div class="uno-relative uno-left-0 sm:uno-left-12 md:uno-left-48px">
             <Swiper v-if="secondRow.length" :modules="[Autoplay]" :slides-per-view="1" :space-between="16" :loop="true"
               :speed="800" :autoplay="{ delay: 2500, disableOnInteraction: false, reverseDirection: true }"
               :breakpoints="{ 640: { slidesPerView: 2, spaceBetween: 20 }, 1024: { slidesPerView: 3, spaceBetween: 24 } }">
               <SwiperSlide v-for="(item, idx) in secondRow" :key="'s-' + idx">
-                <div class="bg-white rounded-2xl shadow-md p-6 border border-[#E7E7E8] w-full max-w-[384px]">
-                  <div class="flex items-center gap-1 mb-4 text-amber-400">
-                    <span v-for="n in 5" :key="n" class="text-base">★</span>
+                <div class="uno-bg-white uno-rounded-2xl uno-shadow-md uno-p-6 uno-border uno-border-[#E7E7E8] uno-w-full uno-max-w-[384px]">
+                  <div class="uno-flex uno-items-center uno-gap-1 uno-mb-4 uno-text-amber-400">
+                    <span v-for="n in 5" :key="n" class="uno-text-base">★</span>
                   </div>
-                  <p class="text-gray-600 mb-6 text-sm">{{ item.text }}</p>
-                  <div class="flex items-center">
-                    <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center mr-3">
-                      <img :src="item.avatarUrl" :alt="item.name" class="w-full h-full rounded-full object-cover">
+                  <p class="uno-text-gray-600 uno-mb-6 uno-text-sm">{{ item.text }}</p>
+                  <div class="uno-flex uno-items-center">
+                    <div class="uno-w-10 uno-h-10 uno-rounded-full uno-bg-gray-200 uno-flex uno-items-center uno-justify-center uno-mr-3">
+                      <img :src="item.avatarUrl" :alt="item.name" class="uno-w-full uno-h-full uno-rounded-full uno-object-cover">
                     </div>
                     <div>
-                      <h4 class="font-['Outfit'] font-bold">{{ item.name }}</h4>
-                      <p class="text-gray-500 text-xs">{{ item.role }}</p>
+                      <h4 class="uno-font-['Outfit'] uno-font-bold">{{ item.name }}</h4>
+                      <p class="uno-text-gray-500 uno-text-xs">{{ item.role }}</p>
                     </div>
                   </div>
                 </div>

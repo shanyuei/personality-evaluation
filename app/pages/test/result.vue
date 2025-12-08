@@ -1,21 +1,21 @@
 <template>
-  <div class="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-white to-gray-50 px-6 py-10 md:py-16">
+  <div class="uno-min-h-screen uno-flex uno-flex-col uno-items-center uno-justify-center uno-bg-gradient-to-b uno-from-white uno-to-gray-50 uno-px-6 uno-py-10 md:uno-py-16">
     <!-- 主内容区 -->
-    <div class="max-w-md w-full flex flex-col items-center text-center">
+    <div class="uno-max-w-md uno-w-full uno-flex uno-flex-col uno-items-center uno-text-center">
       <!-- 成功图标 - 响应式大小 -->
-      <div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-green-100 flex items-center justify-center mb-6 md:mb-8">
-        <svg class="w-8 h-8 md:w-10 md:h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div class="uno-w-16 uno-h-16 md:uno-w-20 md:uno-h-20 uno-rounded-full uno-bg-green-100 uno-flex uno-items-center uno-justify-center uno-mb-6 md:uno-mb-8">
+        <svg class="uno-w-8 uno-h-8 md:uno-w-10 md:uno-h-10 uno-text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
         </svg>
       </div>
       
       <!-- 标题和提示信息 - 响应式文本大小 -->
-      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3 md:mb-4 font-['Outfit']">Congratulations!</h1>
-      <p class="text-gray-600 mb-10 md:mb-12 font-['Outfit'] text-base md:text-lg">You've completed the personality test.</p>
+      <h1 class="uno-text-3xl md:uno-text-4xl uno-font-bold uno-text-gray-900 uno-mb-3 md:uno-mb-4 uno-font-['Outfit']">Congratulations!</h1>
+      <p class="uno-text-gray-600 uno-mb-10 md:uno-mb-12 uno-font-['Outfit'] uno-text-base md:uno-text-lg">You've completed the personality test.</p>
       
       <!-- 主按钮 - 响应式样式 -->
       <button 
-        class="w-full h-[48px] md:h-[56px] bg-green-500 hover:bg-green-600 text-white font-medium rounded-xl transition-all duration-300 font-['Outfit'] shadow-md hover:shadow-lg hover:-translate-y-1"
+        class="uno-w-full uno-h-[48px] md:uno-h-[56px] uno-bg-green-500 hover:uno-bg-green-600 uno-text-white uno-font-medium uno-rounded-xl uno-transition-all uno-duration-300 uno-font-['Outfit'] uno-shadow-md hover:uno-shadow-lg hover:uno--translate-y-1"
         @click="handleGetStarted"
       >
         Get Started
@@ -24,7 +24,7 @@
       <!-- 编辑答案链接 - 响应式样式 -->
       <a 
         href="#" 
-        class="mt-6 text-gray-500 hover:text-gray-700 transition-colors duration-300 font-['Outfit'] text-sm md:text-base"
+        class="uno-mt-6 uno-text-gray-500 hover:uno-text-gray-700 uno-transition-colors uno-duration-300 uno-font-['Outfit'] uno-text-sm md:uno-text-base"
         @click.prevent="handleEditAnswers"
       >
         Edit my answers

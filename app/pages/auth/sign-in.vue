@@ -1,41 +1,41 @@
 <template>
-  <div class="relative flex items-center justify-center py-24 sm:py-32">
-    <div class="w-full max-w-[720px] px-6 sm:px-10">
+  <div class="uno-relative uno-flex uno-items-center uno-justify-center uno-py-24 sm:uno-py-32">
+    <div class="uno-w-full uno-max-w-[720px] uno-px-6 sm:uno-px-10">
       <!-- 登录表单 -->
-      <div class="rounded-[24px] p-8 sm:p-10">
-        <h1 class="text-center mb-10 text-[#0F172A] font-['Outfit'] font-bold text-4xl sm:text-5xl">Sign In</h1>
+      <div class="uno-rounded-[24px] uno-p-8 sm:uno-p-10">
+        <h1 class="uno-text-center uno-mb-10 uno-text-[#0F172A] uno-font-['Outfit'] uno-font-bold uno-text-4xl sm:uno-text-5xl">Sign In</h1>
         
         <!-- Email Input -->
-        <div class="mb-6">
-          <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+        <div class="uno-mb-6">
+          <label uno-for="email" class="uno-block uno-text-sm uno-font-medium uno-text-gray-700 uno-mb-2">Email</label>
           <input 
             id="email"
             type="email"
-            class="w-full px-4 py-3 border border-gray-300 rounded-[16px] focus:outline-none focus:ring-2 focus:ring-[#009D77] focus:border-transparent transition-all shadow-sm"
+            class="uno-w-full uno-px-4 uno-py-3 uno-border uno-border-gray-300 uno-rounded-[16px] focus:uno-outline-none focus:uno-ring-2 focus:uno-ring-[#009D77] focus:uno-border-transparent uno-transition-all uno-shadow-sm"
             placeholder="Email Address"
           >
         </div>
         
         <!-- Password Input -->
-        <div class="mb-8">
-          <label for="password" class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+        <div class="uno-mb-8">
+          <label uno-for="password" class="uno-block uno-text-sm uno-font-medium uno-text-gray-700 uno-mb-2">Password</label>
           <input 
             id="password"
             type="password"
-            class="w-full px-4 py-3 border border-gray-300 rounded-[16px] focus:outline-none focus:ring-2 focus:ring-[#009D77] focus:border-transparent transition-all shadow-sm"
+            class="uno-w-full uno-px-4 uno-py-3 uno-border uno-border-gray-300 uno-rounded-[16px] focus:uno-outline-none focus:uno-ring-2 focus:uno-ring-[#009D77] focus:uno-border-transparent uno-transition-all uno-shadow-sm"
             placeholder="Password"
           >
         </div>
         
         <!-- Get Started Button -->
-        <button class="w-full bg-[#009D77] text-white font-['Outfit'] font-medium py-4 px-4 rounded-[16px] hover:bg-[#0AA17F] transition-colors duration-300 mb-6" @click="handleSignIn">
+        <button class="uno-w-full uno-bg-[#009D77] uno-text-white uno-font-['Outfit'] uno-font-medium uno-py-4 uno-px-4 uno-rounded-[16px] hover:uno-bg-[#0AA17F] uno-transition-colors uno-duration-300 uno-mb-6" @click="handleSignIn">
           Get Started
         </button>
         
         <!-- Sign Up Link -->
-        <div class="flex items-center justify-between text-gray-600">
+        <div class="uno-flex uno-items-center uno-justify-between uno-text-gray-600">
           <p>Don't have an account?</p>
-          <a href="/auth/sign-up" class="text-[#0F172A] underline underline-offset-4 font-medium">Sign Up</a>
+          <a href="/auth/sign-up" class="uno-text-[#0F172A] uno-underline uno-underline-offset-4 uno-font-medium">Sign Up</a>
         </div>
       </div>
     </div>

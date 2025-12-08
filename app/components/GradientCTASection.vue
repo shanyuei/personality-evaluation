@@ -1,32 +1,32 @@
 <template>
   <div
-    class="gradient-cta-section relative w-full flex items-center justify-center   my-20">
+    class="uno-gradient-cta-section uno-relative uno-w-full uno-flex uno-items-center uno-justify-center uno-my-20">
     <!-- 背景 -->
     <NuxtImg src="/theme/home/cat-bg-h5.png" alt="" aria-hidden="true" width="342px" height="438px"
-      class="absolute inset-0 -z-10 pointer-events-none object-cover object-center  block md:hidden" preload />
+      class="uno-absolute uno-inset-0 uno--z-10 uno-pointer-events-none uno-object-cover uno-object-center uno-block md:uno-hidden" uno-preload />
     <NuxtImg src="/theme/home/cat-bg-pc.png" alt="" aria-hidden="true" width="1200px" height="384px"
-      class="absolute inset-0 -z-10 pointer-events-none object-cover object-center  hidden md:block" preload />
+      class="uno-absolute uno-inset-0 uno--z-10 uno-pointer-events-none uno-object-cover uno-object-center uno-hidden md:uno-block" uno-preload />
     <!-- 内容 -->
     <div
-      class="relative z-10 flex flex-col items-center rounded-[32px] sm:rounded-[48px] overflow-hidden w-full  px-0 sm:px-8 md:px-12 lg:px-24 py-12 sm:py-16 md:py-20">
+      class="uno-relative uno-z-10 uno-flex uno-flex-col uno-items-center uno-rounded-[32px] sm:uno-rounded-[48px] uno-overflow-hidden uno-w-full uno-px-0 sm:uno-px-8 md:uno-px-12 lg:uno-px-24 uno-py-12 sm:uno-py-16 md:uno-py-20">
       <NuxtImg src="/theme/home/cat-bg-box-h5.png" alt="" aria-hidden="true"
-        class="absolute inset-0 -z-10 pointer-events-none object-cover object-center w-[100%] h-[100%] block md:hidden"
-        preload />
+        class="uno-absolute uno-inset-0 uno--z-10 uno-pointer-events-none uno-object-cover uno-object-center uno-w-[100%] uno-h-[100%] uno-block md:uno-hidden"
+        uno-preload />
       <NuxtImg src="/theme/home/cat-bg-box-pc.png" alt="" aria-hidden="true"
-        class="absolute inset-0 -z-10 pointer-events-none object-cover object-center w-[100%] h-[100%] hidden md:block"
-        preload />
-      <h2 class="text-[#0F172A] font-['Outfit'] font-bold text-3xl sm:text-4xl md:text-5xl mb-4 text-center">
+        class="uno-absolute uno-inset-0 uno--z-10 uno-pointer-events-none uno-object-cover uno-object-center uno-w-[100%] uno-h-[100%] uno-hidden md:uno-block"
+        uno-preload />
+      <h2 class="uno-text-[#0F172A] uno-font-['Outfit'] uno-font-bold uno-text-3xl sm:uno-text-4xl md:uno-text-5xl uno-mb-4 uno-text-center">
         {{ title || $t('home.accuracy.title') }}
       </h2>
 
-      <p class="text-[#4E5255] max-w-[720px] mx-auto mb-8 sm:mb-10 text-center px-4">
+      <p class="uno-text-[#4E5255] uno-max-w-[720px] uno-mx-auto uno-mb-8 sm:uno-mb-10 uno-text-center uno-px-4">
         {{ description || $t('home.accuracy.description') }}
       </p>
 
       <CTAButton :text="buttonText" :disabled="buttonDisabled"
-        btn-class="w-[160px] h-[48px] sm:w-[186px] sm:h-[56px] pl-[20px!important] pr-[6px!important]"
-        bg-color="#011813" hover-bg-color="#02221D" active-bg-color="#02221D"
-        text-class="text-[#FFFFFF] font-['Outfit'] font-medium text-[18px] sm:text-[20px]" :icon-size-px="40"
+        uno-btn-class="uno-w-[160px] uno-h-[48px] sm:uno-w-[186px] sm:uno-h-[56px] uno-pl-[20px!important] uno-pr-[6px!important]"
+        uno-bg-color="#011813" uno-hover-bg-color="#02221D" uno-active-bg-color="#02221D"
+        uno-text-class="uno-text-[#FFFFFF] uno-font-['Outfit'] uno-font-medium uno-text-[18px] sm:uno-text-[20px]" :icon-size-px="40"
         @click="$emit('button-click', $event)" />
     </div>
 

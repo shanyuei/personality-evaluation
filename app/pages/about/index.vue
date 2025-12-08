@@ -1,53 +1,53 @@
 <template>
   <main class="">
 
-    <section class="relative py-22 sm:py-32 ">
+    <section class="uno-relative uno-py-22 sm:uno-py-32">
       <NuxtImg src="/images/about/icon-1.png" alt="decor"
-        class="absolute left-1/2 -translate-x-1/2 top-4 w-47px h-36px" />
-      <div class="max-w-full  md:max-w-[80%] mx-auto px-6 sm:px-10">
-        <div class="flex flex-col md:flex-row items-center md:justify-between gap-72px ">
-          <div class="text-center md:text-left md:w-1/2">
-            <h1 class="font-semibold text-4xl md:text-6xl text-[#011813] md:leading-[86px] text-left">
+        class="uno-absolute uno-left-1/2 uno--translate-x-1/2 uno-top-4 uno-w-47px uno-h-36px" />
+      <div class="uno-max-w-full md:uno-max-w-[80%] uno-mx-auto uno-px-6 sm:uno-px-10">
+        <div class="uno-flex uno-flex-col md:uno-flex-row uno-items-center md:uno-justify-between uno-gap-72px">
+          <div class="uno-text-center md:uno-text-left md:uno-w-1/2">
+            <h1 class="uno-font-semibold uno-text-4xl md:uno-text-6xl uno-text-[#011813] md:uno-leading-[86px] uno-text-left">
               {{ $t('pages.about.hero.title') }}</h1>
-            <p class="font-normal text-[16px] md:text-[18px] text-[#4e5255] md:leading-[27px] text-left m-t-16px">{{
+            <p class="uno-font-normal uno-text-[16px] md:uno-text-[18px] uno-text-[#4e5255] md:uno-leading-[27px] uno-text-left uno-m-t-16px">{{
               $t('pages.about.hero.desc') }}
             </p>
           </div>
-          <div class="relative w-[320px] sm:w-[342px] md:w-[486px] mx-auto md:mx-0">
+          <div class="uno-relative uno-w-[320px] sm:uno-w-[342px] md:uno-w-[486px] uno-mx-auto md:uno-mx-0">
             <NuxtImg src="/images/about/1.png" alt="About hero" width="486" height="428"
-              sizes="(min-width:768px) 486px, 320px" class="w-full h-auto" />
+              uno-sizes="(min-width:768px) 486px, 320px" class="uno-w-full uno-h-auto" />
           </div>
         </div>
 
-        <div class="mt-12 md:mt-120px">
-          <div class="md:max-w-[74%] mx-auto">
-            <p class="font-normal text-[18px] md:text-[24px] text-[#011813] md:leading-[34px] text-center md:w-80% mx-auto">
+        <div class="uno-mt-12 md:uno-mt-120px">
+          <div class="md:uno-max-w-[74%] uno-mx-auto">
+            <p class="uno-font-normal uno-text-[18px] md:uno-text-[24px] uno-text-[#011813] md:uno-leading-[34px] uno-text-center md:uno-w-80% uno-mx-auto">
               {{ $t('pages.about.content.desc') }}
             </p>
-            <div class="mt-8 md:mt-10 bg-[#edfbff] rounded-[16px] px-6 md:px-10 py-8 md:py-10">
-              <div class="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8 items-center text-center">
+            <div class="uno-mt-8 md:uno-mt-10 uno-bg-[#edfbff] uno-rounded-[16px] uno-px-6 md:uno-px-10 uno-py-8 md:uno-py-10">
+              <div class="uno-grid uno-grid-cols-1 md:uno-grid-cols-4 uno-gap-6 md:uno-gap-8 uno-items-center uno-text-center">
                 <div>
-                  <div class="font-semibold text-[48px] text-[#011813] leading-[58px]">{{
+                  <div class="uno-font-semibold uno-text-[48px] uno-text-[#011813] uno-leading-[58px]">{{
                     $t('pages.about.stats.projects.value') }}</div>
-                  <div class="mt-2 font-normal text-[18px] text-[#4e5255] leading-[27px]">{{
+                  <div class="uno-mt-2 uno-font-normal uno-text-[18px] uno-text-[#4e5255] uno-leading-[27px]">{{
                     $t('pages.about.stats.projects.label') }}</div>
                 </div>
                 <div>
-                  <div class="font-semibold text-[48px] text-[#011813] leading-[58px]">{{
+                  <div class="uno-font-semibold uno-text-[48px] uno-text-[#011813] uno-leading-[58px]">{{
                     $t('pages.about.stats.team.value') }}</div>
-                  <div class="mt-2 font-normal text-[18px] text-[#4e5255] leading-[27px]">{{
+                  <div class="uno-mt-2 uno-font-normal uno-text-[18px] uno-text-[#4e5255] uno-leading-[27px]">{{
                     $t('pages.about.stats.team.label') }}</div>
                 </div>
                 <div>
-                  <div class="font-semibold text-[48px] text-[#011813] leading-[58px]">{{
+                  <div class="uno-font-semibold uno-text-[48px] uno-text-[#011813] uno-leading-[58px]">{{
                     $t('pages.about.stats.reviews.value') }}</div>
-                  <div class="mt-2 font-normal text-[18px] text-[#4e5255] leading-[27px]">{{
+                  <div class="uno-mt-2 uno-font-normal uno-text-[18px] uno-text-[#4e5255] uno-leading-[27px]">{{
                     $t('pages.about.stats.reviews.label') }}</div>
                 </div>
                 <div>
-                  <div class="font-semibold text-[48px] text-[#011813] leading-[58px]">{{
+                  <div class="uno-font-semibold uno-text-[48px] uno-text-[#011813] uno-leading-[58px]">{{
                     $t('pages.about.stats.awards.value') }}</div>
-                  <div class="mt-2 font-normal text-[18px] text-[#4e5255] leading-[27px]">{{
+                  <div class="uno-mt-2 uno-font-normal uno-text-[18px] uno-text-[#4e5255] uno-leading-[27px]">{{
                     $t('pages.about.stats.awards.label') }}</div>
                 </div>
               </div>
@@ -59,124 +59,124 @@
 
 
 
-    <section class="py-12 md:py-20 bg-#f8f8f8">
-      <div class="max-w-full md:max-w-[80%] mx-auto px-6 sm:px-10">
-        <div class="flex flex-col md:flex-row gap-10 items-center">
-          <div class="md:w-1/2">
+    <section class="uno-py-12 md:uno-py-20 uno-bg-#f8f8f8">
+      <div class="uno-max-w-full md:uno-max-w-[80%] uno-mx-auto uno-px-6 sm:uno-px-10">
+        <div class="uno-flex uno-flex-col md:uno-flex-row uno-gap-10 uno-items-center">
+          <div class="md:uno-w-1/2">
             <NuxtImg src="/images/about/2.png" alt="Mission" width="564px" height="440px"
-              sizes="(min-width:768px) 564px, 342px" class="w-full h-auto" />
+              uno-sizes="(min-width:768px) 564px, 342px" class="uno-w-full uno-h-auto" />
           </div>
           <div>
-            <div class="flex justify-center items-center">
+            <div class="uno-flex uno-justify-center uno-items-center">
               <span
-                class="px-16px py-8px bg-[#dfffea] rounded-8px font-medium text-[16px] text-[#011813] leading-[24px]">{{
+                class="uno-px-16px uno-py-8px uno-bg-[#dfffea] uno-rounded-8px uno-font-medium uno-text-[16px] uno-text-[#011813] uno-leading-[24px]">{{
                   $t('pages.about.sections.mission.badge') }}</span>
             </div>
-            <h2 class="mt-4 text-3xl md:text-4xl font-['Outfit'] font-extrabold text-[var(--ui-foreground)]">{{
+            <h2 class="uno-mt-4 uno-text-3xl md:uno-text-4xl uno-font-['Outfit'] uno-font-extrabold uno-text-[var(--ui-foreground)]">{{
               $t('pages.about.sections.mission.title') }}</h2>
-            <p class="mt-4 text-[var(--ui-muted-foreground)]">{{ $t('pages.about.sections.mission.desc') }}</p>
-            <div class="mt-6 space-y-3">
-              <div class="flex items-start gap-3">
-                <NuxtImg src="/images/about/icon-2.png" alt="check" width="24" height="24" class="w-6 h-6" />
-                <span class="text-[var(--ui-foreground)]">{{ $t('pages.about.sections.mission.list1') }}</span>
+            <p class="uno-mt-4 uno-text-[var(--ui-muted-foreground)]">{{ $t('pages.about.sections.mission.desc') }}</p>
+            <div class="uno-mt-6 uno-space-y-3">
+              <div class="uno-flex uno-items-start uno-gap-3">
+                <NuxtImg src="/images/about/icon-2.png" alt="check" width="24" height="24" class="uno-w-6 uno-h-6" />
+                <span class="uno-text-[var(--ui-foreground)]">{{ $t('pages.about.sections.mission.list1') }}</span>
               </div>
-              <div class="flex items-start gap-3">
-                <NuxtImg src="/images/about/icon-2.png" alt="check" width="24" height="24" class="w-6 h-6" />
-                <span class="text-[var(--ui-foreground)]">{{ $t('pages.about.sections.mission.list2') }}</span>
+              <div class="uno-flex uno-items-start uno-gap-3">
+                <NuxtImg src="/images/about/icon-2.png" alt="check" width="24" height="24" class="uno-w-6 uno-h-6" />
+                <span class="uno-text-[var(--ui-foreground)]">{{ $t('pages.about.sections.mission.list2') }}</span>
               </div>
-              <div class="flex items-start gap-3">
-                <NuxtImg src="/images/about/icon-2.png" alt="check" width="24" height="24" class="w-6 h-6" />
-                <span class="text-[var(--ui-foreground)]">{{ $t('pages.about.sections.mission.list3') }}</span>
+              <div class="uno-flex uno-items-start uno-gap-3">
+                <NuxtImg src="/images/about/icon-2.png" alt="check" width="24" height="24" class="uno-w-6 uno-h-6" />
+                <span class="uno-text-[var(--ui-foreground)]">{{ $t('pages.about.sections.mission.list3') }}</span>
               </div>
-              <div class="flex items-start gap-3">
-                <NuxtImg src="/images/about/icon-2.png" alt="check" width="24" height="24" class="w-6 h-6" />
-                <span class="text-[var(--ui-foreground)]">{{ $t('pages.about.sections.mission.list4') }}</span>
+              <div class="uno-flex uno-items-start uno-gap-3">
+                <NuxtImg src="/images/about/icon-2.png" alt="check" width="24" height="24" class="uno-w-6 uno-h-6" />
+                <span class="uno-text-[var(--ui-foreground)]">{{ $t('pages.about.sections.mission.list4') }}</span>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="mt-10 flex flex-col md:flex-row gap-10 items-center">
+        <div class="uno-mt-10 uno-flex uno-flex-col md:uno-flex-row uno-gap-10 uno-items-center">
           <div>
-            <div class="flex justify-center items-center">
+            <div class="uno-flex uno-justify-center uno-items-center">
               <span
-                class="px-16px py-8px bg-[#ffd3e1] rounded-8px font-medium text-[16px] text-[#011813] leading-[24px] mx-auto">{{
+                class="uno-px-16px uno-py-8px uno-bg-[#ffd3e1] uno-rounded-8px uno-font-medium uno-text-[16px] uno-text-[#011813] uno-leading-[24px] uno-mx-auto">{{
                   $t('pages.about.sections.vision.badge') }}</span>
             </div>
-            <h2 class="mt-4 text-3xl md:text-4xl font-['Outfit'] font-extrabold text-[var(--ui-foreground)]">{{
+            <h2 class="uno-mt-4 uno-text-3xl md:uno-text-4xl uno-font-['Outfit'] uno-font-extrabold uno-text-[var(--ui-foreground)]">{{
               $t('pages.about.sections.vision.title') }}</h2>
-            <p class="mt-4 text-[var(--ui-muted-foreground)]">{{ $t('pages.about.sections.vision.desc') }}</p>
-            <div class="mt-6 space-y-3">
-              <div class="flex items-start gap-3">
-                <NuxtImg src="/images/about/icon-2.png" alt="check" width="24" height="24" class="w-6 h-6" />
-                <span class="text-[var(--ui-foreground)]">{{ $t('pages.about.sections.vision.list1') }}</span>
+            <p class="uno-mt-4 uno-text-[var(--ui-muted-foreground)]">{{ $t('pages.about.sections.vision.desc') }}</p>
+            <div class="uno-mt-6 uno-space-y-3">
+              <div class="uno-flex uno-items-start uno-gap-3">
+                <NuxtImg src="/images/about/icon-2.png" alt="check" width="24" height="24" class="uno-w-6 uno-h-6" />
+                <span class="uno-text-[var(--ui-foreground)]">{{ $t('pages.about.sections.vision.list1') }}</span>
               </div>
-              <div class="flex items-start gap-3">
-                <NuxtImg src="/images/about/icon-2.png" alt="check" width="24" height="24" class="w-6 h-6" />
-                <span class="text-[var(--ui-foreground)]">{{ $t('pages.about.sections.vision.list2') }}</span>
+              <div class="uno-flex uno-items-start uno-gap-3">
+                <NuxtImg src="/images/about/icon-2.png" alt="check" width="24" height="24" class="uno-w-6 uno-h-6" />
+                <span class="uno-text-[var(--ui-foreground)]">{{ $t('pages.about.sections.vision.list2') }}</span>
               </div>
-              <div class="flex items-start gap-3">
-                <NuxtImg src="/images/about/icon-2.png" alt="check" width="24" height="24" class="w-6 h-6" />
-                <span class="text-[var(--ui-foreground)]">{{ $t('pages.about.sections.vision.list3') }}</span>
+              <div class="uno-flex uno-items-start uno-gap-3">
+                <NuxtImg src="/images/about/icon-2.png" alt="check" width="24" height="24" class="uno-w-6 uno-h-6" />
+                <span class="uno-text-[var(--ui-foreground)]">{{ $t('pages.about.sections.vision.list3') }}</span>
               </div>
-              <div class="flex items-start gap-3">
-                <NuxtImg src="/images/about/icon-2.png" alt="check" width="24" height="24" class="w-6 h-6" />
-                <span class="text-[var(--ui-foreground)]">{{ $t('pages.about.sections.vision.list4') }}</span>
+              <div class="uno-flex uno-items-start uno-gap-3">
+                <NuxtImg src="/images/about/icon-2.png" alt="check" width="24" height="24" class="uno-w-6 uno-h-6" />
+                <span class="uno-text-[var(--ui-foreground)]">{{ $t('pages.about.sections.vision.list4') }}</span>
               </div>
             </div>
           </div>
-          <div class="md:w-1/2">
+          <div class="md:uno-w-1/2">
             <NuxtImg src="/images/about/3.png" alt="Vision" width="564px" height="440px"
-              sizes="(min-width:768px) 564px, 342px" class="w-full h-auto" />
+              uno-sizes="(min-width:768px) 564px, 342px" class="uno-w-full uno-h-auto" />
           </div>
         </div>
       </div>
     </section>
 
-    <section class="py-12 md:py-20">
-      <div class="max-w-full md:max-w-[80%] mx-auto px-6 sm:px-10">
-        <div class="flex flex-col md:flex-row gap-10 items-start">
+    <section class="uno-py-12 md:uno-py-20">
+      <div class="uno-max-w-full md:uno-max-w-[80%] uno-mx-auto uno-px-6 sm:uno-px-10">
+        <div class="uno-flex uno-flex-col md:uno-flex-row uno-gap-10 uno-items-start">
           <div>
-            <h2 class="text-3xl md:text-5xl font-['Outfit'] font-extrabold text-[var(--ui-foreground)]">{{
+            <h2 class="uno-text-3xl md:uno-text-5xl uno-font-['Outfit'] uno-font-extrabold uno-text-[var(--ui-foreground)]">{{
               $t('pages.about.standout.title') }}</h2>
-            <p class="mt-4 text-[var(--ui-muted-foreground)] max-w-xl">{{ $t('pages.about.standout.desc') }}</p>
-            <div class="mt-8 space-y-6">
-              <div class="flex items-start gap-4">
-                <span class="w-10 h-10 rounded-full bg-[var(--color-green-3)] flex items-center justify-center">
+            <p class="uno-mt-4 uno-text-[var(--ui-muted-foreground)] uno-max-w-xl">{{ $t('pages.about.standout.desc') }}</p>
+            <div class="uno-mt-8 uno-space-y-6">
+              <div class="uno-flex uno-items-start uno-gap-4">
+                <span class="uno-w-10 uno-h-10 uno-rounded-full uno-bg-[var(--color-green-3)] uno-flex uno-items-center uno-justify-center">
                   <NuxtImg src="/images/about/icon-3.png" alt="precision" width="64" height="64" />
                 </span>
                 <div>
-                  <div class="text-lg md:text-xl font-semibold text-[var(--ui-foreground)]">{{
+                  <div class="uno-text-lg md:uno-text-xl uno-font-semibold uno-text-[var(--ui-foreground)]">{{
                     $t('pages.about.standout.items.precision.title') }}</div>
-                  <p class="text-[var(--ui-muted-foreground)]">{{ $t('pages.about.standout.items.precision.desc') }}</p>
+                  <p class="uno-text-[var(--ui-muted-foreground)]">{{ $t('pages.about.standout.items.precision.desc') }}</p>
                 </div>
               </div>
-              <div class="flex items-start gap-4">
-                <span class="w-10 h-10 rounded-full bg-[var(--color-purple-4)] flex items-center justify-center">
+              <div class="uno-flex uno-items-start uno-gap-4">
+                <span class="uno-w-10 uno-h-10 uno-rounded-full uno-bg-[var(--color-purple-4)] uno-flex uno-items-center uno-justify-center">
                   <NuxtImg src="/images/about/icon-4.png" alt="deep" width="64" height="64" />
                 </span>
                 <div>
-                  <div class="text-lg md:text-xl font-semibold text-[var(--ui-foreground)]">{{
+                  <div class="uno-text-lg md:uno-text-xl uno-font-semibold uno-text-[var(--ui-foreground)]">{{
                     $t('pages.about.standout.items.deep.title') }}</div>
-                  <p class="text-[var(--ui-muted-foreground)]">{{ $t('pages.about.standout.items.deep.desc') }}</p>
+                  <p class="uno-text-[var(--ui-muted-foreground)]">{{ $t('pages.about.standout.items.deep.desc') }}</p>
                 </div>
               </div>
-              <div class="flex items-start gap-4">
-                <span class="w-10 h-10 rounded-full bg-[var(--color-pink-3)] flex items-center justify-center">
+              <div class="uno-flex uno-items-start uno-gap-4">
+                <span class="uno-w-10 uno-h-10 uno-rounded-full uno-bg-[var(--color-pink-3)] uno-flex uno-items-center uno-justify-center">
                   <NuxtImg src="/images/about/icon-5.png" alt="expert" width="64" height="64" />
                 </span>
                 <div>
-                  <div class="text-lg md:text-xl font-semibold text-[var(--ui-foreground)]">{{
+                  <div class="uno-text-lg md:uno-text-xl uno-font-semibold uno-text-[var(--ui-foreground)]">{{
                     $t('pages.about.standout.items.expert.title') }}</div>
-                  <p class="text-[var(--ui-muted-foreground)]">{{ $t('pages.about.standout.items.expert.desc') }}</p>
+                  <p class="uno-text-[var(--ui-muted-foreground)]">{{ $t('pages.about.standout.items.expert.desc') }}</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="w-[320px] sm:w-[342px] md:w-[616px] mx-auto md:mx-0">
+          <div class="uno-w-[320px] sm:uno-w-[342px] md:uno-w-[616px] uno-mx-auto md:uno-mx-0">
             <NuxtImg src="/images/about/4.png" alt="Vision" width="616px" height="560px"
-              sizes="(min-width:768px) 616px, 320px" class="w-full h-auto" />
+              uno-sizes="(min-width:768px) 616px, 320px" class="uno-w-full uno-h-auto" />
           </div>
         </div>
       </div>

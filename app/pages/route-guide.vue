@@ -1,49 +1,49 @@
 <template>
-  <main class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-8 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-7xl mx-auto">
+  <main class="uno-min-h-screen uno-bg-gradient-to-br uno-from-gray-50 uno-to-gray-100 uno-py-8 uno-px-4 sm:uno-px-6 lg:uno-px-8">
+    <div class="uno-max-w-7xl uno-mx-auto">
       <!-- 页面标题 -->
-      <div class="text-center mb-8 sm:mb-12">
-        <h1 class="text-2xl sm:text-3xl md:text-4xl font-['Outfit'] font-bold text-gray-900 mb-4">
+      <div class="uno-text-center uno-mb-8 sm:uno-mb-12">
+        <h1 class="uno-text-2xl sm:uno-text-3xl md:uno-text-4xl uno-font-['Outfit'] uno-font-bold uno-text-gray-900 uno-mb-4">
           {{ $t('routeGuide.title') }}
         </h1>
-        <p class="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+        <p class="uno-text-base sm:uno-text-lg uno-text-gray-600 uno-max-w-2xl uno-mx-auto">
           {{ $t('routeGuide.intro') }}
         </p>
       </div>
 
       <!-- 路由列表容器 -->
-      <div class="bg-white rounded-2xl shadow-xl p-4 sm:p-6 md:p-8">
+      <div class="uno-bg-white uno-rounded-2xl uno-shadow-xl uno-p-4 sm:uno-p-6 md:uno-p-8">
         <!-- 路由统计信息 -->
-        <div class="mb-6 sm:mb-8 p-3 sm:p-4 bg-gray-50 rounded-xl">
-          <p class="text-gray-700 font-medium">
+        <div class="uno-mb-6 sm:uno-mb-8 uno-p-3 sm:uno-p-4 uno-bg-gray-50 uno-rounded-xl">
+          <p class="uno-text-gray-700 uno-font-medium">
             {{ $t('routeGuide.stats', { count: routes.length }) }}
           </p>
         </div>
 
         <!-- 路由列表 -->
-        <div class="space-y-3 sm:space-y-4" v-if="routes.length > 0">
+        <div class="uno-space-y-3 sm:uno-space-y-4" v-if="routes.length > 0">
           <div 
             v-for="route in routes" 
             :key="route.path"
-            class="group"
+            class="uno-group"
           >
             <NuxtLink 
               :to="route.path"
-              class="block p-3 sm:p-4 border border-gray-200 rounded-xl hover:border-green-500 transition-all duration-300 hover:bg-gray-50 transform hover:-translate-y-0.5 hover:shadow-md"
+              class="uno-block uno-p-3 sm:uno-p-4 uno-border uno-border-gray-200 uno-rounded-xl hover:uno-border-green-500 uno-transition-all uno-duration-300 hover:uno-bg-gray-50 uno-transform hover:uno--translate-y-0.5 hover:uno-shadow-md"
             >
-              <div class="flex flex-col md:flex-row md:items-center justify-between">
-                <div class="flex-1">
-                  <h3 class="text-base sm:text-lg font-['Outfit'] font-semibold text-gray-900 group-hover:text-green-600 transition-colors">
+              <div class="uno-flex uno-flex-col md:uno-flex-row md:uno-items-center uno-justify-between">
+                <div class="uno-flex-1">
+                  <h3 class="uno-text-base sm:uno-text-lg uno-font-['Outfit'] uno-font-semibold uno-text-gray-900 group-hover:uno-text-green-600 uno-transition-colors">
                     {{ formatRouteName(route.path) }}
                   </h3>
-                  <p class="text-gray-500 text-xs sm:text-sm mt-1 truncate">
+                  <p class="uno-text-gray-500 uno-text-xs sm:uno-text-sm uno-mt-1 uno-truncate">
                     {{ $t('routeGuide.pathLabel') }}: {{ route.path }}
                   </p>
                 </div>
-                <div class="mt-2 md:mt-0 flex-shrink-0">
-                  <span class="inline-flex items-center px-3 py-1 rounded-full text-xs sm:text-sm font-medium bg-green-100 text-green-800">
+                <div class="uno-mt-2 md:uno-mt-0 uno-flex-shrink-0">
+                  <span class="uno-inline-flex uno-items-center uno-px-3 uno-py-1 uno-rounded-full uno-text-xs sm:uno-text-sm uno-font-medium uno-bg-green-100 uno-text-green-800">
                     {{ $t('routeGuide.visit') }}
-                    <svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="uno-w-4 uno-h-4 uno-ml-1 uno-transition-transform group-hover:uno-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                     </svg>
                   </span>
@@ -54,23 +54,23 @@
         </div>
 
         <!-- 无路由时的提示 -->
-        <div v-else class="text-center py-12">
-          <div class="mb-4 flex justify-center">
-            <svg class="w-12 h-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div v-else class="uno-text-center uno-py-12">
+          <div class="uno-mb-4 uno-flex uno-justify-center">
+            <svg class="uno-w-12 uno-h-12 uno-text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
             </svg>
           </div>
-          <p class="text-gray-500">{{ $t('routeGuide.empty') }}</p>
+          <p class="uno-text-gray-500">{{ $t('routeGuide.empty') }}</p>
         </div>
       </div>
 
       <!-- 返回首页按钮 -->
-      <div class="mt-6 sm:mt-8 text-center">
+      <div class="uno-mt-6 sm:uno-mt-8 uno-text-center">
         <NuxtLink 
           to="/" 
-          class="inline-flex items-center px-5 sm:px-6 py-2 sm:py-3 border border-transparent text-sm sm:text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 transition-colors shadow-sm"
+          class="uno-inline-flex uno-items-center uno-px-5 sm:uno-px-6 uno-py-2 sm:uno-py-3 uno-border uno-border-transparent uno-text-sm sm:uno-text-base uno-font-medium uno-rounded-md uno-text-white uno-bg-green-600 hover:uno-bg-green-700 uno-transition-colors uno-shadow-sm"
         >
-          <svg class="w-4 h-4 sm:w-5 sm:h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="uno-w-4 uno-h-4 sm:uno-w-5 sm:uno-h-5 uno-mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V7a2 2 0 00-2-2M5 12V7a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
           </svg>
           {{ $t('routeGuide.back') }}

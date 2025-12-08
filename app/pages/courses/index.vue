@@ -1,61 +1,61 @@
 <template>
-  <main class="min-h-screen bg-white">
+  <main class="uno-min-h-screen uno-bg-white">
     <!-- Page Header -->
-    <section class="py-16 px-6 md:px-12 lg:px-24 bg-gray-50">
-      <div class="max-w-7xl mx-auto">
-        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Courses</h1>
-        <p class="text-lg text-gray-600 max-w-3xl">
+    <section class="uno-py-16 uno-px-6 md:uno-px-12 lg:uno-px-24 uno-bg-gray-50">
+      <div class="uno-max-w-7xl uno-mx-auto">
+        <h1 class="uno-text-3xl md:uno-text-4xl uno-font-bold uno-text-gray-900 uno-mb-4">Our Courses</h1>
+        <p class="uno-text-lg uno-text-gray-600 uno-max-w-3xl">
           Explore our comprehensive range of courses designed to help you achieve your learning goals.
         </p>
       </div>
     </section>
 
     <!-- Course Filters -->
-    <section class="py-8 px-6 md:px-12 lg:px-24">
-      <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
-        <div class="flex flex-wrap gap-2">
-          <UButton variant="ghost" class="rounded-full" :pressed="activeFilter === 'all'" @click="activeFilter = 'all'">
+    <section class="uno-py-8 uno-px-6 md:uno-px-12 lg:uno-px-24">
+      <div class="uno-max-w-7xl uno-mx-auto uno-flex uno-flex-col sm:uno-flex-row uno-justify-between uno-items-start sm:uno-items-center uno-gap-4 uno-mb-8">
+        <div class="uno-flex uno-flex-wrap uno-gap-2">
+          <UButton variant="ghost" class="uno-rounded-full" :pressed="activeFilter === 'all'" @click="activeFilter = 'all'">
             All Courses
           </UButton>
-          <UButton variant="ghost" class="rounded-full" :pressed="activeFilter === 'programming'" @click="activeFilter = 'programming'">
+          <UButton variant="ghost" class="uno-rounded-full" :pressed="activeFilter === 'programming'" @click="activeFilter = 'programming'">
             Programming
           </UButton>
-          <UButton variant="ghost" class="rounded-full" :pressed="activeFilter === 'design'" @click="activeFilter = 'design'">
+          <UButton variant="ghost" class="uno-rounded-full" :pressed="activeFilter === 'design'" @click="activeFilter = 'design'">
             Design
           </UButton>
-          <UButton variant="ghost" class="rounded-full" :pressed="activeFilter === 'business'" @click="activeFilter = 'business'">
+          <UButton variant="ghost" class="uno-rounded-full" :pressed="activeFilter === 'business'" @click="activeFilter = 'business'">
             Business
           </UButton>
         </div>
-        <USelect v-model="sortOrder" :options="sortOptions" placeholder="Sort by" class="w-full sm:w-40" />
+        <USelect v-model="sortOrder" :options="sortOptions" placeholder="Sort by" class="uno-w-full sm:uno-w-40" />
       </div>
 
       <!-- Course Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div v-for="course in filteredCourses" :key="course.id" class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-          <div class="h-48 bg-gray-200 overflow-hidden">
-            <NuxtImg :src="course.image" :alt="course.title" class="w-full h-full object-cover" />
+      <div class="uno-grid uno-grid-cols-1 md:uno-grid-cols-2 lg:uno-grid-cols-3 uno-gap-8">
+        <div v-for="course in filteredCourses" :key="course.id" class="uno-bg-white uno-rounded-lg uno-shadow-md uno-overflow-hidden hover:uno-shadow-lg uno-transition-shadow uno-duration-300">
+          <div class="uno-h-48 uno-bg-gray-200 uno-overflow-hidden">
+            <NuxtImg :src="course.image" :alt="course.title" class="uno-w-full uno-h-full uno-object-cover" />
           </div>
-          <div class="p-6">
-            <div class="flex justify-between items-start mb-2">
-              <span class="text-sm font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">{{ course.category }}</span>
-              <div class="flex items-center">
-                <span class="text-amber-500 mr-1">★</span>
-                <span class="text-sm font-medium">{{ course.rating }}</span>
+          <div class="uno-p-6">
+            <div class="uno-flex uno-justify-between uno-items-start uno-mb-2">
+              <span class="uno-text-sm uno-font-medium uno-text-primary uno-bg-primary/10 uno-px-3 uno-py-1 uno-rounded-full">{{ course.category }}</span>
+              <div class="uno-flex uno-items-center">
+                <span class="uno-text-amber-500 uno-mr-1">★</span>
+                <span class="uno-text-sm uno-font-medium">{{ course.rating }}</span>
               </div>
             </div>
-            <h3 class="text-xl font-bold mb-2">{{ course.title }}</h3>
-            <p class="text-gray-600 text-sm mb-4 line-clamp-2">{{ course.description }}</p>
-            <div class="flex justify-between items-center">
-              <div class="flex items-center">
-                <div class="w-8 h-8 rounded-full bg-gray-200 overflow-hidden mr-2">
-                  <NuxtImg :src="course.instructor.avatar" :alt="course.instructor.name" class="w-full h-full object-cover" />
+            <h3 class="uno-text-xl uno-font-bold uno-mb-2">{{ course.title }}</h3>
+            <p class="uno-text-gray-600 uno-text-sm uno-mb-4 uno-line-clamp-2">{{ course.description }}</p>
+            <div class="uno-flex uno-justify-between uno-items-center">
+              <div class="uno-flex uno-items-center">
+                <div class="uno-w-8 uno-h-8 uno-rounded-full uno-bg-gray-200 uno-overflow-hidden uno-mr-2">
+                  <NuxtImg :src="course.instructor.avatar" :alt="course.instructor.name" class="uno-w-full uno-h-full uno-object-cover" />
                 </div>
-                <span class="text-sm text-gray-700">{{ course.instructor.name }}</span>
+                <span class="uno-text-sm uno-text-gray-700">{{ course.instructor.name }}</span>
               </div>
-              <span class="font-bold text-gray-900">{{ course.price }}</span>
+              <span class="uno-font-bold uno-text-gray-900">{{ course.price }}</span>
             </div>
-            <UButton class="w-full mt-4 bg-primary hover:bg-primary/90 text-white rounded-lg">
+            <UButton class="uno-w-full uno-mt-4 uno-bg-primary hover:uno-bg-primary/90 uno-text-white uno-rounded-lg">
               Enroll Now
             </UButton>
           </div>
@@ -63,9 +63,9 @@
       </div>
 
       <!-- No Courses Found -->
-      <div v-if="filteredCourses.length === 0" class="text-center py-16">
-        <p class="text-gray-600 text-lg">No courses found matching your criteria.</p>
-        <UButton class="mt-4 bg-primary hover:bg-primary/90 text-white rounded-full" @click="activeFilter = 'all'">
+      <div v-if="filteredCourses.length === 0" class="uno-text-center uno-py-16">
+        <p class="uno-text-gray-600 uno-text-lg">No courses found matching your criteria.</p>
+        <UButton class="uno-mt-4 uno-bg-primary hover:uno-bg-primary/90 uno-text-white uno-rounded-full" @click="activeFilter = 'all'">
           View All Courses
         </UButton>
       </div>
