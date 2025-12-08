@@ -227,7 +227,12 @@
   "auth": {
     "signIn": {
       "title": "ログイン",
-      "description": "安全にアカウントへアクセス。"
+      "description": "安全にアカウントへアクセス。",
+      "passwordLabel": "パスワード",
+      "passwordPlaceholder": "パスワード",
+      "submit": "ログイン",
+      "noAccount": "アカウントをお持ちではありませんか？",
+      "signUp": "新規登録"
     }
   },
   "orders": {

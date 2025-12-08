@@ -238,13 +238,13 @@
 import { ref, computed } from 'vue';
 // const { t } = useI18n()
 // definePageMeta({
-//   title: t('pages.blog.title') as string
+//   title: t('blog.title') as string
 // })
 // useSeoMeta({
-//   title: () => t('pages.blog.title') as string,
-//   description: () => t('pages.blog.description') as string,
-//   ogTitle: () => t('pages.blog.title') as string,
-//   ogDescription: () => t('pages.blog.description') as string
+//   title: () => t('blog.title') as string,
+//   description: () => t('blog.description') as string,
+//   ogTitle: () => t('blog.title') as string,
+//   ogDescription: () => t('blog.description') as string
 // })
 
 const searchQuery = ref('');

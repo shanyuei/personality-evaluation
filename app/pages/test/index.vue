@@ -332,13 +332,13 @@
 <script setup lang="ts">
 // const { t } = useI18n()
 // definePageMeta({
-//   title: t('pages.test.title') as string
+//   title: t('test.title') as string
 // })
 // useSeoMeta({
-//   title: () => t('pages.test.title') as string,
-//   description: () => t('pages.test.description') as string,
-//   ogTitle: () => t('pages.test.title') as string,
-//   ogDescription: () => t('pages.test.description') as string
+//   title: () => t('test.title') as string,
+//   description: () => t('test.description') as string,
+//   ogTitle: () => t('test.title') as string,
+//   ogDescription: () => t('test.description') as string
 // })
 // 测评相关逻辑可以在这里实现
 // 例如：问题数据、用户答案管理、进度跟踪等

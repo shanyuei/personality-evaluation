@@ -94,13 +94,13 @@ import { onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 // const { t } = useI18n()
 // definePageMeta({
-//   title: t('pages.test.analyzing.title') as string
+//   title: t('test.analyzing.title') as string
 // })
 // useSeoMeta({
-//   title: () => t('pages.test.analyzing.title') as string,
-//   description: () => t('pages.test.analyzing.description') as string,
-//   ogTitle: () => t('pages.test.analyzing.title') as string,
-//   ogDescription: () => t('pages.test.analyzing.description') as string
+//   title: () => t('test.analyzing.title') as string,
+//   description: () => t('test.analyzing.description') as string,
+//   ogTitle: () => t('test.analyzing.title') as string,
+//   ogDescription: () => t('test.analyzing.description') as string
 // })
 const router = useRouter()
 

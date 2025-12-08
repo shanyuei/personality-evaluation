@@ -334,7 +334,12 @@
     "auth": {
       "signIn": {
         "title": "Sign In",
-        "description": "Access your account securely."
+        "description": "Access your account securely.",
+        "passwordLabel": "Password",
+        "passwordPlaceholder": "Password",
+        "submit": "Sign In",
+        "noAccount": "Don't have an account?",
+        "signUp": "Sign Up"
       }
     },
     "orders": {
@@ -425,7 +430,7 @@
           "accept": { "title": "Acceptance of Terms", "body": "Registering or using the service constitutes acceptance of this agreement." },
           "use": { "title": "Use of Service", "body": "Use the service in accordance with applicable laws and this agreement. Do not abuse or disrupt the platform." },
           "account": { "title": "Accounts & Security", "body": "Keep credentials secure and remain responsible for activities under your account. Notify us immediately of suspicious activity." },
-          "payments": { "title": "Payments", "body": "For paid courses or subscriptions, fees, billing, and refunds follow the policies described on the relevant pages." },
+          "payments": { "title": "Payments", "body": "For paid courses or subscriptions, fees, billing, and refunds follow the policies described on the relevant " },
           "content": { "title": "User Content", "body": "You retain ownership of your content while granting us necessary rights to process and display it to provide the service." },
           "prohibited": { "title": "Prohibited Conduct", "body": "Including but not limited to unlawful content, infringement, attacks, or interference with platform operations." },
           "termination": { "title": "Termination", "body": "We may suspend or terminate service for violations. You may stop using the service and request data export at any time." },

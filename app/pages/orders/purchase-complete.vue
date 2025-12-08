@@ -7,30 +7,30 @@
         </svg>
       </div>
 
-      <h1 class="uno-text-3xl md:uno-text-4xl uno-font-bold uno-text-gray-900 uno-mb-3 md:uno-mb-4 uno-font-['Outfit']">{{ $t('pages.orders.purchaseComplete.title') }}</h1>
-      <p class="uno-text-gray-600 uno-mb-6 md:uno-mb-8 uno-font-['Outfit'] uno-text-base md:uno-text-lg">{{ $t('pages.orders.purchaseComplete.description') }}</p>
+      <h1 class="uno-text-3xl md:uno-text-4xl uno-font-bold uno-text-gray-900 uno-mb-3 md:uno-mb-4 uno-font-['Outfit']">{{ $t('orders.purchaseComplete.title') }}</h1>
+      <p class="uno-text-gray-600 uno-mb-6 md:uno-mb-8 uno-font-['Outfit'] uno-text-base md:uno-text-lg">{{ $t('orders.purchaseComplete.description') }}</p>
 
       <button
         class="uno-w-full uno-h-[48px] uno-inline-flex uno-items-center uno-justify-center uno-rounded-[16px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-[var(--ui-primary-foreground)] uno-font-['Outfit'] uno-transition uno-duration-200"
         type="button"
         @click="goToReport"
       >
-        {{ $t('pages.orders.purchaseComplete.accessReport') }}
+        {{ $t('orders.purchaseComplete.accessReport') }}
       </button>
 
-      <p class="uno-text-gray-500 uno-mt-3 uno-mb-6 uno-font-['Outfit'] uno-text-sm">{{ $t('pages.orders.purchaseComplete.accessNote') }}</p>
+      <p class="uno-text-gray-500 uno-mt-3 uno-mb-6 uno-font-['Outfit'] uno-text-sm">{{ $t('orders.purchaseComplete.accessNote') }}</p>
 
       <button
         class="uno-w-full uno-h-[48px] uno-inline-flex uno-items-center uno-justify-center uno-rounded-[16px] uno-bg-[#0F172A] hover:uno-bg-[#1F2937] active:uno-bg-[#111827] uno-text-white uno-font-['Outfit'] uno-transition uno-duration-200"
         type="button"
         @click="downloadGuidebook"
       >
-        {{ $t('pages.orders.purchaseComplete.downloadGuidebook') }}
+        {{ $t('orders.purchaseComplete.downloadGuidebook') }}
       </button>
 
-      <p class="uno-text-gray-500 uno-mt-3 uno-font-['Outfit'] uno-text-sm">{{ $t('pages.orders.purchaseComplete.downloadNote') }}</p>
+      <p class="uno-text-gray-500 uno-mt-3 uno-font-['Outfit'] uno-text-sm">{{ $t('orders.purchaseComplete.downloadNote') }}</p>
 
-      <NuxtLink to="/" class="uno-mt-8 uno-text-green-600 hover:uno-text-green-700 uno-font-medium">{{ $t('pages.orders.purchaseComplete.goHome') }}</NuxtLink>
+      <NuxtLink to="/" class="uno-mt-8 uno-text-green-600 hover:uno-text-green-700 uno-font-medium">{{ $t('orders.purchaseComplete.goHome') }}</NuxtLink>
     </div>
   </div>
 </template>
@@ -38,13 +38,13 @@
 <script setup lang="ts">
 // const { t } = useI18n()
 // definePageMeta({
-//   title: () => t('pages.orders.purchaseComplete.title') as string
+//   title: () => t('orders.purchaseComplete.title') as string
 // })
 // useSeoMeta({
-//   title: () => t('pages.orders.purchaseComplete.title') as string,
-//   description: () => t('pages.orders.purchaseComplete.description') as string,
-//   ogTitle: () => t('pages.orders.purchaseComplete.title') as string,
-//   ogDescription: () => t('pages.orders.purchaseComplete.description') as string
+//   title: () => t('orders.purchaseComplete.title') as string,
+//   description: () => t('orders.purchaseComplete.description') as string,
+//   ogTitle: () => t('orders.purchaseComplete.title') as string,
+//   ogDescription: () => t('orders.purchaseComplete.description') as string
 // })
 
 const goToReport = () => {

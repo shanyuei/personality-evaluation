@@ -214,13 +214,13 @@ import { useRouter, useRoute } from 'vue-router'
 
 // const { t } = useI18n()
 // definePageMeta({
-//   title: t('pages.test.step.title') as string
+//   title: t('test.step.title') as string
 // })
 // useSeoMeta({
-//   title: () => t('pages.test.step.title') as string,
-//   description: () => t('pages.test.step.description') as string,
-//   ogTitle: () => t('pages.test.step.title') as string,
-//   ogDescription: () => t('pages.test.step.description') as string
+//   title: () => t('test.step.title') as string,
+//   description: () => t('test.step.description') as string,
+//   ogTitle: () => t('test.step.title') as string,
+//   ogDescription: () => t('test.step.description') as string
 // })
 
 // 路由
