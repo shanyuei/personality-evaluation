@@ -1,78 +1,98 @@
 <template>
-  <main class="uno-py-12 uno-px-6 md:uno-px-10">
-    <div class="uno-max-w-[720px] uno-mx-auto">
-      <h1 class="uno-text-3xl md:uno-text-4xl uno-font-['Outfit'] uno-font-bold uno-text-center uno-text-gray-900 uno-mb-8">{{
+  <div class="uno-max-w-[720px] uno-mx-auto">
+    <h1
+      class="uno-text-3xl md:uno-text-4xl uno-font-['Outfit'] uno-font-bold uno-text-center uno-text-gray-900 uno-mb-8">
+      {{
         $t('pages.account.settings.title') }}</h1>
 
-      <div class="uno-bg-white uno-rounded-[24px] uno-shadow-sm uno-border uno-p-6 md:uno-p-8 uno-space-y-10">
-        <!-- Profile details -->
-        <section>
-          <h2 class="uno-text-xl uno-font-['Outfit'] uno-font-semibold uno-text-gray-900 uno-mb-4">{{
-            $t('pages.account.settings.profile.title') }}</h2>
-          <div class="uno-space-y-4">
-            <div>
-              <UInput v-model="name" type="text" :placeholder="$t('pages.account.settings.profile.namePlaceholder')" />
-            </div>
-            <div>
-              <UInput v-model="email" type="email"
-                :placeholder="$t('pages.account.settings.profile.emailPlaceholder')" />
-            </div>
-            <div>
-              <button
-                class="uno-w-full uno-h-[48px] uno-rounded-[16px] uno-bg-[var(--ui-primary)] uno-text-white hover:uno-bg-[var(--color-green-2)] uno-font-['Outfit']"
-                @click="onSaveProfile">{{ $t('pages.account.settings.profile.submit') }}</button>
-            </div>
-            <p v-if="profileMessage" class="uno-text-sm uno-text-green-700 uno-mt-2">{{ profileMessage }}</p>
+    <div
+      class="uno-shadow-[0px_4px_12px_0px_rgba(0,0,0,0.05)] uno-rounded-[24px] uno-border uno-border-solid uno-border-[1px] uno-border-[#e7e7e8] bg-white p-[32px]">
+      <!-- Profile details -->
+      <section>
+        <h2 class="uno-font-semibold uno-text-[24px] uno-text-[#323233] uno-leading-[36px] uno-mb-[16px]">{{
+          $t('pages.account.settings.profile.title') }}</h2>
+        <div class="uno-space-y-4">
+          <UFormField :ui="UFormFieldTheme" :label="$t('pages.account.settings.profile.namePlaceholder')">
+            <UInput v-model="name" :ui="UInputTheme" type="text"
+              :placeholder="$t('pages.account.settings.profile.namePlaceholder')" />
+          </UFormField>
+          <UFormField :ui="UFormFieldTheme" :label="$t('pages.account.settings.profile.emailPlaceholder')">
+            <UInput v-model="email" :ui="UInputTheme" type="email"
+              :placeholder="$t('pages.account.settings.profile.emailPlaceholder')" />
+          </UFormField>
+          <div>
+            <button
+              class="uno-w-[217px] uno-h-[56px] uno-bg-[var(--color-green-1)] uno-rounded-[8px] uno-font-bold uno-text-[18px] uno-text-[#ffffff] uno-leading-[27px]"
+              :disabled="!profileValid" @click="onSaveProfile">{{ $t('pages.account.settings.profile.submit')
+              }}</button>
           </div>
-        </section>
+          <p v-if="profileMessage" class="uno-text-sm uno-text-green-700 uno-mt-2">{{ profileMessage }}</p>
+        </div>
+      </section>
 
-        <!-- Change password -->
-        <section>
-          <h2 class="uno-text-xl uno-font-['Outfit'] uno-font-semibold uno-text-gray-900 uno-mb-4">{{
-            $t('pages.account.settings.password.title') }}</h2>
-          <div class="uno-space-y-4">
-            <UInput v-model="currentPassword" type="password"
+      <!-- Change password -->
+      <section class="uno-mt-34px">
+        <h2 class="uno-font-semibold uno-text-[24px] uno-text-[#323233] uno-leading-[36px] uno-mb-[16px]">{{
+          $t('pages.account.settings.password.title') }}</h2>
+        <div class="uno-space-y-4">
+          <UFormField :ui="UFormFieldTheme">
+            <UInput v-model="currentPassword" :ui="UInputTheme" type="password"
               :placeholder="$t('pages.account.settings.password.current')" />
-            <UInput v-model="newPassword" type="password" :placeholder="$t('pages.account.settings.password.new')" />
-            <UInput v-model="repeatNewPassword" type="password"
+          </UFormField>
+          <UFormField :ui="UFormFieldTheme">
+            <UInput v-model="newPassword" :ui="UInputTheme" type="password"
+              :placeholder="$t('pages.account.settings.password.new')" />
+          </UFormField>
+          <UFormField :ui="UFormFieldTheme">
+            <UInput v-model="repeatNewPassword" :ui="UInputTheme" type="password"
               :placeholder="$t('pages.account.settings.password.repeat')" />
-            <button
-              class="uno-w-full uno-h-[48px] uno-rounded-[16px] uno-bg-[var(--ui-primary)] uno-text-white hover:uno-bg-[var(--color-green-2)] uno-font-['Outfit']"
-              @click="onChangePassword">{{ $t('pages.account.settings.password.submit') }}</button>
-            <p v-if="passwordMessage" class="uno-text-sm" :class="uno-passwordSuccess ? 'text-green-700' : 'text-red-600'">{{
-              passwordMessage }}</p>
-          </div>
-        </section>
+          </UFormField>
+          <button
+            class="uno-w-[217px] uno-h-[56px] uno-bg-[var(--color-green-1)] uno-rounded-[8px] uno-font-bold uno-text-[18px] uno-text-[#ffffff] uno-leading-[27px]"
+            :disabled="!passwordValid" @click="onChangePassword">{{ $t('pages.account.settings.password.submit')
+            }}</button>
+          <p v-if="passwordMessage" class="uno-text-sm"
+            :class="passwordSuccess ? 'uno-text-green-700' : 'uno-text-red-600'">{{ passwordMessage }}</p>
+        </div>
+      </section>
 
-        <!-- Change language -->
-        <section>
-          <h2 class="uno-text-xl uno-font-['Outfit'] uno-font-semibold uno-text-gray-900 uno-mb-4">{{
-            $t('pages.account.settings.language.title') }}</h2>
-          <USelect v-model="language" :items="languageOptions" value-attribute="value" option-attribute="label" />
-          <div class="uno-mt-4">
-            <button
-              class="uno-w-full uno-h-[48px] uno-rounded-[16px] uno-bg-[var(--ui-primary)] uno-text-white hover:uno-bg-[var(--color-green-2)] uno-font-['Outfit']"
-              @click="onLanguageSaved">{{ $t('pages.account.settings.language.submit') }}</button>
-            <p v-if="languageMessage" class="uno-text-sm uno-text-green-700 uno-mt-2">{{ languageMessage }}</p>
-          </div>
-        </section>
+      <!-- Change language -->
+      <section class="uno-mt-34px">
+        <h2 class="uno-font-semibold uno-text-[24px] uno-text-[#323233] uno-leading-[36px] uno-mb-[16px]">{{
+          $t('pages.account.settings.language.title') }}</h2>
+        <UFormField :ui="UFormFieldTheme">
+          <USelect v-model="language" :ui="USelectTheme" :items="languageOptions" value-attribute="value"
+            option-attribute="label" />
+        </UFormField>
+        <div class="uno-mt-4">
+          <button
+            class="uno-w-[217px] uno-h-[56px] uno-bg-[var(--color-green-1)] uno-rounded-[8px] uno-font-bold uno-text-[18px] uno-text-[#ffffff] uno-leading-[27px]"
+            @click="onLanguageSaved">{{
+              $t('pages.account.settings.language.submit') }}</button>
+          <p v-if="languageMessage" class="uno-text-sm uno-text-green-700 uno-mt-2">{{ languageMessage }}</p>
+        </div>
+      </section>
 
-        <!-- Delete account -->
-        <section>
-          <h2 class="uno-text-xl uno-font-['Outfit'] uno-font-semibold uno-text-gray-900 uno-mb-4">{{
-            $t('pages.account.settings.delete.title') }}</h2>
-          <button class="uno-text-[var(--color-pink-1)] hover:uno-underline uno-font-['Outfit']" @click="onDeleteAccount">{{
+      <!-- Delete account -->
+      <section class="uno-mt-34px">
+        <h2 class="uno-font-semibold uno-text-[24px] uno-text-[#323233] uno-leading-[36px] uno-mb-[16px]">{{
+          $t('pages.account.settings.delete.title') }}</h2>
+        <button
+          class="uno-w-[217px] uno-h-[56px] uno-bg-[var(--color-green-1)] uno-rounded-[8px] uno-font-bold uno-text-[18px] uno-text-[#ffffff] uno-leading-[27px]"
+          @click="onDeleteAccount">{{
             $t('pages.account.settings.delete.action') }}</button>
-          <p v-if="deleteMessage" class="uno-text-sm uno-text-green-700 uno-mt-2">{{ deleteMessage }}</p>
-        </section>
-      </div>
+        <p v-if="deleteMessage" class="uno-text-sm uno-text-green-700 uno-mt-2">{{ deleteMessage }}</p>
+      </section>
     </div>
-  </main>
+  </div>
 </template>
 
 <script setup lang="ts">
 import { useUserStore } from '@/stores/modules/user'
 import { useLanguageStore } from '@/stores/modules/language'
+import UFormFieldTheme from "~/theme/UFormField";
+import UInputTheme from "~/theme/UInput";
+import USelectTheme from "~/theme/USelect";
 
 const { t } = useI18n()
 // definePageMeta({ title: () => t('pages.account.settings.title') as string })
@@ -87,12 +107,24 @@ const userStore = useUserStore()
 const name = ref(userStore.user?.name || '')
 const email = ref(userStore.user?.email || '')
 const profileMessage = ref('')
+const profileValid = computed(() => {
+  const n = name.value.trim()
+  const e = email.value.trim()
+  const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)
+  return !!n && !!e && ok
+})
 
 const currentPassword = ref('')
 const newPassword = ref('')
 const repeatNewPassword = ref('')
 const passwordMessage = ref('')
 const passwordSuccess = ref(false)
+const passwordValid = computed(() => {
+  const c = currentPassword.value
+  const n = newPassword.value
+  const r = repeatNewPassword.value
+  return !!c && !!n && !!r && n === r
+})
 
 const languageMessage = ref('')
 const deleteMessage = ref('')
