@@ -1,7 +1,6 @@
 <template>
   <main class="uno-py-12 uno-px-6 md:uno-px-10">
     <div class="uno-max-w-[720px] uno-mx-auto">
-         <UInput v-model="name" />
       <h1 class="uno-text-3xl md:uno-text-4xl uno-font-['Outfit'] uno-font-bold uno-text-center uno-text-gray-900 uno-mb-8">{{
         $t('pages.account.settings.title') }}</h1>
 
@@ -10,8 +9,6 @@
         <section>
           <h2 class="uno-text-xl uno-font-['Outfit'] uno-font-semibold uno-text-gray-900 uno-mb-4">{{
             $t('pages.account.settings.profile.title') }}</h2>
-
-       
           <div class="uno-space-y-4">
             <div>
               <UInput v-model="name" type="text" :placeholder="$t('pages.account.settings.profile.namePlaceholder')" />

@@ -23,18 +23,20 @@
         {{ description || $t('home.accuracy.description') }}
       </p>
 
-      <CTAButton variant="solid" size="md" :disabled="buttonDisabled"
-        class="uno-w-[160px] sm:uno-w-[186px] uno-text-[#FFFFFF] uno-font-['Outfit'] uno-font-medium uno-text-[18px] sm:uno-text-[20px]"
-        @click="$emit('button-click', $event)">
+      <button
+        :disabled="buttonDisabled"
+        class="uno-w-[160px] sm:uno-w-[186px] uno-h-[48px] sm:uno-h-[56px] uno-inline-flex uno-items-center uno-justify-center uno-rounded-[24px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-[#FFFFFF] uno-font-['Outfit'] uno-font-medium uno-text-[18px] sm:uno-text-[20px] uno-transition uno-duration-200 disabled:uno-opacity-50 disabled:uno-cursor-not-allowed"
+        type="button"
+        @click="$emit('button-click', $event)"
+      >
         {{ buttonText }}
-      </CTAButton>
+      </button>
     </div>
 
   </div>
 </template>
 
 <script setup lang="ts">
-import CTAButton from './CTAButton.vue';
 
 interface Props {
   title?: string;

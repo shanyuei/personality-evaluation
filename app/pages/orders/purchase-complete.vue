@@ -10,26 +10,23 @@
       <h1 class="uno-text-3xl md:uno-text-4xl uno-font-bold uno-text-gray-900 uno-mb-3 md:uno-mb-4 uno-font-['Outfit']">{{ $t('pages.orders.purchaseComplete.title') }}</h1>
       <p class="uno-text-gray-600 uno-mb-6 md:uno-mb-8 uno-font-['Outfit'] uno-text-base md:uno-text-lg">{{ $t('pages.orders.purchaseComplete.description') }}</p>
 
-      <CTAButton 
-        variant="solid"
-        size="md"
-        block
+      <button
+        class="uno-w-full uno-h-[48px] uno-inline-flex uno-items-center uno-justify-center uno-rounded-[16px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-[var(--ui-primary-foreground)] uno-font-['Outfit'] uno-transition uno-duration-200"
+        type="button"
         @click="goToReport"
       >
         {{ $t('pages.orders.purchaseComplete.accessReport') }}
-      </CTAButton>
+      </button>
 
       <p class="uno-text-gray-500 uno-mt-3 uno-mb-6 uno-font-['Outfit'] uno-text-sm">{{ $t('pages.orders.purchaseComplete.accessNote') }}</p>
 
-      <CTAButton 
-        variant="solid"
-        size="md"
-        block
-        class="uno-bg-[#0F172A] hover:uno-bg-[#1F2937] active:uno-bg-[#111827] uno-text-white"
+      <button
+        class="uno-w-full uno-h-[48px] uno-inline-flex uno-items-center uno-justify-center uno-rounded-[16px] uno-bg-[#0F172A] hover:uno-bg-[#1F2937] active:uno-bg-[#111827] uno-text-white uno-font-['Outfit'] uno-transition uno-duration-200"
+        type="button"
         @click="downloadGuidebook"
       >
         {{ $t('pages.orders.purchaseComplete.downloadGuidebook') }}
-      </CTAButton>
+      </button>
 
       <p class="uno-text-gray-500 uno-mt-3 uno-font-['Outfit'] uno-text-sm">{{ $t('pages.orders.purchaseComplete.downloadNote') }}</p>
 
@@ -39,7 +36,6 @@
 </template>
 
 <script setup lang="ts">
-import CTAButton from '~/app/components/CTAButton.vue'
 // const { t } = useI18n()
 // definePageMeta({
 //   title: () => t('pages.orders.purchaseComplete.title') as string

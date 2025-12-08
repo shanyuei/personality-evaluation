@@ -18,9 +18,12 @@
 
 
                 <!-- 测试按钮 -->
-                <CTAButton variant="solid" size="lg" class="uno-m-t-72px">
-                    {{ $t('common.getStarted') }}
-                </CTAButton>
+                <button
+                  class="uno-m-t-72px uno-inline-flex uno-items-center uno-justify-center uno-h-[56px] uno-px-6 uno-rounded-[24px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-[var(--ui-primary-foreground)] uno-font-['Outfit'] uno-transition uno-duration-200 disabled:uno-opacity-50 disabled:uno-cursor-not-allowed"
+                  type="button"
+                >
+                  {{ $t('common.getStarted') }}
+                </button>
             </div>
         </div>
         <!-- 第二块区域 hero -->
@@ -125,9 +128,12 @@
                                 <p class="uno-text-gray-600 uno-mb-6">{{ $t('home.why.main.desc') }}</p>
                                 <!-- 分割线 -->
                                 <div class="uno-w-full uno-h-[1px] uno-bg-[#E7E7E8] uno-my-6" />
-                                <CTAButton variant="solid" size="sm">
-                                    {{ $t('common.getStarted') }}
-                                </CTAButton>
+                                <button
+                                  class="uno-inline-flex uno-items-center uno-justify-center uno-h-[40px] uno-px-3 uno-rounded-[16px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-[var(--ui-primary-foreground)] uno-font-['Outfit'] uno-transition uno-duration-200 disabled:uno-opacity-50 disabled:uno-cursor-not-allowed"
+                                  type="button"
+                                >
+                                  {{ $t('common.getStarted') }}
+                                </button>
                             </div>
                             <div class="uno-w-full md:uno-w-[76%] uno-relative md:uno-top-[-6px]">
                                 <!-- 图片 -->
@@ -185,8 +191,12 @@
                         <h2 class="uno-text-4xl uno-font-['Outfit'] uno-font-bold uno-mb-8">{{ $t('home.how.title') }}</h2>
                         <p class="uno-text-gray-600 uno-mb-12">{{ $t('home.how.desc') }}</p>
 
-                        <CTAButton :text="$t('common.getStarted')" uno-size="sm" uno-rounded="full" uno-bg-color="#009D77"
-                            uno-hover-bg-color="#008A68" uno-active-bg-color="#007759" />
+                        <button
+                          class="uno-inline-flex uno-items-center uno-justify-center uno-h-[40px] uno-px-3 uno-rounded-[999px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-[var(--ui-primary-foreground)] uno-font-['Outfit'] uno-transition uno-duration-200"
+                          type="button"
+                        >
+                          {{ $t('common.getStarted') }}
+                        </button>
                     </div>
 
                     <!-- 右侧：三个步骤卡片 -->
@@ -317,7 +327,6 @@
 </template>
 
 <script setup lang="ts">
-import CTAButton from '../../components/CTAButton.vue'
 import GradientCTASection from '../../components/GradientCTASection.vue';
 import TestimonialsSection from '../../components/TestimonialsSection.vue';
 import FAQSection from '../../components/FAQSection.vue';
