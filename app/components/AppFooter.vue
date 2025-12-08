@@ -18,10 +18,10 @@
             <NuxtImg src="/theme/logo.png" alt="logo" width="175px" height="40px" />
             <!-- 介绍 -->
             <p class="uno-text-[#4E5255] uno-font-['Outfit'] uno-text-sm uno-m-t-12px">
-              {{ $t('footer.introduction') }}
+              Unlock knowledge with expert-led online courses.
             </p>
             <p class="uno-text-[#011813] uno-text-xl uno-font-['Outfit'] uno-font-medium uno-m-t-24px">
-              {{ $t('footer.stayConnected') }}
+              Stay connected
             </p>
             <!-- 图标 -->
             <div class="uno-flex uno-gap-12px uno-m-t-16px">
@@ -42,25 +42,32 @@
           <!-- 导航 -->
           <div class="uno-grid uno-grid-cols-2 uno-gap-40px">
             <div>
-              <h3 class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold uno-mb-16px">{{ $t('footer.pagesText') }}
+              <h3 class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold uno-mb-16px">Pages
               </h3>
               <ul class="uno-space-y-16px">
                 <li><a href="/" class="uno-text-[#011813] uno-font-['Outfit'] hover:uno-text-[#4E5255]">Home 1</a></li>
                 <li><a href="/" class="uno-text-[#011813] uno-font-['Outfit'] hover:uno-text-[#4E5255]">Home 2</a></li>
                 <li><a href="/" class="uno-text-[#011813] uno-font-['Outfit'] hover:uno-text-[#4E5255]">Home 3</a></li>
-                <li><a href="/about" class="uno-text-[#011813] uno-font-['Outfit'] hover:uno-text-[#4E5255]">About Us</a></li>
-                <li><a href="/courses" class="uno-text-[#011813] uno-font-['Outfit'] hover:uno-text-[#4E5255]">Courses</a></li>
+                <li><a href="/about" class="uno-text-[#011813] uno-font-['Outfit'] hover:uno-text-[#4E5255]">About
+                    Us</a></li>
+                <li><a href="/courses"
+                    class="uno-text-[#011813] uno-font-['Outfit'] hover:uno-text-[#4E5255]">Courses</a></li>
               </ul>
             </div>
             <div>
-              <h3 class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold uno-mb-16px">{{ $t('footer.othersText') }}
+              <h3 class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold uno-mb-16px">Others
               </h3>
               <ul class="uno-space-y-16px">
-                <li><a href="/mentors" class="uno-text-[#011813] uno-font-['Outfit'] hover:uno-text-[#4E5255]">Mentors</a></li>
-                <li><a href="#" class="uno-text-[#011813] uno-font-['Outfit'] hover:uno-text-[#4E5255]">Contact Us</a></li>
-                <li><a href="/blog" class="uno-text-[#011813] uno-font-['Outfit'] hover:uno-text-[#4E5255]">Blog</a></li>
-                <li><a href="#" class="uno-text-[#011813] uno-font-['Outfit'] hover:uno-text-[#4E5255]">Privacy Policy</a></li>
-                <li><a href="#" class="uno-text-[#011813] uno-font-['Outfit'] hover:uno-text-[#4E5255]">Terms & Conditions</a></li>
+                <li><a href="/mentors"
+                    class="uno-text-[#011813] uno-font-['Outfit'] hover:uno-text-[#4E5255]">Mentors</a></li>
+                <li><a href="#" class="uno-text-[#011813] uno-font-['Outfit'] hover:uno-text-[#4E5255]">Contact Us</a>
+                </li>
+                <li><a href="/blog" class="uno-text-[#011813] uno-font-['Outfit'] hover:uno-text-[#4E5255]">Blog</a>
+                </li>
+                <li><a href="#" class="uno-text-[#011813] uno-font-['Outfit'] hover:uno-text-[#4E5255]">Privacy
+                    Policy</a></li>
+                <li><a href="#" class="uno-text-[#011813] uno-font-['Outfit'] hover:uno-text-[#4E5255]">Terms &
+                    Conditions</a></li>
               </ul>
             </div>
           </div>
@@ -69,7 +76,8 @@
         <template #right>
           <!-- 联系信息 -->
           <div>
-            <h3 class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold uno-mb-16px">Contact Us</h3>
+            <h3 class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold uno-mb-16px">Contact Us
+            </h3>
             <div class="uno-space-y-16px">
               <!-- 电话 -->
               <div class="uno-flex uno-items-center uno-gap-8px">
@@ -80,13 +88,15 @@
               <div class="uno-flex uno-items-center uno-gap-8px">
                 <NuxtImg src="/images/footer/mailto.png" alt="mailto" width="20px" height="20px"
                   class="uno-text-[#4E5255]" />
-                <a href="mailto:hello@designmonks.co" class="uno-text-[#011813] uno-font-['Outfit']">hello@designmonks.co</a>
+                <a href="mailto:hello@designmonks.co"
+                  class="uno-text-[#011813] uno-font-['Outfit']">hello@designmonks.co</a>
               </div>
               <!-- 地址 -->
               <div class="uno-flex uno-items-start uno-gap-8px">
                 <NuxtImg src="/images/footer/address.png" alt="mailto" width="20px" height="20px"
                   class="uno-text-[#4E5255]" />
-                <div class="uno-text-[#011813] uno-font-['Outfit'] uno-not-italic">4886 Stroman Drives, California,<br>South
+                <div class="uno-text-[#011813] uno-font-['Outfit'] uno-not-italic">4886 Stroman Drives,
+                  California,<br>South
                   Stanton, USA</div>
               </div>
             </div>
@@ -100,14 +110,16 @@
           </div>
           <div
             class="uno-w-full uno-max-w-[1440px] uno-mx-auto uno-px-40px xl:uno-px-0 uno-flex uno-items-center uno-justify-between max-md:uno-max-w-[80%] max-sm:uno-max-w-full max-sm:uno-flex-col max-sm:uno-items-start max-sm:uno-gap-16px max-xs:uno-gap-12px">
-            <div class="uno-text-[#011813] uno-font-['Outfit'] uno-text-center uno-text-16px max-sm:uno-text-14px max-xs:uno-text-12px">
-              {{ $t('footer.copyright') }}
+            <div
+              class="uno-text-[#011813] uno-font-['Outfit'] uno-text-center uno-text-16px max-sm:uno-text-14px max-xs:uno-text-12px">
+              2024 ©Design Monks. All rights reserved.
             </div>
             <!-- 支付方式 -->
-            <div class="uno-flex uno-items-center uno-gap-12px uno-flex-wrap uno-justify-center max-sm:uno-gap-8px max-xs:uno-gap-6px">
+            <div
+              class="uno-flex uno-items-center uno-gap-12px uno-flex-wrap uno-justify-center max-sm:uno-gap-8px max-xs:uno-gap-6px">
               <span
-                class="uno-text-[#011813] uno-font-['Outfit'] uno-mr-12px max-sm:uno-mr-8px max-xs:uno-mr-6px max-sm:uno-text-14px max-xs:uno-text-12px">{{
-                  $t('footer.payments') }}:</span>
+                class="uno-text-[#011813] uno-font-['Outfit'] uno-mr-12px max-sm:uno-mr-8px max-xs:uno-mr-6px max-sm:uno-text-14px max-xs:uno-text-12px">
+                Payments:</span>
               <NuxtImg src="/images/footer/payments-logo-1.png" alt="Visa" width="36px" height="24px" />
               <NuxtImg src="/images/footer/payments-logo-2.png" alt="Mastercard" width="36px" height="24px" />
               <NuxtImg src="/images/footer/payments-logo-3.png" alt="UnionPay" width="36px" height="24px" />

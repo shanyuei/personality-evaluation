@@ -289,17 +289,17 @@
     "title": "博客",
     "description": "阅读团队文章与最新动态。"
   },
-    "auth": {
-      "signIn": {
-        "title": "登录",
-        "description": "安全访问你的账户。",
-        "passwordLabel": "密码",
-        "passwordPlaceholder": "密码",
-        "submit": "登录",
-        "noAccount": "还没有账户？",
-        "signUp": "注册"
-      }
-    },
+  "auth": {
+    "signIn": {
+      "title": "登录",
+      "description": "安全访问你的账户。",
+      "passwordLabel": "密码",
+      "passwordPlaceholder": "密码",
+      "submit": "登录",
+      "noAccount": "还没有账户？",
+      "signUp": "注册"
+    }
+  },
   "orders": {
     "cancelSubscription": {
       "title": "取消订阅",
@@ -418,5 +418,8 @@
         }
       }
     }
+  },
+  "footer": {
+    "introduction": ""
   }
 }
