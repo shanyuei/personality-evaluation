@@ -1,5 +1,5 @@
 <template>
-  <div class="uno-max-w-[720px] uno-mx-auto">
+  <div class="uno-max-w-[720px] uno-mx-auto my-[32px]">
     <h1
       class="uno-text-3xl md:uno-text-4xl uno-font-['Outfit'] uno-font-bold uno-text-center uno-text-gray-900 uno-mb-8">
       {{
