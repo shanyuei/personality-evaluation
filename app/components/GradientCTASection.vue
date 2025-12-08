@@ -23,11 +23,11 @@
         {{ description || $t('home.accuracy.description') }}
       </p>
 
-      <CTAButton :text="buttonText" :disabled="buttonDisabled"
-        uno-btn-class="uno-w-[160px] uno-h-[48px] sm:uno-w-[186px] sm:uno-h-[56px] uno-pl-[20px!important] uno-pr-[6px!important]"
-        uno-bg-color="#011813" uno-hover-bg-color="#02221D" uno-active-bg-color="#02221D"
-        uno-text-class="uno-text-[#FFFFFF] uno-font-['Outfit'] uno-font-medium uno-text-[18px] sm:uno-text-[20px]" :icon-size-px="40"
-        @click="$emit('button-click', $event)" />
+      <CTAButton variant="solid" size="md" :disabled="buttonDisabled"
+        class="uno-w-[160px] sm:uno-w-[186px] uno-text-[#FFFFFF] uno-font-['Outfit'] uno-font-medium uno-text-[18px] sm:uno-text-[20px]"
+        @click="$emit('button-click', $event)">
+        {{ buttonText }}
+      </CTAButton>
     </div>
 
   </div>

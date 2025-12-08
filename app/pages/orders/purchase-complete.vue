@@ -11,28 +11,25 @@
       <p class="uno-text-gray-600 uno-mb-6 md:uno-mb-8 uno-font-['Outfit'] uno-text-base md:uno-text-lg">{{ $t('pages.orders.purchaseComplete.description') }}</p>
 
       <CTAButton 
-        :text="$t('pages.orders.purchaseComplete.accessReport')"
-        uno-size="md"
-        uno-rounded="pill"
-        uno-bg-color="#009D77"
-        uno-hover-bg-color="#0AA17F"
-        uno-active-bg-color="#008A68"
-        class="uno-w-full"
+        variant="solid"
+        size="md"
+        block
         @click="goToReport"
-      />
+      >
+        {{ $t('pages.orders.purchaseComplete.accessReport') }}
+      </CTAButton>
 
       <p class="uno-text-gray-500 uno-mt-3 uno-mb-6 uno-font-['Outfit'] uno-text-sm">{{ $t('pages.orders.purchaseComplete.accessNote') }}</p>
 
       <CTAButton 
-        :text="$t('pages.orders.purchaseComplete.downloadGuidebook')"
-        uno-size="md"
-        uno-rounded="pill"
-        uno-bg-color="#0F172A"
-        uno-hover-bg-color="#1F2937"
-        uno-active-bg-color="#111827"
-        class="uno-w-full"
+        variant="solid"
+        size="md"
+        block
+        class="uno-bg-[#0F172A] hover:uno-bg-[#1F2937] active:uno-bg-[#111827] uno-text-white"
         @click="downloadGuidebook"
-      />
+      >
+        {{ $t('pages.orders.purchaseComplete.downloadGuidebook') }}
+      </CTAButton>
 
       <p class="uno-text-gray-500 uno-mt-3 uno-font-['Outfit'] uno-text-sm">{{ $t('pages.orders.purchaseComplete.downloadNote') }}</p>
 
@@ -42,7 +39,7 @@
 </template>
 
 <script setup lang="ts">
-import CTAButton from '@/components/CTAButton.vue'
+import CTAButton from '~/app/components/CTAButton.vue'
 // const { t } = useI18n()
 // definePageMeta({
 //   title: () => t('pages.orders.purchaseComplete.title') as string

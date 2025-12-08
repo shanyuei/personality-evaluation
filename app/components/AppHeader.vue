@@ -4,23 +4,19 @@
     content: 'bg-transparent',
     header: 'bg-transparent h-[96px] border-none max-sm:h-[53px]',
     overlay: 'bg-transparent',
-    root: 'h-[96px] border-none bg-transparent max-sm:h-[53px]',
-    container: 'max-w-full md:max-w-[80%] mx-auto'
+    root: 'h-[96px] border-none bg-transparent max-sm:h-[53px] justify-center flex',
+    container: 'max-w-full md:max-w-[80%]'
   }">
     <!-- 导航栏 -->
     <template #left>
 
-      <div uno-flex uno-gap-54px>
+      <div class="uno-flex uno-gap-54px uno-w-full">
         <!-- logo -->
-        <div class="uno-min-w-175px">
-          <NuxtPicture src="/theme/logo.png" width="175px" height="40px"
-            :img-attrs="{ class: 'uno-w-[175px] uno-h-[40px] max-sm:uno-w-[105px] max-sm:uno-h-[24px]', alt: 'uno-logo' }" />
-        </div>
+        <NuxtImg src="/theme/logo.png" width="175" height="40" alt="logo" />
         <!-- 导航栏 -->
         <UNavigationMenu :ui="{
-          link: 'before:bg-[transparent!important] font-[`Outfit`] text-center font-medium text-[#011813] data-[active]:text-[--color-pink-1] hover:text-[--color-pink-1]',
-          item: 'm-x-18px'
-
+          link: 'before:bg-[transparent!important] font-[\'Outfit\'] text-center font-medium text-[var(--ui-foreground)] data-[active]:text-[var(--color-pink-1)] hover:text-[var(--color-pink-1)]',
+          item: 'ml-[18px] mr-[18px]'
         }" :items="items" class="uno-w-full uno-justify-center max-sm:uno-hidden" />
       </div>
 

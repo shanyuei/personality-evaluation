@@ -39,10 +39,14 @@
           <div class="section-title">输入 CSS</div>
           <textarea id="cssInput">display:flex; justify-content:center; align-items:center; gap:16px; padding:24px; background-color:#009D77; color:white; font-size:18px; font-weight:700; border-radius:16px; width:80%; height:48px;</textarea>
           <div class="actions">
-            <button class="btn btn-primary" id="convertBtn">转换</button>
+            <!-- 自动转换已启用，移除按钮 -->
             <button class="btn" id="clearBtn">清空</button>
             <button class="btn" id="exampleBtn">示例</button>
           </div>
+          <div class="section-title">输入 Tailwind 类名</div>
+          <textarea id="twInput" placeholder="如：flex justify-center items-center p-[24px]"></textarea>
+          <div class="section-title">输入 UnoCSS 类名</div>
+          <textarea id="unoInput" placeholder="如：uno-flex uno-justify-center uno-items-center uno-p-[24px]"></textarea>
         </div>
         <div class="col">
           <div class="section-title">输出 UnoCSS</div>
@@ -50,6 +54,10 @@
           <div class="actions">
             <button class="btn" id="copyBtn">复制类名</button>
           </div>
+          <div class="section-title">输出 Tailwind</div>
+          <div id="twOutput" class="output mono"></div>
+          <div class="section-title">输出 CSS 声明</div>
+          <div id="cssOutput" class="output mono"></div>
           <div class="section-title">已识别</div>
           <div id="chipOk" class="chips"></div>
           <div class="section-title">未映射</div>
@@ -60,15 +68,18 @@
   </main>
   <div id="toast" class="toast" role="status" aria-live="polite">复制成功</div>
   <script>
-    const cssInput = document.getElementById('cssInput')
-    const convertBtn = document.getElementById('convertBtn')
     const clearBtn = document.getElementById('clearBtn')
     const exampleBtn = document.getElementById('exampleBtn')
     const copyBtn = document.getElementById('copyBtn')
     const classOutput = document.getElementById('classOutput')
+    const twOutput = document.getElementById('twOutput')
+    const cssOutput = document.getElementById('cssOutput')
     const chipOk = document.getElementById('chipOk')
     const chipUnknown = document.getElementById('chipUnknown')
     const toast = document.getElementById('toast')
+    const twInput = document.getElementById('twInput')
+    const unoInput = document.getElementById('unoInput')
+    const cssInput = document.getElementById('cssInput')
 
     const namedColors = {
       white:'#ffffff', black:'#000000', red:'#ff0000', green:'#00ff00', blue:'#0000ff',
@@ -174,9 +185,32 @@
           unknown.push(`${prop}: ${val}`)
         }
       }
-      return {classes: Array.from(classes).join(' '), ok, unknown}
+      const raw = Array.from(classes).join(' ')
+      const converted = addUnoPrefix(raw)
+      return {classes: converted, tw: raw, ok, unknown}
     }
-
+    function addUnoPrefix(classString){
+      return classString
+        .split(/\s+/)
+        .filter(Boolean)
+        .map(token => {
+          if (/(^|:)uno-/.test(token)) return token
+          if (/(^|:)page-/.test(token)) return token.replace(/(^|:)page-/g, '$1uno-')
+          const parts = token.split(':')
+          let base = parts.pop()
+          if (!base) return token
+          let lead = ''
+          let tail = base
+          while (tail && (tail[0] === '-' || tail[0] === '!')) {
+            lead += tail[0]
+            tail = tail.slice(1)
+          }
+          const prefixed = lead ? `${lead}uno-${tail}` : `uno-${tail}`
+          return parts.length ? `${parts.join(':')}:${prefixed}` : prefixed
+        })
+        .join(' ')
+    }
+  
     function renderChips(list, root){
       root.innerHTML = ''
       list.forEach(text=>{
@@ -187,9 +221,115 @@
       })
     }
 
+    function stripUnoPrefix(classString){
+      return classString
+        .split(/\s+/)
+        .filter(Boolean)
+        .map(token => token.replace(/(^|:|!|-)(uno-)/g, '$1'))
+        .join(' ')
+    }
+
+    function twToCss(classString){
+      const decls = []
+      const tokens = classString.split(/\s+/).filter(Boolean)
+      const add = (prop, val) => decls.push(`${prop}: ${val}`)
+      const bracket = s => {
+        const m = s.match(/\[(.+)\]/)
+        return m ? m[1] : ''
+      }
+      for (let t of tokens) {
+        const parts = t.split(':')
+        let base = parts.pop()
+        if (!base) continue
+        let important = false
+        let negative = false
+        while (base[0] === '!' || base[0] === '-') {
+          important = important || base[0] === '!'
+          negative = negative || base[0] === '-'
+          base = base.slice(1)
+        }
+        const imp = important ? ' !important' : ''
+        if (base === 'flex') add('display', `flex${imp}`)
+        else if (base === 'grid') add('display', `grid${imp}`)
+        else if (base === 'block') add('display', `block${imp}`)
+        else if (base === 'inline') add('display', `inline${imp}`)
+        else if (base === 'inline-block') add('display', `inline-block${imp}`)
+        else if (base === 'hidden') add('display', `none${imp}`)
+        else if (base === 'absolute' || base === 'relative' || base === 'fixed' || base === 'sticky') add('position', `${base}${imp}`)
+        else if (base === 'flex-row') add('flex-direction', `row${imp}`)
+        else if (base === 'flex-col') add('flex-direction', `column${imp}`)
+        else if (/^justify-/.test(base)) {
+          const m = base.replace('justify-','')
+          const map = {center:'center','between':'space-between','around':'space-around','start':'flex-start','end':'flex-end'}
+          add('justify-content', `${map[m] || m}${imp}`)
+        }
+        else if (/^items-/.test(base)) {
+          const m = base.replace('items-','')
+          const map = {center:'center',start:'flex-start',end:'flex-end',baseline:'baseline',stretch:'stretch'}
+          add('align-items', `${map[m] || m}${imp}`)
+        }
+        else if (/^text-/.test(base)) {
+          const m = base.replace('text-','')
+          const align = {left:'left',right:'right',center:'center',justify:'justify'}[m]
+          if (align) add('text-align', `${align}${imp}`)
+          else if (m.startsWith('[')) add('color', `${bracket(base)}${imp}`)
+        }
+        else if (/^font-/.test(base)) {
+          const w = base.replace('font-','')
+          const map = {thin:'100',extralight:'200',light:'300',normal:'400',medium:'500',semibold:'600',bold:'700',extrabold:'800',black:'900'}
+          add('font-weight', `${map[w] || w}${imp}`)
+        }
+        else if (/^bg-\[/.test(base)) add('background-color', `${bracket(base)}${imp}`)
+        else if (/^opacity-\[/.test(base)) add('opacity', `${bracket(base)}${imp}`)
+        else if (/^z-\[/.test(base)) add('z-index', `${bracket(base)}${imp}`)
+        else if (/^leading-\[/.test(base)) add('line-height', `${bracket(base)}${imp}`)
+        else if (/^tracking-\[/.test(base)) add('letter-spacing', `${bracket(base)}${imp}`)
+        else if (/^overflow-/.test(base)) {
+          const m = base.replace('overflow-','')
+          add('overflow', `${m}${imp}`)
+        }
+        else if (/^gap-\[/.test(base)) add('gap', `${bracket(base)}${imp}`)
+        else if (/^gap-x-\[/.test(base)) add('column-gap', `${bracket(base)}${imp}`)
+        else if (/^gap-y-\[/.test(base)) add('row-gap', `${bracket(base)}${imp}`)
+        else if (/^m-\[/.test(base)) add('margin', `${(negative?'-':'')+bracket(base)}${imp}`)
+        else if (/^mt-\[/.test(base)) add('margin-top', `${(negative?'-':'')+bracket(base)}${imp}`)
+        else if (/^mr-\[/.test(base)) add('margin-right', `${(negative?'-':'')+bracket(base)}${imp}`)
+        else if (/^mb-\[/.test(base)) add('margin-bottom', `${(negative?'-':'')+bracket(base)}${imp}`)
+        else if (/^ml-\[/.test(base)) add('margin-left', `${(negative?'-':'')+bracket(base)}${imp}`)
+        else if (base === 'w-full') add('width', `100%${imp}`)
+        else if (/^w-\[/.test(base)) add('width', `${bracket(base)}${imp}`)
+        else if (base === 'h-full') add('height', `100%${imp}`)
+        else if (/^h-\[/.test(base)) add('height', `${bracket(base)}${imp}`)
+        else if (/^min-w-\[/.test(base)) add('min-width', `${bracket(base)}${imp}`)
+        else if (/^min-h-\[/.test(base)) add('min-height', `${bracket(base)}${imp}`)
+        else if (/^max-w-\[/.test(base)) add('max-width', `${bracket(base)}${imp}`)
+        else if (/^max-h-\[/.test(base)) add('max-height', `${bracket(base)}${imp}`)
+        else if (/^top-\[/.test(base)) add('top', `${bracket(base)}${imp}`)
+        else if (/^right-\[/.test(base)) add('right', `${bracket(base)}${imp}`)
+        else if (/^bottom-\[/.test(base)) add('bottom', `${bracket(base)}${imp}`)
+        else if (/^left-\[/.test(base)) add('left', `${bracket(base)}${imp}`)
+        else if (base === 'rounded-full') add('border-radius', `50%${imp}`)
+        else if (/^rounded-\[/.test(base)) add('border-radius', `${bracket(base)}${imp}`)
+        else if (base === 'border') add('border', `1px solid${imp}`)
+        else if (/^border-solid$|^border-dashed$|^border-dotted$|^border-double$/.test(base)) add('border-style', `${base.replace('border-','')}${imp}`)
+        else if (/^border-\[/.test(base)) {
+          const val = bracket(base)
+          if (/^\d/.test(val)) add('border-width', `${val}${imp}`)
+          else add('border-color', `${val}${imp}`)
+        }
+        else if (/^shadow-\[/.test(base)) add('box-shadow', `${bracket(base)}${imp}`)
+      }
+      return decls.join('; ')
+    }
+
+    let updating = false
+
     function doConvert(){
-      const {classes, ok, unknown} = convert(cssInput.value)
+      if (updating) return
+      const {classes, tw, ok, unknown} = convert(cssInput.value)
       classOutput.textContent = classes
+      twOutput.textContent = tw
+      cssOutput.textContent = twToCss(tw)
       renderChips(ok, chipOk)
       renderChips(unknown, chipUnknown)
     }
@@ -201,7 +341,27 @@
       setTimeout(()=>toast.classList.remove('show'), 1500)
     }
 
-    convertBtn.addEventListener('click', doConvert)
+    cssInput.addEventListener('input', doConvert)
+    twInput.addEventListener('input', () => {
+      if (updating) return
+      updating = true
+      const tw = twInput.value
+      const uno = addUnoPrefix(tw)
+      classOutput.textContent = uno
+      twOutput.textContent = tw
+      cssOutput.textContent = twToCss(tw)
+      updating = false
+    })
+    unoInput.addEventListener('input', () => {
+      if (updating) return
+      updating = true
+      const uno = unoInput.value
+      const tw = stripUnoPrefix(uno)
+      classOutput.textContent = uno
+      twOutput.textContent = tw
+      cssOutput.textContent = twToCss(tw)
+      updating = false
+    })
     clearBtn.addEventListener('click', () => {
       cssInput.value = ''
       classOutput.textContent = ''

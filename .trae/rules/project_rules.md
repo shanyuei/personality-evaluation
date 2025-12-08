@@ -11,7 +11,7 @@
 - 合理使用小标题，保持层级清晰
 - 内联代码、文件路径、命令用反引号包裹；避免过重的格式
 代码协作规范
-- 编辑现有文件时遵循项目约定：Tailwind、NuxtImg、组件风格、断点策略
+- 编辑现有文件时遵循项目约定：UnoCSS、NuxtImg、组件风格、断点策略
 - 变更说明应清楚：改动目的、影响范围、关键行号
 - 优先复用现有组件与资源；不要新引库、不要泄露密钥
 - 生成新页面时放在 app/pages/... ，命名清晰；使用组合式 API
@@ -20,12 +20,12 @@ Nuxt 项目约定
 - 错误页： app/error.vue ，用 useError() 分支展示 404/其它错误；返回首页用 clearError({ redirect: '/' })
 - 静态资源：位于 public/ ；项目已使用 public/theme 与 public/images ，路径以 / 起始
 图片与资源
-- 统一使用 NuxtImg ；需要“视觉方向”时使用两组图按断点显示（如 block md:hidden 与 hidden md:block ）
+- 统一使用 NuxtImg ；需要“视觉方向”时使用两组图按断点显示（如 `uno-block md:uno-hidden` 与 `uno-hidden md:uno-block`）
 - 资源分布示例： /theme/home/cat-bg-h5.png 、 /theme/home/cat-bg-pc.png 、 /theme/404.png
-- 背景图常用类： absolute -z-10 object-cover object-center ，依据卡片尺寸设置 w / h
+- 背景图常用类： `uno-absolute -uno-z-10 uno-object-cover uno-object-center`，依据卡片尺寸设置 w / h
 响应式与样式
-- Tailwind 断点以 md 为分界：移动端 block md:hidden ，桌面端 hidden md:block
-- 统一字号与字体： font-['Outfit'] ；圆角优先 rounded-[16px] / [24px] / [48px]
+- UnoCSS 断点以 md 为分界：移动端 `uno-block md:uno-hidden`，桌面端 `uno-hidden md:uno-block`
+- 统一字号与字体：在模板中使用 `uno-font-['Outfit']`；圆角优先 `uno-rounded-[16px]` / `[24px]` / `[48px]`
 - 颜色与按钮：主色 #009D77 ，悬停 #0AA17F ，次要强调可用 #EA4C89
 - 常见卡片尺寸参考：H5 卡片约 342×440 ，PC 卡片约 1200×384
 页面模式参考
@@ -49,22 +49,33 @@ Nuxt 项目约定
 - 任务分步推进：读项目→给方案→产出代码→说明验证→指出可扩展点
  - 大改动优先拆小步；保持每次输出完整可执行
 自适应细则
-- 页面容器：内容区建议 `max-w-[80%]  mx-auto`，水平内边距 `px-6 sm:px-10`
-- 栅格布局：移动端单列，桌面端 2–3 列；优先 `grid` + `gap-6` 或 `flex` + `gap`
+- 页面容器：内容区建议 `uno-max-w-[80%] uno-mx-auto`，水平内边距 `uno-px-6 sm:uno-px-10`
+- 栅格布局：移动端单列，桌面端 2–3 列；优先 `uno-grid` + `uno-gap-6` 或 `uno-flex` + `uno-gap-6`
 - 图片响应：统一用 `NuxtImg` 并设置 `sizes`，按断点切换 H5/PC 资源；示例 `sizes="(min-width:768px) 1200px, 342px"`
 - 交互尺寸：按钮高度 `h-[48px]`、输入圆角 `rounded-[16px]`；在 md 以上增加水平间距与字号
+ - 交互尺寸：按钮高度 `uno-h-[48px]`、输入圆角 `uno-rounded-[16px]`；在 md 以上增加水平间距与字号
 
 公共主题配色
 - 品牌主色：`var(--ui-primary)`；强调粉：`var(--color-pink-1)`；悬停可用浅色阶 `var(--color-green-2)`
 - 中性文本：正文与标题统一走 `var(--ui-foreground)`；背景 `var(--ui-background)`；边框 `var(--ui-border)`；输入背景 `var(--ui-input)`；弱化文案 `var(--ui-muted-foreground)`
 - 配色抽象：严格参考 `app/assets/css/main.css` 中的变量（如 `--ui-primary`、`--ui-background`、`--ui-foreground`、`--ui-border`、`--ui-input`、`--ui-muted`、`--ui-muted-foreground`、`--color-green-*`、`--color-pink-*`），组件中避免直接使用十六进制颜色值
-- Tailwind 映射：如已在 `tailwind.config` 配置 `theme.colors.brand`，组件统一使用 `text-brand`/`bg-brand` 等语义类
+- 语义色推荐通过 CSS 变量或 UnoCSS 语义类实现，不依赖 Tailwind 配置
 
 样式抽离与复用
 - 通用样式集中在 `app/assets/css/`（如 `utilities.css`/`components.css`），通过 `@apply` 抽取：`.btn-primary`、`.card`、`.input`
 - 组件变体：通过 props 切换变体（如 `variant="primary"`），避免在模板硬编码大量类
 - 背景渐变：封装为 `.bg-page-gradient` 等通用类，页面仅引用类名
-- 颜色使用：不在组件中直接写十六进制值，统一走 CSS 变量或 Tailwind 语义色
+- 颜色使用：不在组件中直接写十六进制值，统一走 CSS 变量或 UnoCSS 语义色
+
+UnoCSS 前缀与属性化
+- 全局工具类前缀统一为 `uno-`，模板内原子类必须写为 `uno-...`，含响应式与状态前缀（如 `md:uno-px-10`、`hover:uno-bg-green-600`）
+- 已启用 Attributify，且 `prefixedOnly: true`：属性化写法同样要求 `uno-` 前缀（如 `uno-flex uno-items-center`）
+- 组件定制 `:ui="..."` 中的字符串不加 `uno-` 前缀（例如 `:ui="{ item: 'px-3 py-1' }"`），避免与组件内部样式冲突
+- 组件属性字符串（如 `:img-attrs="'uno-w-full uno-h-auto'"`）可继续使用 `uno-` 前缀，以生成对应原子类
+- 基础 Reset 使用 `@unocss/reset/tailwind.css`；不要引入 Tailwind 基础样式或函数
+
+NuxtUI 组件
+- 默认由 Tailwind 渲染，不依赖 UnoCSS；若需自定义样式，建议通过 props 或自定义类名实现，避免直接修改组件内部样式
 
 多语言与国际化
 - 默认语言中文，需支持英文；所有用户可见文案避免硬编码
@@ -73,5 +84,15 @@ Nuxt 项目约定
 - 路由策略：简版可不加前缀；如启用多语言路由，采用 `/en/*` 前缀并确保 SEO 友好
 - 组件规范：按钮、标题、占位符等均从字典读取，确保语言切换一致
  - 任务规范：每次新增页面/组件/区块，必须同步在 `app/i18n/modules/{en,zh,ja}.json` 创建对应键，并在模板内以 `$t('...')` 引用；键名建议 `routeGuide.title`、`routeGuide.intro` 这类按页面为命名空间的格式
- - 变量占位：涉及动态数字或文本使用插值（如 `{count}`），在模板中以 `$t('routeGuide.stats', { count })` 方式传参
+- 变量占位：涉及动态数字或文本使用插值（如 `{count}`），在模板中以 `$t('routeGuide.stats', { count })` 方式传参
 
+UnoCSS 前缀与属性化
+- 全局工具类前缀统一为 `uno-`，模板内原子类必须写为 `uno-...`，含响应式与状态前缀（如 `md:uno-px-10`、`hover:uno-bg-green-600`）
+- 已启用 Attributify，且 `prefixedOnly: true`：属性化写法同样要求 `uno-` 前缀（如 `uno-flex uno-items-center`）
+- 组件定制 `:ui="..."` 中的字符串不加 `uno-` 前缀（例如 `:ui="{ item: 'px-3 py-1' }"`），避免与组件内部样式冲突
+- 组件属性字符串（如 `:img-attrs="'uno-w-full uno-h-auto'"`）可继续使用 `uno-` 前缀，以生成对应原子类
+- 基础 Reset 使用 `@unocss/reset/tailwind.css`；不要引入 Tailwind 基础样式或函数
+- NuxtUI 组件不使用 unocss 直接避开
+NuxtUI 组件
+- 默认是由 tailwind 样式渲染，不依赖 unocss
+- 若需自定义样式，建议通过 props 或自定义类名实现，避免直接修改组件内部样式

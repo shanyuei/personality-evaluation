@@ -10,7 +10,7 @@ export default mergeConfigs([config, {
     presetWind4({
       prefix: 'uno-',
       preflights: {
-        reset: true,
+        reset: false,
       }
     }),
     presetAttributify({ prefix: 'uno-', prefixedOnly: true }),

@@ -18,8 +18,9 @@
 
 
                 <!-- 测试按钮 -->
-                <CTAButton :text="$t('common.getStarted')" uno-btn-class="uno-m-t-72px" uno-size="lg" uno-rounded="pill"
-                    uno-bg-color="#009D77" uno-hover-bg-color="#008A68" uno-active-bg-color="#007759" />
+                <CTAButton variant="solid" size="lg" class="uno-m-t-72px">
+                    {{ $t('common.getStarted') }}
+                </CTAButton>
             </div>
         </div>
         <!-- 第二块区域 hero -->
@@ -124,8 +125,9 @@
                                 <p class="uno-text-gray-600 uno-mb-6">{{ $t('home.why.main.desc') }}</p>
                                 <!-- 分割线 -->
                                 <div class="uno-w-full uno-h-[1px] uno-bg-[#E7E7E8] uno-my-6" />
-                                <CTAButton :text="$t('common.getStarted')" uno-size="sm" uno-rounded="full" uno-bg-color="#009D77"
-                                    uno-hover-bg-color="#008A68" uno-active-bg-color="#007759" />
+                                <CTAButton variant="solid" size="sm">
+                                    {{ $t('common.getStarted') }}
+                                </CTAButton>
                             </div>
                             <div class="uno-w-full md:uno-w-[76%] uno-relative md:uno-top-[-6px]">
                                 <!-- 图片 -->
