@@ -4,10 +4,10 @@
       <!-- 页面标题 -->
       <div class="uno-text-center uno-mb-8 sm:uno-mb-12">
         <h1 class="uno-text-2xl sm:uno-text-3xl md:uno-text-4xl uno-font-['Outfit'] uno-font-bold uno-text-gray-900 uno-mb-4">
-          {{ $t('routeGuide.title') }}
+          {{ $t('pages.routeGuide.title') }}
         </h1>
         <p class="uno-text-base sm:uno-text-lg uno-text-gray-600 uno-max-w-2xl uno-mx-auto">
-          {{ $t('routeGuide.intro') }}
+          {{ $t('pages.routeGuide.intro') }}
         </p>
       </div>
 
@@ -16,7 +16,7 @@
         <!-- 路由统计信息 -->
         <div class="uno-mb-6 sm:uno-mb-8 uno-p-3 sm:uno-p-4 uno-bg-gray-50 uno-rounded-xl">
           <p class="uno-text-gray-700 uno-font-medium">
-            {{ $t('routeGuide.stats', { count: routes.length }) }}
+            {{ $t('pages.routeGuide.stats', { count: routes.length }) }}
           </p>
         </div>
 
@@ -37,12 +37,12 @@
                     {{ formatRouteName(route.path) }}
                   </h3>
                   <p class="uno-text-gray-500 uno-text-xs sm:uno-text-sm uno-mt-1 uno-truncate">
-                    {{ $t('routeGuide.pathLabel') }}: {{ route.path }}
+                    {{ $t('pages.routeGuide.pathLabel') }}: {{ route.path }}
                   </p>
                 </div>
                 <div class="uno-mt-2 md:uno-mt-0 uno-flex-shrink-0">
                   <span class="uno-inline-flex uno-items-center uno-px-3 uno-py-1 uno-rounded-full uno-text-xs sm:uno-text-sm uno-font-medium uno-bg-green-100 uno-text-green-800">
-                    {{ $t('routeGuide.visit') }}
+                    {{ $t('pages.routeGuide.visit') }}
                     <svg class="uno-w-4 uno-h-4 uno-ml-1 uno-transition-transform group-hover:uno-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                     </svg>
@@ -60,7 +60,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
             </svg>
           </div>
-          <p class="uno-text-gray-500">{{ $t('routeGuide.empty') }}</p>
+          <p class="uno-text-gray-500">{{ $t('pages.routeGuide.empty') }}</p>
         </div>
       </div>
 
@@ -73,7 +73,7 @@
           <svg class="uno-w-4 uno-h-4 sm:uno-w-5 sm:uno-h-5 uno-mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V7a2 2 0 00-2-2M5 12V7a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
           </svg>
-          {{ $t('routeGuide.back') }}
+          {{ $t('pages.routeGuide.back') }}
         </NuxtLink>
       </div>
     </div>
@@ -85,13 +85,13 @@ import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 // const { t } = useI18n()
 // definePageMeta({
-//   title: t('routeGuide.title') as string
+//   title: t('pages.routeGuide.title') as string
 // })
 // useSeoMeta({
-//   title: () => t('routeGuide.title') as string,
-//   description: () => t('routeGuide.intro') as string,
-//   ogTitle: () => t('routeGuide.title') as string,
-//   ogDescription: () => t('routeGuide.intro') as string
+//   title: () => t('seo.routeGuide.title') as string,
+//   description: () => t('seo.routeGuide.description') as string,
+//   ogTitle: () => t('seo.routeGuide.title') as string,
+//   ogDescription: () => t('seo.routeGuide.description') as string
 // })
 
 const router = useRouter()
