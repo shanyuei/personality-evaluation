@@ -265,6 +265,30 @@
       },
       "cta": "Get Started"
     },
+    "userCourseLesson": {
+      "lessonCount": "Lesson {current} of {total}",
+      "title": "Key Communication Skills for Leaders",
+      "sections": {
+        "activeListening": {
+          "title": "Active Listening",
+          "descriptionTitle": "Description",
+          "descriptionBody": "Active listening involves fully concentrating, understanding, responding, and then remembering what is being said.",
+          "applicationTitle": "Application in Leadership",
+          "applicationBody": "Leaders who are active listeners can better understand team needs, anticipate problems, and build stronger relationships."
+        },
+        "effectiveSpeaking": {
+          "title": "Effective Speaking"
+        },
+        "takeaways": {
+          "title": "Key Takeaways",
+          "i1": "Change management is crucial for the successful implementation of organizational changes.",
+          "i2": "The change management process involves preparing for change, managing the change, and reinforcing the change to ensure it is embedded in the organization.",
+          "i3": "Effective leaders use clear communication, stakeholder engagement, and support mechanisms to facilitate change and overcome resistance."
+        }
+      },
+      "ctaPrimary": "Get Started",
+      "ctaSecondary": "Get Started"
+    },
     "courses": {
       "title": "Courses",
       "description": "Browse expert courses across fields."

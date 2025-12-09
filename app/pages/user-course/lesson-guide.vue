@@ -29,7 +29,9 @@
           </div>
 
           <div class="uno-mt-8">
-            <UButton class="uno-w-full uno-h-[48px] uno-rounded-[12px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-white uno-flex uno-items-center uno-justify-center uno-text-center">{{ $t('pages.userCourseLearn.cta') }}</UButton>
+            <NuxtLink to="/user-course/lesson" class="uno-block">
+              <UButton class="uno-w-full uno-h-[48px] uno-rounded-[12px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-white uno-flex uno-items-center uno-justify-center uno-text-center">{{ $t('pages.userCourseLearn.cta') }}</UButton>
+            </NuxtLink>
           </div>
         </div>
       </div>
@@ -45,4 +47,3 @@ const progress = ref(0)
 </script>
 
 <style scoped></style>
-

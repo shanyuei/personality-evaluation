@@ -276,6 +276,30 @@
       },
       "cta": "Get Started"
     },
+    "userCourseLesson": {
+      "lessonCount": "第 {current} 课 / 共 {total} 课",
+      "title": "领导者的关键沟通技能",
+      "sections": {
+        "activeListening": {
+          "title": "主动倾听",
+          "descriptionTitle": "描述",
+          "descriptionBody": "主动倾听指在交流中全神贯注、理解、回应，并在之后记住要点。",
+          "applicationTitle": "领导中的应用",
+          "applicationBody": "具备主动倾听的领导者能更好理解团队需求、预见问题，并建立更牢固的关系。"
+        },
+        "effectiveSpeaking": {
+          "title": "高效表达"
+        },
+        "takeaways": {
+          "title": "关键要点",
+          "i1": "变更管理对组织变革的成功落地至关重要。",
+          "i2": "变更管理包括变更准备、变更实施与变更巩固，确保变更嵌入组织。",
+          "i3": "高效领导者通过清晰沟通、利益相关者参与与支持机制来推动变更、化解阻力。"
+        }
+      },
+      "ctaPrimary": "开始",
+      "ctaSecondary": "开始"
+    },
     "courses": {
       "title": "课程",
       "description": "浏览各领域的专家课程。"
