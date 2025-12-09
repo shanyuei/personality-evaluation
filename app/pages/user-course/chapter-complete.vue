@@ -29,7 +29,7 @@
           </div>
         </div>
 
-        <NuxtLink to="/test" class="uno-w-full md:uno-w-[520px]">
+        <NuxtLink to="/user-course/test" class="uno-w-full md:uno-w-[520px]">
           <UButton class="uno-w-full uno-h-[48px] uno-rounded-[12px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-white uno-flex uno-items-center uno-justify-center uno-text-center">{{ $t('pages.userCourseChapterComplete.cta') }}</UButton>
         </NuxtLink>
         <NuxtLink to="/user-course" class="uno-text-[var(--ui-muted-foreground)] hover:uno-text-[var(--ui-foreground)]">{{ $t('pages.userCourseChapterComplete.later') }}</NuxtLink>

@@ -321,6 +321,15 @@
       "cta": "Get Started",
       "later": "I'll do it later"
     },
+    "userCourseTest": {
+      "questionCount": "Question {current} of {total}",
+      "question": "During the 'Storming' stage of team development, a leader should:",
+      "o1": "Allow the team to resolve their conflicts without intervening.",
+      "o2": "Facilitate open communication and mediate conflicts.",
+      "o3": "Focus solely on task execution to avoid delays.",
+      "o4": "Establish strict rules to control team dynamics.",
+      "cta": "Get Started"
+    },
     "courses": {
       "title": "课程",
       "description": "浏览各领域的专家课程。"
