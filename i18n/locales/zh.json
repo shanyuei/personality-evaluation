@@ -257,6 +257,25 @@
         "notForMe": "不感兴趣"
       }
     },
+    "userCourseChapters": {
+      "title": "People Leadership vs. Management",
+      "description": "Leadership and management are two distinctive and complementary systems of actions in the business environment. Both are necessary for success in an increasingly complex and volatile business environment.",
+      "coverQuestion": "What will we cover?",
+      "cta": "Get Started"
+    },
+    "userCourseLearn": {
+      "lessonCount": "Lesson {current} of {total}",
+      "title": "Communication Skills for Leaders",
+      "objective": {
+        "title": "Objective",
+        "body": "By the end of this lesson, learners will understand the vital role of communication in leadership. They will explore key communication skills including active listening, effective speaking, and providing constructive feedback. Additionally, learners will learn strategies to improve their communication skills in various leadership contexts."
+      },
+      "intro": {
+        "title": "Introduction",
+        "body": "Effective communication is the cornerstone of successful leadership. It involves not just the transmission of information but also ensuring that the intended message is received and understood. For leaders, mastering communication skills is essential for inspiring and motivating teams, setting clear expectations, and building trust."
+      },
+      "cta": "Get Started"
+    },
     "courses": {
       "title": "课程",
       "description": "浏览各领域的专家课程。"

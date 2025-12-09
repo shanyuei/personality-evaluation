@@ -225,11 +225,6 @@ const courses = ref<Course[]>([
 ])
 
 const sortOrder = ref<'popular' | 'recent' | 'duration'>('popular')
-const sortOptions = [
-    { label: 'Popular', value: 'popular' },
-    { label: 'Recent', value: 'recent' },
-    { label: 'Duration', value: 'duration' }
-]
 
 const sortedCourses = computed(() => {
     const list = [...courses.value]
