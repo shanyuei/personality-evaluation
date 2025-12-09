@@ -70,10 +70,10 @@
 //   title: () => t('pages.legal.privacy.title') as string
 //  })
 //  useSeoMeta({
-//   title: () => t('pages.legal.privacy.title') as string,
-//   description: () => t('pages.legal.privacy.description') as string,
-//   ogTitle: () => t('pages.legal.privacy.title') as string,
-//   ogDescription: () => t('pages.legal.privacy.description') as string
+//   title: () => t('seo.legal.privacy.title') as string,
+//   description: () => t('seo.legal.privacy.description') as string,
+//   ogTitle: () => t('seo.legal.privacy.title') as string,
+//   ogDescription: () => t('seo.legal.privacy.description') as string
 //  })
 
  const usageItems = [

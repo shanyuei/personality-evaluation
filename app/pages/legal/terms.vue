@@ -1,6 +1,6 @@
 <template>
   <main class="uno-min-h-screen uno-bg-gradient-to-br uno-from-gray-50 uno-to-gray-100 uno-py-12 uno-px-6 md:uno-px-10">
-    <div class="uno-max-w-[80%] uno-mx-auto">
+    <div class="page-container">
       <div class="uno-text-center uno-mb-8">
         <h1 class="uno-text-3xl md:uno-text-4xl uno-font-['Outfit'] uno-font-bold uno-text-gray-900">{{ $t('pages.legal.terms.title') }}</h1>
         <p class="uno-text-gray-600 uno-max-w-2xl uno-mx-auto uno-mt-3">{{ $t('pages.legal.terms.description') }}</p>
@@ -22,10 +22,10 @@ const { t } = useI18n()
 //   title: () => t('pages.legal.terms.title') as string
 // })
 // useSeoMeta({
-//   title: () => t('pages.legal.terms.title') as string,
-//   description: () => t('pages.legal.terms.description') as string,
-//   ogTitle: () => t('pages.legal.terms.title') as string,
-//   ogDescription: () => t('pages.legal.terms.description') as string
+//   title: () => t('seo.legal.terms.title') as string,
+//   description: () => t('seo.legal.terms.description') as string,
+//   ogTitle: () => t('seo.legal.terms.title') as string,
+//   ogDescription: () => t('seo.legal.terms.description') as string
 // })
 
 const sections = [

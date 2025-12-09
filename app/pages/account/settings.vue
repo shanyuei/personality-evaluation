@@ -97,10 +97,10 @@ import USelectTheme from "~/theme/USelect";
 const { t } = useI18n()
 // definePageMeta({ title: () => t('pages.account.settings.title') as string })
 // useSeoMeta({
-//   title: () => t('pages.account.settings.title') as string,
-//   description: () => t('pages.account.settings.description') as string,
-//   ogTitle: () => t('pages.account.settings.title') as string,
-//   ogDescription: () => t('pages.account.settings.description') as string
+//   title: () => t('seo.account.settings.title') as string,
+//   description: () => t('seo.account.settings.description') as string,
+//   ogTitle: () => t('seo.account.settings.title') as string,
+//   ogDescription: () => t('seo.account.settings.description') as string
 // })
 
 const userStore = useUserStore()

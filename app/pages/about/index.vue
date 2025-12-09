@@ -4,7 +4,7 @@
     <section class="uno-relative uno-py-22 sm:uno-py-32">
       <NuxtImg src="/images/about/icon-1.png" alt="decor"
         class="uno-absolute uno-left-1/2 uno--translate-x-1/2 uno-top-4 uno-w-47px uno-h-36px" />
-      <div class="uno-max-w-full md:uno-max-w-[80%] uno-mx-auto uno-px-6 sm:uno-px-10">
+      <div class="page-container uno-px-6 sm:uno-px-10">
         <div class="uno-flex uno-flex-col md:uno-flex-row uno-items-center md:uno-justify-between uno-gap-72px">
           <div class="uno-text-center md:uno-text-left md:uno-w-1/2">
             <h1 class="uno-font-semibold uno-text-4xl md:uno-text-6xl uno-text-[#011813] md:uno-leading-[86px] uno-text-left">
@@ -60,7 +60,7 @@
 
 
     <section class="uno-py-12 md:uno-py-20 uno-bg-#f8f8f8">
-      <div class="uno-max-w-full md:uno-max-w-[80%] uno-mx-auto uno-px-6 sm:uno-px-10">
+      <div class="page-container uno-px-6 sm:uno-px-10">
         <div class="uno-flex uno-flex-col md:uno-flex-row uno-gap-10 uno-items-center">
           <div class="md:uno-w-1/2">
             <NuxtImg src="/images/about/2.png" alt="Mission" width="564px" height="440px"
@@ -134,7 +134,7 @@
     </section>
 
     <section class="uno-py-12 md:uno-py-20">
-      <div class="uno-max-w-full md:uno-max-w-[80%] uno-mx-auto uno-px-6 sm:uno-px-10">
+      <div class="page-container uno-px-6 sm:uno-px-10">
         <div class="uno-flex uno-flex-col md:uno-flex-row uno-gap-10 uno-items-start">
           <div>
             <h2 class="uno-text-3xl md:uno-text-5xl uno-font-['Outfit'] uno-font-extrabold uno-text-[var(--ui-foreground)]">{{
@@ -181,7 +181,7 @@
         </div>
       </div>
     </section>
-    <FAQSection :title="$t('pages.about.faq.title')" :description="$t('pages.about.faq.desc')" :items="faqItems"
+  <FAQSection :title="$t('pages.about.faq.title')" :description="$t('pages.about.faq.desc')" :items="faqItems"
       :accordion="true" :default-expanded-index="0" />
   </main>
 </template>
@@ -192,10 +192,10 @@ const { t } = useI18n()
 //   title: () => t('pages.about.title') as string
 // })
 // useSeoMeta({
-//   title: () => t('pages.about.title') as string,
-//   description: () => t('pages.about.description') as string,
-//   ogTitle: () => t('pages.about.title') as string,
-//   ogDescription: () => t('pages.about.description') as string
+//   title: () => t('seo.about.title') as string,
+//   description: () => t('seo.about.description') as string,
+//   ogTitle: () => t('seo.about.title') as string,
+//   ogDescription: () => t('seo.about.description') as string
 // })
 
 const faqItems = [

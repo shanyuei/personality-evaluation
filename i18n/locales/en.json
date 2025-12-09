@@ -1,338 +1,254 @@
 {
-  "header": {
-    "GetStarted": "Get Started"
-  },
-  "footer": {
-    "introduction": "Unlock knowledge with expert-led online courses.",
-    "stayConnected": "Stay connected",
-    "pagesText": "Pages",
-    "othersText": "Others",
-    "copyright": "2024 ©Design Monks. All rights reserved.",
-    "payments": "Payments:"
-  },
-  "home": {
-    "title": "Discover who you truly are with the Personality test",
-    "description": "With this, you will find out your exact personality type.",
-    "accuracy": {
-      "title": "Curious how accurate we are about you?",
-      "description": "Connect with a network of driven professionals, gain valuable insights, and access resources that propel you toward your dream career."
-    },
-    "account": {
-      "settings": {
-        "title": "Settings",
-        "description": "Edit your profile, change password, switch language, or delete your account.",
-        "profile": {
-          "title": "Profile details",
-          "namePlaceholder": "First and last name",
-          "emailPlaceholder": "Email address",
-          "submit": "Save profile",
-          "success": "Profile updated",
-          "fail": "Update failed. Please try again later."
+  "pages": {
+    "home": {
+      "title": "Discover your true self with a personality test",
+      "description": "The test helps you identify your accurate personality type.",
+      "accuracy": {
+        "title": "Curious how accurate we are about you?",
+        "description": "Connect to professional networks, gain valuable insights, and access resources to move toward your ideal career."
+      },
+      "stats": {
+        "testsToday": "Tests Today",
+        "testsUS": "Tests in the U.S.",
+        "totalTests": "Total Tests",
+        "accurateRate": "Rated accurate or very accurate"
+      },
+      "why": {
+        "title": "Why take the test?",
+        "desc": "Connect with top mentors. Guided questions and proven experience deliver personalized advice.",
+        "main": {
+          "title": "Boost self-awareness",
+          "desc": "Gain UI design abilities through practice-driven coaching, with personalized guidance and feedback."
         },
-        "password": {
-          "title": "Change password",
-          "current": "Current password",
-          "new": "New password",
-          "repeat": "Repeat new password",
-          "submit": "Save password",
-          "mismatch": "Passwords do not match",
-          "success": "Password updated"
+        "small1": {
+          "title": "Better decisions",
+          "desc": "Keep improving with expert coaching and personalized guidance."
         },
-        "language": {
-          "title": "Change Language",
-          "submit": "Save language",
-          "success": "Language preference saved"
+        "small2": {
+          "title": "Improved relationships",
+          "desc": "Structured practice and feedback help you build better interpersonal interactions."
         },
-        "delete": {
-          "title": "Delete Account",
-          "action": "Delete Account",
-          "success": "Your deletion request has been submitted"
+        "small3": {
+          "title": "Career satisfaction",
+          "desc": "Clear goals and continuous improvement lead to greater achievement and fulfillment."
         }
-    }
-  },
-  "faq": {
-      "title": "Frequently Asked Questions",
-      "description": "Quick answers about the platform and the test. Use the left navigation to jump between sections.",
+      },
+      "how": {
+        "title": "How it works",
+        "desc": "The Meta template includes 7 pages, 30+ sections, and two home layouts.",
+        "step1": {
+          "title": "Get prepared",
+          "desc": "A relaxed, focused environment leads to better results."
+        },
+        "step2": {
+          "title": "10+ common inner pages",
+          "desc": "Includes commonly used business pages and supports full customization."
+        },
+        "step3": {
+          "title": "30+ detail sections",
+          "desc": "Rich presentation sections help you build a portfolio site as needed."
+        }
+      },
+      "receive": {
+        "title": "What you'll get",
+        "desc": "Participation is always voluntary and flexible in time, focusing on positive experiences and genuine outcomes.",
+        "card1": {
+          "title": "Comprehensive personality report",
+          "desc": "Structured and actionable report content."
+        },
+        "card2": {
+          "title": "Daily practical challenges",
+          "desc": "Improve continuously through small daily exercises."
+        },
+        "card3": {
+          "title": "Personalized course recommendations",
+          "desc": "Recommendations for learning paths and courses that fit you better."
+        },
+        "card4": {
+          "title": "Learning and development library",
+          "desc": "Systematic content to support continuous learning and growth."
+        },
+        "card5": {
+          "title": "Skills assessment tests",
+          "desc": "Measure and track improvements in key skills."
+        },
+        "card6": {
+          "title": "Certificate of achievement",
+          "desc": "Earn a certificate after learning to showcase your results."
+        }
+      },
+      "testimonials": {
+        "title": "Trusted by 20,000+ customers",
+        "description": "Be always were in form of volunteers range time is mediatingappositive the in our affidavit how solitary saw more in his not"
+      },
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "description": "Frequently Asked Questions offers a quick answers to common queries, guiding users through features and functionalities efficiently."
+      }
+    },
+    "faq": {
+      "title": "FAQ",
+      "description": "Quickly understand the platform and testing flow. Categories on the left, Q&A on the right.",
       "nav": {
-        "general": "General FAQs",
-        "integration": "Integration",
+        "general": "General",
+        "integration": "Integrations",
         "account": "Account & Security",
         "billing": "Billing & Payments"
       },
       "sections": {
         "general": {
-          "title": "General FAQs",
-          "desc": "Common questions about the test and reports.",
+          "title": "General",
+          "desc": "Common questions about the test flow and reports.",
           "q1": "How long does the test take?",
-          "a1": "Most users finish within 5–10 minutes. Answer honestly in a focused setting.",
-          "q2": "Will my report be saved?",
-          "a2": "Your report and history are stored in your account and available anytime.",
+          "a1": "It usually takes 5-10 minutes. Stay focused and answer honestly.",
+          "q2": "Will my report be kept long term?",
+          "a2": "Reports and history are stored in your account and can be viewed anytime.",
           "q3": "Is mobile supported?",
-          "a3": "Yes, the experience is optimized for both mobile and desktop devices."
+          "a3": "Optimized for mobile and desktop. You can complete the test on any device."
         },
         "integration": {
-          "title": "Integration",
-          "desc": "Connecting with LMS or enterprise systems.",
+          "title": "Integrations",
+          "desc": "Integration with LMS or enterprise systems.",
           "q1": "Do you support LMS gradebook integration?",
-          "a1": "We can export results and integrate with common LMS platforms. Please contact support for details.",
-          "q2": "Is an API available?",
-          "a2": "REST APIs are available for read/write operations. An API key is required.",
+          "a1": "We can export assessment results and connect to common LMSs. Contact support for details.",
+          "q2": "Is there an API?",
+          "a2": "We provide read and write REST APIs. Keys are required to use them.",
           "q3": "How do I sync users and courses?",
-          "a3": "Use bulk import or APIs with scheduled jobs for synchronization."
+          "a3": "Via batch import or API sync, with scheduled jobs supported."
         },
         "account": {
           "title": "Account & Security",
           "desc": "Account management and privacy.",
-          "q1": "I forgot my password. What should I do?",
-          "a1": "Use the “Forgot Password” option on the sign-in page to reset it.",
+          "q1": "What if I forget my password?",
+          "a1": "Use the \"Forgot password\" feature on the sign-in page to reset it.",
           "q2": "How can I delete my account and data?",
-          "a2": "Submit a deletion request in settings. We process it according to compliance requirements.",
+          "a2": "Submit a deletion request in settings. We will process it according to compliance requirements.",
           "q3": "How is my data protected?",
-          "a3": "We use encrypted transport and access controls. See the Privacy Policy for details."
+          "a3": "We use encrypted transport and access control. See our privacy policy for details."
         },
         "billing": {
           "title": "Billing & Payments",
           "desc": "Orders, refunds, and invoices.",
-          "q1": "Which payment methods are supported?",
-          "a1": "We support major cards and popular third‑party payment providers.",
+          "q1": "What payment methods are supported?",
+          "a1": "Common bank cards and major payment channels are supported.",
           "q2": "Can I request a refund?",
-          "a2": "Refunds are available within the allowed period according to the Terms.",
+          "a2": "Refunds can be requested within the policy window. See the user agreement.",
           "q3": "Do you provide invoices?",
-          "a3": "Invoices are supported. Provide your billing information after the order is completed."
+          "a3": "Invoices for businesses and individuals are supported. Submit invoice details after the order is completed."
         }
-      }
-      ,
+      },
       "standout": {
-        "title": "Why Our Test Stands Out: Precision, Depth, and Clarity",
-        "desc": "Our team combines innovation, expertise, and a client‑centered approach, delivering projects with outstanding quality, meticulous attention to detail, and a focus on meaningful growth.",
+        "title": "What makes our tests different: precision, depth, and clarity",
+        "desc": "We blend innovation, expertise, and a customer-centric approach, focusing on quality and meaningful growth.",
         "items": {
           "precision": {
             "title": "Precision",
-            "desc": "Learn from experienced professionals in fields like marketing, design, development, finance, and more."
+            "desc": "Learn from seasoned professionals in marketing, design, engineering, finance, and more."
           },
           "deep": {
             "title": "Deep Insights",
-            "desc": "Tailor your journey with courses that align with your unique goals and pace."
+            "desc": "Tailor your learning journey to your goals and pace, choosing courses that fit better."
           },
           "expert": {
             "title": "Expert Guidance",
-            "desc": "Engage with multimedia content, quizzes, and assignments designed to make learning dynamic and enjoyable."
+            "desc": "Engage with multimedia content, quizzes, and assignments for a more vivid learning experience."
           }
         }
       }
     },
-    "stats": {
-      "testsToday": "Tests taken today",
-      "testsUS": "Tests taken in US",
-      "totalTests": "Total tests taken",
-      "accurateRate": "Results rated accurate or very accurate"
-    },
-    "why": {
-      "title": "Why You Should Take the Test?",
-      "desc": "Connect with the most expert mentors, guiding you with personalized advice through guided questions and proven expertise.",
-      "main": {
-        "title": "Improved self-awareness",
-        "desc": "Gain UI design mastery with hands-on expert mentorship, refining your skills through personalized guidance and feedback."
-      },
-      "small1": {
-        "title": "Better decision-making",
-        "desc": "Gain UI design mastery with hands-on expert mentorship, refining your skills through personalized guidance and feedback."
-      },
-      "small2": {
-        "title": "Enhanced relationships",
-        "desc": "Gain UI design mastery with hands-on expert mentorship, refining your skills through personalized guidance and feedback."
-      },
-      "small3": {
-        "title": "Career satisfaction",
-        "desc": "Gain UI design mastery with hands-on expert mentorship, refining your skills through personalized guidance and feedback."
-      }
-    },
-    "how": {
-      "title": "How Does It Work?",
-      "desc": "Meta webflow template includes 7 pages in total, with more than 30+ sections and 2 different home page layouts featuring",
-      "step1": {
-        "title": "Prepare yourself",
-        "desc": "Ensure you're in a relaxed setting conducive to concentration for the test."
-      },
-      "step2": {
-        "title": "10+ Useful inner pages",
-        "desc": "Meta has 10+ inner pages that are needed for your business. You can fully customize these."
-      },
-      "step3": {
-        "title": "30+ Details sections",
-        "desc": "Meta has 40+ stunning sections which will help you build a portfolio website as per your needs."
-      }
-    },
-    "receive": {
-      "title": "What You Will Receive",
-      "desc": "Be always were in form of volunteers range time is mediatingappositive the in our affidavit how solitary saw more in his not",
-      "card1": {
-        "title": "Comprehensive Personality Report",
-        "desc": "The to der ealie, der ealie, the to over mear for queen, for please"
-      },
-      "card2": {
-        "title": "Practical Daily Challenges",
-        "desc": "The colu we easily in der ealie, even for moquen, for please"
-      },
-      "card3": {
-        "title": "Personalized Course Recommendations",
-        "desc": "Reveal it everything overing overing the best!"
-      },
-      "card4": {
-        "title": "Learning and Development Library",
-        "desc": "Reveal in everything overing overing bad policy of the test for the great"
-      },
-      "card5": {
-        "title": "Skill Assessment Tests",
-        "desc": "Where centred for date, control over thought, through teacher effectiveness"
-      },
-      "card6": {
-        "title": "Certificates of Achievement",
-        "desc": "Where centred for date, control over thought, through teacher effectiveness"
-      }
-    }
-  },
-  "common": {
-    "getStarted": "Get Started",
-    "siteDescription": "Unlock knowledge with expert-led online courses and tools."
-  },
-  "routeGuide": {
-    "title": "Route Guide",
-    "intro": "Below are all available routes in the system. Click to navigate.",
-    "stats": "There are {count} available routes in the system",
-    "pathLabel": "Path",
-    "visit": "Visit",
-    "empty": "No available routes found",
-    "back": "Back to Home"
-  },
-  "seo": {
-    "app": {
+    "routeGuide": {
       "title": "Route Guide",
-      "description": "Below are all available routes in the system. Click to navigate."
-    },
-    "home": {}
-  }
-  ,
-  "pages": {
-    "userCourse": {
-      "recommendedForYou": "Recommended for you",
-      "lessons": "lessons",
-      "certificate": "Certificate",
-      "whyHere": "Why is this here?",
-      "allCourses": "All courses",
-      "cta": {
-        "start": "Start now",
-        "notForMe": "Not for me"
-      }
-    },
-    "account": {
-      "settings": {
-        "title": "Settings",
-        "description": "Edit your profile, change password, switch language, or delete your account.",
-        "profile": {
-          "title": "Profile details",
-          "namePlaceholder": "First and last name",
-          "emailPlaceholder": "Email address",
-          "submit": "Get Started",
-          "success": "Profile updated",
-          "fail": "Update failed. Please try again later."
-        },
-        "password": {
-          "title": "Change password",
-          "current": "Current password",
-          "new": "New password",
-          "repeat": "Repeat new password",
-          "submit": "Get Started",
-          "mismatch": "Passwords do not match",
-          "success": "Password updated"
-        },
-        "language": {
-          "title": "Change Language",
-          "submit": "Get Started",
-          "success": "Language preference saved"
-        },
-        "delete": {
-          "title": "Delete Account",
-          "action": "Delete Account",
-          "success": "Your deletion request has been submitted"
-        }
-      }
+      "intro": "All available routes in the system are listed below. Click to navigate.",
+      "stats": "There are {count} available routes in the system",
+      "pathLabel": "Path",
+      "visit": "Visit",
+      "empty": "No available routes found",
+      "back": "Back to Home"
     },
     "about": {
       "title": "About Us",
       "description": "Learn about our mission and team.",
       "hero": {
-        "title": "Empowering Self‑Discovery Through Precision",
-        "desc": "At Renovex we believe in the power of collaboration to achieve outstanding results. With a team of skilled professionals and a commitment to quality, we work hand‑in‑hand with our clients to bring their ideas to life. Together, we create spaces and solutions that stand the test of time."
+        "title": "Guide self-exploration with precision",
+        "desc": "We believe collaboration leads to outstanding results. With a professional team and a commitment to quality, we work with customers to turn ideas into reality and create solutions that stand the test of time."
       },
       "faq": {
-        "title": "Frequently Asked Questions",
-        "desc": "Quick answers to common questions to help you understand our platform.",
-        "q1": "How can I reach your support team?",
-        "a1": "Use the contact information on this page to email or call us. We respond within 24 hours.",
-        "q2": "Do courses support live or recorded sessions?",
-        "a2": "We support both live and recorded formats. Check the course page for the specific delivery method.",
+        "title": "FAQ",
+        "desc": "We've gathered the most asked topics to help you quickly understand the platform.",
+        "q1": "How can I contact your support team?",
+        "a1": "Use the contact methods on the right to email or call us. We'll respond within 24 hours.",
+        "q2": "Do courses support live or recorded formats?",
+        "a2": "Both live and recorded formats are supported, depending on the course and instructor. After purchase, check the course details page.",
         "q3": "Can I request a refund?",
-        "a3": "If a course hasn't started or doesn't meet expectations, submit a refund request within 7 days per policy.",
-        "q4": "Do you offer plans for organizations or schools?",
-        "a4": "Yes. We provide group and custom solutions. Contact us to discuss your needs.",
-        "q5": "Is there progress and grade tracking?",
-        "a5": "You can view learning progress and assessment results in your dashboard with detailed reports."
-      }
-      ,
+        "a3": "If the course hasn't started or doesn't meet expectations, submit a refund request within 7 days and we'll process it according to policy.",
+        "q4": "Do you offer group plans for companies or schools?",
+        "a4": "Yes, we support group purchasing and custom plans. Contact us to discuss your needs.",
+        "q5": "Is learning progress and grading tracked?",
+        "a5": "We provide progress statistics and assessment records. View detailed reports in your dashboard."
+      },
       "content": {
-        "desc": "At Renovex we are committed to revolutionizing the construction industry with innovative, sustainable, and cost‑effective solutions. With a proven track record of delivering exceptional projects, we combine state‑of‑the‑art technology, skilled expertise, and customer‑centric approaches to bring visions to life."
+        "desc": "We drive industry transformation through innovation, sustainability, and cost-effectiveness. With proven experience delivering excellent projects, we combine advanced technology, expertise, and a customer-centric approach to turn vision into reality."
       },
       "stats": {
-        "projects": { "value": "150+", "label": "Complete Projects" },
-        "team": { "value": "100+", "label": "Team Members" },
-        "reviews": { "value": "200+", "label": "Client Reviews" },
-        "awards": { "value": "30", "label": "Winning Award" }
-      }
-      ,
+        "projects": {
+          "value": "150+",
+          "label": "Projects Completed"
+        },
+        "team": {
+          "value": "100+",
+          "label": "Team Members"
+        },
+        "reviews": {
+          "value": "200+",
+          "label": "Customer Reviews"
+        },
+        "awards": {
+          "value": "30",
+          "label": "Awards Won"
+        }
+      },
       "sections": {
         "mission": {
           "badge": "Our Mission",
-          "title": "Unveiling the Layers of Your Personality",
-          "desc": "Our mission is to guide individuals on a journey of self‑understanding and growth. By leveraging the profound insights of our meticulously crafted personality test and report, we aim to illuminate the unique patterns that define each personality type. We believe in the transformative power of self‑knowledge and its ability to enhance personal and professional relationships, promote mental well‑being, and foster a fulfilling life.",
-          "list1": "Fostering Sustainable Growth and Green Development",
-          "list2": "Innovating for a Sustainable Future",
-          "list3": "Customer‑Centric Approach",
-          "list4": "Building Stronger Communities"
+          "title": "Reveal the many facets of your personality",
+          "desc": "Our mission is to guide individuals on a journey of self-awareness and growth. Through carefully designed personality tests and reports, we help you uncover unique patterns. We believe self-awareness strengthens relationships, supports mental health, and enables a more fulfilling life.",
+          "list1": "Promote sustainable growth and green development",
+          "list2": "Innovate continuously for a sustainable future",
+          "list3": "Customer-centric methodology",
+          "list4": "Build more resilient communities"
         },
         "vision": {
           "badge": "Our Vision",
-          "title": "A Trusted Partner in Your Personal Growth Journey",
-          "desc": "We strive to be your trusted partner in self‑development, combining thoughtful methodology, modern tools, and human‑centered design to help you grow with clarity and confidence.",
-          "list1": "Inspiring Modern Architecture",
-          "list2": "Pioneering Sustainable Construction",
-          "list3": "Empowering Communities Through Innovation",
-          "list4": "Leading the Future of Building Solutions"
+          "title": "A trusted partner on your growth journey",
+          "desc": "We aim to be your reliable growth partner, using rigorous methods, modern tools, and human-centered design to help you grow clearly and confidently.",
+          "list1": "Inspire modern architecture",
+          "list2": "Pioneer sustainable construction",
+          "list3": "Empower communities through innovation",
+          "list4": "Lead future-ready solutions"
         }
-      }
-      ,
+      },
       "standout": {
-        "title": "Why Our Test Stands Out: Precision, Depth, and Clarity",
-        "desc": "Our team combines innovation, expertise, and a client‑centered approach, delivering projects with outstanding quality, meticulous attention to detail, and a focus on meaningful growth.",
+        "title": "What makes our tests different: precision, depth, and clarity",
+        "desc": "We blend innovation, expertise, and a customer-centric approach, focusing on quality and meaningful growth.",
         "items": {
           "precision": {
             "title": "Precision",
-            "desc": "Learn from experienced professionals in fields like marketing, design, development, finance, and more."
+            "desc": "Learn from seasoned professionals in marketing, design, engineering, finance, and more."
           },
           "deep": {
             "title": "Deep Insights",
-            "desc": "Tailor your journey with courses that align with your unique goals and pace."
+            "desc": "Tailor your learning journey to your goals and pace, choosing courses that fit better."
           },
           "expert": {
             "title": "Expert Guidance",
-            "desc": "Engage with multimedia content, quizzes, and assignments designed to make learning dynamic and enjoyable."
+            "desc": "Engage with multimedia content, quizzes, and assignments for a more vivid learning experience."
           }
         }
       }
     },
     "courses": {
       "title": "Courses",
-      "description": "Browse expert-led courses across topics."
+      "description": "Browse expert courses across fields."
     },
     "mentors": {
       "title": "Mentors",
@@ -340,26 +256,74 @@
     },
     "blog": {
       "title": "Blog",
-      "description": "Read articles and updates from our team."
+      "description": "Read team articles and latest updates.",
+      "hero": {
+        "title": "Empower Your Journey with Expert Career Insights"
+      },
+      "exploreTitle": "Explore All Insights",
+      "sidebar": {
+        "categories": "Categories",
+        "recent": "Recent Blogs",
+        "tags": "Tags",
+        "follow": "Follow us"
+      }
     },
     "auth": {
       "signIn": {
         "title": "Sign In",
-        "description": "Access your account securely."
+        "description": "Securely access your account.",
+        "passwordLabel": "Password",
+        "passwordPlaceholder": "Password",
+        "submit": "Sign In",
+        "noAccount": "Don't have an account?",
+        "signUp": "Sign Up"
+      }
+    },
+    "account": {
+      "settings": {
+        "title": "Settings",
+        "description": "Edit profile, change password, switch language, or delete your account.",
+        "profile": {
+          "title": "Profile",
+          "namePlaceholder": "Name",
+          "emailPlaceholder": "Email address",
+          "submit": "Get Started",
+          "success": "Profile updated",
+          "fail": "Update failed. Please try again later."
+        },
+        "password": {
+          "title": "Change Password",
+          "current": "Current password",
+          "new": "New password",
+          "repeat": "Repeat new password",
+          "submit": "Get Started",
+          "mismatch": "The two passwords do not match",
+          "success": "Password updated"
+        },
+        "language": {
+          "title": "Language",
+          "submit": "Get Started",
+          "success": "Language settings saved"
+        },
+        "delete": {
+          "title": "Delete Account",
+          "action": "Delete Account",
+          "success": "Your deletion request has been submitted"
+        }
       }
     },
     "orders": {
       "cancelSubscription": {
         "title": "Cancel Subscription",
-        "description": "Manage your membership and cancel if needed."
+        "description": "Manage membership and cancel when needed."
       },
       "purchaseComplete": {
-        "title": "Thank you for your purchase!",
+        "title": "Thanks for your purchase!",
         "description": "Click below to get started and access your report.",
-        "accessReport": "Access Report",
+        "accessReport": "Open Report",
         "downloadGuidebook": "Download Guidebook",
         "accessNote": "Click the button above to open your report page.",
-        "downloadNote": "If download is unavailable, please check your email for the link later.",
+        "downloadNote": "If download fails, please check your email later for the link.",
         "goHome": "Back to Home"
       }
     },
@@ -367,81 +331,185 @@
       "title": "Personality Test",
       "description": "Start your personality assessment.",
       "step": {
-        "title": "Test Step",
-        "description": "Answer test questions step by step."
+        "title": "Test Steps",
+        "description": "Answer the questions step by step."
       },
       "analyzing": {
         "title": "Analyzing",
-        "description": "We are analyzing your answers."
+        "description": "Analyzing your answers."
       },
       "result": {
-        "title": "Test Result",
-        "description": "View your personality report and next actions."
+        "title": "Test Results",
+        "description": "View your report and next actions."
       }
-    }
-    ,
+    },
     "legal": {
       "privacy": {
         "title": "Privacy Policy",
-        "description": "We respect your privacy. This page explains how we collect, use, and protect information.",
+        "description": "We value your privacy. Here's how we collect, use, and protect information.",
         "nav": {
           "general": "Overview",
           "usage": "How We Use Information",
-          "sharing": "Data Sharing & Disclosure",
+          "sharing": "Sharing & Disclosure",
           "cookies": "Cookies & Tracking",
-          "changes": "Changes to This Policy",
+          "changes": "Policy Changes",
           "contact": "Contact Us"
         },
         "sections": {
           "general": {
             "title": "Overview",
-            "body": "We collect and process data only for lawful, necessary, and explicit purposes, and apply reasonable safeguards to protect your information."
+            "body": "We only collect and process data for lawful, necessary, and explicit purposes, and take reasonable security measures to protect your information."
           },
           "usage": {
             "title": "How We Use Information",
-            "desc": "Examples of how your information is used:",
+            "desc": "The following scenarios describe how information is used.",
             "q1": "Provide and maintain services",
-            "a1": "Account creation, course access, assessments, and report generation.",
-            "q2": "Communications and support",
-            "a2": "Important notices, service updates, and support responses.",
-            "q3": "Improvement and analytics",
-            "a3": "Anonymous or aggregated analytics to improve product experience and performance."
+            "a1": "Used for core functions such as account creation, course access, assessments, and report generation.",
+            "q2": "Communication and support",
+            "a2": "Used to send important notices, service updates, and support responses.",
+            "q3": "Improvement and analysis",
+            "a3": "Anonymous or aggregated data is analyzed to optimize product experience and performance."
           },
           "sharing": {
-            "title": "Data Sharing & Disclosure",
-            "desc": "We do not sell personal information. We may share only when necessary:",
+            "title": "Sharing & Disclosure",
+            "desc": "We do not sell your personal information. We share only when necessary:",
             "q1": "Service providers",
-            "a1": "Contracted providers for infrastructure and customer support.",
+            "a1": "Shared with contracted third-party providers for infrastructure and customer support.",
             "q2": "Legal compliance",
-            "a2": "When required to comply with law, protect users, or prevent fraud."
+            "a2": "Information may be disclosed to comply with law, protect users, or prevent fraud."
           },
           "cookies": {
             "title": "Cookies & Tracking",
-            "body": "We use cookies to remember preferences and perform site analytics. You can manage cookies in your browser—some features may be impacted."
+            "body": "We use cookies to remember preferences and analyze the site. You can manage or disable cookies in your browser, but some functions may be affected."
           },
           "changes": {
-            "title": "Changes to This Policy",
-            "body": "We may update this policy from time to time. Significant changes will be communicated via in‑app notice or email."
+            "title": "Policy Changes",
+            "body": "We may update this policy from time to time. Significant changes will be communicated via site notices or email."
           },
           "contact": {
             "title": "Contact Us",
-            "body": "For privacy questions or requests, please reach out using the contact information provided on this page."
+            "body": "For privacy questions or requests, please reach out using the contact information on the page."
           }
         }
       },
       "terms": {
         "title": "Terms of Service",
-        "description": "By using the service, you agree to the following terms and conditions.",
+        "description": "By using this service, you agree to the following terms and conditions.",
         "sections": {
-          "accept": { "title": "Acceptance of Terms", "body": "Registering or using the service constitutes acceptance of this agreement." },
-          "use": { "title": "Use of Service", "body": "Use the service in accordance with applicable laws and this agreement. Do not abuse or disrupt the platform." },
-          "account": { "title": "Accounts & Security", "body": "Keep credentials secure and remain responsible for activities under your account. Notify us immediately of suspicious activity." },
-          "payments": { "title": "Payments", "body": "For paid courses or subscriptions, fees, billing, and refunds follow the policies described on the relevant pages." },
-          "content": { "title": "User Content", "body": "You retain ownership of your content while granting us necessary rights to process and display it to provide the service." },
-          "prohibited": { "title": "Prohibited Conduct", "body": "Including but not limited to unlawful content, infringement, attacks, or interference with platform operations." },
-          "termination": { "title": "Termination", "body": "We may suspend or terminate service for violations. You may stop using the service and request data export at any time." },
-          "disclaimer": { "title": "Disclaimers", "body": "The service is provided as‑is without warranties of fitness or uninterrupted operation to the fullest extent permitted by law." }
+          "accept": {
+            "title": "Acceptance of Terms",
+            "body": "Registering or using the service means you have read and agree to this agreement."
+          },
+          "use": {
+            "title": "Use of Service",
+            "body": "Use the service according to applicable laws and this agreement. Do not abuse or disrupt the platform."
+          },
+          "account": {
+            "title": "Account & Security",
+            "body": "Keep your credentials safe and are responsible for activity under your account. Notify us immediately if you notice abnormalities."
+          },
+          "payments": {
+            "title": "Fees & Payments",
+            "body": "For paid courses or subscriptions, fees, billing, and refund policies follow the explanations on the pages."
+          },
+          "content": {
+            "title": "User Content",
+            "body": "You retain ownership of your content, but authorize us to process and display it as needed to provide the service."
+          },
+          "prohibited": {
+            "title": "Prohibited Conduct",
+            "body": "Includes but is not limited to illegal content, rights infringement, attacks, or interference with platform operations."
+          },
+          "termination": {
+            "title": "Termination",
+            "body": "We may suspend or terminate the service if you violate the terms. You may stop using the service at any time and request data export."
+          },
+          "disclaimer": {
+            "title": "Disclaimer",
+            "body": "The service is provided as-is. We make no guarantees of suitability or uninterrupted availability. Liability is limited to the extent permitted by law."
+          }
         }
+      }
+    }
+  },
+  "layouts": {
+    "header": {
+      "GetStarted": "Get Started"
+    }
+  },
+  "common": {
+    "getStarted": "Get Started",
+    "siteDescription": "Unlock knowledge and growth with expert courses and tools."
+  },
+  "seo": {
+    "home": {
+      "title": "Discover your true self with a personality test",
+      "description": "The test helps you identify your accurate personality type."
+    },
+    "faq": {
+      "title": "FAQ",
+      "description": "Quickly understand the platform and testing flow. Categories on the left, Q&A on the right."
+    },
+    "routeGuide": {
+      "title": "Route Guide",
+      "description": "There are {count} available routes in the system"
+    },
+    "about": {
+      "title": "About Us",
+      "description": "Learn about our mission and team."
+    },
+    "courses": {
+      "title": "Courses",
+      "description": "Browse expert courses across fields."
+    },
+    "mentors": {
+      "title": "Mentors",
+      "description": "Meet experienced mentors and instructors."
+    },
+    "blog": {
+      "title": "Blog",
+      "description": "Read team articles and latest updates."
+    },
+    "auth": {
+      "signIn": {
+        "title": "Sign In",
+        "description": "Securely access your account."
+      }
+    },
+    "orders": {
+      "cancelSubscription": {
+        "title": "Cancel Subscription",
+        "description": "Manage membership and cancel when needed."
+      },
+      "purchaseComplete": {
+        "title": "Thanks for your purchase!",
+        "description": "Click below to get started and access your report."
+      }
+    },
+    "test": {
+      "title": "Personality Test",
+      "description": "Start your personality assessment.",
+      "step": {
+        "title": "Test Steps",
+        "description": "Answer the questions step by step."
+      },
+      "analyzing": {
+        "title": "Analyzing",
+        "description": "Analyzing your answers."
+      },
+      "result": {
+        "title": "Test Results",
+        "description": "View your report and next actions."
+      }
+    },
+    "legal": {
+      "privacy": {
+        "title": "Privacy Policy",
+        "description": "We value your privacy. Here's how we collect, use, and protect information."
+      },
+      "terms": {
+        "title": "Terms of Service",
+        "description": "By using this service, you agree to the following terms and conditions."
       }
     }
   }

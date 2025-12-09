@@ -8,10 +8,10 @@
                 <div class="uno-flex uno-justify-start uno-items-center uno-flex-col uno-gap-16px">
                     <h1
                         class="uno-text-[#011813] uno-text-3xl sm:uno-text-5xl lg:uno-text-7xl uno-font-['Outfit'] uno-text-center uno-font-semibold">
-                        {{ $t('home.title') }}
+                        {{ $t('pages.home.title') }}
                     </h1>
                     <h2 class="uno-text-[#4E5255] uno-text-base sm:uno-text-lg uno-font-['Outfit'] uno-text-center">
-                        {{ $t('home.description') }}
+                        {{ $t('pages.home.description') }}
                     </h2>
                 </div>
 
@@ -75,7 +75,7 @@
                             class="uno-text-[#009D77] uno-text-3xl sm:uno-text-4xl md:uno-text-5xl uno-font-['Outfit'] uno-font-semibold uno-m-b-4px">
                             241K+</div>
                         <div class="uno-text-[#4E5255] uno-text-sm sm:uno-text-base md:uno-text-lg uno-font-['Outfit']">{{
-                            $t('home.stats.testsToday') }}</div>
+                            $t('pages.home.stats.testsToday') }}</div>
                     </div>
                     <!-- 统计项2 -->
                     <div class="uno-text-center uno-p-6">
@@ -83,7 +83,7 @@
                             class="uno-text-[#EA4C89] uno-text-3xl sm:uno-text-4xl md:uno-text-5xl uno-font-['Outfit'] uno-font-semibold uno-m-b-4px">
                             172M+</div>
                         <div class="uno-text-[#4E5255] uno-text-sm sm:uno-text-base md:uno-text-lg uno-font-['Outfit']">{{
-                            $t('home.stats.testsUS') }}</div>
+                            $t('pages.home.stats.testsUS') }}</div>
                     </div>
                     <!-- 统计项3 -->
                     <div class="uno-text-center uno-p-6">
@@ -91,7 +91,7 @@
                             class="uno-text-[#FD9AC0] uno-text-3xl sm:uno-text-4xl md:uno-text-5xl uno-font-['Outfit'] uno-font-semibold uno-m-b-4px">
                             1460M+</div>
                         <div class="uno-text-[#4E5255] uno-text-sm sm:uno-text-base md:uno-text-lg uno-font-['Outfit']">{{
-                            $t('home.stats.totalTests') }}</div>
+                            $t('pages.home.stats.totalTests') }}</div>
                     </div>
                     <!-- 统计项4 -->
                     <div class="uno-text-center uno-p-6">
@@ -99,7 +99,7 @@
                             class="uno-text-[#B273F2] uno-text-3xl sm:uno-text-4xl md:uno-text-5xl uno-font-['Outfit'] uno-font-semibold uno-m-b-4px">
                             91.2%</div>
                         <div class="uno-text-[#4E5255] uno-text-sm sm:uno-text-base md:uno-text-lg uno-font-['Outfit']">{{
-                            $t('home.stats.accurateRate') }}</div>
+                            $t('pages.home.stats.accurateRate') }}</div>
                     </div>
                 </div>
             </div>
@@ -110,9 +110,9 @@
                 <!-- Why You Should Take the Test 部分 -->
                 <div class="uno-mb-24">
                     <h2 class="uno-text-[#011813] uno-text-5xl uno-font-['Outfit'] uno-text-center uno-font-semibold uno-m-b-12px">{{
-                        $t('home.why.title') }}</h2>
+                        $t('pages.home.why.title') }}</h2>
                     <p class="uno-text-[#4E5255] uno-font-['Outfit'] uno-text-center">
-                        {{ $t('home.why.desc') }}
+                        {{ $t('pages.home.why.desc') }}
                     </p>
 
                     <!-- 主要介绍卡片 -->
@@ -124,8 +124,8 @@
 
                         <div class="uno-flex uno-flex-col md:uno-flex-row uno-gap-6 md:uno-gap-10">
                             <div class="uno-w-full md:uno-w-[24%] uno-pt-24px">
-                                <h3 class="uno-text-2xl uno-font-['Outfit'] uno-font-bold uno-mb-4">{{ $t('home.why.main.title') }}</h3>
-                                <p class="uno-text-gray-600 uno-mb-6">{{ $t('home.why.main.desc') }}</p>
+                                <h3 class="uno-text-2xl uno-font-['Outfit'] uno-font-bold uno-mb-4">{{ $t('pages.home.why.main.title') }}</h3>
+                                <p class="uno-text-gray-600 uno-mb-6">{{ $t('pages.home.why.main.desc') }}</p>
                                 <!-- 分割线 -->
                                 <div class="uno-w-full uno-h-[1px] uno-bg-[#E7E7E8] uno-my-6" />
                                 <button
@@ -154,8 +154,8 @@
                                 <NuxtImg src="/images/home/3.png" alt="Better decision-making icon" width="56"
                                     height="56" class="" />
                             </div>
-                            <h3 class="uno-text-xl uno-font-['Outfit'] uno-font-bold uno-mb-3">{{ $t('home.why.small1.title') }}</h3>
-                            <p class="uno-text-gray-600">{{ $t('home.why.small1.desc') }}</p>
+                            <h3 class="uno-text-xl uno-font-['Outfit'] uno-font-bold uno-mb-3">{{ $t('pages.home.why.small1.title') }}</h3>
+                            <p class="uno-text-gray-600">{{ $t('pages.home.why.small1.desc') }}</p>
                         </div>
 
                         <!-- 卡片2 -->
@@ -166,8 +166,8 @@
                                 <NuxtImg src="/images/home/4.png" alt="Enhanced relationships icon" width="56"
                                     height="56" />
                             </div>
-                            <h3 class="uno-text-xl uno-font-['Outfit'] uno-font-bold uno-mb-3">{{ $t('home.why.small2.title') }}</h3>
-                            <p class="uno-text-gray-600">{{ $t('home.why.small2.desc') }}</p>
+                            <h3 class="uno-text-xl uno-font-['Outfit'] uno-font-bold uno-mb-3">{{ $t('pages.home.why.small2.title') }}</h3>
+                            <p class="uno-text-gray-600">{{ $t('pages.home.why.small2.desc') }}</p>
                         </div>
 
                         <!-- 卡片3 -->
@@ -178,8 +178,8 @@
                                 <NuxtImg src="/images/home/5.png" alt="Career satisfaction icon" width="56"
                                     height="56" />
                             </div>
-                            <h3 class="uno-text-xl uno-font-['Outfit'] uno-font-bold uno-mb-3">{{ $t('home.why.small3.title') }}</h3>
-                            <p class="uno-text-gray-600">{{ $t('home.why.small3.desc') }}</p>
+                            <h3 class="uno-text-xl uno-font-['Outfit'] uno-font-bold uno-mb-3">{{ $t('pages.home.why.small3.title') }}</h3>
+                            <p class="uno-text-gray-600">{{ $t('pages.home.why.small3.desc') }}</p>
                         </div>
                     </div>
                 </div>
@@ -188,8 +188,8 @@
                 <div class="uno-flex uno-flex-col md:uno-flex-row uno-gap-12 uno-items-center">
                     <!-- 左侧：标题、描述和按钮 -->
                     <div class="uno-w-full md:uno-w-1/2">
-                        <h2 class="uno-text-4xl uno-font-['Outfit'] uno-font-bold uno-mb-8">{{ $t('home.how.title') }}</h2>
-                        <p class="uno-text-gray-600 uno-mb-12">{{ $t('home.how.desc') }}</p>
+                        <h2 class="uno-text-4xl uno-font-['Outfit'] uno-font-bold uno-mb-8">{{ $t('pages.home.how.title') }}</h2>
+                        <p class="uno-text-gray-600 uno-mb-12">{{ $t('pages.home.how.desc') }}</p>
 
                         <button
                           class="uno-inline-flex uno-items-center uno-justify-center uno-h-[40px] uno-px-3 uno-rounded-[999px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-[var(--ui-primary-foreground)] uno-font-['Outfit'] uno-transition uno-duration-200"
@@ -211,9 +211,9 @@
                                 </div>
                                 <div class="uno-flex uno-justify-start uno-items-start uno-flex-col uno-gap-2">
                                     <p class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold">{{
-                                        $t('home.how.step1.title') }}</p>
+                                        $t('pages.home.how.step1.title') }}</p>
                                     <p class="uno-w-[370px] max-sm:uno-w-full uno-text-[#4E5255] uno-font-['Outfit']">{{
-                                        $t('home.how.step1.desc') }}</p>
+                                        $t('pages.home.how.step1.desc') }}</p>
                                 </div>
                             </div>
 
@@ -226,9 +226,9 @@
                                 </div>
                                 <div class="uno-flex uno-justify-start uno-items-start uno-flex-col uno-gap-2">
                                     <span class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold">{{
-                                        $t('home.how.step2.title') }}</span>
+                                        $t('pages.home.how.step2.title') }}</span>
                                     <p class="uno-w-[370px] max-sm:uno-w-full uno-text-[#4E5255] uno-font-['Outfit']">{{
-                                        $t('home.how.step2.desc') }}</p>
+                                        $t('pages.home.how.step2.desc') }}</p>
                                 </div>
                             </div>
 
@@ -241,9 +241,9 @@
                                 </div>
                                 <div class="uno-flex uno-justify-start uno-items-start uno-flex-col uno-gap-2">
                                     <span class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold">{{
-                                        $t('home.how.step3.title') }}</span>
+                                        $t('pages.home.how.step3.title') }}</span>
                                     <p class="uno-w-[370px] max-sm:uno-w-full uno-text-[#4E5255] uno-font-['Outfit']">{{
-                                        $t('home.how.step3.desc') }}</p>
+                                        $t('pages.home.how.step3.desc') }}</p>
                                 </div>
                             </div>
                         </div>
@@ -255,8 +255,8 @@
         <!-- 第五块 What You Will Receive 区域 -->
         <div class="uno-receive-section uno-py-16 sm:uno-py-20 md:uno-py-24 uno-bg-gray-50">
             <div class="uno-container uno-mx-auto uno-max-w-[80%] uno-px-4">
-                <h2 class="uno-text-4xl uno-font-['Outfit'] uno-font-bold uno-text-center uno-mb-4">{{ $t('home.receive.title') }}</h2>
-                <p class="uno-text-center uno-text-gray-600 uno-mb-16 uno-max-w-3xl uno-mx-auto">{{ $t('home.receive.desc') }}</p>
+                <h2 class="uno-text-4xl uno-font-['Outfit'] uno-font-bold uno-text-center uno-mb-4">{{ $t('pages.home.receive.title') }}</h2>
+                <p class="uno-text-center uno-text-gray-600 uno-mb-16 uno-max-w-3xl uno-mx-auto">{{ $t('pages.home.receive.desc') }}</p>
 
                 <!-- 六个卡片布局 -->
                 <div class="uno-grid uno-grid-cols-1 md:uno-grid-cols-3 uno-gap-6 sm:uno-gap-8">
@@ -265,15 +265,15 @@
                             class="uno-bg-white uno-rounded-2xl uno-shadow-lg uno-p-24px uno-border uno-border-[#E7E7E8] uno-flex uno-flex-col uno-items-center uno-text-center uno-gap-12px uno-relative uno-z-[1] uno-w-full uno-min-h-[220px]">
                             <NuxtImg src="/images/home/7.png" alt="Comprehensive Personality Report" width="72"
                                 height="72" />
-                            <h3 class="uno-text-xl uno-font-['Outfit'] uno-font-bold">{{ $t('home.receive.card1.title') }}</h3>
-                            <p class="uno-text-gray-600">{{ $t('home.receive.card1.desc') }}</p>
+                            <h3 class="uno-text-xl uno-font-['Outfit'] uno-font-bold">{{ $t('pages.home.receive.card1.title') }}</h3>
+                            <p class="uno-text-gray-600">{{ $t('pages.home.receive.card1.desc') }}</p>
                         </div>
                         <div
                             class="uno-bg-white uno-rounded-2xl uno-shadow-lg uno-p-24px uno-border uno-border-[#E7E7E8] uno-flex uno-flex-col uno-items-center uno-text-center uno-gap-12px uno-relative uno-z-[3] uno-w-full uno-min-h-[220px] uno-m-t-16px md:uno-m-t-[-20px] uno-ml-0">
                             <NuxtImg src="/images/home/10.png" alt="Practical Daily Challenges" width="72"
                                 height="72" />
-                            <h3 class="uno-text-xl uno-font-['Outfit'] uno-font-bold">{{ $t('home.receive.card2.title') }}</h3>
-                            <p class="uno-text-gray-600">{{ $t('home.receive.card2.desc') }}</p>
+                            <h3 class="uno-text-xl uno-font-['Outfit'] uno-font-bold">{{ $t('pages.home.receive.card2.title') }}</h3>
+                            <p class="uno-text-gray-600">{{ $t('pages.home.receive.card2.desc') }}</p>
                         </div>
                     </div>
 
@@ -282,15 +282,15 @@
                             class="uno-bg-white uno-rounded-2xl uno-shadow-lg uno-p-24px uno-border uno-border-[#E7E7E8] uno-flex uno-flex-col uno-items-center uno-text-center uno-gap-12px uno-relative uno-z-[1] uno-w-full uno-min-h-[220px]">
                             <NuxtImg src="/images/home/8.png" alt="Personalized Course Recommendations" width="72"
                                 height="72" />
-                            <h3 class="uno-text-xl uno-font-['Outfit'] uno-font-bold">{{ $t('home.receive.card3.title') }}</h3>
-                            <p class="uno-text-gray-600">{{ $t('home.receive.card3.desc') }}</p>
+                            <h3 class="uno-text-xl uno-font-['Outfit'] uno-font-bold">{{ $t('pages.home.receive.card3.title') }}</h3>
+                            <p class="uno-text-gray-600">{{ $t('pages.home.receive.card3.desc') }}</p>
                         </div>
                         <div
                             class="uno-bg-white uno-rounded-2xl uno-shadow-lg uno-p-24px uno-border uno-border-[#E7E7E8] uno-flex uno-flex-col uno-items-center uno-text-center uno-gap-12px uno-relative uno-z-[3] uno-w-full uno-min-h-[220px] uno-m-t-16px md:uno-m-t-[-20px] uno-ml-0">
                             <NuxtImg src="/images/home/11.png" alt="Learning and Development Library" width="72"
                                 height="72" />
-                            <h3 class="uno-text-xl uno-font-['Outfit'] uno-font-bold">{{ $t('home.receive.card4.title') }}</h3>
-                            <p class="uno-text-gray-600">{{ $t('home.receive.card4.desc') }}</p>
+                            <h3 class="uno-text-xl uno-font-['Outfit'] uno-font-bold">{{ $t('pages.home.receive.card4.title') }}</h3>
+                            <p class="uno-text-gray-600">{{ $t('pages.home.receive.card4.desc') }}</p>
                         </div>
                     </div>
 
@@ -298,15 +298,15 @@
                         <div
                             class="uno-bg-white uno-rounded-2xl uno-shadow-lg uno-p-24px uno-border uno-border-[#E7E7E8] uno-flex uno-flex-col uno-items-center uno-text-center uno-gap-12px uno-relative uno-z-[1] uno-w-full uno-min-h-[220px]">
                             <NuxtImg src="/images/home/9.png" alt="Skill Assessment Tests" width="72" height="72" />
-                            <h3 class="uno-text-xl uno-font-['Outfit'] uno-font-bold">{{ $t('home.receive.card5.title') }}</h3>
-                            <p class="uno-text-gray-600">{{ $t('home.receive.card5.desc') }}</p>
+                            <h3 class="uno-text-xl uno-font-['Outfit'] uno-font-bold">{{ $t('pages.home.receive.card5.title') }}</h3>
+                            <p class="uno-text-gray-600">{{ $t('pages.home.receive.card5.desc') }}</p>
                         </div>
                         <div
                             class="uno-bg-white uno-rounded-2xl uno-shadow-lg uno-p-24px uno-border uno-border-[#E7E7E8] uno-flex uno-flex-col uno-items-center uno-text-center uno-gap-12px uno-relative uno-z-[3] uno-w-full uno-min-h-[220px] uno-m-t-16px md:uno-m-t-[-20px] uno-ml-0">
                             <NuxtImg src="/images/home/12.png" alt="Certificates of Achievement" width="72"
                                 height="72" />
-                            <h3 class="uno-text-xl uno-font-['Outfit'] uno-font-bold">{{ $t('home.receive.card6.title') }}</h3>
-                            <p class="uno-text-gray-600">{{ $t('home.receive.card6.desc') }}</p>
+                            <h3 class="uno-text-xl uno-font-['Outfit'] uno-font-bold">{{ $t('pages.home.receive.card6.title') }}</h3>
+                            <p class="uno-text-gray-600">{{ $t('pages.home.receive.card6.desc') }}</p>
                         </div>
                     </div>
                 </div>
@@ -314,12 +314,12 @@
         </div>
 
         <!-- 第六块 客户评价模块 -->
-        <TestimonialsSection :title="'Trusted by 20,000+ customers'"
-            :description="'Be always were in form of volunteers range time is mediatingappositive the in our affidavit how solitary saw more in his not'"
+        <TestimonialsSection :title="$t('pages.home.testimonials.title')"
+            :description="$t('pages.home.testimonials.description')"
             :rating="5" :reviews="reviews" />
 
-        <FAQSection :title="'Frequently Asked Questions'"
-            :description="'Frequently Asked Questions offers a quick answers to common queries, guiding users through features and functionalities efficiently.'"
+        <FAQSection :title="$t('pages.home.faq.title')"
+            :description="$t('pages.home.faq.description')"
             :items="faqItems" />
 
         <GradientCTASection @button-click="handleCTAClick" />
@@ -332,13 +332,13 @@ import TestimonialsSection from '../../components/TestimonialsSection.vue';
 import FAQSection from '../../components/FAQSection.vue';
 // const { t } = useI18n()
 // definePageMeta({
-//   title: t('home.title') as string
+//   title: t('pages.home.title') as string
 // })
 // useSeoMeta({
-//   title: () => t('home.title') as string,
-//   description: () => t('home.description') as string,
-//   ogTitle: () => t('home.title') as string,
-//   ogDescription: () => t('home.description') as string
+//   title: () => t('seo.home.title') as string,
+//   description: () => t('seo.home.description') as string,
+//   ogTitle: () => t('seo.home.title') as string,
+//   ogDescription: () => t('seo.home.description') as string
 // })
 
 const baseText = 'An exceptional platform for career development. The current curriculum, skilled instructors, and hands-on learning are truly rewarding.'

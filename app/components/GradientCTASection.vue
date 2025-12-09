@@ -16,11 +16,11 @@
         class="uno-absolute uno-inset-0 uno--z-10 uno-pointer-events-none uno-object-cover uno-object-center uno-w-[100%] uno-h-[100%] uno-hidden md:uno-block"
         uno-preload />
       <h2 class="uno-text-[#0F172A] uno-font-['Outfit'] uno-font-bold uno-text-3xl sm:uno-text-4xl md:uno-text-5xl uno-mb-4 uno-text-center">
-        {{ title || $t('home.accuracy.title') }}
+        {{ title || $t('pages.home.accuracy.title') }}
       </h2>
 
       <p class="uno-text-[#4E5255] uno-max-w-[720px] uno-mx-auto uno-mb-8 sm:uno-mb-10 uno-text-center uno-px-4">
-        {{ description || $t('home.accuracy.description') }}
+        {{ description || $t('pages.home.accuracy.description') }}
       </p>
 
       <button

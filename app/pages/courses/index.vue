@@ -77,13 +77,13 @@
 import { ref, computed } from 'vue';
 // const { t } = useI18n()
 // definePageMeta({
-//   title: t('pages.courses.title') as string
+//   title: t('courses.title') as string
 // })
 // useSeoMeta({
-//   title: () => t('pages.courses.title') as string,
-//   description: () => t('pages.courses.description') as string,
-//   ogTitle: () => t('pages.courses.title') as string,
-//   ogDescription: () => t('pages.courses.description') as string
+//   title: () => t('courses.title') as string,
+//   description: () => t('courses.description') as string,
+//   ogTitle: () => t('courses.title') as string,
+//   ogDescription: () => t('courses.description') as string
 // })
 
 const activeFilter = ref('all');

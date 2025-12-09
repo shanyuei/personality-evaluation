@@ -1,6 +1,6 @@
 <template>
   <main class="uno-min-h-screen uno-bg-gradient-to-br uno-from-gray-50 uno-to-gray-100 uno-py-12 uno-px-6 md:uno-px-10">
-    <div class="uno-max-w-[80%] uno-mx-auto">
+    <div class="page-container">
       <div class="uno-text-center uno-mb-8">
         <h1 class="uno-text-3xl md:uno-text-4xl uno-font-['Outfit'] uno-font-bold uno-text-gray-900">{{ $t('pages.faq.title') }}</h1>
         <p class="uno-text-gray-600 uno-max-w-2xl uno-mx-auto uno-mt-3">{{ $t('pages.faq.description') }}</p>
@@ -66,34 +66,34 @@
 //   title: () => t('pages.faq.title') as string
 // })
 // useSeoMeta({
-//   title: () => t('pages.faq.title') as string,
-//   description: () => t('pages.faq.description') as string,
-//   ogTitle: () => t('pages.faq.title') as string,
-//   ogDescription: () => t('pages.faq.description') as string
+//   title: () => t('seo.faq.title') as string,
+//   description: () => t('seo.faq.description') as string,
+//   ogTitle: () => t('seo.faq.title') as string,
+//   ogDescription: () => t('seo.faq.description') as string
 // })
 
 // const generalItems = [
-//   { question: t('pages.faq.sections.general.q1'), answer: t('pages.faq.sections.general.a1') },
-//   { question: t('pages.faq.sections.general.q2'), answer: t('pages.faq.sections.general.a2') },
-//   { question: t('pages.faq.sections.general.q3'), answer: t('pages.faq.sections.general.a3') }
+//   { question: t('faq.sections.general.q1'), answer: t('faq.sections.general.a1') },
+//   { question: t('faq.sections.general.q2'), answer: t('faq.sections.general.a2') },
+//   { question: t('faq.sections.general.q3'), answer: t('faq.sections.general.a3') }
 // ]
 
 // const integrationItems = [
-//   { question: t('pages.faq.sections.integration.q1'), answer: t('pages.faq.sections.integration.a1') },
-//   { question: t('pages.faq.sections.integration.q2'), answer: t('pages.faq.sections.integration.a2') },
-//   { question: t('pages.faq.sections.integration.q3'), answer: t('pages.faq.sections.integration.a3') }
+//   { question: t('faq.sections.integration.q1'), answer: t('faq.sections.integration.a1') },
+//   { question: t('faq.sections.integration.q2'), answer: t('faq.sections.integration.a2') },
+//   { question: t('faq.sections.integration.q3'), answer: t('faq.sections.integration.a3') }
 // ]
 
 // const accountItems = [
-//   { question: t('pages.faq.sections.account.q1'), answer: t('pages.faq.sections.account.a1') },
-//   { question: t('pages.faq.sections.account.q2'), answer: t('pages.faq.sections.account.a2') },
-//   { question: t('pages.faq.sections.account.q3'), answer: t('pages.faq.sections.account.a3') }
+//   { question: t('faq.sections.account.q1'), answer: t('faq.sections.account.a1') },
+//   { question: t('faq.sections.account.q2'), answer: t('faq.sections.account.a2') },
+//   { question: t('faq.sections.account.q3'), answer: t('faq.sections.account.a3') }
 // ]
 
 // const billingItems = [
-//   { question: t('pages.faq.sections.billing.q1'), answer: t('pages.faq.sections.billing.a1') },
-//   { question: t('pages.faq.sections.billing.q2'), answer: t('pages.faq.sections.billing.a2') },
-//   { question: t('pages.faq.sections.billing.q3'), answer: t('pages.faq.sections.billing.a3') }
+//   { question: t('faq.sections.billing.q1'), answer: t('faq.sections.billing.a1') },
+//   { question: t('faq.sections.billing.q2'), answer: t('faq.sections.billing.a2') },
+//   { question: t('faq.sections.billing.q3'), answer: t('faq.sections.billing.a3') }
 // ]
 </script>
 
