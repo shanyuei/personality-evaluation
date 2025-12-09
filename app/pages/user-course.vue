@@ -4,12 +4,12 @@
         <section class="uno-py-10 uno-px-6 md:uno-px-12 lg:uno-px-24">
             <div class="uno-max-w-[80%] uno-mx-auto">
                 <div class="uno-flex uno-justify-start uno-items-center uno-flex-col uno-gap-[15px]">
-                    <div class="uno-w-full md:uno-w-[1200px]">
+                    <div class="uno-w-full md:uno-w-[1000px]">
                         <p class="uno-text-[var(--ui-muted-foreground)] uno-font-['Outfit'] uno-font-medium">{{
                             $t('pages.userCourse.recommendedForYou') }}</p>
                     </div>
                     <div
-                        class="uno-w-full md:uno-w-[1200px] uno-flex uno-justify-between uno-items-start uno-flex-row uno-p-[32px] uno-bg-white uno-rounded-3xl uno-shadow-[0px_4px_12px_0px_rgba(0,0,0,0.05)]">
+                        class="uno-w-full md:uno-w-[1000px] uno-flex uno-justify-between uno-items-start uno-flex-row uno-p-[32px] uno-bg-white uno-rounded-3xl uno-shadow-[0px_4px_12px_0px_rgba(0,0,0,0.05)]">
                         <div class="uno-flex uno-flex-row uno-gap-[56px]">
                             <div class="uno-flex uno-flex-col uno-gap-6">
                                 <div class="uno-flex uno-flex-col uno-gap-4">
@@ -68,49 +68,78 @@
         </section>
 
 
-        <section class="uno-py-6 uno-px-6 md:uno-px-12 lg:uno-px-24">
-            <div class="uno-max-w-[80%] uno-mx-auto">
-                <div class="uno-flex uno-justify-between uno-items-center uno-mb-4">
-                    <h2 class="uno-text-xl md:uno-text-2xl uno-font-semibold uno-text-[var(--ui-foreground)]">{{
-                        $t('pages.userCourse.allCourses') }}</h2>
-                    <USelect v-model="sortOrder" :options="sortOptions" class="uno-w-[160px]" />
-                </div>
+        <section class="uno-pt-[32px] uno-pb-[120px] uno-px-[24px] md:uno-px-[120px] uno-bg-[var(--color-gray-9)]">
+            <div class="uno-mx-auto md:uno-w-[1200px]">
+                <p class="uno-text-[var(--ui-muted-foreground)] uno-text-xl uno-font-['Outfit'] uno-font-medium">{{ $t('pages.userCourse.allCourses') }}</p>
 
-                <div class="uno-grid uno-grid-cols-1 md:uno-grid-cols-2 uno-gap-6">
-                    <div v-for="course in sortedCourses" :key="course.id"
-                        class="uno-bg-white uno-rounded-[16px] uno-shadow-md uno-border uno-border-[var(--ui-border)] hover:uno-shadow-lg uno-transition">
-                        <div class="uno-grid uno-grid-cols-1 sm:uno-grid-cols-3">
-                            <div class="sm:uno-col-span-1">
-                                <NuxtImg :src="course.image" :alt="course.title"
-                                    class="uno-w-full uno-h-[180px] sm:uno-h-full uno-object-cover" />
+                <div class="uno-mt-4 uno-flex uno-flex-col uno-gap-10">
+                    <div class="uno-flex uno-flex-col md:uno-flex-row uno-gap-6">
+                        <div v-for="course in sortedCourses.slice(0,2)" :key="course.id" class="uno-w-full md:uno-w-[588px] uno-h-auto md:uno-h-[535px] uno-flex uno-items-center uno-flex-col uno-gap-5 uno-pt-3 uno-pb-[24px] uno-px-3 uno-bg-white uno-rounded-2xl">
+                            <div class="uno-w-full md:uno-w-[564px] uno-h-[200px] md:uno-h-[270px] uno-rounded-xl uno-overflow-hidden uno-relative">
+                                <NuxtImg :src="course.image" :alt="course.title" class="uno-rounded-xl uno-absolute uno-left-0 uno-top-0 uno-w-full md:uno-w-[564px] uno-h-[200px] md:uno-h-[270px] uno-object-cover" />
                             </div>
-                            <div class="sm:uno-col-span-2 uno-p-4 sm:uno-p-6">
-                                <div class="uno-flex uno-justify-between uno-items-start">
-                                    <h3
-                                        class="uno-text-lg md:uno-text-xl uno-font-bold uno-text-[var(--ui-foreground)]">
-                                        {{ course.title }}</h3>
-                                    <span v-if="course.progress"
-                                        class="uno-text-xs uno-bg-[var(--color-green-3)] uno-text-[var(--ui-foreground)] uno-rounded-full uno-px-2 uno-py-1">{{
-                                        course.progress }}</span>
-                                </div>
-                                <p class="uno-text-sm uno-text-[var(--ui-muted-foreground)] uno-mt-2 uno-line-clamp-2">
-                                    {{ course.description }}</p>
-
-                                <div class="uno-flex uno-justify-between uno-items-center uno-mt-4">
-                                    <div class="uno-flex uno-items-center uno-gap-2">
-                                        <UButton size="sm"
-                                            class="uno-rounded-full uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-white">
-                                            {{ $t('pages.userCourse.cta.start') }}</UButton>
-                                        <UButton size="sm" variant="ghost" class="uno-rounded-full">{{
-                                            $t('pages.userCourse.cta.notForMe') }}</UButton>
+                            <div class="uno-self-stretch uno-flex uno-flex-col uno-gap-3 uno-px-2">
+                                <div class="uno-flex uno-flex-col uno-gap-4">
+                                    <p class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-medium">{{ course.title }}</p>
+                                    <p class="uno-text-[var(--ui-muted-foreground)] uno-text-sm uno-font-['Outfit']">{{ course.description }}</p>
+                                    <div class="uno-flex uno-justify-between uno-items-end uno-relative">
+                                        <div class="uno-flex uno-items-center uno-gap-2">
+                                            <span class="uno-text-[var(--ui-foreground)] uno-text-sm uno-font-['Outfit'] uno-font-medium">{{ course.progress === '✓' ? "You've completed this test." : (course.progress || '') }}</span>
+                                            <span v-if="course.resultLabel" class="uno-text-[var(--ui-foreground)] uno-text-sm uno-font-['Outfit']">{{ course.resultLabel }}</span>
+                                        </div>
+                                        <div class="uno-h-[48px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-3 uno-py-1 uno-pr-1 uno-pl-[20px] uno-rounded-[100px]" :class="course.ctaTheme === 'dark' ? 'uno-bg-[#011813]' : 'uno-bg-[var(--ui-primary)]'">
+                                            <span class="uno-text-white uno-font-['Outfit'] uno-font-medium">{{ $t('pages.userCourse.cta.start') }}</span>
+                                            <div class="uno-w-[40px] uno-h-[40px] uno-flex uno-justify-center uno-items-center uno-rounded-[100px] uno-bg-white uno-overflow-hidden">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="24" height="24"><path d="M5 12h9m0 0l-4-4m4 4l-4 4" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                                            </div>
+                                        </div>
+                                        <div v-if="course.points" class="uno-w-[64px] uno-h-[64px] uno-flex uno-justify-center uno-items-center uno-rounded-full uno-overflow-hidden uno-bg-[rgba(255,211,204,0.5)] uno-border-solid uno-border-[var(--color-pink-2)] uno-border">
+                                            <div class="uno-flex uno-items-center uno-flex-col">
+                                                <span class="uno-text-[var(--color-pink-1)] uno-text-xl uno-font-['Outfit'] uno-font-semibold">{{ course.points }}</span>
+                                                <span class="uno-text-[var(--color-pink-1)] uno-text-xs uno-font-['Outfit']">points</span>
+                                            </div>
+                                        </div>
+                                        <div v-else-if="course.percent !== undefined" class="uno-w-[64px] uno-h-[64px] uno-flex uno-justify-center uno-items-center uno-rounded-full uno-overflow-hidden uno-border-solid uno-border-[var(--ui-border)] uno-border-4">
+                                            <div class="uno-flex uno-items-center uno-flex-col">
+                                                <span class="uno-text-[var(--ui-muted-foreground)] uno-text-lg uno-font-['Outfit'] uno-font-medium">{{ course.percent }}%</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="uno-flex uno-items-center uno-gap-3">
-                                        <span class="uno-text-xs uno-text-[var(--ui-muted-foreground)]">{{
-                                            course.duration }}</span>
-                                        <div
-                                            class="uno-w-8 uno-h-8 uno-rounded-full uno-bg-[var(--color-gray-9)] uno-overflow-hidden">
-                                            <NuxtImg :src="course.instructor.avatar" :alt="course.instructor.name"
-                                                class="uno-w-full uno-h-full uno-object-cover" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="uno-flex uno-flex-col md:uno-flex-row uno-gap-6">
+                        <div v-for="course in sortedCourses.slice(2,4)" :key="course.id" class="uno-w-full md:uno-w-[588px] uno-h-auto md:uno-h-[535px] uno-flex uno-items-center uno-flex-col uno-gap-5 uno-pt-3 uno-pb-[24px] uno-px-3 uno-bg-white uno-rounded-2xl">
+                            <div class="uno-w-full md:uno-w-[564px] uno-h-[200px] md:uno-h-[270px] uno-rounded-xl uno-overflow-hidden uno-relative">
+                                <NuxtImg :src="course.image" :alt="course.title" class="uno-rounded-xl uno-absolute uno-left-0 uno-top-0 uno-w-full md:uno-w-[564px] uno-h-[200px] md:uno-h-[270px] uno-object-cover" />
+                            </div>
+                            <div class="uno-self-stretch uno-flex uno-flex-col uno-gap-3 uno-px-2">
+                                <div class="uno-flex uno-flex-col uno-gap-4">
+                                    <p class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-medium">{{ course.title }}</p>
+                                    <p class="uno-text-[var(--ui-muted-foreground)] uno-text-sm uno-font-['Outfit']">{{ course.description }}</p>
+                                    <div class="uno-flex uno-justify-between uno-items-end uno-relative">
+                                        <div class="uno-flex uno-items-center uno-gap-2">
+                                            <span class="uno-text-[var(--ui-foreground)] uno-text-sm uno-font-['Outfit'] uno-font-medium">{{ course.progress === '✓' ? "You've completed this test." : (course.progress || '') }}</span>
+                                            <span v-if="course.resultLabel" class="uno-text-[var(--ui-foreground)] uno-text-sm uno-font-['Outfit']">{{ course.resultLabel }}</span>
+                                        </div>
+                                        <div class="uno-h-[48px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-3 uno-py-1 uno-pr-1 uno-pl-[20px] uno-rounded-[100px]" :class="course.ctaTheme === 'dark' ? 'uno-bg-[#011813]' : 'uno-bg-[var(--ui-primary)]'">
+                                            <span class="uno-text-white uno-font-['Outfit'] uno-font-medium">{{ $t('pages.userCourse.cta.start') }}</span>
+                                            <div class="uno-w-[40px] uno-h-[40px] uno-flex uno-justify-center uno-items-center uno-rounded-[100px] uno-bg-white uno-overflow-hidden">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="24" height="24"><path d="M5 12h9m0 0l-4-4m4 4l-4 4" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                                            </div>
+                                        </div>
+                                        <div v-if="course.points" class="uno-w-[64px] uno-h-[64px] uno-flex uno-justify-center uno-items-center uno-rounded-full uno-overflow-hidden uno-bg-[rgba(255,211,204,0.5)] uno-border-solid uno-border-[var(--color-pink-2)] uno-border">
+                                            <div class="uno-flex uno-items-center uno-flex-col">
+                                                <span class="uno-text-[var(--color-pink-1)] uno-text-xl uno-font-['Outfit'] uno-font-semibold">{{ course.points }}</span>
+                                                <span class="uno-text-[var(--color-pink-1)] uno-text-xs uno-font-['Outfit']">points</span>
+                                            </div>
+                                        </div>
+                                        <div v-else-if="course.percent !== undefined" class="uno-w-[64px] uno-h-[64px] uno-flex uno-justify-center uno-items-center uno-rounded-full uno-overflow-hidden uno-border-solid uno-border-[var(--ui-border)] uno-border-4">
+                                            <div class="uno-flex uno-items-center uno-flex-col">
+                                                <span class="uno-text-[var(--ui-muted-foreground)] uno-text-lg uno-font-['Outfit'] uno-font-medium">{{ course.percent }}%</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -138,50 +167,61 @@ const recommended = ref({
 })
 
 type Course = {
-    id: number
-    title: string
-    description: string
-    image: string
-    duration: string
-    progress?: string
-    instructor: { name: string, avatar: string }
+  id: number
+  title: string
+  description: string
+  image: string
+  duration: string
+  progress?: string
+  resultLabel?: string
+  points?: number
+  percent?: number
+  ctaTheme?: 'dark' | 'green'
+  instructor: { name: string, avatar: string }
 }
 
 const courses = ref<Course[]>([
-    {
-        id: 1,
-        title: 'People Leadership vs. Management',
-        description: 'Learn the difference between leadership and management to inspire teams and drive outcomes.',
-        image: '/images/about/3.png',
-        duration: '20 min',
-        progress: '75%',
-        instructor: { name: 'Alex', avatar: '/images/home/8.png' }
-    },
-    {
-        id: 2,
-        title: 'HR Management',
-        description: 'Build practical HR skills covering recruitment, onboarding, and performance frameworks.',
-        image: '/images/home/11.png',
-        duration: '1h',
-        instructor: { name: 'Sofia', avatar: '/images/home/1.png' }
-    },
-    {
-        id: 3,
-        title: 'Email Marketing',
-        description: 'Master lifecycle email strategies with segmentation, copy, and analytics.',
-        image: '/images/home/2.png',
-        duration: '45 min',
-        progress: '✓',
-        instructor: { name: 'Max', avatar: '/images/home/8.png' }
-    },
-    {
-        id: 4,
-        title: 'Brand Management',
-        description: 'Develop coherent brand systems and campaigns across channels.',
-        image: '/images/home/1.png',
-        duration: '1.5h',
-        instructor: { name: 'Sara', avatar: '/images/about/3.png' }
-    }
+  {
+    id: 1,
+    title: 'People Leadership vs. Management',
+    description: 'Learn the difference between leadership and management to inspire teams and drive outcomes.',
+    image: '/images/about/3.png',
+    duration: '20 min',
+    progress: "You've completed this test.",
+    resultLabel: 'View test results',
+    points: 20,
+    ctaTheme: 'dark',
+    instructor: { name: 'Alex', avatar: '/images/home/8.png' }
+  },
+  {
+    id: 2,
+    title: 'HR Management',
+    description: 'Build practical HR skills covering recruitment, onboarding, and performance frameworks.',
+    image: '/images/home/11.png',
+    duration: '1h',
+    percent: 10,
+    ctaTheme: 'green',
+    instructor: { name: 'Sofia', avatar: '/images/home/1.png' }
+  },
+  {
+    id: 3,
+    title: 'Email Marketing',
+    description: 'Master lifecycle email strategies with segmentation, copy, and analytics.',
+    image: '/images/home/2.png',
+    duration: '45 min',
+    progress: '✓',
+    ctaTheme: 'green',
+    instructor: { name: 'Max', avatar: '/images/home/8.png' }
+  },
+  {
+    id: 4,
+    title: 'Brand Management',
+    description: 'Develop coherent brand systems and campaigns across channels.',
+    image: '/images/home/1.png',
+    duration: '1.5h',
+    ctaTheme: 'dark',
+    instructor: { name: 'Sara', avatar: '/images/about/3.png' }
+  }
 ])
 
 const sortOrder = ref<'popular' | 'recent' | 'duration'>('popular')
