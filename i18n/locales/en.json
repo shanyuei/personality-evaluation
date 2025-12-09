@@ -295,6 +295,21 @@
       "cta": "Get Started",
       "toDashboard": "Go to Dashboard"
     },
+    "userCourseChapterComplete": {
+      "title": "Congratulations!",
+      "desc1": "You have successfully completed all lessons of our {courseName} course.",
+      "desc2": "Time to see what you've learned and get your certificate.",
+      "format": {
+        "title": "Format",
+        "body": "The test consists of 10 multiple-choice questions. Each question has four answer choices, reflecting different attitudes and behaviors related to time management."
+      },
+      "scoring": {
+        "title": "Scoring",
+        "body": "Each answer is assigned a point value. The total score is calculated by summing the points from all answers."
+      },
+      "cta": "Get Started",
+      "later": "I'll do it later"
+    },
     "courses": {
       "title": "Courses",
       "description": "Browse expert courses across fields."

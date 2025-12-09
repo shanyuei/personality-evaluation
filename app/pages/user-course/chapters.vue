@@ -15,7 +15,7 @@
 
           <div class="uno-space-y-3">
             <div v-for="(item, idx) in chapters" :key="idx" class="uno-flex uno-items-center uno-gap-4">
-              <span class="uno-inline-flex uno-items-center uno-justify-center uno-w-8 uno-h-8 uno-rounded-full uno-bg-[var(--ui-input)] uno-text-[var(--ui-foreground)] uno-text-sm uno-font-medium">{{ idx + 1 }}</span>
+              <span class="uno-inline-flex uno-items-center uno-justify-center uno-w-8 uno-h-8 uno-aspect-square uno-rounded-full uno-bg-[var(--ui-input)] uno-text-[var(--ui-foreground)] uno-text-sm uno-font-medium">{{ idx + 1 }}</span>
               <span class="uno-text-[var(--ui-foreground)]">{{ item }}</span>
             </div>
           </div>

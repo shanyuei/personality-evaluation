@@ -38,19 +38,19 @@
             <p class="uno-text-[var(--ui-foreground)] uno-font-semibold uno-mb-3">{{ $t('pages.userCourseLesson.sections.takeaways.title') }}</p>
             <div class="uno-space-y-3">
               <div class="uno-flex uno-items-start uno-gap-3">
-                <span class="uno-inline-flex uno-items-center uno-justify-center uno-w-6 uno-h-6 uno-rounded-full uno-bg-white uno-border-2 uno-border-[var(--ui-primary)]">
+                <span class="uno-inline-flex uno-items-center uno-justify-center uno-w-6 uno-h-6 uno-aspect-square uno-rounded-full uno-bg-white uno-border-2 uno-border-[var(--ui-primary)]">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"><path d="M20 6L9 17l-5-5" stroke="var(--ui-primary)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </span>
                 <span class="uno-text-sm md:uno-text-base uno-text-[var(--ui-muted-foreground)]">{{ $t('pages.userCourseLesson.sections.takeaways.i1') }}</span>
               </div>
               <div class="uno-flex uno-items-start uno-gap-3">
-                <span class="uno-inline-flex uno-items-center uno-justify-center uno-w-6 uno-h-6 uno-rounded-full uno-bg-white uno-border-2 uno-border-[var(--ui-primary)]">
+                <span class="uno-inline-flex uno-items-center uno-justify-center uno-w-6 uno-h-6 uno-aspect-square uno-rounded-full uno-bg-white uno-border-2 uno-border-[var(--ui-primary)]">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"><path d="M20 6L9 17l-5-5" stroke="var(--ui-primary)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </span>
                 <span class="uno-text-sm md:uno-text-base uno-text-[var(--ui-muted-foreground)]">{{ $t('pages.userCourseLesson.sections.takeaways.i2') }}</span>
               </div>
               <div class="uno-flex uno-items-start uno-gap-3">
-                <span class="uno-inline-flex uno-items-center uno-justify-center uno-w-6 uno-h-6 uno-rounded-full uno-bg-white uno-border-2 uno-border-[var(--ui-primary)]">
+                <span class="uno-inline-flex uno-items-center uno-justify-center uno-w-6 uno-h-6 uno-aspect-square uno-rounded-full uno-bg-white uno-border-2 uno-border-[var(--ui-primary)]">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"><path d="M20 6L9 17l-5-5" stroke="var(--ui-primary)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </span>
                 <span class="uno-text-sm md:uno-text-base uno-text-[var(--ui-muted-foreground)]">{{ $t('pages.userCourseLesson.sections.takeaways.i3') }}</span>
