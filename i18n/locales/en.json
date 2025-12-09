@@ -256,7 +256,17 @@
     },
     "blog": {
       "title": "Blog",
-      "description": "Read team articles and latest updates."
+      "description": "Read team articles and latest updates.",
+      "hero": {
+        "title": "Empower Your Journey with Expert Career Insights"
+      },
+      "exploreTitle": "Explore All Insights",
+      "sidebar": {
+        "categories": "Categories",
+        "recent": "Recent Blogs",
+        "tags": "Tags",
+        "follow": "Follow us"
+      }
     },
     "auth": {
       "signIn": {

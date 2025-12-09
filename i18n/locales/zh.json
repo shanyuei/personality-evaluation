@@ -256,7 +256,17 @@
     },
     "blog": {
       "title": "博客",
-      "description": "阅读团队文章与最新动态。"
+      "description": "阅读团队文章与最新动态。",
+      "hero": {
+        "title": "以专家洞见赋能你的职业旅程"
+      },
+      "exploreTitle": "探索全部洞见",
+      "sidebar": {
+        "categories": "分类",
+        "recent": "最新博客",
+        "tags": "标签",
+        "follow": "关注我们"
+      }
     },
     "auth": {
       "signIn": {
