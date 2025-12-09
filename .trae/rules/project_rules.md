@@ -49,7 +49,7 @@ Nuxt 项目约定
 - 任务分步推进：读项目→给方案→产出代码→说明验证→指出可扩展点
  - 大改动优先拆小步；保持每次输出完整可执行
 自适应细则
-- 页面容器：统一使用 `.page-container`（`max-width: min(80%, 1440px)` 且水平居中），水平内边距建议 `uno-px-6 sm:uno-px-10`
+- 页面容器：统一使用 `uno-max-w-[80%] uno-mx-auto`（宽度 80% 且水平居中），水平内边距建议 `uno-px-6 sm:uno-px-10`
 - 栅格布局：移动端单列，桌面端 2–3 列；优先 `uno-grid` + `uno-gap-6` 或 `uno-flex` + `uno-gap-6`
 - 图片响应：统一用 `NuxtImg` 并设置 `sizes`，按断点切换 H5/PC 资源；示例 `sizes="(min-width:768px) 1200px, 342px"`
 - 交互尺寸：按钮高度 `h-[48px]`、输入圆角 `rounded-[16px]`；在 md 以上增加水平间距与字号

@@ -67,9 +67,3 @@
 @theme static {
     --color-pink-1: var(--color-pink-1);
 }
-
-.page-container {
-    max-width: min(80%, 1440px);
-    margin-left: auto;
-    margin-right: auto;
-}

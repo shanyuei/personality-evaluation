@@ -2,7 +2,7 @@
   <main class="">
     <!-- Hero -->
     <section class="uno-py-16 uno-px-6 md:uno-px-10 ">
-      <div class="page-container">
+      <div class="uno-max-w-[80%] uno-mx-auto">
         <p class="uno-text-sm uno-text-gray-500">Home / Blog</p>
         <h1 class="uno-text-3xl md:uno-text-5xl uno-font-['Outfit'] uno-font-bold uno-text-[#0F172A] uno-mt-2">
           {{ $t('pages.blog.hero.title') }}
@@ -12,10 +12,10 @@
 
     <!-- Featured grid: 1 large + 4 small -->
     <section class="uno-py-12 uno-px-6 md:uno-px-10">
-      <div class="page-container">
-        <div class="uno-grid md:uno-grid-cols-3 uno-gap-6">
+      <div class="uno-max-w-[80%] uno-mx-auto">
+        <div class="uno-grid md:uno-grid-cols-2 uno-gap-[24px]">
           <!-- Large card -->
-          <div class="md:uno-col-span-2 uno-rounded-2xl uno-overflow-hidden">
+          <div class="uno-rounded-2xl uno-overflow-hidden">
             <div>
               <NuxtImg :src="articles[0].image" :alt="articles[0].title" 
                 class="uno-w-full uno-h-64 md:uno-h-[384px] uno-object-cover" />
@@ -28,7 +28,7 @@
           </div>
 
           <!-- 4 small cards -->
-          <div class="uno-grid sm:uno-grid-cols-2 uno-gap-6">
+          <div class="uno-grid sm:uno-grid-cols-2 uno-gap-[24px]">
             <div v-for="a in smallArticles" :key="a.id" class="uno-rounded-2xl uno-overflow-hidden">
               <NuxtImg :src="a.image" :alt="a.title" class="uno-w-full uno-h-36 uno-object-cover" />
               <div class="uno-p-4">
@@ -43,7 +43,7 @@
 
     <!-- Explore + List -->
     <section class="uno-py-12 uno-px-6 md:uno-px-10">
-      <div class="page-container">
+      <div class="uno-max-w-[80%] uno-mx-auto">
         <div class="uno-text-center uno-mb-8">
           <h2 class="uno-text-2xl md:uno-text-3xl uno-font-['Outfit'] uno-font-bold uno-text-[#0F172A]">{{
             $t('pages.blog.exploreTitle') }}</h2>
