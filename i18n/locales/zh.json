@@ -300,6 +300,12 @@
       "ctaPrimary": "开始",
       "ctaSecondary": "开始"
     },
+    "userCourseLessonComplete": {
+      "title": "Congratulations!",
+      "desc": "You have successfully completed lesson {current} of {courseName} course.",
+      "cta": "Get Started",
+      "toDashboard": "Go to Dashboard"
+    },
     "courses": {
       "title": "课程",
       "description": "浏览各领域的专家课程。"

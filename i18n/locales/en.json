@@ -289,6 +289,12 @@
       "ctaPrimary": "Get Started",
       "ctaSecondary": "Get Started"
     },
+    "userCourseLessonComplete": {
+      "title": "Congratulations!",
+      "desc": "You have successfully completed lesson {current} of {courseName} course.",
+      "cta": "Get Started",
+      "toDashboard": "Go to Dashboard"
+    },
     "courses": {
       "title": "Courses",
       "description": "Browse expert courses across fields."
