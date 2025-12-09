@@ -2,7 +2,7 @@
     <main class="uno-min-h-screen uno-bg-[var(--ui-background)]">
 
         <section class="uno-py-10 uno-px-6 md:uno-px-12 lg:uno-px-24">
-            <div class="uno-max-w-[80%] uno-mx-auto">
+            <div class="page-container">
                 <div class="uno-flex uno-justify-start uno-items-center uno-flex-col uno-gap-[15px]">
                     <div class="uno-w-full md:uno-w-[1200px]">
                         <p class="uno-text-[var(--ui-muted-foreground)] uno-font-['Outfit'] uno-font-medium">{{

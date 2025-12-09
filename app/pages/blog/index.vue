@@ -1,40 +1,39 @@
 <template>
-  <main class="">
+  <main class="page-container uno-py-64px blog-page">
     <!-- Hero -->
-    <section class="uno-py-16 uno-px-6 md:uno-px-10 ">
-      <div class="uno-max-w-[80%] uno-mx-auto">
-        <p class="uno-text-sm uno-text-gray-500">Home / Blog</p>
-        <h1 class="uno-text-3xl md:uno-text-5xl uno-font-['Outfit'] uno-font-bold uno-text-[#0F172A] uno-mt-2">
-          {{ $t('pages.blog.hero.title') }}
-        </h1>
-      </div>
+    <section class="">
+      <p class="uno-font-normal uno-text-[14px] md:uno-text-[16px] uno-text-[#011813] uno-leading-[20px] md:uno-leading-[24px]">Home / Blog</p>
+      <h1 class="uno-font-semibold uno-text-[28px] md:uno-text-[72px] uno-text-[#011813] uno-leading-[36px] md:uno-leading-[86px] uno-mt-12px">
+        {{ $t('pages.blog.hero.title') }}
+      </h1>
     </section>
 
     <!-- Featured grid: 1 large + 4 small -->
-    <section class="uno-py-12 uno-px-6 md:uno-px-10">
-      <div class="uno-max-w-[80%] uno-mx-auto">
-        <div class="uno-grid md:uno-grid-cols-2 uno-gap-[24px]">
-          <!-- Large card -->
-          <div class="uno-rounded-2xl uno-overflow-hidden">
-            <div>
-              <NuxtImg :src="articles[0].image" :alt="articles[0].title" 
-                class="uno-w-full uno-h-64 md:uno-h-[384px] uno-object-cover" />
-              <div class="uno-p-6">
-                <p class="uno-text-sm uno-text-gray-500 uno-mb-1">{{ articles[0].author.name }} · {{ articles[0].readTime }} min</p>
-                <h3 class="uno-text-2xl uno-font-bold uno-text-gray-900 uno-mb-3">{{ articles[0].title }}</h3>
-                <p class="uno-text-gray-600 uno-line-clamp-3">{{ articles[0].excerpt }}</p>
-              </div>
+    <section class="uno-my-[56px]">
+      <div class="uno-grid md:uno-grid-cols-2 uno-gap-[24px]">
+        <!-- Large card -->
+        <div class="uno-rounded-2xl uno-overflow-hidden">
+          <div>
+            <NuxtImg :src="articles[0].image" :alt="articles[0].title" width="588" height="392" />
+            <div class="uno-py-6">
+              <p class="uno-font-normal uno-text-[14px] md:uno-text-[16px] uno-text-[#4e5255] uno-leading-[20px] md:uno-leading-[24px] uno-mb-1">{{
+                articles[0].author.name }} · {{
+                  articles[0].readTime }} min</p>
+              <h3 class="uno-font-semibold uno-text-[20px] md:uno-text-[24px] uno-text-[#011813] uno-leading-[28px] md:uno-leading-[33px] uno-mb-3">{{
+                articles[0].title }}</h3>
+              <p class=" uno-font-normal uno-text-[14px] md:uno-text-[16px] uno-text-[#4e5255] uno-leading-[20px] md:uno-leading-[24px] uno-line-clamp-3">{{
+                articles[0].excerpt }}</p>
             </div>
           </div>
+        </div>
 
-          <!-- 4 small cards -->
-          <div class="uno-grid sm:uno-grid-cols-2 uno-gap-[24px]">
-            <div v-for="a in smallArticles" :key="a.id" class="uno-rounded-2xl uno-overflow-hidden">
-              <NuxtImg :src="a.image" :alt="a.title" class="uno-w-full uno-h-36 uno-object-cover" />
-              <div class="uno-p-4">
-                <p class="uno-text-xs uno-text-gray-500 uno-mb-1">{{ a.author.name }} - {{ a.readTime }} min</p>
-                <h4 class="uno-text-base uno-font-semibold uno-text-gray-900">{{ a.title }}</h4>
-              </div>
+        <!-- 4 small cards -->
+        <div class="uno-hidden md:uno-grid md:uno-grid-cols-2 uno-gap-[24px]">
+          <div v-for="a in smallArticles" :key="a.id" class="uno-rounded-2xl uno-overflow-hidden">
+            <NuxtImg width="282" height="188" :src="a.image" :alt="a.title" />
+            <div class="uno-py-4">
+              <p class="uno-text-sm uno-text-gray-500 uno-mb-1">{{ a.author.name }} · {{ a.readTime }} min</p>
+              <h4 class="uno-text-lg uno-font-semibold uno-text-gray-900 uno-mb-2">{{ a.title }}</h4>
             </div>
           </div>
         </div>
@@ -42,88 +41,108 @@
     </section>
 
     <!-- Explore + List -->
-    <section class="uno-py-12 uno-px-6 md:uno-px-10">
-      <div class="uno-max-w-[80%] uno-mx-auto">
-        <div class="uno-text-center uno-mb-8">
-          <h2 class="uno-text-2xl md:uno-text-3xl uno-font-['Outfit'] uno-font-bold uno-text-[#0F172A]">{{
-            $t('pages.blog.exploreTitle') }}</h2>
+    <section class="uno-mt-60px md:uno-mt-120px">
+      <div class="uno-text-center uno-mb-10">
+        <h2 class="uno-font-semibold uno-text-[48px] uno-text-[#011813] uno-leading-[58px] uno-text-center">{{
+          $t('pages.blog.exploreTitle') }}</h2>
+      </div>
+
+      <div class="uno-flex uno-flex-col lg:uno-flex-row uno-gap-8">
+        <!-- Grid -->
+        <div class="lg:uno-w-2/3">
+          <div class="uno-grid sm:uno-grid-cols-2 md:uno-grid-cols-3 uno-gap-6">
+            <div v-for="a in otherVisibleArticles" :key="a.id" class="uno-rounded-2xl">
+              <NuxtImg :src="a.image" :alt="a.title" width="384" height="282" />
+              <p
+                class="uno-font-normal uno-text-[16px] uno-text-[#4e5255] uno-leading-[24px] uno-mt-2 uno-line-clamp-2">
+                {{ a.author.name }} · {{ a.readTime }} min</p>
+              <h4 class="uno-font-medium uno-text-[24px] uno-text-[#011813] uno-leading-[33px] uno-line-clamp-2">{{
+                a.title }}</h4>
+            </div>
+          </div>
+          <div class="uno-flex uno-justify-center uno-mt-24px">
+            <button
+              :class="!hasMoreOther ? 'uno-opacity-50 uno-cursor-not-allowed uno-border-[var(--ui-border)] uno-text-[var(--ui-muted-foreground)]' : ''"
+              :disabled="!hasMoreOther"
+              class="uno-h-[40px] uno-px-24px uno-rounded-[999px] uno-bg-transparent uno-border uno-border-[var(--ui-primary)] uno-text-[var(--ui-primary)] uno-font-['Outfit'] uno-font-medium hover:uno-opacity-80"
+              @click="otherLimit += 6">
+              Load more
+            </button>
+          </div>
         </div>
 
-        <div class="uno-flex uno-flex-col lg:uno-flex-row uno-gap-8">
-          <!-- Grid -->
-          <div class="lg:uno-w-2/3">
-            <div class="uno-grid sm:uno-grid-cols-2 md:uno-grid-cols-3 uno-gap-6">
-              <div v-for="a in otherArticles" :key="a.id" class="uno-rounded-2xl">
-                <NuxtImg :src="a.image" :alt="a.title"
-                  class="uno-w-full uno-h-48 uno-object-cover uno-rounded-[16px]" />
-                <p class="uno-text-xs uno-text-gray-500 uno-mt-2">{{ a.author.name }} · {{ a.readTime }} min</p>
-                <h4 class="uno-text-base md:uno-text-lg uno-font-semibold uno-text-gray-900">{{ a.title }}</h4>
-              </div>
+        <!-- Sidebar -->
+        <div class="lg:uno-w-1/3">
+          <!-- Categories -->
+          <div class="uno-rounded-2xl uno-mb-12">
+            <h3 class="uno-text-[22px] uno-font-['Outfit'] uno-font-semibold uno-text-[#011813] uno-mb-4">{{
+              $t('pages.blog.sidebar.categories') }}</h3>
+            <ul class="uno-space-y-3">
+              <li v-for="(c, i) in categoryCounts" :key="c.label">
+                <a href="#" class="uno-flex uno-items-center hover:uno-text-[var(--ui-primary)]">
+                  <span :class="i === 0 ? 'uno-text-[var(--color-pink-1)]' : 'uno-text-[#011813]'"
+                    class="uno-text-[18px] uno-font-['Outfit'] uno-font-medium">{{ c.label }}</span>
+                  <span :class="i === 0 ? 'uno-text-[var(--color-pink-1)]' : 'uno-text-[#011813]'"
+                    class="uno-text-[18px] uno-ml-2">({{ String(c.count).padStart(2, '0') }})</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Recent Blogs -->
+          <div class="uno-rounded-2xl uno-mb-6">
+            <h3 class="uno-text-lg uno-font-semibold uno-text-gray-900 uno-mb-4">{{ $t('pages.blog.sidebar.recent') }}
+            </h3>
+            <ul class="uno-space-y-4">
+              <li v-for="recent in recentArticles" :key="recent.id">
+                <a :href="`/blog/${recent.slug}`" class="uno-flex uno-gap-4 uno-group">
+                  <div class="uno-rounded-[12px] uno-overflow-hidden uno-flex-shrink-0">
+                    <NuxtImg :src="recent.image" :alt="recent.title" width="102" height="102" />
+                  </div>
+                  <div>
+                    <h4
+                      class="uno-font-medium uno-text-[20px] uno-text-[#011813] uno-leading-[30px] group-hover:uno-text-[var(--ui-primary)] uno-transition-colors uno-duration-200 uno-line-clamp-1">
+                      {{ recent.title }}</h4>
+                    <p class="uno-font-normal uno-text-[16px] uno-text-[#4e5255] uno-leading-[24px] uno-mt-1 uno-line-clamp-2">{{
+                      recent.excerpt }}</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Tags -->
+          <div class="uno-rounded-2xl uno-py-6">
+            <h3 class="uno-text-lg uno-font-semibold uno-text-gray-900 uno-mb-3">{{ $t('pages.blog.sidebar.tags') }}
+            </h3>
+            <div class="uno-flex uno-flex-wrap uno-gap-3">
+              <span v-for="tag in tags" :key="tag"
+                :class="tag === activeTag ? 'uno-border-[var(--color-pink-1)] uno-bg-transparent uno-text-[#011813]' : 'uno-border-[var(--ui-border)] uno-bg-transparent uno-text-[#011813]'"
+                class="uno-text-[14px] uno-px-3 uno-py-1 uno-rounded-[999px] uno-border">#{{ tag }}</span>
             </div>
           </div>
 
-          <!-- Sidebar -->
-          <div class="lg:uno-w-1/3">
-            <!-- Categories -->
-            <div class="uno-rounded-2xl uno-p-6 uno-mb-8">
-              <h3 class="uno-text-lg uno-font-semibold uno-text-gray-900 uno-mb-4">{{
-                $t('pages.blog.sidebar.categories') }}</h3>
-              <ul class="uno-space-y-2">
-                <li v-for="(c, i) in categoryCounts" :key="c.label" class="uno-text-gray-700">
-                  <a href="#" class="hover:uno-text-[var(--ui-primary)]">
-                    <span :class="i === 0 ? 'uno-text-[var(--color-pink-1)]' : ''">{{ c.label }}</span>
-                    <span class="uno-text-gray-500"> ({{ c.count }})</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <!-- Recent Blogs -->
-            <div class="uno-rounded-2xl uno-p-6 uno-mb-8">
-              <h3 class="uno-text-lg uno-font-semibold uno-text-gray-900 uno-mb-4">{{ $t('pages.blog.sidebar.recent') }}
-              </h3>
-              <ul class="uno-space-y-4">
-                <li v-for="recent in recentArticles" :key="recent.id">
-                  <a :href="`/blog/${recent.slug}`" class="uno-flex uno-gap-3 uno-group">
-                    <div class="uno-w-20 uno-h-20 uno-rounded uno-overflow-hidden uno-flex-shrink-0">
-                      <NuxtImg :src="recent.image" :alt="recent.title"
-                        class="uno-w-full uno-h-full uno-object-cover group-hover:uno-scale-105 uno-transition-transform uno-duration-300" />
-                    </div>
-                    <div>
-                      <h4
-                        class="uno-font-medium uno-text-gray-900 group-hover:uno-text-[var(--ui-primary)] uno-transition-colors uno-duration-200 uno-line-clamp-2">
-                        {{ recent.title }}</h4>
-                      <p class="uno-text-sm uno-text-gray-500 uno-mt-1 uno-line-clamp-2">{{ recent.excerpt }}</p>
-                    </div>
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <!-- Tags -->
-            <div class="uno-rounded-2xl uno-p-6 uno-mb-8">
-              <h3 class="uno-text-lg uno-font-semibold uno-text-gray-900 uno-mb-3">{{ $t('pages.blog.sidebar.tags') }}
-              </h3>
-              <div class="uno-flex uno-flex-wrap uno-gap-2">
-                <span v-for="tag in tags" :key="tag"
-                  class="uno-text-xs uno-px-3 uno-py-1 uno-rounded-full uno-text-gray-800">#{{ tag }}</span>
-              </div>
-            </div>
-
-            <!-- Follow us -->
-            <div class="uno-rounded-2xl uno-p-6">
-              <h3 class="uno-text-lg uno-font-semibold uno-text-gray-900 uno-mb-3">{{ $t('pages.blog.sidebar.follow') }}
-              </h3>
-              <div class="uno-flex uno-gap-3">
-                <a href="#" aria-label="Twitter"
-                  class="uno-w-9 uno-h-9 uno-rounded-full uno-flex uno-items-center uno-justify-center">X</a>
-                <a href="#" aria-label="Website"
-                  class="uno-w-9 uno-h-9 uno-rounded-full uno-flex uno-items-center uno-justify-center">W</a>
-                <a href="#" aria-label="Instagram"
-                  class="uno-w-9 uno-h-9 uno-rounded-full uno-flex uno-items-center uno-justify-center">IG</a>
-                <a href="#" aria-label="LinkedIn"
-                  class="uno-w-9 uno-h-9 uno-rounded-full uno-flex uno-items-center uno-justify-center">IN</a>
-              </div>
+          <!-- Follow us -->
+          <div class="uno-rounded-2xl uno-py-6">
+            <h3 class="uno-text-lg uno-font-semibold uno-text-gray-900 uno-mb-3">{{ $t('pages.blog.sidebar.follow') }}
+            </h3>
+            <div class="uno-flex uno-gap-3">
+              <a href="#" aria-label="Twitter"
+                class="uno-w-[32px] uno-h-[32px] uno-rounded-full uno-flex uno-items-center uno-justify-center">
+                <NuxtImg src="/images/footer/twitter.png" alt="twitter" width="32" height="32" />
+              </a>
+              <a href="#" aria-label="Facebook"
+                class="uno-w-[32px] uno-h-[32px] uno-rounded-full uno-flex uno-items-center uno-justify-center">
+                <NuxtImg src="/images/footer/facebook.png" alt="facebook" width="32" height="32" />
+              </a>
+              <a href="#" aria-label="Instagram"
+                class="uno-w-[32px] uno-h-[32px] uno-rounded-full uno-flex uno-items-center uno-justify-center">
+                <NuxtImg src="/images/footer/instagram.png" alt="instagram" width="32" height="32" />
+              </a>
+              <a href="#" aria-label="LinkedIn"
+                class="uno-w-[32px] uno-h-[32px] uno-rounded-full uno-flex uno-items-center uno-justify-center">
+                <NuxtImg src="/images/footer/linkedin.png" alt="linkedin" width="32" height="32" />
+              </a>
             </div>
           </div>
         </div>
@@ -147,6 +166,7 @@ import { ref, computed } from 'vue';
 
 const searchQuery = ref('');
 const tags = ref(['CareerTips', 'Productivity', 'Tools', 'TechInnovation', 'Leadership']);
+const activeTag = ref('Productivity');
 
 const articles = ref([
   {
@@ -258,6 +278,9 @@ const filteredArticles = computed(() => {
 
 const smallArticles = computed(() => filteredArticles.value.slice(1, 5));
 const otherArticles = computed(() => filteredArticles.value.slice(5));
+const otherLimit = ref(6);
+const otherVisibleArticles = computed(() => otherArticles.value.slice(0, otherLimit.value));
+const hasMoreOther = computed(() => otherLimit.value < otherArticles.value.length);
 
 const recentArticles = computed(() => {
   return articles.value.slice(0, 3);

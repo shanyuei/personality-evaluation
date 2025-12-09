@@ -41,6 +41,7 @@
     "@unocss/preset-wind4": "^66.5.10",
     "eslint": "^9.39.1",
     "eslint-plugin-nuxt": "^4.0.0",
+    "less": "^4.4.2",
     "typescript": "^5.9.3",
     "unocss": "^66.5.10",
     "vue-eslint-parser": "^10.2.0",

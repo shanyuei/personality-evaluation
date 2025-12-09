@@ -4,7 +4,7 @@
     <section class="uno-relative uno-py-22 sm:uno-py-32">
       <NuxtImg src="/images/about/icon-1.png" alt="decor"
         class="uno-absolute uno-left-1/2 uno--translate-x-1/2 uno-top-4 uno-w-47px uno-h-36px" />
-      <div class="uno-max-w-[80%] uno-mx-auto uno-px-6 sm:uno-px-10">
+      <div class="page-container uno-px-6 sm:uno-px-10">
         <div class="uno-flex uno-flex-col md:uno-flex-row uno-items-center md:uno-justify-between uno-gap-72px">
           <div class="uno-text-center md:uno-text-left md:uno-w-1/2">
             <h1 class="uno-font-semibold uno-text-4xl md:uno-text-6xl uno-text-[#011813] md:uno-leading-[86px] uno-text-left">
