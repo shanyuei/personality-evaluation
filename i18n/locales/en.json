@@ -48,9 +48,9 @@
           "action": "Delete Account",
           "success": "Your deletion request has been submitted"
         }
-      }
-    },
-    "faq": {
+    }
+  },
+  "faq": {
       "title": "Frequently Asked Questions",
       "description": "Quick answers about the platform and the test. Use the left navigation to jump between sections.",
       "nav": {
@@ -214,6 +214,17 @@
   }
   ,
   "pages": {
+    "userCourse": {
+      "recommendedForYou": "Recommended for you",
+      "lessons": "lessons",
+      "certificate": "Certificate",
+      "whyHere": "Why is this here?",
+      "allCourses": "All courses",
+      "cta": {
+        "start": "Start now",
+        "notForMe": "Not for me"
+      }
+    },
     "account": {
       "settings": {
         "title": "Settings",

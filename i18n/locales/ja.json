@@ -19,6 +19,17 @@
     "back": "ホームへ戻る"
   },
   "pages": {
+    "userCourse": {
+      "recommendedForYou": "あなたへのおすすめ",
+      "lessons": "レッスン",
+      "certificate": "修了証",
+      "whyHere": "なぜこのおすすめ？",
+      "allCourses": "すべてのコース",
+      "cta": {
+        "start": "今すぐ開始",
+        "notForMe": "興味なし"
+      }
+    },
     "account": {
       "settings": {
         "title": "設定",
