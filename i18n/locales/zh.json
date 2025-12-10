@@ -403,6 +403,37 @@
       },
       "cta": { "download": "下载", "close": "关闭" }
     },
+    "profile": {
+      "welcome": "Welcome, {name}!",
+      "aboutTitle": "All About Your",
+      "type": "类型",
+      "typeName": "热情型",
+      "aboutDesc": "九型人格中的第 7 型常被称为热情者：他们精力充沛、富有自发性并乐观。其核心动机是避免恐惧、痛苦或不适，并保持对新体验的追求。",
+      "readMore": "Read more",
+      "totalScore": "总分概览",
+      "dailyTrivia": "每日问答",
+      "triviaQuestion": "解决问题的关键特质是什么？",
+      "viewResults": "作答并查看结果",
+      "dailyStreak": "连续天数",
+      "begin": "开始你的蜕变！",
+      "continueCourse": {
+        "label": "继续你的课程",
+        "title": "财务管理",
+        "desc": "财务管理是组织成功的关键，涉及有效管理财务资源以实现组织目标并最大化价值。",
+        "cta": "继续学习"
+      },
+      "progress": {
+        "tests": "已完成测试",
+        "courses": "已完成课程",
+        "challenges": "已完成挑战"
+      },
+      "takeAnother": "再做一个测试",
+      "tag": { "hard": "硬技能" },
+      "questions": "题目",
+      "completed": "已完成",
+      "tryAgain": "再试一次",
+      "lessons": "课时"
+    },
     "courses": {
       "title": "课程",
       "description": "浏览各领域的专家课程。"
