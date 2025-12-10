@@ -10,7 +10,7 @@
     <!-- 主要内容区 -->
     <main class="uno-px-6 md:uno-px-10 uno-py-6 uno-flex-grow">
       <!-- 中心容器 -->
-      <div class="uno-max-w-[80%] uno-mx-auto uno-w-full">
+      <div class="page-container uno-w-full">
         <!-- 测评标题 -->
         <h1 class="uno-text-2xl md:uno-text-4xl uno-font-bold uno-text-gray-900 uno-mb-4 md:uno-mb-8 uno-text-center uno-font-['Outfit']">Free Personality Test</h1>
         

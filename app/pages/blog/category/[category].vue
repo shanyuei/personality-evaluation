@@ -1,6 +1,5 @@
 <template>
   <main class="page-container uno-py-64px blog-page">
-    <!-- Hero -->
     <section class="">
       <p class="uno-font-normal uno-text-[14px] md:uno-text-[16px] uno-text-[#011813] uno-leading-[20px] md:uno-leading-[24px]">Home / Blog</p>
       <h1 class="uno-font-semibold uno-text-[28px] md:uno-text-[72px] uno-text-[#011813] uno-leading-[36px] md:uno-leading-[86px] uno-mt-12px">
@@ -8,26 +7,23 @@
       </h1>
     </section>
 
-    <!-- Featured grid: 1 large + 4 small -->
     <section class="uno-my-[56px]">
       <div class="uno-grid md:uno-grid-cols-2 uno-gap-[24px]">
-        <!-- Large card -->
-        <div class="uno-rounded-2xl uno-overflow-hidden">
+        <div class="uno-rounded-2xl uno-overflow-hidden" v-if="filteredArticles.length">
           <div>
-            <NuxtImg :src="articles[0].image" :alt="articles[0].title" width="588" height="392" />
+            <NuxtImg :src="filteredArticles[0].image" :alt="filteredArticles[0].title" width="588" height="392" />
             <div class="uno-py-6">
               <p class="uno-font-normal uno-text-[14px] md:uno-text-[16px] uno-text-[#4e5255] uno-leading-[20px] md:uno-leading-[24px] uno-mb-1">{{
-                articles[0].author.name }} · {{
-                  articles[0].readTime }} min</p>
+                filteredArticles[0].author.name }} · {{
+                  filteredArticles[0].readTime }} min</p>
               <h3 class="uno-font-semibold uno-text-[20px] md:uno-text-[24px] uno-text-[#011813] uno-leading-[28px] md:uno-leading-[33px] uno-mb-3">{{
-                articles[0].title }}</h3>
+                filteredArticles[0].title }}</h3>
               <p class=" uno-font-normal uno-text-[14px] md:uno-text-[16px] uno-text-[#4e5255] uno-leading-[20px] md:uno-leading-[24px] uno-line-clamp-3">{{
-                articles[0].excerpt }}</p>
+                filteredArticles[0].excerpt }}</p>
             </div>
           </div>
         </div>
 
-        <!-- 4 small cards -->
         <div class="uno-hidden md:uno-grid md:uno-grid-cols-2 uno-gap-[24px]">
           <div v-for="a in smallArticles" :key="a.id" class="uno-rounded-2xl uno-overflow-hidden">
             <NuxtImg width="282" height="188" :src="a.image" :alt="a.title" />
@@ -40,7 +36,6 @@
       </div>
     </section>
 
-    <!-- Explore + List -->
     <section class="uno-mt-60px md:uno-mt-120px">
       <div class="uno-text-center uno-mb-10">
         <h2 class="uno-font-semibold uno-text-[48px] uno-text-[#011813] uno-leading-[58px] uno-text-center">{{
@@ -48,15 +43,14 @@
       </div>
 
       <div class="uno-flex uno-flex-col lg:uno-flex-row uno-gap-8">
-        <!-- Grid -->
         <div class="lg:uno-w-2/3">
-          <div class="uno-grid sm:uno-grid-cols-2 md:uno-grid-cols-3 uno-gap-6">
+          <div class="uno-grid sm:uno-grid-cols-2 md:uno-grid-cols-3 uno-gap-[24px]">
             <div v-for="a in otherVisibleArticles" :key="a.id" class="uno-rounded-2xl">
               <NuxtImg :src="a.image" :alt="a.title" width="384" height="282" />
               <p
-                class="uno-font-normal uno-text-[16px] uno-text-[#4e5255] uno-leading-[24px] uno-mt-2 uno-line-clamp-2">
+                class="uno-font-normal uno-text-[14px] md:uno-text-[16px] uno-text-[#4e5255] uno-leading-[20px] md:uno-leading-[24px] uno-mt-2 uno-line-clamp-2">
                 {{ a.author.name }} · {{ a.readTime }} min</p>
-              <h4 class="uno-font-medium uno-text-[24px] uno-text-[#011813] uno-leading-[33px] uno-line-clamp-2">{{
+              <h4 class="uno-font-medium uno-text-[20px] md:uno-text-[24px] uno-text-[#011813] uno-leading-[28px] md:uno-leading-[33px] uno-line-clamp-2">{{
                 a.title }}</h4>
             </div>
           </div>
@@ -71,9 +65,7 @@
           </div>
         </div>
 
-        <!-- Sidebar -->
         <div class="lg:uno-w-1/3">
-          <!-- Categories -->
           <div class="uno-rounded-2xl uno-mb-12">
             <h3 class="uno-text-[22px] uno-font-['Outfit'] uno-font-semibold uno-text-[#011813] uno-mb-4">{{
               $t('pages.blog.sidebar.categories') }}</h3>
@@ -89,7 +81,6 @@
             </ul>
           </div>
 
-          <!-- Recent Blogs -->
           <div class="uno-rounded-2xl uno-mb-6">
             <h3 class="uno-text-lg uno-font-semibold uno-text-gray-900 uno-mb-4">{{ $t('pages.blog.sidebar.recent') }}
             </h3>
@@ -111,7 +102,6 @@
             </ul>
           </div>
 
-          <!-- Tags -->
           <div class="uno-rounded-2xl uno-py-6">
             <h3 class="uno-text-lg uno-font-semibold uno-text-gray-900 uno-mb-3">{{ $t('pages.blog.sidebar.tags') }}
             </h3>
@@ -122,7 +112,6 @@
             </div>
           </div>
 
-          <!-- Follow us -->
           <div class="uno-rounded-2xl uno-py-6">
             <h3 class="uno-text-lg uno-font-semibold uno-text-gray-900 uno-mb-3">{{ $t('pages.blog.sidebar.follow') }}
             </h3>
@@ -152,41 +141,43 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { ref, computed } from 'vue'
+import { useRoute } from 'vue-router'
+import { useArticles } from '~/composables/useArticles'
 
-const searchQuery = ref('');
-const tags = ref(['CareerTips', 'Productivity', 'Tools', 'TechInnovation', 'Leadership']);
-const activeTag = ref('Productivity');
+const route = useRoute()
+const category = computed(() => String(route.params.category || ''))
+
+const searchQuery = ref('')
+const tags = ref(['CareerTips', 'Productivity', 'Tools', 'TechInnovation', 'Leadership'])
+const activeTag = ref('Productivity')
 
 const { articles } = useArticles()
 
 const filteredArticles = computed(() => {
-  return articles.value.filter(article => {
-    const q = searchQuery.value.toLowerCase();
-    return article.title.toLowerCase().includes(q) || article.excerpt.toLowerCase().includes(q);
-  });
-});
+  const q = searchQuery.value.toLowerCase()
+  return articles.value.filter(a => a.category === category.value)
+    .filter(a => a.title.toLowerCase().includes(q) || a.excerpt.toLowerCase().includes(q))
+})
 
-const smallArticles = computed(() => filteredArticles.value.slice(1, 5));
-const otherArticles = computed(() => filteredArticles.value.slice(5));
-const otherLimit = ref(6);
-const otherVisibleArticles = computed(() => otherArticles.value.slice(0, otherLimit.value));
-const hasMoreOther = computed(() => otherLimit.value < otherArticles.value.length);
+const smallArticles = computed(() => filteredArticles.value.slice(1, 5))
+const otherArticles = computed(() => filteredArticles.value.slice(5))
+const otherLimit = ref(6)
+const otherVisibleArticles = computed(() => otherArticles.value.slice(0, otherLimit.value))
+const hasMoreOther = computed(() => otherLimit.value < otherArticles.value.length)
 
 const recentArticles = computed(() => {
-  return articles.value.slice(0, 3);
-});
+  return articles.value.slice(0, 3)
+})
 
 const categoryCounts = computed(() => {
-  const map: Record<string, number> = {};
+  const map: Record<string, number> = {}
   for (const a of articles.value) {
-    map[a.category] = (map[a.category] || 0) + 1;
+    map[a.category] = (map[a.category] || 0) + 1
   }
-  return Object.entries(map).map(([label, count]) => ({ label, count }));
-});
-
+  return Object.entries(map).map(([label, count]) => ({ label, count }))
+})
 </script>
 
 <style scoped>
-/* Blog page specific styles */
 </style>

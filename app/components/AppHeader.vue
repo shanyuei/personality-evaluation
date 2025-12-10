@@ -5,7 +5,7 @@
     header: 'bg-transparent h-[96px] border-none max-sm:h-[53px]',
     overlay: 'bg-transparent',
     root: 'h-[96px] border-none bg-transparent max-sm:h-[53px] justify-center flex',
-    container: 'max-w-full md:max-w-[80%]'
+    container: 'px-[0] page-container '
   }">
     <!-- 导航栏 -->
     <template #left>
@@ -29,7 +29,7 @@
         <NuxtImg src="/images/header/go-icon-1.png" alt="go-icon-1" width="40px" height="40px" />
       </div>
       <!-- 多语言 -->
-      <!-- <I18nSelect /> -->
+      <I18nSelect />
     </template>
 
     <template #body>

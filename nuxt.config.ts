@@ -24,7 +24,7 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     "@nuxt/devtools"
   ],
-  css: ['~/assets/css/main.css'],
+  css: ['~/assets/css/main.css', '~/assets/css/common.less'],
   pinia: {
 
   },
