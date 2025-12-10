@@ -330,6 +330,26 @@
       "o4": "Establish strict rules to control team dynamics.",
       "cta": "Get Started"
     },
+    "userCourseTestComplete": {
+      "scoreLabel": "{score}/{total}",
+      "description": "已完成测试，查看得分并继续学习。",
+      "cta": "返回课程"
+    },
+    "ebooks": {
+      "myTitle": "我的电子书",
+      "otherTitle": "其它电子书",
+      "primary": {
+        "title": "自尊提升指南：构建更强大的自我",
+        "desc": "该精选内容旨在帮助你识别自我价值，以更自信的姿态应对生活挑战，并促进更健康的人际关系。",
+        "download": "下载",
+        "readOnline": "在线阅读"
+      },
+      "cardTitle": "个人成长指南：解锁更好的自己！",
+      "sale": "促销",
+      "oneTime": "一次性付款",
+      "buyNow": "立即购买",
+      "readMore": "了解更多"
+    },
     "courses": {
       "title": "课程",
       "description": "浏览各领域的专家课程。"

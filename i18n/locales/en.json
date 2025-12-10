@@ -319,6 +319,26 @@
       "o4": "Establish strict rules to control team dynamics.",
       "cta": "Get Started"
     },
+    "userCourseTestComplete": {
+      "scoreLabel": "{score}/{total}",
+      "description": "Great job! You’ve completed the test. Review your score and continue learning.",
+      "cta": "Back to Course"
+    },
+    "ebooks": {
+      "myTitle": "My e-books",
+      "otherTitle": "Other e-books",
+      "primary": {
+        "title": "Self-Esteem Guide: Build a Stronger You!",
+        "desc": "This exclusive package is designed to empower you to recognize your worth, navigate life's challenges with confidence, and foster healthy relationships.",
+        "download": "Download",
+        "readOnline": "Read Online"
+      },
+      "cardTitle": "Personal Growth Guidance: Unlock Your Best Self Today!",
+      "sale": "SALE",
+      "oneTime": "One-time payment",
+      "buyNow": "Buy Now",
+      "readMore": "Read More"
+    },
     "courses": {
       "title": "Courses",
       "description": "Browse expert courses across fields."
