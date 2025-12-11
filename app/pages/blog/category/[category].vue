@@ -66,20 +66,7 @@
         </div>
 
         <div class="lg:uno-w-1/3">
-          <div class="uno-rounded-2xl uno-mb-12">
-            <h3 class="uno-text-[22px] uno-font-['Outfit'] uno-font-semibold uno-text-[#011813] uno-mb-4">{{
-              $t('pages.blog.sidebar.categories') }}</h3>
-            <ul class="uno-space-y-3">
-              <li v-for="(c, i) in categoryCounts" :key="c.label">
-                <NuxtLink :to="`/blog/category/${c.label}`" class="uno-flex uno-items-center hover:uno-text-[var(--ui-primary)]">
-                  <span :class="i === 0 ? 'uno-text-[var(--color-pink-1)]' : 'uno-text-[#011813]'"
-                    class="uno-text-[18px] uno-font-['Outfit'] uno-font-medium">{{ c.label }}</span>
-                  <span :class="i === 0 ? 'uno-text-[var(--color-pink-1)]' : 'uno-text-[#011813]'"
-                    class="uno-text-[18px] uno-ml-2">({{ String(c.count).padStart(2, '0') }})</span>
-                </NuxtLink>
-              </li>
-            </ul>
-          </div>
+      
 
           <div class="uno-rounded-2xl uno-mb-6">
             <h3 class="uno-text-lg uno-font-semibold uno-text-gray-900 uno-mb-4">{{ $t('pages.blog.sidebar.recent') }}
