@@ -319,6 +319,110 @@
       "o4": "Establish strict rules to control team dynamics.",
       "cta": "Get Started"
     },
+    "userCourseTestComplete": {
+      "scoreLabel": "{score}/{total}",
+      "description": "Great job! You’ve completed the test. Review your score and continue learning.",
+      "cta": "Back to Course"
+    },
+    "ebooks": {
+      "myTitle": "My e-books",
+      "otherTitle": "Other e-books",
+      "primary": {
+        "title": "Self-Esteem Guide: Build a Stronger You!",
+        "desc": "This exclusive package is designed to empower you to recognize your worth, navigate life's challenges with confidence, and foster healthy relationships.",
+        "download": "Download",
+        "readOnline": "Read Online"
+      },
+      "cardTitle": "Personal Growth Guidance: Unlock Your Best Self Today!",
+      "sale": "SALE",
+      "oneTime": "One-time payment",
+      "buyNow": "Buy Now",
+      "readMore": "Read More"
+    },
+    "ebookDetail": {
+      "hero": {
+        "title": "What Is Self-Esteem?",
+        "subtitle": "Understanding its importance for Well-being"
+      },
+      "title": "Top Marketing Skills to Boost Your Brand Engagement and Reach",
+      "intro": "In today's competitive digital landscape, building a strong brand presence and engaging effectively with your audience is more important than ever. With countless brands vying for attention, mastering key marketing skills can make the difference between a thriving brand and one that goes unnoticed. This blog explores the essential marketing skills that can elevate your brand’s engagement and broaden its reach.",
+      "sections": {
+        "contentCreation": {
+          "title": "Content Creation and Storytelling",
+          "body": "Creating valuable content is at the heart of effective marketing. Your brand’s content should not only inform but also inspire and connect emotionally with your audience. Whether through blog posts, videos, or social media updates, a good storyteller can transform a simple message into a memorable narrative that resonates."
+        },
+        "keyTakeaway": {
+          "title": "Key Takeaway:",
+          "body": "Invest time in learning to craft compelling stories and produce high-quality, relevant content. It will help your brand stand out and build a loyal audience."
+        },
+        "social": {
+          "title": "Social Media Management",
+          "body": "With billions of people on social media platforms, these channels are invaluable for brand engagement. Knowing how to leverage social media platforms effectively can help you reach new audiences, foster community, and create shareable content. Key skills include scheduling, engaging with followers, and staying on top of platform trends and algorithms."
+        },
+        "about": {
+          "title": "About the Course",
+          "body": "This course offers a comprehensive introduction to the core building blocks of web development: HTML, CSS, and JavaScript. You'll start from the basics of structuring web pages, styling them, and adding interactivity. This hands-on approach is designed for beginners and is ideal for those looking to build a strong foundation in front-end web development, whether you’re aspiring to become a professional developer or want to create polished personal websites and projects."
+        },
+        "analytics": {
+          "title": "Data Analytics and Insights",
+          "body": "Understanding analytics is crucial for measuring the success of your marketing efforts. Platforms like Google Analytics and social media insights help you track website traffic, user behavior, engagement rates, and more. Analyzing this data enables you to make data-driven decisions that refine your marketing strategies and enhance engagement."
+        },
+        "video": {
+          "title": "Video Marketing",
+          "body": "Video content has become an essential tool for engaging audiences. It captures attention faster than text, allowing brands to communicate complex information in an easy-to-digest format. Video marketing skills include scriptwriting, editing, and understanding video trends that resonate with your audience."
+        },
+        "copywriting": {
+          "title": "Copywriting and Persuasive Communication",
+          "body": "Copywriting is the art of using words to inspire action. From website copy to social media captions, well-crafted copy can attract readers, encourage readers, and drive conversions. Learn to write with your audience in mind and focus on clear, persuasive messaging."
+        }
+      },
+      "learn": {
+        "title": "What You'll Learn",
+        "i1": "HTML Fundamentals: Structure and organize web pages using HTML tags, attributes, and elements.",
+        "i2": "CSS Essentials: Style and layout web pages with CSS, including typography, colors, flexbox, and grid.",
+        "i3": "JavaScript Basics: Add interactivity with JavaScript fundamentals, including variables, functions, loops, and DOM manipulation.",
+        "i4": "Responsive Design: Build layouts that adapt to different screen sizes and devices.",
+        "i5": "Project-Based Learning: Create real-world projects to showcase your skills and deepen your understanding of web development."
+      },
+      "require": {
+        "title": "Requirements",
+        "i1": "Computer & Internet Access: A laptop or desktop with a stable internet connection.",
+        "i2": "Basic Computer Skills: Familiarity with using a computer, installing software, and navigating the internet.",
+        "i3": "No Prior Coding Knowledge Required: This course is designed for absolute beginners."
+      },
+      "cta": { "download": "Download", "close": "Close" }
+    },
+    "profile": {
+      "welcome": "Welcome, {name}!",
+      "aboutTitle": "All About Your",
+      "type": "Type",
+      "typeName": "Enthusiast",
+      "aboutDesc": "Type 7 on the Enneagram are often referred to as The Enthusiasts: they are energetic, spontaneous, and optimistic. Their core motivation is to avoid fear, pain, or discomfort, and maintain a sense of new experiences.",
+      "readMore": "Read more",
+      "totalScore": "Total score",
+      "dailyTrivia": "Daily trivia",
+      "triviaQuestion": "What is an essential trait for problem-solving?",
+      "viewResults": "Answer & view results",
+      "dailyStreak": "Daily streak",
+      "begin": "Begin your transformation!",
+      "continueCourse": {
+        "label": "Continue your course",
+        "title": "Financial Management",
+        "desc": "Financial management is a critical aspect of organizational success, involving the effective management of financial resources to achieve organizational goals and maximize shareholder value.",
+        "cta": "Continue course"
+      },
+      "progress": {
+        "tests": "Completed tests",
+        "courses": "Finished course",
+        "challenges": "Completed challenge"
+      },
+      "takeAnother": "Take another test",
+      "tag": { "hard": "Hard Skills" },
+      "questions": "questions",
+      "completed": "Completed",
+      "tryAgain": "Try again",
+      "lessons": "lessons"
+    },
     "courses": {
       "title": "Courses",
       "description": "Browse expert courses across fields."
