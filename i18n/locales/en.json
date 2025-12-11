@@ -339,6 +339,32 @@
         "recent": "Recent Blogs",
         "tags": "Tags",
         "follow": "Follow us"
+      },
+      "detail": {
+        "breadcrumb": "Home / Blog / Blog Details",
+        "sections": {
+          "keyTakeaway": "Key Takeaway",
+          "contentCreation": {
+            "title": "Content Creation and Storytelling",
+            "body": "Creating valuable content is at the heart of effective marketing. A strong storyteller can turn a simple message into a memorable narrative that resonates with audiences."
+          },
+          "socialMedia": {
+            "title": "Social Media Management",
+            "body": "Leverage social platforms to reach new audiences, foster community, and create shareable content. Key skills include scheduling, engaging with followers, and staying on top of trends and algorithms."
+          },
+          "analytics": {
+            "title": "Data Analytics and Insights",
+            "body": "Analytics help measure marketing success. Tools like Google Analytics and social platform insights track traffic, behavior, engagement, and more to inform data-driven decisions."
+          },
+          "video": {
+            "title": "Video Marketing",
+            "body": "Video captures attention quickly and communicates complex information effectively. Skills include scripting, editing, and understanding video trends that resonate with audiences."
+          },
+          "copywriting": {
+            "title": "Copywriting and Persuasive Communication",
+            "body": "Compelling copy inspires action. Clear messages, strong structure, and audience-focused tone turn ideas into outcomes."
+          }
+        }
       }
     },
     "auth": {
