@@ -322,6 +322,40 @@
         }
       }
     },
+    "tests": {
+      "filters": {
+        "all": "全部测试",
+        "soft": "软技能",
+        "hard": "硬技能"
+      },
+      "badges": {
+        "soft": "软技能",
+        "hard": "硬技能"
+      },
+      "questions": "共 {count} 题",
+      "hero": {
+        "title": "财务分析",
+        "objective": "目标：通过多项选择题评估特定硬技能的掌握程度，涵盖知识、应用与问题解决。"
+      },
+      "cards": {
+        "operations": {
+          "title": "运营管理",
+          "desc": "目标：通过多项选择题评估特定硬技能的熟练度，覆盖知识、应用与问题解决能力。"
+        },
+        "business": {
+          "title": "商业分析",
+          "desc": "你的得分：40 分满分中的 25 分。"
+        }
+      },
+      "completed": "已完成",
+      "cta": {
+        "startNow": "立即开始",
+        "readMore": "了解更多",
+        "viewResults": "查看结果",
+        "tryAgain": "再试一次",
+        "loadMore": "加载更多测试"
+      }
+    },
     "userCourse": {
       "recommendedForYou": "为你推荐",
       "lessons": "课时",

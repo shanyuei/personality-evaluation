@@ -322,6 +322,40 @@
         }
       }
     },
+    "tests": {
+      "filters": {
+        "all": "All Tests",
+        "soft": "Soft Skills",
+        "hard": "Hard Skills"
+      },
+      "badges": {
+        "soft": "Soft Skills",
+        "hard": "Hard Skills"
+      },
+      "questions": "{count} questions",
+      "hero": {
+        "title": "Financial Analysis",
+        "objective": "Objective: To assess proficiency in a specific hard skill through multiple-choice questions designed to evaluate knowledge, application, and problem-solving."
+      },
+      "cards": {
+        "operations": {
+          "title": "Operations Management",
+          "desc": "Objective: Assess proficiency in a specific hard skill via multiple-choice questions evaluating knowledge, application, and problem-solving."
+        },
+        "business": {
+          "title": "Business Analysis",
+          "desc": "Your score: 25 out of 40 points."
+        }
+      },
+      "completed": "Completed",
+      "cta": {
+        "startNow": "Start now",
+        "readMore": "Read more",
+        "viewResults": "View results",
+        "tryAgain": "Try again",
+        "loadMore": "Load more tests"
+      }
+    },
     "userCourseChapters": {
       "title": "People Leadership vs. Management",
       "description": "Leadership and management are two distinctive and complementary systems of actions in the business environment. Both are necessary for success in an increasingly complex and volatile business environment.",
