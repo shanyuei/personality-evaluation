@@ -10,7 +10,7 @@
           </svg>
         </div>
 
-        <h1 class="uno-text-3xl md:uno-text-4xl uno-font-['Outfit'] uno-font-extrabold uno-text-[var(--ui-foreground)]">{{ $t('pages.userCourseChapterComplete.title') }}</h1>
+        <h1 class="uno-text-[#011813] uno-text-[32px] uno-font-['Outfit'] uno-text-center uno-font-semibold uno-leading-[1.2]">{{ $t('pages.userCourseChapterComplete.title') }}</h1>
         <p class="uno-text-sm md:uno-text-base uno-text-[var(--ui-muted-foreground)] uno-max-w-[640px] uno-mx-auto">{{ $t('pages.userCourseChapterComplete.desc1', { courseName }) }}</p>
         <p class="uno-text-sm md:uno-text-base uno-text-[var(--ui-muted-foreground)] uno-max-w-[640px] uno-mx-auto">{{ $t('pages.userCourseChapterComplete.desc2') }}</p>
 
