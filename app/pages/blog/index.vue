@@ -12,7 +12,7 @@
     <section class="uno-my-[56px]">
       <div class="uno-grid md:uno-grid-cols-2 uno-gap-[24px]">
         <!-- Large card -->
-        <div class="uno-rounded-2xl uno-overflow-hidden">
+        <NuxtLink :to="`/blog/slug/${articles[0].slug}`" class="uno-rounded-2xl uno-overflow-hidden">
           <div>
             <NuxtImg :src="articles[0].image" :alt="articles[0].title" width="588" height="392" />
             <div class="uno-py-6">
@@ -25,17 +25,17 @@
                 articles[0].excerpt }}</p>
             </div>
           </div>
-        </div>
+        </NuxtLink>
 
         <!-- 4 small cards -->
         <div class="uno-hidden md:uno-grid md:uno-grid-cols-2 uno-gap-[24px]">
-          <div v-for="a in smallArticles" :key="a.id" class="uno-rounded-2xl uno-overflow-hidden">
+          <NuxtLink v-for="a in smallArticles" :key="a.id" :to="`/blog/slug/${a.slug}`" class="uno-rounded-2xl uno-overflow-hidden">
             <NuxtImg width="282" height="188" :src="a.image" :alt="a.title" />
             <div class="uno-py-4">
               <p class="uno-text-sm uno-text-gray-500 uno-mb-1">{{ a.author.name }} · {{ a.readTime }} min</p>
               <h4 class="uno-text-lg uno-font-semibold uno-text-gray-900 uno-mb-2">{{ a.title }}</h4>
             </div>
-          </div>
+          </NuxtLink>
         </div>
       </div>
     </section>
@@ -51,14 +51,11 @@
         <!-- Grid -->
         <div class="lg:uno-w-2/3">
           <div class="uno-grid sm:uno-grid-cols-2 md:uno-grid-cols-3 uno-gap-6">
-            <div v-for="a in otherVisibleArticles" :key="a.id" class="uno-rounded-2xl">
+            <NuxtLink v-for="a in otherVisibleArticles" :key="a.id" :to="`/blog/slug/${a.slug}`" class="uno-rounded-2xl">
               <NuxtImg :src="a.image" :alt="a.title" width="384" height="282" />
-              <p
-                class="uno-font-normal uno-text-[16px] uno-text-[#4e5255] uno-leading-[24px] uno-mt-2 uno-line-clamp-2">
-                {{ a.author.name }} · {{ a.readTime }} min</p>
-              <h4 class="uno-font-medium uno-text-[24px] uno-text-[#011813] uno-leading-[33px] uno-line-clamp-2">{{
-                a.title }}</h4>
-            </div>
+              <p class="uno-font-normal uno-text-[16px] uno-text-[#4e5255] uno-leading-[24px] uno-mt-2 uno-line-clamp-2">{{ a.author.name }} · {{ a.readTime }} min</p>
+              <h4 class="uno-font-medium uno-text-[24px] uno-text-[#011813] uno-leading-[33px] uno-line-clamp-2">{{ a.title }}</h4>
+            </NuxtLink>
           </div>
           <div class="uno-flex uno-justify-center uno-mt-24px">
             <button
@@ -95,7 +92,7 @@
             </h3>
             <ul class="uno-space-y-4">
               <li v-for="recent in recentArticles" :key="recent.id">
-                <a :href="`/blog/${recent.slug}`" class="uno-flex uno-gap-4 uno-group">
+                <NuxtLink :to="`/blog/slug/${recent.slug}`" class="uno-flex uno-gap-4 uno-group">
                   <div class="uno-rounded-[12px] uno-overflow-hidden uno-flex-shrink-0">
                     <NuxtImg :src="recent.image" :alt="recent.title" width="102" height="102" />
                   </div>
@@ -106,7 +103,7 @@
                     <p class="uno-font-normal uno-text-[16px] uno-text-[#4e5255] uno-leading-[24px] uno-mt-1 uno-line-clamp-2">{{
                       recent.excerpt }}</p>
                   </div>
-                </a>
+                </NuxtLink>
               </li>
             </ul>
           </div>

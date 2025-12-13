@@ -9,29 +9,25 @@
 
     <section class="uno-my-[56px]">
       <div class="uno-grid md:uno-grid-cols-2 uno-gap-[24px]">
-        <div class="uno-rounded-2xl uno-overflow-hidden" v-if="filteredArticles.length">
+        <NuxtLink v-if="filteredArticles.length" :to="`/blog/slug/${filteredArticles[0].slug}`" class="uno-rounded-2xl uno-overflow-hidden">
           <div>
             <NuxtImg :src="filteredArticles[0].image" :alt="filteredArticles[0].title" width="588" height="392" />
             <div class="uno-py-6">
-              <p class="uno-font-normal uno-text-[14px] md:uno-text-[16px] uno-text-[#4e5255] uno-leading-[20px] md:uno-leading-[24px] uno-mb-1">{{
-                filteredArticles[0].author.name }} · {{
-                  filteredArticles[0].readTime }} min</p>
-              <h3 class="uno-font-semibold uno-text-[20px] md:uno-text-[24px] uno-text-[#011813] uno-leading-[28px] md:uno-leading-[33px] uno-mb-3">{{
-                filteredArticles[0].title }}</h3>
-              <p class=" uno-font-normal uno-text-[14px] md:uno-text-[16px] uno-text-[#4e5255] uno-leading-[20px] md:uno-leading-[24px] uno-line-clamp-3">{{
-                filteredArticles[0].excerpt }}</p>
+              <p class="uno-font-normal uno-text-[14px] md:uno-text-[16px] uno-text-[#4e5255] uno-leading-[20px] md:uno-leading-[24px] uno-mb-1">{{ filteredArticles[0].author.name }} · {{ filteredArticles[0].readTime }} min</p>
+              <h3 class="uno-font-semibold uno-text-[20px] md:uno-text-[24px] uno-text-[#011813] uno-leading-[28px] md:uno-leading-[33px] uno-mb-3">{{ filteredArticles[0].title }}</h3>
+              <p class="uno-font-normal uno-text-[14px] md:uno-text-[16px] uno-text-[#4e5255] uno-leading-[20px] md:uno-leading-[24px] uno-line-clamp-3">{{ filteredArticles[0].excerpt }}</p>
             </div>
           </div>
-        </div>
+        </NuxtLink>
 
         <div class="uno-hidden md:uno-grid md:uno-grid-cols-2 uno-gap-[24px]">
-          <div v-for="a in smallArticles" :key="a.id" class="uno-rounded-2xl uno-overflow-hidden">
+          <NuxtLink v-for="a in smallArticles" :key="a.id" :to="`/blog/slug/${a.slug}`" class="uno-rounded-2xl uno-overflow-hidden">
             <NuxtImg width="282" height="188" :src="a.image" :alt="a.title" />
             <div class="uno-py-4">
               <p class="uno-text-sm uno-text-gray-500 uno-mb-1">{{ a.author.name }} · {{ a.readTime }} min</p>
               <h4 class="uno-text-lg uno-font-semibold uno-text-gray-900 uno-mb-2">{{ a.title }}</h4>
             </div>
-          </div>
+          </NuxtLink>
         </div>
       </div>
     </section>
@@ -45,14 +41,11 @@
       <div class="uno-flex uno-flex-col lg:uno-flex-row uno-gap-8">
         <div class="lg:uno-w-2/3">
           <div class="uno-grid sm:uno-grid-cols-2 md:uno-grid-cols-3 uno-gap-[24px]">
-            <div v-for="a in otherVisibleArticles" :key="a.id" class="uno-rounded-2xl">
+            <NuxtLink v-for="a in otherVisibleArticles" :key="a.id" :to="`/blog/slug/${a.slug}`" class="uno-rounded-2xl">
               <NuxtImg :src="a.image" :alt="a.title" width="384" height="282" />
-              <p
-                class="uno-font-normal uno-text-[14px] md:uno-text-[16px] uno-text-[#4e5255] uno-leading-[20px] md:uno-leading-[24px] uno-mt-2 uno-line-clamp-2">
-                {{ a.author.name }} · {{ a.readTime }} min</p>
-              <h4 class="uno-font-medium uno-text-[20px] md:uno-text-[24px] uno-text-[#011813] uno-leading-[28px] md:uno-leading-[33px] uno-line-clamp-2">{{
-                a.title }}</h4>
-            </div>
+              <p class="uno-font-normal uno-text-[14px] md:uno-text-[16px] uno-text-[#4e5255] uno-leading-[20px] md:uno-leading-[24px] uno-mt-2 uno-line-clamp-2">{{ a.author.name }} · {{ a.readTime }} min</p>
+              <h4 class="uno-font-medium uno-text-[20px] md:uno-text-[24px] uno-text-[#011813] uno-leading-[28px] md:uno-leading-[33px] uno-line-clamp-2">{{ a.title }}</h4>
+            </NuxtLink>
           </div>
           <div class="uno-flex uno-justify-center uno-mt-24px">
             <button
@@ -66,27 +59,14 @@
         </div>
 
         <div class="lg:uno-w-1/3">
-          <div class="uno-rounded-2xl uno-mb-12">
-            <h3 class="uno-text-[22px] uno-font-['Outfit'] uno-font-semibold uno-text-[#011813] uno-mb-4">{{
-              $t('pages.blog.sidebar.categories') }}</h3>
-            <ul class="uno-space-y-3">
-              <li v-for="(c, i) in categoryCounts" :key="c.label">
-                <NuxtLink :to="`/blog/category/${c.label}`" class="uno-flex uno-items-center hover:uno-text-[var(--ui-primary)]">
-                  <span :class="i === 0 ? 'uno-text-[var(--color-pink-1)]' : 'uno-text-[#011813]'"
-                    class="uno-text-[18px] uno-font-['Outfit'] uno-font-medium">{{ c.label }}</span>
-                  <span :class="i === 0 ? 'uno-text-[var(--color-pink-1)]' : 'uno-text-[#011813]'"
-                    class="uno-text-[18px] uno-ml-2">({{ String(c.count).padStart(2, '0') }})</span>
-                </NuxtLink>
-              </li>
-            </ul>
-          </div>
+      
 
           <div class="uno-rounded-2xl uno-mb-6">
             <h3 class="uno-text-lg uno-font-semibold uno-text-gray-900 uno-mb-4">{{ $t('pages.blog.sidebar.recent') }}
             </h3>
             <ul class="uno-space-y-4">
               <li v-for="recent in recentArticles" :key="recent.id">
-                <a :href="`/blog/${recent.slug}`" class="uno-flex uno-gap-4 uno-group">
+                <NuxtLink :to="`/blog/slug/${recent.slug}`" class="uno-flex uno-gap-4 uno-group">
                   <div class="uno-rounded-[12px] uno-overflow-hidden uno-flex-shrink-0">
                     <NuxtImg :src="recent.image" :alt="recent.title" width="102" height="102" />
                   </div>
@@ -97,7 +77,7 @@
                     <p class="uno-font-normal uno-text-[16px] uno-text-[#4e5255] uno-leading-[24px] uno-mt-1 uno-line-clamp-2">{{
                       recent.excerpt }}</p>
                   </div>
-                </a>
+                </NuxtLink>
               </li>
             </ul>
           </div>
@@ -170,13 +150,6 @@ const recentArticles = computed(() => {
   return articles.value.slice(0, 3)
 })
 
-const categoryCounts = computed(() => {
-  const map: Record<string, number> = {}
-  for (const a of articles.value) {
-    map[a.category] = (map[a.category] || 0) + 1
-  }
-  return Object.entries(map).map(([label, count]) => ({ label, count }))
-})
 </script>
 
 <style scoped>
