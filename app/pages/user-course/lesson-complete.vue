@@ -12,18 +12,18 @@
         </div>
 
         <!-- 标题与说明 -->
-        <h1 class="uno-text-3xl md:uno-text-4xl uno-font-['Outfit'] uno-font-extrabold uno-text-[var(--ui-foreground)]">{{ $t('pages.userCourseLessonComplete.title') }}</h1>
-        <p class="uno-text-sm md:uno-text-base uno-text-[var(--ui-muted-foreground)] uno-max-w-[520px] uno-mx-auto">
+        <h1 class="uno-text-5xl uno-text-center uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2] uno-text-[#011813]">{{ $t('pages.userCourseLessonComplete.title') }}</h1>
+        <p class="uno-text-sm md:uno-text-base uno-text-[#4E5255] uno-font-['Outfit'] uno-text-center uno-max-w-[520px] uno-mx-auto">
           {{ $t('pages.userCourseLessonComplete.desc', { current, courseName }) }}
         </p>
 
         <!-- 主按钮 -->
         <NuxtLink to="/user-course/chapters" class="uno-w-full md:uno-w-[520px]">
-          <UButton class="uno-w-full uno-h-[48px] uno-rounded-[12px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-white uno-flex uno-items-center uno-justify-center uno-text-center">{{ $t('pages.userCourseLessonComplete.cta') }}</UButton>
+          <UButton class="uno-w-full uno-h-[48px] uno-rounded-[12px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-white uno-text-lg uno-font-['Outfit'] uno-font-bold uno-leading-normal uno-flex uno-items-center uno-justify-center uno-text-center">{{ $t('pages.userCourseLessonComplete.cta') }}</UButton>
         </NuxtLink>
 
         <!-- 次链接 -->
-        <NuxtLink to="/" class="uno-text-[var(--ui-muted-foreground)] hover:uno-text-[var(--ui-foreground)]">{{ $t('pages.userCourseLessonComplete.toDashboard') }}</NuxtLink>
+        <NuxtLink to="/" class="uno-text-[#4E5255] uno-font-['Outfit'] uno-text-center hover:uno-text-[var(--ui-foreground)]">{{ $t('pages.userCourseLessonComplete.toDashboard') }}</NuxtLink>
       </div>
     </div>
   </main>
