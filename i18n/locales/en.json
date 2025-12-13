@@ -431,6 +431,15 @@
       "title": "Mentors",
       "description": "Meet experienced mentors and instructors."
     },
+    "course": {
+      "recommendedForYou": "Recommended for you",
+      "lessons": "lessons",
+      "certificate": "Certificate",
+      "allCourses": "All courses",
+      "cta": {
+        "start": "Start"
+      }
+    },
     "blog": {
       "title": "Blog",
       "description": "Read team articles and latest updates.",

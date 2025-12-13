@@ -442,6 +442,15 @@
       "title": "导师",
       "description": "认识经验丰富的导师与讲师。"
     },
+    "course": {
+      "recommendedForYou": "为你推荐",
+      "lessons": "课时",
+      "certificate": "结课证书",
+      "allCourses": "全部课程",
+      "cta": {
+        "start": "开始学习"
+      }
+    },
     "blog": {
       "title": "博客",
       "description": "阅读团队文章与最新动态。",
