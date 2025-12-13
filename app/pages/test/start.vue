@@ -37,7 +37,7 @@
 
       <div class="uno-flex uno-items-center uno-justify-center uno-mt-8">
         <NuxtLink to="/test/step" class="uno-inline-block">
-          <UButton class="uno-h-[48px] uno-rounded-[12px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-white uno-px-8">{{ $t('pages.testStart.cta.getStarted') }}</UButton>
+          <UButton class="uno-h-[48px] uno-rounded-[12px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-white uno-text-lg uno-font-['Outfit'] uno-font-bold uno-leading-normal uno-px-8">{{ $t('pages.testStart.cta.getStarted') }}</UButton>
         </NuxtLink>
       </div>
 
