@@ -95,6 +95,10 @@ type Course = {
     percent?: number
     ctaTheme?: 'dark' | 'green'
     instructor: { name: string, avatar: string }
+    lessons?: number
+    certificate?: boolean
+    avatars?: string[]
+    finishedText?: string
 }
 
 const courses = ref<Course[]>([
@@ -108,6 +112,7 @@ const courses = ref<Course[]>([
         resultLabel: 'View test results',
         points: 20,
         ctaTheme: 'dark',
+        footerType: 'completed_with_points',
         instructor: { name: 'Alex', avatar: '/images/home/8.png' }
     },
     {
@@ -116,8 +121,10 @@ const courses = ref<Course[]>([
         description: 'Build practical HR skills covering recruitment, onboarding, and performance frameworks.',
         image: '/images/home/11.png',
         duration: '1h',
+        progress: '1 of 10 lessons',
         percent: 10,
         ctaTheme: 'green',
+        footerType: 'lessons_with_percent',
         instructor: { name: 'Sofia', avatar: '/images/home/1.png' }
     },
     {
@@ -127,7 +134,9 @@ const courses = ref<Course[]>([
         image: '/images/home/2.png',
         duration: '45 min',
         progress: '✓',
+        resultLabel: 'View test results',
         ctaTheme: 'green',
+        footerType: 'completed_with_check',
         instructor: { name: 'Max', avatar: '/images/home/8.png' }
     },
     {
@@ -135,8 +144,13 @@ const courses = ref<Course[]>([
         title: 'Brand Management',
         description: 'Develop coherent brand systems and campaigns across channels.',
         image: '/images/home/1.png',
-        duration: '1.5h',
+        duration: '2 weeks',
+        lessons: 10,
+        certificate: true,
+        avatars: ['/images/home/8.png', '/images/home/11.png', '/images/about/3.png'],
+        finishedText: '3067 people already finished it',
         ctaTheme: 'dark',
+        footerType: 'cta_with_people',
         instructor: { name: 'Sara', avatar: '/images/about/3.png' }
     }
 ])

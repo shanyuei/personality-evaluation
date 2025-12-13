@@ -13,39 +13,85 @@
         <span v-if="course.certificate" class="course-card__meta-item">{{ $t('pages.course.certificate') }}</span>
       </div>
       <div class="course-card__footer">
-        <div v-if="course.progress" class="course-card__status">
-          <span class="course-card__progress">
-            {{ course.progress === '✓' ? "You've completed this test." : course.progress }}
-          </span>
-        </div>
-        <button class="course-card__cta" :class="course.ctaTheme === 'dark' ? 'is-dark' : 'is-green'">
-          <span class="course-card__cta-text">{{ $t('common.getStarted') }}</span>
-          <span class="course-card__cta-icon">
-            <NuxtImg width="40" height="40" src="/images/common/go-arrow-1.png" />
-          </span>
-        </button>
-        <div v-if="course.resultLabel || course.points || course.percent !== undefined" class="course-card__right">
-          <a v-if="course.resultLabel" href="#" class="course-card__link">{{ course.resultLabel }}</a>
-          <div v-if="course.points" class="course-card__badge course-card__badge--points">
-            <div class="course-card__badge-wrap">
-              <span class="course-card__badge-value">{{ course.points }}</span>
-              <span class="course-card__badge-label">points</span>
+        <!-- 模板：已完成 + 积分 -->
+        <template v-if="course.footerType === 'completed_with_points'">
+          <div v-if="course.progress" class="course-card__status">
+            <span class="course-card__progress">
+              {{ course.progress }}
+            </span>
+          </div>
+          <button class="course-card__cta" :class="course.ctaTheme === 'dark' ? 'is-dark' : 'is-green'">
+            <span class="course-card__cta-text">{{ $t('common.getStarted') }}</span>
+            <span class="course-card__cta-icon">
+              <NuxtImg width="40" height="40" src="/images/common/go-arrow-1.png" />
+            </span>
+          </button>
+          <div class="course-card__right">
+            <a v-if="course.resultLabel" href="#" class="course-card__link">{{ course.resultLabel }}</a>
+            <div v-if="course.points" class="course-card__badge course-card__badge--points">
+              <div class="course-card__badge-wrap">
+                <span class="course-card__badge-value">{{ course.points }}</span>
+                <span class="course-card__badge-label">points</span>
+              </div>
             </div>
           </div>
-          <div v-else-if="course.percent !== undefined" class="course-card__badge course-card__badge--percent">
-            <div class="course-card__badge-wrap">
-              <span class="course-card__badge-percent">{{ course.percent }}%</span>
+        </template>
+        <!-- 模板：课程进度 + 百分比 -->
+        <template v-else-if="course.footerType === 'lessons_with_percent'">
+          <div v-if="course.progress" class="course-card__status">
+            <span class="course-card__progress">{{ course.progress }}</span>
+          </div>
+          <button class="course-card__cta" :class="course.ctaTheme === 'dark' ? 'is-dark' : 'is-green'">
+            <span class="course-card__cta-text">{{ $t('common.getStarted') }}</span>
+            <span class="course-card__cta-icon">
+              <NuxtImg width="40" height="40" src="/images/common/go-arrow-1.png" />
+            </span>
+          </button>
+          <div class="course-card__right">
+            <div v-if="course.percent !== undefined" class="course-card__badge course-card__badge--percent">
+              <div class="course-card__badge-wrap">
+                <span class="course-card__badge-percent">{{ course.percent }}%</span>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div v-if="course.avatars?.length || course.finishedText" class="course-card__people">
-        <div class="course-card__avatars">
-          <span v-for="(a, idx) in course.avatars" :key="idx" class="course-card__avatar">
-            <NuxtImg :src="a" alt="avatar" />
-          </span>
-        </div>
-        <p v-if="course.finishedText" class="course-card__finished">{{ course.finishedText }}</p>
+        </template>
+        <!-- 模板：已完成 + 结果链接 + 勾选徽章 -->
+        <template v-else-if="course.footerType === 'completed_with_check'">
+          <div v-if="course.progress" class="course-card__status">
+            <span class="course-card__progress">{{ "You've completed this test." }}</span>
+          </div>
+          <button class="course-card__cta" :class="course.ctaTheme === 'dark' ? 'is-dark' : 'is-green'">
+            <span class="course-card__cta-text">{{ $t('common.getStarted') }}</span>
+            <span class="course-card__cta-icon">
+              <NuxtImg width="40" height="40" src="/images/common/go-arrow-1.png" />
+            </span>
+          </button>
+          <div class="course-card__right">
+            <a v-if="course.resultLabel" href="#" class="course-card__link">{{ course.resultLabel }}</a>
+            <div class="course-card__badge course-card__badge--check">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none">
+                <path d="M5 13l4 4L19 7" stroke="var(--ui-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+        </template>
+        <!-- 模板：CTA + 人群信息（紧挨按钮） -->
+        <template v-else>
+          <button class="course-card__cta" :class="course.ctaTheme === 'dark' ? 'is-dark' : 'is-green'">
+            <span class="course-card__cta-text">{{ $t('common.getStarted') }}</span>
+            <span class="course-card__cta-icon">
+              <NuxtImg width="40" height="40" src="/images/common/go-arrow-1.png" />
+            </span>
+          </button>
+          <div v-if="(course.avatars && course.avatars.length) || course.finishedText" class="course-card__people">
+            <div class="course-card__avatars">
+              <span v-for="(a, idx) in course.avatars" :key="idx" class="course-card__avatar">
+                <NuxtImg :src="a" alt="avatar" />
+              </span>
+            </div>
+            <p v-if="course.finishedText" class="course-card__finished">{{ course.finishedText }}</p>
+          </div>
+        </template>
       </div>
     </div>
   </div>
@@ -73,6 +119,7 @@ interface Course {
   certificate?: boolean
   avatars?: string[]
   finishedText?: string
+  footerType?: 'completed_with_points' | 'lessons_with_percent' | 'completed_with_check' | 'cta_with_people'
 }
 
 defineProps<{
@@ -275,7 +322,7 @@ defineProps<{
   }
 
   &__people {
-    margin-top: 12px;
+    margin-top: 0;
     display: flex;
     align-items: center;
     gap: 8px;
