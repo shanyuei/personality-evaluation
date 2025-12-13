@@ -19,22 +19,22 @@
       <!-- 题卡 -->
       <div class="uno-mt-4 uno-w-full md:uno-w-[860px] uno-mx-auto uno-bg-white uno-rounded-[20px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)]">
         <div class="uno-p-6 md:uno-p-8">
-          <h1 class="uno-text-2xl md:uno-text-3xl uno-font-['Outfit'] uno-font-extrabold uno-text-[var(--ui-foreground)] uno-mb-6">{{ $t('pages.userCourseTest.question') }}</h1>
+          <h1 class="uno-text-[#011813] uno-text-[32px] uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2] uno-mb-6">{{ $t('pages.userCourseTest.question') }}</h1>
 
-          <div class="uno-space-y-4">
+          <div class="uno-space-y-4 uno-max-w-[680px] uno-mx-auto">
             <button v-for="(opt, idx) in options" :key="idx" type="button" class="uno-flex uno-items-center uno-gap-3 uno-w-full uno-text-left"
               @click="selected = idx">
               <span class="uno-inline-flex uno-items-center uno-justify-center uno-w-5 uno-h-5 uno-aspect-square uno-rounded-full"
                 :class="selected === idx ? 'uno-bg-white uno-border-2 uno-border-[var(--ui-primary)]' : 'uno-bg-white uno-border-2 uno-border-[var(--ui-border)]'">
                 <span v-if="selected === idx" class="uno-w-2.5 uno-h-2.5 uno-aspect-square uno-rounded-full uno-bg-[var(--ui-primary)]"></span>
               </span>
-              <span class="uno-text-sm md:uno-text-base uno-text-[var(--ui-foreground)]">{{ opt }}</span>
+              <span class="uno-text-sm md:uno-text-base uno-text-[var(--color-gray-3)] uno-font-['Outfit'] uno-leading-normal">{{ opt }}</span>
             </button>
           </div>
 
           <div class="uno-mt-8">
             <NuxtLink to="/user-course/test-complete" class="uno-block">
-              <UButton class="uno-w-full uno-h-[48px] uno-rounded-[12px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-white uno-flex uno-items-center uno-justify-center uno-text-center">{{ $t('pages.userCourseTest.cta') }}</UButton>
+              <UButton class="uno-w-full uno-h-[48px] uno-rounded-[12px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-white uno-text-lg uno-font-['Outfit'] uno-font-bold uno-leading-normal uno-flex uno-items-center uno-justify-center uno-text-center">{{ $t('pages.userCourseTest.cta') }}</UButton>
             </NuxtLink>
           </div>
         </div>

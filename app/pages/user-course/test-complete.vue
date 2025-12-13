@@ -9,11 +9,11 @@
             </div>
           </div>
 
-          <h1 class="uno-text-2xl md:uno-text-3xl uno-font-['Outfit'] uno-font-extrabold uno-text-[var(--ui-foreground)]">{{ courseName }}</h1>
-          <p class="uno-text-sm md:uno-text-base uno-text-[var(--ui-muted-foreground)] uno-max-w-[700px]">{{ $t('pages.userCourseTestComplete.description') }}</p>
+          <h1 class="uno-text-[32px] uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2] uno-text-[#011813]">{{ courseName }}</h1>
+          <p class="uno-w-[672px] uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-leading-normal">{{ $t('pages.userCourseTestComplete.description') }}</p>
 
           <NuxtLink to="/user-course" class="uno-w-full md:uno-w-[520px]">
-            <UButton class="uno-w-full uno-h-[48px] uno-rounded-[12px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-white uno-flex uno-items-center uno-justify-center uno-text-center">{{ $t('pages.userCourseTestComplete.cta') }}</UButton>
+            <UButton class="uno-w-full uno-h-[48px] uno-rounded-[12px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-white uno-text-lg uno-font-['Outfit'] uno-font-bold uno-leading-normal uno-flex uno-items-center uno-justify-center uno-text-center">{{ $t('pages.userCourseTestComplete.cta') }}</UButton>
           </NuxtLink>
         </div>
       </div>
@@ -28,4 +28,3 @@ const courseName = 'People Leadership vs. Management'
 </script>
 
 <style scoped></style>
-
