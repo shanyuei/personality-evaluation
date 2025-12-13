@@ -67,21 +67,24 @@
               <h3 class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold uno-leading-[1.24]">{{ card.title }}</h3>
               <p class="uno-text-[#323233] uno-text-sm uno-font-['Outfit'] uno-leading-normal">{{ card.desc }}</p>
               <div v-if="!card.completed">
-                <UButton class="uno-h-[40px] uno-rounded-[12px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-white">{{ $t('pages.tests.cta.readMore') }}</UButton>
+                <UButton class="uno-w-[151px] uno-h-[48px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-1 uno-py-1 uno-px-[20px] uno-bg-[#009D77] uno-rounded-lg uno-text-[#FFFFFF] uno-text-lg uno-font-['Outfit'] uno-font-bold uno-leading-normal">{{ $t('pages.tests.cta.readMore') }}</UButton>
               </div>
               <div v-else class="uno-flex uno-gap-3">
                 <NuxtLink to="/test/result">
-                  <UButton class="uno-h-[40px] uno-rounded-[12px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-white">{{ $t('pages.tests.cta.viewResults') }}</UButton>
+                  <UButton class="uno-w-[151px] uno-h-[48px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-1 uno-py-1 uno-px-[20px] uno-bg-[#009D77] uno-rounded-lg uno-text-[#FFFFFF] uno-text-lg uno-font-['Outfit'] uno-font-bold uno-leading-normal">{{ $t('pages.tests.cta.viewResults') }}</UButton>
                 </NuxtLink>
                 <NuxtLink to="/test/step">
-                  <UButton variant="ghost" class="uno-h-[40px] uno-rounded-[12px] uno-border uno-border-[var(--ui-border)] hover:uno-border-[var(--ui-primary)] hover:uno-text-[var(--ui-primary)]">{{ $t('pages.tests.cta.tryAgain') }}</UButton>
+                  <UButton variant="ghost" class="uno-w-[151px] uno-h-[48px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-1 uno-py-1 uno-px-[20px] uno-bg-white uno-border-solid uno-border-2 uno-border-[#009D77] uno-rounded-lg uno-text-[#009D77] uno-text-lg uno-font-['Outfit'] uno-font-bold uno-leading-normal">{{ $t('pages.tests.cta.tryAgain') }}</UButton>
                 </NuxtLink>
               </div>
             </div>
           </div>
         </div>
         <div class="uno-flex uno-justify-center uno-mt-6">
-          <UButton variant="ghost" class="uno-h-[40px] uno-rounded-[12px] uno-border uno-border-[var(--ui-border)] hover:uno-border-[var(--ui-primary)] hover:uno-text-[var(--ui-primary)]">{{ $t('pages.tests.cta.loadMore') }}</UButton>
+          <UButton
+            variant="ghost"
+            class="uno-w-full uno-h-[48px] uno-rounded-[12px] uno-bg-white uno-border uno-border-[var(--ui-border)] uno-text-[#8D8E8F] uno-text-lg uno-font-['Outfit'] uno-font-bold uno-leading-normal uno-flex uno-items-center uno-justify-center uno-text-center"
+          >{{ $t('pages.tests.cta.loadMore') }}</UButton>
         </div>
       </section>
     </div>
