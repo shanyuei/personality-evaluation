@@ -53,6 +53,72 @@
         </div>
       </div>
     </template>
+    <template v-if="course.footerType === 3">
+      <div class="course-card__footer">
+        <div class="course-card__footer__status">
+          <span class="course-card__footer__status-text">
+            You've completed this test.
+          </span>
+        </div>
+        <button class="course-card__footer__cta is-dark">
+          <span class="course-card__footer__cta-text">
+            Get Started
+          </span>
+          <span class="course-card__footer__cta-icon">
+            <NuxtImg src="/images/common/go-arrow-1.png" alt="arrow-right" width="40" height="40" />
+          </span>
+        </button>
+        <div class="course-card__footer__link">
+          <span class="course-card__footer__link-text">
+            View test results
+          </span>
+        </div>
+        <NuxtImg src="/images/common/check-mark-1.png" alt="check-mark" width="66" height="66" />
+      </div>
+    </template>
+    <template v-if="course.footerType === 4">
+      <div class="course-card__footer__meta">
+        <span class="course-card__footer__meta-item">10 lessons</span>
+        <span class="course-card__footer__meta-item">2 weeks</span>
+        <span class="course-card__footer__meta-item">Certificate</span>
+      </div>
+      <div class="course-card__footer">
+        <div class="course-card__footer__row">
+          <div class="course-card__footer__left">
+
+            <div class="course-card__footer__actions">
+              <button class="course-card__footer__cta is-green">
+                <span class="course-card__footer__cta-text">Get Started</span>
+                <span class="course-card__footer__cta-icon">
+                  <NuxtImg src="/images/common/go-arrow-1.png" alt="arrow-right" width="40" height="40" />
+                </span>
+              </button>
+              <div class="course-card__footer__people">
+                <div class="course-card__footer__avatars">
+                  <div class="course-card__footer__avatar">
+                    <img
+                      src="https://image-resource.mastergo.com/64427795427964/64427795427966/cbd4afe3876c389a4228a27675777330.png"
+                      alt="avatar-1" />
+                  </div>
+                  <div class="course-card__footer__avatar">
+                    <img
+                      src="https://image-resource.mastergo.com/64427795427964/64427795427966/2cfa9e1b900d979eb23508b3951c207a.jpg"
+                      alt="avatar-2" />
+                  </div>
+                  <div class="course-card__footer__avatar">
+                    <img
+                      src="https://image-resource.mastergo.com/64427795427964/64427795427966/a8944c428fea9d298029d86ace456ac3.jpg"
+                      alt="avatar-3" />
+                  </div>
+                </div>
+                <p class="course-card__footer__people-text">3067 people already finished it</p>
+              </div>
+            </div>
+          </div>
+          <div class="course-card__footer__spacer"></div>
+        </div>
+      </div>
+    </template>
   </div>
 </template>
 
@@ -113,6 +179,19 @@ defineProps<{
     gap: 4px;
     flex-wrap: wrap;
 
+    &__left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+
+    &__actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
 
 
     &__status {
@@ -172,6 +251,58 @@ defineProps<{
       background: #fff;
       color: var(--ui-foreground);
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    &__people {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 10px 30px 50px rgba(0, 157, 119, 0.08);
+    }
+
+    &__avatars {
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    &__avatar {
+      width: 24px;
+      height: 24px;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 2px solid #fff;
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      &:not(:first-child) {
+        margin-left: -8px;
+      }
+
+      img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &__people-text {
+      color: var(--ui-muted-foreground);
+      font-size: 12px;
+      font-family: 'Outfit';
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    &__spacer {
+      flex: 1 1 auto;
     }
 
     &__link {
@@ -262,6 +393,23 @@ defineProps<{
     line-height: 1.5;
     margin-bottom: 8px;
     margin-top: 8px;
+  }
+
+  .course-card__footer__meta {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 12px;
+    color: var(--ui-foreground);
+    font-size: 14px;
+    font-family: 'Outfit';
+    font-weight: 500;
+    line-height: 1.5;
+  }
+  .course-card__footer__meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
   }
 }
 </style>

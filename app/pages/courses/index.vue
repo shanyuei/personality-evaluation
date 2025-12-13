@@ -121,7 +121,24 @@ const courses = ref<Course[]>([
         ctaTheme: 'dark',
         footerType: 2,
     },
-
+    {
+        id: 1,
+        title: 'People Leadership vs. Management',
+        description: 'Learn the difference between leadership and management to inspire teams and drive outcomes.',
+        image: '/images/courses/1.png',
+        points: 20,
+        ctaTheme: 'dark',
+        footerType: 3,
+    },
+    {
+        id: 1,
+        title: 'People Leadership vs. Management',
+        description: 'Learn the difference between leadership and management to inspire teams and drive outcomes.',
+        image: '/images/courses/1.png',
+        points: 20,
+        ctaTheme: 'dark',
+        footerType: 4,
+    },
 ])
 
 const sortOrder = ref<'popular' | 'recent' | 'duration'>('popular')
