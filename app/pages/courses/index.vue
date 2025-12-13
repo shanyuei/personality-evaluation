@@ -1,231 +1,239 @@
 <template>
-  <main class="uno-min-h-screen uno-bg-white">
-    <!-- Page Header -->
-    <section class="uno-py-16 uno-px-6 md:uno-px-12 lg:uno-px-24 uno-bg-gray-50">
-      <div class="uno-max-w-7xl uno-mx-auto">
-        <h1 class="uno-text-3xl md:uno-text-4xl uno-font-bold uno-text-gray-900 uno-mb-4">Our Courses</h1>
-        <p class="uno-text-lg uno-text-gray-600 uno-max-w-3xl">
-          Explore our comprehensive range of courses designed to help you achieve your learning goals.
-        </p>
-      </div>
-    </section>
+    <main class="">
 
-    <!-- Course Filters -->
-    <section class="uno-py-8 uno-px-6 md:uno-px-12 lg:uno-px-24">
-      <div class="uno-max-w-7xl uno-mx-auto uno-flex uno-flex-col sm:uno-flex-row uno-justify-between uno-items-start sm:uno-items-center uno-gap-4 uno-mb-8">
-        <div class="uno-flex uno-flex-wrap uno-gap-2">
-          <UButton variant="ghost" class="uno-rounded-full" :pressed="activeFilter === 'all'" @click="activeFilter = 'all'">
-            All Courses
-          </UButton>
-          <UButton variant="ghost" class="uno-rounded-full" :pressed="activeFilter === 'programming'" @click="activeFilter = 'programming'">
-            Programming
-          </UButton>
-          <UButton variant="ghost" class="uno-rounded-full" :pressed="activeFilter === 'design'" @click="activeFilter = 'design'">
-            Design
-          </UButton>
-          <UButton variant="ghost" class="uno-rounded-full" :pressed="activeFilter === 'business'" @click="activeFilter = 'business'">
-            Business
-          </UButton>
-        </div>
-        <USelect v-model="sortOrder" :options="sortOptions" placeholder="Sort by" class="uno-w-full sm:uno-w-40" />
-      </div>
-
-      <!-- Course Grid -->
-      <div class="uno-grid uno-grid-cols-1 md:uno-grid-cols-2 lg:uno-grid-cols-3 uno-gap-8">
-        <div v-for="course in filteredCourses" :key="course.id" class="uno-bg-white uno-rounded-lg uno-shadow-md uno-overflow-hidden hover:uno-shadow-lg uno-transition-shadow uno-duration-300">
-          <div class="uno-h-48 uno-bg-gray-200 uno-overflow-hidden">
-            <NuxtImg :src="course.image" :alt="course.title" class="uno-w-full uno-h-full uno-object-cover" />
-          </div>
-          <div class="uno-p-6">
-            <div class="uno-flex uno-justify-between uno-items-start uno-mb-2">
-              <span class="uno-text-sm uno-font-medium uno-text-primary uno-bg-primary/10 uno-px-3 uno-py-1 uno-rounded-full">{{ course.category }}</span>
-              <div class="uno-flex uno-items-center">
-                <span class="uno-text-amber-500 uno-mr-1">★</span>
-                <span class="uno-text-sm uno-font-medium">{{ course.rating }}</span>
-              </div>
-            </div>
-            <h3 class="uno-text-xl uno-font-bold uno-mb-2">{{ course.title }}</h3>
-            <p class="uno-text-gray-600 uno-text-sm uno-mb-4 uno-line-clamp-2">{{ course.description }}</p>
-            <div class="uno-flex uno-justify-between uno-items-center">
-              <div class="uno-flex uno-items-center">
-                <div class="uno-w-8 uno-h-8 uno-rounded-full uno-bg-gray-200 uno-overflow-hidden uno-mr-2">
-                  <NuxtImg :src="course.instructor.avatar" :alt="course.instructor.name" class="uno-w-full uno-h-full uno-object-cover" />
+        <section class="uno-py-10 uno-px-6 md:uno-px-12 lg:uno-px-24">
+            <div class="uno-max-w-[80%] uno-mx-auto">
+                <div class="uno-flex uno-justify-start uno-items-center uno-flex-col uno-gap-[15px]">
+                    <div class="uno-w-full md:uno-w-[1000px]">
+                        <p class="uno-text-[var(--ui-muted-foreground)] uno-font-['Outfit'] uno-font-medium">{{
+                            $t('pages.course.recommendedForYou') }}</p>
+                    </div>
+                    <div
+                        class="uno-w-full md:uno-w-[1000px] uno-flex uno-justify-between uno-items-start uno-flex-row uno-p-[32px] uno-bg-white uno-rounded-3xl uno-shadow-[0px_4px_12px_0px_rgba(0,0,0,0.05)]">
+                        <div class="uno-flex uno-flex-row uno-gap-[56px]">
+                            <div class="uno-flex uno-flex-col uno-gap-6">
+                                <div class="uno-flex uno-flex-col uno-gap-4">
+                                    <p
+                                        class="uno-text-[#011813] uno-text-5xl uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">
+                                        {{ recommended.title }}</p>
+                                    <p class="uno-text-[var(--ui-muted-foreground)] uno-text-sm uno-font-['Outfit']">{{
+                                        recommended.description }}</p>
+                                </div>
+                                <div class="uno-flex uno-flex-row uno-gap-6">
+                                    <span class="uno-text-[var(--ui-foreground)] uno-font-['Outfit'] uno-font-medium">{{
+                                        recommended.lessons }} {{ $t('pages.course.lessons') }}</span>
+                                    <span class="uno-text-[var(--ui-foreground)] uno-font-['Outfit'] uno-font-medium">{{
+                                        recommended.duration }}</span>
+                                    <span class="uno-text-[var(--ui-foreground)] uno-font-['Outfit'] uno-font-medium">{{
+                                        $t('pages.course.certificate') }}</span>
+                                </div>
+                                <div class="uno-flex uno-items-center uno-flex-row uno-gap-4">
+                                    <div
+                                        class="uno-h-[56px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-3 uno-py-1.5 uno-pr-1.5 uno-pl-[20px] uno-bg-[var(--ui-primary)] uno-rounded-[100px]">
+                                        <span class="uno-text-white uno-font-['Outfit'] uno-font-medium">{{
+                                            $t('common.getStarted') }}</span>
+                                        <div
+                                            class="uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-2.5 uno-p-2.5 uno-bg-white uno-rounded-[100px] uno-overflow-hidden">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                width="24" height="24">
+                                                <path d="M5 12h9m0 0l-4-4m4 4l-4 4" stroke="#000" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="uno-flex uno-items-center uno-flex-row uno-gap-2 uno-rounded-xl uno-shadow-[10px_30px_50px_0px_rgba(0,157,119,0.08)]">
+                                        <div class="uno-flex uno-items-center uno-flex-row">
+                                            <div v-for="(a, idx) in recommended.avatars" :key="idx"
+                                                class="uno-w-[24px] uno-h-[24px] uno-bg-white uno-border-solid uno-border-white uno-border uno-rounded-full uno-overflow-hidden">
+                                                <NuxtImg :src="a" alt="avatar"
+                                                    class="uno-w-full uno-h-full uno-object-cover" />
+                                            </div>
+                                        </div>
+                                        <p
+                                            class="uno-text-[var(--ui-muted-foreground)] uno-text-xs uno-font-['Outfit'] uno-text-center">3067
+                                            people already finished it</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="uno-w-[425px] uno-h-[270px] uno-rounded-3xl uno-overflow-hidden uno-relative uno-hidden md:uno-block">
+                            <NuxtImg src="/images/home/1.png" alt="image"
+                                class="uno-rounded-xl uno-absolute uno-left-[65px] uno-top-0 uno-w-[360px] uno-h-[270px] uno-object-cover" />
+                        </div>
+                    </div>
                 </div>
-                <span class="uno-text-sm uno-text-gray-700">{{ course.instructor.name }}</span>
-              </div>
-              <span class="uno-font-bold uno-text-gray-900">{{ course.price }}</span>
             </div>
-            <UButton class="uno-w-full uno-mt-4 uno-bg-primary hover:uno-bg-primary/90 uno-text-white uno-rounded-lg">
-              Enroll Now
-            </UButton>
-          </div>
-        </div>
-      </div>
+        </section>
 
-      <!-- No Courses Found -->
-      <div v-if="filteredCourses.length === 0" class="uno-text-center uno-py-16">
-        <p class="uno-text-gray-600 uno-text-lg">No courses found matching your criteria.</p>
-        <UButton class="uno-mt-4 uno-bg-primary hover:uno-bg-primary/90 uno-text-white uno-rounded-full" @click="activeFilter = 'all'">
-          View All Courses
-        </UButton>
-      </div>
-    </section>
-  </main>
+
+        <section class="uno-pt-[32px] uno-pb-[120px] uno-px-[24px] md:uno-px-[120px] uno-bg-[var(--color-gray-9)]">
+            <div class="uno-mx-auto md:uno-w-[1200px]">
+                <p class="uno-text-[var(--ui-muted-foreground)] uno-text-xl uno-font-['Outfit'] uno-font-medium">{{ $t('pages.course.allCourses') }}</p>
+
+                <div class="uno-mt-4 uno-flex uno-flex-col uno-gap-10">
+                    <div class="uno-flex uno-flex-col md:uno-flex-row uno-gap-6">
+                        <div v-for="course in sortedCourses.slice(0,2)" :key="course.id" class="uno-w-full md:uno-w-[588px] uno-h-auto md:uno-h-[535px] uno-flex uno-items-center uno-flex-col uno-gap-5 uno-pt-3 uno-pb-[24px] uno-px-3 uno-bg-white uno-rounded-2xl">
+                            <div class="uno-w-full md:uno-w-[564px] uno-h-[200px] md:uno-h-[270px] uno-rounded-xl uno-overflow-hidden uno-relative">
+                                <NuxtImg :src="course.image" :alt="course.title" class="uno-rounded-xl uno-absolute uno-left-0 uno-top-0 uno-w-full md:uno-w-[564px] uno-h-[200px] md:uno-h-[270px] uno-object-cover" />
+                            </div>
+                            <div class="uno-self-stretch uno-flex uno-flex-col uno-gap-3 uno-px-2">
+                                <div class="uno-flex uno-flex-col uno-gap-4">
+                                    <p class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-medium">{{ course.title }}</p>
+                                    <p class="uno-text-[var(--ui-muted-foreground)] uno-text-sm uno-font-['Outfit']">{{ course.description }}</p>
+                                    <div class="uno-flex uno-justify-between uno-items-end uno-relative">
+                                        <div class="uno-flex uno-items-center uno-gap-2">
+                                            <span class="uno-text-[var(--ui-foreground)] uno-text-sm uno-font-['Outfit'] uno-font-medium">{{ course.progress === '✓' ? "You've completed this test." : (course.progress || '') }}</span>
+                                            <span v-if="course.resultLabel" class="uno-text-[var(--ui-foreground)] uno-text-sm uno-font-['Outfit']">{{ course.resultLabel }}</span>
+                                        </div>
+                                        <div class="uno-h-[48px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-3 uno-py-1 uno-pr-1 uno-pl-[20px] uno-rounded-[100px]" :class="course.ctaTheme === 'dark' ? 'uno-bg-[#011813]' : 'uno-bg-[var(--ui-primary)]'">
+                                            <span class="uno-text-white uno-font-['Outfit'] uno-font-medium">{{ $t('pages.course.cta.start') }}</span>
+                                            <div class="uno-w-[40px] uno-h-[40px] uno-flex uno-justify-center uno-items-center uno-rounded-[100px] uno-bg-white uno-overflow-hidden">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="24" height="24"><path d="M5 12h9m0 0l-4-4m4 4l-4 4" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                                            </div>
+                                        </div>
+                                        <div v-if="course.points" class="uno-w-[64px] uno-h-[64px] uno-flex uno-justify-center uno-items-center uno-rounded-full uno-overflow-hidden uno-bg-[rgba(255,211,204,0.5)] uno-border-solid uno-border-[var(--color-pink-2)] uno-border">
+                                            <div class="uno-flex uno-items-center uno-flex-col">
+                                                <span class="uno-text-[var(--color-pink-1)] uno-text-xl uno-font-['Outfit'] uno-font-semibold">{{ course.points }}</span>
+                                                <span class="uno-text-[var(--color-pink-1)] uno-text-xs uno-font-['Outfit']">points</span>
+                                            </div>
+                                        </div>
+                                        <div v-else-if="course.percent !== undefined" class="uno-w-[64px] uno-h-[64px] uno-flex uno-justify-center uno-items-center uno-rounded-full uno-overflow-hidden uno-border-solid uno-border-[var(--ui-border)] uno-border-4">
+                                            <div class="uno-flex uno-items-center uno-flex-col">
+                                                <span class="uno-text-[var(--ui-muted-foreground)] uno-text-lg uno-font-['Outfit'] uno-font-medium">{{ course.percent }}%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="uno-flex uno-flex-col md:uno-flex-row uno-gap-6">
+                        <div v-for="course in sortedCourses.slice(2,4)" :key="course.id" class="uno-w-full md:uno-w-[588px] uno-h-auto md:uno-h-[535px] uno-flex uno-items-center uno-flex-col uno-gap-5 uno-pt-3 uno-pb-[24px] uno-px-3 uno-bg-white uno-rounded-2xl">
+                            <div class="uno-w-full md:uno-w-[564px] uno-h-[200px] md:uno-h-[270px] uno-rounded-xl uno-overflow-hidden uno-relative">
+                                <NuxtImg :src="course.image" :alt="course.title" class="uno-rounded-xl uno-absolute uno-left-0 uno-top-0 uno-w-full md:uno-w-[564px] uno-h-[200px] md:uno-h-[270px] uno-object-cover" />
+                            </div>
+                            <div class="uno-self-stretch uno-flex uno-flex-col uno-gap-3 uno-px-2">
+                                <div class="uno-flex uno-flex-col uno-gap-4">
+                                    <p class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-medium">{{ course.title }}</p>
+                                    <p class="uno-text-[var(--ui-muted-foreground)] uno-text-sm uno-font-['Outfit']">{{ course.description }}</p>
+                                    <div class="uno-flex uno-justify-between uno-items-end uno-relative">
+                                        <div class="uno-flex uno-items-center uno-gap-2">
+                                            <span class="uno-text-[var(--ui-foreground)] uno-text-sm uno-font-['Outfit'] uno-font-medium">{{ course.progress === '✓' ? "You've completed this test." : (course.progress || '') }}</span>
+                                            <span v-if="course.resultLabel" class="uno-text-[var(--ui-foreground)] uno-text-sm uno-font-['Outfit']">{{ course.resultLabel }}</span>
+                                        </div>
+                                        <div class="uno-h-[48px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-3 uno-py-1 uno-pr-1 uno-pl-[20px] uno-rounded-[100px]" :class="course.ctaTheme === 'dark' ? 'uno-bg-[#011813]' : 'uno-bg-[var(--ui-primary)]'">
+                                            <span class="uno-text-white uno-font-['Outfit'] uno-font-medium">{{ $t('pages.course.cta.start') }}</span>
+                                            <div class="uno-w-[40px] uno-h-[40px] uno-flex uno-justify-center uno-items-center uno-rounded-[100px] uno-bg-white uno-overflow-hidden">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="24" height="24"><path d="M5 12h9m0 0l-4-4m4 4l-4 4" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                                            </div>
+                                        </div>
+                                        <div v-if="course.points" class="uno-w-[64px] uno-h-[64px] uno-flex uno-justify-center uno-items-center uno-rounded-full uno-overflow-hidden uno-bg-[rgba(255,211,204,0.5)] uno-border-solid uno-border-[var(--color-pink-2)] uno-border">
+                                            <div class="uno-flex uno-items-center uno-flex-col">
+                                                <span class="uno-text-[var(--color-pink-1)] uno-text-xl uno-font-['Outfit'] uno-font-semibold">{{ course.points }}</span>
+                                                <span class="uno-text-[var(--color-pink-1)] uno-text-xs uno-font-['Outfit']">points</span>
+                                            </div>
+                                        </div>
+                                        <div v-else-if="course.percent !== undefined" class="uno-w-[64px] uno-h-[64px] uno-flex uno-justify-center uno-items-center uno-rounded-full uno-overflow-hidden uno-border-solid uno-border-[var(--ui-border)] uno-border-4">
+                                            <div class="uno-flex uno-items-center uno-flex-col">
+                                                <span class="uno-text-[var(--ui-muted-foreground)] uno-text-lg uno-font-['Outfit'] uno-font-medium">{{ course.percent }}%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue';
-// const { t } = useI18n()
-// definePageMeta({
-//   title: t('courses.title') as string
-// })
-// useSeoMeta({
-//   title: () => t('courses.title') as string,
-//   description: () => t('courses.description') as string,
-//   ogTitle: () => t('courses.title') as string,
-//   ogDescription: () => t('courses.description') as string
-// })
+import { ref, computed } from 'vue'
 
-const activeFilter = ref('all');
-const sortOrder = ref('popular');
+const recommended = ref({
+    title: 'Budgeting',
+    description: 'Craft better budgeting habits to optimize spending, build a sustainable plan, and reach your financial goals with confidence.',
+    lessons: 10,
+    duration: '2 weeks',
+    certificate: true,
+    image: '/images/home/1.png',
+    avatars: ['/images/home/8.png', '/images/home/11.png', '/images/about/3.png']
+})
 
-const sortOptions = [
-  { label: 'Most Popular', value: 'popular' },
-  { label: 'Newest', value: 'newest' },
-  { label: 'Price: Low to High', value: 'price-low' },
-  { label: 'Price: High to Low', value: 'price-high' },
-];
+type Course = {
+  id: number
+  title: string
+  description: string
+  image: string
+  duration: string
+  progress?: string
+  resultLabel?: string
+  points?: number
+  percent?: number
+  ctaTheme?: 'dark' | 'green'
+  instructor: { name: string, avatar: string }
+}
 
-const courses = ref([
+const courses = ref<Course[]>([
   {
     id: 1,
-    title: 'Introduction to Web Development',
-    description: 'Learn the fundamentals of web development with HTML, CSS, and JavaScript.',
-    image: '/images/courses/web-dev.jpg',
-    category: 'programming',
-    rating: 4.8,
-    reviews: 124,
-    price: '$49.99',
-    instructor: {
-      name: 'John Doe',
-      avatar: '/images/instructors/john-doe.jpg',
-    },
-    duration: '8 weeks',
-    level: 'Beginner',
+    title: 'People Leadership vs. Management',
+    description: 'Learn the difference between leadership and management to inspire teams and drive outcomes.',
+    image: '/images/about/3.png',
+    duration: '20 min',
+    progress: "You've completed this test.",
+    resultLabel: 'View test results',
+    points: 20,
+    ctaTheme: 'dark',
+    instructor: { name: 'Alex', avatar: '/images/home/8.png' }
   },
   {
     id: 2,
-    title: 'Advanced React Development',
-    description: 'Master React hooks, context API, and build modern single-page applications.',
-    image: '/images/courses/react.jpg',
-    category: 'programming',
-    rating: 4.9,
-    reviews: 89,
-    price: '$89.99',
-    instructor: {
-      name: 'Jane Smith',
-      avatar: '/images/instructors/jane-smith.jpg',
-    },
-    duration: '10 weeks',
-    level: 'Advanced',
+    title: 'HR Management',
+    description: 'Build practical HR skills covering recruitment, onboarding, and performance frameworks.',
+    image: '/images/home/11.png',
+    duration: '1h',
+    percent: 10,
+    ctaTheme: 'green',
+    instructor: { name: 'Sofia', avatar: '/images/home/1.png' }
   },
   {
     id: 3,
-    title: 'UI/UX Design Fundamentals',
-    description: 'Learn the principles of user interface and user experience design.',
-    image: '/images/courses/ui-ux.jpg',
-    category: 'design',
-    rating: 4.7,
-    reviews: 156,
-    price: '$69.99',
-    instructor: {
-      name: 'Sarah Johnson',
-      avatar: '/images/instructors/sarah-johnson.jpg',
-    },
-    duration: '6 weeks',
-    level: 'Beginner',
+    title: 'Email Marketing',
+    description: 'Master lifecycle email strategies with segmentation, copy, and analytics.',
+    image: '/images/home/2.png',
+    duration: '45 min',
+    progress: '✓',
+    ctaTheme: 'green',
+    instructor: { name: 'Max', avatar: '/images/home/8.png' }
   },
   {
     id: 4,
-    title: 'Digital Marketing Strategy',
-    description: 'Create effective digital marketing campaigns and grow your online presence.',
-    image: '/images/courses/marketing.jpg',
-    category: 'business',
-    rating: 4.6,
-    reviews: 78,
-    price: '$59.99',
-    instructor: {
-      name: 'Michael Brown',
-      avatar: '/images/instructors/michael-brown.jpg',
-    },
-    duration: '8 weeks',
-    level: 'Intermediate',
-  },
-  {
-    id: 5,
-    title: 'Data Science Essentials',
-    description: 'Introduction to data analysis, visualization, and machine learning.',
-    image: '/images/courses/data-science.jpg',
-    category: 'programming',
-    rating: 4.9,
-    reviews: 112,
-    price: '$99.99',
-    instructor: {
-      name: 'Emily Davis',
-      avatar: '/images/instructors/emily-davis.jpg',
-    },
-    duration: '12 weeks',
-    level: 'Intermediate',
-  },
-  {
-    id: 6,
-    title: 'Graphic Design with Adobe Creative Suite',
-    description: 'Master Adobe Photoshop, Illustrator, and InDesign for professional design work.',
-    image: '/images/courses/graphic-design.jpg',
-    category: 'design',
-    rating: 4.8,
-    reviews: 95,
-    price: '$79.99',
-    instructor: {
-      name: 'David Wilson',
-      avatar: '/images/instructors/david-wilson.jpg',
-    },
-    duration: '10 weeks',
-    level: 'Beginner',
-  },
-]);
+    title: 'Brand Management',
+    description: 'Develop coherent brand systems and campaigns across channels.',
+    image: '/images/home/1.png',
+    duration: '1.5h',
+    ctaTheme: 'dark',
+    instructor: { name: 'Sara', avatar: '/images/about/3.png' }
+  }
+])
 
-const filteredCourses = computed(() => {
-  let result = courses.value;
-  
-  // Filter by category
-  if (activeFilter.value !== 'all') {
-    result = result.filter(course => course.category === activeFilter.value);
-  }
-  
-  // Sort courses
-  switch (sortOrder.value) {
-    case 'newest':
-      return [...result].reverse();
-    case 'price-low':
-      return [...result].sort((a, b) => {
-        const priceA = parseFloat(a.price.replace('$', ''));
-        const priceB = parseFloat(b.price.replace('$', ''));
-        return priceA - priceB;
-      });
-    case 'price-high':
-      return [...result].sort((a, b) => {
-        const priceA = parseFloat(a.price.replace('$', ''));
-        const priceB = parseFloat(b.price.replace('$', ''));
-        return priceB - priceA;
-      });
-    case 'popular':
-    default:
-      return [...result].sort((a, b) => b.reviews - a.reviews);
-  }
-});
+const sortOrder = ref<'popular' | 'recent' | 'duration'>('popular')
+
+const sortedCourses = computed(() => {
+    const list = [...courses.value]
+    if (sortOrder.value === 'duration') {
+        return list.sort((a, b) => (parseInt(a.duration) || 0) - (parseInt(b.duration) || 0))
+    }
+    return list
+})
+
 </script>
 
-<style scoped>
-/* Courses page specific styles */
-</style>
+<style scoped></style>

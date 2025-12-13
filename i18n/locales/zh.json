@@ -449,6 +449,10 @@
         "title": "以专家洞见赋能你的职业旅程"
       },
       "exploreTitle": "探索全部洞见",
+      "breadcrumb": {
+        "list": "首页 / 博客"
+      },
+      "loadMore": "加载更多",
       "sidebar": {
         "categories": "分类",
         "recent": "最新博客",
@@ -456,7 +460,7 @@
         "follow": "关注我们"
       },
       "detail": {
-        "breadcrumb": "Home / Blog / Blog Details",
+        "breadcrumb": "首页 / 博客 / 文章详情",
         "sections": {
           "keyTakeaway": "关键要点",
           "contentCreation": {

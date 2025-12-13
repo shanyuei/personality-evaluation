@@ -438,6 +438,10 @@
         "title": "Empower Your Journey \nwith Expert Career Insights"
       },
       "exploreTitle": "Explore All Insights",
+      "breadcrumb": {
+        "list": "Home / Blog"
+      },
+      "loadMore": "Load more",
       "sidebar": {
         "categories": "Categories",
         "recent": "Recent Blogs",

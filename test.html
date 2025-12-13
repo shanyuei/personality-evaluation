@@ -1,579 +1,134 @@
-<!-- <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
 <script>
-  eruda.init();
-</script> -->
-<!-- <link
-  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-  rel="stylesheet"
-  integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-  crossorigin="anonymous"
-/> -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://static.airwallex.com/components/sdk/v1/index.js"></script>
-<style>
-    .loading {
-        color: #fff;
-    }
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
-    .custom-backdrop {
-        position: fixed;
-        inset: 0;
-        pointer-events: auto;
-        z-index: 10000;
-    }
-</style>
-<div class="order-box">
-    <div class="container">
-        <div class="d-flex flex-column flex-lg-row order-box-wrap">
-            <div class="order-box-info pt-md-5 pb-3 order-2 order-lg-1">
-                <div class="pro-box border-bottom d-flex">
-                    <div class="img">
-                        <img src="{{.site_url}}/images/sp-box.png" width="120" alt="" />
-                    </div>
-                    <div class="info">
-                        <div class="name totalPrice"></div>
-                        <div class="pri fw-800">US$<span class="pay_price"></span></div>
-                    </div>
-                </div>
-                <div class="order-list d-flex align-items-center justify-content-between">
-                    <div class="col-4 py-2 plan"></div>
-                    <div class="col-8 text-end fs-6 fw-600">
-                        <span class="name"></span>
-                    </div>
-                </div>
-                <div class="order-list d-flex align-items-center justify-content-between">
-                    <div class="col-4 py-2 subscriptionPeriod"></div>
-                    <div class="col-8 py-2 text-end fs-6 fw-600">
-                        <span class="month"></span>
-                        <span class="monthPlaceholder">Month(s)</span>
-                    </div>
-                </div>
-                <div class="order-list d-flex align-items-center justify-content-between">
-                    <div class="col-4 py-2 monthPrice"></div>
-                    <div class="col-8 py-2 text-end fs-6 fw-600">
-                        US$<span class="price_per_month"></span>
-                    </div>
-                </div>
-                <div class="order-list d-flex align-items-center justify-content-between">
-                    <div class="col-4 py-2 totalPrice"></div>
-                    <div class="col-8 py-2 text-end fs-6 fw-600">
-                        US$<span class="pay_price"></span>
-                    </div>
-                </div>
-                <div class="order-list">
-                    <span class="autoRenew"></span>:
-                    <span class="fw-600 text-primary">ON</span>
-                </div>
-                <div class="border rounded-3 order-info">
-                    <p class="small">Secure Payments</p>
-                    <div><img src="{{.site_url}}/images/buy-safe.png" alt="" /></div>
-                </div>
-            </div>
-            <div class="order-1 order-lg-2 p-4" style="
-          width: 100%;
-          flex: 1;
-          border: solid 1px #d7d8e0;
-          border-radius: 8px;
-        ">
-                <div class="contact-form">
-                    <h3 class="title h5 fw-600 mb-0 title"></h3>
-                    <div class="from-box">
-                        <form id="payment-form">
-                            <div class="mt-4">
-                                <div class="title-box text-muted mb-2 emailAddress"></div>
-                                <div class="item mb-4">
-                                    <input class="form-control" name="email" disabled />
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div id="payment-options" class="d-flex gap-2"></div>
-                    <div id="payment-area" class="mt-4"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="fullscreenLoading" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
-        <div class="modal-dialog modal-fullscreen d-flex align-items-center justify-content-center">
-            <div class="custom-backdrop"></div>
-            <div class="text-center loading">
-                <div class="spinner-border" role="status" aria-hidden="true" style="width: 4rem; height: 4rem"></div>
-                <div class="mt-3 fw-semibold">Loading…</div>
-            </div>
-        </div>
-    </div>
-</div>
-<script src="https://www.yeespy.com/assets/jquery.min.js"></script>
-<script>
-    var search = location.search.replace("?", "").split("&");
-    var query = {};
-    for (var i = 0; i < search.length; i++) {
-        var q = search[i].split("=");
-        query[q[0]] = q[1];
-    }
-    if (query.orderStatus === "success") {
-        window.open(
-            "https://www.yeespy.com/payment-successful.html" + location.search,
-            "_self"
-        );
-    }
+    function check(planName) {
+        if ($('#needLoginModal').length > 0) {
+            if (!logintoken) {
+                $('#needLoginModal').modal('show')
+            } else {
+                let planSection = $('.' + planName);
+                if (planSection.length > 0) {
+                    let checkedRadio = planSection.find('input[type="radio"]:checked');
+                    if (checkedRadio.length > 0) {
 
-    if (query.orderStatus === "pending") {
-        setTimeout(function () {
-            alert(
-                "Thank you for your order! We are currently reviewing it, which may take some time. Once it is confirmed, we will send you a confirmation email. We apologize for any inconvenience and appreciate your understanding."
-            );
-        }, 1000 / 60);
-    }
+                        let data = checkedRadio.data('json');
 
-    if (query.orderStatus === "fail") {
-        if (query.orderInfo) {
-            alert(
-                "Your payment failed. Please contact your card issuing bank or try a different card. Reason for failure:" +
-                query.orderInfo
-            );
-        } else {
-            alert(
-                "Transaction failed due to incorrect card details or risk rules. Please verify and retry. For persistent issues, contact support@yeespy.com. Thanks!"
-            );
-        }
-    }
-</script>
-<script>
-    const REQUEST_URL = "https://api.yeespy.com/api";
 
-    const LOCALE_MAP = {
-        en: "en",
-    };
+                        let payParams = {
+                            name: planName,
+                            order_price: data.del_price,
+                            pay_price: data.price,
+                            package_price_id: data.id,
+                            pay_type: 6
+                        };
+                        // if (window.location.href.indexOf('24.222.9.162') > -1) {
+                        // 	$.ajax({
+                        // 		url: 'https://api.yeespy.com/api/Vip/addToCart',
+                        // 		type: 'POST',
+                        // 		headers: {
+                        // 			'token': logintoken
+                        // 		},
+                        // 		data: {
+                        // 			package_price_id: payParams.package_price_id
+                        // 		},
+                        // 		success: function(response) {
+                        // 			console.log(response);
+                        // 			if (window.location.href.indexOf('24.222.9.162') > -1) {
+                        // 				window.location.href =
+                        // 				'http://124.222.9.162:9090/page/preview/id/2115';
+                        // 			} else {
+                        // 				window.location.href = './payment.html';
+                        // 			}
+                        // 		},
+                        // 		error: function(xhr, status, error) {
+                        // 			console.log('请求失败：', error);
+                        // 		}
+                        // 	});
+                        // } else {
+                        $.ajax({
+                            url: 'https://api.yeespy.com/api/Vip/createOrder',
+                            type: 'POST',
+                            headers: {
+                                'token': logintoken
+                            },
+                            data: payParams,
+                            success: function (response) {
+                                if (response.code === 1) {
+                                    console.log('订单创建成功：', response);
 
-    const paths = location.pathname.split("/");
-    // const locale = getLang(paths) || "en"; // 前端语言设置，目前支持en, zh, ja, ko, ar, es, de, fr, it, nl
-    const locale = "en";
-    const env = "prod";
-    const paymentLocale = LOCALE_MAP[locale];
-    // 获取 orderId 参数
-    const order_sn = getQueryParam("order_sn");
-    const token = getQueryParam("token");
-    let loadingModal;
 
-    let activeIndex = 0;
-    console.log(paths, paymentLocale, paths, getLang(paths));
+                                    window.location.href = './checkout.html?order_sn=' + response.data.order_sn + '&token=' + logintoken;
+                                    // if (window.location.href.indexOf('24.222.9.162') > -1) {
+                                    //     window.location.href =
+                                    //         'http://124.222.9.162:8080/page/preview/id/2097?order_sn=' +
+                                    //         response.data.order_sn;
+                                    // } else {
+                                    //     window.location.href = './payment.html?order_sn=' + response.data
+                                    //         .order_sn;
+                                    // }
+                                } else {
+                                    console.log('订单创建失败：', response.message);
+                                }
+                            },
+                            error: function (xhr, status, error) {
+                                console.log('请求失败：', error);
+                            }
+                        });
+                        // }
 
-    const LOCALE_TEXT_MAP = {
-        en: {
-            plan: "Plan",
-            subscriptionPeriod: "Subscription period",
-            monthPrice: "1 Month Price",
-            monthPlaceholder: "Month(s)",
-            totalPrice: "Total Price",
-            autoRenew: "Automatic renewal",
-            emailAddress: "Email Address",
-            emailPlaceholder: "Email",
-            title: "Please enter your details",
-        },
-    };
 
-    const currTextData = LOCALE_TEXT_MAP[locale];
-    $(".plan").text(currTextData?.plan);
-    $(".subscriptionPeriod").text(currTextData?.subscriptionPeriod);
-    $(".monthPrice").text(currTextData?.monthPrice);
-    $(".monthPlaceholder").text(currTextData?.monthPlaceholder);
-    $(".totalPrice").text(currTextData?.totalPrice);
-    $(".autoRenew").text(currTextData?.autoRenew);
-    $(".emailAddress").text(currTextData?.emailAddress);
-    $("input[name=email]").attr("placeholder", currTextData?.emailPlaceholder);
-    $(".title").text(currTextData?.title);
 
-    const methods = [
-        {
-            label: "Credit Card",
-            value: "credit_card",
-            imgUrl: "https://www.yeespy.com/images/credit_card.svg",
-        },
-        // {
-        //   label: "Paypal",
-        //   value: "paypal",
-        //   imgUrl: "https://www.yeespy.com/images/paypal.svg",
-        // },
-        {
-            label: "Google Pay",
-            value: "google_pay",
-            imgUrl: "https://www.yeespy.com/images/googlepay.svg",
-        },
-        {
-            label: "Apple Pay",
-            value: "apple_pay",
-            imgUrl: "https://www.yeespy.com/images/applepay.svg",
-        },
-    ];
-
-    function getQueryParam(key) {
-        return new URLSearchParams(location.search).get(key);
-    }
-
-    function getLang(segments) {
-        if (!Array.isArray(segments)) return "";
-        const len = segments.length;
-
-        // 没有第二段，直接空
-        if (len < 2) return "";
-
-        const last = segments[len - 1];
-        const secondLast = segments[len - 2];
-
-        // 如果最后一段像文件（含点号），就取倒数第二个
-        if (/.[a-z]+$/i.test(last)) {
-            return secondLast || "";
-        }
-
-        // 否则取最后一段（它可能就是语言）
-        return last || "";
-    }
-
-    // 统一处理支付成功
-    function handlePaymentSuccess(intent, originalOrder) {
-        console.log("✅ Payment succeeded:", intent);
-        const { card, googlepay, applepay } =
-            intent.latest_payment_attempt.payment_method;
-
-        if (intent.status === "SUCCEEDED") {
-            const data = card || googlepay || applepay;
-            if (data != null) {
-                const { billing } = data;
-                loadingModal.show();
-
-                $.ajax({
-                    url: REQUEST_URL + "/Pay/createAirwallexSubscription",
-                    type: "POST",
-                    data: {
-                        order_sn,
-                        consent_id: intent.payment_consent_id,
-                        city: billing.address.city,
-                        country_code: billing.address.country_code,
-                        state: billing.address.state,
-                        street: billing.address.street,
-                        postcode: billing.address.postcode,
-                        name: billing.first_name,
-                        // phone_number: billing.phone_number,
-                        email: originalOrder.email,
-                    },
-                    success(res) {
-                        loadingModal.hide();
-                        console.log(res);
-                        if (res.code === 1) {
-                            window.open(
-                                `https://www.yeespy.com/${locale}/checkout-success.html?order_sn=` +
-                                order_sn,
-                                "_self"
-                            );
-                        } else {
-                            alert(res.msg);
-                        }
-                    },
-                    error() {
-                        loadingModal.hide();
-                    },
-                });
+                        console.log('完整数据：', data);
+                    } else {
+                        console.log('请选择一个套餐选项');
+                    }
+                }
             }
         }
     }
-
-    // 统一处理支付错误
-    function handlePaymentError(error) {
-        console.error("❌ Payment failed:", error);
-        alert(
-            "Your payment failed. Please contact your card issuing bank or try a different card. Reason for failure:" +
-            (error.message || "Unknown error")
-        );
-    }
-
-    function handlePenddingProcess() {
-        alert(
-            "Thank you for your order! We are currently reviewing it, which may take some time. Once it is confirmed, we will send you a confirmation email. We apologize for any inconvenience and appreciate your understanding."
-        );
-    }
-
-    // 页面刷新默认加载
     $(function () {
-        const loadingModalEl = $("#fullscreenLoading");
-        loadingModal = new bootstrap.Modal(loadingModalEl, {
-            keyboard: false,
-            backdrop: "static",
+        function handleData(data) {
+            let num = 0;
+            $('.u-row').each((i, item) => {
+                let name = $(item).find(".fs-5.fw-700").text();
+                $(item).addClass(name);
+                data.map((obj, j) => {
+                    if (name == obj.name) {
+                        console.log(obj.package_prices)
+                        $(item).find(".plan-checklist").empty();
+                        num++;
+                        obj.package_prices.forEach((bd, x) => {
+                            let jsonString = JSON.stringify(bd).replace(/"/g, '&quot;');
+                            $(item).find(".plan-checklist").append(`<label class="form-check form-check-lg py-2 my-2" for="flexCheckDefault${bd.id}${num}">
+                                <input class="form-check-input form-check-input-hook" type="radio" data-mouth="${bd.length}"
+                                    data-money="US$" value="${bd.price}/${bd.del_price}" data-buyurl="#flexCheckDefault${bd.id}"
+                                    name="flexRadioDefault${num}" id="flexCheckDefault${bd.id}${num}" data-json="${jsonString}">
+                                <div class="form-check-label d-flex align-items-center justify-content-between">
+                                    <div> ${bd.length}-Month Plan </div>
+                                    <div> <b class="fs-6 fw-600">$${bd.price}</b> <del class="text-muted">$${bd.del_price}</del></div>
+                                </div>
+                            </label>`);
+                        });
+                        if (name == 'Premium') {
+                            $(item).find('input[type="radio"]').eq(2).attr('checked', 'checked');
+                        } else {
+                            $(item).find('input[type="radio"]').eq(0).attr('checked', 'checked');
+                        }
+                    }
+                });
+            });
+        }
+        let cachedData = localStorage.getItem('packageListData');
+        if (cachedData) {
+            handleData(JSON.parse(cachedData));
+        }
+        $.get("https://api.yeespy.com/api/Ability/get_package_list_pc?type=2", function (res) {
+            localStorage.setItem('packageListData', JSON.stringify(res.data));
+            if (cachedData != JSON.stringify(res.data)) {
+                handleData(res.data);
+            }
         });
 
-        const initialGooglePay = async (orderData, encryptedData, locationData) => {
-            const googlePay = await window.AirwallexComponentsSDK.createElement(
-                "googlePayButton",
-                {
-                    mode: "recurring",
-                    client_secret: encryptedData.client_secret,
-                    customer_id: encryptedData.customer_id,
-                    currency: orderData.currency,
-                    amount: {
-                        value: 0,
-                        currency: orderData.currency,
-                    },
-                    countryCode: "GB",
-                    displayItems: [
-                        {
-                            label: "monthly",
-                            price: orderData.pay_price,
-                            status: "FINAL",
-                            type: "LINE_ITEM",
-                        },
-                    ],
-                    billingAddressRequired: true,
-                    billingAddressParameters: {
-                        format: "FULL",
-                    },
-
-                }
-            );
-
-            googlePay.mount("payment-area");
-        };
-
-        const initialApplePay = async (orderData, encryptedData, locationData) => {
-            const applePay = await window.AirwallexComponentsSDK.createElement(
-                "applePayButton",
-                {
-                    mode: "recurring",
-                    client_secret: encryptedData.client_secret,
-                    customer_id: encryptedData.customer_id,
-                    currency: orderData.currency,
-                    amount: {
-                        value: 0,
-                        currency: orderData.currency,
-                    },
-                    countryCode: "GB",
-                    billingContact: { countryCode: locationData.country_code },
-                    requiredBillingContactFields: ["postalAddress"],
-                    requiredShippingContactFields: ["name"],
-                    lineItems: [
-                        {
-                            label: "Subscription",
-                            amount: orderData.pay_price,
-                            type: "final",
-                            paymentTiming: "recurring",
-                        },
-                    ],
-                }
-            );
-
-            applePay.mount("payment-area");
-
-            applePay.mount("success", (event) => {
-                console.log("Apple payment success", event);
-            });
-
-            applePay.mount("error", (event) => {
-                console.log("Apple payment failed", event);
-            });
-        };
-
-        const initialCreditCard = async (
-            orderData,
-            encryptedData,
-            locationData
-        ) => {
-
-            const rootStyles = getComputedStyle(document.documentElement);
-            const primary = rootStyles.getPropertyValue('--bs-primary')
-            const creditCard = await window.AirwallexComponentsSDK.createElement(
-                "dropIn",
-                {
-                    appearance: {
-                        mode: "light",
-                        variables: {
-                            colorBrand: primary,
-                        },
-                        rules: {
-                            ".Button": {
-                                color: "#FFFFFF",
-                            },
-                        },
-                    },
-
-                    intent_id: encryptedData.intent_id,
-                    currency: locationData.currency,
-                    locale: paymentLocale,
-                    billing: {
-                        address: {
-                            country_code: locationData.country_code,
-                        },
-                    },
-                    requiredBillingContactFields: ["name", "country_code", "address"],
-                    methods: ["card"],
-                    client_secret: encryptedData.client_secret,
-                    customer_id: encryptedData.customer_id,
-                    mode: "recurring",
-                    recurringOptions: {
-                        next_triggered_by: "merchant",
-                        currency: locationData.currency,
-                    },
-                }
-            );
-
-            creditCard.mount("payment-area");
-
-            // 监听事件
-            creditCard.on("success", (event) =>
-                handlePaymentSuccess(event.detail.intent, orderData)
-            );
-
-            creditCard.on("error", (event) => {
-                console.log("Catch payment error", event);
-            });
-        };
-
-        const renderPaymentButtons = (orderData, encryptedData, locationData) => {
-            // 渲染支付按钮
-            $("#payment-options").empty();
-
-            $.each(methods, function (index, item) {
-                const btn = $("<div>")
-                    .addClass("payment-btn border rounded-3 text-center")
-                    .css({
-                        width: "120px",
-                        height: "54px",
-                        cursor: "pointer",
-                        transition: "all 0.2s ease",
-                        padding: index > 0 ? "8px" : 0,
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        position: "relative",
-                    })
-                    .html(
-                        `<img src="${item.imgUrl}" alt="${item.label}" width="${index > 1 ? "80px" : "100%"
-                        }" style="border-radius: 12px;height: 46px;">
-              <div class="selected-icon"
-                  style="display:none; position:absolute; bottom: -10px; right:-10px; font-size:16px;">
-              <img src="https://www.yeespy.com/images/primary-check-icon.svg" style="object-fit: cover;">
-            </div>`
-                    )
-                    .on("click", function () {
-                        if (activeIndex === index) {
-                            return;
-                        }
-
-                        activeIndex = index;
-
-                        // 清除所有按钮状态
-                        $(".payment-btn")
-                            .removeClass("border-primary")
-                            .css("border-width", "1px");
-                        $(".selected-icon").hide();
-
-                        // 当前按钮高亮（蓝色 + 加粗）
-                        $(this).addClass("border-primary");
-                        $(this)
-                            .get(0)
-                            .style.setProperty("border-width", "4px", "important");
-                        $(this).find(".selected-icon").show();
-
-                        // 支付逻辑
-                        if (item.value === "google_pay") {
-                            initialGooglePay(orderData, encryptedData, locationData);
-                        } else if (item.value === "apple_pay") {
-                            initialApplePay(orderData, encryptedData, locationData);
-                        } else if (item.value === "credit_card") {
-                            initialCreditCard(orderData, encryptedData, locationData);
-                        }
-                    });
-
-                // 默认第一个按钮选中高亮
-                if (index === 0) {
-                    btn.addClass("border-primary");
-                    btn.get(0).style.setProperty("border-width", "4px", "important");
-                    btn.find(".selected-icon").show();
-                    initialCreditCard(orderData, encryptedData, locationData);
-                }
-
-                $("#payment-options").append(btn);
-            });
-        };
-
-        // 生成订单信息
-        function createOrder(data) {
-            return new Promise((resolve, reject) => {
-                $.ajax({
-                    url: REQUEST_URL + "/Vip/createOrder",
-                    type: "POST",
-                    headers: { token, language: locale },
-                    data: {
-                        name: data.name,
-                        order_price: data.order_price,
-                        pay_price: data.pay_price,
-                        package_price_id: data.vip_id,
-                        equipment_id: data.equipment_id,
-                        pay_type: 6, // airwallex
-                    },
-                    success: (res) => resolve(res.data),
-                    error: (xhr) => reject(xhr),
-                });
-            });
-        }
-
-        function getLocationData() {
-            return new Promise((resolve, reject) => {
-                $.ajax({
-                    url: "https://ipapi.co/json",
-                    type: "GET",
-                    success: (res) => resolve(res),
-                    error: (xhr) => reject(xhr),
-                });
-            });
-        }
-
-        function getOriginalOrder() {
-            return new Promise((resolve, reject) => {
-                $.ajax({
-                    url: REQUEST_URL + "/Payment/order_info?order_sn=" + order_sn,
-                    type: "GET",
-                    headers: { token, language: locale },
-                    success: (res) => resolve(res.data),
-                    error: (xhr) => reject(xhr),
-                });
-            });
-        }
-
-        function initialPayment() {
-            return window.AirwallexComponentsSDK.init({
-                env, // Setup which Airwallex env('staging' | 'demo' | 'prod') to integrate with
-                enabledElements: ["payments"],
-                locale: paymentLocale, // 默认语言
-            });
-        }
-
-        Promise.all([getOriginalOrder(), getLocationData(), initialPayment()]).then(
-            ([orderData, locationData]) => {
-                console.log("订单详情", orderData);
-                console.log("IP详情", locationData);
-
-                // 填充页面字段
-                $('input[name="email"]').val(orderData.email);
-                for (var key in orderData) {
-                    $("." + key).html(orderData[key] || "");
-                }
-
-                // 获取支付配置密钥
-                $.ajax({
-                    url: REQUEST_URL + "/Pay/createAirwallexPay",
-                    method: "POST",
-                    data: { order_sn },
-                    headers: { token },
-                    async success(res) {
-                        const encryptedData = res.data;
-                        console.log("密钥详情", encryptedData);
-
-                        $("#payment-area").empty();
-
-                        // 渲染支付按钮
-                        renderPaymentButtons(orderData, encryptedData, locationData);
-                    },
-                });
-            }
-        );
     });
 </script>
