@@ -60,66 +60,8 @@
                     $t('pages.course.allCourses') }}</p>
 
                 <div class="uno-mt-4">
-                    <div class="uno-grid uno-grid-cols-1 md:uno-grid-cols-2 lg:uno-grid-cols-3 uno-gap-6">
-                        <div v-for="course in sortedCourses" :key="course.id"
-                            class="uno-w-full uno-h-auto md:uno-h-[535px] uno-flex uno-items-center uno-flex-col uno-gap-5 uno-pt-3 uno-pb-[24px] uno-px-3 uno-bg-white uno-rounded-2xl uno-shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:uno-shadow-[0_20px_40px_rgba(0,157,119,0.12)]">
-                            <div
-                                class="uno-w-full uno-h-[200px] md:uno-h-[270px] uno-rounded-xl uno-overflow-hidden uno-relative uno-shadow-sm">
-                                <NuxtImg :src="course.image" :alt="course.title"
-                                    class="uno-rounded-xl uno-absolute uno-left-0 uno-top-0 uno-w-full uno-h-[200px] md:uno-h-[270px] uno-object-cover" />
-                            </div>
-                            <div class="uno-self-stretch uno-flex uno-flex-col uno-gap-3 uno-px-2">
-                                <div class="uno-flex uno-flex-col uno-gap-4">
-                                    <p
-                                        class="uno-text-[var(--ui-foreground)] uno-text-2xl uno-font-['Outfit'] uno-font-medium">
-                                        {{ course.title }}</p>
-                                    <p class="uno-text-[var(--ui-muted-foreground)] uno-text-sm uno-font-['Outfit']">{{
-                                        course.description }}</p>
-                                    <div class="uno-flex uno-justify-between uno-items-end uno-relative">
-                                        <div class="uno-flex uno-items-center uno-gap-2">
-                                            <span
-                                                class="uno-text-[var(--ui-foreground)] uno-text-sm uno-font-['Outfit'] uno-font-medium">{{
-                                                    course.progress === '✓' ? "You've completed this test." :
-                                                        (course.progress || '') }}</span>
-                                            <span v-if="course.resultLabel"
-                                                class="uno-text-[var(--ui-foreground)] uno-text-sm uno-font-['Outfit']">{{
-                                                    course.resultLabel }}</span>
-                                        </div>
-                                        <div class="uno-h-[48px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-3 uno-py-1 uno-pr-1 uno-pl-[20px] uno-rounded-[100px]"
-                                            :class="course.ctaTheme === 'dark' ? 'uno-bg-[var(--ui-foreground)]' : 'uno-bg-[var(--ui-primary)]'">
-                                            <span class="uno-text-white uno-font-['Outfit'] uno-font-medium">{{
-                                                $t('pages.course.cta.start') }}</span>
-                                            <div
-                                                class="uno-w-[40px] uno-h-[40px] uno-flex uno-justify-center uno-items-center uno-rounded-[100px] uno-bg-white uno-overflow-hidden">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                    width="24" height="24">
-                                                    <path d="M5 12h9m0 0l-4-4m4 4l-4 4" stroke="#000" stroke-width="2"
-                                                        stroke-linecap="round" stroke-linejoin="round" />
-                                                </svg>
-                                            </div>
-                                        </div>
-                                        <div v-if="course.points"
-                                            class="uno-w-[64px] uno-h-[64px] uno-flex uno-justify-center uno-items-center uno-rounded-full uno-overflow-hidden uno-bg-[rgba(255,211,204,0.5)] uno-border-solid uno-border-[var(--color-pink-2)] uno-border">
-                                            <div class="uno-flex uno-items-center uno-flex-col">
-                                                <span
-                                                    class="uno-text-[var(--color-pink-1)] uno-text-xl uno-font-['Outfit'] uno-font-semibold">{{
-                                                        course.points }}</span>
-                                                <span
-                                                    class="uno-text-[var(--color-pink-1)] uno-text-xs uno-font-['Outfit']">points</span>
-                                            </div>
-                                        </div>
-                                        <div v-else-if="course.percent !== undefined"
-                                            class="uno-w-[64px] uno-h-[64px] uno-flex uno-justify-center uno-items-center uno-rounded-full uno-overflow-hidden uno-border-solid uno-border-[var(--ui-border)] uno-border-4">
-                                            <div class="uno-flex uno-items-center uno-flex-col">
-                                                <span
-                                                    class="uno-text-[var(--ui-muted-foreground)] uno-text-lg uno-font-['Outfit'] uno-font-medium">{{
-                                                        course.percent }}%</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="uno-grid uno-grid-cols-1 md:uno-grid-cols-2 lg:uno-grid-cols-2 uno-gap-6">
+                        <CourseCard v-for="course in sortedCourses" :key="course.id" :course="course" />
                     </div>
                 </div>
             </div>
