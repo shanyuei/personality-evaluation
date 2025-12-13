@@ -13,16 +13,16 @@
             <p class="uno-text-[var(--ui-foreground)] uno-font-semibold">{{ $t('pages.userCourseChapters.coverQuestion') }}</p>
           </div>
 
-          <div class="uno-space-y-3">
+          <div class="uno-space-y-3 uno-flex uno-flex-col uno-items-center uno-text-center">
             <div v-for="(item, idx) in chapters" :key="idx" class="uno-flex uno-items-center uno-gap-4">
-              <span class="uno-inline-flex uno-items-center uno-justify-center uno-w-8 uno-h-8 uno-aspect-square uno-rounded-full uno-bg-[var(--ui-input)] uno-text-[var(--ui-foreground)] uno-text-sm uno-font-medium">{{ idx + 1 }}</span>
-              <span class="uno-text-[var(--ui-foreground)]">{{ item }}</span>
+              <span class="uno-inline-flex uno-items-center uno-justify-center uno-w-8 uno-h-8 uno-aspect-square uno-rounded-full uno-bg-[var(--ui-input)] uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-font-medium uno-leading-normal">{{ idx + 1 }}</span>
+              <span class="uno-text-[#4E5255] uno-font-['Outfit'] uno-leading-normal">{{ item }}</span>
             </div>
           </div>
 
           <div class="uno-mt-8">
             <NuxtLink to="/user-course/lesson-guide" class="uno-block">
-              <UButton class="uno-w-full uno-h-[48px] uno-rounded-[12px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-white uno-flex uno-items-center uno-justify-center uno-text-center">{{ $t('pages.userCourseChapters.cta') }}</UButton>
+              <UButton class="uno-w-full uno-h-[48px] uno-rounded-[12px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-white uno-text-lg uno-font-['Outfit'] uno-font-bold uno-leading-normal uno-flex uno-items-center uno-justify-center uno-text-center">{{ $t('pages.userCourseChapters.cta') }}</UButton>
             </NuxtLink>
           </div>
         </div>

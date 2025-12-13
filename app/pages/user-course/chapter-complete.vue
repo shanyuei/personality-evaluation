@@ -25,7 +25,7 @@
             <span class="uno-inline-flex uno-items-center uno-justify-center uno-w-6 uno-h-6 uno-aspect-square uno-rounded-full uno-bg-white uno-border-2 uno-border-[var(--ui-primary)]">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"><path d="M20 6L9 17l-5-5" stroke="var(--ui-primary)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
-            <p class="uno-text-sm md:uno-text-base uno-text-[var(--ui-muted-foreground)]"><span class="uno-text-[var(--ui-foreground)] uno-font-medium">{{ $t('pages.userCourseChapterComplete.scoring.title') }}</span>: {{ $t('pages.userCourseChapterComplete.scoring.body') }}</p>
+            <p class="uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-leading-normal"><span class="uno-text-[var(--ui-foreground)] uno-font-medium">{{ $t('pages.userCourseChapterComplete.scoring.title') }}</span>: {{ $t('pages.userCourseChapterComplete.scoring.body') }}</p>
           </div>
         </div>
 

@@ -9,7 +9,7 @@
             </div>
           </div>
 
-          <h1 class="uno-text-2xl md:uno-text-3xl uno-font-['Outfit'] uno-font-extrabold uno-text-[var(--ui-foreground)]">{{ courseName }}</h1>
+          <h1 class="uno-text-[32px] uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2] uno-text-[#011813]">{{ courseName }}</h1>
           <p class="uno-w-[672px] uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-leading-normal">{{ $t('pages.userCourseTestComplete.description') }}</p>
 
           <NuxtLink to="/user-course" class="uno-w-full md:uno-w-[520px]">
