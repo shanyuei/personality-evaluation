@@ -60,7 +60,7 @@
                     $t('pages.course.allCourses') }}</p>
 
                 <div class="uno-mt-4">
-                    <div class="uno-grid uno-grid-cols-1 md:uno-grid-cols-2 lg:uno-grid-cols-2 xl:uno-grid-cols-3 uno-gap-6">
+                    <div class="uno-grid uno-grid-cols-1 md:uno-grid-cols-2 uno-gap-6">
                         <CourseCard v-for="course in sortedCourses" :key="course.id" :course="course" />
                     </div>
                 </div>
@@ -88,18 +88,18 @@ type Course = {
     title: string
     description: string
     image: string
-    duration: string
+    duration?: string
     progress?: string
     resultLabel?: string
     points?: number
     percent?: number
-    ctaTheme?: 'dark' | 'green'
-    instructor: { name: string, avatar: string }
+    ctaTheme: 'dark' | 'green'
+    instructor?: { name: string, avatar: string }
     lessons?: number
     certificate?: boolean
     avatars?: string[]
     finishedText?: string
-    footerType?: 'completed_with_points' | 'lessons_with_percent' | 'completed_with_check' | 'cta_with_people'
+    footerType: 1 | 2 | 3 | 4
 }
 
 const courses = ref<Course[]>([
@@ -107,53 +107,21 @@ const courses = ref<Course[]>([
         id: 1,
         title: 'People Leadership vs. Management',
         description: 'Learn the difference between leadership and management to inspire teams and drive outcomes.',
-        image: '/images/home/3.png',
-        duration: '20 min',
-        progress: "You've completed this test.",
-        resultLabel: 'View test results',
+        image: '/images/courses/1.png',
         points: 20,
         ctaTheme: 'dark',
-        footerType: 'completed_with_points',
-        instructor: { name: 'Alex', avatar: '/images/home/8.png' }
+        footerType: 1,
     },
     {
-        id: 2,
-        title: 'HR Management',
-        description: 'Build practical HR skills covering recruitment, onboarding, and performance frameworks.',
-        image: '/images/home/11.png',
-        duration: '1h',
-        progress: '1 of 10 lessons',
-        percent: 10,
-        ctaTheme: 'green',
-        footerType: 'lessons_with_percent',
-        instructor: { name: 'Sofia', avatar: '/images/home/1.png' }
-    },
-    {
-        id: 3,
+        id: 1,
         title: 'People Leadership vs. Management',
-        description: 'Leadership and management are two distinctive and complementary systems of actions in the business environment. Both are necessary for success in an increasingly complex and volatile business environment.',
-        image: '/images/home/9.png',
-        duration: '30 min',
-        progress: '✓',
-        resultLabel: 'View test results',
-        ctaTheme: 'green',
-        footerType: 'completed_with_check',
-        instructor: { name: 'Max', avatar: '/images/home/8.png' }
-    },
-    {
-        id: 4,
-        title: 'Email Marketing',
-        description: 'Master lifecycle email strategies with segmentation, copy, and analytics.',
-        image: '/images/home/2.png',
-        duration: '2 weeks',
-        lessons: 10,
-        certificate: true,
-        avatars: ['/images/home/8.png', '/images/home/11.png', '/images/about/3.png'],
-        finishedText: '3067 people already finished it',
+        description: 'Learn the difference between leadership and management to inspire teams and drive outcomes.',
+        image: '/images/courses/1.png',
+        points: 20,
         ctaTheme: 'dark',
-        footerType: 'cta_with_people',
-        instructor: { name: 'Sara', avatar: '/images/about/3.png' }
-    }
+        footerType: 2,
+    },
+
 ])
 
 const sortOrder = ref<'popular' | 'recent' | 'duration'>('popular')

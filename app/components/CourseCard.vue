@@ -1,147 +1,71 @@
 <template>
   <div class="course-card">
-    <NuxtImg :src="course.image" :alt="course.title" class="course-card__img" />
-    <div class="course-card__body">
-      <h3 class="course-card__title">{{ course.title }}</h3>
-      <p class="course-card__desc">{{ course.description }}</p>
-      <div v-if="course.lessons || course.duration || course.certificate" class="course-card__meta">
-        <span v-if="course.lessons" class="course-card__meta-item">
-          <span class="course-card__meta-strong">{{ course.lessons }}</span>
-          <span>{{ $t('pages.course.lessons') }}</span>
-        </span>
-        <span v-if="course.duration" class="course-card__meta-item">{{ course.duration }}</span>
-        <span v-if="course.certificate" class="course-card__meta-item">{{ $t('pages.course.certificate') }}</span>
+    <NuxtImg :src="course.image" :alt="course.title" width="564" height="270" class="course-card__img" />
+    <h3 class="course-card__title">{{ course.title }}</h3>
+    <p class="course-card__desc">{{ course.description }}</p>
+    <!-- footer -->
+    <template v-if="course.footerType === 1">
+      <div class="course-card__footer">
+        <div class="course-card__footer__status">
+          You've completed this test.
+        </div>
+        <div class="course-card__footer__cta">
+          <span class="course-card__footer__cta-text">
+            Get Started
+          </span>
+          <NuxtImg src="/images/common/go-arrow-1.png" alt="arrow-right" width="40" height="40" />
+        </div>
+        <div class="course-card__footer__link">
+          <span class="course-card__footer__link-text">
+            View test results
+          </span>
+        </div>
+        <div class="course-card__footer__badge course-card__footer__badge--points">
+          <div class="course-card__footer__badge-wrap">
+            <span class="course-card__footer__badge-value">
+              20
+            </span>
+            <span class="course-card__footer__badge-label">
+              points
+            </span>
+          </div>
+        </div>
       </div>
-      <div class="course-card__progress">
-        {{ course.progress }}
+    </template>
+
+
+    <template v-if="course.footerType === 2">
+      <div class="course-card__status">
+        <span>1</span> of <span>10</span> lessons
       </div>
       <div class="course-card__footer">
-        <!-- 模板：已完成 + 积分 -->
-        <div v-if="course.footerType === 'completed_with_points'" class="block lg:uno-hidden xl:uno-hidden">
-          <div class="course-card__status course-card__status--inline">
-            You've completed this test.
-          </div>
-          <button class="course-card__cta" :class="course.ctaTheme === 'dark' ? 'is-dark' : 'is-green'">
-            <span class="course-card__cta-text">{{ $t('common.getStarted') }}</span>
-            <span class="course-card__cta-icon">
-              <NuxtImg width="40" height="40" src="/images/common/go-arrow-1.png" />
-            </span>
-          </button>
-          <div class="course-card__right">
-            <a v-if="course.resultLabel" href="#" class="course-card__link">{{ course.resultLabel }}</a>
-            <div v-if="course.points" class="course-card__badge course-card__badge--points">
-              <div class="course-card__badge-wrap">
-                <span class="course-card__badge-value">{{ course.points }}</span>
-                <span class="course-card__badge-label">points</span>
-              </div>
-            </div>
-          </div>
+        <button class="course-card__footer__cta is-green">
+          <span class="course-card__footer__cta-text">
+            {{ $t('common.getStarted') || 'Get Started' }}
+          </span>
+          <span class="course-card__footer__cta-icon">
+            <NuxtImg src="/images/common/go-arrow-1.png" alt="arrow-right" width="40" height="40" />
+          </span>
+        </button>
+        <div class="course-card__footer__badge course-card__footer__badge--percent"
+          :style="{ '--pct': ((course.percent ?? 10) + '%') }">
+          <span class="course-card__footer__badge--percent-percent">{{ (course.percent ?? 10) }}%</span>
         </div>
-        <div v-if="course.footerType === 'completed_with_points'" class="hidden lg:uno-block xl:uno-block">
-          <div class="course-card__left">
-            <div class="course-card__status course-card__status--inline">
-              You've completed this test.
-            </div>
-            <a v-if="course.resultLabel" href="#" class="course-card__link">{{ course.resultLabel }}</a>
-          </div>
-          <div class="course-card__right">
-            <button class="course-card__cta" :class="course.ctaTheme === 'dark' ? 'is-dark' : 'is-green'">
-              <span class="course-card__cta-text">{{ $t('common.getStarted') }}</span>
-              <span class="course-card__cta-icon">
-                <NuxtImg width="40" height="40" src="/images/common/go-arrow-1.png" />
-              </span>
-            </button>
-            <div v-if="course.points" class="course-card__badge course-card__badge--points">
-              <div class="course-card__badge-wrap">
-                <span class="course-card__badge-value">{{ course.points }}</span>
-                <span class="course-card__badge-label">points</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- 模板：课程进度 + 百分比 -->
-        <template v-else-if="course.footerType === 'lessons_with_percent'">
-          <!-- <button class="course-card__cta" :class="course.ctaTheme === 'dark' ? 'is-dark' : 'is-green'">
-            <span class="course-card__cta-text">{{ $t('common.getStarted') }}</span>
-            <span class="course-card__cta-icon">
-              <NuxtImg width="40" height="40" src="/images/common/go-arrow-1.png" />
-            </span>
-          </button>
-          <div class="course-card__right">
-            <div v-if="course.percent !== undefined" class="course-card__badge course-card__badge--percent"
-              :style="{ '--pct': (course.percent || 0) + '%' }">
-              <div class="course-card__badge-wrap">
-                <span class="course-card__badge-percent">{{ course.percent }}%</span>
-              </div>
-            </div>
-          </div> -->
-        </template>
-        <!-- 模板：已完成 + 结果链接 + 勾选徽章 -->
-        <template v-else-if="course.footerType === 'completed_with_check'">
-          <!-- <div v-if="course.progress" class="course-card__status course-card__status--inline">
-            <span class="course-card__result">{{ "You've completed this test." }}</span>
-          </div>
-          <button class="course-card__cta" :class="course.ctaTheme === 'dark' ? 'is-dark' : 'is-green'">
-            <span class="course-card__cta-text">{{ $t('common.getStarted') }}</span>
-            <span class="course-card__cta-icon">
-              <NuxtImg width="40" height="40" src="/images/common/go-arrow-1.png" />
-            </span>
-          </button>
-          <div class="course-card__right">
-            <a v-if="course.resultLabel" href="#" class="course-card__link">{{ course.resultLabel }}</a>
-            <div class="course-card__badge course-card__badge--check">
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <path d="M5 13l4 4L19 7" stroke="var(--ui-primary)" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round" />
-              </svg>
-            </div>
-          </div> -->
-        </template>
-        <!-- 模板：CTA + 人群信息（紧挨按钮） -->
-        <template v-else>
-          <!-- <button class="course-card__cta" :class="course.ctaTheme === 'dark' ? 'is-dark' : 'is-green'">
-            <span class="course-card__cta-text">{{ $t('common.getStarted') }}</span>
-            <span class="course-card__cta-icon">
-              <NuxtImg width="40" height="40" src="/images/common/go-arrow-1.png" />
-            </span>
-          </button>
-          <div v-if="(course.avatars && course.avatars.length) || course.finishedText" class="course-card__people">
-            <div class="course-card__avatars">
-              <span v-for="(a, idx) in course.avatars" :key="idx" class="course-card__avatar">
-                <NuxtImg :src="a" alt="avatar" />
-              </span>
-            </div>
-            <p v-if="course.finishedText" class="course-card__finished">{{ course.finishedText }}</p>
-          </div> -->
-        </template>
       </div>
-    </div>
+    </template>
   </div>
 </template>
 
 <script setup lang="ts">
-interface Instructor {
-  name: string
-  avatar: string
-}
 
 interface Course {
   id: number
   title: string
   description: string
   image: string
-  duration: string
+  footerType?: 1 | 2 | 3 | 4
   progress?: string
-  resultLabel?: string
-  points?: number
   percent?: number
-  ctaTheme?: 'dark' | 'green'
-  instructor: Instructor
-  lessons?: number
-  certificate?: boolean
-  avatars?: string[]
-  finishedText?: string
-  footerType?: 'completed_with_points' | 'lessons_with_percent' | 'completed_with_check' | 'cta_with_people'
 }
 
 defineProps<{
@@ -152,138 +76,93 @@ defineProps<{
 <style scoped lang="less">
 .course-card {
   background: var(--ui-background, #fff);
-  border: 1px solid var(--ui-border);
-  border-radius: 24px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: box-shadow .2s ease;
-  overflow: hidden;
   padding: 12px;
+  border-radius: 12px;
+  overflow: hidden;
 
-  &:hover {
-    box-shadow: 0 8px 20px rgba(0, 157, 119, 0.12);
-  }
-
-  &__img {
+  .course-card__img {
+    border-radius: 12px;
+    overflow: hidden;
     width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-top-left-radius: 24px;
-    border-top-right-radius: 24px;
+    height: auto;
   }
 
-  @media (min-width: 768px) {
-    &__img {
-      height: 200px;
-    }
-  }
-
-  &__body {
-    margin-top: 12px;
-  }
-
-  &__title {
+  .course-card__title {
     color: var(--ui-foreground);
     font-family: 'Outfit';
     font-weight: 500;
-    font-size: 20px;
-    line-height: 1.3;
-    margin: 0;
+    font-size: 24px;
+    line-height: 1.5;
+    margin-top: 12px;
   }
 
-  &__desc {
+  .course-card__desc {
     color: var(--ui-muted-foreground);
-    font-size: 14px;
-    margin-top: 8px;
-  }
-
-  &__meta {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-top: 8px;
-    color: var(--ui-muted-foreground);
-    font-size: 14px;
-
-    &-item {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    &-strong {
-      color: var(--ui-foreground);
-      font-weight: 600;
-    }
-  }
-
-  &__footer {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    row-gap: 8px;
-    flex-wrap: wrap;
-    margin-top: 16px;
-    position: relative;
-  }
-
-  &__status {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  &__status--block {
-    flex: 0 0 100%;
-    order: 0;
-    margin-bottom: 4px;
-  }
-
-  &__status--inline {
-    flex: 0 0 auto;
-    order: 0;
-    margin-bottom: 0;
-    white-space: nowrap;
-  }
-
-  &__progress,
-  &__result {
-    color: var(--ui-muted-foreground);
-    font-size: 14px;
     font-family: 'Outfit';
-    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-top: 8px;
   }
 
-  &__cta {
-    height: 48px;
-    min-width: 158px;
+  .course-card__footer {
+    margin-top: 16px;
     display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 4px 4px 4px 20px;
-    border-radius: 100px;
-    border: none;
-    cursor: pointer;
-    transition: background-color .2s ease;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-direction: row;
+    gap: 4px;
+    flex-wrap: wrap;
 
-    &.is-green {
-      background-color: var(--ui-primary);
+
+
+    &__status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    &.is-dark {
-      background-color: var(--ui-foreground);
+    &__status-text {
+      color: var(--ui-muted-foreground);
+      font-size: 14px;
+      font-family: 'Outfit';
+      font-weight: 500;
+      line-height: 1.5;
     }
 
-    &:hover {
-      background-color: var(--color-green-2);
+    &__cta {
+      height: 48px;
+      min-width: 158px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 4px 4px 4px 20px;
+      border-radius: 100px;
+      background: var(--ui-primary);
+      border: none;
+      cursor: pointer;
+      transition: background-color .2s ease;
+
+      &.is-green {
+        background: var(--ui-primary);
+      }
+
+      &.is-dark {
+        background: var(--ui-foreground);
+      }
+
+      &:hover {
+        background-color: var(--color-green-2);
+      }
     }
 
-    &-text {
+    &__cta-text {
       color: #fff;
       font-family: 'Outfit';
       font-weight: 500;
+      line-height: 1.5;
     }
 
-    &-icon {
+    &__cta-icon {
       width: 40px;
       height: 40px;
       display: flex;
@@ -294,67 +173,62 @@ defineProps<{
       color: var(--ui-foreground);
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     }
-  }
 
-  &__link {
-    margin-left: 12px;
-    color: var(--ui-foreground);
-    font-size: 14px;
-    font-family: 'Outfit';
-  }
-
-  &__right {
-    margin-left: auto;
-    flex: 0 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    order: 2;
-  }
-
-  &__badge {
-    width: 64px;
-    height: 64px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    flex: 0 0 64px;
-
-    &--points {
-      background: rgba(255, 211, 204, 0.5);
-      border: 1px solid var(--color-pink-2);
-
-      .course-card__badge-wrap {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        .course-card__badge-value {
-          color: var(--color-pink-1);
-          font-size: 18px;
-          font-family: 'Outfit';
-          font-weight: 600;
-          line-height: 1;
-        }
-
-        .course-card__badge-label {
-          color: var(--color-pink-1);
-          font-size: 12px;
-          font-family: 'Outfit';
-          line-height: 1;
-        }
-      }
-
+    &__link {
+      display: flex;
+      align-items: center;
     }
 
-    &--percent {
+    &__link-text {
+      color: var(--ui-foreground);
+      font-size: 14px;
+      font-family: 'Outfit';
+      line-height: 1.5;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    &__badge {
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 145.45px;
+      background: rgba(255, 211, 204, 0.5);
+      border: 1px solid var(--color-pink-2);
+      overflow: hidden;
+
+      &-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      &-value {
+        color: var(--color-pink-1);
+        font-size: 20px;
+        font-family: 'Outfit';
+        font-weight: 600;
+        line-height: 1.2;
+      }
+
+      &-label {
+        color: var(--color-pink-1);
+        font-size: 12px;
+        font-family: 'Outfit';
+        line-height: 1.2;
+      }
+    }
+
+    &__badge--percent {
       width: 44px;
       height: 44px;
       flex: 0 0 44px;
       position: relative;
-      background:
-        conic-gradient(var(--ui-primary) var(--pct), var(--ui-input) 0);
+      border-radius: 50%;
+      background: conic-gradient(var(--ui-primary) var(--pct), var(--ui-input) 0);
       border: none;
 
       &::after {
@@ -365,7 +239,7 @@ defineProps<{
         background: #fff;
       }
 
-      .course-card__badge-percent {
+      &-percent {
         position: absolute;
         inset: 0;
         display: flex;
@@ -378,53 +252,16 @@ defineProps<{
         line-height: 1;
       }
     }
-
-    &--check {
-      width: 44px;
-      height: 44px;
-      flex: 0 0 44px;
-      border: 1px solid var(--ui-primary);
-      background: #fff;
-    }
   }
 
-  &__people {
-    margin-top: 0;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  &__avatars {
-    display: inline-flex;
-    align-items: center;
-  }
-
-  &__avatar {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 2px solid #fff;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    &:not(:first-child) {
-      margin-left: -8px;
-    }
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-
-  &__finished {
+  .course-card__status {
     color: var(--ui-muted-foreground);
-    font-size: 12px;
+    font-size: 14px;
     font-family: 'Outfit';
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    margin-top: 8px;
   }
 }
 </style>
