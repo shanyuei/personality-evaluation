@@ -925,4 +925,24 @@
       }
     }
   }
+  ,
+  "courseCard": {
+    "status": {
+      "completed": "已完成该测试",
+      "of": "/",
+      "lessons": "课时"
+    },
+    "link": {
+      "viewResults": "查看测试结果"
+    },
+    "badge": {
+      "points": "积分"
+    },
+    "meta": {
+      "certificate": "结课证书"
+    },
+    "people": {
+      "finished": "人已完成"
+    }
+  }
 }

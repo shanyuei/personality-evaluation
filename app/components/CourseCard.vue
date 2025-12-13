@@ -7,11 +7,11 @@
     <template v-if="course.footerType === 1">
       <div class="course-card__footer">
         <div class="course-card__footer__status">
-          You've completed this test.
+          {{ $t('courseCard.status.completed') }}
         </div>
         <div class="course-card__footer__cta">
           <span class="course-card__footer__cta-text">
-            Get Started
+            {{ $t('common.getStarted') }}
           </span>
           <span class="course-card__footer__cta-icon">
             <NuxtImg src="/images/common/go-arrow-1.png" alt="arrow-right" width="40" height="40" />
@@ -19,7 +19,7 @@
         </div>
         <div class="course-card__footer__link">
           <span class="course-card__footer__link-text">
-            View test results
+            {{ $t('courseCard.link.viewResults') }}
           </span>
         </div>
         <div class="course-card__footer__badge course-card__footer__badge--points">
@@ -28,7 +28,7 @@
               {{ course.points ?? 20 }}
             </span>
             <span class="course-card__footer__badge-label">
-              {{ course.resultLabel ?? 'points' }}
+              {{ course.resultLabel ?? $t('courseCard.badge.points') }}
             </span>
           </div>
         </div>
@@ -38,7 +38,7 @@
 
     <template v-if="course.footerType === 2">
       <div class="course-card__status">
-        <strong class="uno-text-bold uno-text-#000">{{ course.completedLessons ?? 1 }}</strong> of <strong>{{ course.lessons ?? 10 }}</strong> lessons
+        <strong class="uno-text-bold uno-text-#000">{{ course.completedLessons ?? 1 }}</strong> {{ $t('courseCard.status.of') }} <strong>{{ course.lessons ?? 10 }}</strong> {{ $t('courseCard.status.lessons') }}
       </div>
       <div class="course-card__footer">
         <button class="course-card__footer__cta is-green">
@@ -70,12 +70,12 @@
       <div class="course-card__footer">
         <div class="course-card__footer__status">
           <span class="course-card__footer__status-text">
-            You've completed this test.
+            {{ $t('courseCard.status.completed') }}
           </span>
         </div>
         <button class="course-card__footer__cta is-dark">
           <span class="course-card__footer__cta-text">
-            Get Started
+            {{ $t('common.getStarted') }}
           </span>
           <span class="course-card__footer__cta-icon">
             <NuxtImg src="/images/common/go-arrow-1.png" alt="arrow-right" width="40" height="40" />
@@ -83,7 +83,7 @@
         </button>
         <div class="course-card__footer__link">
           <span class="course-card__footer__link-text">
-            View test results
+            {{ $t('courseCard.link.viewResults') }}
           </span>
         </div>
         <NuxtImg src="/images/common/check-mark-1.png" alt="check-mark" width="66" height="66"
@@ -94,16 +94,16 @@
     </template>
     <template v-if="course.footerType === 4">
       <div class="course-card__footer__meta">
-        <span class="course-card__footer__meta-item">{{ course.lessons ?? 10 }} lessons</span>
+        <span class="course-card__footer__meta-item">{{ course.lessons ?? 10 }} {{ $t('courseCard.status.lessons') }}</span>
         <span class="course-card__footer__meta-item">{{ course.duration ?? '2 weeks' }}</span>
-        <span v-if="course.certificate !== false" class="course-card__footer__meta-item">Certificate</span>
+        <span v-if="course.certificate !== false" class="course-card__footer__meta-item">{{ $t('courseCard.meta.certificate') }}</span>
       </div>
       <div class="course-card__footer">
         <div class="course-card__footer__row">
           <div class="course-card__footer__left">
             <div class="course-card__footer__actions">
               <button class="course-card__footer__cta is-green">
-                <span class="course-card__footer__cta-text">Get Started</span>
+                <span class="course-card__footer__cta-text">{{ $t('common.getStarted') }}</span>
                 <span class="course-card__footer__cta-icon">
                   <NuxtImg src="/images/common/go-arrow-1.png" alt="arrow-right" width="40" height="40" />
                 </span>
@@ -114,7 +114,7 @@
                     <img :src="a" :alt="'avatar-'+(idx+1)" />
                   </div>
                 </div>
-                <p class="course-card__footer__people-text">{{ course.finishedText ?? '3067 people already finished it' }}</p>
+                <p class="course-card__footer__people-text">{{ course.finishedText ?? `3067 ${$t('courseCard.people.finished')}` }}</p>
               </div>
             </div>
           </div>

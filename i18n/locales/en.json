@@ -913,4 +913,24 @@
       }
     }
   }
+  ,
+  "courseCard": {
+    "status": {
+      "completed": "You've completed this test.",
+      "of": "of",
+      "lessons": "lessons"
+    },
+    "link": {
+      "viewResults": "View test results"
+    },
+    "badge": {
+      "points": "points"
+    },
+    "meta": {
+      "certificate": "Certificate"
+    },
+    "people": {
+      "finished": "people already finished it"
+    }
+  }
 }
