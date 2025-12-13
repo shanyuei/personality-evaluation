@@ -86,6 +86,82 @@
         "description": "Frequently Asked Questions offers a quick answers to common queries, guiding users through features and functionalities efficiently."
       }
     },
+    "testDetail": {
+      "welcome": "Welcome, {name}!",
+      "type": "Type",
+      "allAbout": "All About You",
+      "typeName": "Enthusiast",
+      "readMore": "Read more",
+      "aboutDesc": "Type 7s in the Enneagram are often referred to as The Enthusiasts: energetic, spontaneous, and optimistic. Their core drive is to avoid fear, pain, or discomfort while pursuing new experiences.",
+      "totalScore": "Total score",
+      "tab": {
+        "core": "Core characteristics",
+        "motivation": "Motivations & Fears",
+        "relationships": "Relationships",
+        "work": "Work",
+        "stress": "Stress & Relaxation",
+        "compatibility": "Compatibility"
+      },
+      "core": {
+        "title": "Core Characteristics of The Enthusiast",
+        "cardTitle": "Optimism and Positivity",
+        "cardDesc": "They tend to stay optimistic, seek pleasure, and avoid discomfort, driven by possibilities and new experiences."
+      }
+    },
+    "personalityDetail": {
+      "subtypes": {
+        "title": "Enthusiast Subtypes",
+        "subtitle": "Each subtype emphasizes different focuses and behavioral patterns:",
+        "sp": "Self-Preservation (SP) Type 7",
+        "spDesc": "Safety and resources oriented; plans, reserves, and self-soothes to reduce discomfort.",
+        "social": "Social (SO) Type 7",
+        "socialDesc": "Group and belonging focused; seeks experiences and connection, good at organizing and participating.",
+        "oneToOne": "One-to-One (SX) Type 7",
+        "oneToOneDesc": "Intense experiences and close bonds; pursues passion and deeper connection.",
+        "cta": "Take a course"
+      }
+      ,
+      "conclusion": {
+        "title": "Conclusion",
+        "p1": "Based on your core characteristics and motivations, we recommend exploring and practicing in a gentle, structured way to build stable rhythms and clear priorities.",
+        "p2": "In relationships and work, leverage your creativity and optimism while introducing appropriate constraints and commitments to improve execution and reflection.",
+        "p3": "Start with the growth path below to gradually strengthen discomfort tolerance, mindfulness practice, and commitment—supporting long-term, sustainable growth."
+      },
+      "growth": {
+        "title": "Growth Path for The Enthusiast",
+        "items": {
+          "i1": {
+            "title": "Confronting Fear of Discomfort",
+            "body": "Progress involves gradually facing discomfort and negative experiences—such as boredom or sadness—without immediately seeking distraction or escape. Embracing the full spectrum builds resilience and emotional maturity."
+          },
+          "i2": {
+            "title": "Practicing Mindfulness and Presence",
+            "body": "Cultivate present-moment awareness and self-connection. Avoid over-chasing novelty; move at a steadier pace and find deeper satisfaction in more meaningful experiences."
+          },
+          "i3": {
+            "title": "Embracing Commitment and Follow-Through",
+            "body": "Learn to prioritize and complete tasks, resisting the pull of constant new opportunities. With focus and discipline, turn visions into reality and create meaningful impact in life and career."
+          }
+        },
+        "ctaCourses": "View courses",
+        "ctaTests": "View tests"
+      }
+      ,
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "description": "Quick answers to common queries, guiding you through features and functionalities.",
+        "q1": "Can I track my assignments and grades?",
+        "a1": "Yes. The platform provides a Gradebook where students can view grades, monitor feedback on assignments, and check due dates. Instructors can post grades and comments for each submission.",
+        "q2": "Does the LMS support video lessons and live classes?",
+        "a2": "Yes. Courses can use recorded videos and live sessions depending on the instructor and course design.",
+        "q3": "How can I communicate with my instructor?",
+        "a3": "You can use in-course messaging, comments, or designated communication channels to contact instructors.",
+        "q4": "What support is available for students and instructors?",
+        "a4": "Support includes progress tracking, assessment reports, course management tools, and grading and feedback for instructors.",
+        "q5": "Are there interactive features for students?",
+        "a5": "Yes. Features include quizzes, discussions, assignments, and feedback to enhance the learning experience."
+      }
+    },
     "faq": {
       "title": "FAQ",
       "description": "Quickly understand the platform and testing flow. Categories on the left, Q&A on the right.",
