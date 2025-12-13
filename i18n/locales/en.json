@@ -356,6 +356,46 @@
         "loadMore": "Load more tests"
       }
     },
+    "testStart": {
+      "title": "Anger Management",
+      "format": {
+        "title": "Format:",
+        "body": "The test consists of 10 multiple-choice questions. Each question has four answer choices, reflecting different responses to anger-provoking scenarios."
+      },
+      "scoring": {
+        "title": "Scoring:",
+        "body": "Each answer is assigned a point value. The total score is calculated by summing the points from all answers."
+      },
+      "cta": { "getStarted": "Get Started" },
+      "disclaimer": "Taking our test should not be viewed as a comprehensive or precise evaluation of your personality and mental well-being."
+    },
+    "testEnd": {
+      "score": "{value}/{total} points",
+      "title": "Developing Financial Analysis Skills",
+      "description": "Your score suggests that you are in the early stages of developing your financial analysis skills. You may find basic concepts and calculations challenging and might not be familiar with many of the tools and techniques used in financial analysis.",
+      "areasTitle": "Areas for Improvement:",
+      "areas": {
+        "format": {
+          "title": "Format",
+          "body": "The test consists of 10 multiple-choice questions with four answer choices, reflecting different responses."
+        },
+        "financial": {
+          "title": "Financial Statements",
+          "body": "Improve understanding of the balance sheet, income statement, and cash flow statement."
+        },
+        "ratio": {
+          "title": "Ratio Analysis",
+          "body": "Get familiar with basic financial ratios and their implications for a company’s financial health."
+        },
+        "investment": {
+          "title": "Investment Appraisal",
+          "body": "Start with techniques like NPV and ROE to understand how to evaluate opportunities."
+        }
+      },
+      "ctaPrimary": "Get Started",
+      "ctaSecondary": "Get Started",
+      "disclaimer": "Taking our test should not be viewed as a comprehensive or precise evaluation of your personality and mental well-being."
+    },
     "userCourseChapters": {
       "title": "People Leadership vs. Management",
       "description": "Leadership and management are two distinctive and complementary systems of actions in the business environment. Both are necessary for success in an increasingly complex and volatile business environment.",
