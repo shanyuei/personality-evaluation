@@ -1,76 +1,73 @@
 <template>
-    <main class="">
-
-        <section class="uno-py-10 uno-px-6 md:uno-px-12 lg:uno-px-24">
-            <div class="uno-max-w-[80%] uno-mx-auto">
-                <div class="uno-flex uno-justify-start uno-items-center uno-flex-col uno-gap-[15px]">
-                    <div class="uno-w-full md:uno-w-[1000px]">
-                        <p class="uno-text-[var(--ui-muted-foreground)] uno-font-['Outfit'] uno-font-medium">{{
-                            $t('pages.course.recommendedForYou') }}</p>
-                    </div>
-                    <div
-                        class="uno-w-full md:uno-w-[1000px] uno-flex uno-justify-between uno-items-start uno-flex-row uno-p-[32px] uno-bg-white uno-rounded-3xl uno-shadow-[0px_4px_12px_0px_rgba(0,0,0,0.05)]">
-                        <div class="uno-flex uno-flex-row uno-gap-[56px]">
-                            <div class="uno-flex uno-flex-col uno-gap-6">
-                                <div class="uno-flex uno-flex-col uno-gap-4">
+    <main class="page-container uno-py-64px">
+        <section class="uno-py-10 ">
+            <div class="uno-flex uno-justify-start uno-items-center uno-flex-col uno-gap-[15px]">
+                <div class="uno-w-full ">
+                    <p class="uno-text-[var(--ui-muted-foreground)] uno-font-['Outfit'] uno-font-medium">{{
+                        $t('pages.course.recommendedForYou') }}</p>
+                </div>
+                <div
+                    class="uno-w-full uno-flex uno-justify-between uno-items-start uno-flex-row uno-p-[32px] uno-bg-white uno-rounded-3xl uno-shadow-[0px_4px_12px_0px_rgba(0,0,0,0.05)]">
+                    <div class="uno-flex uno-flex-row uno-gap-[56px]">
+                        <div class="uno-flex uno-flex-col uno-gap-6">
+                            <div class="uno-flex uno-flex-col uno-gap-4">
+                                <p
+                                    class="uno-text-[#011813] uno-text-5xl uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">
+                                    {{ recommended.title }}</p>
+                                <p class="uno-text-[var(--ui-muted-foreground)] uno-text-sm uno-font-['Outfit']">{{
+                                    recommended.description }}</p>
+                            </div>
+                            <div class="uno-flex uno-flex-row uno-gap-6">
+                                <span class="uno-text-[var(--ui-foreground)] uno-font-['Outfit'] uno-font-medium">{{
+                                    recommended.lessons }} {{ $t('pages.course.lessons') }}</span>
+                                <span class="uno-text-[var(--ui-foreground)] uno-font-['Outfit'] uno-font-medium">{{
+                                    recommended.duration }}</span>
+                                <span class="uno-text-[var(--ui-foreground)] uno-font-['Outfit'] uno-font-medium">{{
+                                    $t('pages.course.certificate') }}</span>
+                            </div>
+                            <div class="uno-flex uno-items-center uno-flex-row uno-gap-4">
+                                <div
+                                    class="uno-h-[56px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-3 uno-py-1.5 uno-pr-1.5 uno-pl-[20px] uno-bg-[var(--ui-primary)] uno-rounded-[100px]">
+                                    <span class="uno-text-white uno-font-['Outfit'] uno-font-medium">{{
+                                        $t('common.getStarted') }}</span>
+                                    <div
+                                        class="uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-2.5 uno-p-2.5 uno-bg-white uno-rounded-[100px] uno-overflow-hidden">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            width="24" height="24">
+                                            <path d="M5 12h9m0 0l-4-4m4 4l-4 4" stroke="#000" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div
+                                    class="uno-flex uno-items-center uno-flex-row uno-gap-2 uno-rounded-xl uno-shadow-[10px_30px_50px_0px_rgba(0,157,119,0.08)]">
+                                    <div class="uno-flex uno-items-center uno-flex-row">
+                                        <div v-for="(a, idx) in recommended.avatars" :key="idx"
+                                            class="uno-w-[24px] uno-h-[24px] uno-bg-white uno-border-solid uno-border-white uno-border uno-rounded-full uno-overflow-hidden">
+                                            <NuxtImg :src="a" alt="avatar"
+                                                class="uno-w-full uno-h-full uno-object-cover" />
+                                        </div>
+                                    </div>
                                     <p
-                                        class="uno-text-[#011813] uno-text-5xl uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">
-                                        {{ recommended.title }}</p>
-                                    <p class="uno-text-[var(--ui-muted-foreground)] uno-text-sm uno-font-['Outfit']">{{
-                                        recommended.description }}</p>
-                                </div>
-                                <div class="uno-flex uno-flex-row uno-gap-6">
-                                    <span class="uno-text-[var(--ui-foreground)] uno-font-['Outfit'] uno-font-medium">{{
-                                        recommended.lessons }} {{ $t('pages.course.lessons') }}</span>
-                                    <span class="uno-text-[var(--ui-foreground)] uno-font-['Outfit'] uno-font-medium">{{
-                                        recommended.duration }}</span>
-                                    <span class="uno-text-[var(--ui-foreground)] uno-font-['Outfit'] uno-font-medium">{{
-                                        $t('pages.course.certificate') }}</span>
-                                </div>
-                                <div class="uno-flex uno-items-center uno-flex-row uno-gap-4">
-                                    <div
-                                        class="uno-h-[56px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-3 uno-py-1.5 uno-pr-1.5 uno-pl-[20px] uno-bg-[var(--ui-primary)] uno-rounded-[100px]">
-                                        <span class="uno-text-white uno-font-['Outfit'] uno-font-medium">{{
-                                            $t('common.getStarted') }}</span>
-                                        <div
-                                            class="uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-2.5 uno-p-2.5 uno-bg-white uno-rounded-[100px] uno-overflow-hidden">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                width="24" height="24">
-                                                <path d="M5 12h9m0 0l-4-4m4 4l-4 4" stroke="#000" stroke-width="2"
-                                                    stroke-linecap="round" stroke-linejoin="round" />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    <div
-                                        class="uno-flex uno-items-center uno-flex-row uno-gap-2 uno-rounded-xl uno-shadow-[10px_30px_50px_0px_rgba(0,157,119,0.08)]">
-                                        <div class="uno-flex uno-items-center uno-flex-row">
-                                            <div v-for="(a, idx) in recommended.avatars" :key="idx"
-                                                class="uno-w-[24px] uno-h-[24px] uno-bg-white uno-border-solid uno-border-white uno-border uno-rounded-full uno-overflow-hidden">
-                                                <NuxtImg :src="a" alt="avatar"
-                                                    class="uno-w-full uno-h-full uno-object-cover" />
-                                            </div>
-                                        </div>
-                                        <p
-                                            class="uno-text-[var(--ui-muted-foreground)] uno-text-xs uno-font-['Outfit'] uno-text-center">
-                                            3067
-                                            people already finished it</p>
-                                    </div>
+                                        class="uno-text-[var(--ui-muted-foreground)] uno-text-xs uno-font-['Outfit'] uno-text-center">
+                                        3067
+                                        people already finished it</p>
                                 </div>
                             </div>
                         </div>
-                        <div
-                            class="uno-w-[425px] uno-h-[270px] uno-rounded-3xl uno-overflow-hidden uno-relative uno-hidden md:uno-block">
-                            <NuxtImg src="/images/home/1.png" alt="image"
-                                class="uno-rounded-xl uno-absolute uno-left-[65px] uno-top-0 uno-w-[360px] uno-h-[270px] uno-object-cover" />
-                        </div>
+                    </div>
+                    <div
+                        class="uno-w-[425px] uno-h-[270px] uno-rounded-3xl uno-overflow-hidden uno-relative uno-hidden md:uno-block">
+                        <NuxtImg src="/images/home/1.png" alt="image"
+                            class="uno-rounded-xl uno-absolute uno-left-[65px] uno-top-0 uno-w-[360px] uno-h-[270px] uno-object-cover" />
                     </div>
                 </div>
             </div>
         </section>
 
 
-        <section class="uno-pt-[32px] uno-pb-[120px] uno-px-[24px] md:uno-px-[120px] ">
-            <div class="uno-mx-auto md:uno-w-[1200px]">
+        <section class="uno-pt-[32px] uno-pb-[120px] ">
+            <div class="uno-mx-auto">
                 <p class="uno-text-[var(--ui-muted-foreground)] uno-text-xl uno-font-['Outfit'] uno-font-medium">{{
                     $t('pages.course.allCourses') }}</p>
 
@@ -94,10 +91,10 @@
                                             <span
                                                 class="uno-text-[var(--ui-foreground)] uno-text-sm uno-font-['Outfit'] uno-font-medium">{{
                                                     course.progress === '✓' ? "You've completed this test." :
-                                                (course.progress || '') }}</span>
+                                                        (course.progress || '') }}</span>
                                             <span v-if="course.resultLabel"
                                                 class="uno-text-[var(--ui-foreground)] uno-text-sm uno-font-['Outfit']">{{
-                                                course.resultLabel }}</span>
+                                                    course.resultLabel }}</span>
                                         </div>
                                         <div class="uno-h-[48px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-3 uno-py-1 uno-pr-1 uno-pl-[20px] uno-rounded-[100px]"
                                             :class="course.ctaTheme === 'dark' ? 'uno-bg-[#011813]' : 'uno-bg-[var(--ui-primary)]'">
@@ -117,7 +114,7 @@
                                             <div class="uno-flex uno-items-center uno-flex-col">
                                                 <span
                                                     class="uno-text-[var(--color-pink-1)] uno-text-xl uno-font-['Outfit'] uno-font-semibold">{{
-                                                    course.points }}</span>
+                                                        course.points }}</span>
                                                 <span
                                                     class="uno-text-[var(--color-pink-1)] uno-text-xs uno-font-['Outfit']">points</span>
                                             </div>
@@ -127,7 +124,7 @@
                                             <div class="uno-flex uno-items-center uno-flex-col">
                                                 <span
                                                     class="uno-text-[var(--ui-muted-foreground)] uno-text-lg uno-font-['Outfit'] uno-font-medium">{{
-                                                    course.percent }}%</span>
+                                                        course.percent }}%</span>
                                             </div>
                                         </div>
                                     </div>
@@ -155,10 +152,10 @@
                                             <span
                                                 class="uno-text-[var(--ui-foreground)] uno-text-sm uno-font-['Outfit'] uno-font-medium">{{
                                                     course.progress === '✓' ? "You've completed this test." :
-                                                (course.progress || '') }}</span>
+                                                        (course.progress || '') }}</span>
                                             <span v-if="course.resultLabel"
                                                 class="uno-text-[var(--ui-foreground)] uno-text-sm uno-font-['Outfit']">{{
-                                                course.resultLabel }}</span>
+                                                    course.resultLabel }}</span>
                                         </div>
                                         <div class="uno-h-[48px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-3 uno-py-1 uno-pr-1 uno-pl-[20px] uno-rounded-[100px]"
                                             :class="course.ctaTheme === 'dark' ? 'uno-bg-[#011813]' : 'uno-bg-[var(--ui-primary)]'">
@@ -178,7 +175,7 @@
                                             <div class="uno-flex uno-items-center uno-flex-col">
                                                 <span
                                                     class="uno-text-[var(--color-pink-1)] uno-text-xl uno-font-['Outfit'] uno-font-semibold">{{
-                                                    course.points }}</span>
+                                                        course.points }}</span>
                                                 <span
                                                     class="uno-text-[var(--color-pink-1)] uno-text-xs uno-font-['Outfit']">points</span>
                                             </div>
@@ -188,7 +185,7 @@
                                             <div class="uno-flex uno-items-center uno-flex-col">
                                                 <span
                                                     class="uno-text-[var(--ui-muted-foreground)] uno-text-lg uno-font-['Outfit'] uno-font-medium">{{
-                                                    course.percent }}%</span>
+                                                        course.percent }}%</span>
                                             </div>
                                         </div>
                                     </div>
