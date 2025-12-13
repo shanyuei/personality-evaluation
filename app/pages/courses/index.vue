@@ -7,12 +7,13 @@
                         $t('pages.course.recommendedForYou') }}</p>
                 </div>
                 <div
-                    class="uno-w-full uno-flex uno-justify-between uno-items-start uno-flex-row uno-p-[32px] uno-bg-white uno-rounded-3xl uno-shadow-[0px_4px_12px_0px_rgba(0,0,0,0.05)]">
-                    <div class="uno-flex uno-flex-row uno-gap-[56px] uno-w-642px">
+                    class="uno-w-full uno-flex uno-justify-between uno-items-start uno-flex-col md:uno-flex-row uno-gap-6 md:uno-gap-[56px] uno-p-6 md:uno-p-[32px] uno-bg-white uno-rounded-3xl uno-shadow-[0px_4px_12px_0px_rgba(0,0,0,0.05)]">
+                    <div
+                        class="uno-flex uno-flex-col md:uno-flex-row uno-gap-6 md:uno-gap-[56px] uno-w-full md:uno-w-642px">
                         <div class="uno-flex uno-flex-col uno-gap-6">
                             <div class="uno-flex uno-flex-col uno-gap-4">
                                 <p
-                                    class="uno-text-[var(--ui-foreground)] uno-text-5xl uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">
+                                    class="uno-text-[var(--ui-foreground)] uno-text-2xl md:uno-text-5xl uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">
                                     {{ recommended.title }}</p>
                                 <p class="uno-text-[var(--ui-muted-foreground)] uno-text-sm uno-font-['Outfit']">{{
                                     recommended.description }}</p>
@@ -25,30 +26,34 @@
                                 <span class="uno-text-[var(--ui-foreground)] uno-font-['Outfit'] uno-font-medium">{{
                                     $t('pages.course.certificate') }}</span>
                             </div>
-                            <div class="uno-flex uno-items-center uno-flex-row uno-gap-6 uno-mt-2">
+                            <div
+                                class="uno-flex uno-items-center uno-flex-row uno-flex-wrap md:uno-flex-nowrap uno-gap-4 md:uno-gap-6 uno-mt-2">
                                 <div
-                                    class="uno-h-[56px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-3 uno-py-1.5 uno-pr-1.5 uno-pl-[20px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-transition-all uno-rounded-[100px]">
+                                    class="uno-h-[48px] md:uno-h-[56px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-3 uno-py-1.5 uno-pr-1.5 uno-pl-[16px] md:uno-pl-[20px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-transition-all uno-rounded-[100px]">
                                     <span class="uno-text-white uno-font-['Outfit'] uno-font-medium">{{
                                         $t('common.getStarted') }}</span>
-                                    <NuxtImg width="44" height="44" src="/images/common/go-arrow-1.png" />
+                                    <NuxtImg width="44" height="44" src="/images/common/go-arrow-1.png"
+                                        class="uno-w-[36px] uno-h-[36px] md:uno-w-[44px] md:uno-h-[44px]" />
                                 </div>
                                 <div
-                                    class="uno-flex uno-items-center uno-flex-row uno-gap-2 uno-rounded-xl uno-shadow-[10px_30px_50px_0px_rgba(0,157,119,0.08)]">
+                                    class="uno-flex uno-items-center uno-flex-row uno-gap-1 md:uno-gap-2 uno-rounded-xl  uno-mt-3 md:uno-mt-0">
                                     <div class="uno-flex uno-items-center uno-flex-row">
                                         <div v-for="(a, idx) in recommended.avatars" :key="idx"
-                                            :class="['uno-w-[24px] uno-h-[24px] uno-bg-white uno-border-solid uno-border-white uno-border uno-rounded-full uno-overflow-hidden', idx > 0 ? 'uno--ml-2' : '']">
+                                            :class="['uno-w-[20px] uno-h-[20px] md:uno-w-[24px] md:uno-h-[24px] uno-bg-white uno-border-solid uno-border-white uno-border uno-rounded-full uno-overflow-hidden', idx > 0 ? 'uno--ml-1 md:uno--ml-2' : '']">
                                             <NuxtImg :src="a" alt="avatar"
                                                 class="uno-w-full uno-h-full uno-object-cover" />
                                         </div>
                                     </div>
                                     <p
-                                        class="uno-text-[var(--ui-muted-foreground)] uno-text-xs uno-font-['Outfit'] uno-text-center">
+                                        class="uno-text-[var(--ui-muted-foreground)] uno-text-xs md:uno-text-sm uno-font-['Outfit'] uno-text-center md:uno-text-left">
                                         3067 people already finished it</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <NuxtImg src="/images/courses/1.png" alt="image" width="425" height="270" />
+                    <NuxtImg src="/images/courses/1.png" alt="image" width="425" height="270"
+                        class="uno-w-full uno-h-auto md:uno-w-[425px] md:uno-h-[270px] uno-object-cover uno-rounded-[16px]"
+                        sizes="(min-width:768px) 425px, 100vw" />
                 </div>
             </div>
         </section>

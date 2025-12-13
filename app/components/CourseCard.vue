@@ -13,7 +13,9 @@
           <span class="course-card__footer__cta-text">
             Get Started
           </span>
-          <NuxtImg src="/images/common/go-arrow-1.png" alt="arrow-right" width="40" height="40" />
+          <span class="course-card__footer__cta-icon">
+            <NuxtImg src="/images/common/go-arrow-1.png" alt="arrow-right" width="40" height="40" />
+          </span>
         </div>
         <div class="course-card__footer__link">
           <span class="course-card__footer__link-text">
@@ -47,9 +49,20 @@
             <NuxtImg src="/images/common/go-arrow-1.png" alt="arrow-right" width="40" height="40" />
           </span>
         </button>
-        <div class="course-card__footer__badge course-card__footer__badge--percent"
-          :style="{ '--pct': ((course.percent ?? 10) + '%') }">
-          <span class="course-card__footer__badge--percent-percent">{{ (course.percent ?? 10) }}%</span>
+        <div class="course-card__footer__progress" role="progressbar" :aria-valuenow="formatPercent(course.percent)" aria-valuemin="0" aria-valuemax="100">
+          <svg viewBox="0 0 44 44" class="course-card__footer__progress-svg">
+            <circle cx="22" cy="22" r="19" class="course-card__footer__progress-track" />
+            <circle
+              cx="22"
+              cy="22"
+              r="19"
+              class="course-card__footer__progress-bar"
+              :style="{ strokeDasharray: progressCircumference, strokeDashoffset: progressOffset }"
+            />
+            <text x="22" y="22" class="course-card__footer__progress-text" dominant-baseline="middle" text-anchor="middle">
+              {{ formatPercent(course.percent) }}%
+            </text>
+          </svg>
         </div>
       </div>
     </template>
@@ -73,7 +86,10 @@
             View test results
           </span>
         </div>
-        <NuxtImg src="/images/common/check-mark-1.png" alt="check-mark" width="66" height="66" />
+        <NuxtImg src="/images/common/check-mark-1.png" alt="check-mark" width="66" height="66"
+          class="max-sm:hidden max-xs:hidden" />
+        <NuxtImg src="/images/common/check-mark-1.png" alt="check-mark" width="24" height="24"
+          class="hidden max-sm:block max-xs:block" />
       </div>
     </template>
     <template v-if="course.footerType === 4">
@@ -85,7 +101,6 @@
       <div class="course-card__footer">
         <div class="course-card__footer__row">
           <div class="course-card__footer__left">
-
             <div class="course-card__footer__actions">
               <button class="course-card__footer__cta is-green">
                 <span class="course-card__footer__cta-text">Get Started</span>
@@ -115,7 +130,6 @@
               </div>
             </div>
           </div>
-          <div class="course-card__footer__spacer"></div>
         </div>
       </div>
     </template>
@@ -123,6 +137,7 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
 
 interface Course {
   id: number
@@ -134,9 +149,23 @@ interface Course {
   percent?: number
 }
 
-defineProps<{
+const props = defineProps<{
   course: Course
 }>()
+
+const formatPercent = (p?: number) => {
+  const v = Math.round(p ?? 10)
+  if (v < 0) return 0
+  if (v > 100) return 100
+  return v
+}
+
+const progressRadius = 19
+const progressCircumference = 2 * Math.PI * progressRadius
+const progressOffset = computed(() => {
+  const p = formatPercent(props.course?.percent)
+  return progressCircumference - (p / 100) * progressCircumference
+})
 </script>
 
 <style scoped lang="less">
@@ -353,35 +382,80 @@ defineProps<{
       }
     }
 
+    &__progress {
+      width: 64px;
+      height: 64px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &__progress-svg {
+      width: 64px;
+      height: 64px;
+      display: block;
+      overflow: visible;
+    }
+    &__progress-track {
+      fill: none;
+      stroke: var(--ui-input);
+      stroke-width: 6;
+    }
+    &__progress-bar {
+      fill: none;
+      stroke: var(--ui-primary);
+      stroke-width: 6;
+      stroke-linecap: round;
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+    }
+    &__progress-text {
+      fill: var(--ui-foreground);
+      font-size: 12px;
+      font-family: 'Outfit';
+      font-weight: 600;
+    }
+
     &__badge--percent {
-      width: 44px;
-      height: 44px;
-      flex: 0 0 44px;
+      width: 64px;
+      height: 64px;
+      flex: 0 0 64px;
       position: relative;
       border-radius: 50%;
       background: conic-gradient(var(--ui-primary) var(--pct), var(--ui-input) 0);
-      border: none;
-
-      &::after {
-        content: '';
-        position: absolute;
-        inset: 6px;
-        border-radius: 50%;
-        background: #fff;
-      }
-
-      &-percent {
-        position: absolute;
-        inset: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--ui-muted-foreground);
-        font-size: 12px;
-        font-family: 'Outfit';
-        font-weight: 600;
-        line-height: 1;
-      }
+    }
+    &__badge--percent::after {
+      content: '';
+      position: absolute;
+      inset: 12px;
+      border-radius: 50%;
+      background: #fff;
+      z-index: 1;
+    }
+    &__badge--percent::before {
+      content: '';
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--ui-primary);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(var(--pct-angle)) translate(0, -24px);
+      z-index: 3;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+    &__badge--percent-percent {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ui-muted-foreground);
+      font-size: 16px;
+      font-family: 'Outfit';
+      font-weight: 600;
+      line-height: 1;
+      z-index: 2;
     }
   }
 
@@ -406,10 +480,124 @@ defineProps<{
     font-weight: 500;
     line-height: 1.5;
   }
+
   .course-card__footer__meta-item {
     display: inline-flex;
     align-items: center;
     gap: 6px;
+  }
+}
+
+@media (max-width: 767px) {
+  .course-card {
+    .course-card__footer {
+      // flex-direction: column;
+      // align-items: flex-start;
+      // gap: 8px;
+    }
+
+    .course-card__footer__status {
+      margin-bottom: 2px;
+    }
+
+    .course-card__footer__cta {
+      height: 44px;
+      padding-left: 14px;
+      padding-right: 6px;
+      min-width: 140px;
+      gap: 8px;
+      justify-content: space-between;
+    }
+
+    .course-card__footer__cta-text {
+      font-size: 14px;
+    }
+
+    .course-card__footer__cta-icon {
+      width: 32px;
+      height: 32px;
+    }
+
+    .course-card__footer__link {
+      margin-top: 2px;
+    }
+
+    .course-card__footer__badge {
+      width: 40px;
+      height: 40px;
+    }
+
+    .course-card__footer__badge-value {
+      font-size: 14px;
+    }
+
+    .course-card__footer__badge-label {
+      font-size: 10px;
+    }
+    .course-card__footer__people {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px;
+      width: 100%;
+    }
+    .course-card__footer__people-text {
+      text-align: left;
+    }
+    .course-card__footer__avatar {
+      width: 20px;
+      height: 20px;
+    }
+    .course-card__footer__avatar:not(:first-child) {
+      margin-left: -6px;
+    }
+    .course-card__footer__badge--percent {
+      width: 36px;
+      height: 36px;
+      flex: 0 0 36px;
+      position: relative;
+      border-radius: 50%;
+      background: conic-gradient(var(--ui-primary) var(--pct), var(--ui-input) 0);
+    }
+    .course-card__footer__badge--percent::after {
+      content: '';
+      position: absolute;
+      inset: 6px;
+      border-radius: 50%;
+      background: #fff;
+      z-index: 1;
+    }
+    .course-card__footer__badge--percent::before {
+      content: '';
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--ui-primary);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(var(--pct-angle)) translate(0, -18px);
+      z-index: 3;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+    .course-card__footer__badge--percent-percent { font-size: 11px; z-index: 2; }
+
+    .course-card__footer__progress {
+      width: 40px;
+      height: 40px;
+    }
+    .course-card__footer__progress-svg {
+      width: 40px;
+      height: 40px;
+    }
+    .course-card__footer__progress-track {
+      stroke-width: 5;
+    }
+    .course-card__footer__progress-bar {
+      stroke-width: 5;
+    }
+    .course-card__footer__progress-text {
+      font-size: 10px;
+    }
   }
 }
 </style>

@@ -5,7 +5,7 @@
     header: 'bg-transparent h-[96px] border-none max-sm:h-[53px]',
     overlay: 'bg-transparent',
     root: 'h-[96px] border-none bg-transparent max-sm:h-[53px] justify-center flex',
-    container: '!px-[0px] page-container '
+    container: '!px-[0px] page-container max-sm:!px-[24px] max-xs:!px-[16px]'
   }">
     <!-- 导航栏 -->
     <template #left>
