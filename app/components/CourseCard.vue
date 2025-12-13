@@ -25,10 +25,10 @@
         <div class="course-card__footer__badge course-card__footer__badge--points">
           <div class="course-card__footer__badge-wrap">
             <span class="course-card__footer__badge-value">
-              20
+              {{ course.points ?? 20 }}
             </span>
             <span class="course-card__footer__badge-label">
-              points
+              {{ course.resultLabel ?? 'points' }}
             </span>
           </div>
         </div>
@@ -38,7 +38,7 @@
 
     <template v-if="course.footerType === 2">
       <div class="course-card__status">
-        <span>1</span> of <span>10</span> lessons
+        <strong class="uno-text-bold uno-text-#000">{{ course.completedLessons ?? 1 }}</strong> of <strong>{{ course.lessons ?? 10 }}</strong> lessons
       </div>
       <div class="course-card__footer">
         <button class="course-card__footer__cta is-green">
@@ -94,9 +94,9 @@
     </template>
     <template v-if="course.footerType === 4">
       <div class="course-card__footer__meta">
-        <span class="course-card__footer__meta-item">10 lessons</span>
-        <span class="course-card__footer__meta-item">2 weeks</span>
-        <span class="course-card__footer__meta-item">Certificate</span>
+        <span class="course-card__footer__meta-item">{{ course.lessons ?? 10 }} lessons</span>
+        <span class="course-card__footer__meta-item">{{ course.duration ?? '2 weeks' }}</span>
+        <span v-if="course.certificate !== false" class="course-card__footer__meta-item">Certificate</span>
       </div>
       <div class="course-card__footer">
         <div class="course-card__footer__row">
@@ -110,23 +110,11 @@
               </button>
               <div class="course-card__footer__people">
                 <div class="course-card__footer__avatars">
-                  <div class="course-card__footer__avatar">
-                    <img
-                      src="https://image-resource.mastergo.com/64427795427964/64427795427966/cbd4afe3876c389a4228a27675777330.png"
-                      alt="avatar-1" />
-                  </div>
-                  <div class="course-card__footer__avatar">
-                    <img
-                      src="https://image-resource.mastergo.com/64427795427964/64427795427966/2cfa9e1b900d979eb23508b3951c207a.jpg"
-                      alt="avatar-2" />
-                  </div>
-                  <div class="course-card__footer__avatar">
-                    <img
-                      src="https://image-resource.mastergo.com/64427795427964/64427795427966/a8944c428fea9d298029d86ace456ac3.jpg"
-                      alt="avatar-3" />
+                  <div v-for="(a, idx) in (course.avatars?.slice(0,3) ?? ['/images/home/8.png','/images/home/11.png','/images/about/3.png'])" :key="idx" class="course-card__footer__avatar">
+                    <img :src="a" :alt="'avatar-'+(idx+1)" />
                   </div>
                 </div>
-                <p class="course-card__footer__people-text">3067 people already finished it</p>
+                <p class="course-card__footer__people-text">{{ course.finishedText ?? '3067 people already finished it' }}</p>
               </div>
             </div>
           </div>
@@ -144,9 +132,17 @@ interface Course {
   title: string
   description: string
   image: string
-  footerType?: 1 | 2 | 3 | 4
-  progress?: string
+  footerType: 1 | 2 | 3 | 4
+  points?: number
   percent?: number
+  ctaTheme?: 'dark' | 'green'
+  lessons?: number
+  duration?: string
+  certificate?: boolean
+  avatars?: string[]
+  finishedText?: string
+  resultLabel?: string
+  completedLessons?: number
 }
 
 const props = defineProps<{

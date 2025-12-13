@@ -51,9 +51,7 @@
                             </div>
                         </div>
                     </div>
-                    <NuxtImg src="/images/courses/1.png" alt="image" width="425" height="270"
-                        class="uno-w-full uno-h-auto md:uno-w-[425px] md:uno-h-[270px] uno-object-cover uno-rounded-[16px]"
-                        sizes="(min-width:768px) 425px, 100vw" />
+                    <NuxtImg src="/images/courses/1.png" alt="image" width="425" height="270" />
                 </div>
             </div>
         </section>
@@ -98,6 +96,7 @@ type Course = {
     resultLabel?: string
     points?: number
     percent?: number
+    completedLessons?: number
     ctaTheme: 'dark' | 'green'
     instructor?: { name: string, avatar: string }
     lessons?: number
@@ -123,6 +122,9 @@ const courses = ref<Course[]>([
         description: 'Learn the difference between leadership and management to inspire teams and drive outcomes.',
         image: '/images/courses/1.png',
         points: 20,
+        percent: 10,
+        completedLessons: 1,
+        lessons: 10,
         ctaTheme: 'dark',
         footerType: 2,
     },
@@ -143,6 +145,11 @@ const courses = ref<Course[]>([
         points: 20,
         ctaTheme: 'dark',
         footerType: 4,
+        lessons: 10,
+        duration: '2 weeks',
+        certificate: true,
+        avatars: ['/images/home/8.png', '/images/home/11.png', '/images/about/3.png'],
+        finishedText: '3067 people already finished it',
     },
 ])
 
