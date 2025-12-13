@@ -356,6 +356,40 @@
         "loadMore": "Load more tests"
       }
     },
+    "testIntro": {
+      "title": "Free Personality Test",
+      "h5": {
+        "step1": "Be yourself and answer honestly to find your personality type.",
+        "step2": "Learn how your personality type influences many areas of your life.",
+        "step3": "Find jobs that suit your personality and get career guidance that actually helps."
+      },
+      "pc": {
+        "step1": { "title": "Complete the Test", "desc": "Be yourself and answer honestly to find your personality type." },
+        "step2": { "title": "View Detailed Results", "desc": "Learn how your personality type influences many areas of your life." },
+        "step3": { "title": "Unlock Your Potential", "desc": "Find jobs that suit your personality and get career guidance that actually helps." }
+      },
+      "progress": {
+        "count": "{answered}/{total}",
+        "step": "Step {current} of {total}"
+      },
+      "instructions": "Choose how accurately each statement reflects you.",
+      "scale": {
+        "sd": "Strongly Disagree",
+        "d": "Disagree",
+        "n": "Neutral",
+        "a": "Agree",
+        "sa": "Strongly Agree"
+      },
+      "q": {
+        "q1": "I strive for accuracy and precision in all my tasks.",
+        "q2": "I notice even the smallest inconsistencies and errors in my work.",
+        "q3": "I am able to maintain high standards even under tight deadlines.",
+        "q4": "I frequently check my work to ensure it meets the required standards.",
+        "q5": "Improving and refining systems or processes is a priority for me."
+      },
+      "notice": "All questions must be answered before you continue.",
+      "cta": "Get Started"
+    },
     "testStart": {
       "title": "Anger Management",
       "format": {

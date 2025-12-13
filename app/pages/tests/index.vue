@@ -3,13 +3,13 @@
     <div class="uno-w-full md:uno-w-[90%] uno-mx-auto">
       <div class="uno-flex uno-gap-2 uno-flex-wrap uno-justify-center uno-mb-6">
         <UButton
-          v-for="f in filters"
+          v-for="(f, i) in filters"
           :key="f.id"
-          class="uno-rounded-full uno-h-[36px] uno-px-4 uno-flex uno-items-center uno-justify-center"
+          class="uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-1 uno-py-3 uno-px-[20px] uno-rounded-[100px] uno-font-['Outfit'] uno-font-medium"
+          :class="i === 0
+            ? 'uno-bg-[var(--ui-primary)] uno-text-white'
+            : 'uno-bg-white uno-text-[#4E5255] uno-border uno-border-solid uno-border-[#B1B2B2]'"
           @click="activeFilter = f.id"
-          :class="activeFilter === f.id
-            ? 'uno-bg-[var(--ui-primary)] uno-text-white hover:uno-bg-[var(--color-green-2)]'
-            : 'uno-bg-white uno-text-[var(--ui-muted-foreground)] uno-border uno-border-[var(--ui-border)] hover:uno-bg-[var(--color-green-2)] hover:uno-text-white'"
         >{{ f.label }}</UButton>
       </div>
 
@@ -19,11 +19,11 @@
             <NuxtImg src="/images/blog/2.png" alt="hero" class="uno-w-full uno-h-[180px] md:uno-h-full uno-object-cover uno-rounded-[16px]" />
           </div>
           <div class="md:uno-col-span-2 uno-space-y-4">
+            <h1 class="uno-w-[642px] uno-text-[#011813] uno-text-5xl uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{ $t('pages.tests.hero.title') }}</h1>
             <div class="uno-flex uno-items-center uno-justify-between">
               <span class="uno-text-xs uno-bg-[var(--ui-input)] uno-text-[var(--ui-foreground)] uno-rounded-full uno-px-3 uno-py-1">{{ heroBadge }}</span>
               <span class="uno-text-xs uno-text-[var(--ui-muted-foreground)]">{{ $t('pages.tests.questions', { count: hero.questions }) }}</span>
             </div>
-            <h1 class="uno-text-2xl md:uno-text-3xl uno-font-['Outfit'] uno-font-extrabold uno-text-[var(--ui-foreground)]">{{ $t('pages.tests.hero.title') }}</h1>
             <p class="uno-text-[var(--ui-muted-foreground)]">{{ $t('pages.tests.hero.objective') }}</p>
             <div>
               <NuxtLink to="/test/step">
@@ -68,7 +68,8 @@
 </template>
 
 <script setup lang="ts">
-const { t } = useI18n()
+const { t, locale } = useI18n()
+locale.value = 'en'
 
 const filters = [
   { id: 'all', label: t('pages.tests.filters.all') },
