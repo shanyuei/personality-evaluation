@@ -60,7 +60,7 @@
                     $t('pages.course.allCourses') }}</p>
 
                 <div class="uno-mt-4">
-                    <div class="uno-grid uno-grid-cols-1 md:uno-grid-cols-2 lg:uno-grid-cols-2 uno-gap-6">
+                    <div class="uno-grid uno-grid-cols-1 md:uno-grid-cols-2 lg:uno-grid-cols-2 xl:uno-grid-cols-3 uno-gap-6">
                         <CourseCard v-for="course in sortedCourses" :key="course.id" :course="course" />
                     </div>
                 </div>
@@ -99,6 +99,7 @@ type Course = {
     certificate?: boolean
     avatars?: string[]
     finishedText?: string
+    footerType?: 'completed_with_points' | 'lessons_with_percent' | 'completed_with_check' | 'cta_with_people'
 }
 
 const courses = ref<Course[]>([
@@ -106,7 +107,7 @@ const courses = ref<Course[]>([
         id: 1,
         title: 'People Leadership vs. Management',
         description: 'Learn the difference between leadership and management to inspire teams and drive outcomes.',
-        image: '/images/about/3.png',
+        image: '/images/home/3.png',
         duration: '20 min',
         progress: "You've completed this test.",
         resultLabel: 'View test results',
@@ -129,10 +130,10 @@ const courses = ref<Course[]>([
     },
     {
         id: 3,
-        title: 'Email Marketing',
-        description: 'Master lifecycle email strategies with segmentation, copy, and analytics.',
-        image: '/images/home/2.png',
-        duration: '45 min',
+        title: 'People Leadership vs. Management',
+        description: 'Leadership and management are two distinctive and complementary systems of actions in the business environment. Both are necessary for success in an increasingly complex and volatile business environment.',
+        image: '/images/home/9.png',
+        duration: '30 min',
         progress: '✓',
         resultLabel: 'View test results',
         ctaTheme: 'green',
@@ -141,9 +142,9 @@ const courses = ref<Course[]>([
     },
     {
         id: 4,
-        title: 'Brand Management',
-        description: 'Develop coherent brand systems and campaigns across channels.',
-        image: '/images/home/1.png',
+        title: 'Email Marketing',
+        description: 'Master lifecycle email strategies with segmentation, copy, and analytics.',
+        image: '/images/home/2.png',
         duration: '2 weeks',
         lessons: 10,
         certificate: true,
