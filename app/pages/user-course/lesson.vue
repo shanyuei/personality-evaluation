@@ -61,9 +61,9 @@
           <!-- 底部按钮 -->
           <div class="uno-mt-8 uno-grid uno-grid-cols-1 md:uno-grid-cols-2 uno-gap-4">
             <NuxtLink to="/user-course/lesson-complete" class="uno-block">
-              <UButton class="uno-w-full uno-h-[48px] uno-rounded-[12px] uno-bg-[#011813] hover:uno-opacity-90 uno-text-[var(--ui-primary)] uno-flex uno-items-center uno-justify-center uno-text-center">{{ $t('pages.userCourseLesson.ctaPrimary') }}</UButton>
+              <UButton class="uno-w-full uno-h-[48px] uno-rounded-[12px] uno-bg-[#011813] hover:uno-opacity-90 uno-text-[var(--ui-primary)] uno-text-lg uno-font-['Outfit'] uno-font-bold uno-leading-normal uno-flex uno-items-center uno-justify-center uno-text-center">{{ $t('pages.userCourseLesson.ctaPrimary') }}</UButton>
             </NuxtLink>
-            <UButton class="uno-h-[48px] uno-rounded-[12px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-white uno-flex uno-items-center uno-justify-center uno-text-center">{{ $t('pages.userCourseLesson.ctaSecondary') }}</UButton>
+            <UButton class="uno-h-[48px] uno-rounded-[12px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-white uno-text-lg uno-font-['Outfit'] uno-font-bold uno-leading-normal uno-flex uno-items-center uno-justify-center uno-text-center">{{ $t('pages.userCourseLesson.ctaSecondary') }}</UButton>
           </div>
         </div>
       </div>
