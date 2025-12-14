@@ -62,9 +62,16 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
 const route = useRoute()
-const scoreValue = Number(route.query.score ?? localStorage.getItem('testScore') ?? 20)
-const scoreTotal = Number(route.query.total ?? localStorage.getItem('testTotal') ?? 40)
+const scoreValue = ref(Number(route.query.score ?? 20))
+const scoreTotal = ref(Number(route.query.total ?? 40))
+if (process.client) {
+  const s = localStorage.getItem('testScore')
+  const tt = localStorage.getItem('testTotal')
+  if (!route.query.score && s) scoreValue.value = Number(s)
+  if (!route.query.total && tt) scoreTotal.value = Number(tt)
+}
 const { t } = useI18n()
 const areas = [
   { key: 'format', title: t('pages.testEnd.areas.format.title'), body: t('pages.testEnd.areas.format.body') },
