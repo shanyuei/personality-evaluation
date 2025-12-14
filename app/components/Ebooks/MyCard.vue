@@ -7,10 +7,12 @@
       <div class="uno-flex uno-gap-3 uno-pt-2 uno-justify-between">
         <UButton
           :ui="{ base: `flex-1 h-[48px] flex justify-center items-center flex-row gap-1 py-1 px-[20px]  rounded-lg text-[#FFFFFF] text-sm md:text-lg font-['Outfit'] font-bold leading-normal` }">
-          {{ downloadText }}</UButton>
-        <UButton variant="ghost"
-          :ui="{ base: ` h-[48px] flex justify-center items-center flex-row gap-1 py-1 px-[20px] border-solid  border-2 rounded-lg  text-sm md:text-lg font-['Outfit'] font-bold leading-normal` }">
-          {{ readOnlineText }}</UButton>
+          {{ $t('pages.ebooks.primary.download') }}</UButton>
+        <NuxtLink to="/ebooks/detail">
+          <UButton variant="ghost"
+            :ui="{ base: ` h-[48px] flex justify-center items-center flex-row gap-1 py-1 px-[20px] border-solid  border-2 rounded-lg  text-sm md:text-lg font-['Outfit'] font-bold leading-normal` }">
+            {{ $t('pages.ebooks.primary.readOnline') }}</UButton>
+        </NuxtLink>
       </div>
     </div>
     <NuxtImg :src="image" alt="ebook"  width="268" height="209" class="uno-rounded-[24px] uno-m-auto" />
@@ -21,8 +23,6 @@
 interface Props {
   title: string
   description: string
-  downloadText: string
-  readOnlineText: string
   image: string
 }
 

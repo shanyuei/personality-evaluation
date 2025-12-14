@@ -9,9 +9,7 @@
             <div class="uno-space-y-6">
               <div v-for="book in primaryBooks" :key="book.id"
                 class="uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)]">
-                <EbooksMyCard :title="book.title" :description="book.description"
-                  :download-text="book.downloadText"
-                  :read-online-text="book.readOnlineText" :image="book.image" />
+                <EbooksMyCard :title="book.title" :description="book.description" :image="book.image" />
               </div>
             </div>
           </section>
@@ -40,24 +38,18 @@ const primaryBooks = [
     id: 1,
     title: t('pages.ebooks.primary.title'),
     description: t('pages.ebooks.primary.desc'),
-    downloadText: t('pages.ebooks.primary.download'),
-    readOnlineText: t('pages.ebooks.primary.readOnline'),
     image: '/images/blog/2.png'
   },
   {
     id: 2,
     title: t('pages.ebooks.primary.title'),
     description: t('pages.ebooks.primary.desc'),
-    downloadText: t('pages.ebooks.primary.download'),
-    readOnlineText: t('pages.ebooks.primary.readOnline'),
     image: '/images/blog/7.png'
   },
   {
     id: 3,
     title: t('pages.ebooks.primary.title'),
     description: t('pages.ebooks.primary.desc'),
-    downloadText: t('pages.ebooks.primary.download'),
-    readOnlineText: t('pages.ebooks.primary.readOnline'),
     image: '/images/blog/8.png'
   }
 ]
