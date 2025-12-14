@@ -2,7 +2,7 @@
   <main class="uno-py-10 uno-px-4 sm:uno-px-6">
     <div class="page-container uno-mx-auto">
         <div class="uno-flex uno-flex-col md:uno-flex-row uno-gap-6 uno-w-full uno-mx-auto">
-            <section class="uno-w-[66.66%] uno-shrink-0">
+            <section class="uno-w-full md:uno-w-[66.66%] md:uno-shrink-0">
             <h2
               class="uno-text-2xl md:uno-text-3xl uno-font-['Outfit'] uno-font-extrabold uno-text-[var(--ui-foreground)] uno-mb-4">
               {{ $t('pages.ebooks.myTitle') }}</h2>
@@ -16,7 +16,7 @@
             </div>
           </section>
 
-          <section class="uno-w-[33.33%] uno-shrink-0">
+          <section class="uno-w-full md:uno-w-[33.33%] md:uno-shrink-0">
             <h2
               class="uno-text-2xl md:uno-text-3xl uno-font-['Outfit'] uno-font-extrabold uno-text-[var(--ui-foreground)] uno-mb-4">
               {{ $t('pages.ebooks.otherTitle') }}</h2>
