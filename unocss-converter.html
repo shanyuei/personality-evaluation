@@ -37,16 +37,16 @@
       <div class="grid">
         <div class="col">
           <div class="section-title">输入 CSS</div>
-          <textarea id="cssInput">display:flex; justify-content:center; align-items:center; gap:16px; padding:24px; background-color:#009D77; color:white; font-size:18px; font-weight:700; border-radius:16px; width:80%; height:48px;</textarea>
+          <textarea id="cssInput" oninput="convertAll()">display:flex; justify-content:center; align-items:center; gap:16px; padding:24px; background-color:#009D77; color:white; font-size:18px; font-weight:700; border-radius:16px; width:80%; height:48px;</textarea>
           <div class="actions">
             <!-- 自动转换已启用，移除按钮 -->
             <button class="btn" id="clearBtn">清空</button>
             <button class="btn" id="exampleBtn">示例</button>
           </div>
           <div class="section-title">输入 Tailwind 类名</div>
-          <textarea id="twInput" placeholder="如：flex justify-center items-center p-[24px]"></textarea>
+          <textarea id="twInput" oninput="convertAll()" placeholder="如：flex justify-center items-center p-[24px]"></textarea>
           <div class="section-title">输入 UnoCSS 类名</div>
-          <textarea id="unoInput" placeholder="如：uno-flex uno-justify-center uno-items-center uno-p-[24px]"></textarea>
+          <textarea id="unoInput" oninput="convertAll()" placeholder="如：uno-flex uno-justify-center uno-items-center uno-p-[24px]"></textarea>
         </div>
         <div class="col">
           <div class="section-title">输出 UnoCSS</div>
@@ -330,6 +330,9 @@
       classOutput.textContent = classes
       twOutput.textContent = tw
       cssOutput.textContent = twToCss(tw)
+      // Sync converted values to input fields
+      twInput.value = tw
+      unoInput.value = classes
       renderChips(ok, chipOk)
       renderChips(unknown, chipUnknown)
     }
@@ -350,6 +353,8 @@
       classOutput.textContent = uno
       twOutput.textContent = tw
       cssOutput.textContent = twToCss(tw)
+      // Sync UnoCSS class to unoInput field
+      unoInput.value = uno
       updating = false
     })
     unoInput.addEventListener('input', () => {
@@ -360,6 +365,8 @@
       classOutput.textContent = uno
       twOutput.textContent = tw
       cssOutput.textContent = twToCss(tw)
+      // Sync Tailwind class to twInput field
+      twInput.value = tw
       updating = false
     })
     clearBtn.addEventListener('click', () => {
