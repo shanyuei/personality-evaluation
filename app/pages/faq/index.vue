@@ -24,8 +24,10 @@
                   {{ cat.title }}
                 </div>
                 <template v-for="(text, i) in cat.items" :key="i">
-                  <div
-                    class="uno-font-['Outfit'] uno-leading-[2.4] uno-cursor-pointer uno-text-[var(--ui-muted-foreground)] uno-font-medium">
+                  <div :class="[
+                    `uno-font-['Outfit'] uno-leading-[2.4] uno-cursor-pointer uno-font-medium`,
+                    currentCategory === text.id ? 'uno-text-[var(--ui-primary)]' : 'uno-text-[var(--ui-muted-foreground)]'
+                  ]" @click="switchCategory(text.id)">
                     {{ text.text }}
                   </div>
                 </template>
@@ -36,34 +38,37 @@
         <!-- 内容 -->
         <section class="md:uno-col-span-2 uno-space-y-10">
           <div class="uno-space-y-4">
-            <h2 class="uno-text-2xl md:uno-text-3xl uno-font-['Outfit'] uno-font-bold uno-text-[var(--ui-foreground)]">
+            <h2 class="uno-text-2xl md:uno-text-3xl uno-font-['Outfit'] uno-font-bold uno-text-black uno-mb-4">
               {{ $t('pages.faq.sections.general.title') }}
             </h2>
-            <div class="uno-space-y-3">
+            <div class="uno-space-y-5">
               <template v-for="entry in asideCategories" :key="entry.id">
-                <h4 class="uno-text-[var(--ui-muted-foreground)] uno-text-lg uno-font-['Outfit'] uno-font-medium">
+                <h4 class="uno-text-gray-800 uno-text-xl md:uno-text-2xl uno-font-['Outfit'] uno-font-medium">
                   {{ entry.title }}
                 </h4>
                 <template v-for="item in entry.items" :key="item.text">
-                  <h6 class="uno-text-[var(--ui-muted-foreground)] uno-text-lg uno-font-['Outfit'] uno-font-medium">
-                    {{ item.text }}
-                  </h6>
-                  <div v-for="(text, i) in item.list" :key="i"
-                    class="uno-border-t uno-border-t-[var(--ui-border)] uno-rounded-[12px]">
-                    <div class="uno-flex uno-justify-between uno-items-center uno-py-[20px] ">
-                      <p class="uno-text-[var(--ui-foreground)] uno-text-xl uno-font-['Outfit'] uno-font-medium">
-                        {{ text.question }}
-                      </p>
-                      <div class="uno-w-[24px] uno-h-[24px] uno-flex uno-items-center uno-justify-center">
-                        <IconsFaqToggle />
+                  <template v-if="item.id === currentCategory">
+                    <h6 class="uno-text-gray-700 uno-text-lg md:uno-text-xl uno-font-['Outfit'] uno-font-medium">
+                      {{ item.text }}
+                    </h6>
+                    <div v-for="(text, i) in item.list" :key="i"
+                      class="uno-border-t uno-border-t-[var(--ui-border)] uno-rounded-[12px]">
+                      <div class="uno-flex uno-justify-between uno-items-center uno-py-[20px] "
+                        @click="toggle('general', i)">
+                        <p class="uno-text-[var(--ui-foreground)] uno-text-xl uno-font-['Outfit'] uno-font-medium">
+                          {{ text.question }}
+                        </p>
+                        <div class="uno-w-[24px] uno-h-[24px] uno-flex uno-items-center uno-justify-center uno-mr-4">
+                          <IconsFaqToggle />
+                        </div>
+                      </div>
+                      <div v-if="isExpanded('general', i)" class=" uno-pb-[20px]">
+                        <p class="uno-text-[var(--ui-muted-foreground)]">
+                          {{ text.answer }}
+                        </p>
                       </div>
                     </div>
-                    <div v-if="isExpanded('general', text.idx)" class="uno-px-[24px] uno-pb-[20px]">
-                      <p class="uno-text-[var(--ui-muted-foreground)]">
-                        {{ text.answer }}
-                      </p>
-                    </div>
-                  </div>
+                  </template>
                 </template>
               </template>
             </div>
@@ -81,7 +86,7 @@ const { t } = useI18n()
 
 
 
-
+const currentCategory = ref<string>('1') // 默认选中第一个分类
 const expanded = reactive<{ [key: string]: number | null }>({
   general: 0,
   integration: null,
@@ -92,6 +97,11 @@ const expanded = reactive<{ [key: string]: number | null }>({
 const isExpanded = (section: string, i: number) => expanded[section] === i
 const toggle = (section: string, i: number) => {
   expanded[section] = expanded[section] === i ? null : i
+}
+
+// 切换分类
+const switchCategory = (id: string) => {
+  currentCategory.value = id
 }
 const asideCategories: any = [
   {
@@ -152,9 +162,6 @@ const asideCategories: any = [
 ]
 
 
-const getFaqType = () => {
-
-}
 
 
 </script>
