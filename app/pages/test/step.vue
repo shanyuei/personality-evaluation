@@ -1,301 +1,109 @@
 <template>
-  <div class="uno-min-h-screen uno-bg-gradient-to-b uno-from-blue-50 uno-to-purple-50 uno-flex uno-flex-col">
-    <!-- 顶部导航栏 -->
-    <div class="uno-pt-6 uno-px-6 md:uno-px-10 uno-flex uno-justify-between uno-items-center">
-      <!-- 品牌Logo -->
-      <div class="uno-w-12 uno-h-12 uno-bg-gradient-to-br uno-from-green-500 uno-to-teal-500 uno-rounded-full uno-flex uno-items-center uno-justify-center">
-        <span class="uno-text-white uno-font-bold uno-text-xl">P</span>
-      </div>
-      
-      <!-- 进度指示器 - 步骤版本 -->
-      <div class="uno-flex uno-items-center uno-space-x-2">
-        <div class="uno-h-1.5 md:uno-h-2 uno-bg-gray-200 uno-rounded-full uno-overflow-hidden uno-w-24 md:uno-w-32">
-          <div class="uno-h-full uno-bg-green-500 uno-rounded-full uno-transition-all uno-duration-300 uno-ease-out" :style="{ width: `${progressPercentage}%` }"></div>
+  <main class="uno-min-h-screen uno-bg-gradient-to-br uno-from-[var(--color-green-4)] uno-to-[var(--color-pink-4)] uno-py-10 uno-px-6 md:uno-px-10">
+    <div class="uno-max-w-[80%] uno-mx-auto">
+      <div class="uno-flex uno-flex-col uno-items-center uno-gap-4">
+        <div class="uno-w-14 uno-h-14 uno-bg-gradient-to-br uno-from-[var(--color-green-2)] uno-to-[var(--color-green-1)] uno-rounded-full uno-flex uno-items-center uno-justify-center">
+          <span class="uno-text-white uno-font-bold uno-text-2xl">P</span>
         </div>
-        <span class="uno-text-xs md:uno-text-sm uno-text-gray-500 uno-font-medium">Step 1 of 5</span>
+        <h1 class="uno-w-[909.71px] uno-text-[#011813] uno-text-5xl uno-font-['Outfit'] uno-text-center uno-font-semibold uno-leading-[1.2]">{{ $t('pages.testIntro.title') }}</h1>
+      </div>
+
+      <div class="uno-w-full md:uno-w-[602px] uno-mx-auto uno-mt-6">
+        <div class="uno-flex uno-items-center uno-justify-between uno-text-[var(--ui-muted-foreground)]">
+          <div class="uno-text-[#4E5255] uno-text-xs uno-font-['Outfit'] uno-leading-normal">{{ progress }}%</div>
+          <div class="uno-text-[#4E5255] uno-text-xs uno-font-['Outfit'] uno-leading-normal">{{ $t('pages.testIntro.progress.step', { current, total }) }}</div>
+        </div>
+        <div class="uno-relative uno-w-full uno-h-[10px] uno-rounded-xl uno-bg-[#DDDDDD] uno-mt-2">
+          <div class="uno-absolute uno-top-0 uno-left-0 uno-w-[32px] uno-h-[10px] uno-rounded-xl uno-bg-[#009D77] uno-z-10"></div>
+          <div class="uno-h-full uno-rounded-full uno-bg-[var(--ui-primary)]" :style="{ width: progress + '%' }"></div>
+        </div>
+      </div>
+
+      <div class="uno-w-full md:uno-w-[602px] uno-mx-auto uno-mt-4">
+        <div class="uno-flex uno-items-center uno-justify-between">
+          <NuxtLink to="/tests" class="uno-inline-flex uno-items-center uno-gap-2 hover:uno-text-[var(--ui-foreground)]">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path d="M15 19l-7-7 7-7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </NuxtLink>
+          <h2 class="uno-text-[#011813] uno-text-lg uno-font-['Outfit'] uno-text-center uno-font-semibold uno-leading-[1.2]">{{ $t('pages.testIntro.instructions') }}</h2>
+          <div class="uno-w-6"></div>
+        </div>
+        <div class="uno-flex uno-flex-row uno-items-center uno-justify-between uno-gap-0 uno-mt-4 uno-px-[10%]">
+          <div class="uno-flex uno-flex-col uno-items-center uno-gap-1">
+            <div class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px] uno-p-2.5 uno-bg-[#F4D0CB] uno-border-solid uno-border-[#F6BAB2] uno-border-2"></div>
+            <span class="uno-text-xs uno-text-[var(--ui-muted-foreground)]">{{ $t('pages.testIntro.scale.sd') }}</span>
+          </div>
+          <div class="uno-flex uno-flex-col uno-items-center uno-gap-1">
+            <div class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px] uno-p-2.5 uno-bg-[#F1DACE] uno-border-solid uno-border-[#F5CEB6] uno-border-2"></div>
+            <span class="uno-text-xs uno-text-[var(--ui-muted-foreground)]">{{ $t('pages.testIntro.scale.d') }}</span>
+          </div>
+          <div class="uno-flex uno-flex-col uno-items-center uno-gap-1">
+            <div class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px] uno-p-2.5 uno-bg-[#F0F0F0] uno-border-solid uno-border-[#D8D8D8] uno-border-2"></div>
+            <span class="uno-text-xs uno-text-[var(--ui-muted-foreground)]">{{ $t('pages.testIntro.scale.n') }}</span>
+          </div>
+          <div class="uno-flex uno-flex-col uno-items-center uno-gap-1">
+            <div class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px] uno-p-2.5 uno-bg-[#C6EAD8] uno-border-solid uno-border-[#9FE2AA] uno-border-2"></div>
+            <span class="uno-text-xs uno-text-[var(--ui-muted-foreground)]">{{ $t('pages.testIntro.scale.a') }}</span>
+          </div>
+          <div class="uno-flex uno-flex-col uno-items-center uno-gap-1">
+            <div class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px] uno-p-2.5 uno-bg-[#B3E1D6] uno-border-solid uno-border-[#88D9BA] uno-border-2"></div>
+            <span class="uno-text-xs uno-text-[var(--ui-muted-foreground)]">{{ $t('pages.testIntro.scale.sa') }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="uno-w-full md:uno-w-[602px] uno-mx-auto uno-mt-4">
+        <div class="uno-space-y-4">
+          <div v-for="(q, qi) in questions" :key="qi" class="uno-bg-white uno-rounded-[20px] uno-border uno-border-[var(--ui-border)] uno-shadow-[0px_2px_8px_rgba(0,0,0,0.06)]">
+            <div class="uno-p-5 md:uno-p-6">
+                <p class="uno-text-[#011813] uno-font-['Outfit'] uno-text-center uno-leading-[1.2]">{{ q }}</p>
+              <div class="uno-flex uno-flex-row uno-items-center uno-justify-between uno-gap-[20px] uno-mt-4 uno-px-[10%]">
+                <svg v-if="qi === 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" version="1.1" width="40" height="40.000244140625" viewBox="0 0 40 40.000244140625" @click="answers[qi] = 1">
+                  <g>
+                    <rect x="0" y="0" width="40" height="40" rx="20" fill="#F6998D" fill-opacity="1" />
+                    <g>
+                      <path d="M28.437143,15.522389408125001Q28.58683,15.380761738125,28.668314,15.191486958125Q28.7498,15.002212208125,28.7498,14.796142578125Q28.749798,14.697670869125,28.730587,14.601091278125Q28.711376,14.504511688125,28.673691,14.413535718125Q28.636009,14.322559718125,28.581301,14.240683498125Q28.526594,14.158807278125,28.456964,14.089177248125Q28.387335,14.019547228124999,28.305458,13.964839338125Q28.223581,13.910131398125,28.132604999999998,13.872447908125Q28.041629999999998,13.834764358125,27.945051,13.815553488125Q27.848471,13.796342608125,27.75,13.796342548125Q27.558306,13.796342548125,27.380205,13.867244718125Q27.202105,13.938147008125,27.062858,14.069895268125L27.06272,14.069750188125L21.5627165,19.273608678125L16.7628493,23.815033878125L16.7665939,23.806237178125002L15.2071054,22.246748478125L12.95710665,19.996750378125L12.95696521,19.996891978125Q12.81634104,19.856267478124998,12.63260677,19.780161878125Q12.44887252,19.704057178124998,12.25,19.704057178124998Q12.151528291,19.704057178124998,12.0549487,19.723267578125Q11.95836911,19.742478378125,11.86739314,19.780161878125Q11.77641714,19.817845378125,11.69454092,19.872552878125Q11.6126647,19.927261378125,11.54303467,19.996891478125Q11.473404649999999,20.066521178125,11.41869676,20.148397478125Q11.36398882,20.230273678125002,11.32630533,20.321249978125Q11.28862178,20.412225678125,11.26941091,20.508805778125Q11.25020003,20.605385778125,11.25019997,20.703857378125Q11.25020003,20.902729978125002,11.32630527,21.086463978125Q11.40241051,21.270198378125002,11.54303455,21.410822878125L11.54289335,21.410963978125L13.7928916,23.660962078125L15.352382200000001,25.220453578125Q15.9239936,25.792063578125,16.728242899999998,25.810283578125002Q17.544528,25.828778578125,18.137410199999998,25.267817578124998L22.937278,20.726393178125L28.437281,15.522534968125L28.437143,15.522389408125001Z" fill-rule="evenodd" fill="#011813" fill-opacity="1" />
+                    </g>
+                  </g>
+                </svg>
+                <div v-else class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px] uno-p-2.5 uno-bg-[#F4D0CB] uno-border-solid uno-border-[#F6BAB2] uno-border-2" @click="answers[qi] = 1"></div>
+                <div class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px] uno-p-2.5 uno-bg-[#F1DACE] uno-border-solid uno-border-[#F5CEB6] uno-border-2" @click="answers[qi] = 2"></div>
+                <div class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px] uno-p-2.5 uno-bg-[#F0F0F0] uno-border-solid uno-border-[#D8D8D8] uno-border-2" @click="answers[qi] = 3"></div>
+                <div class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px] uno-p-2.5 uno-bg-[#C6EAD8] uno-border-solid uno-border-[#9FE2AA] uno-border-2" @click="answers[qi] = 4"></div>
+                <div class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px] uno-p-2.5 uno-bg-[#B3E1D6] uno-border-solid uno-border-[#88D9BA] uno-border-2" @click="answers[qi] = 5"></div>
+              </div>
+              </div>
+            </div>
+        </div>
+
+        <p class="uno-text-[#8D8E8F] uno-font-['Outfit'] uno-text-center uno-leading-[1.2] uno-mt-6">{{ $t('pages.testIntro.notice') }}</p>
+      </div>
+
+      <div class="uno-w-full md:uno-w-[602px] uno-mx-auto uno-mt-6 uno-flex uno-justify-center">
+        <UButton
+          class="uno-w-full uno-h-[48px] uno-rounded-[12px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-white uno-text-lg uno-font-['Outfit'] uno-font-bold uno-leading-normal uno-flex uno-items-center uno-justify-center uno-text-center"
+          :disabled="!canContinue"
+        >{{ $t('pages.testIntro.cta') }}</UButton>
       </div>
     </div>
-
-    <!-- 主要内容区 -->
-    <main class="uno-px-6 md:uno-px-10 uno-py-6 uno-flex-grow">
-      <div class="page-container uno-w-full">
-        <!-- 测评标题和描述 -->
-        <div class="uno-text-center uno-mb-8 md:uno-mb-12">
-          <h1 class="uno-text-2xl md:uno-text-4xl uno-font-bold uno-text-gray-900 uno-mb-4 uno-font-['Outfit']">Conscientiousness</h1>
-          <p class="uno-text-gray-600 uno-max-w-2xl uno-mx-auto">Rate how well each statement describes you. Be honest and go with your first instinct.</p>
-        </div>
-
-        <!-- 评分指南 - PC版本 -->
-        <div class="uno-hidden md:uno-flex uno-justify-between uno-mb-8 uno-px-4 uno-max-w-2xl uno-mx-auto">
-          <div class="uno-text-center">
-            <div class="uno-w-10 uno-h-10 uno-rounded-full uno-bg-pink-100 uno-mx-auto uno-flex uno-items-center uno-justify-center uno-mb-1">
-              <span class="uno-text-pink-600 uno-text-sm">1</span>
-            </div>
-            <span class="uno-text-xs uno-text-gray-600">Strongly Disagree</span>
-          </div>
-          
-          <div class="uno-text-center">
-            <div class="uno-w-10 uno-h-10 uno-rounded-full uno-bg-pink-50 uno-mx-auto uno-flex uno-items-center uno-justify-center uno-mb-1">
-              <span class="uno-text-pink-500 uno-text-sm">2</span>
-            </div>
-            <span class="uno-text-xs uno-text-gray-600">Disagree</span>
-          </div>
-          
-          <div class="uno-text-center">
-            <div class="uno-w-10 uno-h-10 uno-rounded-full uno-bg-gray-100 uno-mx-auto uno-flex uno-items-center uno-justify-center uno-mb-1">
-              <span class="uno-text-gray-600 uno-text-sm">3</span>
-            </div>
-            <span class="uno-text-xs uno-text-gray-600">Neutral</span>
-          </div>
-          
-          <div class="uno-text-center">
-            <div class="uno-w-10 uno-h-10 uno-rounded-full uno-bg-green-50 uno-mx-auto uno-flex uno-items-center uno-justify-center uno-mb-1">
-              <span class="uno-text-green-500 uno-text-sm">4</span>
-            </div>
-            <span class="uno-text-xs uno-text-gray-600">Agree</span>
-          </div>
-          
-          <div class="uno-text-center">
-            <div class="uno-w-10 uno-h-10 uno-rounded-full uno-bg-green-100 uno-mx-auto uno-flex uno-items-center uno-justify-center uno-mb-1">
-              <span class="uno-text-green-600 uno-text-sm">5</span>
-            </div>
-            <span class="uno-text-xs uno-text-gray-600">Strongly Agree</span>
-          </div>
-        </div>
-        
-        <!-- 评分指南 - 移动端简化版本 -->
-        <div class="uno-block md:uno-hidden uno-mb-6 uno-px-4">
-          <div class="uno-flex uno-justify-between uno-items-center">
-            <span class="uno-text-sm uno-text-pink-600">Disagree</span>
-            <span class="uno-text-sm uno-text-gray-600">Neutral</span>
-            <span class="uno-text-sm uno-text-green-600">Agree</span>
-          </div>
-        </div>
-
-        <!-- 测评问题列表 -->
-        <div class="uno-max-w-2xl uno-mx-auto">
-          <div class="uno-space-y-6 md:uno-space-y-8">
-            <!-- 问题1 -->
-            <div class="uno-bg-white uno-rounded-xl uno-border uno-border-gray-100 uno-p-4 md:uno-p-6 uno-shadow-sm uno-transition-all hover:uno-shadow-md">
-              <div class="uno-flex uno-items-start uno-mb-4">
-                <div class="uno-flex-shrink-0 uno-w-8 uno-h-8 uno-bg-green-100 uno-rounded-full uno-flex uno-items-center uno-justify-center uno-mr-3 uno-mt-1">
-                  <span class="uno-text-green-600 uno-text-sm uno-font-medium">1</span>
-                </div>
-                <p class="uno-text-base md:uno-text-lg uno-text-gray-800 uno-font-['Outfit']">I strive for accuracy and precision in all my tasks.</p>
-              </div>
-              
-              <!-- 评分选项 -->
-              <div class="uno-flex uno-justify-between uno-px-1">
-                <button 
-                  v-for="rating in 5" 
-                  :key="rating"
-                  class="uno-flex uno-flex-col uno-items-center uno-flex-1 uno-mx-1"
-                  :class="{ 'uno-border-2 uno-border-gray-200 uno-text-gray-500 hover:uno-border-gray-300 hover:uno-bg-gray-50': selectedRatings[0] !== rating, 'uno-border-2 uno-border-pink-300 uno-bg-pink-50 uno-text-pink-600': selectedRatings[0] === rating && rating <= 2, 'uno-border-2 uno-border-gray-300 uno-bg-gray-50 uno-text-gray-600': selectedRatings[0] === rating && rating === 3, 'uno-border-2 uno-border-green-300 uno-bg-green-50 uno-text-green-600': selectedRatings[0] === rating && rating >= 4 }"
-                  @click="selectRating(0, rating)"
-                  @touchstart="selectRating(0, rating)"
-                >
-                  <div class="uno-w-10 uno-h-10 md:uno-w-12 md:uno-h-12 uno-rounded-full uno-flex uno-items-center uno-justify-center uno-text-xs md:uno-text-sm uno-transition-all uno-duration-200 uno-ease-in-out uno-transform hover:uno-scale-105 active:uno-scale-95">
-                    {{ selectedRatings[0] === rating ? '✓' : rating }}
-                  </div>
-                  
-                  <!-- 移动端评分标签 -->
-                  <span v-if="selectedRatings[0] === rating" class="uno-mt-1 uno-text-[10px] uno-text-center uno-truncate uno-max-w-[80px]">
-                    {{ getRatingLabel(rating) }}
-                  </span>
-                </button>
-              </div>
-            </div>
-
-            <!-- 问题2 -->
-            <div class="uno-bg-white uno-rounded-xl uno-border uno-border-gray-100 uno-p-4 md:uno-p-6 uno-shadow-sm uno-transition-all hover:uno-shadow-md">
-              <div class="uno-flex uno-items-start uno-mb-4">
-                <div class="uno-flex-shrink-0 uno-w-8 uno-h-8 uno-bg-green-100 uno-rounded-full uno-flex uno-items-center uno-justify-center uno-mr-3 uno-mt-1">
-                  <span class="uno-text-green-600 uno-text-sm uno-font-medium">2</span>
-                </div>
-                <p class="uno-text-base md:uno-text-lg uno-text-gray-800 uno-font-['Outfit']">I notice even the smallest inconsistencies and errors in my work.</p>
-              </div>
-              
-              <!-- 评分选项 -->
-              <div class="uno-flex uno-justify-between uno-px-1">
-                <button 
-                  v-for="rating in 5" 
-                  :key="rating"
-                  class="uno-flex uno-flex-col uno-items-center uno-flex-1 uno-mx-1"
-                  :class="{ 'uno-border-2 uno-border-gray-200 uno-text-gray-500 hover:uno-border-gray-300 hover:uno-bg-gray-50': selectedRatings[1] !== rating, 'uno-border-2 uno-border-pink-300 uno-bg-pink-50 uno-text-pink-600': selectedRatings[1] === rating && rating <= 2, 'uno-border-2 uno-border-gray-300 uno-bg-gray-50 uno-text-gray-600': selectedRatings[1] === rating && rating === 3, 'uno-border-2 uno-border-green-300 uno-bg-green-50 uno-text-green-600': selectedRatings[1] === rating && rating >= 4 }"
-                  @click="selectRating(1, rating)"
-                  @touchstart="selectRating(1, rating)"
-                >
-                  <div class="uno-w-10 uno-h-10 md:uno-w-12 md:uno-h-12 uno-rounded-full uno-flex uno-items-center uno-justify-center uno-text-xs md:uno-text-sm uno-transition-all uno-duration-200 uno-ease-in-out uno-transform hover:uno-scale-105 active:uno-scale-95">
-                    {{ selectedRatings[1] === rating ? '✓' : rating }}
-                  </div>
-                  
-                  <!-- 移动端评分标签 -->
-                  <span v-if="selectedRatings[1] === rating" class="uno-mt-1 uno-text-[10px] uno-text-center uno-truncate uno-max-w-[80px]">
-                    {{ getRatingLabel(rating) }}
-                  </span>
-                </button>
-              </div>
-            </div>
-
-            <!-- 问题3 -->
-            <div class="uno-bg-white uno-rounded-xl uno-border uno-border-gray-100 uno-p-4 md:uno-p-6 uno-shadow-sm uno-transition-all hover:uno-shadow-md">
-              <div class="uno-flex uno-items-start uno-mb-4">
-                <div class="uno-flex-shrink-0 uno-w-8 uno-h-8 uno-bg-green-100 uno-rounded-full uno-flex uno-items-center uno-justify-center uno-mr-3 uno-mt-1">
-                  <span class="uno-text-green-600 uno-text-sm uno-font-medium">3</span>
-                </div>
-                <p class="uno-text-base md:uno-text-lg uno-text-gray-800 uno-font-['Outfit']">I am able to maintain high standards even under tight deadlines.</p>
-              </div>
-              
-              <!-- 评分选项 -->
-              <div class="uno-flex uno-justify-between uno-px-1">
-                <button 
-                  v-for="rating in 5" 
-                  :key="rating"
-                  class="uno-flex uno-flex-col uno-items-center uno-flex-1 uno-mx-1"
-                  :class="{ 'uno-border-2 uno-border-gray-200 uno-text-gray-500 hover:uno-border-gray-300 hover:uno-bg-gray-50': selectedRatings[2] !== rating, 'uno-border-2 uno-border-pink-300 uno-bg-pink-50 uno-text-pink-600': selectedRatings[2] === rating && rating <= 2, 'uno-border-2 uno-border-gray-300 uno-bg-gray-50 uno-text-gray-600': selectedRatings[2] === rating && rating === 3, 'uno-border-2 uno-border-green-300 uno-bg-green-50 uno-text-green-600': selectedRatings[2] === rating && rating >= 4 }"
-                  @click="selectRating(2, rating)"
-                  @touchstart="selectRating(2, rating)"
-                >
-                  <div class="uno-w-10 uno-h-10 md:uno-w-12 md:uno-h-12 uno-rounded-full uno-flex uno-items-center uno-justify-center uno-text-xs md:uno-text-sm uno-transition-all uno-duration-200 uno-ease-in-out uno-transform hover:uno-scale-105 active:uno-scale-95">
-                    {{ selectedRatings[2] === rating ? '✓' : rating }}
-                  </div>
-                  
-                  <!-- 移动端评分标签 -->
-                  <span v-if="selectedRatings[2] === rating" class="uno-mt-1 uno-text-[10px] uno-text-center uno-truncate uno-max-w-[80px]">
-                    {{ getRatingLabel(rating) }}
-                  </span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- 提示文本 -->
-          <p class="uno-text-center uno-text-sm uno-text-gray-500 uno-mt-8 uno-mb-6">All questions must be answered before continuing.</p>
-          
-          <!-- 步骤进度指示器 - 底部版本 -->
-          <div class="uno-mt-8 uno-mb-4">
-            <div class="uno-flex uno-justify-between uno-items-center">
-              <div class="uno-flex-1 uno-h-1 uno-bg-gray-200 uno-rounded-full uno-relative">
-                <div class="uno-absolute uno-left-0 uno-top-0 uno-h-full uno-bg-green-500 uno-w-[20%] uno-rounded-full uno-transition-all uno-duration-300"></div>
-              </div>
-              <div class="uno-ml-4">
-                <div class="uno-flex uno-space-x-1">
-                  <span v-for="i in 5" :key="i" class="uno-w-2 uno-h-2 uno-rounded-full" :class="i <= 1 ? 'uno-bg-green-500' : 'uno-bg-gray-300'"></span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
-
-    <!-- 底部导航按钮 -->
-      <div class="uno-px-6 md:uno-px-10 uno-py-4 md:uno-py-8 uno-mt-auto">
-        <div class="uno-max-w-2xl uno-mx-auto uno-flex uno-space-x-4">
-          <button class="uno-w-1/3 uno-h-[48px] md:uno-h-[52px] uno-bg-white uno-text-gray-600 uno-font-medium uno-rounded-xl uno-border uno-border-gray-200 hover:uno-bg-gray-50 uno-transition-colors uno-duration-300 uno-font-['Outfit']" @click="goBack">
-            Back
-          </button>
-          <button 
-            class="uno-w-2/3 uno-h-[48px] md:uno-h-[52px] uno-font-medium uno-rounded-xl uno-font-['Outfit'] uno-transition-all uno-duration-300 md:uno-shadow-md"
-            :class="{ 'uno-bg-green-600 uno-text-white hover:uno-bg-green-700 hover:uno-shadow-lg uno-transform hover:uno-translate-y-[-2px]': allQuestionsAnswered, 'uno-bg-gray-300 uno-text-gray-500 uno-cursor-not-allowed': !allQuestionsAnswered }"
-            :disabled="!allQuestionsAnswered"
-            @click="nextStep"
-          >
-            {{ currentStep < 5 ? 'Next Step' : 'View Results' }}
-          </button>
-        </div>
-      </div>
-  </div>
+  </main>
 </template>
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import { useRouter, useRoute } from 'vue-router'
-
-// const { t } = useI18n()
-// definePageMeta({
-//   title: t('test.step.title') as string
-// })
-// useSeoMeta({
-//   title: () => t('test.step.title') as string,
-//   description: () => t('test.step.description') as string,
-//   ogTitle: () => t('test.step.title') as string,
-//   ogDescription: () => t('test.step.description') as string
-// })
-
-// 路由
-const router = useRouter()
-const route = useRoute()
-
-// 问题答案状态
-const selectedRatings = ref<number[]>([0, 0, 0])
-
-// 获取当前步骤（默认为1）
-const currentStep = ref(parseInt(route.query.step as string) || 1)
-
-// 计算当前进度百分比
-const progressPercentage = computed(() => {
-  const answeredCount = selectedRatings.value.filter(rating => rating > 0).length
-  return Math.round((answeredCount / selectedRatings.value.length) * 100)
-})
-
-// 检查是否所有问题都已回答
-const allQuestionsAnswered = computed(() => {
-  return selectedRatings.value.every(rating => rating > 0)
-})
-
-// 选择评分
-const selectRating = (questionIndex: number, rating: number) => {
-  selectedRatings.value[questionIndex] = rating
-}
-
-// 获取评分标签
-const getRatingLabel = (rating: number): string => {
-  switch (rating) {
-    case 1: return 'Strongly Disagree'
-    case 2: return 'Disagree'
-    case 3: return 'Neutral'
-    case 4: return 'Agree'
-    case 5: return 'Strongly Agree'
-    default: return ''
-  }
-}
-
-// 下一步
-const nextStep = () => {
-  if (allQuestionsAnswered.value) {
-    // 保存当前步骤的答案
-    const answers = JSON.parse(localStorage.getItem('testAnswers') || '{}')
-    answers[`step${currentStep.value}`] = selectedRatings.value
-    localStorage.setItem('testAnswers', JSON.stringify(answers))
-    
-    // 保存答案，然后导航到下一步
-    console.log('Navigating to next step with answers:', selectedRatings.value)
-    
-    // 根据当前步骤决定下一步导航
-    if (currentStep.value < 5) {
-      // 还有下一个步骤
-      router.push({ path: '/test/step', query: { step: currentStep.value + 1 } })
-    } else {
-      // 所有步骤完成，跳转到结果页
-      router.push('/test/result')
-    }
-  }
-}
-
-// 返回上一步
-const goBack = () => {
-  if (currentStep.value > 1) {
-    // 返回上一个步骤
-    router.push({ path: '/test/step', query: { step: currentStep.value - 1 } })
-  } else {
-    // 实际项目中这里会导航到上一个页面
-    // router.back() 或 router.push('/test')
-    console.log('Going back to previous step')
-  }
-}
+const { t } = useI18n()
+const total = 20
+const current = 1
+const questions = [
+  t('pages.testIntro.q.q1'),
+  t('pages.testIntro.q.q2'),
+  t('pages.testIntro.q.q3'),
+  t('pages.testIntro.q.q4'),
+  t('pages.testIntro.q.q5')
+]
+const answers = ref<(number | null)[]>(Array(questions.length).fill(null))
+const answeredCount = computed(() => answers.value.filter(a => a !== null).length)
+const progress = computed(() => Math.round((answeredCount.value / total) * 100))
+const canContinue = computed(() => answeredCount.value === questions.length)
 </script>
 
-<style scoped>
-/* 可以添加自定义样式 */
-</style>
+<style scoped></style>
