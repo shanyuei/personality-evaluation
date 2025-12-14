@@ -9,12 +9,13 @@
       </div>
 
       <div class="uno-grid uno-grid-cols-1 md:uno-grid-cols-3 uno-gap-8">
+        <!-- 分类 -->
         <aside class="md:uno-col-span-1">
           <div class=" uno-rounded-2xl  uno-p-6">
             <div class="uno-flex uno-justify-start uno-items-start uno-flex-col uno-gap-4">
               <span
                 class="uno-text-[var(--ui-foreground)] uno-text-2xl uno-font-['Outfit'] uno-font-medium uno-leading-normal">
-                General FAQs
+                {{ $t('pages.faq.sections.general.title') }}
               </span>
               <div v-for="cat in asideCategories" :key="cat.id"
                 class="uno-flex uno-justify-start uno-items-start uno-flex-col uno-gap-3 uno-cursor-pointer">
@@ -32,7 +33,7 @@
             </div>
           </div>
         </aside>
-
+        <!-- 内容 -->
         <section class="md:uno-col-span-2 uno-space-y-10">
           <div class="uno-space-y-4">
             <h2 class="uno-text-2xl md:uno-text-3xl uno-font-['Outfit'] uno-font-bold uno-text-[var(--ui-foreground)]">
@@ -49,7 +50,7 @@
                   </h6>
                   <div v-for="(text, i) in item.list" :key="i"
                     class="uno-border-t uno-border-t-[var(--ui-border)] uno-rounded-[12px]">
-                    <div class="uno-flex uno-justify-between uno-items-center uno-py-[20px] uno-px-[24px]">
+                    <div class="uno-flex uno-justify-between uno-items-center uno-py-[20px] ">
                       <p class="uno-text-[var(--ui-foreground)] uno-text-xl uno-font-['Outfit'] uno-font-medium">
                         {{ text.question }}
                       </p>
