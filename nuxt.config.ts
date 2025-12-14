@@ -10,7 +10,10 @@ export default defineNuxtConfig({
   // Configure app settings to disable font loading
   app: {
     head: {
-      link: [] // Remove any auto-added font links
+      link: [], // Remove any auto-added font links
+      meta: [
+        { name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' }
+      ]
     }
   },
 
@@ -66,4 +69,9 @@ export default defineNuxtConfig({
   build: {
     transpile: [],
   },
+  nitro: {
+    prerender: {
+      ignore: ['/-mentors', '/legal/-terms.vue'] // 排除带有 "-" 的文件夹和文件
+    }
+  }
 });

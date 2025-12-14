@@ -1,63 +1,82 @@
 <template>
-  <section class="uno-relative uno-flex uno-items-center uno-justify-center uno-py-24 sm:uno-py-32">
-    <div class="uno-w-full uno-max-w-[720px] uno-px-6 sm:uno-px-10">
-      <div class="uno-p-8 sm:uno-p-10">
-        <h1 class="uno-text-center uno-mb-3 uno-text-[#0F172A] uno-font-['Outfit'] uno-font-bold uno-text-4xl sm:uno-text-5xl">Cancel Subscription</h1>
-        <p class="uno-text-center uno-text-[#4E5255] uno-mb-8">Easily cancel your subscription by entering the email used to create your account.</p>
+  <section class="uno-relative uno-flex uno-items-center uno-justify-center uno-py-12 sm:uno-py-24 md:uno-py-32">
+    <div class="uno-w-full uno-max-w-[720px] uno-px-4 sm:uno-px-6 md:uno-px-10">
+      <div class="uno-p-4 sm:uno-p-6 md:uno-p-8">
+        <h1
+          class="uno-text-center uno-mb-3 uno-text-[#0F172A] uno-font-['Outfit'] uno-font-bold uno-text-2xl sm:uno-text-3xl md:uno-text-4xl lg:uno-text-5xl">
+          Cancel Subscription</h1>
+        <p class="uno-text-center uno-text-[#4E5255] uno-mb-6 sm:uno-mb-8">Easily cancel your subscription by entering
+          the email
+          used to create your account.</p>
 
-        <div class="uno-mb-6">
-          <label uno-for="email" class="uno-block uno-text-sm uno-font-medium uno-text-gray-700 uno-mb-2">Email</label>
-          <input
-            id="email"
-            type="email"
-            v-model="email"
-            class="uno-w-full uno-px-4 uno-py-3 uno-border uno-border-gray-300 uno-rounded-[16px] focus:uno-outline-none focus:uno-ring-2 focus:uno-ring-[#009D77] focus:uno-border-transparent uno-transition-all uno-shadow-sm"
-            placeholder="Email Address"
-          >
-          <p v-if="emailError" class="uno-mt-2 uno-text-sm uno-text-[#EA4C89]">Email Address is required. This field cannot be left blank.</p>
+        <div class="uno-mb-4 sm:uno-mb-6">
+          <UFormField label="email" :ui="UFormFieldTheme">
+            <UInput id="email" v-model="email" type="email" placeholder="Email Address" :ui="UInputTheme" />
+          </UFormField>
+
+          <p v-if="emailError" class="uno-mt-2 uno-text-sm uno-text-[#EA4C89]">Email Address is required. This field
+            cannot be left blank.</p>
         </div>
 
-        <div class="uno-mb-8">
-          <h2 class="uno-text-[#0F172A] uno-font-['Outfit'] uno-font-semibold uno-text-xl uno-mb-4">Why did you decide to cancel your subscription?</h2>
-          <div class="uno-space-y-3">
+        <div class="uno-mb-6 sm:uno-mb-8">
+          <h2
+            class="uno-text-[#0F172A] uno-font-['Outfit'] uno-font-semibold uno-text-lg sm:uno-text-xl uno-mb-3 sm:uno-mb-4">
+            Why did you decide
+            to cancel your subscription?</h2>
+          <div class="uno-space-y-2 sm:uno-space-y-3">
             <label class="uno-flex uno-items-start uno-gap-3 uno-cursor-pointer">
-              <input type="checkbox" class="uno-mt-1 uno-h-4 uno-w-4" v-model="reasons" uno-value="difficult" >
+              <UCheckbox v-model="reasons.difficult" value="difficult" :ui="UCheckboxTheme" />
               <span>I found Cacaoo difficult to use.</span>
             </label>
             <label class="uno-flex uno-items-start uno-gap-3 uno-cursor-pointer">
-              <input type="checkbox" class="uno-mt-1 uno-h-4 uno-w-4" v-model="reasons" uno-value="missing" >
+              <UCheckbox v-model="reasons.missing" value="missing" :ui="UCheckboxTheme" />
               <span>I didn't find the necessary function.</span>
             </label>
             <label class="uno-flex uno-items-start uno-gap-3 uno-cursor-pointer">
-              <input type="checkbox" class="uno-mt-1 uno-h-4 uno-w-4" v-model="reasons" uno-value="technical" >
+              <UCheckbox v-model="reasons.technical" value="technical" :ui="UCheckboxTheme" />
               <span>I faced technical issues while working with Cacaoo.</span>
             </label>
             <label class="uno-flex uno-items-start uno-gap-3 uno-cursor-pointer">
-              <input type="checkbox" class="uno-mt-1 uno-h-4 uno-w-4" v-model="reasons" uno-value="switching" >
+              <UCheckbox v-model="reasons.switching" value="switching" :ui="UCheckboxTheme" />
               <span>I had problems switching plans.</span>
             </label>
             <label class="uno-flex uno-items-start uno-gap-3 uno-cursor-pointer">
-              <input type="checkbox" class="uno-mt-1 uno-h-4 uno-w-4" v-model="reasons" uno-value="team" >
+              <UCheckbox v-model="reasons.team" value="team" :ui="UCheckboxTheme" />
               <span>My team members do not want to use Cacaoo.</span>
             </label>
             <label class="uno-flex uno-items-start uno-gap-3 uno-cursor-pointer">
-              <input type="checkbox" class="uno-mt-1 uno-h-4 uno-w-4" v-model="reasons" uno-value="other" >
+              <UCheckbox v-model="reasons.other" value="other" :ui="UCheckboxTheme" />
               <span>Other.</span>
             </label>
           </div>
         </div>
 
-        <button class="uno-w-full uno-bg-[#009D77] uno-text-white uno-font-['Outfit'] uno-font-medium uno-py-4 uno-px-4 uno-rounded-[16px] hover:uno-bg-[#0AA17F] uno-transition-colors uno-duration-300 uno-mb-6" @click="submit">
+        <UButton
+          class="uno-w-full uno-py-3 sm:uno-py-4 uno-px-4 uno-rounded-[16px] uno-transition-colors uno-duration-300 uno-mb-4 sm:uno-mb-6"
+          :ui="UButtonTheme" @click="submit">
           Get Started
-        </button>
+        </UButton>
 
-        <div class="uno-space-y-3 uno-text-sm uno-text-[#4E5255]">
-          <p>
-            If you don't remember which email you used to register, check your inbox for emails from "Personality".
-            Otherwise, contact our friendly customer support <a href="/support" class="uno-underline">here</a>.
-          </p>
-          <p>
-            You can also cancel your subscription by logging into your account, going to the "Membership" tab and clicking "Cancel Subscription".
+        <div class="uno-space-y-3 sm:uno-space-y-4 uno-text-sm uno-text-[#4E5255]">
+          <div class="uno-flex uno-items-start uno-gap-2 sm:uno-gap-3">
+            <NuxtImg src="/images/common/email-icon-1.png" alt="Email Icon" width="16" height="16"
+              class="uno-mt-0.5 uno-hidden md:uno-block " />
+            <NuxtImg src="/images/common/email-icon-1.png" alt="Email Icon" width="50" height="50"
+              class="uno-mt-0.5 uno-block md:uno-hidden" />
+            <div>
+              If you don't remember which email you used to register, check your inbox for emails from "Personality".
+              Otherwise, contact our friendly customer support <span
+                class="uno-underline uno-text-[#009D77]">here</span>
+
+            </div>
+          </div>
+          <p class="uno-flex uno-items-start uno-gap-2 sm:uno-gap-3">
+            <NuxtImg src="/images/common/user-icon-1.png" alt="User Icon" width="16" height="16"
+              class="uno-mt-0.5  uno-hidden md:uno-block" />
+            <NuxtImg src="/images/common/user-icon-1.png" alt="User Icon" width="50" height="50"
+              class="uno-mt-0.5 uno-block md:uno-hidden" />
+            You can also cancel your subscription by logging into your account, going to the "Membership" tab and
+            clicking "Cancel Subscription".
           </p>
         </div>
       </div>
@@ -67,6 +86,10 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import UFormFieldTheme from "~/theme/UFormField";
+import UInputTheme from "~/theme/UInput";
+import UCheckboxTheme from "~/theme/UCheckbox";
+import UButtonTheme from "~/theme/UButton";
 // const { t } = useI18n()
 // definePageMeta({
 //   title: t('orders.cancelSubscription.title') as string
@@ -78,7 +101,15 @@ import { ref } from 'vue'
 //   ogDescription: () => t('orders.cancelSubscription.description') as string
 // })
 const email = ref('')
-const reasons = ref<string[]>(['difficult'])
+const reasons = ref({
+  difficult: false,
+  missing: false,
+  technical: false,
+  switching: false,
+  team: false,
+  other: false,
+
+})
 const emailError = ref(false)
 
 const submit = () => {
