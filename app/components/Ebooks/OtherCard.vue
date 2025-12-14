@@ -14,11 +14,11 @@
       </div>
       <div class="uno-flex uno-gap-3 uno-pt-2">
         <UButton
-          :ui="{ base: `w-[151px] h-[48px] flex justify-center items-center flex-row gap-1 py-1 px-[20px]  rounded-lg text-[#FFFFFF] text-lg font-['Outfit'] font-bold leading-normal` }">
+          :ui="{ base: `flex-1 h-[48px] flex justify-center items-center flex-row gap-1 py-1 px-[20px]  rounded-lg text-[#FFFFFF] text-sm md:text-lg font-['Outfit'] font-bold leading-normal` }">
           {{ $t('pages.ebooks.buyNow') }}
         </UButton>
         <UButton variant="ghost"
-          :ui="{ base: `w-[153px] h-[48px] flex justify-center items-center flex-row gap-1 py-1 px-[20px] border-solid  border-2 rounded-lg  text-lg font-['Outfit'] font-bold leading-normal` }">
+          :ui="{ base: `h-[48px] flex justify-center items-center flex-row gap-1 py-1 px-[20px] border-solid  border-2 rounded-lg  text-sm md:text-lg font-['Outfit'] font-bold leading-normal` }">
           {{ $t('pages.ebooks.readMore') }}
         </UButton>
       </div>
@@ -27,7 +27,6 @@
 </template>
 
 <script setup lang="ts">
-import type { PropType } from 'vue';
 
 interface Props {
   title: string;
@@ -37,5 +36,5 @@ interface Props {
   image: string;
 }
 
-const props = defineProps<Props>();
+defineProps<Props>();
 </script>
