@@ -1,5 +1,5 @@
 <template>
-  <div class="uno-faq-section uno-py-16 sm:uno-py-20 md:uno-py-24 uno-bg-gray-50">
+  <div class="uno-faq-section uno-py-16 sm:uno-py-20 md:uno-py-24">
     <div class="uno-container uno-mx-auto uno-max-w-[80%] uno-px-4">
       <div class="uno-text-center uno-mb-16">
         <h2 class="uno-text-4xl uno-font-['Outfit'] uno-font-bold uno-mb-3">{{ title }}</h2>
