@@ -10,7 +10,7 @@
 
       <div class="uno-grid uno-grid-cols-1 md:uno-grid-cols-3 uno-gap-8">
         <!-- 分类 -->
-        <aside class="md:uno-col-span-1">
+        <aside class="uno-hidden md:uno-block md:uno-col-span-1">
           <div class=" uno-rounded-2xl  uno-p-6">
             <div class="uno-flex uno-justify-start uno-items-start uno-flex-col uno-gap-4">
               <span
@@ -47,7 +47,7 @@
                   {{ entry.title }}
                 </h4>
                 <template v-for="item in entry.items" :key="item.text">
-                  <template v-if="item.id === currentCategory">
+                  <template v-if="currentCategory === 'all' || item.id === currentCategory">
                     <h6 class="uno-text-gray-700 uno-text-lg md:uno-text-xl uno-font-['Outfit'] uno-font-medium">
                       {{ item.text }}
                     </h6>
@@ -86,7 +86,7 @@ const { t } = useI18n()
 
 
 
-const currentCategory = ref<string>('1') // 默认选中第一个分类
+const currentCategory = ref<string>('all') // 默认展示全部分类
 const expanded = reactive<{ [key: string]: number | null }>({
   general: 0,
   integration: null,
@@ -112,51 +112,23 @@ const asideCategories: any = [
         text: "How We Use Your Information",
         id: "1",
         list: [
-          { question: t('faq.sections.general.q1'), answer: t('faq.sections.general.a1'), id: "1", type: "1" },
-          { question: t('faq.sections.general.q2'), answer: t('faq.sections.general.a2'), id: "2", type: "1" },
-          { question: t('faq.sections.general.q3'), answer: t('faq.sections.general.a3'), id: "3", type: "1" },
-          { question: t('faq.sections.general.q2'), answer: t('faq.sections.general.a2'), id: "4", type: "1" },
-          { question: t('faq.sections.general.q3'), answer: t('faq.sections.general.a3'), id: "5", type: "1" },
+          { question: "什么是我们的服务？", answer: "我们提供专业的测评服务，帮助你了解自己的优势和不足。", id: "1", type: "1" },
+          { question: "如何注册账户？", answer: "点击右上角注册按钮，填写邮箱和密码即可完成注册。", id: "2", type: "1" },
+          { question: "忘记密码怎么办？", answer: "点击登录页忘记密码链接，输入邮箱即可重置密码。", id: "3", type: "1" },
+          { question: "如何注册账户？", answer: "点击右上角注册按钮，填写邮箱和密码即可完成注册。", id: "4", type: "1" },
+          { question: "忘记密码怎么办？", answer: "点击登录页忘记密码链接，输入邮箱即可重置密码。", id: "5", type: "1" },
         ]
       },
       {
         text: "Data Sharing and Disclosure",
         id: "2",
         list: [
-          { question: t('faq.sections.integration.q1'), answer: t('faq.sections.integration.a1'), id: "6", type: "2" },
-          { question: t('faq.sections.integration.q2'), answer: t('faq.sections.integration.a2'), id: "7", type: "2" },
-          { question: t('faq.sections.integration.q3'), answer: t('faq.sections.integration.a3'), id: "8", type: "2" },
+          { question: "如何集成我们的API？", answer: "你可以参考我们的API文档，按照步骤完成集成。", id: "6", type: "2" },
+          { question: "API调用有频率限制吗？", answer: "免费用户每分钟最多调用10次，付费用户无限制。", id: "7", type: "2" },
+          { question: "如何获取API密钥？", answer: "登录账户后，在设置页面可以生成和管理API密钥。", id: "8", type: "2" },
         ]
       },
-      {
-        text: "Cookies and Tracking Technologies",
-        id: "3",
-        list: [
-          { question: t('faq.sections.account.q1'), answer: t('faq.sections.account.a1'), id: "9", type: "3" },
-          { question: t('faq.sections.account.q2'), answer: t('faq.sections.account.a2'), id: "10", type: "3" },
-          { question: t('faq.sections.account.q3'), answer: t('faq.sections.account.a3'), id: "11", type: "3" },
-        ],
-      },
-      {
-        text: "Changes to This Privacy Policy",
-        id: "4",
-        list: [
-          { question: t('faq.sections.billing.q1'), answer: t('faq.sections.billing.a1'), id: "12", type: "4" },
-          { question: t('faq.sections.billing.q2'), answer: t('faq.sections.billing.a2'), id: "13", type: "4" },
-          { question: t('faq.sections.billing.q3'), answer: t('faq.sections.billing.a3'), id: "14", type: "4" },
-          { question: t('faq.sections.billing.q4'), answer: t('faq.sections.billing.a4'), id: "15", type: "4" },
-        ]
-      },
-      {
-        text: "Contact Us",
-        id: "5",
-        list: [
-          { question: t('faq.sections.billing.q5'), answer: t('faq.sections.billing.a5'), id: "16", type: "5" },
-          { question: t('faq.sections.billing.q6'), answer: t('faq.sections.billing.a6'), id: "17", type: "5" },
-          { question: t('faq.sections.billing.q7'), answer: t('faq.sections.billing.a7'), id: "18", type: "5" },
-          { question: t('faq.sections.billing.q8'), answer: t('faq.sections.billing.a8'), id: "19", type: "5" },
-        ]
-      }
+     
     ]
   }
 ]
