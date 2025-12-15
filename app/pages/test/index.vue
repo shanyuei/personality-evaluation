@@ -70,8 +70,8 @@
           <div class="uno-text-[#4E5255] uno-text-xs uno-font-['Outfit'] uno-leading-normal">{{ progress }}%</div>
           <div class="uno-text-[#4E5255] uno-text-xs uno-font-['Outfit'] uno-leading-normal">{{ $t('pages.testIntro.progress.step', { current, total }) }}</div>
         </div>
-        <div class="uno-relative uno-w-full uno-h-[10px] uno-rounded-xl uno-bg-[#DDDDDD] uno-mt-2">
-          <div class="uno-absolute uno-top-0 uno-left-0 uno-w-[32px] uno-h-[10px] uno-rounded-xl uno-bg-[#009D77] uno-z-10"></div>
+        <div class="uno-relative uno-w-[450px] uno-h-[10px] uno-rounded-xl uno-bg-[#DDDDDD] uno-mt-2">
+          <div class="uno-absolute uno-top-0 uno-left-0 uno-w-[399px] uno-h-[10px] uno-rounded-xl uno-bg-[#009D77] uno-z-10"></div>
           <div class="uno-h-full uno-rounded-full uno-bg-[var(--ui-primary)]" :style="{ width: progress + '%' }"></div>
         </div>
       </div>
@@ -110,7 +110,7 @@
 
       <div class="uno-w-full md:uno-w-[602px] uno-mx-auto uno-mt-4">
         <div class="uno-space-y-4">
-          <div v-for="(q, qi) in questions" :key="qi" class="uno-bg-white uno-rounded-[20px] uno-border uno-border-[var(--ui-border)] uno-shadow-[0px_2px_8px_rgba(0,0,0,0.06)]">
+          <div v-for="(q, qi) in questions" :key="qi" class="uno-bg-white uno-rounded-[20px] uno-border uno-border-[var(--ui-border)]">
             <div class="uno-p-5 md:uno-p-6">
                 <p class="uno-text-[#011813] uno-font-['Outfit'] uno-text-center uno-leading-[1.2]">{{ q }}</p>
               <div class="uno-flex uno-flex-row uno-items-center uno-justify-between uno-gap-[20px] uno-mt-4 uno-px-[10%]">
