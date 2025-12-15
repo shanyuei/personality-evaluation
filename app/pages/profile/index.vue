@@ -22,7 +22,7 @@
               Type 7s on the Enneagram are often referred to as The Enthusiasts due to their energetic, spontaneous, and optimistic nature. They are characterized by a zest for life, a love of adventure, and a constant pursuit of new experiences. Type 7s are driven by the desire to avoid pain and discomfort, seeking pleasure, excitement, and variety in all aspects of their lives. With their forward-thinking and imaginative minds, Type 7s are natural problem-solvers, able to see opportunities where others may see obstacles. They thrive on possibilities and are quick to generate ideas, often inspiring those around them with their infectious optimism and sense of adventure.
             </p>
             <div>
-              <UButton class="uno-h-[40px] uno-rounded-[12px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-white">{{ $t('pages.profile.readMore') }}</UButton>
+              <UButton class="uno-w-[151px] uno-h-[48px] uno-gap-1 uno-py-1 uno-px-[20px] uno-bg-[var(--ui-primary)] uno-rounded-lg hover:uno-bg-[var(--color-green-2)] uno-text-white uno-text-lg uno-font-['Outfit'] uno-font-bold uno-leading-normal uno-text-center">{{ $t('pages.profile.readMore') }}</UButton>
             </div>
           </div>
           <div>
@@ -45,30 +45,41 @@
         </div>
       </section>
 
-      <div class="uno-grid uno-gap-6 md:uno-grid-cols-2 uno-mt-6">
-        <section class="uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)]">
+      <div class="uno-grid uno-gap-6 md:uno-grid-cols-5 uno-mt-6">
+        <section class="uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)] md:uno-col-span-3">
           <div class="uno-p-6 md:uno-p-8 uno-space-y-4">
-            <span class="uno-text-sm uno-text-[var(--ui-muted-foreground)]">{{ $t('pages.profile.dailyTrivia') }}</span>
-            <h3 class="uno-text-lg md:uno-text-xl uno-font-bold uno-text-[var(--ui-foreground)]">{{ $t('pages.profile.triviaQuestion') }}</h3>
+            <span class="uno-w-[418px] uno-text-[#4E5255] uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2] uno-mb-12">{{ $t('pages.profile.dailyTrivia') }}</span>
+            <h3 class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{ $t('pages.profile.triviaQuestion') }}</h3>
             <div class="uno-space-y-2">
             <label v-for="(opt, idx) in triviaOptions" :key="idx" class="uno-flex uno-items-center uno-gap-3">
               <input v-model="triviaSelected" :value="idx" type="radio">
-              <span class="uno-text-[var(--ui-foreground)]">{{ opt }}</span>
+              <span class="uno-text-[var(--ui-foreground)] uno-text-sm">{{ opt }}</span>
             </label>
             </div>
             <div>
-              <UButton class="uno-h-[40px] uno-rounded-[12px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-white">{{ $t('pages.profile.viewResults') }}</UButton>
+              <UButton class="uno-h-[48px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-1 uno-py-1 uno-px-[20px] uno-bg-[#009D77] uno-rounded-lg hover:uno-bg-[var(--color-green-2)] uno-text-[#FFFFFF] uno-text-base uno-font-['Outfit'] uno-font-bold uno-leading-normal">{{ $t('pages.profile.viewResults') }}</UButton>
             </div>
           </div>
         </section>
 
-        <section class="uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)]">
-          <div class="uno-p-6 md:uno-p-8 uno-space-y-3">
-            <span class="uno-text-sm uno-text-[var(--ui-muted-foreground)]">{{ $t('pages.profile.dailyStreak') }}</span>
-            <div class="uno-text-3xl uno-font-extrabold uno-text-[var(--ui-foreground)]">0</div>
-            <p class="uno-text-[var(--ui-muted-foreground)]">{{ $t('pages.profile.begin') }}</p>
+        <section class="uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)] md:uno-col-span-2">
+          <div class="uno-p-6 md:uno-p-8">
+            <span class="uno-w-[418px] uno-text-[#4E5255] uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2] uno-mb-3">{{ $t('pages.profile.dailyStreak') }}</span>
+            <div class="uno-flex uno-items-center uno-gap-2 uno-my-4">
+              <div class="uno-text-[#011813] uno-text-[88px] uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">0</div>
+              <p class="uno-w-[272px] uno-text-[#4E5255] uno-text-base uno-font-['Outfit'] uno-leading-[1.6]">Days in a row<br>{{ $t('pages.profile.begin') }}</p>
+            </div>
             <div class="uno-flex uno-gap-2 uno-mt-2">
-              <span v-for="d in weekdays" :key="d.text" class="uno-w-8 uno-h-8 uno-rounded-full uno-flex uno-items-center uno-justify-center" :class="d.active ? 'uno-bg-[var(--ui-primary)] uno-text-white' : 'uno-bg-[var(--ui-input)] uno-text-[var(--ui-foreground)]'">{{ d.text }}</span>
+              <span v-for="(d, idx) in weekdays" :key="d.text" :class="[
+                idx === 2 
+                  ? 'uno-w-[48px] uno-h-[48px] uno-flex uno-justify-center uno-items-end uno-pb-0 uno-px-[19.5px] uno-bg-[#DCFBF2] uno-border-solid uno-border-[#009D77] uno-border-[4.2px] uno-rounded-[24px] uno-overflow-hidden' 
+                  : 'uno-w-[46px] uno-h-[46px] uno-flex uno-justify-center uno-items-end uno-pb-0 uno-px-[19.5px] uno-bg-[#F0F0F0] uno-border-solid uno-border-[#DDDDDD] uno-border-[4.2px] uno-rounded-[24px] uno-overflow-hidden',
+                d.active 
+                  ? 'uno-bg-[var(--ui-primary)] uno-text-white uno-font-bold' 
+                  : idx === 2 
+                    ? 'uno-text-[#009D77]' 
+                    : 'uno-bg-[#F0F0F0] uno-text-black uno-font-bold'
+              ]">{{ d.text }}</span>
             </div>
           </div>
         </section>
@@ -163,15 +174,15 @@ const scoreBars = [
 
 
 
-const triviaOptions = ['Guesswork', 'Practice', 'Analytical thinking']
+const triviaOptions = ['Avoidance', 'Guesswork', 'Practice', 'Analytical thinking']
 const triviaSelected = ref<number | null>(null)
 
 const weekdays = [
   { text: 'M', active: false },
   { text: 'T', active: false },
-  { text: 'W', active: true },
-  { text: 'T', active: true },
-  { text: 'F', active: true },
+  { text: 'W', active: false },
+  { text: 'T', active: false },
+  { text: 'F', active: false },
   { text: 'S', active: false },
   { text: 'S', active: false }
 ]
