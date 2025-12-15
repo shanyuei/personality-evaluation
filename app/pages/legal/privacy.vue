@@ -1,92 +1,206 @@
 <template>
-  <main class="uno-min-h-screen uno-bg-gradient-to-br uno-from-gray-50 uno-to-gray-100 uno-py-12 uno-px-6 md:uno-px-10">
-    <div class="page-container">
-      <div class="uno-text-center uno-mb-8">
-        <h1 class="uno-text-3xl md:uno-text-4xl uno-font-['Outfit'] uno-font-bold uno-text-gray-900">{{ $t('pages.legal.privacy.title') }}</h1>
-        <p class="uno-text-gray-600 uno-max-w-2xl uno-mx-auto uno-mt-3">{{ $t('pages.legal.privacy.description') }}</p>
+  <main class="uno-py-12 uno-px-6 md:uno-px-10 ">
+    <div class="page-container  uno-mx-auto">
+      <!-- 面包屑导航 -->
+      <div class="uno-text-sm  uno-mb-6">
+        <a href="/">Home</a> / <span>Privacy Policy</span>
       </div>
 
-      <div class="uno-grid uno-grid-cols-1 md:uno-grid-cols-3 uno-gap-8">
-        <aside class="md:uno-col-span-1">
-          <div class="uno-bg-white uno-rounded-2xl uno-shadow-sm uno-border uno-p-6">
-            <ul class="uno-space-y-3">
-              <li><a href="#general" class="uno-text-gray-800 hover:uno-text-green-600 uno-font-medium">{{ $t('pages.legal.privacy.nav.general') }}</a></li>
-              <li><a href="#usage" class="uno-text-gray-800 hover:uno-text-green-600 uno-font-medium">{{ $t('pages.legal.privacy.nav.usage') }}</a></li>
-              <li><a href="#sharing" class="uno-text-gray-800 hover:uno-text-green-600 uno-font-medium">{{ $t('pages.legal.privacy.nav.sharing') }}</a></li>
-              <li><a href="#cookies" class="uno-text-gray-800 hover:uno-text-green-600 uno-font-medium">{{ $t('pages.legal.privacy.nav.cookies') }}</a></li>
-              <li><a href="#changes" class="uno-text-gray-800 hover:uno-text-green-600 uno-font-medium">{{ $t('pages.legal.privacy.nav.changes') }}</a></li>
-              <li><a href="#contact" class="uno-text-gray-800 hover:uno-text-green-600 uno-font-medium">{{ $t('pages.legal.privacy.nav.contact') }}</a></li>
+      <div class="uno-mb-20">
+        <h1 class="uno-text-4xl md:uno-text-5xl uno-font-['Outfit'] uno-font-bold uno-text-gray-900">Privacy Policy</h1>
+      </div>
+
+      <div class="uno-grid uno-grid-cols-1 md:uno-grid-cols-4 uno-gap-8">
+        <!-- 侧边栏菜单 -->
+        <div class="uno-col-span-1 uno-hidden md:uno-block">
+          <nav class="uno-sticky uno-top-8">
+            <ul class="uno-space-y-4">
+              <li>
+                <a href="#privacy-policy"
+                  :class="['uno-block uno-text-sm uno-font-medium hover:text-[var(--color-pink-1)]', activeSection === 'privacy-policy' ? 'text-[var(--color-pink-1)]' : '']"
+                  @click="handleClick('privacy-policy')">Privacy
+                  Policy</a>
+              </li>
+              <li>
+                <a href="#information-we-collect"
+                  :class="['uno-block uno-text-sm uno-font-medium hover:text-[var(--color-pink-1)]', activeSection === 'information-we-collect' ? 'text-[var(--color-pink-1)]' : '']"
+                  @click="handleClick('information-we-collect')">Information We
+                  Collect</a>
+              </li>
+              <li>
+                <a href="#how-we-use-your-information"
+                  :class="['uno-block uno-text-sm uno-font-medium hover:text-[var(--color-pink-1)]', activeSection === 'how-we-use-your-information' ? 'text-[var(--color-pink-1)]' : '']"
+                  @click="handleClick('how-we-use-your-information')">How We Use
+                  Your Information</a>
+              </li>
+              <li>
+                <a href="#data-sharing-and-disclosure"
+                  :class="['uno-block uno-text-sm uno-font-medium hover:text-[var(--color-pink-1)]', activeSection === 'data-sharing-and-disclosure' ? 'text-[var(--color-pink-1)]' : '']"
+                  @click="handleClick('data-sharing-and-disclosure')">Data Sharing
+                  and Disclosure</a>
+              </li>
+              <li>
+                <a href="#cookies-and-tracking-technologies"
+                  :class="['uno-block uno-text-sm uno-font-medium hover:text-[var(--color-pink-1)]', activeSection === 'cookies-and-tracking-technologies' ? 'text-[var(--color-pink-1)]' : '']"
+                  @click="handleClick('cookies-and-tracking-technologies')">Cookies and
+                  Tracking Technologies</a>
+              </li>
+              <li>
+                <a href="#changes-to-this-privacy-policy"
+                  :class="['uno-block uno-text-sm uno-font-medium hover:text-[var(--color-pink-1)]', activeSection === 'changes-to-this-privacy-policy' ? 'text-[var(--color-pink-1)]' : '']"
+                  @click="handleClick('changes-to-this-privacy-policy')">Changes to
+                  This Privacy Policy</a>
+              </li>
+              <li>
+                <a href="#contact-us"
+                  :class="['uno-block uno-text-sm uno-font-medium hover:text-[var(--color-pink-1)]', activeSection === 'contact-us' ? 'text-[var(--color-pink-1)]' : '']"
+                  @click="handleClick('contact-us')">Contact Us</a>
+              </li>
             </ul>
+          </nav>
+        </div>
+
+        <!-- 主内容区域 -->
+        <div class="uno-col-span-3">
+          <div class="uno-space-y-8">
+            <!-- Privacy Policy -->
+            <section id="privacy-policy">
+              <h2 class="uno-text-2xl uno-font-['Outfit'] uno-font-bold uno-text-gray-900 uno-mb-4">Privacy Policy</h2>
+              <p class="uno-text-sm uno-text-gray-500 uno-mb-6">Last Update: 25-11-2024</p>
+              <p class="uno-text-gray-700 uno-mb-4">
+                At MH. Masters Hub, we value and prioritize your privacy. This Privacy Policy describes how we collect,
+                use,
+                share, and protect your information while you use our Learning Management System (LMS) website and
+                services. We are committed to ensuring that your personal data remains secure and that you are informed
+                about your rights and options regarding your information.
+              </p>
+            </section>
+
+            <!-- Information We Collect -->
+            <section id="information-we-collect">
+              <h2 class="uno-text-xl uno-font-['Outfit'] uno-font-bold uno-text-gray-900 uno-mb-4">Information We
+                Collect</h2>
+              <p class="uno-text-gray-700 uno-mb-4">
+                We collect personal information such as your name, email, and contact details to manage your account and
+                improve your learning experience. We track your course progress, assignments, and assessments to tailor
+                our
+                services. For purchases, we collect payment details for secure processing. We also gather usage data,
+                including
+                IP address and device information, to enhance our platform's performance.
+              </p>
+            </section>
+
+            <!-- How We Use Your Information -->
+            <section id="how-we-use-your-information">
+              <h2 class="uno-text-xl uno-font-['Outfit'] uno-font-bold uno-text-gray-900 uno-mb-4">How We Use Your
+                Information</h2>
+              <p class="uno-text-gray-700 uno-mb-4">
+                We use your data to manage your account, personalize your learning, and communicate important updates.
+                With your consent, we may send you promotional offers. Your payment information is used for secure
+                transactions
+                and fraud prevention. We also use your data to improve our website, customer services, and comply with
+                legal
+                requirements.
+              </p>
+            </section>
+
+            <!-- Data Sharing and Disclosure -->
+            <section id="data-sharing-and-disclosure">
+              <h2 class="uno-text-xl uno-font-['Outfit'] uno-font-bold uno-text-gray-900 uno-mb-4">Data Sharing and
+                Disclosure</h2>
+              <p class="uno-text-gray-700 uno-mb-4">
+                Your privacy is important to us, and we ensure your information is kept confidential. We do not sell or
+                rent your
+                data. But may share it with trusted third-party vendors for services like hosting and payment
+                processing. These
+                providers are required to protect your data. We may also share information to comply with legal
+                obligations or
+                with your consent.
+              </p>
+            </section>
+
+            <!-- Cookies and Tracking Technologies -->
+            <section id="cookies-and-tracking-technologies">
+              <h2 class="uno-text-xl uno-font-['Outfit'] uno-font-bold uno-text-gray-900 uno-mb-4">Cookies and Tracking
+                Technologies</h2>
+              <p class="uno-text-gray-700 uno-mb-4">
+                Our website uses cookies and similar tracking technologies to improve user experience and functionality.
+                Cookies enable us to remember your preferences, analyze site usage, and enhance our services. Cookies
+                are
+                small files stored on your device, and while you may choose to disable them via your browser settings,
+                doing so
+                could limit certain functionalities or features on our website.
+              </p>
+            </section>
+
+            <!-- Changes to This Privacy Policy -->
+            <section id="changes-to-this-privacy-policy">
+              <h2 class="uno-text-xl uno-font-['Outfit'] uno-font-bold uno-text-gray-900 uno-mb-4">Changes to This
+                Privacy Policy</h2>
+              <p class="uno-text-gray-700 uno-mb-4">
+                We may update this Privacy Policy to reflect changes in our practices or legal requirements. Updates
+                will be
+                posted here, and significant changes will be communicated via email or notifications. We encourage you
+                to
+                review this policy regularly to stay informed. By continuing to use our website, you accept the updated
+                terms.
+              </p>
+            </section>
+
+            <!-- Contact Us -->
+            <section id="contact-us">
+              <h2 class="uno-text-xl uno-font-['Outfit'] uno-font-bold uno-text-gray-900 uno-mb-4">Contact Us</h2>
+              <p class="uno-text-gray-700 uno-mb-4">
+                If you have any questions, concerns, or feedback regarding this Privacy Policy, please reach out to us.
+                We are
+                here to address any inquiries you may have to ensure your experience with MH. Masters Hub is secure and
+                trustworthy.
+              </p>
+            </section>
           </div>
-        </aside>
-
-        <section class="md:uno-col-span-2 uno-space-y-10">
-          <div id="general" class="uno-bg-white uno-rounded-2xl uno-shadow-sm uno-border uno-p-6">
-            <h2 class="uno-text-xl md:uno-text-2xl uno-font-['Outfit'] uno-font-semibold uno-text-gray-900 uno-mb-4">{{ $t('pages.legal.privacy.sections.general.title') }}</h2>
-            <p class="uno-text-gray-700">{{ $t('pages.legal.privacy.sections.general.body') }}</p>
-          </div>
-
-          <FAQSection
-            :title="$t('pages.legal.privacy.sections.usage.title')"
-            :description="$t('pages.legal.privacy.sections.usage.desc')"
-            :items="usageItems"
-            :accordion="true"
-            :default-expanded-index="0"
-          />
-
-          <FAQSection
-            id="sharing"
-            :title="$t('pages.legal.privacy.sections.sharing.title')"
-            :description="$t('pages.legal.privacy.sections.sharing.desc')"
-            :items="sharingItems"
-            :accordion="true"
-            :default-expanded-index="null"
-          />
-
-          <div id="cookies" class="uno-bg-white uno-rounded-2xl uno-shadow-sm uno-border uno-p-6">
-            <h2 class="uno-text-xl md:uno-text-2xl uno-font-['Outfit'] uno-font-semibold uno-text-gray-900 uno-mb-4">{{ $t('pages.legal.privacy.sections.cookies.title') }}</h2>
-            <p class="uno-text-gray-700">{{ $t('pages.legal.privacy.sections.cookies.body') }}</p>
-          </div>
-
-          <div id="changes" class="uno-bg-white uno-rounded-2xl uno-shadow-sm uno-border uno-p-6">
-            <h2 class="uno-text-xl md:uno-text-2xl uno-font-['Outfit'] uno-font-semibold uno-text-gray-900 uno-mb-4">{{ $t('pages.legal.privacy.sections.changes.title') }}</h2>
-            <p class="uno-text-gray-700">{{ $t('pages.legal.privacy.sections.changes.body') }}</p>
-          </div>
-
-          <div id="contact" class="uno-bg-white uno-rounded-2xl uno-shadow-sm uno-border uno-p-6">
-            <h2 class="uno-text-xl md:uno-text-2xl uno-font-['Outfit'] uno-font-semibold uno-text-gray-900 uno-mb-4">{{ $t('pages.legal.privacy.sections.contact.title') }}</h2>
-            <p class="uno-text-gray-700">{{ $t('pages.legal.privacy.sections.contact.body') }}</p>
-          </div>
-        </section>
+        </div>
       </div>
     </div>
   </main>
- </template>
+</template>
 
- <script setup lang="ts">
- import FAQSection from '@/components/FAQSection.vue'
- const { t } = useI18n()
-//  definePageMeta({
-//   title: () => t('pages.legal.privacy.title') as string
-//  })
-//  useSeoMeta({
-//   title: () => t('seo.legal.privacy.title') as string,
-//   description: () => t('seo.legal.privacy.description') as string,
-//   ogTitle: () => t('seo.legal.privacy.title') as string,
-//   ogDescription: () => t('seo.legal.privacy.description') as string
-//  })
+<script setup lang="ts">
+import { ref, onMounted, onUnmounted } from 'vue'
 
- const usageItems = [
-  { question: t('pages.legal.privacy.sections.usage.q1'), answer: t('pages.legal.privacy.sections.usage.a1') },
-  { question: t('pages.legal.privacy.sections.usage.q2'), answer: t('pages.legal.privacy.sections.usage.a2') },
-  { question: t('pages.legal.privacy.sections.usage.q3'), answer: t('pages.legal.privacy.sections.usage.a3') }
- ]
+const activeSection = ref('privacy-policy')
+const isClicking = ref(false)
 
- const sharingItems = [
-  { question: t('pages.legal.privacy.sections.sharing.q1'), answer: t('pages.legal.privacy.sections.sharing.a1') },
-  { question: t('pages.legal.privacy.sections.sharing.q2'), answer: t('pages.legal.privacy.sections.sharing.a2') }
- ]
- </script>
+const handleScroll = () => {
+  if (isClicking.value) return
+  
+  const sections = document.querySelectorAll('section[id]')
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 100
+    const sectionId = section.getAttribute('id')
+    if (window.scrollY >= sectionTop) {
+      activeSection.value = sectionId
+    }
+  })
+}
 
- <style scoped>
- </style>
+const handleClick = (sectionId) => {
+  isClicking.value = true
+  activeSection.value = sectionId
+  
+  // Reset clicking state after a delay to allow scroll to complete
+  setTimeout(() => {
+    isClicking.value = false
+  }, 1000)
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+  handleScroll()
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
+</script>
+
+<style scoped></style>

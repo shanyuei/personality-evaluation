@@ -1,41 +1,41 @@
 <template>
-  <div class="uno-min-h-screen uno-flex uno-flex-col uno-items-center uno-justify-center uno-bg-gradient-to-b uno-from-white uno-to-gray-50 uno-px-6 uno-py-10 md:uno-py-16">
+  <div class=" uno-flex uno-flex-col uno-items-center uno-justify-center uno-px-6 uno-py-10 md:uno-py-16">
     <div class="uno-max-w-md uno-w-full uno-flex uno-flex-col uno-items-center uno-text-center">
-      <div class="uno-w-16 uno-h-16 md:uno-w-20 md:uno-h-20 uno-rounded-full uno-bg-green-100 uno-flex uno-items-center uno-justify-center uno-mb-6 md:uno-mb-8">
-        <svg class="uno-w-8 uno-h-8 md:uno-w-10 md:uno-h-10 uno-text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-        </svg>
+      <div
+        class="uno-w-16 uno-h-16 md:uno-w-20 md:uno-h-20 uno-rounded-full  uno-flex uno-items-center uno-justify-center uno-mb-6 md:uno-mb-8">
+        <nuxt-img src="/images/common/pay-card-1.png" alt="pay-card-1" width="96" height="96" />
       </div>
 
-      <h1 class="uno-text-3xl md:uno-text-4xl uno-font-bold uno-text-gray-900 uno-mb-3 md:uno-mb-4 uno-font-['Outfit']">{{ $t('pages.orders.purchaseComplete.title') }}</h1>
-      <p class="uno-text-gray-600 uno-mb-6 md:uno-mb-8 uno-font-['Outfit'] uno-text-base md:uno-text-lg">{{ $t('pages.orders.purchaseComplete.description') }}</p>
+      <h1 class="uno-text-3xl md:uno-text-5xl uno-font-bold uno-text-gray-900 uno-mb-3 md:uno-mb-4 uno-font-['Outfit']">
+        {{ $t('pages.orders.purchaseComplete.title') }}</h1>
+      <p class="uno-text-gray-600 uno-mb-6 md:uno-mb-8 uno-font-['Outfit'] uno-text-sm md:uno-text-lg">
+        {{ $t('pages.orders.purchaseComplete.description') }}
+      </p>
 
-      <button
-        class="uno-w-full uno-h-[48px] uno-inline-flex uno-items-center uno-justify-center uno-rounded-[16px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-[var(--ui-primary-foreground)] uno-font-['Outfit'] uno-transition uno-duration-200"
-        type="button"
-        @click="goToReport"
-      >
+      <UButton
+        class="uno-w-full uno-h-[48px] uno-font-['Outfit']"
+        :ui="UButtonTheme"
+        @click="goToReport">
         {{ $t('pages.orders.purchaseComplete.accessReport') }}
-      </button>
+      </UButton>
 
-      <p class="uno-text-gray-500 uno-mt-3 uno-mb-6 uno-font-['Outfit'] uno-text-sm">{{ $t('pages.orders.purchaseComplete.accessNote') }}</p>
+      <p class="uno-text-gray-500 uno-mt-3 uno-mb-6 uno-font-['Outfit'] uno-text-sm md:uno-text-base">
+        {{ $t('pages.orders.purchaseComplete.accessNote') }}
+      </p>
 
-      <button
-        class="uno-w-full uno-h-[48px] uno-inline-flex uno-items-center uno-justify-center uno-rounded-[16px] uno-bg-[#0F172A] hover:uno-bg-[#1F2937] active:uno-bg-[#111827] uno-text-white uno-font-['Outfit'] uno-transition uno-duration-200"
-        type="button"
-        @click="downloadGuidebook"
-      >
+      <UButton
+        :ui="UButtonThemeDark"
+        class="uno-w-full uno-h-[48px] uno-font-['Outfit']"
+        @click="downloadGuidebook">
         {{ $t('pages.orders.purchaseComplete.downloadGuidebook') }}
-      </button>
+      </UButton>
 
-      <p class="uno-text-gray-500 uno-mt-3 uno-font-['Outfit'] uno-text-sm">{{ $t('pages.orders.purchaseComplete.downloadNote') }}</p>
-
-      <NuxtLink to="/" class="uno-mt-8 uno-text-green-600 hover:uno-text-green-700 uno-font-medium">{{ $t('pages.orders.purchaseComplete.goHome') }}</NuxtLink>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+  import UButtonTheme, { UButtonThemeDark } from '~/theme/UButton'
 // const { t } = useI18n()
 // definePageMeta({
 //   title: () => t('pages.orders.purchaseComplete.title') as string
@@ -56,5 +56,4 @@ const downloadGuidebook = () => {
 }
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
