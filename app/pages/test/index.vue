@@ -65,7 +65,7 @@
         </div>
       </div>
 
-      <div class="uno-w-full md:uno-w-[602px] uno-mx-auto uno-mt-6">
+      <div class="uno-w-full md:uno-w-[602px] uno-mx-auto uno-mt-12">
         <div class="uno-flex uno-items-center uno-justify-between uno-text-[var(--ui-muted-foreground)]">
           <div class="uno-text-[#4E5255] uno-text-xs uno-font-['Outfit'] uno-leading-normal">{{ progress }}%</div>
           <div class="uno-text-[#4E5255] uno-text-xs uno-font-['Outfit'] uno-leading-normal">{{ $t('pages.testIntro.progress.step', { current, total }) }}</div>
