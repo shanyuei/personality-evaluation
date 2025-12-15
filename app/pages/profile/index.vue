@@ -5,32 +5,34 @@
 
       <section class="uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)]">
         <div class="uno-p-6 md:uno-p-8 uno-grid uno-gap-6 md:uno-grid-cols-3">
-          <div class="uno-flex uno-gap-6">
-            <div class="uno-flex uno-flex-col uno-gap-2 uno-items-center">
-              <div class="uno-w-16 uno-h-16 uno-aspect-square uno-rounded-full uno-overflow-hidden uno-border uno-border-[var(--ui-border)]">
+          <div class="uno-col-span-full md:uno-col-span-1 uno-flex uno-flex-col uno-items-start uno-space-y-4">
+            <div class="uno-space-y-2">
+              <div class="uno-w-[418px] uno-text-[#4E5255] uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2] uno-text-sm">{{ $t('pages.profile.aboutTitle') }}</div>
+            </div>
+            <div class="uno-flex uno-items-center uno-gap-4">
+              <div class="uno-w-20 uno-h-20 uno-aspect-square uno-rounded-full uno-overflow-hidden uno-bg-[#F0F0F0]">
                 <NuxtImg src="/images/instructors/jane-smith.jpg" alt="avatar" class="uno-w-full uno-h-full uno-object-cover" />
               </div>
-              <span class="uno-text-xs uno-bg-[var(--ui-input)] uno-text-[var(--ui-foreground)] uno-rounded-full uno-px-3 uno-py-1">{{ $t('pages.profile.type') }} 7</span>
+              <div class="uno-flex uno-flex-col uno-items-start uno-gap-1">
+                <div class="uno-text-[#4E5255] uno-text-xs uno-font-['Outfit'] uno-leading-normal">{{ $t('pages.profile.type') }} 7</div>
+                <div class="uno-w-[418px] uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{ $t('pages.profile.typeName') }}</div>
+              </div>
             </div>
-            <div class="uno-flex-1 uno-space-y-3">
-              <div class="uno-flex uno-items-center uno-gap-2">
-                <span class="uno-text-base md:uno-text-lg uno-font-bold uno-text-[var(--ui-foreground)]">{{ $t('pages.profile.aboutTitle') }}</span>
-                <span class="uno-text-[var(--ui-primary)] uno-font-semibold">{{ $t('pages.profile.typeName') }}</span>
-              </div>
-              <p class="uno-text-sm md:uno-text-base uno-text-[var(--ui-muted-foreground)]">{{ $t('pages.profile.aboutDesc') }}</p>
-              <div>
-                <UButton class="uno-h-[40px] uno-rounded-[12px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-white">{{ $t('pages.profile.readMore') }}</UButton>
-              </div>
+            <p class="uno-text-xs uno-text-[var(--ui-muted-foreground)] uno-text-left uno-max-w-md">
+              Type 7s on the Enneagram are often referred to as The Enthusiasts due to their energetic, spontaneous, and optimistic nature. They are characterized by a zest for life, a love of adventure, and a constant pursuit of new experiences. Type 7s are driven by the desire to avoid pain and discomfort, seeking pleasure, excitement, and variety in all aspects of their lives. With their forward-thinking and imaginative minds, Type 7s are natural problem-solvers, able to see opportunities where others may see obstacles. They thrive on possibilities and are quick to generate ideas, often inspiring those around them with their infectious optimism and sense of adventure.
+            </p>
+            <div>
+              <UButton class="uno-h-[40px] uno-rounded-[12px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-white">{{ $t('pages.profile.readMore') }}</UButton>
             </div>
           </div>
           <div>
-            <h3 class="uno-text-lg uno-font-bold uno-text-[var(--ui-foreground)]">{{ $t('pages.profile.totalScore') }}</h3>
+            <h3 class="uno-text-[#323233] uno-text-lg uno-font-['Outfit'] uno-font-semibold uno-leading-normal">{{ $t('pages.profile.totalScore') }}</h3>
             <div class="uno-mt-3 uno-space-y-3">
               <div v-for="bar in scoreBars" :key="bar.label" class="uno-flex uno-items-center uno-gap-3">
-                <span class="uno-w-7 uno-h-7 uno-rounded-full uno-flex uno-items-center uno-justify-center uno-text-xs" :style="{ background: bar.color, color: '#fff' }">{{ bar.num }}</span>
-                <span class="uno-w-28 uno-text-sm uno-text-[var(--ui-foreground)]">{{ bar.label }}</span>
+                <span class="uno-w-[28px] uno-h-[28px] uno-flex uno-justify-center uno-items-center uno-flex-col uno-gap-[8.75px] uno-py-[3.5px] uno-px-[11.37px] uno-bg-[#F0F0F0] uno-rounded-[14px] uno-overflow-hidden uno-text-[#4E5255] uno-text-[14px] uno-font-['Outfit'] uno-font-medium uno-leading-normal">{{ bar.num }}</span>
+                <span class="uno-w-28 uno-text-sm uno-text-[#4E5255] uno-font-['Outfit'] uno-leading-normal">{{ bar.label }}</span>
                 <div class="uno-flex-1 uno-h-2 uno-rounded-full uno-bg-[var(--ui-input)]">
-                  <div class="uno-h-2 uno-rounded-full" :style="{ width: bar.value + '%', background: bar.color }"></div>
+                  <div class="uno-h-2 uno-rounded-full" :style="{ width: bar.value + '%', background: bar.label === 'Individualist' ? '#E786DF' : bar.num === 2 ? '#F5CEA4' : bar.num === 5 ? '#B57AF5' : bar.num === 8 ? '#67DCA9' : bar.num === 3 ? '#E97274' : bar.num === 9 ? '#C7EB78' : bar.num === 6 ? '#7E6EE7' : bar.num === 1 ? '#F4DA8F' : '#8FADF6' }"></div>
                 </div>
                 <span class="uno-text-sm uno-text-[var(--ui-muted-foreground)]">{{ bar.value }}%</span>
               </div>
@@ -38,16 +40,7 @@
           </div>
 
           <div class="uno-flex uno-items-center uno-justify-center">
-            <svg width="220" height="220" viewBox="0 0 220 220">
-              <circle cx="110" cy="110" r="90" fill="none" stroke="var(--ui-border)" stroke-width="1" />
-              <circle cx="110" cy="110" r="60" fill="none" stroke="var(--ui-border)" stroke-width="1" />
-              <circle cx="110" cy="110" r="30" fill="none" stroke="var(--ui-border)" stroke-width="1" />
-              <line v-for="edge in enneaLines" :key="edge.join('-')" :x1="enneaPos[edge[0]].x" :y1="enneaPos[edge[0]].y" :x2="enneaPos[edge[1]].x" :y2="enneaPos[edge[1]].y" stroke="var(--ui-foreground)" />
-              <g v-for="n in enneaNodes" :key="n.id">
-                <circle :cx="enneaPos[n.id].x" :cy="enneaPos[n.id].y" r="14" :fill="n.fill" />
-                <text :x="enneaPos[n.id].x" :y="enneaPos[n.id].y + 4" text-anchor="middle" font-size="10" fill="#fff">{{ n.id }}</text>
-              </g>
-            </svg>
+            <NuxtImg src="/images/test/5.png" alt="Enneagram" class="uno-w-[220px] uno-h-[220px]" />
           </div>
         </div>
       </section>
@@ -162,34 +155,13 @@ const scoreBars = [
   { num: 5, label: 'Investigator', value: 86, color: 'var(--ui-primary)' },
   { num: 8, label: 'Challenger', value: 86, color: 'var(--color-green-2)' },
   { num: 3, label: 'Achiever', value: 84, color: 'var(--ui-primary)' },
-  { num: 6, label: 'Loyalist', value: 83, color: 'var(--color-green-2)' },
-  { num: 9, label: 'Peacemaker', value: 66, color: 'var(--ui-primary)' },
+  { num: 9, label: 'Loyalist', value: 83, color: 'var(--color-green-2)' },
+  { num: 6, label: 'Peacemaker', value: 66, color: 'var(--ui-primary)' },
   { num: 1, label: 'Reformer', value: 52, color: 'var(--color-pink-1)' }
 ]
 //
 
-const enneaNodes = Array.from({ length: 9 }, (_, i) => {
-  const id = i + 1
-  const fill = id === 7 ? 'var(--color-green-2)' : id === 4 ? 'var(--color-pink-1)' : 'var(--ui-primary)'
-  return { id, fill }
-})
 
-const enneaPos = computed(() => {
-  const map: Record<number, { x: number; y: number }> = {}
-  const cx = 110, cy = 110, r = 80
-  enneaNodes.forEach((n, idx) => {
-    const angleDeg = -90 + idx * (360 / 9)
-    const rad = angleDeg * Math.PI / 180
-    map[n.id] = { x: cx + r * Math.cos(rad), y: cy + r * Math.sin(rad) }
-  })
-  return map
-})
-
-const enneaLines: Array<[number, number]> = [
-  [7, 2],
-  [7, 4],
-  [7, 6]
-]
 
 const triviaOptions = ['Guesswork', 'Practice', 'Analytical thinking']
 const triviaSelected = ref<number | null>(null)
