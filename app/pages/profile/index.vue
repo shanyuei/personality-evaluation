@@ -85,32 +85,50 @@
         </section>
       </div>
 
-      <div class="uno-grid uno-gap-6 md:uno-grid-cols-2 uno-mt-6">
-        <section class="uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)]">
+      <div class="uno-grid uno-gap-6 md:uno-grid-cols-5 uno-mt-6">
+        <section class="uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)] md:uno-col-span-3">
           <div class="uno-p-6 md:uno-p-8 uno-space-y-3">
-            <span class="uno-text-sm uno-text-[var(--ui-muted-foreground)]">{{ $t('pages.profile.continueCourse.label') }}</span>
-            <h3 class="uno-text-lg md:uno-text-xl uno-font-bold uno-text-[var(--ui-foreground)]">{{ $t('pages.profile.continueCourse.title') }}</h3>
-            <p class="uno-text-[var(--ui-muted-foreground)]">{{ $t('pages.profile.continueCourse.desc') }}</p>
-            <div class="uno-flex uno-items-center uno-justify-between">
-              <span class="uno-text-sm uno-text-[var(--ui-muted-foreground)]">0/10 {{ $t('pages.profile.lessons') }}</span>
-              <span class="uno-text-sm uno-text-[var(--ui-muted-foreground)]">0%</span>
+            <span class="uno-w-[418px] uno-text-xs uno-text-[#4E5255] uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{ $t('pages.profile.continueCourse.label') }}</span>
+            <h3 class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{ $t('pages.profile.continueCourse.title') }}</h3>
+            <p class="uno-text-[#323233] uno-text-sm uno-font-['Outfit'] uno-leading-normal">{{ $t('pages.profile.continueCourse.desc') }}</p>
+            <div class="uno-flex uno-justify-between uno-items-center">
+              <span class="uno-text-[#323233] uno-text-sm uno-font-['Outfit'] uno-font-medium uno-leading-normal">0/10 {{ $t('pages.profile.lessons') }}</span>
             </div>
-            <UButton class="uno-h-[40px] uno-rounded-[12px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-white">{{ $t('pages.profile.continueCourse.cta') }}</UButton>
+            <div class="uno-mt-2 uno-flex uno-items-end uno-justify-between">
+              <UButton class="uno-h-[48px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-1 uno-py-1 uno-px-[20px] uno-bg-[#009D77] uno-rounded-lg hover:uno-bg-[var(--color-green-2)] uno-text-[#FFFFFF] uno-text-sm uno-font-['Outfit'] uno-font-bold uno-leading-normal">{{ $t('pages.profile.continueCourse.cta') }}</UButton>
+              <div class="uno-w-[64px] uno-h-[64px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[14.55px] uno-p-[14.55px] uno-border-solid uno-border-[#E7E7E8] uno-border-4 uno-rounded-[145.45px] uno-overflow-hidden">
+                  <span class="uno-text-sm uno-text-[var(--ui-muted-foreground)]">0%</span>
+                </div>
+            </div>
           </div>
         </section>
-        <section class="uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)]">
-          <div class="uno-p-6 md:uno-p-8 uno-grid uno-gap-4 md:uno-grid-cols-2">
-            <div class="uno-bg-[var(--ui-input)] uno-rounded-[16px] uno-p-4">
-              <div class="uno-text-[var(--ui-muted-foreground)]">{{ $t('pages.profile.progress.tests') }}</div>
-              <div class="uno-text-2xl uno-font-bold uno-text-[var(--ui-foreground)]">2</div>
-            </div>
-            <div class="uno-bg-[var(--ui-input)] uno-rounded-[16px] uno-p-4">
-              <div class="uno-text-[var(--ui-muted-foreground)]">{{ $t('pages.profile.progress.courses') }}</div>
-              <div class="uno-text-2xl uno-font-bold uno-text-[var(--ui-foreground)]">1</div>
-            </div>
-            <div class="uno-bg-[var(--ui-input)] uno-rounded-[16px] uno-p-4">
-              <div class="uno-text-[var(--ui-muted-foreground)]">{{ $t('pages.profile.progress.challenges') }}</div>
-              <div class="uno-text-2xl uno-font-bold uno-text-[var(--ui-foreground)]">1</div>
+        <section class="uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)] md:uno-col-span-2">
+          <div class="uno-p-6 md:uno-p-8 uno-space-y-6">
+            <h3 class="uno-text-lg uno-font-semibold uno-text-[var(--ui-foreground)]">Your progress</h3>
+            <div class="uno-space-y-4">
+              <div class="uno-flex uno-items-center uno-justify-between">
+                <div class="uno-flex uno-items-center uno-gap-3">
+                  <div class="uno-text-[var(--color-green-1)]">✓</div>
+                  <span class="uno-text-[var(--ui-foreground)]">Completed tests</span>
+                </div>
+                <div class="uno-text-2xl uno-font-bold uno-text-[var(--ui-foreground)]">2</div>
+              </div>
+              <div class="uno-h-[1px] uno-bg-[var(--ui-border)]"></div>
+              <div class="uno-flex uno-items-center uno-justify-between">
+                <div class="uno-flex uno-items-center uno-gap-3">
+                  <div class="uno-text-[var(--color-green-1)]">📚</div>
+                  <span class="uno-text-[var(--ui-foreground)]">Finished course</span>
+                </div>
+                <div class="uno-text-2xl uno-font-bold uno-text-[var(--ui-foreground)]">1</div>
+              </div>
+              <div class="uno-h-[1px] uno-bg-[var(--ui-border)]"></div>
+              <div class="uno-flex uno-items-center uno-justify-between">
+                <div class="uno-flex uno-items-center uno-gap-3">
+                  <div class="uno-text-[var(--color-green-1)]">🔬</div>
+                  <span class="uno-text-[var(--ui-foreground)]">Completed challenge</span>
+                </div>
+                <div class="uno-text-2xl uno-font-bold uno-text-[var(--ui-foreground)]">1</div>
+              </div>
             </div>
           </div>
         </section>
