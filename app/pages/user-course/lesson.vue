@@ -1,6 +1,5 @@
 <template>
-  <main class="uno-py-6 uno-px-4 md:uno-px-10">
-    <div class="uno-w-full md:uno-w-[1000px] uno-mx-auto">
+    <div class="page-container uno-py-6">
       <!-- 顶部导航与进度 -->
       <div class="course-header">
         <div class="course-nav">
@@ -70,7 +69,6 @@
         </div>
       </div>
     </div>
-  </main>
   
 </template>
 

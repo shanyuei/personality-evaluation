@@ -117,19 +117,19 @@
 
                     <!-- 主要介绍卡片 -->
                     <div
-                        class="uno-shadow-lg uno-mb-10 sm:uno-mb-12 uno-w-full md:uno-w-[70%] uno-bg-[#F8F8F8] uno-border-solid uno-border-[#E7E7E8] uno-border uno-rounded-3xl uno-p-16px sm:uno-p-24px uno-relative">
+                        class="uno-shadow-lg uno-mb-10 sm:uno-mb-12 uno-w-full md:uno-w-[70%] uno-bg-[#F8F8F8] uno-border-solid uno-border-[#E7E7E8] uno-border uno-rounded-3xl uno-p-4 sm:uno-p-6 uno-relative uno-mx-auto">
                         <!-- 装饰图片 -->
                         <NuxtImg src="/images/home/2.png" alt="decor" width="56" height="56"
-                            class="uno-hidden md:uno-block uno-relative uno-top-[0] md:uno-left-246px" />
+                            class="uno-hidden md:uno-block uno-absolute uno-top-0 uno-right-8" />
 
                         <div class="uno-flex uno-flex-col md:uno-flex-row uno-gap-6 md:uno-gap-10">
-                            <div class="uno-w-full md:uno-w-[24%] uno-pt-24px">
+                            <div class="uno-w-full md:uno-w-[24%] uno-pt-6">
                                 <h3 class="uno-text-2xl uno-font-['Outfit'] uno-font-bold uno-mb-4">{{ $t('pages.home.why.main.title') }}</h3>
                                 <p class="uno-text-gray-600 uno-mb-6">{{ $t('pages.home.why.main.desc') }}</p>
                                 <!-- 分割线 -->
                                 <div class="uno-w-full uno-h-[1px] uno-bg-[#E7E7E8] uno-my-6" />
                                 <button
-                                  class="uno-inline-flex uno-items-center uno-justify-center uno-h-[40px] uno-px-3 uno-rounded-[16px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-[var(--ui-primary-foreground)] uno-font-['Outfit'] uno-transition uno-duration-200 disabled:uno-opacity-50 disabled:uno-cursor-not-allowed"
+                                  class="uno-inline-flex uno-items-center uno-justify-center uno-h-[40px] uno-px-4 uno-rounded-[16px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-[var(--ui-primary-foreground)] uno-font-['Outfit'] uno-transition uno-duration-200 disabled:uno-opacity-50 disabled:uno-cursor-not-allowed"
                                   type="button"
                                 >
                                   {{ $t('common.getStarted') }}
@@ -138,7 +138,7 @@
                             <div class="uno-w-full md:uno-w-[76%] uno-relative md:uno-top-[-6px]">
                                 <!-- 图片 -->
                                 <NuxtImg src="/images/home/1.png" alt="Self-awareness illustration" width="564"
-                                    height="376" class="uno-rounded-lg uno-w-100%" />
+                                    height="376" class="uno-rounded-lg uno-w-full" />
 
                             </div>
                         </div>
@@ -202,49 +202,43 @@
                     <!-- 右侧：三个步骤卡片 -->
                     <div class="uno-w-full md:uno-w-1/2">
                         <div class="uno-flex uno-justify-start uno-items-start uno-flex-col uno-gap-6">
-                            <div style="flex-shrink: 0"
-                                class="uno-flex uno-justify-start uno-items-center uno-flex-row uno-gap-6 uno-py-24px uno-px-24px uno-bg-[#FFFFFF] uno-rounded-2xl uno-shadow-[0_20px_40px_0_rgba(0,157,119,0.08)]">
-                                <div style="flex: none"
-                                    class="uno-w-[56px] uno-h-[56px] uno-flex uno-justify-center uno-items-center uno-p-4 uno-bg-[#E8FAF5] uno-rounded-[28px]">
+                            <div class="uno-flex-shrink-0 uno-flex uno-justify-start uno-items-center uno-flex-row uno-gap-6 uno-py-6 uno-px-6 uno-bg-[#FFFFFF] uno-rounded-2xl uno-shadow-[0_20px_40px_0_rgba(0,157,119,0.08)]">
+                                <div class="uno-flex-none uno-w-[56px] uno-h-[56px] uno-flex uno-justify-center uno-items-center uno-p-4 uno-bg-[#E8FAF5] uno-rounded-[28px]">
                                     <span
                                         class="uno-text-[#009D77] uno-text-4xl uno-font-['Outfit'] uno-font-semibold uno-leading-[1.36]">1</span>
                                 </div>
                                 <div class="uno-flex uno-justify-start uno-items-start uno-flex-col uno-gap-2">
-                                    <p class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold">{{
+                                    <p class="uno-text-[var(--ui-foreground)] uno-text-2xl uno-font-['Outfit'] uno-font-semibold">{{
                                         $t('pages.home.how.step1.title') }}</p>
-                                    <p class="uno-w-[370px] max-sm:uno-w-full uno-text-[#4E5255] uno-font-['Outfit']">{{
+                                    <p class="uno-w-full md:uno-w-[370px] uno-text-[var(--ui-muted-foreground)] uno-font-['Outfit']">{{
                                         $t('pages.home.how.step1.desc') }}</p>
                                 </div>
                             </div>
 
-                            <div style="flex-shrink: 0"
-                                class="uno-flex uno-justify-start uno-items-center uno-flex-row uno-gap-6 uno-py-24px uno-px-24px uno-bg-[#FFFFFF] uno-rounded-2xl uno-shadow-[0_20px_40px_0_rgba(0,157,119,0.08)]">
-                                <div style="flex: none"
-                                    class="uno-w-[56px] uno-h-[56px] uno-flex uno-justify-center uno-items-center uno-p-4 uno-bg-[#FFF5F9] uno-rounded-[28px]">
+                            <div class="uno-flex-shrink-0 uno-flex uno-justify-start uno-items-center uno-flex-row uno-gap-6 uno-py-6 uno-px-6 uno-bg-[#FFFFFF] uno-rounded-2xl uno-shadow-[0_20px_40px_0_rgba(0,157,119,0.08)]">
+                                <div class="uno-flex-none uno-w-[56px] uno-h-[56px] uno-flex uno-justify-center uno-items-center uno-p-4 uno-bg-[#FFF5F9] uno-rounded-[28px]">
                                     <span
                                         class="uno-text-[#EA4C89] uno-text-4xl uno-font-['Outfit'] uno-font-semibold uno-leading-[1.36]">2</span>
                                 </div>
                                 <div class="uno-flex uno-justify-start uno-items-start uno-flex-col uno-gap-2">
-                                    <span class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold">{{
+                                    <span class="uno-text-[var(--ui-foreground)] uno-text-2xl uno-font-['Outfit'] uno-font-semibold">{{
                                         $t('pages.home.how.step2.title') }}</span>
-                                    <p class="uno-w-[370px] max-sm:uno-w-full uno-text-[#4E5255] uno-font-['Outfit']">{{
+                                    <p class="uno-w-full md:uno-w-[370px] uno-text-[var(--ui-muted-foreground)] uno-font-['Outfit']">{{
                                         $t('pages.home.how.step2.desc') }}</p>
                                 </div>
                             </div>
 
-                            <div style="flex-shrink: 0"
-                                class="uno-flex uno-justify-start uno-items-center uno-flex-row uno-gap-6 uno-py-24px uno-px-24px uno-bg-[#FFFFFF] uno-rounded-2xl uno-shadow-[0_20px_40px_0_rgba(0,157,119,0.08)]">
-                                <div style="flex: none"
-                                    class="uno-w-[56px] uno-h-[56px] uno-flex uno-justify-center uno-items-center uno-p-4 uno-bg-[#F5EFFC] uno-rounded-[28px]">
+                            <div class="uno-flex-shrink-0 uno-flex uno-justify-start uno-items-center uno-flex-row uno-gap-6 uno-py-6 uno-px-6 uno-bg-[#FFFFFF] uno-rounded-2xl uno-shadow-[0_20px_40px_0_rgba(0,157,119,0.08)]">
+                                <div class="uno-flex-none uno-w-[56px] uno-h-[56px] uno-flex uno-justify-center uno-items-center uno-p-4 uno-bg-[#F5EFFC] uno-rounded-[28px]">
                                     <span
                                         class="uno-text-[#932EFA] uno-text-4xl uno-font-['Outfit'] uno-font-semibold uno-leading-[1.36]">3</span>
                                 </div>
                                 <div class="uno-flex uno-justify-start uno-items-start uno-flex-col uno-gap-2">
-                                    <span class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold">{{
-                                        $t('pages.home.how.step3.title') }}</span>
-                                    <p class="uno-w-[370px] max-sm:uno-w-full uno-text-[#4E5255] uno-font-['Outfit']">{{
-                                        $t('pages.home.how.step3.desc') }}</p>
-                                </div>
+                            <span class="uno-text-[var(--ui-foreground)] uno-text-2xl uno-font-['Outfit'] uno-font-semibold">{{
+                                $t('pages.home.how.step3.title') }}</span>
+                            <p class="uno-w-full md:uno-w-[370px] uno-text-[var(--ui-muted-foreground)] uno-font-['Outfit']">{{
+                                $t('pages.home.how.step3.desc') }}</p>
+                        </div>
                             </div>
                         </div>
                     </div>

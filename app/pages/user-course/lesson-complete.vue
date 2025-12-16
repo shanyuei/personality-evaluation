@@ -1,7 +1,6 @@
 <template>
-  <main class="uno-min-h-screen uno-bg-gradient-to-br uno-from-[var(--color-green-4)] uno-to-[var(--color-pink-4)] uno-py-20 uno-px-6 md:uno-px-10">
-    <div class="uno-max-w-[80%] uno-mx-auto">
-      <div class="uno-flex uno-flex-col uno-items-center uno-text-center uno-gap-6">
+    <div class="page-container my-10">
+      <div class="uno-flex uno-flex-col uno-items-center uno-text-center uno-gap-8">
         <!-- 顶部圆形图标 -->
         <div class="uno-w-16 uno-h-16 md:uno-w-20 md:uno-h-20 uno-rounded-full uno-bg-[var(--color-green-3)] uno-flex uno-items-center uno-justify-center">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28">
@@ -12,25 +11,25 @@
         </div>
 
         <!-- 标题与说明 -->
-        <h1 class="uno-text-5xl uno-text-center uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2] uno-text-[#011813]">{{ $t('pages.userCourseLessonComplete.title') }}</h1>
-        <p class="uno-text-sm md:uno-text-base uno-text-[#4E5255] uno-font-['Outfit'] uno-text-center uno-max-w-[520px] uno-mx-auto">
+        <h1 class="uno-text-3xl md:uno-text-5xl uno-text-center uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2] uno-text-[var(--ui-foreground)]">{{ $t('pages.userCourseLessonComplete.title') }}</h1>
+        <p class="uno-text-sm md:uno-text-base uno-text-[var(--ui-muted-foreground)] uno-font-['Outfit'] uno-text-center uno-max-w-[520px] uno-mx-auto">
           {{ $t('pages.userCourseLessonComplete.desc', { current, courseName }) }}
         </p>
 
         <!-- 主按钮 -->
         <NuxtLink to="/user-course/chapters" class="uno-w-full md:uno-w-[520px]">
-          <UButton class="uno-w-full uno-h-[48px] uno-rounded-[12px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-white uno-text-lg uno-font-['Outfit'] uno-font-bold uno-leading-normal uno-flex uno-items-center uno-justify-center uno-text-center">{{ $t('pages.userCourseLessonComplete.cta') }}</UButton>
+          <UButton :ui="UButtonTheme" class="uno-font-['Outfit']">{{ $t('pages.userCourseLessonComplete.cta') }}</UButton>
         </NuxtLink>
 
         <!-- 次链接 -->
-        <NuxtLink to="/" class="uno-text-[#4E5255] uno-font-['Outfit'] uno-text-center hover:uno-text-[var(--ui-foreground)]">{{ $t('pages.userCourseLessonComplete.toDashboard') }}</NuxtLink>
+        <NuxtLink to="/" class="uno-text-[var(--ui-muted-foreground)] uno-font-['Outfit'] uno-text-center hover:uno-text-[var(--ui-foreground)]">{{ $t('pages.userCourseLessonComplete.toDashboard') }}</NuxtLink>
       </div>
     </div>
-  </main>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import UButtonTheme from '~/theme/UButton'
 const current = ref(3)
 const courseName = 'People Leadership vs. Management'
 </script>

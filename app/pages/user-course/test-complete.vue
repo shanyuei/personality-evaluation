@@ -1,5 +1,5 @@
 <template>
-  <main class="page-container uno-py-20 uno-px-6 md:uno-px-10">
+  <main class="page-container uno-py-6">
       <div class="uno-w-full  uno-mx-auto uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)]">
         <div class="uno-p-8 md:uno-p-10 uno-flex uno-flex-col uno-items-center uno-text-center uno-gap-6">
           <div class="uno-w-20 uno-h-20 uno-aspect-square uno-rounded-full uno-border-2 uno-border-[var(--color-pink-2)] uno-flex uno-items-center uno-justify-center">

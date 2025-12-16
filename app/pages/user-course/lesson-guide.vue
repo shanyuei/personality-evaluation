@@ -1,6 +1,5 @@
 <template>
-  <main class="uno-py-6">
-    <div class="page-container">
+    <div class="page-container uno-py-6">
       <div class="course-header">
         <div class="course-nav">
           <NuxtLink to="/user-course/chapters" class="back-link">
@@ -38,7 +37,6 @@
         </div>
       </div>
     </div>
-  </main>
 </template>
 
 <script setup lang="ts">
