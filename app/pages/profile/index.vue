@@ -138,20 +138,23 @@
       </div>
 
       <section class="uno-mt-8">
-        <h2 class="uno-w-[1200px] uno-text-[#011813] uno-text-[32px] uno-font-['Outfit'] uno-font-bold uno-leading-normal">{{ $t('pages.profile.takeAnother') }}</h2>
+        <h2 class="uno-w-[1200px] uno-text-[#011813] uno-text-[32px] uno-font-['Outfit'] uno-font-bold uno-leading-normal uno-mt-12 uno-mb-10">{{ $t('pages.profile.takeAnother') }}</h2>
         <div class="uno-grid uno-gap-6 md:uno-grid-cols-3">
           <div v-for="card in testCards" :key="card.id" class="uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)]">
             <div class="uno-p-6 md:uno-p-8 uno-space-y-3">
               <div class="uno-flex uno-items-center uno-justify-between uno-gap-2">
                 <span class="uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-2 uno-py-2 uno-px-4 uno-bg-[#F0F0F0] uno-rounded-lg uno-text-sm uno-text-right">{{ $t('pages.profile.tag.hard') }}</span>
                 <span v-if="card.id !== 2" class="uno-text-[#4E5255] uno-font-['Outfit'] uno-text-right uno-font-medium uno-leading-normal uno-text-sm">10 {{ $t('pages.profile.questions') }}</span>
-                <span v-if="card.completed" class="uno-text-xs uno-bg-[var(--ui-input)] uno-rounded-full uno-px-2 uno-py-1">{{ $t('pages.profile.completed') }}</span>
+                <span v-if="card.completed" class="uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-2 uno-py-2 uno-px-4 uno-bg-[#F0FDF9] uno-border-solid uno-border-[rgba(0,157,119,0.3)] uno-border uno-rounded-lg uno-text-[#009D77] uno-font-['Outfit'] uno-font-medium uno-leading-normal">
+                  <NuxtImg src="/images/profile/4.png" alt="completed" class="uno-w-[13.75px] uno-h-[12.5px]" />
+                  {{ $t('pages.profile.completed') }}
+                </span>
               </div>
               <h3 class="uno-text-[#011813] uno-text-xl uno-font-['Outfit'] uno-font-semibold uno-leading-[1.24]">{{ card.title }}</h3>
-              <p class="uno-text-[#323233] uno-text-xs uno-font-['Outfit'] uno-leading-normal">{{ card.desc }}</p>
+              <p class="uno-text-[#323233] uno-text-xs uno-font-['Outfit'] uno-leading-normal uno-min-h-[80px]">{{ card.desc }}</p>
               <div class="uno-flex uno-gap-3">
                 <UButton class="uno-w-[151px] uno-h-[48px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-1 uno-py-1 uno-px-[20px] uno-bg-[#009D77] uno-rounded-lg uno-text-[#FFFFFF] uno-text-base uno-font-['Outfit'] uno-font-bold uno-leading-normal hover:uno-bg-[var(--color-green-2)]">{{ $t('pages.profile.readMore') }}</UButton>
-                <UButton v-if="card.try" class="uno-w-[151px] uno-h-[48px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-1 uno-py-1 uno-px-[20px] uno-bg-[#009D77] uno-rounded-lg uno-text-[#FFFFFF] uno-text-base uno-font-['Outfit'] uno-font-bold uno-leading-normal hover:uno-bg-[var(--color-green-2)]">{{ $t('pages.profile.tryAgain') }}</UButton>
+                <UButton v-if="card.try" class="uno-w-[151px] uno-h-[48px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-1 uno-py-1 uno-px-[20px] uno-bg-white uno-border-2 uno-border-[#009D77] uno-rounded-lg uno-text-[#009D77] uno-text-base uno-font-['Outfit'] uno-font-bold uno-leading-normal hover:uno-bg-[#F0FDF9]">{{ $t('pages.profile.tryAgain') }}</UButton>
               </div>
             </div>
           </div>
@@ -159,17 +162,31 @@
       </section>
 
       <section class="uno-mt-8">
-        <div class="uno-grid uno-gap-6 md:uno-grid-cols-4">
-          <div v-for="course in courseCards" :key="course.id" class="uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)]">
-            <NuxtImg :src="course.image" :alt="course.title" class="uno-w-full uno-h-[160px] uno-object-cover uno-rounded-t-[24px]" />
-            <div class="uno-p-6 uno-space-y-3">
-              <h3 class="uno-text-lg uno-font-bold uno-text-[var(--ui-foreground)]">{{ course.title }}</h3>
-              <p class="uno-text-[var(--ui-muted-foreground)]">{{ course.desc }}</p>
-              <div class="uno-flex uno-items-center uno-justify-between">
-                <span class="uno-text-xs uno-text-[var(--ui-muted-foreground)]">1/10 {{ $t('pages.profile.lessons') }}</span>
-                <span class="uno-text-xs uno-text-[var(--ui-muted-foreground)]">10%</span>
+        <div class="uno-grid uno-gap-8 md:uno-grid-cols-3">
+          <div v-for="(course, index) in courseCards" :key="course.id" class="uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)] uno-overflow-hidden">
+            <NuxtImg :src="`/images/courses/${index + 1}.png`" :alt="course.title" class="uno-w-full uno-h-[180px] uno-object-cover" />
+            <div class="uno-p-6">
+              <h3 class="uno-text-lg uno-font-bold uno-text-[var(--ui-foreground)] uno-mb-3">{{ course.title }}</h3>
+              <p class="uno-text-sm uno-text-[var(--ui-muted-foreground)] uno-mb-4 line-clamp-3">{{ course.desc }}</p>
+              <div class="uno-mt-2">
+                <div class="uno-flex uno-items-center uno-justify-between">
+                  <div>
+                    <span class="uno-text-xs uno-text-[var(--ui-muted-foreground)]">1/10 {{ $t('pages.profile.lessons') }}</span>
+                  </div>
+                </div>
+                <div class="uno-flex uno-items-center uno-justify-between uno-mt-2">
+                  <UButton class="uno-h-[40px] uno-w-[150px] uno-rounded-[12px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-white uno-text-center uno-justify-center">{{ $t('pages.profile.continueCourse.cta') }}</UButton>
+                  <div class="uno-relative uno-w-14 uno-h-14">
+                    <div class="uno-absolute uno-inset-0 uno-flex uno-items-center uno-justify-center">
+                      <span class="uno-text-sm uno-font-medium uno-text-[var(--ui-primary)]">10%</span>
+                    </div>
+                    <svg class="uno-w-full uno-h-full" viewBox="0 0 100 100">
+                      <circle class="uno-fill-none uno-stroke-[#E0E0E0] uno-stroke-w-6" cx="50" cy="50" r="45" />
+                      <circle class="uno-fill-none uno-stroke-[#009D77] uno-stroke-w-6 uno-stroke-linecap-round" cx="50" cy="50" r="45" stroke-dasharray="283" stroke-dashoffset="254.7" />
+                    </svg>
+                  </div>
+                </div>
               </div>
-              <UButton class="uno-h-[40px] uno-rounded-[12px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-white">{{ $t('pages.profile.continueCourse.cta') }}</UButton>
             </div>
           </div>
         </div>
@@ -217,8 +234,7 @@ const testCards = [
 const courseCards = [
   { id: 1, title: 'Business Analysis', desc: 'Leadership and management are two distinctive and complementary systems of actions in the business environment. Both are necessary for success in an increasingly complex and volatile business environment.', image: '/images/blog/1.png' },
   { id: 2, title: 'Brand Management', desc: 'Leadership and management are two distinctive and complementary systems of actions in the business environment.', image: '/images/blog/2.png' },
-  { id: 3, title: 'Brand Management', desc: 'Leadership and management are two distinctive and complementary systems of actions in the business environment.', image: '/images/blog/3.png' },
-  { id: 4, title: 'Business Analysis', desc: 'Leadership and management are two distinctive and complementary systems of actions in the business environment.', image: '/images/blog/4.png' }
+  { id: 3, title: 'Brand Management', desc: 'Leadership and management are two distinctive and complementary systems of actions in the business environment.', image: '/images/blog/3.png' }
 ]
 </script>
 
