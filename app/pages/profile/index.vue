@@ -153,8 +153,8 @@
               <h3 class="uno-text-[#011813] uno-text-xl uno-font-['Outfit'] uno-font-semibold uno-leading-[1.24]">{{ card.title }}</h3>
               <p class="uno-text-[#323233] uno-text-xs uno-font-['Outfit'] uno-leading-normal uno-min-h-[80px]">{{ card.desc }}</p>
               <div class="uno-flex uno-gap-3">
-                <UButton class="uno-w-[151px] uno-h-[48px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-1 uno-py-1 uno-px-[20px] uno-bg-[#009D77] uno-rounded-lg uno-text-[#FFFFFF] uno-text-base uno-font-['Outfit'] uno-font-bold uno-leading-normal hover:uno-bg-[var(--color-green-2)]">{{ $t('pages.profile.readMore') }}</UButton>
-                <UButton v-if="card.try" class="uno-w-[151px] uno-h-[48px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-1 uno-py-1 uno-px-[20px] uno-bg-white uno-border-2 uno-border-[#009D77] uno-rounded-lg uno-text-[#009D77] uno-text-base uno-font-['Outfit'] uno-font-bold uno-leading-normal hover:uno-bg-[#F0FDF9]">{{ $t('pages.profile.tryAgain') }}</UButton>
+                <UButton class="uno-w-[151px] uno-h-[48px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-1 uno-py-1 uno-px-[20px] uno-bg-[#009D77] uno-rounded-lg uno-text-[#FFFFFF] uno-text-lg uno-font-['Outfit'] uno-font-bold uno-leading-normal hover:uno-bg-[var(--color-green-2)]">{{ $t('pages.profile.readMore') }}</UButton>
+                <UButton v-if="card.try" class="uno-w-[151px] uno-h-[48px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-1 uno-py-1 uno-px-[20px] uno-bg-white uno-border-2 uno-border-[#009D77] uno-rounded-lg uno-text-[#009D77] uno-text-lg uno-font-['Outfit'] uno-font-bold uno-leading-normal hover:uno-bg-[#F0FDF9]">{{ $t('pages.profile.tryAgain') }}</UButton>
               </div>
             </div>
           </div>
