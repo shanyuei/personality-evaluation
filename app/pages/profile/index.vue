@@ -37,7 +37,7 @@
                 </div>
                 <span class="uno-text-sm uno-text-[var(--ui-muted-foreground)]">{{ bar.value }}%</span>
               </div>
-              <div class="uno-h-[2px] uno-bg-[#4E5255]"></div>
+              <!-- <div class="uno-h-[2px] uno-bg-[#4E5255]"></div> -->
             </div>
           </div>
 
@@ -89,14 +89,14 @@
 
       <div class="uno-grid uno-gap-6 md:uno-grid-cols-5 uno-mt-6">
         <section class="uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)] md:uno-col-span-3">
-          <div class="uno-p-6 md:uno-p-8 uno-space-y-3">
+          <div class="uno-p-6 md:uno-p-8 uno-space-y-6">
             <span class="uno-w-[418px] uno-text-xs uno-text-[#4E5255] uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{ $t('pages.profile.continueCourse.label') }}</span>
             <h3 class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{ $t('pages.profile.continueCourse.title') }}</h3>
             <p class="uno-text-[#323233] uno-text-sm uno-font-['Outfit'] uno-leading-normal">{{ $t('pages.profile.continueCourse.desc') }}</p>
             <div class="uno-flex uno-justify-between uno-items-center">
               <span class="uno-text-[#323233] uno-text-sm uno-font-['Outfit'] uno-font-medium uno-leading-normal">0/10 {{ $t('pages.profile.lessons') }}</span>
             </div>
-            <div class="uno-mt-2 uno-flex uno-items-end uno-justify-between">
+            <div class="uno-flex uno-items-end uno-justify-between">
               <UButton class="uno-h-[48px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-1 uno-py-1 uno-px-[20px] uno-bg-[#009D77] uno-rounded-lg hover:uno-bg-[var(--color-green-2)] uno-text-[#FFFFFF] uno-text-sm uno-font-['Outfit'] uno-font-bold uno-leading-normal">{{ $t('pages.profile.continueCourse.cta') }}</UButton>
               <div class="uno-w-[64px] uno-h-[64px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[14.55px] uno-p-[14.55px] uno-border-solid uno-border-[#E7E7E8] uno-border-4 uno-rounded-[145.45px] uno-overflow-hidden">
                   <span class="uno-text-sm uno-text-[var(--ui-muted-foreground)]">0%</span>
@@ -138,20 +138,20 @@
       </div>
 
       <section class="uno-mt-8">
-        <h2 class="uno-text-xl md:uno-text-2xl uno-font-['Outfit'] uno-font-extrabold uno-text-[var(--ui-foreground)] uno-mb-4">{{ $t('pages.profile.takeAnother') }}</h2>
+        <h2 class="uno-w-[1200px] uno-text-[#011813] uno-text-[32px] uno-font-['Outfit'] uno-font-bold uno-leading-normal">{{ $t('pages.profile.takeAnother') }}</h2>
         <div class="uno-grid uno-gap-6 md:uno-grid-cols-3">
           <div v-for="card in testCards" :key="card.id" class="uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)]">
             <div class="uno-p-6 md:uno-p-8 uno-space-y-3">
-              <div class="uno-flex uno-items-center uno-gap-2">
-                <span class="uno-text-xs uno-bg-[var(--ui-input)] uno-rounded-full uno-px-2 uno-py-1">{{ $t('pages.profile.tag.hard') }}</span>
-                <span class="uno-text-xs uno-text-[var(--ui-muted-foreground)]">10 {{ $t('pages.profile.questions') }}</span>
-                <span v-if="card.completed" class="uno-text-xs uno-text-[var(--ui-primary)]">{{ $t('pages.profile.completed') }}</span>
+              <div class="uno-flex uno-items-center uno-justify-between uno-gap-2">
+                <span class="uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-2 uno-py-2 uno-px-4 uno-bg-[#F0F0F0] uno-rounded-lg uno-text-sm uno-text-right">{{ $t('pages.profile.tag.hard') }}</span>
+                <span v-if="card.id !== 2" class="uno-text-[#4E5255] uno-font-['Outfit'] uno-text-right uno-font-medium uno-leading-normal uno-text-sm">10 {{ $t('pages.profile.questions') }}</span>
+                <span v-if="card.completed" class="uno-text-xs uno-bg-[var(--ui-input)] uno-rounded-full uno-px-2 uno-py-1">{{ $t('pages.profile.completed') }}</span>
               </div>
-              <h3 class="uno-text-lg uno-font-bold uno-text-[var(--ui-foreground)]">{{ card.title }}</h3>
-              <p class="uno-text-[var(--ui-muted-foreground)]">{{ card.desc }}</p>
+              <h3 class="uno-text-[#011813] uno-text-xl uno-font-['Outfit'] uno-font-semibold uno-leading-[1.24]">{{ card.title }}</h3>
+              <p class="uno-text-[#323233] uno-text-xs uno-font-['Outfit'] uno-leading-normal">{{ card.desc }}</p>
               <div class="uno-flex uno-gap-3">
-                <UButton variant="ghost" class="uno-h-[40px] uno-rounded-[12px] uno-border uno-border-[var(--ui-border)] hover:uno-border-[var(--ui-primary)] hover:uno-text-[var(--ui-primary)]">{{ $t('pages.profile.readMore') }}</UButton>
-                <UButton v-if="card.try" class="uno-h-[40px] uno-rounded-[12px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-white">{{ $t('pages.profile.tryAgain') }}</UButton>
+                <UButton class="uno-w-[151px] uno-h-[48px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-1 uno-py-1 uno-px-[20px] uno-bg-[#009D77] uno-rounded-lg uno-text-[#FFFFFF] uno-text-base uno-font-['Outfit'] uno-font-bold uno-leading-normal hover:uno-bg-[var(--color-green-2)]">{{ $t('pages.profile.readMore') }}</UButton>
+                <UButton v-if="card.try" class="uno-w-[151px] uno-h-[48px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-1 uno-py-1 uno-px-[20px] uno-bg-[#009D77] uno-rounded-lg uno-text-[#FFFFFF] uno-text-base uno-font-['Outfit'] uno-font-bold uno-leading-normal hover:uno-bg-[var(--color-green-2)]">{{ $t('pages.profile.tryAgain') }}</UButton>
               </div>
             </div>
           </div>
