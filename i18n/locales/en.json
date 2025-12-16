@@ -588,7 +588,8 @@
       "triviaQuestion": "What is an essential trait for problem-solving?",
       "viewResults": "Answer & view results",
       "dailyStreak": "Daily streak",
-      "begin": "Begin your transformation!",
+      "begin": "Days in a row Begin your transformation!",
+      "continueLearning": "Continue Learning",
       "continueCourse": {
         "label": "Continue your course",
         "title": "Financial Management",
