@@ -17,6 +17,7 @@
                 <div class="uno-text-[#4E5255] uno-text-xs uno-font-['Outfit'] uno-leading-normal">{{ $t('pages.profile.type') }} 7</div>
                 <div class="uno-w-[418px] uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{ $t('pages.profile.typeName') }}</div>
               </div>
+              <div class="uno-h-[2px] uno-bg-[#4E5255]"></div>
             </div>
             <p class="uno-text-xs uno-text-[var(--ui-muted-foreground)] uno-text-left uno-max-w-md">
               Type 7s on the Enneagram are often referred to as The Enthusiasts due to their energetic, spontaneous, and optimistic nature. They are characterized by a zest for life, a love of adventure, and a constant pursuit of new experiences. Type 7s are driven by the desire to avoid pain and discomfort, seeking pleasure, excitement, and variety in all aspects of their lives. With their forward-thinking and imaginative minds, Type 7s are natural problem-solvers, able to see opportunities where others may see obstacles. They thrive on possibilities and are quick to generate ideas, often inspiring those around them with their infectious optimism and sense of adventure.
@@ -36,6 +37,7 @@
                 </div>
                 <span class="uno-text-sm uno-text-[var(--ui-muted-foreground)]">{{ bar.value }}%</span>
               </div>
+              <div class="uno-h-[2px] uno-bg-[#4E5255]"></div>
             </div>
           </div>
 
@@ -106,29 +108,30 @@
           <div class="uno-p-6 md:uno-p-8 uno-space-y-6">
             <h3 class="uno-text-lg uno-text-[#4E5255] uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">Your progress</h3>
             <div class="uno-space-y-4">
-              <div class="uno-flex uno-items-center uno-justify-between">
+              <div class="uno-flex uno-items-end uno-justify-between">
                 <div class="uno-flex uno-items-center uno-gap-3">
-                  <div class="uno-text-[var(--color-green-1)]">✓</div>
-                  <span class="uno-text-[var(--ui-foreground)]">Completed tests</span>
+                  <NuxtImg src="/images/profile/1.png" alt="completed" class="uno-w-[24px] uno-h-[24px]" />
+                  <span class="uno-text-[#323233] uno-font-['Outfit']">Completed tests</span>
                 </div>
-                <div class="uno-text-2xl uno-font-bold uno-text-[var(--ui-foreground)]">2</div>
+                <div class="uno-text-[#323233] uno-text-5xl uno-font-['Outfit'] uno-font-semibold uno-mb-0">2</div>
               </div>
-              <div class="uno-h-[1px] uno-bg-[var(--ui-border)]"></div>
-              <div class="uno-flex uno-items-center uno-justify-between">
+              <div class="uno-h-[2px] uno-bg-[#4E5255]"></div>
+              <div class="uno-flex uno-items-end uno-justify-between">
                 <div class="uno-flex uno-items-center uno-gap-3">
-                  <div class="uno-text-[var(--color-green-1)]">📚</div>
-                  <span class="uno-text-[var(--ui-foreground)]">Finished course</span>
+                  <NuxtImg src="/images/profile/2.png" alt="book" class="uno-w-[24px] uno-h-[24px]" />
+                  <span class="uno-text-[#323233] uno-font-['Outfit']">Finished course</span>
                 </div>
-                <div class="uno-text-2xl uno-font-bold uno-text-[var(--ui-foreground)]">1</div>
+                <div class="uno-text-[#323233] uno-text-5xl uno-font-['Outfit'] uno-font-semibold uno-mb-0">1</div>
               </div>
-              <div class="uno-h-[1px] uno-bg-[var(--ui-border)]"></div>
-              <div class="uno-flex uno-items-center uno-justify-between">
+              <div class="uno-h-[2px] uno-bg-[#4E5255]"></div>
+              <div class="uno-flex uno-items-end uno-justify-between">
                 <div class="uno-flex uno-items-center uno-gap-3">
-                  <div class="uno-text-[var(--color-green-1)]">🔬</div>
-                  <span class="uno-text-[var(--ui-foreground)]">Completed challenge</span>
+                  <NuxtImg src="/images/profile/3.png" alt="test tube" class="uno-w-[24px] uno-h-[24px]" />
+                  <span class="uno-text-[#323233] uno-font-['Outfit']">Completed challenge</span>
                 </div>
-                <div class="uno-text-2xl uno-font-bold uno-text-[var(--ui-foreground)]">1</div>
+                <div class="uno-text-[#323233] uno-text-5xl uno-font-['Outfit'] uno-font-semibold uno-mb-0">1</div>
               </div>
+              <div class="uno-h-[2px] uno-bg-[#4E5255]"></div>
             </div>
           </div>
         </section>
