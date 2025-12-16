@@ -22,75 +22,57 @@
             </g>
           </svg>
         </div>
-        <h1 class="uno-w-[909.71px] uno-text-[#011813] uno-text-5xl uno-font-['Outfit'] uno-text-center uno-font-semibold uno-leading-[1.2]">{{ $t('pages.testIntro.title') }}</h1>
+        <h1 class="uno-w-[909.71px] uno-text-[#011813] uno-text-5xl uno-font-['Outfit'] uno-text-center uno-font-semibold uno-leading-[1.2] uno-mb-8 md:uno-mb-12">{{ $t('pages.testIntro.title') }}</h1>
       </div>
 
       <div class="uno-mt-6">
-        <div class="uno-grid uno-gap-6 md:uno-grid-cols-3">
-          <div class="uno-bg-[#FBF0F4] uno-rounded-[24px]">
+        <div class="uno-grid uno-gap-8 md:uno-gap-12 md:uno-grid-cols-3">
+          <div class="uno-bg-[#FBF0F4] uno-rounded-[24px] uno-w-[300px] uno-mx-auto">
             <div class="uno-inline-block uno-w-fit uno-mx-auto uno-p-4 uno-space-y-2 uno-bg-[#FBF0F4] uno-rounded-2xl">
               <div class="uno-flex uno-flex-col uno-items-center uno-gap-3">
-                <span class="uno-w-10 uno-h-10 uno-rounded-full uno-bg-[var(--color-pink-4)] uno-flex uno-items-center uno-justify-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                    fill="none"
-                    version="1.1"
-                    width="21.3857421875"
-                    height="7.54150390625"
-                    viewBox="0 0 21.3857421875 7.54150390625">
-                    <g>
-                      <g>
-                        <path
-                          d="M0.00018310546875,7.5416083C0.00018310546875,7.5416083,21.38589110546875,7.5416083,21.38589110546875,7.5416083C21.35900710546875,4.4903469,21.25148010546875,-0.29489058,15.31025910546875,0.014268034C15.31025910546875,0.014268034,7.16459610546875,2.6219537,7.16459610546875,2.6219537C7.16459610546875,2.6219537,0.00018310546875,7.5416083,0.00018310546875,7.5416083Z"
-                          fill="#FCEEDF"
-                          fill-opacity="1" />
-                      </g>
-                    </g>
-                  </svg>
+                <span class="uno-w-20 uno-h-20 uno-rounded-full uno-bg-[var(--color-pink-4)] uno-flex uno-items-center uno-justify-center">
+                  <NuxtImg src="/images/test/1.png" alt="step1" width="80" height="80" />
                 </span>
                 <span class="uno-inline-flex uno-justify-start uno-items-center uno-flex-row uno-gap-2.5 uno-py-1 uno-px-4 uno-bg-[#FD9AC0] uno-rounded-3xl uno-self-start uno-text-[#011813] uno-text-center uno-text-xs uno-font-['Outfit'] uno-font-medium uno-leading-[1.36]">STEP 1</span>
               </div>
-              <div class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold">{{ $t('pages.testIntro.pc.step1.title') }}</div>
-              <p class="uno-text-[#4E5255] uno-font-['Outfit']">{{ $t('pages.testIntro.pc.step1.desc') }}</p>
+              <div class="uno-text-[#011813] uno-text-lg md:uno-text-xl uno-font-['Outfit'] uno-font-semibold">{{ $t('pages.testIntro.pc.step1.title') }}</div>
+              <p class="uno-text-xs md:uno-text-sm uno-text-[#4E5255] uno-font-['Outfit']">{{ $t('pages.testIntro.pc.step1.desc') }}</p>
             </div>
           </div>
 
-          <div class="uno-bg-white uno-rounded-[24px]">
+          <div class="uno-bg-white uno-rounded-[24px] uno-w-[300px] uno-mx-auto">
             <div class="uno-inline-block uno-w-fit uno-mx-auto uno-p-4 uno-space-y-2 uno-bg-[#EEE5F8] uno-rounded-[24px]">
               <div class="uno-flex uno-flex-col uno-items-center uno-gap-3">
-                <span class="uno-w-10 uno-h-10 uno-rounded-full uno-bg-[var(--color-purple-4)] uno-flex uno-items-center uno-justify-center">
-                  <NuxtImg src="/images/about/icon-4.png" alt="step2" width="40" height="40" />
+                <span class="uno-w-20 uno-h-20 uno-rounded-full uno-bg-[var(--color-purple-4)] uno-flex uno-items-center uno-justify-center">
+                  <NuxtImg src="/images/test/2.png" alt="step2" width="80" height="80" />
                 </span>
                 <span class="uno-inline-flex uno-justify-start uno-items-center uno-flex-row uno-gap-2.5 uno-py-1 uno-px-4 uno-bg-[#DEC4FA] uno-rounded-3xl uno-text-[#011813] uno-text-center uno-text-xs uno-font-['Outfit'] uno-font-medium uno-leading-[1.36] uno-self-start">STEP 2</span>
               </div>
-              <div class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold">{{ $t('pages.testIntro.pc.step2.title') }}</div>
-              <p class="uno-text-[#4E5255] uno-font-['Outfit']">{{ $t('pages.testIntro.pc.step2.desc') }}</p>
+              <div class="uno-text-[#011813] uno-text-lg md:uno-text-xl uno-font-['Outfit'] uno-font-semibold">{{ $t('pages.testIntro.pc.step2.title') }}</div>
+              <p class="uno-text-xs md:uno-text-sm uno-text-[#4E5255] uno-font-['Outfit']">{{ $t('pages.testIntro.pc.step2.desc') }}</p>
             </div>
           </div>
 
-          <div class="uno-bg-white uno-rounded-[24px]">
-            <div class="uno-inline-block uno-w-fit uno-mx-auto uno-p-4 uno-space-y-2 uno-bg-[#D2F2E9] uno-rounded-[24px]">
-              <div class="uno-flex uno-flex-col uno-items-center uno-gap-3">
-                <span class="uno-w-10 uno-h-10 uno-rounded-full uno-bg-[var(--color-green-3)] uno-flex uno-items-center uno-justify-center">
-                  <NuxtImg src="/images/about/icon-3.png" alt="step3" width="40" height="40" />
-                </span>
-                <span class="uno-inline-block uno-rounded-full uno-bg-[var(--color-green-2)] uno-text-[#011813] uno-text-xs uno-font-['Outfit'] uno-px-3 uno-py-1 uno-self-start">STEP 3</span>
-              </div>
-              <div class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold">{{ $t('pages.testIntro.pc.step3.title') }}</div>
-              <p class="uno-text-[#4E5255] uno-font-['Outfit']">{{ $t('pages.testIntro.pc.step3.desc') }}</p>
+          <div class="uno-bg-[#D2F2E9] uno-rounded-[24px] uno-p-4 uno-space-y-2 uno-w-[300px] uno-mx-auto">
+            <div class="uno-flex uno-flex-col uno-items-center uno-gap-3">
+              <span class="uno-w-20 uno-h-20 uno-rounded-full uno-bg-[var(--color-green-3)] uno-flex uno-items-center uno-justify-center">
+                <NuxtImg src="/images/test/3.png" alt="step3" width="80" height="80" />
+              </span>
+              <span class="uno-inline-block uno-rounded-full uno-bg-[var(--color-green-2)] uno-text-[#011813] uno-text-xs uno-font-['Outfit'] uno-px-3 uno-py-1 uno-self-start">STEP 3</span>
             </div>
+            <div class="uno-text-[#011813] uno-text-lg md:uno-text-xl uno-font-['Outfit'] uno-font-semibold">{{ $t('pages.testIntro.pc.step3.title') }}</div>
+            <p class="uno-text-xs md:uno-text-sm uno-text-[#4E5255] uno-font-['Outfit']">{{ $t('pages.testIntro.pc.step3.desc') }}</p>
           </div>
         </div>
       </div>
 
-      <div class="uno-w-full md:uno-w-[602px] uno-mx-auto uno-mt-6">
+      <div class="uno-w-full md:uno-w-[602px] uno-mx-auto uno-mt-12">
         <div class="uno-flex uno-items-center uno-justify-between uno-text-[var(--ui-muted-foreground)]">
           <div class="uno-text-[#4E5255] uno-text-xs uno-font-['Outfit'] uno-leading-normal">{{ progress }}%</div>
           <div class="uno-text-[#4E5255] uno-text-xs uno-font-['Outfit'] uno-leading-normal">{{ $t('pages.testIntro.progress.step', { current, total }) }}</div>
         </div>
-        <div class="uno-relative uno-w-full uno-h-[10px] uno-rounded-xl uno-bg-[#DDDDDD] uno-mt-2">
-          <div class="uno-absolute uno-top-0 uno-left-0 uno-w-[32px] uno-h-[10px] uno-rounded-xl uno-bg-[#009D77] uno-z-10"></div>
+        <div class="uno-relative uno-w-[450px] uno-h-[10px] uno-rounded-xl uno-bg-[#DDDDDD] uno-mt-2">
+          <div class="uno-absolute uno-top-0 uno-left-0 uno-w-[399px] uno-h-[10px] uno-rounded-xl uno-bg-[#009D77] uno-z-10"></div>
           <div class="uno-h-full uno-rounded-full uno-bg-[var(--ui-primary)]" :style="{ width: progress + '%' }"></div>
         </div>
       </div>
@@ -129,7 +111,7 @@
 
       <div class="uno-w-full md:uno-w-[602px] uno-mx-auto uno-mt-4">
         <div class="uno-space-y-4">
-          <div v-for="(q, qi) in questions" :key="qi" class="uno-bg-white uno-rounded-[20px] uno-border uno-border-[var(--ui-border)] uno-shadow-[0px_2px_8px_rgba(0,0,0,0.06)]">
+          <div v-for="(q, qi) in questions" :key="qi" class="uno-bg-white uno-rounded-[20px] uno-border uno-border-[var(--ui-border)]">
             <div class="uno-p-5 md:uno-p-6">
                 <p class="uno-text-[#011813] uno-font-['Outfit'] uno-text-center uno-leading-[1.2]">{{ q }}</p>
               <div class="uno-flex uno-flex-row uno-items-center uno-justify-between uno-gap-[20px] uno-mt-4 uno-px-[10%]">

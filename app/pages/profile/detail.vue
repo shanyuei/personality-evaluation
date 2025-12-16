@@ -3,52 +3,46 @@
     <div class="uno-w-full md:uno-w-[90%] uno-mx-auto">
       <h1 class="uno-text-2xl md:uno-text-3xl uno-font-['Outfit'] uno-font-extrabold uno-text-[var(--ui-foreground)] uno-mb-6">{{ $t('pages.testDetail.welcome', { name }) }}</h1>
 
-      <section class="uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)]">
+ <section class="uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)]">
         <div class="uno-p-6 md:uno-p-8 uno-grid uno-gap-6 md:uno-grid-cols-3">
-          <div class="uno-flex uno-gap-6">
-            <div class="uno-flex uno-flex-col uno-gap-2 uno-items-center">
-              <div class="uno-w-16 uno-h-16 uno-aspect-square uno-rounded-full uno-overflow-hidden uno-border uno-border-[var(--ui-border)]">
+          <div class="uno-col-span-full md:uno-col-span-1 uno-flex uno-flex-col uno-items-start uno-space-y-4">
+            <div class="uno-space-y-2">
+              <div class="uno-w-[418px] uno-text-[#4E5255] uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2] uno-text-sm">{{ $t('pages.profile.aboutTitle') }}</div>
+            </div>
+            <div class="uno-flex uno-items-center uno-gap-4">
+              <div class="uno-w-20 uno-h-20 uno-aspect-square uno-rounded-full uno-overflow-hidden uno-bg-[#F0F0F0]">
                 <NuxtImg src="/images/instructors/jane-smith.jpg" alt="avatar" class="uno-w-full uno-h-full uno-object-cover" />
               </div>
-              <span class="uno-text-xs uno-bg-[var(--ui-input)] uno-text-[var(--ui-foreground)] uno-rounded-full uno-px-3 uno-py-1">{{ $t('pages.testDetail.type') }} 7</span>
+              <div class="uno-flex uno-flex-col uno-items-start uno-gap-1">
+                <div class="uno-text-[#4E5255] uno-text-xs uno-font-['Outfit'] uno-leading-normal">{{ $t('pages.profile.type') }} 7</div>
+                <div class="uno-w-[418px] uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{ $t('pages.profile.typeName') }}</div>
+              </div>
+              <div class="uno-h-[2px] uno-bg-[#4E5255]"></div>
             </div>
-            <div class="uno-flex-1 uno-space-y-3">
-              <div class="uno-flex uno-items-center uno-gap-2">
-                <span class="uno-text-base md:uno-text-lg uno-font-bold uno-text-[var(--ui-foreground)]">{{ $t('pages.testDetail.allAbout') }}</span>
-                <span class="uno-text-[var(--ui-primary)] uno-font-semibold">{{ $t('pages.testDetail.typeName') }}</span>
-              </div>
-              <p class="uno-text-sm md:uno-text-base uno-text-[var(--ui-muted-foreground)]">{{ $t('pages.testDetail.aboutDesc') }}</p>
-              <div>
-                <UButton class="uno-h-[40px] uno-rounded-[12px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-white">{{ $t('pages.testDetail.readMore') }}</UButton>
-              </div>
+            <p class="uno-text-[#8D8E8F] uno-text-sm uno-font-['Outfit'] uno-leading-normal uno-text-left uno-max-w-md">
+              Type 7s on the Enneagram are often referred to as The Enthusiasts due to their energetic, spontaneous, and optimistic nature. They are characterized by a zest for life, a love of adventure, and a constant pursuit of new experiences. Type 7s are driven by the desire to avoid pain and discomfort, seeking pleasure, excitement, and variety in all aspects of their lives. With their forward-thinking and imaginative minds, Type 7s are natural problem-solvers, able to see opportunities where others may see obstacles. They thrive on possibilities and are quick to generate ideas, often inspiring those around them with their infectious optimism and sense of adventure.
+            </p>
+            <div>
+              <UButton class="uno-w-[151px] uno-h-[48px] uno-gap-1 uno-py-1 uno-px-[20px] uno-bg-[var(--ui-primary)] uno-rounded-lg hover:uno-bg-[var(--color-green-2)] uno-text-white uno-text-lg uno-font-['Outfit'] uno-font-bold uno-leading-normal uno-text-center">{{ $t('pages.profile.readMore') }}</UButton>
             </div>
           </div>
-
           <div>
-            <h3 class="uno-text-lg uno-font-bold uno-text-[var(--ui-foreground)]">{{ $t('pages.testDetail.totalScore') }}</h3>
+            <h3 class="uno-w-[307px] uno-text-[#011813] uno-text-lg uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{ $t('pages.profile.totalScore') }}</h3>
             <div class="uno-mt-3 uno-space-y-3">
               <div v-for="bar in scoreBars" :key="bar.label" class="uno-flex uno-items-center uno-gap-3">
-                <span class="uno-w-7 uno-h-7 uno-rounded-full uno-flex uno-items-center uno-justify-center uno-text-xs" :style="{ background: bar.color, color: '#fff' }">{{ bar.num }}</span>
-                <span class="uno-w-28 uno-text-sm uno-text-[var(--ui-foreground)]">{{ bar.label }}</span>
+                <span class="uno-w-[28px] uno-h-[28px] uno-flex uno-justify-center uno-items-center uno-flex-col uno-gap-[8.75px] uno-py-[3.5px] uno-px-[11.37px] uno-bg-[#F0F0F0] uno-rounded-[14px] uno-overflow-hidden uno-text-[#4E5255] uno-text-[14px] uno-font-['Outfit'] uno-font-medium uno-leading-normal">{{ bar.num }}</span>
+                <span class="uno-w-28 uno-text-sm uno-text-[#4E5255] uno-font-['Outfit'] uno-leading-normal">{{ bar.label }}</span>
                 <div class="uno-flex-1 uno-h-2 uno-rounded-full uno-bg-[var(--ui-input)]">
-                  <div class="uno-h-2 uno-rounded-full" :style="{ width: bar.value + '%', background: bar.color }"></div>
+                  <div class="uno-h-2 uno-rounded-full" :style="{ width: bar.value + '%', background: bar.label === 'Individualist' ? '#E786DF' : bar.num === 2 ? '#F5CEA4' : bar.num === 5 ? '#B57AF5' : bar.num === 8 ? '#67DCA9' : bar.num === 3 ? '#E97274' : bar.num === 9 ? '#C7EB78' : bar.num === 6 ? '#7E6EE7' : bar.num === 1 ? '#F4DA8F' : '#8FADF6' }"></div>
                 </div>
-                <span class="uno-text-sm uno-text-[var(--ui-muted-foreground)]">{{ bar.value }}%</span>
+                <span class="uno-text-[#8D8E8F] uno-text-sm uno-font-['Outfit'] uno-leading-normal">{{ bar.value }}%</span>
               </div>
+              <!-- <div class="uno-h-[2px] uno-bg-[#4E5255]"></div> -->
             </div>
           </div>
 
           <div class="uno-flex uno-items-center uno-justify-center">
-            <svg width="220" height="220" viewBox="0 0 220 220">
-              <circle cx="110" cy="110" r="90" fill="none" stroke="var(--ui-border)" stroke-width="1" />
-              <circle cx="110" cy="110" r="60" fill="none" stroke="var(--ui-border)" stroke-width="1" />
-              <circle cx="110" cy="110" r="30" fill="none" stroke="var(--ui-border)" stroke-width="1" />
-              <line v-for="edge in enneaLines" :key="edge.join('-')" :x1="enneaPos[edge[0]].x" :y1="enneaPos[edge[0]].y" :x2="enneaPos[edge[1]].x" :y2="enneaPos[edge[1]].y" stroke="var(--ui-foreground)" />
-              <g v-for="n in enneaNodes" :key="n.id">
-                <circle :cx="enneaPos[n.id].x" :cy="enneaPos[n.id].y" r="14" :fill="n.fill" />
-                <text :x="enneaPos[n.id].x" :y="enneaPos[n.id].y + 4" text-anchor="middle" font-size="10" fill="#fff">{{ n.id }}</text>
-              </g>
-            </svg>
+            <NuxtImg src="/images/test/5.png" alt="Enneagram" class="uno-w-[220px] uno-h-[220px]" />
           </div>
         </div>
       </section>
@@ -57,21 +51,21 @@
         <UButton
           v-for="tab in tabs"
           :key="tab.id"
-          class="uno-rounded-full uno-h-[40px] uno-px-4 uno-flex uno-items-center uno-justify-center"
+          class="uno-rounded-full uno-h-[40px] uno-px-4 uno-flex uno-items-center uno-justify-center font-['Outfit'] font-medium"
           @click="activeTab = tab.id"
           :class="activeTab === tab.id
-            ? 'uno-bg-[var(--ui-primary)] uno-text-white hover:uno-bg-[var(--color-green-2)]'
-            : 'uno-bg-white uno-text-[var(--ui-muted-foreground)] uno-border uno-border-[var(--ui-border)] hover:uno-bg-[var(--color-green-2)] hover:uno-text-white'"
+            ? 'uno-bg-[var(--ui-primary)] uno-text-[#FFFFFF] hover:uno-bg-[var(--color-green-2)]'
+            : 'uno-bg-white uno-text-[var(--ui-muted-foreground)] uno-border uno-border-[var(--ui-border)] hover:uno-bg-[var(--color-green-2)] hover:uno-text-[#FFFFFF]'"
         >{{ tab.label }}</UButton>
       </div>
 
       <section class="uno-mt-6 uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)]">
         <div class="uno-p-6 md:uno-p-8">
-          <h2 class="uno-text-xl md:uno-text-2xl uno-font-['Outfit'] uno-font-extrabold uno-text-[var(--ui-foreground)] uno-mb-4">{{ $t('pages.testDetail.core.title') }}</h2>
+          <h2 class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{ $t('pages.testDetail.core.title') }}</h2>
           <div class="uno-grid uno-gap-6 md:uno-grid-cols-2">
-            <div v-for="i in 6" :key="i" class="uno-space-y-2">
-              <h3 class="uno-text-base uno-font-bold uno-text-[var(--ui-foreground)]">{{ $t('pages.testDetail.core.cardTitle') }}</h3>
-              <p class="uno-text-[var(--ui-muted-foreground)]">{{ $t('pages.testDetail.core.cardDesc') }}</p>
+            <div v-for="i in 8" :key="i" class="uno-space-y-2">
+              <h3 class="uno-w-[307px] uno-text-[#011813] uno-text-lg uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{ $t('pages.testDetail.core.cardTitle') }}</h3>
+              <p class="uno-text-[#8D8E8F] uno-text-sm uno-font-['Outfit'] uno-leading-normal">Type 7s are known for their optimistic outlook on life, always seeing the silver lining even in difficult situations. They approach challenges with a sense of enthusiasm and curiosity, believing that there is always something positive to be found.</p>
             </div>
           </div>
         </div>
@@ -79,20 +73,20 @@
 
       <section class="uno-mt-6 uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)]">
         <div class="uno-p-6 md:uno-p-8 uno-space-y-6">
-          <h2 class="uno-text-xl md:uno-text-2xl uno-font-['Outfit'] uno-font-extrabold uno-text-[var(--ui-foreground)]">{{ $t('pages.personalityDetail.subtypes.title') }}</h2>
-          <p class="uno-text-[var(--ui-muted-foreground)]">{{ $t('pages.personalityDetail.subtypes.subtitle') }}</p>
+          <h2 class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{ $t('pages.personalityDetail.subtypes.title') }}</h2>
+          <p class="uno-text-[#8D8E8F] uno-text-xs uno-font-['Outfit'] uno-leading-normal">The Enneagram outlines three subtypes for Type 7, each highlighting different expressions of their core characteristics:</p>
           <div class="uno-grid uno-gap-6 md:uno-grid-cols-3">
             <div class="uno-space-y-2">
-              <h3 class="uno-text-base uno-font-bold uno-text-[var(--ui-foreground)]">{{ $t('pages.personalityDetail.subtypes.sp') }}</h3>
-              <p class="uno-text-[var(--ui-muted-foreground)]">{{ $t('pages.personalityDetail.subtypes.spDesc') }}</p>
+              <h3 class="uno-w-[307px] uno-text-[#011813] uno-text-lg uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{ $t('pages.personalityDetail.subtypes.sp') }}</h3>
+              <p class="uno-text-[#8D8E8F] uno-text-sm uno-font-['Outfit'] uno-leading-normal">{{ $t('pages.personalityDetail.subtypes.spDesc') }}</p>
             </div>
             <div class="uno-space-y-2">
-              <h3 class="uno-text-base uno-font-bold uno-text-[var(--ui-foreground)]">{{ $t('pages.personalityDetail.subtypes.social') }}</h3>
-              <p class="uno-text-[var(--ui-muted-foreground)]">{{ $t('pages.personalityDetail.subtypes.socialDesc') }}</p>
+              <h3 class="uno-w-[307px] uno-text-[#011813] uno-text-lg uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{ $t('pages.personalityDetail.subtypes.social') }}</h3>
+              <p class="uno-text-[#8D8E8F] uno-text-sm uno-font-['Outfit'] uno-leading-normal">{{ $t('pages.personalityDetail.subtypes.socialDesc') }}</p>
             </div>
             <div class="uno-space-y-2">
-              <h3 class="uno-text-base uno-font-bold uno-text-[var(--ui-foreground)]">{{ $t('pages.personalityDetail.subtypes.oneToOne') }}</h3>
-              <p class="uno-text-[var(--ui-muted-foreground)]">{{ $t('pages.personalityDetail.subtypes.oneToOneDesc') }}</p>
+              <h3 class="uno-w-[307px] uno-text-[#011813] uno-text-lg uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{ $t('pages.personalityDetail.subtypes.oneToOne') }}</h3>
+              <p class="uno-text-[#8D8E8F] uno-text-sm uno-font-['Outfit'] uno-leading-normal">{{ $t('pages.personalityDetail.subtypes.oneToOneDesc') }}</p>
             </div>
           </div>
           <div class="uno-flex uno-justify-center">
@@ -103,22 +97,22 @@
 
       <section class="uno-mt-6 uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)]">
         <div class="uno-p-6 md:uno-p-8 uno-space-y-4">
-          <h2 class="uno-text-xl md:uno-text-2xl uno-font-['Outfit'] uno-font-extrabold uno-text-[var(--ui-foreground)]">{{ $t('pages.personalityDetail.conclusion.title') }}</h2>
-          <p class="uno-text-[var(--ui-muted-foreground)]">{{ $t('pages.personalityDetail.conclusion.p1') }}</p>
-          <p class="uno-text-[var(--ui-muted-foreground)]">{{ $t('pages.personalityDetail.conclusion.p2') }}</p>
-          <p class="uno-text-[var(--ui-muted-foreground)]">{{ $t('pages.personalityDetail.conclusion.p3') }}</p>
+          <h2 class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{ $t('pages.personalityDetail.conclusion.title') }}</h2>
+          <p class="uno-text-[#8D8E8F] uno-text-sm uno-font-['Outfit'] uno-leading-normal">{{ $t('pages.personalityDetail.conclusion.p1') }}</p>
+          <p class="uno-text-[#8D8E8F] uno-text-sm uno-font-['Outfit'] uno-leading-normal">{{ $t('pages.personalityDetail.conclusion.p2') }}</p>
+          <p class="uno-text-[#8D8E8F] uno-text-sm uno-font-['Outfit'] uno-leading-normal">{{ $t('pages.personalityDetail.conclusion.p3') }}</p>
         </div>
       </section>
 
       <section class="uno-mt-6 uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)]">
         <div class="uno-p-6 md:uno-p-8 uno-space-y-6">
-          <h2 class="uno-text-xl md:uno-text-2xl uno-font-['Outfit'] uno-font-extrabold uno-text-[var(--ui-foreground)]">{{ $t('pages.personalityDetail.growth.title') }}</h2>
+          <h2 class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{ $t('pages.personalityDetail.growth.title') }}</h2>
 
           <div class="uno-grid uno-gap-6 md:uno-grid-cols-3">
             <div class="uno-space-y-3">
               <div class="uno-w-10 uno-h-10 uno-rounded-full uno-border uno-border-[var(--ui-border)] uno-flex uno-items-center uno-justify-center uno-text-[var(--ui-foreground)] uno-font-semibold">1</div>
-              <h3 class="uno-text-base uno-font-bold uno-text-[var(--ui-foreground)]">{{ $t('pages.personalityDetail.growth.items.i1.title') }}</h3>
-              <p class="uno-text-[var(--ui-muted-foreground)]">{{ $t('pages.personalityDetail.growth.items.i1.body') }}</p>
+              <h3 class="uno-w-[307px] uno-text-[#011813] uno-text-lg uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{ $t('pages.personalityDetail.growth.items.i1.title') }}</h3>
+              <p class="uno-text-[#8D8E8F] uno-text-sm uno-font-['Outfit'] uno-leading-normal">{{ $t('pages.personalityDetail.growth.items.i1.body') }}</p>
               <NuxtLink to="/courses" class="uno-inline-block">
                 <UButton variant="ghost" class="uno-h-[40px] uno-rounded-[12px] uno-border uno-border-[var(--ui-primary)] uno-text-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] hover:uno-text-white">{{ $t('pages.personalityDetail.growth.ctaCourses') }}</UButton>
               </NuxtLink>
@@ -126,14 +120,14 @@
 
             <div class="uno-space-y-3">
               <div class="uno-w-10 uno-h-10 uno-rounded-full uno-border uno-border-[var(--ui-border)] uno-flex uno-items-center uno-justify-center uno-text-[var(--ui-foreground)] uno-font-semibold">2</div>
-              <h3 class="uno-text-base uno-font-bold uno-text-[var(--ui-foreground)]">{{ $t('pages.personalityDetail.growth.items.i2.title') }}</h3>
-              <p class="uno-text-[var(--ui-muted-foreground)]">{{ $t('pages.personalityDetail.growth.items.i2.body') }}</p>
+              <h3 class="uno-w-[307px] uno-text-[#011813] uno-text-lg uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{ $t('pages.personalityDetail.growth.items.i2.title') }}</h3>
+              <p class="uno-text-[#8D8E8F] uno-text-sm uno-font-['Outfit'] uno-leading-normal">{{ $t('pages.personalityDetail.growth.items.i2.body') }}</p>
             </div>
 
             <div class="uno-space-y-3">
               <div class="uno-w-10 uno-h-10 uno-rounded-full uno-border uno-border-[var(--ui-border)] uno-flex uno-items-center uno-justify-center uno-text-[var(--ui-foreground)] uno-font-semibold">3</div>
-              <h3 class="uno-text-base uno-font-bold uno-text-[var(--ui-foreground)]">{{ $t('pages.personalityDetail.growth.items.i3.title') }}</h3>
-              <p class="uno-text-[var(--ui-muted-foreground)]">{{ $t('pages.personalityDetail.growth.items.i3.body') }}</p>
+              <h3 class="uno-w-[307px] uno-text-[#011813] uno-text-lg uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{ $t('pages.personalityDetail.growth.items.i3.title') }}</h3>
+              <p class="uno-text-[#8D8E8F] uno-text-sm uno-font-['Outfit'] uno-leading-normal">{{ $t('pages.personalityDetail.growth.items.i3.body') }}</p>
               <NuxtLink to="/test" class="uno-inline-block">
                 <UButton variant="ghost" class="uno-h-[40px] uno-rounded-[12px] uno-border uno-border-[var(--ui-primary)] uno-text-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] hover:uno-text-white">{{ $t('pages.personalityDetail.growth.ctaTests') }}</UButton>
               </NuxtLink>
