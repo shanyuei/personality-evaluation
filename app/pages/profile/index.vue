@@ -45,7 +45,7 @@
             <NuxtImg src="/images/test/5.png" alt="Enneagram" class="uno-w-[220px] uno-h-[220px]" />
           </div>
         </div>
-      </section>
+      </section>            
 
       <div class="uno-grid uno-gap-6 md:uno-grid-cols-5 uno-mt-6">
         <section class="uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)] md:uno-col-span-3">
