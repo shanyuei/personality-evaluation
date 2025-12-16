@@ -23,7 +23,7 @@
               Type 7s on the Enneagram are often referred to as The Enthusiasts due to their energetic, spontaneous, and optimistic nature. They are characterized by a zest for life, a love of adventure, and a constant pursuit of new experiences. Type 7s are driven by the desire to avoid pain and discomfort, seeking pleasure, excitement, and variety in all aspects of their lives. With their forward-thinking and imaginative minds, Type 7s are natural problem-solvers, able to see opportunities where others may see obstacles. They thrive on possibilities and are quick to generate ideas, often inspiring those around them with their infectious optimism and sense of adventure.
             </p>
             <div>
-              <UButton class="uno-w-[151px] uno-h-[48px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-1 uno-py-1 uno-px-[20px] uno-bg-[var(--ui-primary)] uno-rounded-lg hover:uno-bg-[var(--color-green-2)] uno-text-white uno-text-lg uno-font-['Outfit'] uno-font-bold uno-leading-normal uno-text-center">{{ $t('pages.profile.readMore') }}</UButton>
+              <UButton class="uno-w-[151px] uno-h-[48px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-1 uno-py-1 uno-px-[20px] uno-bg-[var(--ui-primary)] uno-rounded-lg hover:uno-bg-[var(--color-green-2)] uno-text-white uno-text-base uno-font-['Outfit'] uno-font-bold uno-leading-normal uno-text-center">{{ $t('pages.profile.readMore') }}</UButton>
             </div>
           </div>
           <div>
@@ -127,7 +127,7 @@
               <h3 class="uno-w-[307px] uno-text-[#011813] uno-text-lg uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{ $t('pages.personalityDetail.growth.items.i3.title') }}</h3>
               <p class="uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-leading-normal">{{ $t('pages.personalityDetail.growth.items.i3.body') }}</p>
               <NuxtLink to="/test" class="uno-inline-block">
-                <UButton class="uno-w-[151px] uno-h-[48px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-1 uno-py-1 uno-px-[20px] uno-bg-[#009D77] uno-rounded-lg hover:uno-bg-[var(--color-green-2)] uno-text-[#FFFFFF] uno-text-lg uno-font-['Outfit'] uno-font-bold uno-leading-normal">{{ $t('pages.personalityDetail.growth.ctaTests') }}</UButton>
+                <UButton class="uno-w-[151px] uno-h-[48px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-1 uno-py-1 uno-px-[20px] uno-bg-[#009D77] uno-rounded-lg hover:uno-bg-[var(--color-green-2)] uno-text-[#FFFFFF] uno-text-base uno-font-['Outfit'] uno-font-bold uno-leading-normal">{{ $t('pages.personalityDetail.growth.ctaTests') }}</UButton>
               </NuxtLink>
             </div>
           </div>
