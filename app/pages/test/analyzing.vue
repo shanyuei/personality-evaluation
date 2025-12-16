@@ -1,10 +1,11 @@
 <template>
-  <div class="uno-min-h-screen uno-bg-gradient-to-b uno-from-blue-50 uno-to-purple-50 uno-flex uno-flex-col uno-items-center uno-justify-center uno-py-8 uno-px-4 md:uno-py-12 md:uno-px-6">
+  <div class="page-container uno-py-6">
+    <div class="uno-bg-gradient-to-b uno-from-blue-50 uno-to-purple-50 uno-flex uno-flex-col uno-items-center uno-justify-center uno-py-6 md:uno-py-12 uno-px-4 md:uno-px-6">
     <!-- 圆形图表和特征点区域 -->
-    <div class="uno-relative uno-w-full uno-max-w-md md:uno-max-w-lg uno-h-[350px] md:uno-h-[450px] uno-mb-10 md:uno-mb-16">
+    <div class="uno-relative uno-w-full uno-max-w-md md:uno-max-w-lg uno-h-[300px] md:uno-h-[450px] uno-mb-8 md:uno-mb-16">
       <!-- 圆形连接线 -->
       <div class="uno-absolute uno-inset-0 uno-flex uno-items-center uno-justify-center">
-        <svg class="uno-w-[280px] uno-h-[280px] md:uno-w-[350px] md:uno-h-[350px]" viewBox="0 0 100 100">
+        <svg class="uno-w-[240px] uno-h-[240px] md:uno-w-[350px] md:uno-h-[350px]" viewBox="0 0 100 100">
           <!-- 外圆 -->
           <circle uno-cx="50" uno-cy="50" uno-r="40" fill="none" stroke="#E5E7EB" stroke-width="1" />
           <!-- 连接线 -->
@@ -60,20 +61,20 @@
       
       <!-- 中间特性卡片 -->
       <div class="uno-absolute uno-inset-0 uno-flex uno-items-center uno-justify-center">
-        <div class="uno-w-[160px] uno-h-[160px] md:uno-w-[200px] md:uno-h-[200px] uno-bg-white uno-rounded-[16px] uno-shadow-lg uno-p-4 md:uno-p-6 uno-flex uno-flex-col uno-items-center uno-justify-center">
-          <div class="uno-flex uno-items-center uno-mb-3 md:uno-mb-4">
-            <div class="uno-w-7 uno-h-7 md:uno-w-9 md:uno-h-9 uno-rounded-full uno-bg-yellow-100 uno-flex uno-items-center uno-justify-center uno-mr-2">
-              <svg class="uno-w-3.5 uno-h-3.5 md:uno-w-4.5 md:uno-h-4.5 uno-text-yellow-500" viewBox="0 0 16 16" fill="currentColor">
+        <div class="uno-w-[140px] uno-h-[140px] md:uno-w-[200px] md:uno-h-[200px] uno-bg-white uno-rounded-[16px] uno-shadow-lg uno-p-3 md:uno-p-6 uno-flex uno-flex-col uno-items-center uno-justify-center">
+          <div class="uno-flex uno-items-center uno-mb-2 md:uno-mb-4">
+            <div class="uno-w-6 uno-h-6 md:uno-w-9 md:uno-h-9 uno-rounded-full uno-bg-yellow-100 uno-flex uno-items-center uno-justify-center uno-mr-1.5">
+              <svg class="uno-w-3 uno-h-3 md:uno-w-4.5 md:uno-h-4.5 uno-text-yellow-500" viewBox="0 0 16 16" fill="currentColor">
                 <path d="M8 0L10 5.2H16L11.5 8.5L13 14L8 10.8L3 14L4.5 8.5L0 5.2H6L8 0Z"/>
               </svg>
             </div>
-            <h3 class="uno-text-base md:uno-text-lg uno-font-bold uno-font-['Outfit'] uno-text-gray-800">Characteristics</h3>
+            <h3 class="uno-text-xs md:uno-text-lg uno-font-bold uno-font-['Outfit'] uno-text-gray-800">Characteristics</h3>
           </div>
-          <div class="uno-w-full uno-space-y-2 md:uno-space-y-2.5">
-            <div class="uno-h-1.5 md:uno-h-2 uno-bg-gray-100 uno-rounded-full uno-w-[90%]"></div>
-            <div class="uno-h-1.5 md:uno-h-2 uno-bg-gray-100 uno-rounded-full uno-w-[95%]"></div>
-            <div class="uno-h-1.5 md:uno-h-2 uno-bg-gray-100 uno-rounded-full uno-w-[85%]"></div>
-            <div class="uno-h-1.5 md:uno-h-2 uno-bg-gray-100 uno-rounded-full uno-w-[92%]"></div>
+          <div class="uno-w-full uno-space-y-1.5 md:uno-space-y-2.5">
+            <div class="uno-h-1 md:uno-h-2 uno-bg-gray-100 uno-rounded-full uno-w-[90%]"></div>
+            <div class="uno-h-1 md:uno-h-2 uno-bg-gray-100 uno-rounded-full uno-w-[95%]"></div>
+            <div class="uno-h-1 md:uno-h-2 uno-bg-gray-100 uno-rounded-full uno-w-[85%]"></div>
+            <div class="uno-h-1 md:uno-h-2 uno-bg-gray-100 uno-rounded-full uno-w-[92%]"></div>
           </div>
         </div>
       </div>
@@ -84,7 +85,8 @@
       <div class="uno-w-full uno-h-2 uno-bg-gray-100 uno-rounded-full uno-overflow-hidden uno-shadow-sm">
         <div class="uno-h-full uno-bg-green-500 uno-rounded-full uno-w-[70%] uno-transition-all uno-duration-1000 uno-ease-in-out uno-animate-pulse"></div>
       </div>
-      <p class="uno-text-center uno-text-gray-600 uno-mt-3 md:uno-mt-4 uno-text-sm md:uno-text-base uno-font-['Outfit']">We are analyzing your answers and preparing your personality type report...</p>
+      <p class="uno-text-center uno-text-gray-600 uno-mt-2 md:uno-mt-4 uno-text-[12px] md:uno-text-base uno-font-['Outfit']">We are analyzing your answers and preparing your personality type report...</p>
+    </div>
     </div>
   </div>
 </template>

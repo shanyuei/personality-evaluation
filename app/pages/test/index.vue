@@ -1,5 +1,6 @@
 <template>
-  <main class="uno-min-h-screen uno-bg-gradient-to-br uno-from-[var(--color-green-4)] uno-to-[var(--color-pink-4)] uno-py-10 uno-px-6 md:uno-px-10">
+  <div class="page-container uno-py-6">
+    <main class="uno-py-10 uno-px-6 md:uno-px-10">
     <div class="uno-max-w-[80%] uno-mx-auto">
       <div class="uno-flex uno-flex-col uno-items-center uno-gap-4">
         <div class="uno-w-[80px] uno-h-[80px] uno-flex uno-items-center uno-justify-center">
@@ -187,16 +188,18 @@
 
       <div class="uno-w-full md:uno-w-[602px] uno-mx-auto uno-mt-6 uno-flex uno-justify-center">
         <UButton
-          class="uno-w-full uno-h-[48px] uno-rounded-[12px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-white uno-text-lg uno-font-['Outfit'] uno-font-bold uno-leading-normal uno-flex uno-items-center uno-justify-center uno-text-center"
+          :ui="UButtonTheme"
           :disabled="!canContinue"
         >{{ $t('pages.testIntro.cta') }}</UButton>
       </div>
     </div>
   </main>
+  </div>
 </template>
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
+import UButtonTheme from '~/theme/UButton'
 const { t } = useI18n()
 const total = 20
 const current = 1

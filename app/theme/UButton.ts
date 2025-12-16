@@ -1,5 +1,5 @@
 const UButtonTheme = {
-  base: "rounded-[8px] h-[56px] font-bold text-[16px] md:text-[18px] text-[#ffffff] leading-[27px] justify-center",
+  base: "rounded-[8px] w-full h-[56px] font-bold text-[16px] md:text-[18px] text-[#ffffff] leading-[27px] justify-center",
   variants: {
     default: "bg-[var(--ui-primary)] hover:bg-[#0AA17F]",
     secondary: "bg-[var(--color-pink-1)] hover:bg-[#F06B9D]",
