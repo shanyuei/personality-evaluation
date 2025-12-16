@@ -26,13 +26,7 @@
             <div class="uno-h-[2px] uno-bg-[#4E5255]"></div>
           </div>
           <p class="uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-leading-normal uno-text-left uno-max-w-md">
-            Type 7s on the Enneagram are often referred to as The Enthusiasts due to their energetic, spontaneous, and
-            optimistic nature. They are characterized by a zest for life, a love of adventure, and a constant pursuit of
-            new experiences. Type 7s are driven by the desire to avoid pain and discomfort, seeking pleasure,
-            excitement, and variety in all aspects of their lives. With their forward-thinking and imaginative minds,
-            Type 7s are natural problem-solvers, able to see opportunities where others may see obstacles. They thrive
-            on possibilities and are quick to generate ideas, often inspiring those around them with their infectious
-            optimism and sense of adventure.
+            {{ $t('profile.intro') }}
           </p>
           <div>
             <UButton :ui="UButtonTheme" class="uno-w-full md:uno-w-[151px]">{{ $t('pages.profile.readMore') }}</UButton>
@@ -86,10 +80,7 @@
           <div v-for="i in 8" :key="i" class="uno-space-y-2">
             <h3 class="uno-text-[#011813] uno-text-lg uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{
               $t('pages.testDetail.core.cardTitle') }}</h3>
-            <p class="uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-leading-normal">Type 7s are known for their
-              optimistic outlook on life, always seeing the silver lining even in difficult situations. They approach
-              challenges with a sense of enthusiasm and curiosity, believing that there is always something positive to
-              be found.</p>
+            <p class="uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-leading-normal">{{ $t('profile.optimisticDesc') }}</p>
           </div>
         </div>
       </div>
@@ -100,8 +91,7 @@
       <div class="uno-p-6 md:uno-p-8 uno-space-y-6">
         <h2 class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{
           $t('pages.personalityDetail.subtypes.title') }}</h2>
-        <p class="uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-leading-normal">The Enneagram outlines three
-          subtypes for Type 7, each highlighting different expressions of their core characteristics:</p>
+        <p class="uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-leading-normal">{{ $t('profile.subtypesIntro') }}</p>
         <div class="uno-grid uno-gap-6 md:uno-grid-cols-3">
           <div class="uno-space-y-2">
             <h3 class="uno-text-[#011813] uno-text-lg uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{
@@ -134,18 +124,7 @@
       <div class="uno-p-6 md:uno-p-8 uno-space-y-4">
         <h2 class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{
           $t('pages.personalityDetail.conclusion.title') }}</h2>
-        <p class="uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-leading-normal">Lorem ipsum dolor sit amet,
-          consectetur adipiscing elit. Aeneaneuismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et
-          viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient
-          montes, nascetur ridiculus mus. Nam fermentum,nulla luctus pharetra vulputate, felis tellus mollis orci, sed
-          rhoncus pronin sapien nunc accuan eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aeneean
-          euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales
-          pulvinaar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam
-          fermentum,nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan
-          eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aeneean euismod bibendum laoreet. Proin gravida
-          dolor sit amet <br /> lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis
-          natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum nullaluctus pharetra
-          vulputate, felis tellus mollis orci</p>
+        <p class="uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-leading-normal">{{ $t('profile.conclusion') }}</p>
       </div>
     </section>
 
@@ -207,7 +186,9 @@
 import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import UButtonTheme from '~/theme/UButton'
-
+definePageMeta({
+  layoutShowFooter:false,
+})
 const name = 'liyangzhi'
 const { t } = useI18n()
 
@@ -266,4 +247,3 @@ const faqItems = [
 </script>
 
 <style scoped></style>
-

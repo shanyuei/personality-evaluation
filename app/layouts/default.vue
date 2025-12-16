@@ -16,12 +16,19 @@
       </slot>
     </main>
     <!-- 底部 -->
-    <app-footer />
+    <app-footer v-if="showFooter" />
   </div>
 </template>
 
 <script setup lang="ts">
+
+  const route = useRoute()
+
+  const showFooter = computed(() => {
+    return route.meta.layoutShowFooter !== false
+  })
 // 布局组件逻辑
+// 
 </script>
 
 <style scoped>

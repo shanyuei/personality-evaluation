@@ -1,8 +1,8 @@
 <template>
   <div class="uno-faq-section uno-py-16 sm:uno-py-20 md:uno-py-24">
-    <div class="uno-container uno-mx-auto uno-max-w-[80%] uno-px-4">
+    <div class="uno-container uno-w-full md:uno-mx-auto md:uno-max-w-[80%] ">
       <div class="uno-text-center uno-mb-16">
-        <h2 class="uno-text-4xl uno-font-['Outfit'] uno-font-bold uno-mb-3">{{ title }}</h2>
+        <h2 class="uno-text-3xl md:uno-text-4xl uno-font-['Outfit'] uno-font-bold uno-mb-3">{{ title }}</h2>
         <p v-if="description" class="uno-text-gray-600 uno-max-w-3xl uno-mx-auto">{{ description }}</p>
       </div>
 
@@ -22,7 +22,7 @@
               <div class="uno-flex uno-self-stretch uno-justify-start uno-items-start uno-flex-col uno-gap-3 uno-py-[20px] uno-px-[24px] uno-bg-[#FFFFFF]">
                 <div style="flex-shrink: 0" class="uno-w-full uno-flex uno-justify-between uno-items-center uno-flex-row"
                   @click="toggle(idx)">
-                  <p class="uno-text-[#009D77] uno-text-2xl uno-font-['Outfit'] uno-text-center uno-font-medium">
+                  <p class="uno-text-[#009D77] uno-text-xl md:uno-text-2xl uno-font-['Outfit'] uno-text-center uno-font-medium">
                     {{ item.question }}
                   </p>
                   <svg xmlns="http://www.w3.org/2000/svg" uno-xmlns:xlink="http://www.w3.org/1999/xlink" fill="none"
@@ -50,7 +50,7 @@
           <div v-else>
             <div class="uno-flex uno-justify-between uno-items-center uno-flex-row uno-py-[20px] uno-px-[24px] uno-bg-[#FFFFFF]"
               @click="toggle(idx)">
-              <span class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-medium">
+              <span class="uno-text-[#011813] uno-text-xl md:uno-text-2xl uno-font-['Outfit'] uno-font-medium">
                 {{ item.question }}
               </span>
               <svg xmlns="http://www.w3.org/2000/svg" uno-xmlns:xlink="http://www.w3.org/1999/xlink" fill="none"
@@ -122,3 +122,4 @@ const toggle = (i: number) => {
   box-shadow: 0 12px 24px rgba(0, 157, 119, 0.12);
 }
 </style>
+

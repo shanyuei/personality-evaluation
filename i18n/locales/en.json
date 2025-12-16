@@ -92,7 +92,9 @@
       "allAbout": "All About You",
       "typeName": "Enthusiast",
       "readMore": "Read more",
-      "aboutDesc": "Type 7s in the Enneagram are often referred to as The Enthusiasts: energetic, spontaneous, and optimistic. Their core drive is to avoid fear, pain, or discomfort while pursuing new experiences.",
+      "aboutDesc": "Type 7 in the Enneagram is often called the Enthusiast: they are energetic, spontaneous and optimistic. Their core motivation is to avoid fear, pain, or discomfort and to maintain a pursuit of new experiences.",
+      "totalScore": "Total score",
+      "subtypesIntro": "The Enneagram outlines three subtypes for Type 7, each highlighting different expressions of their core characteristics:",
       "totalScore": "Total score",
       "tab": {
         "core": "Core characteristics",
@@ -369,6 +371,10 @@
         "step3": { "title": "Unlock Your Potential", "desc": "Find jobs that suit your personality and get career guidance that actually helps." }
       },
       "progress": {
+        "title": "Your progress",
+        "tests": "Completed tests",
+        "courses": "Finished course",
+        "challenges": "Completed challenge",
         "count": "{answered}/{total}",
         "step": "Step {current} of {total}"
       },
@@ -581,8 +587,10 @@
       "aboutTitle": "All About Your",
       "type": "Type",
       "typeName": "Enthusiast",
-      "aboutDesc": "Type 7 on the Enneagram are often referred to as The Enthusiasts: they are energetic, spontaneous, and optimistic. Their core motivation is to avoid fear, pain, or discomfort, and maintain a sense of new experiences.",
-      "readMore": "Read more",
+      "aboutDesc": "Type 7s on the Enneagram are often referred to as The Enthusiasts: energetic, spontaneous, and optimistic. Their core drive is to avoid fear, pain, or discomfort while pursuing new experiences.",
+      "intro": "Type 7 in the Enneagram is often called the Enthusiast or Hedonist. They are vibrant, curious, and optimistic individuals always seeking new experiences and opportunities.",
+      "optimisticDesc": "Type 7s are known for their optimistic outlook on life, seeing the silver lining even in difficult situations. They approach challenges with enthusiasm and curiosity, believing there's always a positive angle.",
+      "detailedDesc": "Type 7 in the Enneagram is often called the Enthusiast or Hedonist. They are vibrant, curious, and optimistic individuals always seeking new experiences and opportunities. Type 7s fear being limited or missing out on anything life has to offer, so they tend to keep multiple options and possibilities open. They are creative, able to see connections between different things and often come up with innovative ideas. While Type 7s may appear carefree on the surface, deep down they fear pain and negative emotions, so they avoid these feelings by staying busy and pursuing pleasure.",
       "totalScore": "Total score",
       "dailyTrivia": "Daily trivia",
       "triviaQuestion": "What is an essential trait for problem-solving?",
@@ -597,9 +605,12 @@
         "cta": "Continue course"
       },
       "progress": {
+        "title": "Your progress",
         "tests": "Completed tests",
         "courses": "Finished course",
-        "challenges": "Completed challenge"
+        "challenges": "Completed challenge",
+        "count": "{answered}/{total}",
+        "step": "Step {current} of {total}"
       },
       "takeAnother": "Take another test",
       "tag": { "hard": "Hard Skills" },

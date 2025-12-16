@@ -9,8 +9,8 @@
       <div class="uno-p-4 md:uno-p-8 uno-grid uno-gap-6 md:uno-grid-cols-3">
         <div class="uno-col-span-full md:uno-col-span-1 uno-flex uno-flex-col uno-items-start uno-space-y-4">
           <div class="uno-space-y-2">
-            <div class="uno-text-[#4E5255] uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2] uno-text-sm">{{
-              $t('pages.profile.aboutTitle') }}</div>
+            <div class="uno-text-[#4E5255] uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2] uno-text-sm">
+              {{ $t('pages.profile.aboutTitle') }}</div>
           </div>
           <div class="uno-flex uno-items-center uno-gap-4">
             <div class="uno-w-20 uno-h-20 uno-aspect-square uno-rounded-full uno-overflow-hidden uno-bg-[#F0F0F0]">
@@ -26,16 +26,10 @@
           </div>
           <div class="uno-h-[1px] uno-w-full uno-bg-[var(--ui-border)]"></div>
           <p class="uno-text-xs uno-text-[var(--ui-muted-foreground)] uno-text-left uno-max-w-md">
-            Type 7s on the Enneagram are often referred to as The Enthusiasts due to their energetic, spontaneous, and
-            optimistic nature. They are characterized by a zest for life, a love of adventure, and a constant pursuit of
-            new experiences. Type 7s are driven by the desire to avoid pain and discomfort, seeking pleasure,
-            excitement, and variety in all aspects of their lives. With their forward-thinking and imaginative minds,
-            Type 7s are natural problem-solvers, able to see opportunities where others may see obstacles. They thrive
-            on possibilities and are quick to generate ideas, often inspiring those around them with their infectious
-            optimism and sense of adventure.
+            {{ $t('pages.profile.detailedDesc') }}
           </p>
           <div class="uno-w-full md:uno-w-200px">
-            <UButton :ui="UButtonTheme" >{{
+            <UButton :ui="UButtonTheme">{{
               $t('pages.profile.readMore') }}</UButton>
           </div>
         </div>
@@ -85,27 +79,40 @@
 
       <section
         class="uno-col-span-full md:uno-col-span-2 uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)]">
-        <div class="uno-p-4 md:uno-p-8">
-          <span class="uno-text-[#4E5255] uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2] uno-mb-3">{{
-            $t('pages.profile.dailyStreak') }}</span>
-          <div class="uno-flex uno-items-center uno-gap-2 uno-my-4">
-            <div
-              class="uno-text-[#011813] uno-text-[64px] md:uno-text-[88px] uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">
-              0</div>
-            <p class="uno-text-[#4E5255] uno-text-sm md:uno-text-base uno-font-['Outfit'] uno-leading-[1.6]">{{
-              $t('pages.profile.begin') }}</p>
-          </div>
-          <div class="uno-flex uno-gap-2 uno-mt-2 uno-flex-wrap">
-            <span v-for="(d, idx) in weekdays" :key="d.text" :class="[
-              idx === 2
-                ? 'uno-w-[48px] uno-h-[48px] uno-flex uno-justify-center uno-items-end uno-pb-0 uno-px-[19.5px] uno-bg-[#DCFBF2] uno-border-solid uno-border-[#009D77] uno-border-[4.2px] uno-rounded-[24px] uno-overflow-hidden'
-                : 'uno-w-[46px] uno-h-[46px] uno-flex uno-justify-center uno-items-end uno-pb-0 uno-px-[19.5px] uno-bg-[#F0F0F0] uno-border-solid uno-border-[#DDDDDD] uno-border-[4.2px] uno-rounded-[24px] uno-overflow-hidden',
-              d.active
-                ? 'uno-bg-[var(--ui-primary)] uno-text-white uno-font-bold'
-                : idx === 2
-                  ? 'uno-text-[#009D77]'
-                  : 'uno-bg-[#F0F0F0] uno-text-black uno-font-bold'
-            ]">{{ d.text }}</span>
+        <div class="uno-p-4 md:uno-p-8 uno-space-y-6">
+          <h3
+            class="uno-text-base md:uno-text-lg uno-text-[#4E5255] uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">
+            {{ $t('pages.profile.progress.title') }}</h3>
+          <div class="uno-space-y-4">
+            <div class="uno-flex uno-items-end uno-justify-between">
+              <div class="uno-flex uno-items-center uno-gap-3">
+                <NuxtImg src="/images/profile/1.png" alt="completed" class="uno-w-[24px] uno-h-[24px]" />
+                <span class="uno-text-[#323233] uno-font-['Outfit'] uno-text-sm">{{ $t('pages.profile.progress.tests') }}</span>
+              </div>
+              <div
+                class="uno-text-[#323233] uno-text-4xl md:uno-text-5xl uno-font-['Outfit'] uno-font-semibold uno-mb-0">2
+              </div>
+            </div>
+            <div class="uno-h-[2px] uno-bg-[var(--ui-border)]"></div>
+            <div class="uno-flex uno-items-end uno-justify-between">
+              <div class="uno-flex uno-items-center uno-gap-3">
+                <NuxtImg src="/images/profile/2.png" alt="book" class="uno-w-[24px] uno-h-[24px]" />
+                <span class="uno-text-[#323233] uno-font-['Outfit'] uno-text-sm">{{ $t('pages.profile.progress.courses') }}</span>
+              </div>
+              <div
+                class="uno-text-[#323233] uno-text-4xl md:uno-text-5xl uno-font-['Outfit'] uno-font-semibold uno-mb-0">1
+              </div>
+            </div>
+            <div class="uno-h-[2px] uno-bg-[var(--ui-border)]"></div>
+            <div class="uno-flex uno-items-end uno-justify-between">
+              <div class="uno-flex uno-items-center uno-gap-3">
+                <NuxtImg src="/images/profile/3.png" alt="test tube" class="uno-w-[24px] uno-h-[24px]" />
+                <span class="uno-text-[#323233] uno-font-['Outfit'] uno-text-sm">{{ $t('pages.profile.progress.challenges') }}</span>
+              </div>
+              <div
+                class="uno-text-[#323233] uno-text-4xl md:uno-text-5xl uno-font-['Outfit'] uno-font-semibold uno-mb-0">1
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -141,12 +148,12 @@
         <div class="uno-p-4 md:uno-p-8 uno-space-y-6">
           <h3
             class="uno-text-base md:uno-text-lg uno-text-[#4E5255] uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">
-            Your progress</h3>
+            {{ $t('pages.profile.progress.title') }}</h3>
           <div class="uno-space-y-4">
             <div class="uno-flex uno-items-end uno-justify-between">
               <div class="uno-flex uno-items-center uno-gap-3">
                 <NuxtImg src="/images/profile/1.png" alt="completed" class="uno-w-[24px] uno-h-[24px]" />
-                <span class="uno-text-[#323233] uno-font-['Outfit'] uno-text-sm">Completed tests</span>
+                <span class="uno-text-[#323233] uno-font-['Outfit'] uno-text-sm">{{ $t('pages.profile.progress.tests') }}</span>
               </div>
               <div
                 class="uno-text-[#323233] uno-text-4xl md:uno-text-5xl uno-font-['Outfit'] uno-font-semibold uno-mb-0">2
@@ -156,7 +163,7 @@
             <div class="uno-flex uno-items-end uno-justify-between">
               <div class="uno-flex uno-items-center uno-gap-3">
                 <NuxtImg src="/images/profile/2.png" alt="book" class="uno-w-[24px] uno-h-[24px]" />
-                <span class="uno-text-[#323233] uno-font-['Outfit'] uno-text-sm">Finished course</span>
+                <span class="uno-text-[#323233] uno-font-['Outfit'] uno-text-sm">{{ $t('pages.profile.progress.courses') }}</span>
               </div>
               <div
                 class="uno-text-[#323233] uno-text-4xl md:uno-text-5xl uno-font-['Outfit'] uno-font-semibold uno-mb-0">1
@@ -166,7 +173,7 @@
             <div class="uno-flex uno-items-end uno-justify-between">
               <div class="uno-flex uno-items-center uno-gap-3">
                 <NuxtImg src="/images/profile/3.png" alt="test tube" class="uno-w-[24px] uno-h-[24px]" />
-                <span class="uno-text-[#323233] uno-font-['Outfit'] uno-text-sm">Completed challenge</span>
+                <span class="uno-text-[#323233] uno-font-['Outfit'] uno-text-sm">{{ $t('pages.profile.progress.challenges') }}</span>
               </div>
               <div
                 class="uno-text-[#323233] uno-text-4xl md:uno-text-5xl uno-font-['Outfit'] uno-font-semibold uno-mb-0">1
@@ -259,6 +266,7 @@ import UButtonTheme from '~/theme/UButton'
 import URadioTheme from '~/theme/URadio'
 
 const { t } = useI18n()
+
 const name = 'liyangzhi'
 const scoreBars = [
   { num: 7, label: 'Enthusiast', value: 93, color: 'var(--ui-primary)' },
