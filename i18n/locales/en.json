@@ -121,8 +121,7 @@
         "oneToOne": "One-to-One (SX) Type 7",
         "oneToOneDesc": "Intense experiences and close bonds; pursues passion and deeper connection.",
         "cta": "Take a course"
-      }
-      ,
+      },
       "conclusion": {
         "title": "Conclusion",
         "p1": "Based on your core characteristics and motivations, we recommend exploring and practicing in a gentle, structured way to build stable rhythms and clear priorities.",
@@ -147,8 +146,7 @@
         },
         "ctaCourses": "View courses",
         "ctaTests": "View tests"
-      }
-      ,
+      },
       "faq": {
         "title": "Frequently Asked Questions",
         "description": "Quick answers to common queries, guiding you through features and functionalities.",
@@ -366,9 +364,18 @@
         "step3": "Find jobs that suit your personality and get career guidance that actually helps."
       },
       "pc": {
-        "step1": { "title": "Complete the Test", "desc": "Be yourself and answer honestly to find your personality type." },
-        "step2": { "title": "View Detailed Results", "desc": "Learn how your personality type influences many areas of your life." },
-        "step3": { "title": "Unlock Your Potential", "desc": "Find jobs that suit your personality and get career guidance that actually helps." }
+        "step1": {
+          "title": "Complete the Test",
+          "desc": "Be yourself and answer honestly to find your personality type."
+        },
+        "step2": {
+          "title": "View Detailed Results",
+          "desc": "Learn how your personality type influences many areas of your life."
+        },
+        "step3": {
+          "title": "Unlock Your Potential",
+          "desc": "Find jobs that suit your personality and get career guidance that actually helps."
+        }
       },
       "progress": {
         "title": "Your progress",
@@ -406,7 +413,9 @@
         "title": "Scoring:",
         "body": "Each answer is assigned a point value. The total score is calculated by summing the points from all answers."
       },
-      "cta": { "getStarted": "Get Started" },
+      "cta": {
+        "getStarted": "Get Started"
+      },
       "disclaimer": "Taking our test should not be viewed as a comprehensive or precise evaluation of your personality and mental well-being."
     },
     "testEnd": {
@@ -580,7 +589,10 @@
         "i2": "Basic Computer Skills: Familiarity with using a computer, installing software, and navigating the internet.",
         "i3": "No Prior Coding Knowledge Required: This course is designed for absolute beginners."
       },
-      "cta": { "download": "Download", "close": "Close" }
+      "cta": {
+        "download": "Download",
+        "close": "Close"
+      }
     },
     "profile": {
       "welcome": "Welcome, {name}!",
@@ -613,7 +625,9 @@
         "step": "Step {current} of {total}"
       },
       "takeAnother": "Take another test",
-      "tag": { "hard": "Hard Skills" },
+      "tag": {
+        "hard": "Hard Skills"
+      },
       "questions": "questions",
       "completed": "Completed",
       "tryAgain": "Try again",
@@ -844,105 +858,33 @@
       }
     }
   },
-  "layouts": {
-    "header": {
-      "GetStarted": "Get Started"
-    }
-  },
   "common": {
     "getStarted": "Get Started",
-    "siteDescription": "Unlock knowledge and growth with expert courses and tools."
-  },
-  "seo": {
-    "home": {
-      "title": "Discover your true self with a personality test",
-      "description": "The test helps you identify your accurate personality type."
-    },
-    "faq": {
-      "title": "FAQ",
-      "description": "Quickly understand the platform and testing flow. Categories on the left, Q&A on the right."
-    },
-    "routeGuide": {
-      "title": "Route Guide",
-      "description": "There are {count} available routes in the system"
-    },
-    "about": {
-      "title": "About Us",
-      "description": "Learn about our mission and team."
-    },
-    "courses": {
-      "title": "Courses",
-      "description": "Browse expert courses across fields."
-    },
-    "mentors": {
-      "title": "Mentors",
-      "description": "Meet experienced mentors and instructors."
-    },
-    "blog": {
-      "title": "Blog",
-      "description": "Read team articles and latest updates."
-    },
-    "auth": {
-      "signIn": {
-        "title": "Sign In",
-        "description": "Securely access your account."
-      }
-    },
-    "orders": {
-      "cancelSubscription": {
-        "title": "Cancel Subscription",
-        "description": "Manage membership and cancel when needed."
+    "siteDescription": "Unlock knowledge and growth with expert courses and tools.",
+    "courseCard": {
+      "status": {
+        "completed": "You've completed this test.",
+        "of": "of",
+        "lessons": "lessons"
       },
-      "purchaseComplete": {
-        "title": "Thanks for your purchase!",
-        "description": "Click below to get started and access your report."
-      }
-    },
-    "test": {
-      "title": "Personality Test",
-      "description": "Start your personality assessment.",
-      "step": {
-        "title": "Test Steps",
-        "description": "Answer the questions step by step."
+      "link": {
+        "viewResults": "View test results"
       },
-      "analyzing": {
-        "title": "Analyzing",
-        "description": "Analyzing your answers."
+      "badge": {
+        "points": "points"
       },
-      "result": {
-        "title": "Test Results",
-        "description": "View your report and next actions."
-      }
-    },
-    "legal": {
-      "privacy": {
-        "title": "Privacy Policy",
-        "description": "We value your privacy. Here's how we collect, use, and protect information."
+      "meta": {
+        "certificate": "Certificate"
       },
-      "terms": {
-        "title": "Terms of Service",
-        "description": "By using this service, you agree to the following terms and conditions."
+      "people": {
+        "finished": "people already finished it"
       }
     }
-  }
-  ,
-  "courseCard": {
-    "status": {
-      "completed": "You've completed this test.",
-      "of": "of",
-      "lessons": "lessons"
-    },
-    "link": {
-      "viewResults": "View test results"
-    },
-    "badge": {
-      "points": "points"
-    },
-    "meta": {
-      "certificate": "Certificate"
-    },
-    "people": {
-      "finished": "people already finished it"
+  },
+  "seo": {
+    "home":{
+      "title": "Unlock knowledge and growth with expert courses and tools.",
+      "description": "An exceptional platform for career development. The current curriculum, skilled instructors, and hands-on learning are truly rewarding."
     }
   }
 }

@@ -7,7 +7,7 @@
     <template v-if="course.footerType === 1">
       <div class="course-card__footer">
         <div class="course-card__footer__status">
-          {{ $t('courseCard.status.completed') }}
+          {{ $t('common.courseCard.status.completed') }}
         </div>
         <div class="course-card__footer__cta">
           <span class="course-card__footer__cta-text">
@@ -70,7 +70,7 @@
       <div class="course-card__footer">
         <div class="course-card__footer__status">
           <span class="course-card__footer__status-text">
-            {{ $t('courseCard.status.completed') }}
+            {{ $t('common.courseCard.status.completed') }}
           </span>
         </div>
         <button class="course-card__footer__cta is-dark">

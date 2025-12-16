@@ -54,6 +54,7 @@ export default defineNuxtConfig({
       cookieCrossOrigin: false
     },
     baseUrl: 'https://example.com',
+    seo: true
   },
   unocss: {
     nuxtLayers: true,
