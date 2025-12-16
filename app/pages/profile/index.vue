@@ -104,7 +104,7 @@
         </section>
         <section class="uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)] md:uno-col-span-2">
           <div class="uno-p-6 md:uno-p-8 uno-space-y-6">
-            <h3 class="uno-text-lg uno-font-semibold uno-text-[var(--ui-foreground)]">Your progress</h3>
+            <h3 class="uno-text-lg uno-text-[#4E5255] uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">Your progress</h3>
             <div class="uno-space-y-4">
               <div class="uno-flex uno-items-center uno-justify-between">
                 <div class="uno-flex uno-items-center uno-gap-3">
