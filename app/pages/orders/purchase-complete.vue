@@ -46,7 +46,9 @@
 //   ogTitle: () => t('seo.orders.purchaseComplete.title') as string,
 //   ogDescription: () => t('seo.orders.purchaseComplete.description') as string
 // })
-
+definePageMeta({
+  layoutShowMenu:false,
+})
 const goToReport = () => {
   navigateTo('/test/result')
 }

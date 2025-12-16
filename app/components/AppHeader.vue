@@ -6,15 +6,17 @@
     overlay: 'bg-transparent',
     root: 'h-[96px] border-none bg-transparent max-sm:h-[53px] justify-center flex',
     container: '!px-[0px] page-container max-sm:!px-[24px] max-xs:!px-[16px]'
-  }">
+  }" :class="[!showMenu? 'hiddenMenu': '']">
     <!-- 导航栏 -->
     <template #left>
 
       <div class="uno-flex uno-gap-54px uno-w-full">
         <!-- logo -->
-        <NuxtImg src="/theme/logo.png" width="175" height="40" alt="logo" />
+        <NuxtImg src="/theme/logo.png" width="249" height="40" alt="logo" class="max-sm:hidden" />
+
+        <NuxtImg src="/theme/logo-2.png" width="152" height="26" alt="logo" class="max-sm:block" />
         <!-- 导航栏 -->
-        <UNavigationMenu :ui="{
+        <UNavigationMenu v-if="showMenu" :ui="{
           link: 'before:bg-[transparent!important] font-[\'Outfit\'] text-center font-medium text-[var(--ui-foreground)] data-[active]:text-[var(--color-pink-1)] hover:text-[var(--color-pink-1)]',
           item: 'ml-[18px] mr-[18px]'
         }" :items="items" class="uno-w-full uno-justify-center max-sm:uno-hidden" />
@@ -53,6 +55,12 @@
 <script setup lang="ts">
 import { ref } from "vue";
 // import I18nSelect from "~/components/I18nSelect.vue";
+const props = defineProps({
+  showMenu: {
+    type: Boolean,
+    default: true,
+  },
+})
 const items = ref([
   {
     label: 'Home',
@@ -75,6 +83,13 @@ const items = ref([
     to: '/about',
   },
 ]);
+
 </script>
 
-<style scoped></style>
+<style lang="less">
+  .hiddenMenu{
+    [data-slot="base"]{
+      display: none;
+    }
+  }
+</style>

@@ -8,7 +8,7 @@
     <NuxtImg src="/theme/layout/page-top-icon-2.png" width="163px" height="170px"
       class="uno-absolute uno-top-431px uno-left-133px uno-z-1" />
     <!-- 头部 -->
-    <app-header />
+    <app-header :show-menu="showMenu" />
     <!-- 主要内容区域 -->
     <main class="uno-flex-1 uno-mx-auto uno-z-10 uno-w-full">
       <slot>
@@ -26,6 +26,9 @@
 
   const showFooter = computed(() => {
     return route.meta.layoutShowFooter !== false
+  })
+  const showMenu = computed(() => {
+    return route.meta.layoutShowMenu !== false
   })
 // 布局组件逻辑
 // 
