@@ -82,9 +82,17 @@
 
 <script setup lang="ts">
 import { reactive, ref } from 'vue'
+
+
 const { t } = useI18n()
 definePageMeta({
-  layoutShowCurious: true
+  layoutShowCurious: true,
+  title: () => 'seo.faq.title'
+})
+
+useSeoMeta({
+  title: () => t('seo.faq.title'),
+  description: () => t('seo.faq.description')
 })
 
 

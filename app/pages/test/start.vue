@@ -58,9 +58,18 @@
 
 <script setup lang="ts">
 import UButtonTheme from '~/theme/UButton'
-definePageMeta({
- layoutShowFooter:false
 
+
+const { t } = useI18n()
+
+definePageMeta({
+  layoutShowFooter: false,
+  title: () => 'seo.test.start.title'
+})
+
+useSeoMeta({
+  title: () => t('seo.test.start.title'),
+  description: () => t('seo.test.start.description'),
 })
 </script>
 

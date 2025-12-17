@@ -882,21 +882,153 @@
     }
   },
   "seo": {
-    "home":{
+    "home": {
       "title": "Unlock knowledge and growth with expert courses and tools.",
       "description": "An exceptional platform for career development. The current curriculum, skilled instructors, and hands-on learning are truly rewarding."
     },
     "test": {
-      "title": "Test - Unlock knowledge and growth with expert courses and tools.",
-      "description": "An exceptional platform for career development. The current curriculum, skilled instructors, and hands-on learning are truly rewarding."
+      "title": "Personality Test - Discover Your True Self",
+      "description": "Take our comprehensive personality test to gain insights into your traits, strengths, and areas for growth."
     },
-    "ebooks":{
-      "title": "Ebooks - Unlock knowledge and growth with expert courses and tools.",
-      "description": "An exceptional platform for career development. The current curriculum, skilled instructors, and hands-on learning are truly rewarding."
+    "test.start": {
+      "title": "Start Personality Test - Begin Your Journey",
+      "description": "Ready to discover your true self? Start the personality test now."
     },
-    "ebooks.detail":{
-      "title": "Ebook Detail - Unlock knowledge and growth with expert courses and tools.",
-      "description": "An exceptional platform for career development. The current curriculum, skilled instructors, and hands-on learning are truly rewarding."
+    "test.step": {
+      "title": "Personality Test - Question",
+      "description": "Answer questions to reveal your personality traits."
+    },
+    "test.analyzing": {
+      "title": "Analyzing Your Personality - Please Wait",
+      "description": "We're analyzing your responses to generate your personalized report."
+    },
+    "test.result": {
+      "title": "Your Personality Results - Insights and Growth",
+      "description": "View your detailed personality analysis and personalized insights."
+    },
+    "ebooks": {
+      "title": "Ebooks - Expert Knowledge and Resources",
+      "description": "Explore our collection of expert-crafted ebooks on personal development and career growth."
+    },
+    "ebooks.detail": {
+      "title": "Ebook Detail - In-Depth Learning Resource",
+      "description": "Access detailed information about this expert ebook."
+    },
+    "profile": {
+      "title": "Your Profile - Personal Dashboard",
+      "description": "Manage your profile and access your test results and learning materials."
+    },
+    "profile.detail": {
+      "title": "Profile Details - Update Your Information",
+      "description": "View and update your personal information and preferences."
+    },
+    "tests": {
+      "title": "Tests - Explore Available Assessments",
+      "description": "Browse our selection of personality and career assessments."
+    },
+    "blog": {
+      "title": "Blog - Latest Insights and Articles",
+      "description": "Read our latest articles on personal development, career growth, and industry trends."
+    },
+    "blog.category": {
+      "title": "Blog Category - Articles by Topic",
+      "description": "View articles in this blog category."
+    },
+    "blog.slug": {
+      "title": "Blog Post - Detailed Article",
+      "description": "Read this in-depth article on personal development."
+    },
+    "faq": {
+      "title": "Frequently Asked Questions - Get Answers",
+      "description": "Find answers to common questions about our platform and services."
+    },
+    "userCourse": {
+      "title": "User Courses - Personalized Learning",
+      "description": "Access your enrolled courses and track your learning progress."
+    },
+    "userCourse.chapters": {
+      "title": "Course Chapters - Learning Modules",
+      "description": "Navigate through course chapters and lessons."
+    },
+    "userCourse.lesson": {
+      "title": "Course Lesson - Interactive Learning",
+      "description": "Engage with course content and complete lesson activities."
+    },
+    "userCourse.lessonComplete": {
+      "title": "Lesson Complete - Congratulations!",
+      "description": "You've successfully completed this lesson."
+    },
+    "userCourse.chapterComplete": {
+      "title": "Chapter Complete - Well Done!",
+      "description": "You've finished this chapter. Move on to the next one."
+    },
+    "userCourse.test": {
+      "title": "Course Test - Assess Your Knowledge",
+      "description": "Take this test to evaluate your understanding of the course material."
+    },
+    "userCourse.testComplete": {
+      "title": "Course Test Complete - Results",
+      "description": "View your test results and feedback."
+    },
+    "userCourse.lessonGuide": {
+      "title": "Lesson Guide - Learning Objectives",
+      "description": "Review the learning objectives for this lesson."
+    },
+    "about": {
+      "title": "About Us - Our Mission and Team",
+      "description": "Learn about our mission, team, and commitment to personal development."
+    },
+    "orders": {
+      "title": "Orders - Manage Your Purchases",
+      "description": "View and manage your orders and subscriptions."
+    },
+    "orders.cancelSubscription": {
+      "title": "Cancel Subscription - Manage Membership",
+      "description": "Cancel your subscription and manage your membership settings."
+    },
+    "orders.purchaseComplete": {
+      "title": "Purchase Complete - Thank You!",
+      "description": "Your purchase has been successfully processed."
+    },
+    "courses": {
+      "title": "Courses - Expert Learning Resources",
+      "description": "Explore our collection of expert-led courses for personal and professional growth."
+    },
+    "legal": {
+      "title": "Legal Information - Terms and Policies",
+      "description": "Review our terms of service and privacy policies."
+    },
+    "legal.privacy": {
+      "title": "Privacy Policy - Your Data Protection",
+      "description": "Learn how we protect your personal information."
+    },
+    "legal.terms": {
+      "title": "Terms of Service - Platform Rules",
+      "description": "Review our terms of service and platform guidelines."
+    },
+    "mentors": {
+      "title": "Mentors - Expert Guidance",
+      "description": "Connect with expert mentors for personalized guidance and support."
+    },
+    "routeGuide": {
+      "title": "Route Guide - Platform Navigation",
+      "description": "Learn how to navigate our platform and access all features."
+    },
+    "auth": {
+      "title": "Authentication - Secure Access",
+      "description": "Securely access your account with our authentication system."
+    },
+    "auth.signIn": {
+      "title": "Sign In - Access Your Account",
+      "description": "Log in to your account to access personalized features."
+    },
+    "account": {
+      "title": "Account Management - Settings and Preferences",
+      "description": "Manage your account settings and preferences."
+    },
+    "account.settings": {
+      "title": "Account Settings - Personalize Your Experience",
+      "description": "Update your account settings and personal preferences."
     }
   }
 }

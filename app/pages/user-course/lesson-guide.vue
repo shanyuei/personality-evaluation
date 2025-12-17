@@ -40,11 +40,24 @@
 </template>
 
 <script setup lang="ts">
-import UButtonTheme from '~/theme/UButton'
 import { ref } from 'vue'
+
+
+import UButtonTheme from '~/theme/UButton'
+
+const { t } = useI18n()
 const current = ref(3)
 const total = ref(10)
 const progress = ref(0)
+
+definePageMeta({
+  title: () => 'seo.userCourse.lessonGuide.title'
+})
+
+useSeoMeta({
+  title: () => t('seo.userCourse.lessonGuide.title'),
+  description: () => t('seo.userCourse.lessonGuide.description')
+})
 </script>
 
 <style scoped></style>

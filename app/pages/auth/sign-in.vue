@@ -39,18 +39,23 @@
 
 <script setup lang="ts">
 // i18n used in template via $t
+import { ref, computed } from 'vue'
+
+
 import UFormFieldTheme from "~/theme/UFormField";
 import UInputTheme from "~/theme/UInput";
 import UButtonTheme from "~/theme/UButton";
-// definePageMeta({
-//   title: t('pages.auth.signIn.title') as string
-// })
-// useSeoMeta({
-//   title: () => t('seo.auth.signIn.title') as string,
-//   description: () => t('seo.auth.signIn.description') as string,
-//   ogTitle: () => t('seo.auth.signIn.title') as string,
-//   ogDescription: () => t('seo.auth.signIn.description') as string
-// })
+
+const { t } = useI18n()
+
+definePageMeta({
+  title: () => 'seo.auth.signIn.title'
+})
+
+useSeoMeta({
+  title: () => t('seo.auth.signIn.title') as string,
+  description: () => t('seo.auth.signIn.description') as string
+})
 const email = ref('')
 const password = ref('')
 const canSubmit = computed(() => {

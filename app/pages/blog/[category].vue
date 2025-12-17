@@ -125,6 +125,10 @@ import { ref, computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { useArticles } from '~/composables/useArticles'
 
+
+
+const { t } = useI18n()
+
 const route = useRoute()
 const category = computed(() => String(route.params.category || ''))
 
@@ -148,6 +152,16 @@ const hasMoreOther = computed(() => otherLimit.value < otherArticles.value.lengt
 
 const recentArticles = computed(() => {
   return articles.value.slice(0, 3)
+})
+
+// 使用分类名称作为页面标题，结合blog主标题
+definePageMeta({
+  title: () => 'seo.blog.category.title'
+})
+
+useSeoMeta({
+  title: () => `${category.value} - ${t('seo.blog.category.title')}`,
+  description: () => `${t('seo.blog.category.description')} - ${category.value}`
 })
 
 </script>

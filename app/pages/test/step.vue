@@ -143,12 +143,17 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import { useI18n } from 'vue-i18n'
+
 import UButtonTheme from '~/theme/UButton'
 const { t } = useI18n()
 definePageMeta({
- layoutShowFooter:false
+  layoutShowFooter: false,
+  title: () => 'seo.test.step.title'
+})
 
+useSeoMeta({
+  title: () => t('seo.test.step.title'),
+  description: () => t('seo.test.step.description'),
 })
 const total = 20
 const current = 1

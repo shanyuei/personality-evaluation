@@ -29,9 +29,22 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+
+
 import UButtonTheme from '~/theme/UButton'
+
+const { t } = useI18n()
 const current = ref(3)
 const courseName = 'People Leadership vs. Management'
+
+definePageMeta({
+  title: () => 'seo.userCourse.lessonComplete.title'
+})
+
+useSeoMeta({
+  title: () => t('seo.userCourse.lessonComplete.title'),
+  description: () => t('seo.userCourse.lessonComplete.description')
+})
 </script>
 
 <style scoped></style>

@@ -184,13 +184,20 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import { useI18n } from 'vue-i18n'
+
+
 import UButtonTheme from '~/theme/UButton'
 definePageMeta({
   layoutShowFooter:false,
+  title: () => 'seo.profile.detail.title'
 })
 const name = 'liyangzhi'
 const { t } = useI18n()
+
+useSeoMeta({
+  title: () => t('seo.profile.detail.title'),
+  description: () => t('seo.profile.detail.description'),
+})
 
 const tabs = [
   { id: 'core', label: useI18n().t('pages.testDetail.tab.core') },

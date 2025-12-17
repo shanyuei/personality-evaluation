@@ -74,10 +74,23 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
+
+
 import UButtonTheme, { UButtonThemeDark } from '~/theme/UButton'
+
+const { t } = useI18n()
 const current = ref(3)
 const total = ref(10)
 const progress = computed(() => Math.round((current.value / total.value) * 100))
+
+definePageMeta({
+  title: () => 'seo.userCourse.lesson.title'
+})
+
+useSeoMeta({
+  title: () => t('seo.userCourse.lesson.title'),
+  description: () => t('seo.userCourse.lesson.description')
+})
 </script>
 
 <style scoped></style>

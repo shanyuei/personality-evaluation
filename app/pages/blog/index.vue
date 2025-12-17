@@ -150,8 +150,19 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue';
+;
+;
+
+const { t } = useI18n();
+
 definePageMeta({
-layoutShowCurious: true
+  layoutShowCurious: true,
+  title: () => 'seo.blog.title'
+})
+
+useSeoMeta({
+  title: () => t('seo.blog.title'),
+  description: () => t('seo.blog.description'),
 })
 const searchQuery = ref('');
 const tags = ref(['CareerTips', 'Productivity', 'Tools', 'TechInnovation', 'Leadership']);

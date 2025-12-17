@@ -187,16 +187,17 @@
 </template>
 
 <script setup lang="ts">
+
+
+
 const { t } = useI18n()
-// definePageMeta({
-//   title: () => t('pages.about.title') as string
-// })
-// useSeoMeta({
-//   title: () => t('seo.about.title') as string,
-//   description: () => t('seo.about.description') as string,
-//   ogTitle: () => t('seo.about.title') as string,
-//   ogDescription: () => t('seo.about.description') as string
-// })
+definePageMeta({
+  title: () => 'seo.about.title'
+})
+useSeoMeta({
+  title: () => t('seo.about.title') as string,
+  description: () => t('seo.about.description') as string
+})
 
 const faqItems = [
   {

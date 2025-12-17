@@ -704,70 +704,152 @@
       "title": "通过性格测试发现真实的自己",
       "description": "通过测试，你将了解自己的准确性格类型。"
     },
-    "faq": {
-      "title": "常见问题",
-      "description": "快速了解平台与测试流程。左侧为分类导航，右侧为具体问答。"
+    "test": {
+      "title": "性格测试 - 发现真实的自己",
+      "description": "通过我们全面的性格测试，深入了解你的特质、优势和成长领域。",
+      "start": {
+        "title": "开始性格测试 - 开启你的探索之旅",
+        "description": "准备好发现真实的自己了吗？立即开始性格测试。",
+        "step": {
+          "title": "性格测试 - 回答问题",
+          "description": "回答问题以揭示你的性格特质。",
+          "analyzing": {
+            "title": "正在分析你的性格 - 请稍候",
+            "description": "我们正在分析你的回答，以生成个性化报告。",
+            "result": {
+              "title": "你的性格测试结果 - 洞见与成长",
+              "description": "查看你的详细性格分析和个性化洞见。"
+            }
+          }
+        }
+      }
     },
-    "routeGuide": {
-      "title": "路由引导页面",
-      "description": "系统中共有 {count} 个可用路由"
+    "ebooks": {
+      "title": "电子书 - 专家知识与资源",
+      "description": "探索我们收集的关于个人发展和职业成长的专家级电子书。",
+      "detail": {
+        "title": "电子书详情 - 深入学习资源",
+        "description": "访问这本专家电子书的详细信息。"
+      }
     },
-    "about": {
-      "title": "关于我们",
-      "description": "了解我们的使命与团队。"
+    "profile": {
+      "title": "你的个人资料 - 个人仪表板",
+      "description": "管理你的个人资料，访问你的测试结果和学习材料。",
+      "detail": {
+        "title": "个人资料详情 - 更新你的信息",
+        "description": "查看和更新你的个人信息和偏好设置。"
+      }
     },
-    "courses": {
-      "title": "课程",
-      "description": "浏览各领域的专家课程。"
-    },
-    "mentors": {
-      "title": "导师",
-      "description": "认识经验丰富的导师与讲师。"
+    "tests": {
+      "title": "测试 - 探索可用评估",
+      "description": "浏览我们的性格和职业评估选择。"
     },
     "blog": {
-      "title": "博客",
-      "description": "阅读团队文章与最新动态。"
-    },
-    "auth": {
-      "signIn": {
-        "title": "登录",
-        "description": "安全访问你的账户。"
+      "title": "博客 - 最新洞见和文章",
+      "description": "阅读我们关于个人发展、职业成长和行业趋势的最新文章。",
+      "category": {
+        "title": "博客分类 - 按主题浏览文章",
+        "description": "查看此博客分类中的文章。"
+      },
+      "slug": {
+        "title": "博客文章 - 详细内容",
+        "description": "阅读这篇关于个人发展的深入文章。"
       }
+    },
+    "faq": {
+      "title": "常见问题 - 获取答案",
+      "description": "查找关于我们平台和服务的常见问题的答案。"
+    },
+    "userCourse": {
+      "title": "用户课程 - 个性化学习",
+      "description": "访问你注册的课程并跟踪你的学习进度。",
+      "chapters": {
+        "title": "课程章节 - 学习模块",
+        "description": "浏览课程章节和课程内容。",
+        "lesson": {
+          "title": "课程内容 - 互动学习",
+          "description": "参与课程内容并完成课程活动。",
+          "lessonComplete": {
+            "title": "课程完成 - 恭喜！",
+            "description": "你已成功完成本课程。"
+          },
+          "chapterComplete": {
+            "title": "章节完成 - 做得好！",
+            "description": "你已完成本章节。继续学习下一个章节。"
+          },
+          "test": {
+            "title": "课程测试 - 评估你的知识",
+            "description": "参加此测试以评估你对课程材料的理解。",
+            "testComplete": {
+              "title": "课程测试完成 - 结果",
+              "description": "查看你的测试结果和反馈。"
+            }
+          },
+          "lessonGuide": {
+            "title": "课程指南 - 学习目标",
+            "description": "查看本课程的学习目标。"
+          }
+        }
+      }
+    },
+    "about": {
+      "title": "关于我们 - 使命与团队",
+      "description": "了解我们的使命、团队和对个人发展的承诺。"
     },
     "orders": {
+      "title": "订单 - 管理你的购买",
+      "description": "查看和管理你的订单和订阅。",
       "cancelSubscription": {
-        "title": "取消订阅",
-        "description": "管理会员并按需取消。"
+        "title": "取消订阅 - 管理会员",
+        "description": "取消你的订阅并管理你的会员设置。"
       },
       "purchaseComplete": {
-        "title": "感谢你的购买！",
-        "description": "点击下方开始使用并访问你的报告。"
+        "title": "购买完成 - 谢谢！",
+        "description": "你的购买已成功处理。"
       }
     },
-    "test": {
-      "title": "性格测试",
-      "description": "开始你的性格测评。",
-      "step": {
-        "title": "测试步骤",
-        "description": "按步骤回答测试问题。"
-      },
-      "analyzing": {
-        "title": "分析中",
-        "description": "正在分析你的回答。"
-      },
-      "result": {
-        "title": "测试结果",
-        "description": "查看你的报告与下一步行动。"
-      }
+    "courses": {
+      "title": "课程 - 专家学习资源",
+      "description": "探索我们的专家主导课程，助力个人和职业成长。"
     },
     "legal": {
+      "title": "法律信息 - 条款与政策",
+      "description": "查看我们的服务条款和隐私政策。",
       "privacy": {
-        "title": "隐私政策",
-        "description": "我们重视你的隐私，以下说明我们如何收集、使用与保护信息。"
+        "title": "隐私政策 - 你的数据保护",
+        "description": "了解我们如何保护你的个人信息。"
       },
       "terms": {
-        "title": "用户协议",
-        "description": "使用本服务即表示你同意以下条款与条件。"
+        "title": "服务条款 - 平台规则",
+        "description": "查看我们的服务条款和平台指南。"
+      }
+    },
+    "mentors": {
+      "title": "导师 - 专家指导",
+      "description": "与专家导师联系，获取个性化指导和支持。"
+    },
+    "courses": {
+      "title": "课程 - 专家指导学习",
+      "description": "探索我们的专家指导课程，促进个人和职业成长。"
+    },
+    "routeGuide": {
+      "title": "路由引导 - 平台导航",
+      "description": "了解如何导航我们的平台并访问所有功能。"
+    },
+    "auth": {
+      "title": "身份验证 - 安全访问",
+      "description": "通过我们的身份验证系统安全访问你的账户。",
+      "signIn": {
+        "title": "登录 - 访问你的账户",
+        "description": "登录你的账户以访问个性化功能。"
+      }
+    },
+    "account": {
+      "title": "账户管理 - 设置与偏好",
+      "description": "管理你的账户设置和偏好。",
+      "settings": {
+        "title": "账户设置 - 个性化你的体验",
+        "description": "更新你的账户设置和个人偏好。"
       }
     }
   }

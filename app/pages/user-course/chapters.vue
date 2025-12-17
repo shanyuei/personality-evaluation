@@ -36,6 +36,21 @@
 
 <script setup lang="ts">
 import UButtonTheme from '~/theme/UButton'
+
+
+
+const { t } = useI18n()
+
+// 设置页面SEO元数据
+definePageMeta({
+  title: () => 'seo.userCourse.chapters.title'
+})
+
+useSeoMeta({
+  title: () => t('seo.userCourse.chapters.title'),
+  description: () => t('seo.userCourse.chapters.description')
+})
+
 const chapters = [
   'Foundations of Leadership',
   'Emotional Intelligence in Leadership',

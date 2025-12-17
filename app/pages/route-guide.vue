@@ -83,16 +83,19 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
-// const { t } = useI18n()
-// definePageMeta({
-//   title: t('pages.routeGuide.title') as string
-// })
-// useSeoMeta({
-//   title: () => t('seo.routeGuide.title') as string,
-//   description: () => t('seo.routeGuide.description') as string,
-//   ogTitle: () => t('seo.routeGuide.title') as string,
-//   ogDescription: () => t('seo.routeGuide.description') as string
-// })
+
+
+
+const { t } = useI18n()
+
+definePageMeta({
+  title: () => 'seo.routeGuide.title'
+})
+
+useSeoMeta({
+  title: () => t('seo.routeGuide.title'),
+  description: () => t('seo.routeGuide.description')
+})
 
 const router = useRouter()
 const routes = ref<any[]>([])

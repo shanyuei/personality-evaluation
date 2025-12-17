@@ -76,6 +76,19 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 
+
+
+const { t } = useI18n()
+
+definePageMeta({
+  title: () => 'seo.courses.title'
+})
+
+useSeoMeta({
+  title: () => t('seo.courses.title') as string,
+  description: () => t('seo.courses.description') as string
+})
+
 const recommended = ref({
     title: 'Budgeting',
     description: 'Budgeting is a foundational aspect of financial planning, bboth for individuals and organizations. In this lesson, we will explore the basics of budgeting, its role in setting finarcial goals, and how it helps in managing income and expenses effectively',

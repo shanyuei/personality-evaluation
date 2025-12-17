@@ -86,20 +86,20 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+
+
 import UFormFieldTheme from "~/theme/UFormField";
 import UInputTheme from "~/theme/UInput";
 import UCheckboxTheme from "~/theme/UCheckbox";
 import UButtonTheme from "~/theme/UButton";
-// const { t } = useI18n()
-// definePageMeta({
-//   title: t('orders.cancelSubscription.title') as string
-// })
-// useSeoMeta({
-//   title: () => t('orders.cancelSubscription.title') as string,
-//   description: () => t('orders.cancelSubscription.description') as string,
-//   ogTitle: () => t('orders.cancelSubscription.title') as string,
-//   ogDescription: () => t('orders.cancelSubscription.description') as string
-// })
+const { t } = useI18n()
+definePageMeta({
+  title: () => 'seo.orders.cancelSubscription.title'
+})
+useSeoMeta({
+  title: () => t('seo.orders.cancelSubscription.title') as string,
+  description: () => t('seo.orders.cancelSubscription.description') as string
+})
 const email = ref('')
 const reasons = ref({
   difficult: false,

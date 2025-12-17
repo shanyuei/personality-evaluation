@@ -35,19 +35,17 @@
 </template>
 
 <script setup lang="ts">
+  
+  
   import UButtonTheme, { UButtonThemeDark } from '~/theme/UButton'
-// const { t } = useI18n()
-// definePageMeta({
-//   title: () => t('pages.orders.purchaseComplete.title') as string
-// })
-// useSeoMeta({
-//   title: () => t('seo.orders.purchaseComplete.title') as string,
-//   description: () => t('seo.orders.purchaseComplete.description') as string,
-//   ogTitle: () => t('seo.orders.purchaseComplete.title') as string,
-//   ogDescription: () => t('seo.orders.purchaseComplete.description') as string
-// })
+  const { t } = useI18n()
 definePageMeta({
+  title: () => 'pages.orders.purchaseComplete.title',
   layoutShowMenu:false,
+})
+useSeoMeta({
+  title: () => t('seo.orders.purchaseComplete.title') as string,
+  description: () => t('seo.orders.purchaseComplete.description') as string
 })
 const goToReport = () => {
   navigateTo('/test/result')

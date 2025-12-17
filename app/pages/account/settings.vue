@@ -95,16 +95,16 @@ import UInputTheme from "~/theme/UInput";
 import USelectTheme from "~/theme/USelect";
 definePageMeta({
  layoutShowFooter:false,
-
+ title: () => 'seo.account.settings.title'
 })
 const { t } = useI18n()
 // definePageMeta({ title: () => t('pages.account.settings.title') as string })
-// useSeoMeta({
-//   title: () => t('seo.account.settings.title') as string,
-//   description: () => t('seo.account.settings.description') as string,
-//   ogTitle: () => t('seo.account.settings.title') as string,
-//   ogDescription: () => t('seo.account.settings.description') as string
-// })
+useSeoMeta({
+  title: () => t('seo.account.settings.title') as string,
+  description: () => t('seo.account.settings.description') as string,
+  ogTitle: () => t('seo.account.settings.title') as string,
+  ogDescription: () => t('seo.account.settings.description') as string
+})
 
 const userStore = useUserStore()
 const name = ref(userStore.user?.name || '')
