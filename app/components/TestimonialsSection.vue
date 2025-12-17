@@ -1,6 +1,6 @@
 <template>
   <div class="uno-testimonials-section uno-py-16 sm:uno-py-20 md:uno-py-24 uno-bg-white uno-w-full uno-mx-auto uno-overflow-hidden">
-    <div class="uno-mx-auto uno-max-w-[80%] uno-px-4">
+    <div class="page-container uno-px-4">
       <div class="uno-text-center uno-mb-16">
         <h2 class="uno-text-4xl uno-font-['Outfit'] uno-font-bold uno-mb-4">{{ title }}</h2>
         <p class="uno-text-gray-600 uno-max-w-3xl uno-mx-auto">{{ description }}</p>

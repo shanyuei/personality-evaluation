@@ -1,8 +1,8 @@
 <template>
   <main class="uno-min-h-screen uno-bg-white">
     <!-- Page Header -->
-    <section class="uno-py-16 uno-px-6 md:uno-px-12 lg:uno-px-24 uno-bg-gray-50">
-      <div class="uno-max-w-7xl uno-mx-auto">
+    <section class="uno-py-16">
+      <div class="page-container">
         <h1 class="uno-text-3xl md:uno-text-4xl uno-font-bold uno-text-gray-900 uno-mb-4">Our Expert Mentors</h1>
         <p class="uno-text-lg uno-text-gray-600 uno-max-w-3xl">
           Meet our team of experienced professionals who are passionate about guiding you on your learning journey.
@@ -11,8 +11,8 @@
     </section>
 
     <!-- Mentors Section -->
-    <section class="uno-py-12 uno-px-6 md:uno-px-12 lg:uno-px-24">
-      <div class="uno-max-w-7xl uno-mx-auto">
+    <section class="uno-py-12">
+      <div class="page-container">
         <!-- Search and Filter -->
         <div class="uno-flex uno-flex-col md:uno-flex-row uno-justify-between uno-items-start md:uno-items-center uno-mb-12 uno-gap-4">
           <UInput 
@@ -271,3 +271,4 @@ const resetFilters = () => {
 <style scoped>
 /* Mentors page specific styles */
 </style>
+

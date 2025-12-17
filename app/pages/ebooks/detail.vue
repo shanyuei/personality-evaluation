@@ -1,6 +1,6 @@
 <template>
   <main class=" uno-py-10 uno-px-6 md:uno-px-10">
-    <div class="uno-w-full md:uno-w-[70%] uno-mx-auto">
+    <div class="page-container">
       <div
         class="uno-bg-[var(--ui-primary)] uno-text-white uno-rounded-[20px] uno-px-6 uno-py-8 md:uno-px-10 md:uno-py-12 uno-shadow-[0_8px_24px_rgba(0,0,0,0.12)]">
         <h1 class="uno-text-2xl md:uno-text-4xl uno-font-['Outfit'] uno-font-extrabold uno-text-center">{{
