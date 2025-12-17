@@ -402,13 +402,14 @@
 </template>
 
 <script setup lang="ts">
-import GradientCTASection from '../../components/GradientCTASection.vue';
+import GradientCTASection from '../../components/AppCurious.vue';
 import TestimonialsSection from '../../components/TestimonialsSection.vue';
 import FAQSection from '../../components/FAQSection.vue';
 const { t } = useI18n()
 
 definePageMeta({
-    title: "seo.home.title"
+    title: "seo.home.title",
+    layoutShowCurious: true,
 })
 useSeoMeta({
     title: () => t('seo.home.title') as string,

@@ -29,6 +29,8 @@
             <NuxtPage />
           </slot>
         </main>
+        <!--  curious -->
+        <app-curious v-if="showCurious" />
         <!-- 底部 -->
         <app-footer v-if="showFooter" />
       </div>
@@ -47,6 +49,9 @@ const showFooter = computed(() => {
 })
 const showMenu = computed(() => {
   return route.meta.layoutShowMenu !== false
+})
+const showCurious = computed(() => {
+  return route.meta.layoutShowCurious === true
 })
 console.log(route?.meta?.title)
 const head = useLocaleHead()
