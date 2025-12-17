@@ -252,11 +252,20 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import { useI18n } from 'vue-i18n'
+
+
 import UButtonTheme from '~/theme/UButton'
 import URadioTheme from '~/theme/URadio'
-
+definePageMeta({
+ layoutShowFooter:false,
+ title: () => 'seo.profile.title'
+})
 const { t } = useI18n()
+
+useSeoMeta({
+  title: () => t('seo.profile.title'),
+  description: () => t('seo.profile.description'),
+})
 
 const name = 'liyangzhi'
 const scoreBars = [

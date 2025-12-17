@@ -6,8 +6,8 @@
           <NuxtLink to="/user-course/chapters" class="back-link">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path d="M15 19l-7-7 7-7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </NuxtLink>
-          <div class="question-count">{{ $t('pages.userCourseLesson.lessonCount', { current, total }) }}</div>
           <div class="progress-percent">{{ progress }}%</div>
+          <div class="question-count">{{ $t('pages.userCourseLesson.lessonCount', { current, total }) }}</div>
         </div>
 
         <div class="course-progress">
@@ -74,10 +74,23 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
+
+
 import UButtonTheme, { UButtonThemeDark } from '~/theme/UButton'
+
+const { t } = useI18n()
 const current = ref(3)
 const total = ref(10)
 const progress = computed(() => Math.round((current.value / total.value) * 100))
+
+definePageMeta({
+  title: () => 'seo.userCourse.lesson.title'
+})
+
+useSeoMeta({
+  title: () => t('seo.userCourse.lesson.title'),
+  description: () => t('seo.userCourse.lesson.description')
+})
 </script>
 
 <style scoped></style>

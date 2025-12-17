@@ -20,16 +20,16 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 import { useRouter } from 'vue-router'
-// const { t } = useI18n()
-// definePageMeta({
-//   title: t('test.analyzing.title') as string
-// })
-// useSeoMeta({
-//   title: () => t('test.analyzing.title') as string,
-//   description: () => t('test.analyzing.description') as string,
-//   ogTitle: () => t('test.analyzing.title') as string,
-//   ogDescription: () => t('test.analyzing.description') as string
-// })
+
+
+const { t } = useI18n()
+definePageMeta({
+  title: () => 'seo.test.analyzing.title'
+})
+useSeoMeta({
+  title: () => t('seo.test.analyzing.title'),
+  description: () => t('seo.test.analyzing.description')
+})
 const router = useRouter()
 
 onMounted(() => {

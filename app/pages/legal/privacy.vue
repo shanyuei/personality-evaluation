@@ -167,6 +167,18 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
 
+
+const { t } = useI18n()
+
+definePageMeta({
+  layoutShowCurious: true,
+  title: () => 'seo.legal.privacy.title'
+})
+
+useSeoMeta({
+  title: () => t('seo.legal.privacy.title'),
+  description: () => t('seo.legal.privacy.description'),
+})
 const activeSection = ref('privacy-policy')
 const isClicking = ref(false)
 

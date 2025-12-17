@@ -47,6 +47,15 @@
 import { ref } from 'vue'
 import IconsCheck from '~/components/icons/Check.vue'
 import UButtonTheme, {UButtonThemeDark} from '~/theme/UButton'
+definePageMeta({
+  layoutShowFooter: false,
+  title: () => 'seo.test.result.title'
+})
+
+useSeoMeta({
+  title: () => t('seo.test.result.title'),
+  description: () => t('seo.test.result.description'),
+})
 const route = useRoute()
 const scoreValue = ref(Number(route.query.score ?? 20))
 const scoreTotal = ref(Number(route.query.total ?? 40))

@@ -82,8 +82,18 @@
 
 <script setup lang="ts">
 import { reactive, ref } from 'vue'
-const { t } = useI18n()
 
+
+const { t } = useI18n()
+definePageMeta({
+  layoutShowCurious: true,
+  title: () => 'seo.faq.title'
+})
+
+useSeoMeta({
+  title: () => t('seo.faq.title'),
+  description: () => t('seo.faq.description')
+})
 
 
 const currentCategory = ref<string>('all') // 默认展示全部分类

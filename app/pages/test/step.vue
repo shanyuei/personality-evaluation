@@ -3,10 +3,10 @@
     <main class="uno-py-6 md:uno-py-12 md:uno-px-10">
       <div class="uno-mx-auto">
         <div class="uno-flex uno-flex-col uno-items-center uno-gap-4">
-          <div
-            class="uno-w-12 md:uno-w-14 uno-h-12 md:uno-h-14 uno-bg-gradient-to-br uno-from-[var(--color-green-2)] uno-to-[var(--color-green-1)] uno-rounded-full uno-flex uno-items-center uno-justify-center">
-            <span class="uno-text-white uno-font-bold uno-text-xl md:uno-text-2xl">P</span>
-          </div>
+          <NuxtImg
+            src="/images/process/1.png"
+            alt="Process Icon"
+            class="uno-w-12 md:uno-w-14 uno-h-12 md:uno-h-14 uno-rounded-full" />
           <h1
             class="uno-w-full uno-text-[#011813] uno-text-2xl md:uno-text-5xl uno-font-['Outfit'] uno-text-center uno-font-semibold uno-leading-[1.2]">
             {{ $t('pages.testIntro.title') }}</h1>
@@ -14,9 +14,9 @@
 
         <div class="course-header md:!uno-w-[80%] md:!uno-max-w-[80%] uno-mx-auto">
           <div class="course-nav">
+            <div class="progress-percent">{{ progress }}%</div>
             <div/> <!-- 占位符，保持布局一致 -->
             <div class="question-count">{{ $t('pages.testIntro.progress.step', { current, total }) }}</div>
-            <div class="progress-percent">{{ progress }}%</div>
           </div>
           <div class="course-progress">
             <div class="progress-bar" :style="{ width: progress + '%' }"/>
@@ -143,9 +143,18 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import { useI18n } from 'vue-i18n'
+
 import UButtonTheme from '~/theme/UButton'
 const { t } = useI18n()
+definePageMeta({
+  layoutShowFooter: false,
+  title: () => 'seo.test.step.title'
+})
+
+useSeoMeta({
+  title: () => t('seo.test.step.title'),
+  description: () => t('seo.test.step.description'),
+})
 const total = 20
 const current = 1
 const questions = [

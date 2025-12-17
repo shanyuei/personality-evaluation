@@ -94,13 +94,26 @@ import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { useArticles } from '~/composables/useArticles'
 
+
+
 const route = useRoute()
+const { t } = useI18n()
 const slug = computed(() => String(route.params.slug || ''))
 
 const { articles } = useArticles()
 
 const article = computed(() => articles.value.find(a => a.slug === slug.value))
 const recentArticles = computed(() => articles.value.slice(0, 3))
+
+// 使用文章标题作为页面标题，如果没有文章则使用默认标题
+definePageMeta({
+  title: () => 'seo.blog.slug.title'
+})
+
+useSeoMeta({
+  title: () => article.value ? `${article.value.title} - ${t('seo.blog.slug.title')}` : t('seo.blog.title'),
+  description: () => article.value ? article.value.excerpt : t('seo.blog.slug.description')
+})
 </script>
 
 <style scoped>

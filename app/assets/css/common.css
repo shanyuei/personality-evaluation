@@ -1,0 +1,95 @@
+/* 页面容器：≤1440 宽度 80%，>1440 最大宽度 1440；移动端满宽（Less 嵌套） */
+.page-container {
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 767px) {
+  .page-container {
+    width: 100%;
+    padding: 0 24px !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 1440px) {
+  .page-container {
+    width: 80%;
+  }
+}
+@media (min-width: 1441px) {
+  .page-container {
+    max-width: 1200px;
+    width: 100%;
+  }
+}
+/* 课程页面顶部导航与进度条 */
+.course-header {
+  width: 100%;
+  max-width: 860px;
+  padding: 24px 0;
+}
+.course-header .course-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--ui-muted-foreground);
+  margin-bottom: 8px;
+}
+.course-header .course-nav .back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  color: var(--ui-muted-foreground);
+}
+.course-header .course-nav .back-link:hover {
+  color: var(--ui-foreground);
+}
+.course-header .course-nav .question-count {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  .course-header .course-nav .question-count {
+    font-size: 16px;
+  }
+}
+.course-header .course-nav .progress-percent {
+  font-size: 14px;
+}
+.course-header .course-progress {
+  width: 100%;
+  height: 8px;
+  border-radius: 24px;
+  background-color: var(--ui-input);
+}
+@media (min-width: 768px) {
+  .course-header .course-progress {
+    height: 12px;
+  }
+}
+.course-header .course-progress .progress-bar {
+  height: 100%;
+  border-radius: 24px;
+  background-color: var(--ui-primary);
+}
+@media (max-width: 767px) {
+  .blog-page h1 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .blog-page h2 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .blog-page h3 {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  .blog-page h4 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .blog-page p,
+  .blog-page li,
+  .blog-page span {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}

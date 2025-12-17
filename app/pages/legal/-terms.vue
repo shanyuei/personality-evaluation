@@ -19,16 +19,16 @@
 </template>
 
 <script setup lang="ts">
+
+
 const { t } = useI18n()
-// definePageMeta({
-//   title: () => t('pages.legal.terms.title') as string
-// })
-// useSeoMeta({
-//   title: () => t('seo.legal.terms.title') as string,
-//   description: () => t('seo.legal.terms.description') as string,
-//   ogTitle: () => t('seo.legal.terms.title') as string,
-//   ogDescription: () => t('seo.legal.terms.description') as string
-// })
+definePageMeta({
+  title: () => 'seo.legal.terms.title'
+})
+useSeoMeta({
+  title: () => t('seo.legal.terms.title') as string,
+  description: () => t('seo.legal.terms.description') as string
+})
 
 const sections = [
   { title: t('pages.legal.terms.sections.accept.title'), body: t('pages.legal.terms.sections.accept.body') },

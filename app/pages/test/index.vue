@@ -189,9 +189,18 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import UButtonTheme from '~/theme/UButton'
-import { useI18n } from 'vue-i18n'
 
+
+definePageMeta({
+ layoutShowFooter:false,
+ title: () => 'seo.test.title'
+})
 const { t } = useI18n()
+
+useSeoMeta({
+  title: () => t('seo.test.title'),
+  description: () => t('seo.test.description'),
+})
 const total = 20
 const current = 1
 const questions = [

@@ -20,10 +20,23 @@
 </template>
 
 <script setup lang="ts">
+
+
 import UButtonTheme from '~/theme/UButton'
+
+const { t } = useI18n()
 const score = 0
 const total = 10
 const courseName = 'People Leadership vs. Management'
+
+definePageMeta({
+  title: () => 'seo.userCourse.testComplete.title'
+})
+
+useSeoMeta({
+  title: () => t('seo.userCourse.testComplete.title'),
+  description: () => t('seo.userCourse.testComplete.description')
+})
 </script>
 
 <style scoped></style>

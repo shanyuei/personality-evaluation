@@ -32,7 +32,16 @@
 </template>
 
 <script setup lang="ts">
+
+
 const { t } = useI18n()
+definePageMeta({
+  title: () => 'seo.ebooks.title'
+})
+useSeoMeta({
+  title: () => t('seo.ebooks.title') as string,
+  description: () => t('seo.ebooks.description') as string
+})
 const primaryBooks = [
   {
     id: 1,

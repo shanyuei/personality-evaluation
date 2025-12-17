@@ -99,9 +99,21 @@
 </template>
 
 <script setup lang="ts">
+import { ref, computed } from 'vue'
+
+
+
 const { t, locale } = useI18n()
 locale.value = 'en'
+definePageMeta({
+ layoutShowFooter:false,
+ title: () => 'seo.tests.title'
+})
 
+useSeoMeta({
+  title: () => t('seo.tests.title'),
+  description: () => t('seo.tests.description'),
+})
 const filters = [
   { id: 'all', label: t('pages.tests.filters.all') },
   { id: 'soft', label: t('pages.tests.filters.soft') },

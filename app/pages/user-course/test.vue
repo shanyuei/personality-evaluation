@@ -9,8 +9,8 @@
                 stroke-linejoin="round" />
             </svg>
           </NuxtLink>
-          <div class="question-count">{{ $t('pages.userCourseTest.questionCount', { current, total }) }}</div>
           <div class="progress-percent">{{ progress }}%</div>
+          <div class="question-count">{{ $t('pages.userCourseTest.questionCount', { current, total }) }}</div>
         </div>
 
         <div class="course-progress">
@@ -42,8 +42,12 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
+
+
 import UButtonTheme from '~/theme/UButton'
 import URadioTheme from '~/theme/URadio'
+
+const { t } = useI18n()
 const current = ref(4)
 const total = ref(10)
 const progress = computed(() => Math.round((current.value / total.value) * 100))
@@ -62,6 +66,15 @@ const radioItems = computed(() => {
     label: opt,
     value: idx
   }))
+})
+
+definePageMeta({
+  title: () => 'seo.userCourse.test.title'
+})
+
+useSeoMeta({
+  title: () => t('seo.userCourse.test.title'),
+  description: () => t('seo.userCourse.test.description')
 })
 </script>
 

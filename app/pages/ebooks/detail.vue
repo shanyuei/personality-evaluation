@@ -94,7 +94,16 @@
 </template>
 
 <script setup lang="ts">
+
+
 const { t } = useI18n()
+definePageMeta({
+  title: () => 'seo.ebooks.detail.title'
+})
+useSeoMeta({
+  title: () => t('seo.ebooks.detail.title') as string,
+  description: () => t('seo.ebooks.detail.description') as string
+})
 const learnList = [
   t('pages.ebookDetail.learn.i1'),
   t('pages.ebookDetail.learn.i2'),

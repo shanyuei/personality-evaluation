@@ -2,10 +2,10 @@
   <main class="">
 
     <section class="uno-relative uno-py-22 sm:uno-py-32">
-      <NuxtImg src="/images/about/icon-1.png" alt="decor"
-        class="uno-absolute uno-left-1/2 uno--translate-x-1/2 uno-top-4 uno-w-47px uno-h-36px" />
       <div class="page-container uno-px-6 sm:uno-px-10">
         <div class="uno-flex uno-flex-col md:uno-flex-row uno-items-center md:uno-justify-between uno-gap-72px">
+          <NuxtImg src="/images/about/icon-1.png" alt="decor"
+            class="uno-absolute uno-left-1/2 uno--translate-x-1/2 uno-top-4 uno-w-47px uno-h-36px" />
           <div class="uno-text-center md:uno-text-left md:uno-w-1/2">
             <h1 class="uno-font-semibold uno-text-4xl md:uno-text-6xl uno-text-[#011813] md:uno-leading-[86px] uno-text-left">
               {{ $t('pages.about.hero.title') }}</h1>
@@ -62,9 +62,9 @@
     <section class="uno-py-12 md:uno-py-20 uno-bg-#f8f8f8">
       <div class="page-container uno-px-6 sm:uno-px-10">
         <div class="uno-flex uno-flex-col md:uno-flex-row uno-gap-10 uno-items-center">
-          <div class="md:uno-w-1/2">
+          <div class="uno-min-w-564px">
             <NuxtImg src="/images/about/2.png" alt="Mission" width="564px" height="440px"
-              uno-sizes="(min-width:768px) 564px, 342px" class="uno-w-full uno-h-auto" />
+               class="uno-w-full uno-h-auto" />
           </div>
           <div>
             <div class="uno-flex uno-justify-center uno-items-center">
@@ -125,9 +125,9 @@
               </div>
             </div>
           </div>
-          <div class="md:uno-w-1/2">
+            <div class="uno-min-w-564px">
             <NuxtImg src="/images/about/3.png" alt="Vision" width="564px" height="440px"
-              uno-sizes="(min-width:768px) 564px, 342px" class="uno-w-full uno-h-auto" />
+              class="uno-w-full uno-h-auto" />
           </div>
         </div>
       </div>
@@ -187,16 +187,17 @@
 </template>
 
 <script setup lang="ts">
+
+
+
 const { t } = useI18n()
-// definePageMeta({
-//   title: () => t('pages.about.title') as string
-// })
-// useSeoMeta({
-//   title: () => t('seo.about.title') as string,
-//   description: () => t('seo.about.description') as string,
-//   ogTitle: () => t('seo.about.title') as string,
-//   ogDescription: () => t('seo.about.description') as string
-// })
+definePageMeta({
+  title: () => 'seo.about.title'
+})
+useSeoMeta({
+  title: () => t('seo.about.title') as string,
+  description: () => t('seo.about.description') as string
+})
 
 const faqItems = [
   {
