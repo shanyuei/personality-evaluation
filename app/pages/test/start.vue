@@ -3,16 +3,12 @@
     <main class="uno-py-8 md:uno-py-16 uno-px-0 md:uno-px-10">
       <div class="uno-max-w-full md:uno-max-w-[64%] uno-mx-auto uno-text-center">
         <div class="uno-flex uno-items-center uno-justify-center uno-mb-6">
-          <div
-            class="uno-w-16 uno-h-16 uno-rounded-full uno-bg-[var(--ui-input)] uno-flex uno-items-center uno-justify-center">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-              <rect x="5" y="3" width="14" height="18" rx="2" stroke="var(--ui-primary)" stroke-width="2" />
-              <line x1="8" y1="8" x2="16" y2="8" stroke="var(--ui-primary)" stroke-width="1.5" />
-              <line x1="8" y1="12" x2="16" y2="12" stroke="var(--ui-primary)" stroke-width="1.5" />
-              <line x1="8" y1="16" x2="13" y2="16" stroke="var(--ui-primary)" stroke-width="1.5" />
-            </svg>
-          </div>
-        </div>
+        <NuxtImg
+          src="/images/test/6.png"
+          class="uno-w-16 uno-h-16 uno-rounded-full"
+          alt="Test icon"
+        />
+      </div>
 
         <h1
           class="uno-text-[#011813] uno-text-2xl md:uno-text-5xl uno-font-['Outfit'] uno-text-center uno-font-semibold uno-leading-[1.2] uno-mb-4 md:uno-mb-6">
