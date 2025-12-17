@@ -50,7 +50,13 @@ const showMenu = computed(() => {
 })
 console.log(route?.meta?.title)
 const head = useLocaleHead()
-const title = computed(() => t(route?.meta?.title));
+const title = computed(() => {
+  if (route?.meta?.title) {
+    return t(route?.meta?.title)
+  } else {
+    return ""
+  }
+});
 
 </script>
 
