@@ -5,7 +5,7 @@
         <div class="uno-relative uno-rounded-xl uno-mx-auto uno-max-w-[80%] uno-border uno-border-transparent uno-px-4 sm:uno-px-6 md:uno-px-8">
             <!-- 内容区域 -->
             <div class="uno-flex uno-justify-start uno-items-center uno-flex-col">
-                <div class="uno-flex uno-justify-start uno-items-center uno-flex-col uno-gap-16px">
+                <div class="uno-flex uno-justify-start uno-items-center uno-flex-col uno-gap-24px">
                     <h1
                         class="uno-text-[#011813] uno-text-3xl sm:uno-text-5xl lg:uno-text-7xl uno-font-['Outfit'] uno-text-center uno-font-semibold">
                         {{ $t('pages.home.title') }}
@@ -19,10 +19,11 @@
 
                 <!-- 测试按钮 -->
                 <button
-                  class="uno-m-t-72px uno-inline-flex uno-items-center uno-justify-center uno-h-[56px] uno-px-6 uno-rounded-[24px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-[var(--ui-primary-foreground)] uno-font-['Outfit'] uno-transition uno-duration-200 disabled:uno-opacity-50 disabled:uno-cursor-not-allowed"
+                  class="uno-m-t-72px uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[18px] uno-py-4 uno-pr-3 uno-pl-[48px] uno-bg-[#009D77] hover:uno-bg-[var(--color-green-2)] uno-text-[#FFFFFF] uno-text-[28px] uno-font-['Outfit'] uno-font-medium uno-rounded-[149.99px] uno-transition uno-duration-200 disabled:uno-opacity-50 disabled:uno-cursor-not-allowed"
                   type="button"
                 >
-                  {{ $t('common.getStarted') }}
+                  Take the Test
+                  <NuxtImg src="/images/common/go-arrow-1.png" alt="arrow-right" width="51" height="51" />
                 </button>
             </div>
         </div>
@@ -188,14 +189,15 @@
                 <div class="uno-flex uno-flex-col md:uno-flex-row uno-gap-12 uno-items-center">
                     <!-- 左侧：标题、描述和按钮 -->
                     <div class="uno-w-full md:uno-w-1/2">
-                        <h2 class="uno-text-4xl uno-font-['Outfit'] uno-font-bold uno-mb-8">{{ $t('pages.home.how.title') }}</h2>
+                        <h2 class="uno-text-4xl uno-font-['Outfit'] uno-font-bold uno-mb-8">How Does It Work?</h2>
                         <p class="uno-text-gray-600 uno-mb-12">{{ $t('pages.home.how.desc') }}</p>
 
                         <button
-                          class="uno-inline-flex uno-items-center uno-justify-center uno-h-[40px] uno-px-3 uno-rounded-[999px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-[var(--ui-primary-foreground)] uno-font-['Outfit'] uno-transition uno-duration-200"
+                          class="uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-3 uno-py-1.5 uno-pr-1.5 uno-pl-[20px] uno-h-[56px] uno-bg-[#009D77] hover:uno-bg-[var(--color-green-2)] uno-text-[var(--ui-primary-foreground)] uno-font-['Outfit'] uno-rounded-[100px] uno-transition uno-duration-200"
                           type="button"
                         >
                           {{ $t('common.getStarted') }}
+                          <NuxtImg src="/images/common/go-arrow-1.png" alt="arrow-right" width="40" height="40" />
                         </button>
                     </div>
 
