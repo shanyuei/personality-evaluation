@@ -83,7 +83,9 @@
 <script setup lang="ts">
 import { reactive, ref } from 'vue'
 const { t } = useI18n()
-
+definePageMeta({
+  layoutShowCurious: true
+})
 
 
 const currentCategory = ref<string>('all') // 默认展示全部分类

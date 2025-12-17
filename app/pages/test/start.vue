@@ -58,6 +58,10 @@
 
 <script setup lang="ts">
 import UButtonTheme from '~/theme/UButton'
+definePageMeta({
+ layoutShowFooter:false
+
+})
 </script>
 
 <style scoped></style>

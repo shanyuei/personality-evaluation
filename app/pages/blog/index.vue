@@ -150,7 +150,9 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-
+definePageMeta({
+layoutShowCurious: true
+})
 const searchQuery = ref('');
 const tags = ref(['CareerTips', 'Productivity', 'Tools', 'TechInnovation', 'Leadership']);
 const activeTag = ref('Productivity');

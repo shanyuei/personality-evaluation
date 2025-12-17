@@ -47,6 +47,9 @@
 import { ref } from 'vue'
 import IconsCheck from '~/components/icons/Check.vue'
 import UButtonTheme, {UButtonThemeDark} from '~/theme/UButton'
+definePageMeta({
+ layoutShowFooter:false
+})
 const route = useRoute()
 const scoreValue = ref(Number(route.query.score ?? 20))
 const scoreTotal = ref(Number(route.query.total ?? 40))

@@ -166,7 +166,10 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
+definePageMeta({
 
+  layoutShowCurious: true
+})
 const activeSection = ref('privacy-policy')
 const isClicking = ref(false)
 

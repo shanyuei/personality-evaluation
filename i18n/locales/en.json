@@ -885,6 +885,18 @@
     "home":{
       "title": "Unlock knowledge and growth with expert courses and tools.",
       "description": "An exceptional platform for career development. The current curriculum, skilled instructors, and hands-on learning are truly rewarding."
+    },
+    "test": {
+      "title": "Test - Unlock knowledge and growth with expert courses and tools.",
+      "description": "An exceptional platform for career development. The current curriculum, skilled instructors, and hands-on learning are truly rewarding."
+    },
+    "ebooks":{
+      "title": "Ebooks - Unlock knowledge and growth with expert courses and tools.",
+      "description": "An exceptional platform for career development. The current curriculum, skilled instructors, and hands-on learning are truly rewarding."
+    },
+    "ebooks.detail":{
+      "title": "Ebook Detail - Unlock knowledge and growth with expert courses and tools.",
+      "description": "An exceptional platform for career development. The current curriculum, skilled instructors, and hands-on learning are truly rewarding."
     }
   }
 }

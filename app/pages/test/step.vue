@@ -146,6 +146,10 @@ import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import UButtonTheme from '~/theme/UButton'
 const { t } = useI18n()
+definePageMeta({
+ layoutShowFooter:false
+
+})
 const total = 20
 const current = 1
 const questions = [

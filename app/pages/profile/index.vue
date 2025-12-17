@@ -264,7 +264,9 @@ import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import UButtonTheme from '~/theme/UButton'
 import URadioTheme from '~/theme/URadio'
-
+definePageMeta({
+ layoutShowFooter:false
+})
 const { t } = useI18n()
 
 const name = 'liyangzhi'

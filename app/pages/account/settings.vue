@@ -93,7 +93,10 @@ import { useLanguageStore } from '@/stores/modules/language'
 import UFormFieldTheme from "~/theme/UFormField";
 import UInputTheme from "~/theme/UInput";
 import USelectTheme from "~/theme/USelect";
+definePageMeta({
+ layoutShowFooter:false,
 
+})
 const { t } = useI18n()
 // definePageMeta({ title: () => t('pages.account.settings.title') as string })
 // useSeoMeta({

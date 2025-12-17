@@ -101,7 +101,10 @@
 <script setup lang="ts">
 const { t, locale } = useI18n()
 locale.value = 'en'
+definePageMeta({
+ layoutShowFooter:false
 
+})
 const filters = [
   { id: 'all', label: t('pages.tests.filters.all') },
   { id: 'soft', label: t('pages.tests.filters.soft') },

@@ -190,7 +190,10 @@
 import { ref, computed } from 'vue'
 import UButtonTheme from '~/theme/UButton'
 import { useI18n } from 'vue-i18n'
+definePageMeta({
+ layoutShowFooter:false,
 
+})
 const { t } = useI18n()
 const total = 20
 const current = 1
