@@ -5,8 +5,8 @@
           <NuxtLink to="/user-course/chapters" class="back-link">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path d="M15 19l-7-7 7-7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </NuxtLink>
-          <div class="question-count">{{ $t('pages.userCourseLearn.lessonCount', { current, total }) }}</div>
           <div class="progress-percent">{{ progress }}%</div>
+          <div class="question-count">{{ $t('pages.userCourseLearn.lessonCount', { current, total }) }}</div>
         </div>
 
         <div class="course-progress">

@@ -9,8 +9,8 @@
                 stroke-linejoin="round" />
             </svg>
           </NuxtLink>
-          <div class="question-count">{{ $t('pages.userCourseTest.questionCount', { current, total }) }}</div>
           <div class="progress-percent">{{ progress }}%</div>
+          <div class="question-count">{{ $t('pages.userCourseTest.questionCount', { current, total }) }}</div>
         </div>
 
         <div class="course-progress">
