@@ -597,12 +597,12 @@
       "aboutDesc": "九型人格中的第 7 型常被称为热情者：他们精力充沛、富有自发性并乐观。其核心动机是避免恐惧、痛苦或不适，并保持对新体验的追求。",
       "totalScore": "总分概览",
       "dailyTrivia": "每日小知识",
-      "triviaQuestion": "你知道吗？九型人格中的7型人通常被称为\"热情者\"或\"享乐主义者\"。他们是充满活力、好奇心强、乐观向上的人，总是寻找新的体验和机会。",
+      "triviaQuestion": "你知道吗？九型人格中的7型人通常被称为\"热情者\"或\"享乐主义者\"。他们是充满活力、好奇强、乐观向上的人，总是寻找新的体验和机会。",
       "viewResults": "查看详情",
       "dailyStreak": "连续测试",
       "begin": "开始测试",
       "continueLearning": "继续学习",
-      "intro": "九型人格中的7型人通常被称为\"热情者\"或\"享乐主义者\"。他们是充满活力、好奇心强、乐观向上的人，总是寻找新的体验和机会。",
+      "intro": "九型人格中的7型人通常被称为\"热情者\"或\"享乐主义者\"。他们是充满活力、好奇强、乐观向上的人，总是寻找新的体验和机会。",
       "optimisticDesc": "7型人以乐观的人生态度著称，即使在困难的情况下也能看到希望。他们以热情和好奇面对挑战，相信总是有积极的一面。",
       "detailedDesc": "九型人格中的7型人通常被称为\"热情者\"或\"享乐主义者\"。他们是充满活力、好奇强、乐观向上的人，总是寻找新的体验和机会。7型人害怕被限制或错过生活中的任何美好事物，因此他们倾向于保持多种选择和可能性。他们富有创意，能够看到不同事物之间的联系，经常提出创新的想法。虽然7型人表面上看起来无忧无虑，但内心深处他们害怕痛苦和负面情绪，所以通过保持忙碌和追求快乐来逃避这些感受。",
       "continueCourse": {
@@ -696,99 +696,26 @@
     }
   },
   "common": {
-    "getStarted": "开始",
-    "siteDescription": "通过专家课程与工具，解锁知识与成长。"
-  },
-  "seo": {
-    "home": {
-      "title": "通过性格测试发现真实的自己",
-      "description": "通过测试，你将了解自己的准确性格类型。"
-    },
-    "faq": {
-      "title": "常见问题",
-      "description": "快速了解平台与测试流程。左侧为分类导航，右侧为具体问答。"
-    },
-    "routeGuide": {
-      "title": "路由引导页面",
-      "description": "系统中共有 {count} 个可用路由"
-    },
-    "about": {
-      "title": "关于我们",
-      "description": "了解我们的使命与团队。"
-    },
-    "courses": {
-      "title": "课程",
-      "description": "浏览各领域的专家课程。"
-    },
-    "mentors": {
-      "title": "导师",
-      "description": "认识经验丰富的导师与讲师。"
-    },
-    "blog": {
-      "title": "博客",
-      "description": "阅读团队文章与最新动态。"
-    },
-    "auth": {
-      "signIn": {
-        "title": "登录",
-        "description": "安全访问你的账户。"
-      }
-    },
-    "orders": {
-      "cancelSubscription": {
-        "title": "取消订阅",
-        "description": "管理会员并按需取消。"
+    "getStarted": "开始测试",
+    "siteDescription": "通过专家课程与工具解锁知识与成长。",
+    "courseCard": {
+      "status": {
+        "completed": "已完成该测试",
+        "of": "/",
+        "lessons": "课时"
       },
-      "purchaseComplete": {
-        "title": "感谢你的购买！",
-        "description": "点击下方开始使用并访问你的报告。"
-      }
-    },
-    "test": {
-      "title": "性格测试",
-      "description": "开始你的性格测评。",
-      "step": {
-        "title": "测试步骤",
-        "description": "按步骤回答测试问题。"
+      "link": {
+        "viewResults": "查看测试结果"
       },
-      "analyzing": {
-        "title": "分析中",
-        "description": "正在分析你的回答。"
+      "badge": {
+        "points": "积分"
       },
-      "result": {
-        "title": "测试结果",
-        "description": "查看你的报告与下一步行动。"
-      }
-    },
-    "legal": {
-      "privacy": {
-        "title": "隐私政策",
-        "description": "我们重视你的隐私，以下说明我们如何收集、使用与保护信息。"
+      "meta": {
+        "certificate": "结课证书"
       },
-      "terms": {
-        "title": "用户协议",
-        "description": "使用本服务即表示你同意以下条款与条件。"
+      "people": {
+        "finished": "人已完成"
       }
-    }
-  }
-  ,
-  "courseCard": {
-    "status": {
-      "completed": "已完成该测试",
-      "of": "/",
-      "lessons": "课时"
-    },
-    "link": {
-      "viewResults": "查看测试结果"
-    },
-    "badge": {
-      "points": "积分"
-    },
-    "meta": {
-      "certificate": "结课证书"
-    },
-    "people": {
-      "finished": "人已完成"
     }
   }
 }

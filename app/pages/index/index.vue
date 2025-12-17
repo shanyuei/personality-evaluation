@@ -124,14 +124,14 @@
                     <h2
                         class="uno-text-[#011813] uno-text-5xl uno-font-['Outfit'] uno-text-center uno-font-semibold uno-m-b-12px">
                         {{
-                            $t('home.why.title') }}</h2>
-                    <p class="uno-text-[#4E5255] uno-font-['Outfit'] uno-text-center">
-                        {{ $t('home.why.desc') }}
+                            $t('pages.home.why.title') }}</h2>
+                    <p class="uno-text-[#4E5255] uno-font-['Outfit'] uno-text-center uno-mb-4">
+                        {{ $t('pages.home.why.desc') }}
                     </p>
 
                     <!-- 主要介绍卡片 -->
                     <div
-                        class="uno-shadow-lg uno-mb-10 sm:uno-mb-12 uno-w-full md:uno-w-[70%] uno-bg-[#F8F8F8] uno-border-solid uno-border-[#E7E7E8] uno-border uno-rounded-3xl uno-p-16px sm:uno-p-24px uno-relative">
+                        class="uno-shadow-lg uno-mb-10 sm:uno-mb-12 uno-w-full md:uno-w-[78%] uno-bg-[#F8F8F8] uno-border-solid uno-border-[#E7E7E8] uno-border uno-rounded-3xl uno-p-16px sm:uno-p-24px uno-relative">
                         <!-- 装饰图片 -->
                         <NuxtImg src="/images/home/2.png" alt="decor" width="56" height="56"
                             class="uno-hidden md:uno-block uno-relative uno-top-[0] md:uno-left-246px" />
@@ -139,14 +139,16 @@
                         <div class="uno-flex uno-flex-col md:uno-flex-row uno-gap-6 md:uno-gap-10">
                             <div class="uno-w-full md:uno-w-[24%] uno-pt-24px">
                                 <h3 class="uno-text-2xl uno-font-['Outfit'] uno-font-bold uno-mb-4">{{
-                                    $t('home.why.main.title') }}</h3>
-                                <p class="uno-text-gray-600 uno-mb-6">{{ $t('home.why.main.desc') }}</p>
+                                    $t('pages.home.why.main.title') }}</h3>
+                                <p class="uno-text-gray-600 uno-mb-6">{{ $t('pages.home.why.main.desc') }}</p>
                                 <!-- 分割线 -->
                                 <div class="uno-w-full uno-h-[1px] uno-bg-[#E7E7E8] uno-my-6" />
                                 <button
-                                    class="uno-inline-flex uno-items-center uno-justify-center uno-h-[40px] uno-px-3 uno-rounded-[16px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-[var(--ui-primary-foreground)] uno-font-['Outfit'] uno-transition uno-duration-200 disabled:uno-opacity-50 disabled:uno-cursor-not-allowed"
+                                    class="uno-m-t-24px uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[12px] uno-py-2 uno-pr-[6px] uno-pl-[24px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-[#FFFFFF] uno-text-[18px] uno-font-['Outfit'] uno-font-medium uno-rounded-[149.99px] uno-transition uno-duration-200 disabled:uno-opacity-50 disabled:uno-cursor-not-allowed"
                                     type="button">
                                     {{ $t('common.getStarted') }}
+                                    <NuxtImg src="/images/common/go-arrow-1.png" alt="arrow-right" width="50"
+                                        height="50" />
                                 </button>
                             </div>
                             <div class="uno-w-full md:uno-w-[76%] uno-relative md:uno-top-[-6px]">
@@ -170,8 +172,8 @@
                                     height="56" class="" />
                             </div>
                             <h3 class="uno-text-xl uno-font-['Outfit'] uno-font-bold uno-mb-3">{{
-                                $t('home.why.small1.title') }}</h3>
-                            <p class="uno-text-gray-600">{{ $t('home.why.small1.desc') }}</p>
+                                $t('pages.home.why.small1.title') }}</h3>
+                            <p class="uno-text-gray-600">{{ $t('pages.home.why.small1.desc') }}</p>
                         </div>
 
                         <!-- 卡片2 -->
@@ -183,8 +185,8 @@
                                     height="56" />
                             </div>
                             <h3 class="uno-text-xl uno-font-['Outfit'] uno-font-bold uno-mb-3">{{
-                                $t('home.why.small2.title') }}</h3>
-                            <p class="uno-text-gray-600">{{ $t('home.why.small2.desc') }}</p>
+                                $t('pages.home.why.small2.title') }}</h3>
+                            <p class="uno-text-gray-600">{{ $t('pages.home.why.small2.desc') }}</p>
                         </div>
 
                         <!-- 卡片3 -->
@@ -196,8 +198,8 @@
                                     height="56" />
                             </div>
                             <h3 class="uno-text-xl uno-font-['Outfit'] uno-font-bold uno-mb-3">{{
-                                $t('home.why.small3.title') }}</h3>
-                            <p class="uno-text-gray-600">{{ $t('home.why.small3.desc') }}</p>
+                                $t('pages.home.why.small3.title') }}</h3>
+                            <p class="uno-text-gray-600">{{ $t('pages.home.why.small3.desc') }}</p>
                         </div>
                     </div>
                 </div>
@@ -206,20 +208,22 @@
                 <div class="uno-flex uno-flex-col md:uno-flex-row uno-gap-12 uno-items-center">
                     <!-- 左侧：标题、描述和按钮 -->
                     <div class="uno-w-full md:uno-w-1/2">
-                        <h2 class="uno-text-4xl uno-font-['Outfit'] uno-font-bold uno-mb-8">{{ $t('home.how.title') }}
+                        <h2 class="uno-text-4xl uno-font-['Outfit'] uno-font-bold uno-mb-8">{{
+                            $t('pages.home.how.title') }}
                         </h2>
-                        <p class="uno-text-gray-600 uno-mb-12">{{ $t('home.how.desc') }}</p>
+                        <p class="uno-text-gray-600 uno-mb-12">{{ $t('pages.home.how.desc') }}</p>
 
                         <button
-                            class="uno-inline-flex uno-items-center uno-justify-center uno-h-[40px] uno-px-3 uno-rounded-[999px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-[var(--ui-primary-foreground)] uno-font-['Outfit'] uno-transition uno-duration-200"
+                            class="uno-m-t-24px uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[12px] uno-py-2 uno-pr-[6px] uno-pl-[24px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-[#FFFFFF] uno-text-[18px] uno-font-['Outfit'] uno-font-medium uno-rounded-[149.99px] uno-transition uno-duration-200 disabled:uno-opacity-50 disabled:uno-cursor-not-allowed"
                             type="button">
                             {{ $t('common.getStarted') }}
+                            <NuxtImg src="/images/common/go-arrow-1.png" alt="arrow-right" width="50" height="50" />
                         </button>
                     </div>
 
                     <!-- 右侧：三个步骤卡片 -->
                     <div class="uno-w-full md:uno-w-1/2">
-                        <div class="uno-flex uno-justify-start uno-items-start uno-flex-col uno-gap-6">
+                        <div class="uno-flex uno-justify-start uno-items-end uno-flex-col uno-gap-6">
                             <div style="flex-shrink: 0"
                                 class="uno-flex uno-justify-start uno-items-center uno-flex-row uno-gap-6 uno-py-24px uno-px-24px uno-bg-[#FFFFFF] uno-rounded-2xl uno-shadow-[0_20px_40px_0_rgba(0,157,119,0.08)]">
                                 <div style="flex: none"
@@ -229,9 +233,9 @@
                                 </div>
                                 <div class="uno-flex uno-justify-start uno-items-start uno-flex-col uno-gap-2">
                                     <p class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold">{{
-                                        $t('home.how.step1.title') }}</p>
+                                        $t('pages.home.how.step1.title') }}</p>
                                     <p class="uno-w-[370px] max-sm:uno-w-full uno-text-[#4E5255] uno-font-['Outfit']">{{
-                                        $t('home.how.step1.desc') }}</p>
+                                        $t('pages.home.how.step1.desc') }}</p>
                                 </div>
                             </div>
 
@@ -245,9 +249,9 @@
                                 <div class="uno-flex uno-justify-start uno-items-start uno-flex-col uno-gap-2">
                                     <span
                                         class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold">{{
-                                            $t('home.how.step2.title') }}</span>
+                                            $t('pages.home.how.step2.title') }}</span>
                                     <p class="uno-w-[370px] max-sm:uno-w-full uno-text-[#4E5255] uno-font-['Outfit']">{{
-                                        $t('home.how.step2.desc') }}</p>
+                                        $t('pages.home.how.step2.desc') }}</p>
                                 </div>
                             </div>
 
@@ -261,9 +265,9 @@
                                 <div class="uno-flex uno-justify-start uno-items-start uno-flex-col uno-gap-2">
                                     <span
                                         class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold">{{
-                                            $t('home.how.step3.title') }}</span>
+                                            $t('pages.home.how.step3.title') }}</span>
                                     <p class="uno-w-[370px] max-sm:uno-w-full uno-text-[#4E5255] uno-font-['Outfit']">{{
-                                        $t('home.how.step3.desc') }}</p>
+                                        $t('pages.home.how.step3.desc') }}</p>
                                 </div>
                             </div>
                         </div>
