@@ -39,7 +39,7 @@
           </div>
 
           <div class="uno-p-4 md:uno-p-6">
-            <div class="uno-flex uno-flex-row uno-items-center uno-justify-center uno-gap-0 uno-mt-4 uno-px-[5%]">
+            <div class="uno-flex uno-flex-row uno-items-baseline uno-justify-center uno-gap-0 uno-mt-4 uno-px-[5%]">
               <div class="uno-flex-1 uno-flex uno-flex-col uno-items-center uno-gap-1">
                 <div
                   class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px] uno-p-2.5 uno-bg-[#F4D0CB] uno-border-solid uno-border-[#F6BAB2] uno-border-2"/>
@@ -91,7 +91,7 @@
                     </div>
                   </div>
                   <div class="uno-flex-1 uno-flex uno-justify-center uno-items-center">
-                    <CheckIcon v-if="qi === 2" color="#FFC8A7" @click="answers[qi] = 2" />
+                    <IconsCheck v-if="qi === 2" color="#FFC8A7" @click="answers[qi] = 2" />
                     <div v-else class="uno-flex-1 uno-flex uno-justify-center uno-items-center">
                       <div
                         class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px] uno-p-2.5 uno-bg-[#F1DACE] uno-border-solid uno-border-[#F5CEB6] uno-border-2"

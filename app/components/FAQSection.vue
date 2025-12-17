@@ -1,6 +1,6 @@
 <template>
-  <div class="uno-faq-section uno-py-16 sm:uno-py-20 md:uno-py-24">
-    <div class="uno-container uno-w-full md:uno-mx-auto md:uno-max-w-[80%] ">
+  <div class="page-container uno-faq-section uno-py-16 sm:uno-py-20 md:uno-py-24">
+    <div class=" uno-w-full md:uno-mx-auto md:uno-max-w-[80%] ">
       <div class="uno-text-center uno-mb-16">
         <h2 class="uno-text-3xl md:uno-text-4xl uno-font-['Outfit'] uno-font-bold uno-mb-3">{{ title }}</h2>
         <p v-if="description" class="uno-text-gray-600 uno-max-w-3xl uno-mx-auto">{{ description }}</p>

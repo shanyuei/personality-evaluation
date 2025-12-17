@@ -96,7 +96,7 @@
         <h2
           class="uno-text-[#011813] uno-text-base md:uno-text-lg uno-font-['Outfit'] uno-text-center uno-font-semibold uno-leading-[1.2]">
           {{ $t('pages.testIntro.instructions') }}</h2>
-        <div class="uno-flex uno-flex-row uno-items-center uno-justify-center uno-gap-0 uno-mt-4 uno-px-[5%]">
+        <div class="uno-flex uno-flex-row uno-items-baseline uno-justify-center uno-gap-0 uno-mt-4 uno-px-[5%]">
           <div class="uno-flex-1 uno-flex uno-flex-col uno-items-center uno-gap-1">
             <div
               class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px] uno-p-2.5 uno-bg-[#F4D0CB] uno-border-solid uno-border-[#F6BAB2] uno-border-2" />
