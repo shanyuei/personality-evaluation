@@ -84,7 +84,7 @@
               :class="!hasMoreOther ? 'uno-opacity-50 uno-cursor-not-allowed uno-border-[var(--ui-border)] uno-text-[var(--ui-muted-foreground)]' : ''"
               :disabled="!hasMoreOther"
               class="uno-h-[40px] uno-px-24px uno-rounded-[999px] uno-bg-transparent uno-border uno-border-[var(--ui-primary)] uno-text-[var(--ui-primary)] uno-font-['Outfit'] uno-font-medium hover:uno-opacity-80"
-              @click="otherLimit += 6">
+              @click="loadMoreData">
               {{ $t('pages.blog.loadMore') }}
             </button>
           </div>
@@ -190,8 +190,10 @@ useSeoMeta({
   title: () => t('seo.blog.title'),
   description: () => t('seo.blog.description'),
 })
-const searchQuery = ref('');
+const hasMoreOther = ref(false);
 const tags = ref<Tag[]>([])
+// 当前页码
+const currentPage = ref(1);
 const recommendArticles = ref<Post[]>([])
 const articles = ref<Post[]>([])
 // 预览前五
@@ -210,39 +212,34 @@ getRecommendArticles().then(res => {
 getPreviewArticles().then(res => {
   previewArticles.value = res.data;
 })
-const getPageData = async (page: number = 1) => {
+const getPageData = async (page: number = 1, append: boolean = false) => {
   const res = await getAllArticles(page);
-  articles.value = res.data;
+  
+  // 如果是追加模式，将新数据添加到现有数组中
+  if (append) {
+    articles.value = [...articles.value, ...res.data];
+  } else {
+    articles.value = res.data;
+  }
+  
+  hasMoreOther.value = articles.value.length < res.meta.total;
+  return res;
 }
-getPageData();
-// const { articles } = useArticles()
-
-
+getPageData(1);
 
 const smallArticles = computed(() => recommendArticles.value.slice(1, 5));
 
-// const filteredArticles = computed(() => {
-//   return articles.value.filter(article => {
-//     const q = searchQuery.value.toLowerCase();
-//     return article.title.toLowerCase().includes(q) || article.excerpt.toLowerCase().includes(q);
-//   });
-// });
-// const otherArticles = computed(() => filteredArticles.value.slice(5));
-const otherLimit = ref(6);
-// const otherVisibleArticles = computed(() => otherArticles.value.slice(0, otherLimit.value));
-// const hasMoreOther = computed(() => otherLimit.value < otherArticles.value.length);
 
-// const recentArticles = computed(() => {
-//   return articles.value.slice(0, 3);
-// });
 
-// const categoryCounts = computed(() => {
-//   const map: Record<string, number> = {};
-//   for (const a of articles.value) {
-//     map[a.category] = (map[a.category] || 0) + 1;
-//   }
-//   return Object.entries(map).map(([label, count]) => ({ label, count }));
-// });
+// 加载更多数据
+const loadMoreData = async () => {
+  if (hasMoreOther.value) {
+    currentPage.value++;
+    await getPageData(currentPage.value, true);
+  }
+};
+
+
 
 </script>
 

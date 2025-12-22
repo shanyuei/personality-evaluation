@@ -32,7 +32,7 @@ export const getRecommendArticles = async () => {
 // 获取所有文章
 export const getAllArticles = async (page: number = 1) => {
   const str = buildStrapiQuery({
-    pagination: { page, pageSize: 20 },
+    pagination: { page, pageSize: 3 },
 
   })
   return useStrapiGet('/post/except-top-recommended-all' + str)
