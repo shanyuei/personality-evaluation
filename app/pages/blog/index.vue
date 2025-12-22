@@ -98,7 +98,7 @@
               $t('pages.blog.sidebar.categories') }}</h3>
             <ul class="uno-space-y-3">
               <li v-for="(c, i) in categories" :key="c.documentId">
-                <NuxtLink :to="`/blog/category/${c.id}`"
+                <NuxtLink :to="`/blog/category/${c.slug}`"
                   class="uno-flex uno-items-center hover:uno-text-[var(--color-pink-1)]">
                   <span class="uno-text-[18px] uno-font-['Outfit'] uno-font-medium">{{ c.name }}</span>
                   <span class="uno-text-[18px] uno-ml-2">({{ c.posts.count }})</span>

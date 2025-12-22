@@ -4,4 +4,5 @@ export type Category = {
   name: string
   posts: { count: number },
   locale: string
+  slug: string
 }
