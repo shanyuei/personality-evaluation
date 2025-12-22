@@ -2,8 +2,11 @@
   <main class="page-container uno-py-64px blog-page">
     <!-- Hero -->
     <section class="">
-      <p class="uno-font-normal uno-text-[14px] md:uno-text-[16px] uno-text-[#011813] uno-leading-[20px] md:uno-leading-[24px]">{{ $t('pages.blog.breadcrumb.list') }}</p>
-      <h1 class="uno-font-semibold uno-text-[28px] md:uno-text-[72px] uno-text-[#011813] uno-leading-[36px] md:uno-leading-[86px] uno-mt-12px">
+      <p
+        class="uno-font-normal uno-text-[14px] md:uno-text-[16px] uno-text-[#011813] uno-leading-[20px] md:uno-leading-[24px]">
+        {{ $t('pages.blog.breadcrumb.list') }}</p>
+      <h1
+        class="uno-font-semibold uno-text-[28px] md:uno-text-[72px] uno-text-[#011813] uno-leading-[36px] md:uno-leading-[86px] uno-mt-12px">
         {{ $t('pages.blog.hero.title') }}
       </h1>
     </section>
@@ -12,24 +15,35 @@
     <section class="uno-my-[56px]">
       <div class="uno-grid md:uno-grid-cols-2 uno-gap-[24px]">
         <!-- Large card -->
-        <NuxtLink :to="`/blog/${articles[0].slug}`" class="uno-rounded-2xl uno-overflow-hidden">
+        <NuxtLink v-if="recommendArticles[0]" :to="`/blog/${recommendArticles[0].slug}`"
+          class="uno-rounded-2xl uno-overflow-hidden">
           <div>
-            <NuxtImg :src="articles[0].image" :alt="articles[0].title" width="588" height="392" />
+            <NuxtImg :src="getImageUrl(recommendArticles[0].cover[0].url)" :alt="recommendArticles[0].title" width="588"
+              height="392" class="uno-rounded-2xl uno-overflow-hidden" />
             <div class="uno-py-6">
-              <p class="uno-font-normal uno-text-[14px] md:uno-text-[16px] uno-text-[#4e5255] uno-leading-[20px] md:uno-leading-[24px] uno-mb-1">{{
-                articles[0].author.name }} · {{
-                  articles[0].readTime }} min</p>
-              <h3 class="uno-font-semibold uno-text-[20px] md:uno-text-[24px] uno-text-[#011813] uno-leading-[28px] md:uno-leading-[33px] uno-mb-3">{{
-                articles[0].title }}</h3>
-              <p class=" uno-font-normal uno-text-[14px] md:uno-text-[16px] uno-text-[#4e5255] uno-leading-[20px] md:uno-leading-[24px] uno-line-clamp-3">{{
-                articles[0].excerpt }}</p>
+              <p
+                class="uno-font-normal uno-text-[14px] md:uno-text-[16px] uno-text-[#4e5255] uno-leading-[20px] md:uno-leading-[24px] uno-mb-1">
+                <!-- {{ recommendArticles[0].author.name }}  -->
+                ·
+                {{ formatDate(recommendArticles[0].publishedAt,'datetime') }}
+                <!-- min -->
+              </p>
+              <h3
+                class="uno-font-semibold uno-text-[20px] md:uno-text-[24px] uno-text-[#011813] uno-leading-[28px] md:uno-leading-[33px] uno-mb-3">
+                {{
+                  recommendArticles[0].title }}</h3>
+              <p
+                class=" uno-font-normal uno-text-[14px] md:uno-text-[16px] uno-text-[#4e5255] uno-leading-[20px] md:uno-leading-[24px] uno-line-clamp-3">
+                {{
+                  recommendArticles[0].excerpt }}</p>
             </div>
           </div>
         </NuxtLink>
 
         <!-- 4 small cards -->
         <div class="uno-hidden md:uno-grid md:uno-grid-cols-2 uno-gap-[24px]">
-          <NuxtLink v-for="a in smallArticles" :key="a.id" :to="`/blog/${a.slug}`" class="uno-rounded-2xl uno-overflow-hidden">
+          <NuxtLink v-for="a in smallArticles" :key="a.id" :to="`/blog/${a.slug}`"
+            class="uno-rounded-2xl uno-overflow-hidden">
             <NuxtImg width="282" height="188" :src="a.image" :alt="a.title" />
             <div class="uno-py-4">
               <p class="uno-text-sm uno-text-gray-500 uno-mb-1">{{ a.author.name }} · {{ a.readTime }} min</p>
@@ -53,8 +67,11 @@
           <div class="uno-grid sm:uno-grid-cols-2 md:uno-grid-cols-3 uno-gap-6">
             <NuxtLink v-for="a in otherVisibleArticles" :key="a.id" :to="`/blog/${a.slug}`" class="uno-rounded-2xl">
               <NuxtImg :src="a.image" :alt="a.title" width="384" height="282" />
-              <p class="uno-font-normal uno-text-[16px] uno-text-[#4e5255] uno-leading-[24px] uno-mt-2 uno-line-clamp-2">{{ a.author.name }} · {{ a.readTime }} min</p>
-              <h4 class="uno-font-medium uno-text-[24px] uno-text-[#011813] uno-leading-[33px] uno-line-clamp-2">{{ a.title }}</h4>
+              <p
+                class="uno-font-normal uno-text-[16px] uno-text-[#4e5255] uno-leading-[24px] uno-mt-2 uno-line-clamp-2">
+                {{ a.author.name }} · {{ a.readTime }} min</p>
+              <h4 class="uno-font-medium uno-text-[24px] uno-text-[#011813] uno-leading-[33px] uno-line-clamp-2">{{
+                a.title }}</h4>
             </NuxtLink>
           </div>
           <div class="uno-flex uno-justify-center uno-mt-24px">
@@ -75,12 +92,11 @@
             <h3 class="uno-text-[22px] uno-font-['Outfit'] uno-font-semibold uno-text-[#011813] uno-mb-4">{{
               $t('pages.blog.sidebar.categories') }}</h3>
             <ul class="uno-space-y-3">
-              <li v-for="(c, i) in categoryCounts" :key="c.label">
-                <NuxtLink :to="`/blog/${c.label}`" class="uno-flex uno-items-center hover:uno-text-[var(--ui-primary)]">
-                  <span :class="i === 0 ? 'uno-text-[var(--color-pink-1)]' : 'uno-text-[#011813]'"
-                    class="uno-text-[18px] uno-font-['Outfit'] uno-font-medium">{{ c.label }}</span>
-                  <span :class="i === 0 ? 'uno-text-[var(--color-pink-1)]' : 'uno-text-[#011813]'"
-                    class="uno-text-[18px] uno-ml-2">({{ String(c.count).padStart(2, '0') }})</span>
+              <li v-for="(c, i) in categories" :key="c.documentId">
+                <NuxtLink :to="`/blog/category/${c.id}`"
+                  class="uno-flex uno-items-center hover:uno-text-[var(--color-pink-1)]">
+                  <span class="uno-text-[18px] uno-font-['Outfit'] uno-font-medium">{{ c.name }}</span>
+                  <span class="uno-text-[18px] uno-ml-2">({{ c.posts.count }})</span>
                 </NuxtLink>
               </li>
             </ul>
@@ -100,8 +116,10 @@
                     <h4
                       class="uno-font-medium uno-text-[20px] uno-text-[#011813] uno-leading-[30px] group-hover:uno-text-[var(--ui-primary)] uno-transition-colors uno-duration-200 uno-line-clamp-1">
                       {{ recent.title }}</h4>
-                    <p class="uno-font-normal uno-text-[16px] uno-text-[#4e5255] uno-leading-[24px] uno-mt-1 uno-line-clamp-2">{{
-                      recent.excerpt }}</p>
+                    <p
+                      class="uno-font-normal uno-text-[16px] uno-text-[#4e5255] uno-leading-[24px] uno-mt-1 uno-line-clamp-2">
+                      {{
+                        recent.excerpt }}</p>
                   </div>
                 </NuxtLink>
               </li>
@@ -113,9 +131,9 @@
             <h3 class="uno-text-lg uno-font-semibold uno-text-gray-900 uno-mb-3">{{ $t('pages.blog.sidebar.tags') }}
             </h3>
             <div class="uno-flex uno-flex-wrap uno-gap-3">
-              <span v-for="tag in tags" :key="tag"
-                :class="tag === activeTag ? 'uno-border-[var(--color-pink-1)] uno-bg-transparent uno-text-[#011813]' : 'uno-border-[var(--ui-border)] uno-bg-transparent uno-text-[#011813]'"
-                class="uno-text-[14px] uno-px-3 uno-py-1 uno-rounded-[999px] uno-border">#{{ tag }}</span>
+              <span v-for="tag in tags" :key="tag.documentId"
+                class="uno-text-[14px] uno-px-3 uno-py-1 uno-rounded-[999px] uno-border uno-border-[var(--ui-border)] uno-bg-transparent uno-text-[#011813] hover:uno-border-[var(--color-pink-1)] hover:uno-text-[var(--color-pink-1)]">{{
+                  tag.name }}</span>
             </div>
           </div>
 
@@ -150,8 +168,11 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-;
-;
+import { getCategories, getRecommendArticles, getTop5Tags, getAllArticles } from '~/api/blog'
+
+import type { Category } from '~/types/Category'
+import type { Post } from '~/types/Post';
+import type { Tag } from '~/types/Tag'
 
 const { t } = useI18n();
 
@@ -165,10 +186,32 @@ useSeoMeta({
   description: () => t('seo.blog.description'),
 })
 const searchQuery = ref('');
-const tags = ref(['CareerTips', 'Productivity', 'Tools', 'TechInnovation', 'Leadership']);
-const activeTag = ref('Productivity');
+const tags = ref<Tag[]>([])
+const recommendArticles = ref<Post[]>([])
 
+
+const categories = ref<Category[]>([])
+
+getCategories().then(res => {
+  categories.value = res.data;
+})
+getTop5Tags().then(res => {
+  tags.value = res.data;
+})
+getRecommendArticles().then(res => {
+  recommendArticles.value = res.data;
+})
+
+const getPageData = async (page: number = 1) => {
+  const res = await getAllArticles(page);
+  articles.value = res.data;
+}
+getPageData();
 const { articles } = useArticles()
+
+
+
+const smallArticles = computed(() => recommendArticles.value.slice(1, 5));
 
 const filteredArticles = computed(() => {
   return articles.value.filter(article => {
@@ -176,8 +219,6 @@ const filteredArticles = computed(() => {
     return article.title.toLowerCase().includes(q) || article.excerpt.toLowerCase().includes(q);
   });
 });
-
-const smallArticles = computed(() => filteredArticles.value.slice(1, 5));
 const otherArticles = computed(() => filteredArticles.value.slice(5));
 const otherLimit = ref(6);
 const otherVisibleArticles = computed(() => otherArticles.value.slice(0, otherLimit.value));
@@ -187,13 +228,13 @@ const recentArticles = computed(() => {
   return articles.value.slice(0, 3);
 });
 
-const categoryCounts = computed(() => {
-  const map: Record<string, number> = {};
-  for (const a of articles.value) {
-    map[a.category] = (map[a.category] || 0) + 1;
-  }
-  return Object.entries(map).map(([label, count]) => ({ label, count }));
-});
+// const categoryCounts = computed(() => {
+//   const map: Record<string, number> = {};
+//   for (const a of articles.value) {
+//     map[a.category] = (map[a.category] || 0) + 1;
+//   }
+//   return Object.entries(map).map(([label, count]) => ({ label, count }));
+// });
 
 </script>
 

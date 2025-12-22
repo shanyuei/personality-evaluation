@@ -62,7 +62,8 @@ export default defineNuxtConfig({
   },
   imports: {
     presets: [
-      { from: 'vue-i18n', imports: ['useI18n'] }
+      { from: 'vue-i18n', imports: ['useI18n'] },
+      { from: 'alova', imports: ['useRequest', 'useWatcher', 'useFetcher'] },
     ]
   },
   // Additional configuration to disable font loading
@@ -73,6 +74,20 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       ignore: ['/-mentors', '/legal/-terms.vue'] // 排除带有 "-" 的文件夹和文件
+    }
+  },
+  
+  // 运行时配置
+  runtimeConfig: {
+    // 私有密钥（仅在服务器端可用）
+    // 公共配置（客户端和服务器端都可用）
+    public: {
+      // Strapi API配置
+      strapiApiUrl: process.env.NUXT_PUBLIC_STRAPI_API_URL || 'http://localhost:1337/api',
+      strapiUrl: process.env.NUXT_PUBLIC_STRAPI_URL || 'http://localhost:1337',
+      // 通用API配置
+      apiBaseUrl: process.env.NUXT_PUBLIC_API_BASE_URL || 'https://api.example.com',
+  
     }
   }
 });
