@@ -32,12 +32,13 @@ export const getRecommendArticles = async () => {
 // 获取所有文章
 export const getAllArticles = async (page: number = 1) => {
   const str = buildStrapiQuery({
-    sort: { publishedAt: 'desc' },
     pagination: { page, pageSize: 20 },
-    populate: {
-      cover: { fields: ['url'] },
-      category: { fields: ['name'] },
-    }
+
   })
-  return useStrapiGet('/posts' + str)
+  return useStrapiGet('/post/except-top-recommended-all' + str)
+}
+// 预览前五
+export const getPreviewArticles = async () => {
+
+  return useStrapiGet('/post/top-preview-count')
 }

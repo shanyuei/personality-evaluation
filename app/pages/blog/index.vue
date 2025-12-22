@@ -44,9 +44,13 @@
         <div class="uno-hidden md:uno-grid md:uno-grid-cols-2 uno-gap-[24px]">
           <NuxtLink v-for="a in smallArticles" :key="a.id" :to="`/blog/${a.slug}`"
             class="uno-rounded-2xl uno-overflow-hidden">
-            <NuxtImg width="282" height="188" :src="a.image" :alt="a.title" />
+            <NuxtImg width="282" height="188" :src="getImageUrl(a.cover[0].url)" :alt="a.title" class="uno-rounded-2xl uno-overflow-hidden" />
             <div class="uno-py-4">
-              <p class="uno-text-sm uno-text-gray-500 uno-mb-1">{{ a.author.name }} · {{ a.readTime }} min</p>
+              <p class="uno-text-sm uno-text-gray-500 uno-mb-1">
+                <!-- {{ a.author.name }} -->
+                · 
+                {{ formatDate(a.publishedAt,'date') }}
+              </p>
               <h4 class="uno-text-lg uno-font-semibold uno-text-gray-900 uno-mb-2">{{ a.title }}</h4>
             </div>
           </NuxtLink>
@@ -65,11 +69,12 @@
         <!-- Grid -->
         <div class="lg:uno-w-2/3">
           <div class="uno-grid sm:uno-grid-cols-2 md:uno-grid-cols-3 uno-gap-6">
-            <NuxtLink v-for="a in otherVisibleArticles" :key="a.id" :to="`/blog/${a.slug}`" class="uno-rounded-2xl">
-              <NuxtImg :src="a.image" :alt="a.title" width="384" height="282" />
+            <NuxtLink v-for="a in articles" :key="a.id" :to="`/blog/${a.slug}`" class="uno-rounded-2xl">
+              <NuxtImg :src="getImageUrl(a.cover[0].url)" :alt="a.title" width="384" height="282" class="uno-rounded-2xl uno-overflow-hidden" />
               <p
                 class="uno-font-normal uno-text-[16px] uno-text-[#4e5255] uno-leading-[24px] uno-mt-2 uno-line-clamp-2">
-                {{ a.author.name }} · {{ a.readTime }} min</p>
+                <!-- {{ a.author.name }} -->
+                 · {{ formatDate(a.publishedAt,'date') }}</p>
               <h4 class="uno-font-medium uno-text-[24px] uno-text-[#011813] uno-leading-[33px] uno-line-clamp-2">{{
                 a.title }}</h4>
             </NuxtLink>
@@ -107,10 +112,10 @@
             <h3 class="uno-text-lg uno-font-semibold uno-text-gray-900 uno-mb-4">{{ $t('pages.blog.sidebar.recent') }}
             </h3>
             <ul class="uno-space-y-4">
-              <li v-for="recent in recentArticles" :key="recent.id">
+              <li v-for="recent in previewArticles" :key="recent.id">
                 <NuxtLink :to="`/blog/${recent.slug}`" class="uno-flex uno-gap-4 uno-group">
                   <div class="uno-rounded-[12px] uno-overflow-hidden uno-flex-shrink-0">
-                    <NuxtImg :src="recent.image" :alt="recent.title" width="102" height="102" />
+                    <NuxtImg :src="getImageUrl(recent.cover[0].url)" :alt="recent.title" width="102" height="102" />
                   </div>
                   <div>
                     <h4
@@ -168,7 +173,7 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-import { getCategories, getRecommendArticles, getTop5Tags, getAllArticles } from '~/api/blog'
+import { getCategories, getRecommendArticles, getTop5Tags, getAllArticles,getPreviewArticles } from '~/api/blog'
 
 import type { Category } from '~/types/Category'
 import type { Post } from '~/types/Post';
@@ -188,8 +193,9 @@ useSeoMeta({
 const searchQuery = ref('');
 const tags = ref<Tag[]>([])
 const recommendArticles = ref<Post[]>([])
-
-
+const articles = ref<Post[]>([])
+// 预览前五
+const previewArticles = ref<Post[]>([])
 const categories = ref<Category[]>([])
 
 getCategories().then(res => {
@@ -201,32 +207,34 @@ getTop5Tags().then(res => {
 getRecommendArticles().then(res => {
   recommendArticles.value = res.data;
 })
-
+getPreviewArticles().then(res => {
+  previewArticles.value = res.data;
+})
 const getPageData = async (page: number = 1) => {
   const res = await getAllArticles(page);
   articles.value = res.data;
 }
 getPageData();
-const { articles } = useArticles()
+// const { articles } = useArticles()
 
 
 
 const smallArticles = computed(() => recommendArticles.value.slice(1, 5));
 
-const filteredArticles = computed(() => {
-  return articles.value.filter(article => {
-    const q = searchQuery.value.toLowerCase();
-    return article.title.toLowerCase().includes(q) || article.excerpt.toLowerCase().includes(q);
-  });
-});
-const otherArticles = computed(() => filteredArticles.value.slice(5));
+// const filteredArticles = computed(() => {
+//   return articles.value.filter(article => {
+//     const q = searchQuery.value.toLowerCase();
+//     return article.title.toLowerCase().includes(q) || article.excerpt.toLowerCase().includes(q);
+//   });
+// });
+// const otherArticles = computed(() => filteredArticles.value.slice(5));
 const otherLimit = ref(6);
-const otherVisibleArticles = computed(() => otherArticles.value.slice(0, otherLimit.value));
-const hasMoreOther = computed(() => otherLimit.value < otherArticles.value.length);
+// const otherVisibleArticles = computed(() => otherArticles.value.slice(0, otherLimit.value));
+// const hasMoreOther = computed(() => otherLimit.value < otherArticles.value.length);
 
-const recentArticles = computed(() => {
-  return articles.value.slice(0, 3);
-});
+// const recentArticles = computed(() => {
+//   return articles.value.slice(0, 3);
+// });
 
 // const categoryCounts = computed(() => {
 //   const map: Record<string, number> = {};
