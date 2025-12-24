@@ -31,7 +31,6 @@ export const useImageUrl = () => {
 // 为了向后兼容，导出一个默认的getImageUrl函数
 // 注意：这个函数只能在组件或组合式函数中使用
 export const getImageUrl = (path: string): string => {
-  console.log('path', path)
   const { strapiUrl } = useRuntimeConfig().public
   const baseUrl = (strapiUrl as string || '').replace(/\/$/, '')
   
@@ -42,7 +41,6 @@ export const getImageUrl = (path: string): string => {
   }
   
   const normalizedPath = path.startsWith('/') ? path : `/${path}`
-  console.log('normalizedPath', `${baseUrl}${normalizedPath}`)
   return `${baseUrl}${normalizedPath}`
 }
 

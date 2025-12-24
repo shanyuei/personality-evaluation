@@ -6,6 +6,7 @@ export type Post = {
     slug: string;
     publishedAt: string;
     excerpt: string;
+    content: string;
     cover: {
         id: number;
         documentId: string;
