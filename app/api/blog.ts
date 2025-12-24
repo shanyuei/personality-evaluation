@@ -24,7 +24,7 @@ export const getRecommendArticles = async (categorySlug: string | string[] | und
 }
 
 // 获取最新的五条文章
-export const getLatestArticles = async (categorySlug: string | string[] | undefined) => {
+export const getLatestArticles = async (categorySlug?: string | string[] | undefined) => {
   const str = buildStrapiQuery({
     categorySlug: categorySlug,
   })
@@ -32,7 +32,7 @@ export const getLatestArticles = async (categorySlug: string | string[] | undefi
 }
 
 // 获取所有文章
-export const getAllArticles = async (page: number = 1, tagSlug?: string,categorySlug) => {
+export const getAllArticles = async (page: number = 1, tagSlug?: string,categorySlug?: string | string[] | undefined) => {
   const str = buildStrapiQuery({
     pagination: { page, pageSize: 3 },
     tagSlug,
