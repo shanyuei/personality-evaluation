@@ -54,7 +54,6 @@ export const useAlova = () => {
   }
   return baseAlovaInstance
 }
-
 // 获取 Strapi Alova 实例的组合式函数
 export const useStrapiAlova = () => {
   if (!strapiAlovaInstance) {
@@ -65,6 +64,45 @@ export const useStrapiAlova = () => {
     })
   }
   return strapiAlovaInstance
+}
+// 实现基础useFetch 
+export const useBaseFetch = <T>(url: string, options: any) => {
+  const nuxtApp = useNuxtApp()
+  const { public: { apiBaseUrl } } = useRuntimeConfig()
+  const lang = nuxtApp.$i18n.locale.value
+  const headers = { ...(options.headers || {}), 'Accept-Language': lang }
+  const query = { ...(options.query as any || {}), locale: lang }
+  return useFetch<T>(url, {
+    ...options,
+    baseURL: apiBaseUrl,
+    headers,
+    query,
+    key: options.key ?? `api:${url}`,
+  })
+}
+// 实现Strapi useFetch
+export const useStrapiFetch = <T>(url: string, options: any) => {
+  const nuxtApp = useNuxtApp()
+  const { public: { strapiApiUrl } } = useRuntimeConfig()
+  const lang = nuxtApp.$i18n.locale.value
+  const headers = { ...(options?.headers || {}), 'Accept-Language': lang }
+  const query = { ...(options?.query as any || {}), locale: lang }
+  return useFetch<T>(url, {
+    ...options,
+    baseURL: strapiApiUrl,
+    headers,
+    query,
+    key: options?.key ?? `strapi:${url}`,
+    // ③ 自动脱壳：只返回 data 本身
+    transform: (res: any) => {
+      return res
+    },
+    onResponse({ response }) {
+      // if (response.status !== 200) {
+      //   throw new Error(response.statusText)
+      // }
+    },
+  })
 }
 
 // 基础 GET 请求组合式函数
@@ -77,6 +115,10 @@ export const useGet = <T = any>(url: string) => {
 export const useStrapiGet = <T = any>(url: string) => {
   const alova = useStrapiAlova()
   return alova.Get<T>(url)
+}
+//  Strapi GET UseFetch 组合式函数
+export const useStrapiGetFetch = <T = any>(url: string, options?: any) => {
+  return useStrapiFetch<T>(url, options)
 }
 
 // 基础 POST 请求组合式函数
@@ -102,7 +144,12 @@ export const useStrapiPut = <T = any, D = any>(url: string, data?: D) => {
   const alova = useStrapiAlova()
   return alova.Put<T>(url, data)
 }
-
+export const useStrapiPutFetch = <T = any>(url: string, options?: any) => {
+  return useStrapiFetch<T>(url, {
+    ...options,
+    method: 'PUT',
+  })
+}
 // 基础 DELETE 请求组合式函数
 export const useDelete = <T = any>(url: string) => {
   const alova = useAlova()

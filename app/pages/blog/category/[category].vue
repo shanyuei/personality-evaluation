@@ -28,6 +28,7 @@
               <p
                 class="uno-font-normal uno-text-[14px] md:uno-text-[16px] uno-text-[#4e5255] uno-leading-[20px] md:uno-leading-[24px] uno-mb-1">
                 <!-- {{ recommendArticles[0].author.name }}  -->
+                {{ recommendArticles[0].updatedBy.firstname + " " + recommendArticles[0].updatedBy.lastname }}
                 ·
                 {{ formatDate(recommendArticles[0].publishedAt, 'datetime') }}
                 <!-- min -->
@@ -56,7 +57,7 @@
               class="uno-rounded-2xl uno-overflow-hidden" />
             <div class="uno-py-4">
               <p class="uno-text-sm uno-text-gray-500 uno-mb-1">
-                <!-- {{ a.author.name }} -->
+                {{ a.updatedBy.firstname + " " + a.updatedBy.lastname }}
                 ·
                 {{ formatDate(a.publishedAt, 'date') }}
               </p>
@@ -88,7 +89,7 @@
                 class="uno-rounded-2xl uno-overflow-hidden" />
               <p
                 class="uno-font-normal uno-text-[16px] uno-text-[#4e5255] uno-leading-[24px] uno-mt-2 uno-line-clamp-2">
-                <!-- {{ a.author.name }} -->
+                {{ a.updatedBy.firstname + " " + a.updatedBy.lastname }}
                 · {{ formatDate(a.publishedAt, 'date') }}
               </p>
               <h4 class="uno-font-medium uno-text-[24px] uno-text-[#011813] uno-leading-[33px] uno-line-clamp-2">{{
@@ -157,16 +158,10 @@
             <h3 class="uno-text-lg uno-font-semibold uno-text-gray-900 uno-mb-3">{{ $t('pages.blog.sidebar.tags') }}
             </h3>
             <div class="uno-flex uno-flex-wrap uno-gap-3">
-              <span
-                v-for="tag in tags"
-                :key="tag.documentId"
-                role="button"
-                :class="[
-                  'uno-text-[14px] uno-px-3 uno-py-1 uno-rounded-[999px] uno-border uno-bg-transparent uno-text-[#011813] uno-cursor-pointer hover:uno-border-[var(--color-pink-1)] hover:uno-text-[var(--color-pink-1)]',
-                  activeTagSlug === tag.slug ? 'uno-border-[var(--color-pink-1)] uno-text-[var(--color-pink-1)]' : 'uno-border-[var(--ui-border)]'
-                ]"
-                @click="onTagClick(tag)"
-              >{{ tag.name }}</span>
+              <span v-for="tag in tags" :key="tag.documentId" role="button" :class="[
+                'uno-text-[14px] uno-px-3 uno-py-1 uno-rounded-[999px] uno-border uno-bg-transparent uno-text-[#011813] uno-cursor-pointer hover:uno-border-[var(--color-pink-1)] hover:uno-text-[var(--color-pink-1)]',
+                activeTagSlug === tag.slug ? 'uno-border-[var(--color-pink-1)] uno-text-[var(--color-pink-1)]' : 'uno-border-[var(--ui-border)]'
+              ]" @click="onTagClick(tag)">{{ tag.name }}</span>
             </div>
           </div>
 
@@ -201,7 +196,7 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-import {  getRecommendArticles, getAllTags, getAllArticles, getLatestArticles } from '~/api/blog'
+import { getRecommendArticles, getAllTags, getAllArticles, getLatestArticles } from '~/api/blog'
 
 import type { Category } from '~/types/Category'
 import type { Post } from '~/types/Post';
@@ -233,25 +228,25 @@ const activeTagSlug = ref<string | null>(null)
 
 
 getAllTags().then(res => {
-  tags.value = res.data;
+  tags.value = res.data.value.data;
 })
 getRecommendArticles(route.params.category).then(res => {
-  recommendArticles.value = res.data;
+  recommendArticles.value = res.data.value.data;
 })
 getLatestArticles(route.params.category).then(res => {
-  previewArticles.value = res.data;
+  previewArticles.value = res.data.value.data;
 })
 const getPageData = async (page: number = 1, append: boolean = false) => {
   const res = await getAllArticles(page, activeTagSlug.value ?? undefined, route.params.category);
 
   // 如果是追加模式，将新数据添加到现有数组中
   if (append) {
-    articles.value = [...articles.value, ...res.data];
+    articles.value = [...articles.value, ...res.data.value.data];
   } else {
-    articles.value = res.data;
+    articles.value = res.data.value.data;
   }
 
-  hasMoreOther.value = articles.value.length < res.meta.total;
+  hasMoreOther.value = articles.value.length < res.data.value.meta.total;
   return res;
 }
 getPageData(1);

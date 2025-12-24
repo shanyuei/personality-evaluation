@@ -30,7 +30,7 @@ export const useImageUrl = () => {
 
 // 为了向后兼容，导出一个默认的getImageUrl函数
 // 注意：这个函数只能在组件或组合式函数中使用
-export const getImageUrl = (path: string): string => {
+export const getImageUrl = (path: any): string => {
   const { strapiUrl } = useRuntimeConfig().public
   const baseUrl = (strapiUrl as string || '').replace(/\/$/, '')
   

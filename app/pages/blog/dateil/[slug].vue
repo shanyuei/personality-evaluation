@@ -8,7 +8,7 @@
 
     <section class="uno-my-[24px] md:uno-my-[40px]">
       <div v-if="article" class="uno-rounded-[24px] uno-overflow-hidden">
-        <NuxtImg v-if="article.cover?.[0]?.url" :src="getImageUrl(article.cover[0].url)" :alt="article.title"
+        <NuxtImg v-if="article?.cover?.[0]?.url" :src="getImageUrl(article.cover?.[0]?.url || '')" :alt="article.title"
           class="uno-w-full uno-h-420px uno-object-cover" />
       </div>
       <div class="uno-grid md:uno-grid-cols-3 uno-gap-[24px] uno-mt-24px">
@@ -89,7 +89,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
-import { getArticleBySlug, getLatestArticles } from '~/api/blog'
+import { getArticleBySlug, getLatestArticles, updatePreviewBySlug } from '~/api/blog'
 import type { Post } from '~/types/Post'
 
 
@@ -104,12 +104,13 @@ const article = ref<Post>()
 const recentArticles = ref<Post[]>([])
 
 getArticleBySlug(slug.value).then(res => {
-  article.value = res.data[0]
+  console.log('getArticleBySlug', res.data);
+  article.value = res.data.value.data[0]
 })
 getLatestArticles().then(res => {
-  recentArticles.value = res.data
+  recentArticles.value = res.data.value.data
 })
-
+updatePreviewBySlug(slug.value);
 // 使用文章标题作为页面标题，如果没有文章则使用默认标题
 definePageMeta({
   title: () => 'seo.blog.slug.title'

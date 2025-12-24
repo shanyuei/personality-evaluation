@@ -7,6 +7,10 @@ export type Post = {
     publishedAt: string;
     excerpt: string;
     content: string;
+    updatedBy: {
+        firstname: string;
+        lastname: string;
+    };
     cover: {
         id: number;
         documentId: string;
