@@ -54,7 +54,6 @@ export default defineNuxtConfig({
       cookieCrossOrigin: false
     },
     baseUrl: 'https://example.com',
-    seo: true
   },
   unocss: {
     nuxtLayers: true,
@@ -63,7 +62,6 @@ export default defineNuxtConfig({
   imports: {
     presets: [
       { from: 'vue-i18n', imports: ['useI18n'] },
-      { from: 'alova', imports: ['useRequest', 'useWatcher', 'useFetcher'] },
     ]
   },
   // Additional configuration to disable font loading

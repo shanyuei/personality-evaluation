@@ -9,7 +9,11 @@ const handleResponse = (response: any) => {
     throw new Error(response._data.message)
   }
   if (response._data?.data) {
-    response._data = response._data.data
+    response._data = {
+      code: response._data.code,
+      message: response._data.message,
+      data: response._data.data,
+    }
   }
 }
 
@@ -36,9 +40,9 @@ export const useBaseFetch = <T>(url: string, options: any = {}) => {
     headers,
     query,
     key: options.key ?? `api:${url}`,
-    transform: (res: any) => {
-      return res
-    },
+    // transform: (res: any) => {
+    //   return res
+    // },
     onResponse({ response }) {
       handleResponse(response)
     },
@@ -108,6 +112,12 @@ export const $strapiFetch = <T>(url: string, options: any = {}) => {
 export const useGetFetch = <T = any>(url: string, options?: any) => {
   return useBaseFetch<T>(url, options)
 }
+export const usePostFetch = <T = any>(url: string, options?: any) => {
+  return useBaseFetch<T>(url, {
+    ...options,
+    method: 'POST',
+  })
+}
 
 // Strapi GET UseFetch 组合式函数
 export const useStrapiGetFetch = <T = any>(url: string, options?: any) => {
@@ -121,3 +131,6 @@ export const useStrapiPutFetch = <T = any>(url: string, options?: any) => {
     method: 'PUT',
   })
 }
+
+
+

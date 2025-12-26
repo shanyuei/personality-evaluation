@@ -40,12 +40,11 @@
         </div>
 
         <div class="uno-flex uno-items-center uno-justify-center uno-mt-8">
-          <NuxtLink to="/test/step" class="uno-block uno-w-full uno-max-w-[880px] uno-mx-auto">
             <UButton
               :ui="UButtonTheme"
+              @click="nextStep"
 >
               {{ $t('pages.testStart.cta.getStarted') }}</UButton>
-          </NuxtLink>
         </div>
 
         <p
@@ -61,7 +60,7 @@ import UButtonTheme from '~/theme/UButton'
 
 
 const { t } = useI18n()
-
+const router = useRouter()
 definePageMeta({
   layoutShowFooter: false,
   title: () => 'seo.test.start.title'
@@ -71,6 +70,10 @@ useSeoMeta({
   title: () => t('seo.test.start.title'),
   description: () => t('seo.test.start.description'),
 })
+const nextStep = () => {
+  console.log('nextStep', router.getRoutes())
+  router.push({ name: 'test-step', query: { step: 1 } })
+}
 </script>
 
 <style scoped></style>

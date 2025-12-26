@@ -21,8 +21,8 @@
 
     <div class="uno-mt-6">
       <div class="uno-grid uno-gap-6 md:uno-gap-8 md:uno-grid-cols-3">
-        <div class="uno-w-full uno-max-w-xs uno-bg-[#FBF0F4] uno-rounded-[24px] uno-p-4 uno-mx-auto">
-          <div class="uno-inline-block uno-w-full uno-p-4 uno-space-y-2 uno-bg-[#FBF0F4] uno-rounded-2xl">
+        <div class="uno-w-full uno-max-w-xs uno-bg-[#FBF0F4] uno-rounded-[24px]  uno-mx-auto">
+          <div class="uno-inline-block uno-w-full uno-p-6 uno-space-y-2 uno-bg-[#FBF0F4] uno-rounded-2xl">
             <div class="uno-flex uno-flex-col uno-items-center uno-gap-3">
               <span
                 class="uno-w-20 uno-h-20 uno-rounded-full uno-bg-[var(--color-pink-4)] uno-flex uno-items-center uno-justify-center">
@@ -39,8 +39,8 @@
           </div>
         </div>
 
-        <div class="uno-w-full uno-max-w-xs uno-bg-white uno-rounded-[24px] uno-p-4 uno-mx-auto">
-          <div class="uno-inline-block uno-w-full uno-p-4 uno-space-y-2 uno-bg-[#EEE5F8] uno-rounded-[24px]">
+        <div class="uno-w-full uno-max-w-xs uno-bg-white uno-rounded-[24px]  uno-mx-auto">
+          <div class="uno-inline-block uno-w-full uno-p-6 uno-space-y-2 uno-bg-[#EEE5F8] uno-rounded-[24px]">
             <div class="uno-flex uno-flex-col uno-items-center uno-gap-3">
               <span
                 class="uno-w-20 uno-h-20 uno-rounded-full uno-bg-[var(--color-purple-4)] uno-flex uno-items-center uno-justify-center">
@@ -57,8 +57,8 @@
           </div>
         </div>
 
-        <div class="uno-w-full uno-max-w-xs uno-bg-[#D2F2E9] uno-rounded-[24px] uno-p-4 uno-mx-auto">
-          <div class="uno-inline-block uno-w-full uno-p-4 uno-space-y-2 uno-bg-[#D2F2E9] uno-rounded-2xl">
+        <div class="uno-w-full uno-max-w-xs uno-bg-[#D2F2E9] uno-rounded-[24px] uno-mx-auto">
+          <div class="uno-inline-block uno-w-full uno-p-6 uno-space-y-2 uno-bg-[#D2F2E9] uno-rounded-2xl">
             <div class="uno-flex uno-flex-col uno-items-center uno-gap-3">
               <span
                 class="uno-w-20 uno-h-20 uno-rounded-full uno-bg-[var(--color-green-3)] uno-flex uno-items-center uno-justify-center">
@@ -82,12 +82,12 @@
     <!-- 进度条 -->
     <div class="course-header md:!uno-w-[80%] md:!uno-max-w-[80%] uno-mx-auto uno-mt-4">
       <div class="course-nav">
-        <div class="progress-percent">{{ progress }}%</div>
+        <div class="progress-percent">{{ 0 }}%</div>
         <div class="question-count">{{ $t('pages.testIntro.progress.step', { current, total }) }}</div>
 
       </div>
       <div class="course-progress">
-        <div class="progress-bar" :style="{ width: progress + '%' }" />
+        <div class="progress-bar" :style="{ width: 0 + '%' }" />
       </div>
     </div>
 
@@ -141,32 +141,27 @@
               <!-- 非常不同意 -->
               <div class="uno-flex-1 uno-flex uno-justify-center uno-items-center">
                 <div
-                  class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px] uno-p-2.5 uno-bg-[#F4D0CB] uno-border-solid uno-border-[#F6BAB2] uno-border-2"
-                  @click="answers[qi] = 1" />
+                  class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px] uno-p-2.5 uno-bg-[#F4D0CB] uno-border-solid uno-border-[#F6BAB2] uno-border-2" />
               </div>
               <!-- 不同意 -->
               <div class="uno-flex-1 uno-flex uno-justify-center uno-items-center">
                 <div
-                  class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px] uno-p-2.5 uno-bg-[#F1DACE] uno-border-solid uno-border-[#F5CEB6] uno-border-2"
-                  @click="answers[qi] = 2" />
+                  class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px] uno-p-2.5 uno-bg-[#F1DACE] uno-border-solid uno-border-[#F5CEB6] uno-border-2" />
               </div>
               <!-- 中立 -->
               <div class="uno-flex-1 uno-flex uno-justify-center uno-items-center">
                 <div
-                  class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px] uno-p-2.5 uno-bg-[#F0F0F0] uno-border-solid uno-border-[#D8D8D8] uno-border-2"
-                  @click="answers[qi] = 3" />
+                  class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px] uno-p-2.5 uno-bg-[#F0F0F0] uno-border-solid uno-border-[#D8D8D8] uno-border-2" />
               </div>
               <!-- 同意 -->
               <div class="uno-flex-1 uno-flex uno-justify-center uno-items-center">
                 <div
-                  class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px] uno-p-2.5 uno-bg-[#C6EAD8] uno-border-solid uno-border-[#9FE2AA] uno-border-2"
-                  @click="answers[qi] = 4" />
+                  class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px] uno-p-2.5 uno-bg-[#C6EAD8] uno-border-solid uno-border-[#9FE2AA] uno-border-2" />
               </div>
               <!-- 非常同意 -->
               <div class="uno-flex-1 uno-flex uno-justify-center uno-items-center">
                 <div
-                  class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px] uno-p-2.5 uno-bg-[#B3E1D6] uno-border-solid uno-border-[#88D9BA] uno-border-2"
-                  @click="answers[qi] = 5" />
+                  class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px] uno-p-2.5 uno-bg-[#B3E1D6] uno-border-solid uno-border-[#88D9BA] uno-border-2" />
               </div>
             </div>
           </div>
@@ -182,15 +177,18 @@
 
     <!-- 提交按钮 -->
     <div class="uno-w-full md:uno-w-[80%] uno-mx-auto uno-mt-6 uno-flex uno-justify-center uno-mb-12">
-      <UButton :ui="UButtonTheme" :disabled="!canContinue">{{ $t('pages.testIntro.cta') }}</UButton>
+      <UButton :ui="UButtonTheme" @click="nextStart">{{ $t('pages.testIntro.cta') }}</UButton>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
 import UButtonTheme from '~/theme/UButton'
 import { getTestQuestions } from '~/api/tests'
+import type { TestQuestion } from '~/types/TestQuestion'
+import { useQuestionsStore } from '~/stores/modules/questions'
+const questionsStore = useQuestionsStore()
 
 
 definePageMeta({
@@ -198,28 +196,27 @@ definePageMeta({
   title: () => 'seo.test.title'
 })
 const { t } = useI18n()
+const router = useRouter()
 
 useSeoMeta({
   title: () => t('seo.test.title'),
   description: () => t('seo.test.description'),
 })
-
-getTestQuestions().then(({ data }) => {
-  console.log('getTestQuestions', data)
+const questions = ref<TestQuestion[]>([])
+const allQuestions = ref<TestQuestion[]>([])
+const current = 0, total = ref(0)
+getTestQuestions().then(res => {
+  const { data } = res.data.value;
+  questions.value = data.list.map(q => q.text).slice(0, 5)
+  total.value = data.list.length
+  allQuestions.value = data.list
 })
-const total = 20
-const current = 1
-const questions = [
-  t('pages.testIntro.q.q1'),
-  t('pages.testIntro.q.q2'),
-  t('pages.testIntro.q.q3'),
-  t('pages.testIntro.q.q4'),
-  t('pages.testIntro.q.q5')
-]
-const answers = ref<(number | null)[]>(Array(questions.length).fill(null))
-const answeredCount = computed(() => answers.value.filter(a => a !== null).length)
-const progress = computed(() => Math.round((answeredCount.value / total) * 100))
-const canContinue = computed(() => answeredCount.value === questions.length)
+const nextStart = () => {
+  questionsStore.currentStep = 1;
+  questionsStore.setQuestions(allQuestions.value)
+  router.push({ name: 'test-start' })
+}
+
 </script>
 
 <style scoped></style>
