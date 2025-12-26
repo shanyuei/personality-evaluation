@@ -1,5 +1,8 @@
 <template>
     <main class="uno-py-64px">
+            <NuxtLink :to="{
+      name: 'test'
+    }">111</NuxtLink>
         <section class="uno-py-10 page-container ">
             <div class="uno-flex uno-justify-start uno-items-center uno-flex-col uno-gap-[15px]">
                 <div class="uno-w-full ">

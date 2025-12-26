@@ -1,5 +1,6 @@
 <template>
   <div class="page-container uno-py-6">
+
     <div class="uno-flex uno-flex-col uno-items-center uno-gap-4">
       <div class="uno-w-[80px] uno-h-[80px] uno-flex uno-items-center uno-justify-center">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" version="1.1"
@@ -189,17 +190,22 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import UButtonTheme from '~/theme/UButton'
+import { getTestQuestions } from '~/api/tests'
 
 
 definePageMeta({
- layoutShowFooter:false,
- title: () => 'seo.test.title'
+  layoutShowFooter: false,
+  title: () => 'seo.test.title'
 })
 const { t } = useI18n()
 
 useSeoMeta({
   title: () => t('seo.test.title'),
   description: () => t('seo.test.description'),
+})
+
+getTestQuestions().then(({ data }) => {
+  console.log('getTestQuestions', data)
 })
 const total = 20
 const current = 1

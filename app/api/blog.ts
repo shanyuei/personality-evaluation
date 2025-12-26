@@ -1,4 +1,4 @@
-import { useStrapiGetFetch } from '~/composables/useAlova'
+import { useStrapiGetFetch, useStrapiPutFetch } from '~/composables/useApi'
 import { buildStrapiQuery } from '~/utils/queryBuilder'
 
 // 获取所有分类
