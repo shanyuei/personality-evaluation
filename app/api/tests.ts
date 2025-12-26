@@ -1,4 +1,4 @@
-import { useGetFetch } from "~/composables/useApi";
+import { useGetFetch , usePostFetch } from "~/composables/useApi";
 import type { TestQuestion } from "@/types/TestQuestion";
 import {
   submitPersonalityAnswers,
@@ -16,5 +16,5 @@ export const getTestQuestions = () => {
 }
 // 提交测试答案
 export const submitTestAnswers = (data: PersonalitySubmitData) => {
-  return submitPersonalityAnswers(data)
+return usePostFetch<PersonalitySubmitResult>(`/personal/submit`, data)
 }

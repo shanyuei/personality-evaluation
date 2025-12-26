@@ -4,10 +4,8 @@
       <NuxtImg src="/images/test/4.png" alt="test image" width="450" height="450" />
       <!-- 底部进度条和提示文本 -->
       <div class="uno-w-full uno-max-w-md md:uno-max-w-lg uno-px-2">
-        <div class="uno-w-full uno-h-2 uno-bg-gray-100 uno-rounded-full uno-overflow-hidden uno-shadow-sm">
-          <div
-            class="uno-h-full uno-bg-green-500 uno-rounded-full uno-w-[70%] uno-transition-all uno-duration-1000 uno-ease-in-out uno-animate-pulse">
-          </div>
+        <div class="uno-w-full uno-h-2 uno-bg-[var(--ui-muted)] uno-rounded-full uno-overflow-hidden uno-shadow-sm uno-relative">
+          <div class="bar-loading" :style="{ width: progress + '%' }" />
         </div>
         <p
           class="uno-text-center uno-text-[#8D8E8F] uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2] uno-mt-3 md:uno-mt-4 uno-text-[10px] md:uno-text-xs uno-max-w-[70%] md:uno-max-w-[60%] uno-mx-auto">
@@ -18,11 +16,16 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { submitTestAnswers } from '~/api/tests'
+import { useQuestionsStore } from '~/stores/modules/questions'
+import { storeToRefs } from 'pinia'
 
 
 const { t } = useI18n()
+const questionsStore = useQuestionsStore()
+const { userAnswers } = storeToRefs(questionsStore)
 definePageMeta({
   title: () => 'seo.test.analyzing.title'
 })
@@ -32,17 +35,61 @@ useSeoMeta({
 })
 const router = useRouter()
 
-onMounted(() => {
-  // 模拟分析过程，5秒后跳转到结果页面
-  // const timer = setTimeout(() => {
-  //   router.push('/test/result')
-  // }, 5000)
-
-  // 清理定时器
-  return () => clearTimeout(timer)
+const progress = ref(0)
+onMounted(async () => {
+  const answers = []
+  for (const key in userAnswers.value) {
+    const score = userAnswers.value[key]
+    if (score == null || score === 0) continue
+    answers.push({
+      id: Number(key),
+      score
+    })
+  }
+  // 进度模拟到 85%
+  let incre = setInterval(() => {
+    progress.value = Math.min(85, progress.value + 3)
+  }, 120)
+  try {
+    await submitTestAnswers({ answers })
+    // 请求完成后进度拉满并跳转
+    clearInterval(incre)
+    progress.value = 100
+    setTimeout(() => {
+      router.push('/test/result')
+    }, 500)
+  } catch (e) {
+    clearInterval(incre)
+    progress.value = 100
+    // 请求失败也收尾，后续可在此提示错误
+  }
 })
 </script>
 
+
+
 <style scoped>
-/* 样式将在后续步骤中完善 */
+.bar-loading {
+  position: absolute;
+  inset: 0 auto 0 0;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--ui-primary);
+  width: 0;
+  transition: width 300ms ease;
+}
+.bar-loading::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -20%;
+  height: 100%;
+  width: 40%;
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.35) 50%, rgba(255,255,255,0) 100%);
+  animation: shimmer 1.2s linear infinite;
+}
+@keyframes shimmer {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(200%); }
+}
 </style>

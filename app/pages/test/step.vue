@@ -14,7 +14,9 @@
           <div class="course-nav">
             <div class="progress-percent">{{ progress }}%</div>
             <div /> <!-- 占位符，保持布局一致 -->
-            <div class="question-count">{{ $t('pages.testIntro.progress.step', { currentStep, totalSteps }) }}</div>
+            <div class="question-count">{{ $t('pages.testIntro.progress.step', {
+              current: currentStep, total: totalSteps
+            }) }}</div>
           </div>
           <div class="course-progress">
             <div class="progress-bar" :style="{ width: progress + '%' }" />
@@ -107,7 +109,9 @@
         </div>
 
         <div class="uno-w-full md:uno-w-[602px] uno-mx-auto uno-mt-6 uno-flex uno-justify-center">
-          <UButton :ui="UButtonTheme" @click="nextStep">{{ $t('pages.testIntro.cta') }}</UButton>
+          <UButton :ui="UButtonTheme" @click="nextStep">
+            {{ currentStep < totalSteps ? $t('pages.testIntro.ctaNext') : $t('pages.testIntro.ctaSubmit') }}
+          </UButton>
         </div>
       </div>
     </main>
@@ -122,7 +126,7 @@ import { useQuestionsStore } from '~/stores/modules/questions'
 import { storeToRefs } from 'pinia'
 import type { TestQuestion } from '~/types/TestQuestion'
 const questionsStore = useQuestionsStore()
-const { totalSteps, currentStep, progress,userAnswers } = storeToRefs(questionsStore)
+const { totalSteps, currentStep, progress, userAnswers } = storeToRefs(questionsStore)
 const { t } = useI18n()
 const route = useRoute()
 const router = useRouter()
@@ -147,13 +151,21 @@ const nextStep = () => {
   if (questionsStore.currentStep < totalSteps.value) {
     router.push({ name: 'test-step', query: { step: questionsStore.currentStep + 1 } })
   } else {
-    router.push({ name: 'test-result' })
+    router.push({ name: 'test-analyzing' })
   }
 }
 const useAnswers = (q: TestQuestion, i: number) => {
-  console.log(q, i)
   userAnswers.value[q.id] = i
   // questionsStore.userAnswers[q.id] = i
+}
+
+const mockUserAnswers = () => {
+  questions.value.forEach(q => {
+    userAnswers.value[q.id] = Math.floor(Math.random() * 5) + 1;
+  });
+  setTimeout(() => {
+    nextStep();
+  }, 3000)
 }
 watch(
   () => route.query.step,
@@ -162,6 +174,10 @@ watch(
     questionsStore.currentStep = stepNum
     const list = questionsStore.getQuestionsByStep(stepNum)
     questions.value = list
+
+
+    mockUserAnswers();
+
   },
   { immediate: true }
 )

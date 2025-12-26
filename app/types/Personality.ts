@@ -11,8 +11,8 @@ export interface PersonalityQuestion {
 
 export interface PersonalitySubmitData {
   answers: {
-    questionId: number
-    value: number | string | (number | string)[]
+    id: number
+    score: number | string | (number | string)[]
   }[]
 }
 

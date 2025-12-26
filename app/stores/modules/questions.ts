@@ -9,13 +9,15 @@ export const useQuestionsStore = defineStore('questions', () => {
     const questionType = ref('personality');
     // 当前步骤
     const currentStep = ref(1);
-    // 当前答题下标
-    const currentIndex = ref(0);
+    // 当前答题数
+    const currentAnswerCount = computed(() => {
+        return Object.keys(userAnswers.value).length;
+    });
     // 总步骤数
     const totalSteps = computed(() => Math.ceil(questions.value.length / 5));
     // 答题进度
     const progress = computed(() => {
-        return Math.round((currentIndex.value / questions.value.length) * 100);
+        return Math.round((currentAnswerCount.value / questions.value.length) * 100);
     })
     // 用户选择答案
     const userAnswers = ref<Record<number, number>>({});

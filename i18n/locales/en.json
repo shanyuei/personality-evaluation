@@ -401,7 +401,9 @@
         "q5": "Improving and refining systems or processes is a priority for me."
       },
       "notice": "All questions must be answered before you continue.",
-      "cta": "Get Started"
+      "cta": "Get Started",
+      "ctaNext": "Next",
+      "ctaSubmit": "Submit"
     },
     "testStart": {
       "title": "Anger Management",

@@ -32,8 +32,8 @@ export const useBaseFetch = <T>(url: string, options: any = {}) => {
   const nuxtApp = useNuxtApp()
   const { public: { apiBaseUrl } } = useRuntimeConfig()
   const lang = nuxtApp.$i18n.locale.value
-  const headers = { ...(options.headers || {}), 'Accept-Language': lang }
-  const query = { ...(options.query as any || {}), locale: lang }
+  const headers = { ...(options.headers || {}), 'Accept-Language': lang,'Lang': lang }
+  const query = { ...(options.query as any || {})}
   return useFetch<T>(url, {
     ...options,
     baseURL: apiBaseUrl,
@@ -49,23 +49,6 @@ export const useBaseFetch = <T>(url: string, options: any = {}) => {
   })
 }
 
-// 实现基础 $fetch (非响应式，返回 Promise)
-export const $baseFetch = <T>(url: string, options: any = {}) => {
-  const nuxtApp = useNuxtApp()
-  const { public: { apiBaseUrl } } = useRuntimeConfig()
-  const lang = nuxtApp.$i18n.locale.value
-  const headers = { ...(options.headers || {}), 'Accept-Language': lang }
-  const query = { ...(options.query as any || {}), locale: lang }
-  return $fetch<T>(url, {
-    ...options,
-    baseURL: apiBaseUrl,
-    headers,
-    query,
-    onResponse({ response }) {
-      handleResponse(response)
-    },
-  })
-}
 
 // 实现Strapi useFetch
 export const useStrapiFetch = <T>(url: string, options: any = {}) => {
@@ -90,32 +73,21 @@ export const useStrapiFetch = <T>(url: string, options: any = {}) => {
   })
 }
 
-// 实现Strapi $fetch (非响应式，返回 Promise)
-export const $strapiFetch = <T>(url: string, options: any = {}) => {
-  const nuxtApp = useNuxtApp()
-  const { public: { strapiApiUrl } } = useRuntimeConfig()
-  const lang = nuxtApp.$i18n.locale.value
-  const headers = { ...(options?.headers || {}), 'Accept-Language': lang }
-  const query = { ...(options?.query as any || {}), locale: lang }
-  return $fetch<T>(url, {
-    ...options,
-    baseURL: strapiApiUrl,
-    headers,
-    query,
-    onResponse({ response }) {
-      handleStrapiResponse(response)
-    },
-  })
-}
+
 
 // 基础 UseFetch 组合式函数
-export const useGetFetch = <T = any>(url: string, options?: any) => {
-  return useBaseFetch<T>(url, options)
+export const useGetFetch = <T = any>(url: string, data?: { query: { submissionId: string | number } } | undefined,options?: any) => {
+  return useBaseFetch<T>(url,{
+    ...options,
+    method: 'GET',
+    query: data,
+  })
 }
-export const usePostFetch = <T = any>(url: string, options?: any) => {
+export const usePostFetch = <T = any>(url: string, data?: any, options?: any) => {
   return useBaseFetch<T>(url, {
     ...options,
     method: 'POST',
+    body: data,
   })
 }
 

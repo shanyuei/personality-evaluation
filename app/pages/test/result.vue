@@ -47,6 +47,7 @@
 import { ref } from 'vue'
 import IconsCheck from '~/components/icons/Check.vue'
 import UButtonTheme, {UButtonThemeDark} from '~/theme/UButton'
+const { t } = useI18n()
 definePageMeta({
   layoutShowFooter: false,
   title: () => 'seo.test.result.title'
@@ -65,7 +66,7 @@ if (import.meta.client) {
   if (!route.query.score && s) scoreValue.value = Number(s)
   if (!route.query.total && tt) scoreTotal.value = Number(tt)
 }
-const { t } = useI18n()
+
 const areas = [
   { key: 'format', title: t('pages.testEnd.areas.format.title'), body: t('pages.testEnd.areas.format.body') },
   { key: 'financial', title: t('pages.testEnd.areas.financial.title'), body: t('pages.testEnd.areas.financial.body') },

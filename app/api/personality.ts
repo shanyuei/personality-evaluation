@@ -1,4 +1,4 @@
-import { useGetFetch, usePostFetch, $baseFetch } from '~/composables/useApi'
+import { useGetFetch, usePostFetch,  } from '~/composables/useApi'
 import type {
   PersonalityQuestion,
   PersonalityResult,
@@ -20,21 +20,4 @@ export const getPersonalityResult = (submissionId: string | number) => {
   })
 }
 
-export const $getPersonalityQuestions = () => {
-  return $baseFetch<PersonalityQuestion[]>('/personal/questions')
-}
-
-export const $submitPersonalityAnswers = (data: PersonalitySubmitData) => {
-  return $baseFetch<PersonalitySubmitResult>('/personal/submit', {
-    method: 'POST',
-    body: data
-  })
-}
-
-export const $getPersonalityResult = (submissionId: string | number) => {
-  return $baseFetch<PersonalityResult>('/personal/result', {
-    method: 'GET',
-    query: { submissionId }
-  } as any)
-}
 
