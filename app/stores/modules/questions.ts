@@ -18,7 +18,7 @@ export const useQuestionsStore = defineStore('questions', () => {
         return Math.round((currentIndex.value / questions.value.length) * 100);
     })
     // 用户选择答案
-    const userAnswers = ref<TestQuestion[]>([]);
+    const userAnswers = ref<Record<number, number>>({});
 
 
     const setQuestions = (value: TestQuestion[]) => {
@@ -44,5 +44,7 @@ export const useQuestionsStore = defineStore('questions', () => {
         getQuestionsByStep,
     };
 }, {
-     persist: true,
+     persist: {
+        pick: ['questions', 'questionType', 'currentStep', 'currentIndex', 'userAnswers']
+     },
 });

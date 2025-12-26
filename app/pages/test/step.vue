@@ -82,46 +82,19 @@
                   {{ q.text }}</p>
                 <div
                   class="uno-flex uno-flex-row uno-items-center uno-justify-center uno-gap-2 md:uno-gap-[20px] uno-mt-4 uno-px-[5%]">
-                  <div class="uno-flex-1 uno-flex uno-justify-center uno-items-center">
-                    <IconsSad v-if="qi === 2" @click="answers[qi] = 1" />
-                    <div v-else class="uno-flex-1 uno-flex uno-justify-center uno-items-center">
-                      <div
-                        class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px] uno-p-2.5 uno-bg-[#F4D0CB] uno-border-solid uno-border-[#F6BAB2] uno-border-2"
-                        @click="answers[qi] = 1" />
+                  <template v-for="i in [1, 2, 3, 4, 5]" :key="i">
+                    <div class="uno-flex-1 uno-flex uno-justify-center uno-items-center">
+
+                      <div class="uno-flex-1 uno-flex uno-justify-center uno-items-center">
+                        <div
+                          class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px]   uno-border-solid  uno-border-2"
+                          :class="[i === 1 ? 'uno-bg-[#F4D0CB] uno-border-[#F6BAB2]' : i === 2 ? 'uno-bg-[#F1DACE] uno-border-[#F5CEB6]' : i === 3 ? 'uno-bg-[#F0F0F0] uno-border-[#D8D8D8]' : i === 4 ? 'uno-bg-[#C6EAD8] uno-border-[#9FE2AA]' : 'uno-bg-[#B3E1D6] uno-border-[#88D9BA]']"
+                          @click="useAnswers(q, i)">
+                          <IconsSad v-if="userAnswers[q.id] === i" />
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  <div class="uno-flex-1 uno-flex uno-justify-center uno-items-center">
-                    <IconsCheck v-if="qi === 2" color="#FFC8A7" @click="answers[qi] = 2" />
-                    <div v-else class="uno-flex-1 uno-flex uno-justify-center uno-items-center">
-                      <div
-                        class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px] uno-p-2.5 uno-bg-[#F1DACE] uno-border-solid uno-border-[#F5CEB6] uno-border-2"
-                        @click="answers[qi] = 2" />
-                    </div>
-                  </div>
-                  <div class="uno-flex-1 uno-flex uno-justify-center uno-items-center">
-                    <IconsCheck v-if="qi === 2" color="#D8D8D8" @click="answers[qi] = 3" />
-                    <div v-else class="uno-flex-1 uno-flex uno-justify-center uno-items-center">
-                      <div
-                        class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px] uno-p-2.5 uno-bg-[#F0F0F0] uno-border-solid uno-border-[#D8D8D8] uno-border-2"
-                        @click="answers[qi] = 3" />
-                    </div>
-                  </div>
-                  <div class="uno-flex-1 uno-flex uno-justify-center uno-items-center">
-                    <IconsCheck v-if="qi === 2" color="#96E5A3" @click="answers[qi] = 4" />
-                    <div v-else class="uno-flex-1 uno-flex uno-justify-center uno-items-center">
-                      <div
-                        class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px] uno-p-2.5 uno-bg-[#C6EAD8] uno-border-solid uno-border-[#9FE2AA] uno-border-2"
-                        @click="answers[qi] = 4" />
-                    </div>
-                  </div>
-                  <div class="uno-flex-1 uno-flex uno-justify-center uno-items-center">
-                    <IconsCheck v-if="qi === 2" color="#5AD7A7" @click="answers[qi] = 5" />
-                    <div v-else class="uno-flex-1 uno-flex uno-justify-center uno-items-center">
-                      <div
-                        class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px] uno-p-2.5 uno-bg-[#B3E1D6] uno-border-solid uno-border-[#88D9BA] uno-border-2"
-                        @click="answers[qi] = 5" />
-                    </div>
-                  </div>
+                  </template>
                 </div>
               </div>
             </div>
@@ -149,7 +122,7 @@ import { useQuestionsStore } from '~/stores/modules/questions'
 import { storeToRefs } from 'pinia'
 import type { TestQuestion } from '~/types/TestQuestion'
 const questionsStore = useQuestionsStore()
-const { totalSteps, currentStep, progress } = storeToRefs(questionsStore)
+const { totalSteps, currentStep, progress,userAnswers } = storeToRefs(questionsStore)
 const { t } = useI18n()
 const route = useRoute()
 const router = useRouter()
@@ -171,12 +144,16 @@ const prevStep = () => {
   }
 }
 const nextStep = () => {
-  console.log(currentStep,totalSteps);
   if (questionsStore.currentStep < totalSteps.value) {
     router.push({ name: 'test-step', query: { step: questionsStore.currentStep + 1 } })
   } else {
     router.push({ name: 'test-result' })
   }
+}
+const useAnswers = (q: TestQuestion, i: number) => {
+  console.log(q, i)
+  userAnswers.value[q.id] = i
+  // questionsStore.userAnswers[q.id] = i
 }
 watch(
   () => route.query.step,
