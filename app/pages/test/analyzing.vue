@@ -51,12 +51,18 @@ onMounted(async () => {
     progress.value = Math.min(85, progress.value + 3)
   }, 120)
   try {
-    await submitTestAnswers({ answers })
+    const { data } = await submitTestAnswers({ answers })
     // 请求完成后进度拉满并跳转
     clearInterval(incre)
     progress.value = 100
+
+    const reportId = data.value?.data?.report_id
+
     setTimeout(() => {
-      router.push('/test/result')
+      router.push({
+        path: '/pricing',
+        query: { reportId }
+      })
     }, 500)
   } catch (e) {
     clearInterval(incre)

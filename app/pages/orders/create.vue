@@ -132,7 +132,7 @@
 
             <!-- Buttons -->
             <div class="uno-space-y-3">
-              <button class="uno-w-full uno-h-[48px] uno-bg-[#009D77] hover:uno-bg-[var(--color-green-2)] uno-text-white uno-rounded-[12px] uno-font-bold uno-transition-colors">
+              <button @click="handleSubmit" class="uno-w-full uno-h-[48px] uno-bg-[#009D77] hover:uno-bg-[var(--color-green-2)] uno-text-white uno-rounded-[12px] uno-font-bold uno-transition-colors">
                 {{ $t('pages.order.create.form.subscribeBtn') }}
               </button>
               
@@ -179,10 +179,14 @@
 </template>
 
 <script setup lang="ts">
+import { payOrder } from '~/api/tests';
+
 const { t } = useI18n()
+const route = useRoute()
 
 // Form State
 const form = ref({
+  order_id: '',
   email: '',
   name: '',
   cardNumber: '',
@@ -192,9 +196,69 @@ const form = ref({
   consent: false
 })
 
-const handleSubmit = () => {
-  console.log('Form submitted', form.value)
-  // Implement submission logic here
+const isLoading = ref(false)
+const emailError = ref(false)
+
+// Initialize form data from route query
+onMounted(() => {
+  if (route.query.order_id) {
+    form.value.order_id = route.query.order_id as string
+  } else if (route.query.order_sn) {
+     form.value.order_id = route.query.order_sn as string
+  }
+})
+
+const validateEmail = () => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  if (form.value.email && !emailRegex.test(form.value.email)) {
+    emailError.value = true
+  } else {
+    emailError.value = false
+  }
+}
+
+const isFormValid = computed(() => {
+  const emailValid = !!form.value.email && !emailError.value
+  const orderIdValid = !!form.value.order_id
+  const consentValid = form.value.consent
+  return emailValid && orderIdValid && consentValid
+})
+
+const handleSubmit = async () => {
+  if (!isFormValid.value) return
+  
+  isLoading.value = true
+  try {
+    const { data, error } = await payOrder({
+      order_id: form.value.order_id,
+      email: form.value.email
+    })
+
+    if (error.value) {
+      console.error('Payment failed:', error.value)
+      // Using alert for simplicity, could be replaced with a toast
+      return
+    }
+
+    const token = data.value?.data?.user_token
+    if (token) {
+      // 存储 token 到 localStorage 或 sessionStorage
+      localStorage.setItem('userToken', token)
+      // 跳转到成功页面
+      // router.push({ path: '/orders/success' })
+    } else {
+      // 处理 token 缺失的情况
+      console.error('Token not found in response')
+      alert(t('pages.order.create.form.paymentError') || 'Payment failed. Please try again.')
+    }
+    
+
+
+  } catch (err) {
+    console.error('Error submitting form:', err)
+  } finally {
+    isLoading.value = false
+  }
 }
 
 // Trust Badges Data

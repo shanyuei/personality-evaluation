@@ -28,3 +28,12 @@ export interface PersonalityResult {
   advice?: string
 }
 
+export interface PlanInfo {
+  id: number | string;
+  name:string
+  price:string
+ currency:string
+ unit:string
+
+
+}
