@@ -86,6 +86,115 @@
         "description": "快速了解常见问题的答案，帮助你高效掌握功能与使用方式。"
       }
     },
+    "pricing": {
+      "title": "开启您的自我发现之旅",
+      "subtitle": "探索内心，了解自我。通过专业测评与个性化指导，开启一段充满启发的旅程。",
+      "plans": {
+        "weekly": {
+          "title": "7天访问权限",
+          "description": "开始使用 AI 构建、实验和制作原型。",
+          "price": "$14",
+          "unit": "/月",
+          "button": "立即购买"
+        },
+        "monthly": {
+          "title": "月付",
+          "description": "适合不需要 CMS 的落地页、个人网站、作品集或 MVP。",
+          "price": "$14",
+          "unit": "/月",
+          "billing": "按年计费",
+          "button": "立即购买"
+        },
+        "yearly": {
+          "title": "年付",
+          "description": "适合不需要 CMS 的落地页、个人网站、作品集或 MVP。",
+          "price": "$23",
+          "unit": "/月",
+          "billing": "按年计费",
+          "button": "立即购买",
+          "badge": "最受欢迎"
+        }
+      },
+      "features": {
+        "publishing": "发布权限",
+        "webflow": "Webflow.io 域名",
+        "pages": "2 个页面",
+        "cms": "20 个 CMS 集合",
+        "ai": "AI 助手"
+      },
+      "why": {
+        "title": "为什么选择我们的测试",
+        "subtitle": "始终以志愿者形式参与，时间灵活，为您带来积极的体验与真实见证"
+      },
+      "faq": {
+        "title": "常见问题",
+        "subtitle": "快速了解常见问题的答案，帮助你高效掌握功能与使用方式。",
+        "items": [
+          {
+            "q": "我可以追踪我的任务和成绩吗？",
+            "a": "是的，平台提供仪表板，用户可以在其中查看结果，监控进度并检查即将到来的挑战。"
+          },
+          {
+            "q": "系统支持视频课程和直播吗？",
+            "a": "是的，我们的平台完全支持高清视频内容，并集成了实时会话工具。"
+          },
+          {
+            "q": "我如何与导师沟通？",
+            "a": "您可以通过内置的消息系统、讨论论坛或在预定会话期间进行交流。"
+          },
+          {
+            "q": "为用户提供什么支持？",
+            "a": "我们提供 24/7 技术支持、全面的文档和专属的社区论坛。"
+          },
+          {
+            "q": "有互动功能吗？",
+            "a": "当然！我们有测验、投票、互动任务和同行评审功能。"
+          }
+        ]
+      }
+    },
+    "order": {
+      "create": {
+        "title": "获取无限报告",
+        "subtitle": "发现你的优势，获取知识，在生活的方方面面成长",
+        "summary": {
+          "trial": "7天试用",
+          "price": "$1.99",
+          "benefit1": "我发现 Cacao 很难用。",
+          "benefit2": "人格类型评估",
+          "benefit3": "超过 50 个高级人格测试",
+          "terms": "计费条款：$1.99 试用 7 天。点击“订阅”即授权每月自动扣款 $27.88，直到取消。随时取消：855-342 8558 / support@mypersonality.net"
+        },
+        "form": {
+          "email": "邮箱",
+          "emailPlaceholder": "您的邮箱",
+          "name": "持卡人姓名",
+          "namePlaceholder": "您的全名",
+          "cardNumber": "卡号",
+          "cardNumberPlaceholder": "0000 0000 0000 0000",
+          "expires": "过期日期",
+          "expiresPlaceholder": "MM/YY",
+          "cvv": "CVV",
+          "cvvPlaceholder": "123",
+          "zip": "邮政编码",
+          "zipPlaceholder": "12345",
+          "consent": "点击“订阅”即表示我以电子方式授权 Mypersonality.net 根据计费条款从我的卡中扣款（包括自动续订），直到取消。我同意条款和隐私政策。",
+          "subscribeBtn": "仅需 $1.99 订阅",
+          "paypalBtn": "使用 PayPal 支付",
+          "gpayBtn": "使用 G Pay 支付"
+        },
+        "trust": {
+          "us": "位于美国",
+          "noCharge": "无额外费用",
+          "refund": "30 天全额退款",
+          "cancel": "随时取消"
+        },
+        "testimonials": {
+          "title": "深受 20,000+ 客户信赖",
+          "subtitle": "无论何时何地，我们都致力于为您提供最优质的服务，帮助您发现自我，提升能力。"
+        }
+      }
+    },
     "testDetail": {
       "welcome": "欢迎，{name}!",
       "type": "类型",
