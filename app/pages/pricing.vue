@@ -52,25 +52,17 @@
           </button>
 
           <div class="uno-space-y-4">
-            <div class="uno-text-xs uno-font-bold uno-text-[#011813] uno-tracking-wider uno-uppercase">PUBLISHING</div>
+            <div class="uno-text-xs uno-font-normal uno-text-[#8D8E8F] uno-tracking-wider uno-uppercase">PUBLISHING</div>
             <ul class="uno-space-y-3">
-              <li v-for="(feat, i) in features" :key="i" class="uno-flex uno-items-center uno-gap-3">
-                <div 
-                  class="uno-w-5 uno-h-5 uno-rounded-full uno-flex uno-items-center uno-justify-center"
-                  :class="[
-                    selectedPlan === plan.key
-                      ? 'uno-bg-[#009D77]'
-                      : 'uno-border uno-border-[#E7E7E8]'
-                  ]"
-                >
-                   <IconCheck 
-                    class="uno-w-3 uno-h-3" 
-                    :class="[
-                      selectedPlan === plan.key ? 'uno-text-white' : 'uno-text-[#009D77]'
-                    ]"
-                   />
-                </div>
+              <li v-for="(feat, i) in features" :key="i" class="uno-flex uno-items-center uno-justify-between uno-gap-3">
                 <span class="uno-text-[#4E5255] uno-text-sm" :class="{ 'uno-text-[#011813]': selectedPlan === plan.key }">{{ feat }}</span>
+                <NuxtImg 
+                  src="/images/pricing/1.png" 
+                  alt="Feature Included" 
+                  class="uno-w-5 uno-h-5 uno-object-contain"
+                  loading="lazy"
+                  format="webp"
+                />
               </li>
             </ul>
           </div>
@@ -91,10 +83,12 @@
 
       <div class="uno-grid uno-grid-cols-1 md:uno-grid-cols-2 lg:uno-grid-cols-3 uno-gap-6">
         <div v-for="(item, idx) in whyItems" :key="idx" class="uno-bg-white uno-rounded-[24px] uno-p-8 uno-text-center uno-border uno-border-[#E7E7E8] uno-shadow-sm hover:uno-shadow-md uno-transition-shadow">
-          <div class="uno-w-16 uno-h-16 uno-mx-auto uno-mb-6 uno-rounded-full uno-bg-[#F5F8FF] uno-flex uno-items-center uno-justify-center">
-            <!-- Icon Placeholder: Using dynamic icons or generic SVGs -->
-             <component :is="item.icon" class="uno-w-8 uno-h-8" :class="item.iconColor" />
-          </div>
+          <!-- Image only, removed fallback icon logic to ensure replacement -->
+          <img 
+            :src="item.image"
+            :alt="item.title"
+            class="uno-w-16 uno-h-16 uno-mx-auto uno-mb-6 uno-object-contain"
+          />
           <h3 class="uno-text-lg uno-font-bold uno-text-[#011813] uno-mb-3">{{ item.title }}</h3>
           <p class="uno-text-[#4E5255] uno-text-sm">{{ item.desc }}</p>
         </div>
@@ -127,6 +121,7 @@ const planConfig: Record<number, { key: string; badge?: string; billingFallback?
 const { data: plansData } = await getPlanList();
 
 const plans = computed(() => {
+  console.log('plansData:', plansData.value);
   const list = plansData.value?.data || [];
   return list.map((item: any) => {
     const config = planConfig[item.id] || { key: 'monthly' }; // Fallback to monthly key if unknown
@@ -199,38 +194,32 @@ const whyItems = computed(() => [
   {
     title: t('pages.home.receive.card1.title'),
     desc: t('pages.home.receive.card1.desc'),
-    icon: IconReport,
-    iconColor: 'uno-text-amber-500'
+    image: '/images/pricing/2.png',
   },
   {
     title: t('pages.home.receive.card3.title'),
     desc: t('pages.home.receive.card3.desc'),
-    icon: IconCourse,
-    iconColor: 'uno-text-pink-500'
+    image: '/images/pricing/3.png',
   },
   {
     title: t('pages.home.receive.card5.title'),
     desc: t('pages.home.receive.card5.desc'),
-    icon: IconSkill,
-    iconColor: 'uno-text-emerald-500'
+    image: '/images/pricing/4.png',
   },
   {
     title: t('pages.home.receive.card2.title'),
     desc: t('pages.home.receive.card2.desc'),
-    icon: IconDaily,
-    iconColor: 'uno-text-rose-500'
+    image: '/images/pricing/5.png',
   },
   {
     title: t('pages.home.receive.card4.title'),
     desc: t('pages.home.receive.card4.desc'),
-    icon: IconLibrary,
-    iconColor: 'uno-text-indigo-500'
+    image: '/images/pricing/6.png',
   },
   {
     title: t('pages.home.receive.card6.title') || 'Transparency and Value',
     desc: t('pages.home.receive.card6.desc'),
-    icon: IconValue,
-    iconColor: 'uno-text-yellow-500'
+    image: '/images/pricing/7.png',
   },
 ]);
 
@@ -262,6 +251,10 @@ useHead({
   meta: [
     { name: 'description', content: t('pages.pricing.subtitle') }
   ]
+})
+definePageMeta({
+    
+    layoutShowCurious: true,
 })
 </script>
 
