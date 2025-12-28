@@ -1,7 +1,7 @@
 <template>
-  <div class="page-container uno-py-12 md:uno-py-16">
+  <div class="uno-py-12 md:uno-py-16">
     <!-- Top Section: Summary & Form -->
-    <div class="uno-grid uno-grid-cols-1 lg:uno-grid-cols-12 uno-gap-8 lg:uno-gap-16 uno-mb-24 uno-items-start">
+    <div class="page-container uno-grid uno-grid-cols-1 lg:uno-grid-cols-12 uno-gap-8 lg:uno-gap-16 uno-mb-24 uno-items-start">
       
       <!-- Left Column: Summary -->
       <div class="lg:uno-col-span-5">
@@ -161,7 +161,7 @@
     </div>
 
     <!-- Trust Badges Section -->
-    <div class="uno-grid uno-grid-cols-2 md:uno-grid-cols-4 uno-gap-8 uno-mb-24 uno-max-w-5xl uno-mx-auto">
+    <div class="page-container uno-grid uno-grid-cols-2 md:uno-grid-cols-4 uno-gap-8 uno-mb-24 uno-max-w-5xl uno-mx-auto">
       <div v-for="(item, index) in trustItems" :key="index" class="uno-flex uno-flex-col uno-items-center uno-text-center">
         <NuxtImg :src="item.image" width="64" height="64" class="uno-w-16 uno-h-16 uno-mb-4" />
         <h4 class="uno-text-[#4E5255] uno-font-bold uno-font-['Outfit']">{{ item.text }}</h4>
@@ -174,6 +174,13 @@
       :description="$t('pages.order.create.testimonials.subtitle')"
       :rating="5"
       :reviews="reviews"
+    />
+
+    <!-- FAQ Section -->
+    <FAQSection 
+      :title="$t('pages.home.faq.title')" 
+      :description="$t('pages.home.faq.description')"
+      :items="faqItems" 
     />
   </div>
 </template>
@@ -268,38 +275,37 @@ const trustItems = computed(() => [
   { text: t('pages.order.create.trust.refund'), image: '/images/orders/create/7.png' },
   { text: t('pages.order.create.trust.cancel'), image: '/images/orders/create/8.png' },
 ])
-
+const baseText = 'An exceptional platform for career development. The current curriculum, skilled instructors, and hands-on learning are truly rewarding.'
 // Testimonials Data
-const reviews = [
-  {
+const reviews: Array<{ text: string; avatarUrl: string; name: string; role: string }> = Array.from({ length: 30 }, (_, i) => ({
+    text: baseText,
+    avatarUrl: `https://randomuser.me/api/portraits/${i % 2 === 0 ? 'men' : 'women'}/${(i % 99) + 1}.jpg`,
     name: 'Brandon Michael',
-    role: 'UI/UX Designer',
-    avatarUrl: '/images/home/8.png',
-    text: 'An exceptional platform for career development! The current curriculum, skilled instructors, and hands-on learning ensure every moment is impactful, enriching, and truly rewarding.'
-  },
-  {
-    name: 'Sarah Johnson',
-    role: 'Product Manager',
-    avatarUrl: '/images/home/11.png',
-    text: 'This platform transformed my understanding of my own strengths. The insights were spot on and helped me navigate a career change with confidence.'
-  },
-  {
-    name: 'David Chen',
-    role: 'Software Engineer',
-    avatarUrl: '/images/about/3.png',
-    text: 'The personality tests are incredibly detailed. I was skeptical at first, but the results explained so much about my work style and preferences.'
-  },
-  {
-    name: 'Emily Davis',
-    role: 'Marketing Specialist',
-    avatarUrl: '/images/home/8.png',
-    text: 'Great value for money. The unlimited reports option gave me access to deep dives that I use regularly for personal growth and team building.'
-  },
-  {
-    name: 'Michael Wilson',
-    role: 'HR Director',
-    avatarUrl: '/images/home/11.png',
-    text: 'We use this for our entire team. It has improved our communication and understanding of each other significantly. Highly recommended!'
-  }
+    role: 'UX/UI Designer'
+}))
+
+
+const faqItems = [
+    {
+        question: 'Can I Track My Assignments and Grades?',
+        answer:
+            'Yes, the LMS offers a "Gradebook" where students can view their grades, mentor feedback on assignments, and class attendance data. You can view your grade and comments for each submission.'
+    },
+    {
+        question: 'Does the LMS support video lessons and live classes?',
+        answer: 'Yes, it supports both pre-recorded video lessons and live classes with interactive features.'
+    },
+    {
+        question: 'How can I communicate with my instructor?',
+        answer: 'You can use messaging tools, discussion boards, and scheduled office hours to communicate.'
+    },
+    {
+        question: 'What support is available for students and instructors?',
+        answer: 'Help center articles, email support, and live chat are available for both students and instructors.'
+    },
+    {
+        question: 'Are there interactive features for students?',
+        answer: 'Quizzes, assignments, polls, and peer discussions are available to enhance engagement.'
+    }
 ]
 </script>
