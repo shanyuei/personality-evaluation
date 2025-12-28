@@ -24,7 +24,9 @@
 
       <button
         class="uno-m-t-12px uno-relative uno-z-10 uno-w-40% md:uno-w-220px sm:uno-m-t-16px md:uno-m-t-24px uno-flex uno-justify-between uno-items-center uno-flex-row uno-gap-[6px] sm:uno-gap-[8px] md:uno-gap-[12px] uno-py-2 sm:uno-py-2 uno-pr-[3px] sm:uno-pr-[4px] md:uno-pr-[6px] uno-pl-[12px] sm:uno-pl-[16px] md:uno-pl-[24px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-[#FFFFFF] uno-text-[12px] sm:uno-text-[14px] md:uno-text-[18px] uno-font-['Outfit'] uno-font-medium uno-rounded-[149.99px] uno-transition uno-duration-200 disabled:uno-opacity-50 disabled:uno-cursor-not-allowed"
-        type="button">
+        type="button"
+        @click="navigateTo('/test')"
+      >
         {{ $t('common.getStarted') }}
         <NuxtImg src="/images/common/go-arrow-1.png" alt="arrow-right" width="20" height="20"
           class="sm:uno-w-[24px] sm:uno-h-[24px] md:uno-w-[50px] md:uno-h-[50px]" />
