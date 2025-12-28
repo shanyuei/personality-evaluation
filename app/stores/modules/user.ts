@@ -47,7 +47,14 @@ export const useUserStore = defineStore('user', () => {
     return userApi.getUserTestInfo()
   }
 
-
+  // 更新用户信息
+  const updateUserInfo = (data: { name?: string, email?: string, lang?: string }) => {
+    return userApi.updateUserInfo(data)
+  }
+  // 修改密码
+  const updatePassword = (data: UpdatePasswordRequest) => {
+    return userApi.updatePassword(data)
+  }
 
   // 退出登录
   const logout = () => {
@@ -68,6 +75,10 @@ export const useUserStore = defineStore('user', () => {
     fetchUserInfo,
     changePassword,
     getUserTestInfo,
+    updateUserInfo,
+    updatePassword
+
+
 
   };
 }, {

@@ -823,27 +823,30 @@
       "settings": {
         "title": "Settings",
         "description": "Edit profile, change password, switch language, or delete your account.",
+        "saveChanges": "Save changes",
         "profile": {
-          "title": "Profile",
-          "namePlaceholder": "Name",
+          "title": "Profile details",
+          "namePlaceholder": "First and last name",
           "emailPlaceholder": "Email address",
-          "submit": "Get Started",
+          "submit": "Save",
           "success": "Profile updated",
           "fail": "Update failed. Please try again later."
         },
         "password": {
-          "title": "Change Password",
+          "title": "Change password",
           "current": "Current password",
           "new": "New password",
           "repeat": "Repeat new password",
-          "submit": "Get Started",
+          "submit": "Save",
           "mismatch": "The two passwords do not match",
-          "success": "Password updated"
+          "success": "Password updated",
+          "fail": "Failed to update password. Please try again."
         },
         "language": {
-          "title": "Language",
-          "submit": "Get Started",
-          "success": "Language settings saved"
+          "title": "Change Language",
+          "submit": "Save changes",
+          "success": "Language settings saved",
+          "fail": "Failed to update language settings. Please try again."
         },
         "delete": {
           "title": "Delete Account",
