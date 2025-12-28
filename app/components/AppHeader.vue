@@ -38,22 +38,32 @@
       </div>
 
       <!-- 登录状态 -->
-      <UDropdown v-else :items="accountItems" :ui="{ item: { disabled: 'cursor-text select-text' } }" :popper="{ placement: 'bottom-end' }">
+      <UDropdownMenu v-else :items="accountItems"
+        :ui="{ item: 'data-[disabled]:cursor-text data-[disabled]:select-text uno-px-3 uno-py-2', content: 'uno-p-1 uno-bg-white uno-ring-1 uno-ring-gray-200 uno-rounded-xl uno-shadow-lg uno-min-w-[200px]' }"
+        :content="{ align: 'end', side: 'bottom', sideOffset: 8 }">
         <div class="uno-flex uno-items-center uno-gap-2 uno-cursor-pointer max-sm:uno-hidden">
           <UIcon name="i-lucide-circle-user" class="uno-w-6 uno-h-6 uno-text-[var(--color-pink-1)]" />
-          <span class="uno-text-[var(--color-pink-1)] uno-font-['Outfit'] uno-font-medium uno-text-lg">{{ userStore.userInfo?.name || 'Account' }}</span>
+          <span class="uno-text-[var(--color-pink-1)] uno-font-['Outfit'] uno-font-medium uno-text-lg">{{
+            userStore.userInfo?.name || 'Account' }}</span>
           <UIcon name="i-heroicons-chevron-down-20-solid" class="uno-w-5 uno-h-5 uno-text-[var(--color-pink-1)]" />
         </div>
 
         <template #account="{ item }">
-          <div class="text-left">
-            <p>Signed in as</p>
-            <p class="truncate font-medium text-gray-900 dark:text-white">
+          <div class="uno-text-left">
+            <p class="uno-text-xs uno-font-['Outfit'] uno-text-[var(--ui-muted-foreground)]">Signed in as</p>
+            <p class="uno-truncate uno-font-medium uno-text-[var(--ui-foreground)] uno-font-['Outfit']">
               {{ item.label }}
             </p>
           </div>
         </template>
-      </UDropdown>
+
+        <template #profile="{ item }">
+          <div class="uno-flex uno-items-center uno-gap-2 uno-w-full" @click="onClick(item)">
+            <UIcon :name="item.icon" class="uno-w-5 uno-h-5 uno-text-[var(--ui-muted-foreground)]" />
+            <span class="uno-truncate uno-font-['Outfit'] uno-text-[var(--ui-foreground)]">{{ item.label }}</span>
+          </div>
+        </template>
+      </UDropdownMenu>
 
       <!-- 多语言 -->
       <I18nSelect />
@@ -78,7 +88,7 @@
 
 </template>
 <script setup lang="ts">
-import { ref, computed } from "vue";
+import { ref } from "vue";
 import { useUserStore } from '~/stores/modules/user';
 
 const userStore = useUserStore();
@@ -98,7 +108,7 @@ const handleLogout = () => {
   navigateTo('/');
 };
 
-const accountItems = computed(() => [
+const accountItems = ref<any[]>([
   [{
     label: userStore.userInfo?.name || 'User',
     slot: 'account',
@@ -106,19 +116,27 @@ const accountItems = computed(() => [
   }],
   [{
     label: 'Profile',
-    icon: 'i-heroicons-user',
+    icon: 'i-lucide-user',
+    slot: 'profile',
     to: '/profile'
   }, {
+    label: 'Billing',
+    icon: 'i-lucide-credit-card',
+    to: '/billing'
+  }, {
     label: 'Settings',
-    icon: 'i-heroicons-cog-8-tooth',
+    icon: 'i-lucide-cog',
     to: '/account/settings'
   }],
   [{
     label: 'Sign out',
     icon: 'i-heroicons-arrow-left-on-rectangle',
+    slot: 'profile',
     click: handleLogout
   }]
 ]);
+
+
 
 const items = ref([
   {
@@ -142,7 +160,14 @@ const items = ref([
     to: '/about',
   },
 ]);
-
+const onClick = (item: any) => {
+  console.log(item)
+  if (item.to) {
+    navigateTo(item.to);
+  } else if (item.click) {
+    item.click();
+  }
+}
 </script>
 
 <style lang="less">

@@ -49,9 +49,22 @@ export const useUserStore = defineStore('user', () => {
 
 
 
+  // 退出登录
+  const logout = () => {
+    const token = useCookie('token');
+    token.value = null;
+    userInfo.value = undefined;
+
+    console.log('退出登录')
+    
+    // 如果需要调用后端登出接口，可以在这里添加
+    // await userApi.logout();
+  };
+
   return {
     userInfo,
     login,
+    logout,
     fetchUserInfo,
     changePassword,
     getUserTestInfo,

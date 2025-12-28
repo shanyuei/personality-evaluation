@@ -42,13 +42,15 @@ export const useBaseFetch = <T>(url: string, options: any = {}) => {
   const nuxtApp = useNuxtApp()
   const { public: { apiBaseUrl } } = useRuntimeConfig()
   const lang = nuxtApp.$i18n.locale.value
+  const userStore = useUserStore()
+  const userInfo = userStore.userInfo
   const token = useCookie('token')
-  console.log(token.value)
+  console.log(token.value, userInfo?.token)
   const headers = {
     ...(options.headers || {}),
     'Accept-Language': lang,
     'Lang': lang,
-    ...(token.value ? { 'token': `${token.value}` } : {})
+    ...((token.value || userInfo?.token) ? { 'token': `${token.value || userInfo?.token}` } : {})
   }
   console.log('headers',headers)
   const query = { ...(options.query as any || {}) }
