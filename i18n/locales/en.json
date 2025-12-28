@@ -208,7 +208,6 @@
       "aboutDesc": "Type 7 in the Enneagram is often called the Enthusiast: they are energetic, spontaneous and optimistic. Their core motivation is to avoid fear, pain, or discomfort and to maintain a pursuit of new experiences.",
       "totalScore": "Total score",
       "subtypesIntro": "The Enneagram outlines three subtypes for Type 7, each highlighting different expressions of their core characteristics:",
-      "totalScore": "Total score",
       "tab": {
         "core": "Core characteristics",
         "motivation": "Motivations & Fears",
@@ -994,6 +993,9 @@
       "people": {
         "finished": "people already finished it"
       }
+    },
+    "api": {
+      "error": "Error"
     }
   },
   "seo": {

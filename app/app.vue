@@ -1,5 +1,5 @@
 <template>
-  <UApp>
+  <UApp :toaster="toaster">
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
@@ -7,7 +7,9 @@
 </template>
 
 <script setup lang="ts">
+import type { ToasterProps } from '@nuxt/ui';
 
+const toaster = ref<ToasterProps>({ position: 'top-center' })
 </script>
 
 <style scoped>

@@ -29,11 +29,32 @@
     </template>
 
     <template #right>
-      <div
-        class="uno-h-[48px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-3 uno-py-1 uno-pr-1 uno-pl-[20px] uno-border-solid uno-border-[#011813] uno-border uno-rounded-[100px] max-sm:uno-hidden">
-        <span class="uno-text-[#011813] uno-font-['Outfit'] uno-font-medium">{{ $t("header.GetStarted") }}</span>
+      <!-- 未登录状态 -->
+      <div v-if="!token"
+        class="uno-h-[48px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-3 uno-py-1 uno-pr-1 uno-pl-[20px] uno-border-solid uno-border-[#011813] uno-border uno-rounded-[100px] max-sm:uno-hidden cursor-pointer"
+        @click="navigateTo('/auth/sign-in')">
+        <span class="uno-text-[#011813] uno-font-['Outfit'] uno-font-medium">{{ $t("common.getStarted") }}</span>
         <NuxtImg src="/images/header/go-icon-1.png" alt="go-icon-1" width="40px" height="40px" />
       </div>
+
+      <!-- 登录状态 -->
+      <UDropdown v-else :items="accountItems" :ui="{ item: { disabled: 'cursor-text select-text' } }" :popper="{ placement: 'bottom-end' }">
+        <div class="uno-flex uno-items-center uno-gap-2 uno-cursor-pointer max-sm:uno-hidden">
+          <UIcon name="i-lucide-circle-user" class="uno-w-6 uno-h-6 uno-text-[var(--color-pink-1)]" />
+          <span class="uno-text-[var(--color-pink-1)] uno-font-['Outfit'] uno-font-medium uno-text-lg">{{ userStore.userInfo?.name || 'Account' }}</span>
+          <UIcon name="i-heroicons-chevron-down-20-solid" class="uno-w-5 uno-h-5 uno-text-[var(--color-pink-1)]" />
+        </div>
+
+        <template #account="{ item }">
+          <div class="text-left">
+            <p>Signed in as</p>
+            <p class="truncate font-medium text-gray-900 dark:text-white">
+              {{ item.label }}
+            </p>
+          </div>
+        </template>
+      </UDropdown>
+
       <!-- 多语言 -->
       <I18nSelect />
     </template>
@@ -57,7 +78,13 @@
 
 </template>
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, computed } from "vue";
+import { useUserStore } from '~/stores/modules/user';
+
+const userStore = useUserStore();
+const token = useCookie('token');
+const { t } = useI18n();
+
 // import I18nSelect from "~/components/I18nSelect.vue";
 const props = defineProps({
   showMenu: {
@@ -65,6 +92,34 @@ const props = defineProps({
     default: true,
   },
 })
+
+const handleLogout = () => {
+  userStore.logout();
+  navigateTo('/');
+};
+
+const accountItems = computed(() => [
+  [{
+    label: userStore.userInfo?.name || 'User',
+    slot: 'account',
+    disabled: true
+  }],
+  [{
+    label: 'Profile',
+    icon: 'i-heroicons-user',
+    to: '/profile'
+  }, {
+    label: 'Settings',
+    icon: 'i-heroicons-cog-8-tooth',
+    to: '/account/settings'
+  }],
+  [{
+    label: 'Sign out',
+    icon: 'i-heroicons-arrow-left-on-rectangle',
+    click: handleLogout
+  }]
+]);
+
 const items = ref([
   {
     label: 'Home',
