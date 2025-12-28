@@ -252,6 +252,10 @@ useHead({
     { name: 'description', content: t('pages.pricing.subtitle') }
   ]
 })
+definePageMeta({
+    
+    layoutShowCurious: true,
+})
 </script>
 
 <style scoped>
