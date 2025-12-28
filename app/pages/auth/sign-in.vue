@@ -45,6 +45,7 @@ import { ref, computed } from 'vue'
 import UFormFieldTheme from "~/theme/UFormField";
 import UInputTheme from "~/theme/UInput";
 import UButtonTheme from "~/theme/UButton";
+import { useUserStore } from '~/stores/modules/user';
 
 const { t } = useI18n()
 
@@ -56,6 +57,7 @@ useSeoMeta({
   title: () => t('seo.auth.signIn.title') as string,
   description: () => t('seo.auth.signIn.description') as string
 })
+const userStore = useUserStore()
 const email = ref('')
 const password = ref('')
 const canSubmit = computed(() => {
@@ -67,7 +69,9 @@ const canSubmit = computed(() => {
 
 const handleSignIn = () => {
   if (!canSubmit.value) return
-  console.log('Sign in attempt', { email: email.value })
+  userStore.login({ email: email.value, password: password.value }).then(() => {
+    navigateTo('/')
+  })
 }
 </script>
 

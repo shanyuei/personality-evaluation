@@ -1,19 +1,29 @@
 import { useRuntimeConfig } from '#app'
 
 // 统一的响应处理逻辑
-const handleResponse = (response: any) => {
+const handleResponse = (response: any, i18n: any) => {
+  let toast = null;
+  if (import.meta.client) {
+    toast = useToast()
+  }
   if (response.status !== 200) {
     throw new Error(response.statusText)
   }
-  if (response._data?.code !== 0 && response._data?.message) {
-    throw new Error(response._data.message)
+  const code = response._data.code;
+  const message = response._data.message;
+  const data = response._data.data;
+  if (code !== 0 && toast) {
+    toast?.add({
+      title: i18n.t('common.api.error'),
+      color: 'warning',
+      description: message,
+    })
+    throw new Error(message)
   }
-  if (response._data?.data) {
-    response._data = {
-      code: response._data.code,
-      message: response._data.message,
-      data: response._data.data,
-    }
+  response._data = {
+    code: code,
+    message: message,
+    data: data,
   }
 }
 
@@ -32,8 +42,8 @@ export const useBaseFetch = <T>(url: string, options: any = {}) => {
   const nuxtApp = useNuxtApp()
   const { public: { apiBaseUrl } } = useRuntimeConfig()
   const lang = nuxtApp.$i18n.locale.value
-  const headers = { ...(options.headers || {}), 'Accept-Language': lang,'Lang': lang }
-  const query = { ...(options.query as any || {})}
+  const headers = { ...(options.headers || {}), 'Accept-Language': lang, 'Lang': lang }
+  const query = { ...(options.query as any || {}) }
   return useFetch<T>(url, {
     ...options,
     baseURL: apiBaseUrl,
@@ -44,7 +54,7 @@ export const useBaseFetch = <T>(url: string, options: any = {}) => {
     //   return res
     // },
     onResponse({ response }) {
-      handleResponse(response)
+      handleResponse(response, nuxtApp.$i18n)
     },
   })
 }
@@ -76,8 +86,8 @@ export const useStrapiFetch = <T>(url: string, options: any = {}) => {
 
 
 // 基础 UseFetch 组合式函数
-export const useGetFetch = <T = any>(url: string, data?: { query: { submissionId: string | number } } | undefined,options?: any) => {
-  return useBaseFetch<T>(url,{
+export const useGetFetch = <T = any>(url: string, data?: { query: { submissionId: string | number } } | undefined, options?: any) => {
+  return useBaseFetch<T>(url, {
     ...options,
     method: 'GET',
     query: data,
