@@ -1,112 +1,80 @@
 <template>
-  <div class="uno-bg-[#F8F9FC] uno-min-h-screen uno-font-['Outfit']">
+  <div class="uno-font-['Outfit']">
     
     <!-- Pricing Section -->
     <section class="page-container uno-pt-12 sm:uno-pt-16 md:uno-pt-20 uno-pb-12 sm:uno-pb-16 md:uno-pb-24">
       <div class="uno-text-center uno-mb-12 sm:uno-mb-16">
         <h1 class="uno-text-[#011813] uno-text-3xl sm:uno-text-4xl md:uno-text-5xl uno-font-bold uno-mb-4 sm:uno-mb-6">
-          {{ $t('pricing.title') }}
+          {{ $t('pages.pricing.title') }}
         </h1>
         <p class="uno-text-[#4E5255] uno-text-sm sm:uno-text-base md:uno-text-lg uno-max-w-3xl uno-mx-auto uno-px-4">
-          {{ $t('pricing.subtitle') }}
+          {{ $t('pages.pricing.subtitle') }}
         </p>
       </div>
 
       <div class="uno-grid uno-grid-cols-1 lg:uno-grid-cols-3 uno-gap-6 md:uno-gap-8 uno-items-start">
-        <!-- Card 1: 7-Day Access -->
-        <div class="uno-bg-white uno-rounded-[24px] uno-p-6 sm:uno-p-8 uno-border uno-border-[#E7E7E8] uno-shadow-sm hover:uno-shadow-md uno-transition-shadow">
-          <h3 class="uno-text-xl uno-font-bold uno-text-[#011813] uno-mb-2">{{ $t('pricing.plans.weekly.title') }}</h3>
-          <p class="uno-text-[#4E5255] uno-text-sm uno-mb-6 uno-min-h-[40px]">{{ $t('pricing.plans.weekly.description') }}</p>
+        <div 
+          v-for="plan in plans" 
+          :key="plan.key"
+          class="uno-rounded-[24px] uno-p-6 sm:uno-p-8 uno-border uno-shadow-sm hover:uno-shadow-md uno-transition-all uno-cursor-pointer uno-relative uno-overflow-hidden"
+          :class="[
+            selectedPlan === plan.key 
+              ? 'uno-bg-[#E8FAF5] uno-border-[#009D77] uno-shadow-lg' 
+              : 'uno-bg-white uno-border-[#E7E7E8]'
+          ]"
+          @click="selectedPlan = plan.key"
+        >
+          <div v-if="plan.badge" class="uno-absolute uno-top-6 uno-right-6 uno-bg-[#009D77] uno-text-white uno-text-xs uno-font-bold uno-px-3 uno-py-1 uno-rounded-full">
+            {{ $t(plan.badge) }}
+          </div>
+          
+          <h3 class="uno-text-xl uno-font-bold uno-text-[#011813] uno-mb-2">{{ plan.name }}</h3>
+          <!-- <p class="uno-text-[#4E5255] uno-text-sm uno-mb-6 uno-min-h-[40px]">{{ $t(`pages.pricing.plans.${plan.key}.description`) }}</p> -->
           
           <div class="uno-flex uno-items-baseline uno-gap-1 uno-mb-1">
-            <span class="uno-text-4xl uno-font-bold uno-text-[#011813]">{{ $t('pricing.plans.weekly.price') }}</span>
-            <span class="uno-text-[#4E5255] uno-text-sm">{{ $t('pricing.plans.weekly.unit') }}</span>
+            <span class="uno-text-4xl uno-font-bold uno-text-[#011813]">{{ plan.unit }}{{ plan.price }}</span>
+            <!-- <span class="uno-text-[#4E5255] uno-text-sm">{{ $t(`pages.pricing.plans.${plan.key}.unit`) }}</span> -->
           </div>
-          <div class="uno-text-xs uno-text-[#4E5255] uno-mb-6 uno-h-[20px]">
-            {{ $t('pages.ebooks.oneTime') || 'Auto-renews after 7 Days' }}
-          </div>
+          <!-- <div class="uno-text-xs uno-text-[#4E5255] uno-mb-6 uno-h-[20px]">
+            {{ plan.billingFallback ? ($t('pages.ebooks.oneTime') || 'Auto-renews after 7 Days') : $t(`pages.pricing.plans.${plan.key}.billing`) }}
+          </div> -->
 
-          <button class="uno-w-full uno-h-[48px] uno-bg-[#009D77] hover:uno-bg-[var(--color-green-2)] uno-text-white uno-rounded-[12px] uno-font-bold uno-mb-8 uno-transition-colors">
-            {{ $t('pricing.plans.weekly.button') }}
+          <button 
+            @click.stop="handleCreateOrder(plan)"
+            class="uno-w-full uno-mt-6 uno-h-[48px] uno-rounded-[12px] uno-font-bold uno-mb-8 uno-transition-colors"
+            :class="[
+              selectedPlan === plan.key
+                ? 'uno-bg-[#009D77] hover:uno-bg-[var(--color-green-2)] uno-text-white'
+                : 'uno-bg-[#009D77] hover:uno-bg-[var(--color-green-2)] uno-text-white'
+            ]"
+          >
+            {{ $t(`pages.pricing.plans.${plan.key}.button`) }}
           </button>
 
           <div class="uno-space-y-4">
             <div class="uno-text-xs uno-font-bold uno-text-[#011813] uno-tracking-wider uno-uppercase">PUBLISHING</div>
             <ul class="uno-space-y-3">
               <li v-for="(feat, i) in features" :key="i" class="uno-flex uno-items-center uno-gap-3">
-                <div class="uno-w-5 uno-h-5 uno-rounded-full uno-border uno-border-[#E7E7E8] uno-flex uno-items-center uno-justify-center">
-                   <IconCheck class="uno-w-3 uno-h-3 uno-text-[#009D77]" />
+                <div 
+                  class="uno-w-5 uno-h-5 uno-rounded-full uno-flex uno-items-center uno-justify-center"
+                  :class="[
+                    selectedPlan === plan.key
+                      ? 'uno-bg-[#009D77]'
+                      : 'uno-border uno-border-[#E7E7E8]'
+                  ]"
+                >
+                   <IconCheck 
+                    class="uno-w-3 uno-h-3" 
+                    :class="[
+                      selectedPlan === plan.key ? 'uno-text-white' : 'uno-text-[#009D77]'
+                    ]"
+                   />
                 </div>
-                <span class="uno-text-[#4E5255] uno-text-sm">{{ feat }}</span>
+                <span class="uno-text-[#4E5255] uno-text-sm" :class="{ 'uno-text-[#011813]': selectedPlan === plan.key }">{{ feat }}</span>
               </li>
             </ul>
           </div>
         </div>
-
-        <!-- Card 2: Monthly -->
-        <div class="uno-bg-white uno-rounded-[24px] uno-p-6 sm:uno-p-8 uno-border uno-border-[#E7E7E8] uno-shadow-sm hover:uno-shadow-md uno-transition-shadow">
-          <h3 class="uno-text-xl uno-font-bold uno-text-[#011813] uno-mb-2">{{ $t('pricing.plans.monthly.title') }}</h3>
-          <p class="uno-text-[#4E5255] uno-text-sm uno-mb-6 uno-min-h-[40px]">{{ $t('pricing.plans.monthly.description') }}</p>
-          
-          <div class="uno-flex uno-items-baseline uno-gap-1 uno-mb-1">
-            <span class="uno-text-4xl uno-font-bold uno-text-[#011813]">{{ $t('pricing.plans.monthly.price') }}</span>
-            <span class="uno-text-[#4E5255] uno-text-sm">{{ $t('pricing.plans.monthly.unit') }}</span>
-          </div>
-          <div class="uno-text-xs uno-text-[#4E5255] uno-mb-6 uno-h-[20px]">
-             {{ $t('pricing.plans.monthly.billing') }}
-          </div>
-
-          <button class="uno-w-full uno-h-[48px] uno-bg-[#009D77] hover:uno-bg-[var(--color-green-2)] uno-text-white uno-rounded-[12px] uno-font-bold uno-mb-8 uno-transition-colors">
-            {{ $t('pricing.plans.monthly.button') }}
-          </button>
-
-          <div class="uno-space-y-4">
-            <div class="uno-text-xs uno-font-bold uno-text-[#011813] uno-tracking-wider uno-uppercase">PUBLISHING</div>
-            <ul class="uno-space-y-3">
-              <li v-for="(feat, i) in features" :key="i" class="uno-flex uno-items-center uno-gap-3">
-                <div class="uno-w-5 uno-h-5 uno-rounded-full uno-border uno-border-[#E7E7E8] uno-flex uno-items-center uno-justify-center">
-                   <IconCheck class="uno-w-3 uno-h-3 uno-text-[#009D77]" />
-                </div>
-                <span class="uno-text-[#4E5255] uno-text-sm">{{ feat }}</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Card 3: Yearly (Popular) -->
-        <div class="uno-bg-[#E8FAF5] uno-rounded-[24px] uno-p-6 sm:uno-p-8 uno-border uno-border-[#009D77] uno-shadow-lg uno-relative uno-overflow-hidden">
-          <div class="uno-absolute uno-top-6 uno-right-6 uno-bg-[#009D77] uno-text-white uno-text-xs uno-font-bold uno-px-3 uno-py-1 uno-rounded-full">
-            {{ $t('pricing.plans.yearly.badge') }}
-          </div>
-          
-          <h3 class="uno-text-xl uno-font-bold uno-text-[#011813] uno-mb-2">{{ $t('pricing.plans.yearly.title') }}</h3>
-          <p class="uno-text-[#4E5255] uno-text-sm uno-mb-6 uno-min-h-[40px]">{{ $t('pricing.plans.yearly.description') }}</p>
-          
-          <div class="uno-flex uno-items-baseline uno-gap-1 uno-mb-1">
-            <span class="uno-text-4xl uno-font-bold uno-text-[#011813]">{{ $t('pricing.plans.yearly.price') }}</span>
-            <span class="uno-text-[#4E5255] uno-text-sm">{{ $t('pricing.plans.yearly.unit') }}</span>
-          </div>
-          <div class="uno-text-xs uno-text-[#4E5255] uno-mb-6 uno-h-[20px]">
-             {{ $t('pricing.plans.yearly.billing') }}
-          </div>
-
-          <button class="uno-w-full uno-h-[48px] uno-bg-[#009D77] hover:uno-bg-[var(--color-green-2)] uno-text-white uno-rounded-[12px] uno-font-bold uno-mb-8 uno-transition-colors">
-            {{ $t('pricing.plans.yearly.button') }}
-          </button>
-
-          <div class="uno-space-y-4">
-            <div class="uno-text-xs uno-font-bold uno-text-[#011813] uno-tracking-wider uno-uppercase">PUBLISHING</div>
-            <ul class="uno-space-y-3">
-              <li v-for="(feat, i) in features" :key="i" class="uno-flex uno-items-center uno-gap-3">
-                <div class="uno-w-5 uno-h-5 uno-rounded-full uno-bg-[#009D77] uno-flex uno-items-center uno-justify-center">
-                   <IconCheck class="uno-w-3 uno-h-3 uno-text-white" />
-                </div>
-                <span class="uno-text-[#011813] uno-text-sm">{{ feat }}</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
       </div>
     </section>
 
@@ -114,10 +82,10 @@
     <section class="page-container uno-py-12 sm:uno-py-16">
       <div class="uno-text-center uno-mb-12">
         <h2 class="uno-text-[#011813] uno-text-2xl sm:uno-text-3xl md:uno-text-4xl uno-font-bold uno-mb-4">
-          {{ $t('pricing.why.title') }}
+          {{ $t('pages.pricing.why.title') }}
         </h2>
         <p class="uno-text-[#4E5255] uno-text-sm sm:uno-text-base uno-max-w-2xl uno-mx-auto">
-          {{ $t('pricing.why.subtitle') }}
+          {{ $t('pages.pricing.why.subtitle') }}
         </p>
       </div>
 
@@ -135,8 +103,8 @@
 
     <!-- FAQ Section -->
     <FAQSection 
-      :title="$t('pricing.faq.title')" 
-      :description="$t('pricing.faq.subtitle')"
+      :title="$t('pages.pricing.faq.title')" 
+      :description="$t('pages.pricing.faq.subtitle')"
       :items="faqItems" 
     />
 
@@ -144,9 +112,65 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import FAQSection from '~/components/FAQSection.vue';
+import { getPlanList, createOrder } from '~/api/tests';
+
+// Base config to preserve UI logic (keys for i18n, badges)
+const planConfig: Record<number, { key: string; badge?: string; billingFallback?: boolean }> = {
+  1: { key: 'weekly', billingFallback: true },
+  2: { key: 'monthly' },
+  3: { key: 'yearly', badge: 'pages.pricing.plans.yearly.badge' }
+};
+
+const { data: plansData } = await getPlanList();
+
+const plans = computed(() => {
+  const list = plansData.value?.data || [];
+  return list.map((item: any) => {
+    const config = planConfig[item.id] || { key: 'monthly' }; // Fallback to monthly key if unknown
+    return {
+      ...item,
+      ...config
+    };
+  });
+});
+
+const selectedPlan = ref('yearly');
+
+const handleCreateOrder = async (plan: any) => {
+  const reportId = route.query.reportId as string || '';
+
+  try {
+    const { data, error } = await createOrder({
+      plan_id: String(plan.id),
+      report_id: reportId
+    });
+
+    if (error.value) {
+      console.error('Failed to create order:', error.value);
+      // TODO: Show error notification
+      return;
+    }
+
+    const order_id = data.value?.data?.order_id;
+    if (order_id) {
+      navigateTo({
+        path: '/orders/create',
+        query: {
+          order_id: order_id,
+          // Keep these for display fallback if needed
+          plan_id: plan.id,
+          plan_name: plan.name,
+          plan_price: plan.price
+        }
+      });
+    }
+  } catch (err) {
+    console.error('Error in handleCreateOrder:', err);
+  }
+};
 
 // Inline Icon Components
 const IconCheck = {
@@ -161,13 +185,14 @@ const IconLibrary = { template: `<svg viewBox="0 0 24 24" fill="none" stroke="cu
 const IconValue = { template: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>` }
 
 const { t } = useI18n();
+const route = useRoute();
 
 const features = computed(() => [
-  t('pricing.features.publishing'),
-  t('pricing.features.webflow'),
-  t('pricing.features.pages'),
-  t('pricing.features.cms'),
-  t('pricing.features.ai'),
+  t('pages.pricing.features.publishing'),
+  t('pages.pricing.features.webflow'),
+  t('pages.pricing.features.pages'),
+  t('pages.pricing.features.cms'),
+  t('pages.pricing.features.ai'),
 ]);
 
 const whyItems = computed(() => [
@@ -211,31 +236,31 @@ const whyItems = computed(() => [
 
 const faqItems = computed(() => [
   {
-    question: t('pricing.faq.items.0.q'),
-    answer: t('pricing.faq.items.0.a')
+    question: t('pages.pricing.faq.items.0.q'),
+    answer: t('pages.pricing.faq.items.0.a')
   },
   {
-    question: t('pricing.faq.items.1.q'),
-    answer: t('pricing.faq.items.1.a')
+    question: t('pages.pricing.faq.items.1.q'),
+    answer: t('pages.pricing.faq.items.1.a')
   },
   {
-    question: t('pricing.faq.items.2.q'),
-    answer: t('pricing.faq.items.2.a')
+    question: t('pages.pricing.faq.items.2.q'),
+    answer: t('pages.pricing.faq.items.2.a')
   },
   {
-    question: t('pricing.faq.items.3.q'),
-    answer: t('pricing.faq.items.3.a')
+    question: t('pages.pricing.faq.items.3.q'),
+    answer: t('pages.pricing.faq.items.3.a')
   },
   {
-    question: t('pricing.faq.items.4.q'),
-    answer: t('pricing.faq.items.4.a')
+    question: t('pages.pricing.faq.items.4.q'),
+    answer: t('pages.pricing.faq.items.4.a')
   }
 ]);
 
 useHead({
-  title: t('pricing.title'),
+  title: t('pages.pricing.title'),
   meta: [
-    { name: 'description', content: t('pricing.subtitle') }
+    { name: 'description', content: t('pages.pricing.subtitle') }
   ]
 })
 </script>
