@@ -753,7 +753,39 @@
       "questions": "题目",
       "completed": "已完成",
       "tryAgain": "再试一次",
-      "lessons": "课时"
+      "lessons": "课时",
+      "settings": {
+        "title": "设置",
+        "description": "编辑个人资料、修改密码、切换语言或注销账户。",
+        "saveChanges": "保存更改",
+        "profile": {
+          "title": "个人资料详情",
+          "namePlaceholder": "姓名",
+          "emailPlaceholder": "邮箱地址",
+          "submit": "开始",
+          "success": "个人资料已更新",
+          "fail": "更新失败，请稍后再试。"
+        },
+        "password": {
+          "title": "修改密码",
+          "current": "当前密码",
+          "new": "新密码",
+          "repeat": "重复新密码",
+          "submit": "保存",
+          "mismatch": "两次输入的密码不一致",
+          "success": "密码已更新"
+        },
+        "language": {
+          "title": "修改语言",
+          "submit": "开始",
+          "success": "语言设置已保存"
+        },
+        "delete": {
+          "title": "注销账户",
+          "action": "注销账户",
+          "success": "您的注销请求已提交"
+        }
+      }
     },
     "courses": {
       "title": "课程",
@@ -779,7 +811,12 @@
     "auth": {
       "signIn": {
         "title": "登录",
-        "description": "安全访问你的账户。"
+        "description": "安全访问你的账户。",
+        "passwordLabel": "密码",
+        "passwordPlaceholder": "请输入密码",
+        "submit": "登录",
+        "noAccount": "还没有账号？",
+        "signUp": "注册"
       }
     },
     "orders": {
@@ -905,6 +942,42 @@
       }
     }
   },
+    "account": {
+      "settings": {
+        "title": "设置",
+        "description": "编辑个人资料、修改密码、切换语言或注销账户。",
+        "saveChanges": "保存更改",
+        "profile": {
+          "title": "个人资料详情",
+          "namePlaceholder": "姓名",
+          "emailPlaceholder": "邮箱地址",
+          "submit": "开始",
+          "success": "个人资料已更新",
+          "fail": "更新失败，请稍后再试。"
+        },
+        "password": {
+          "title": "修改密码",
+          "current": "当前密码",
+          "new": "新密码",
+          "repeat": "重复新密码",
+          "submit": "保存",
+          "mismatch": "两次输入的密码不一致",
+          "success": "密码已更新",
+          "fail": "密码更新失败，请重试。"
+        },
+        "language": {
+          "title": "修改语言",
+          "submit": "保存更改",
+          "success": "语言设置已保存",
+          "fail": "语言设置更新失败，请重试。"
+        },
+        "delete": {
+          "title": "注销账户",
+          "action": "注销账户",
+          "success": "您的注销请求已提交"
+        }
+      }
+    },
   "layouts": {
     "header": {
       "GetStarted": "开始"
