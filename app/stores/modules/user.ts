@@ -12,8 +12,11 @@ export const useUserStore = defineStore('user', () => {
   const login = (data: { email: string, password: string }) => {
     return new Promise<LoginResponse>((resolve, reject) => {
       userApi.login(data).then(async (res) => {
+        const token = useCookie('token')
         const loginRes = res.data.value;
         userInfo.value = loginRes.data;
+        token.value = loginRes.data.token;
+        console.log(userInfo.value, token.value)
         await fetchUserInfo()
         resolve(loginRes.data)
       }).catch(err => {
@@ -47,6 +50,7 @@ export const useUserStore = defineStore('user', () => {
 
 
   return {
+    userInfo,
     login,
     fetchUserInfo,
     changePassword,
