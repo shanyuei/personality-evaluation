@@ -9,17 +9,17 @@
         <div class="course-card__footer__status">
           {{ $t('common.courseCard.status.completed') }}
         </div>
-        <div class="course-card__footer__cta">
+        <button class="course-card__footer__cta is-dark">
           <span class="course-card__footer__cta-text">
-            {{ $t('common.getStarted') }}
+            {{ $t('common.retakeTest') }}
           </span>
           <span class="course-card__footer__cta-icon">
             <NuxtImg src="/images/common/go-arrow-1.png" alt="arrow-right" width="40" height="40" />
           </span>
-        </div>
+        </button>
         <div class="course-card__footer__link">
           <span class="course-card__footer__link-text">
-            {{ $t('courseCard.link.viewResults') }}
+            {{ $t('common.viewResults') }}
           </span>
         </div>
         <div class="course-card__footer__badge course-card__footer__badge--points">
@@ -28,7 +28,7 @@
               {{ course.points ?? 20 }}
             </span>
             <span class="course-card__footer__badge-label">
-              {{ course.resultLabel ?? $t('courseCard.badge.points') }}
+              {{ course.resultLabel ?? $t('common.points') }}
             </span>
           </div>
         </div>
@@ -37,8 +37,19 @@
 
 
     <template v-if="course.footerType === 2">
-      <div class="course-card__status">
-        <strong class="uno-text-bold uno-text-#000">{{ course.completedLessons ?? 1 }}</strong> {{ $t('courseCard.status.of') }} <strong>{{ course.lessons ?? 10 }}</strong> {{ $t('courseCard.status.lessons') }}
+      <div class="course-card__status uno-text-bold uno-text-#000">
+        <span>
+          {{ course.completedLessons ?? 1 }}
+        </span>
+        <span>
+          {{ $t('common.of') }}
+        </span>
+        <span>
+          {{ course.lessons ?? 10 }}
+        </span>
+        <span>
+          {{ $t('common.lessons') }}
+        </span>
       </div>
       <div class="course-card__footer">
         <button class="course-card__footer__cta is-green">
@@ -46,23 +57,23 @@
             {{ $t('common.getStarted') || 'Get Started' }}
           </span>
           <span class="course-card__footer__cta-icon">
-            <NuxtImg src="/images/common/go-arrow-1.png" alt="arrow-right" width="40" height="40" />
+            <NuxtImg src="/images/common/go-arrow-1.png" alt="arrow-right" width="44" height="44" />
           </span>
         </button>
-        <div class="course-card__footer__progress" role="progressbar" :aria-valuenow="formatPercent(course.percent)" aria-valuemin="0" aria-valuemax="100">
-          <svg viewBox="0 0 44 44" class="course-card__footer__progress-svg">
-            <circle cx="22" cy="22" r="19" class="course-card__footer__progress-track" />
-            <circle
-              cx="22"
-              cy="22"
-              r="19"
-              class="course-card__footer__progress-bar"
-              :style="{ strokeDasharray: progressCircumference, strokeDashoffset: progressOffset }"
-            />
-            <text x="22" y="22" class="course-card__footer__progress-text" dominant-baseline="middle" text-anchor="middle">
-              {{ formatPercent(course.percent) }}%
-            </text>
+        <div class="course-card__footer__progress uno-relative" role="progressbar"
+          :aria-valuenow="formatPercent(course.percent)" aria-valuemin="0" aria-valuemax="100">
+
+
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="60" height="60" rx="30" stroke="#E7E7E8" stroke-width="4" />
+            <rect x="2" y="2" width="60" height="60" rx="30" stroke="var(--ui-primary)" stroke-width="4"
+              class="uno-transition-all uno-duration-500 uno-ease-out"
+              :style="{ strokeDasharray: progressCircumference, strokeDashoffset: progressOffset }" />
           </svg>
+          <span
+            class="course-card__footer__progress-text uno-absolute uno-top-1/2 uno-left-1/2 uno-transform uno-translate-x-[-50%] uno-translate-y-[-50%]">
+            {{ formatPercent(course.percent) }}%
+          </span>
         </div>
       </div>
     </template>
@@ -83,10 +94,10 @@
         </button>
         <div class="course-card__footer__link">
           <span class="course-card__footer__link-text">
-            {{ $t('courseCard.link.viewResults') }}
+            {{ $t('common.viewResults') }}
           </span>
         </div>
-        <NuxtImg src="/images/common/check-mark-1.png" alt="check-mark" width="66" height="66"
+        <NuxtImg src="/images/common/check-mark-1.png" alt="check-mark" width="64" height="64"
           class="max-sm:hidden max-xs:hidden" />
         <NuxtImg src="/images/common/check-mark-1.png" alt="check-mark" width="24" height="24"
           class="hidden max-sm:block max-xs:block" />
@@ -94,9 +105,11 @@
     </template>
     <template v-if="course.footerType === 4">
       <div class="course-card__footer__meta">
-        <span class="course-card__footer__meta-item">{{ course.lessons ?? 10 }} {{ $t('courseCard.status.lessons') }}</span>
+        <span class="course-card__footer__meta-item">{{ course.lessons ?? 10 }} {{ $t('common.lessons')
+        }}</span>
         <span class="course-card__footer__meta-item">{{ course.duration ?? '2 weeks' }}</span>
-        <span v-if="course.certificate !== false" class="course-card__footer__meta-item">{{ $t('courseCard.meta.certificate') }}</span>
+        <span v-if="course.certificate !== false" class="course-card__footer__meta-item">{{
+          $t('common.certificate') }}</span>
       </div>
       <div class="course-card__footer">
         <div class="course-card__footer__row">
@@ -110,11 +123,14 @@
               </button>
               <div class="course-card__footer__people">
                 <div class="course-card__footer__avatars">
-                  <div v-for="(a, idx) in (course.avatars?.slice(0,3) ?? ['/images/home/8.png','/images/home/11.png','/images/about/3.png'])" :key="idx" class="course-card__footer__avatar">
-                    <img :src="a" :alt="'avatar-'+(idx+1)" />
+                  <div
+                    v-for="(a, idx) in (course.avatars?.slice(0, 3) ?? ['/images/home/8.png', '/images/home/11.png', '/images/about/3.png'])"
+                    :key="idx" class="course-card__footer__avatar">
+                    <img :src="a" :alt="'avatar-' + (idx + 1)" />
                   </div>
                 </div>
-                <p class="course-card__footer__people-text">{{ course.finishedText ?? `3067 ${$t('courseCard.people.finished')}` }}</p>
+                <p class="course-card__footer__people-text">{{ course.finishedText ?? `3067
+                  ${$t('common.finished')}` }}</p>
               </div>
             </div>
           </div>
@@ -156,7 +172,7 @@ const formatPercent = (p?: number) => {
   return v
 }
 
-const progressRadius = 19
+const progressRadius = 30
 const progressCircumference = 2 * Math.PI * progressRadius
 const progressOffset = computed(() => {
   const p = formatPercent(props.course?.percent)
@@ -170,6 +186,9 @@ const progressOffset = computed(() => {
   padding: 12px;
   border-radius: 12px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   .course-card__img {
     border-radius: 12px;
@@ -211,6 +230,9 @@ const progressOffset = computed(() => {
       gap: 12px;
     }
 
+    .course-card__footer__status {
+      font-size: 14px;
+    }
 
     &__actions {
       display: flex;
@@ -385,17 +407,20 @@ const progressOffset = computed(() => {
       align-items: center;
       justify-content: center;
     }
+
     &__progress-svg {
       width: 64px;
       height: 64px;
       display: block;
       overflow: visible;
     }
+
     &__progress-track {
       fill: none;
       stroke: var(--ui-input);
       stroke-width: 6;
     }
+
     &__progress-bar {
       fill: none;
       stroke: var(--ui-primary);
@@ -404,6 +429,7 @@ const progressOffset = computed(() => {
       transform: rotate(-90deg);
       transform-origin: 50% 50%;
     }
+
     &__progress-text {
       fill: var(--ui-foreground);
       font-size: 12px;
@@ -419,6 +445,7 @@ const progressOffset = computed(() => {
       border-radius: 50%;
       background: conic-gradient(var(--ui-primary) var(--pct), var(--ui-input) 0);
     }
+
     &__badge--percent::after {
       content: '';
       position: absolute;
@@ -427,6 +454,7 @@ const progressOffset = computed(() => {
       background: #fff;
       z-index: 1;
     }
+
     &__badge--percent::before {
       content: '';
       position: absolute;
@@ -438,8 +466,9 @@ const progressOffset = computed(() => {
       left: 50%;
       transform: translate(-50%, -50%) rotate(var(--pct-angle)) translate(0, -24px);
       z-index: 3;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     }
+
     &__badge--percent-percent {
       position: absolute;
       inset: 0;
@@ -456,31 +485,37 @@ const progressOffset = computed(() => {
   }
 
   .course-card__status {
-    color: var(--ui-muted-foreground);
     font-size: 14px;
     font-family: 'Outfit';
     font-weight: 500;
     line-height: 1.5;
-    margin-bottom: 8px;
-    margin-top: 8px;
+    margin-bottom: 0;
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
   }
 
   .course-card__footer__meta {
     display: flex;
     align-items: center;
     gap: 24px;
-    margin-bottom: 12px;
     color: var(--ui-foreground);
     font-size: 14px;
     font-family: 'Outfit';
     font-weight: 500;
     line-height: 1.5;
+    margin-top: 12px;
   }
 
   .course-card__footer__meta-item {
     display: inline-flex;
     align-items: center;
     gap: 6px;
+  }
+
+  .course-card__footer__progress-text {
+    font-size: 18px;
   }
 }
 
@@ -494,6 +529,7 @@ const progressOffset = computed(() => {
 
     .course-card__footer__status {
       margin-bottom: 2px;
+      font-size: 14px;
     }
 
     .course-card__footer__cta {
@@ -530,22 +566,27 @@ const progressOffset = computed(() => {
     .course-card__footer__badge-label {
       font-size: 10px;
     }
+
     .course-card__footer__people {
       flex-direction: column;
       align-items: flex-start;
       gap: 6px;
       width: 100%;
     }
+
     .course-card__footer__people-text {
       text-align: left;
     }
+
     .course-card__footer__avatar {
       width: 20px;
       height: 20px;
     }
+
     .course-card__footer__avatar:not(:first-child) {
       margin-left: -6px;
     }
+
     .course-card__footer__badge--percent {
       width: 36px;
       height: 36px;
@@ -554,6 +595,7 @@ const progressOffset = computed(() => {
       border-radius: 50%;
       background: conic-gradient(var(--ui-primary) var(--pct), var(--ui-input) 0);
     }
+
     .course-card__footer__badge--percent::after {
       content: '';
       position: absolute;
@@ -562,6 +604,7 @@ const progressOffset = computed(() => {
       background: #fff;
       z-index: 1;
     }
+
     .course-card__footer__badge--percent::before {
       content: '';
       position: absolute;
@@ -573,24 +616,32 @@ const progressOffset = computed(() => {
       left: 50%;
       transform: translate(-50%, -50%) rotate(var(--pct-angle)) translate(0, -18px);
       z-index: 3;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     }
-    .course-card__footer__badge--percent-percent { font-size: 11px; z-index: 2; }
+
+    .course-card__footer__badge--percent-percent {
+      font-size: 11px;
+      z-index: 2;
+    }
 
     .course-card__footer__progress {
       width: 40px;
       height: 40px;
     }
+
     .course-card__footer__progress-svg {
       width: 40px;
       height: 40px;
     }
+
     .course-card__footer__progress-track {
       stroke-width: 5;
     }
+
     .course-card__footer__progress-bar {
       stroke-width: 5;
     }
+
     .course-card__footer__progress-text {
       font-size: 10px;
     }

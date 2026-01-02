@@ -21,7 +21,7 @@
 
         <!-- 导航栏 -->
         <UNavigationMenu v-if="showMenu" :ui="{
-          link: 'before:bg-[transparent!important] font-[\'Outfit\'] text-center font-medium text-[var(--ui-foreground)] data-[active]:text-[var(--color-pink-1)] hover:text-[var(--color-pink-1)]',
+          link: 'before:bg-[transparent!important] font-[\'Outfit\'] text-center font-medium text-[16px] text-[#001813] data-[active]:text-[var(--color-pink-1)] hover:text-[var(--color-pink-1)]',
           item: 'ml-[18px] mr-[18px]'
         }" :items="items" class="uno-w-full uno-justify-center max-sm:uno-hidden" />
       </div>

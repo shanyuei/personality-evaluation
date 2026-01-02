@@ -3,7 +3,7 @@
         <div
             class=" uno-w-137px uno-h-40px uno-flex uno-items-center uno-gap-4px uno-justify-center max-sm:uno-w-auto max-sm:uno-px-8px max-sm:uno-gap-2px">
             <!-- 地区图标 -->
-            <NuxtImg src="/images/i18nSelect/en.png" alt="en" width="20px" height="20px" />
+            <NuxtImg src="/images/i18nSelect/en.png" alt="en" width="24px" height="24px" />
             <!-- 区域文字 -->
             <span
                 class="uno-min-w-[54px] max-sm:uno-w-auto max-sm:uno-min-w-auto uno-text-[#000000] uno-text-sm uno-font-['Outfit'] uno-text-center uno-font-medium uno-leading-[22px]">

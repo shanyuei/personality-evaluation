@@ -1,8 +1,8 @@
 <template>
     <main class="uno-py-64px">
-            <NuxtLink :to="{
+        <!-- <NuxtLink :to="{
       name: 'test'
-    }">111</NuxtLink>
+    }">111</NuxtLink> -->
         <section class="uno-py-10 page-container ">
             <div class="uno-flex uno-justify-start uno-items-center uno-flex-col uno-gap-[15px]">
                 <div class="uno-w-full ">
@@ -48,7 +48,7 @@
                                         </div>
                                     </div>
                                     <p
-                                        class="uno-text-[var(--ui-muted-foreground)] uno-text-xs md:uno-text-sm uno-font-['Outfit'] uno-text-center md:uno-text-left">
+                                        class="uno-text-[var(--ui-muted-foreground)] uno-text-[12px] md:uno-text-[14px] uno-font-['Outfit'] uno-text-center md:uno-text-left">
                                         3067 people already finished it</p>
                                 </div>
                             </div>
@@ -66,7 +66,7 @@
                     $t('pages.course.allCourses') }}</p>
 
                 <div class="uno-mt-4">
-                    <div class="uno-grid uno-grid-cols-1 md:uno-grid-cols-2 uno-gap-6">
+                    <div class="uno-grid uno-grid-cols-1 md:uno-grid-cols-2 uno-gap-[40px_24px]">
                         <CourseCard v-for="course in sortedCourses" :key="course.id" :course="course" />
                     </div>
                 </div>
@@ -84,12 +84,12 @@ import { ref, computed } from 'vue'
 const { t } = useI18n()
 
 definePageMeta({
-  title: () => 'seo.courses.title'
+    title: () => 'seo.courses.title'
 })
 
 useSeoMeta({
-  title: () => t('seo.courses.title') as string,
-  description: () => t('seo.courses.description') as string
+    title: () => t('seo.courses.title') as string,
+    description: () => t('seo.courses.description') as string
 })
 
 const recommended = ref({

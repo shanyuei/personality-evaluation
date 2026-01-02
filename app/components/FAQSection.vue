@@ -1,31 +1,32 @@
 <template>
   <div class="page-container uno-faq-section uno-py-16 sm:uno-py-20 md:uno-py-24">
     <div class=" uno-w-full md:uno-mx-auto md:uno-max-w-[80%] ">
-      <div class="uno-text-center uno-mb-16">
-        <h2 class="uno-text-3xl md:uno-text-4xl uno-font-['Outfit'] uno-font-bold uno-mb-3">{{ title }}</h2>
-        <p v-if="description" class="uno-text-gray-600 uno-max-w-3xl uno-mx-auto">{{ description }}</p>
+      <div class="uno-text-center uno-mb-16 uno-max-w-3xl uno-mx-auto">
+        <h2 class="uno-text-[48px] md:uno-text-[48px] uno-font-['Outfit'] uno-font-bold uno-mb-3">{{ title }}</h2>
+        <p v-if="description" class="uno-text-[var(--ui-muted-foreground)] uno-px-[50px]">{{ description }}</p>
       </div>
+
 
       <div class="uno-max-w-3xl uno-w-full uno-mx-auto">
         <div v-for="(item, idx) in localItems" :key="idx"
           class="uno-w-full uno-rounded-lg uno-mb-4 uno-overflow-hidden uno-transition-shadow uno-relative"
           :class="isExpanded(idx) ? 'item-expanded' : 'item-collapsed'">
-          <div
-            v-if="isExpanded(idx)"
-            aria-hidden="true"
+          <div v-if="isExpanded(idx)" aria-hidden="true"
             style="flex: none; background: linear-gradient(90deg, rgba(234,76,137,0.12) 0%, rgba(0,157,119,0.38) 49%, rgba(147,46,250,0.12) 100%); left: 0; right: 0; margin: 0 auto; pointer-events: none;"
-            class="uno-hidden md:uno-block uno-w-full uno-h-[160px] uno-rounded-[48px] uno-shadow-[blur(48px)] uno-absolute"
-          />
+            class="uno-hidden md:uno-block uno-w-full uno-h-[160px] uno-rounded-[48px] uno-shadow-[blur(48px)] uno-absolute" />
           <div v-if="isExpanded(idx)">
             <!-- background: linear-gradient(90deg, rgba(234,76,137,0.12) 0%, rgba(0,157,119,0.38) 49%, rgba(147,46,250,0.12) 100%); -->
             <div class="uno-flex uno-justify-start uno-items-start uno-flex-col uno-relative">
-              <div class="uno-flex uno-self-stretch uno-justify-start uno-items-start uno-flex-col uno-gap-3 uno-py-[20px] uno-px-[24px] uno-bg-[#FFFFFF]">
-                <div style="flex-shrink: 0" class="uno-w-full uno-flex uno-justify-between uno-items-center uno-flex-row"
-                  @click="toggle(idx)">
-                  <p class="uno-text-[#009D77] uno-text-xl md:uno-text-2xl uno-font-['Outfit'] uno-text-center uno-font-medium">
+              <div
+                class="uno-flex uno-self-stretch uno-justify-start uno-items-start uno-flex-col uno-gap-3 uno-py-[20px] uno-px-[24px] uno-bg-[#FFFFFF]">
+                <div style="flex-shrink: 0"
+                  class="uno-w-full uno-flex uno-justify-between uno-items-center uno-flex-row" @click="toggle(idx)">
+                  <p
+                    class="uno-text-[#009D77] uno-text-xl md:uno-text-2xl uno-font-['Outfit'] uno-text-center uno-font-medium">
                     {{ item.question }}
                   </p>
-                  <svg xmlns="http://www.w3.org/2000/svg" uno-xmlns:xlink="http://www.w3.org/1999/xlink" fill="none"
+                  <svg class="uno-w-6 uno-h-6 uno-min-w-6 uno-min-h-6 uno-flex-shrink-0"
+                    xmlns="http://www.w3.org/2000/svg" uno-xmlns:xlink="http://www.w3.org/1999/xlink" fill="none"
                     uno-version="1.1" width="24" height="24" viewBox="0 0 24 24">
                     <defs>
                       <clipPath id="master_svg0_0_17743">
@@ -41,20 +42,26 @@
                     </g>
                   </svg>
                 </div>
-                <p style="flex-shrink: 0" class="uno-self-stretch uno-text-[#4E5255] uno-font-['Outfit']">
-                  {{ item.answer }}
-                </p>
+                <div class="uno-flex uno-justify-start uno-items-start">
+                  <p style="flex-shrink: 0"
+                    class="uno-self-stretch uno-text-[#4E5255] uno-font-['Outfit'] uno-break-words">
+                    {{ item.answer }}
+                  </p>
+                  <div class="uno-w-6 uno-h-6 uno-min-w-6 uno-min-h-6 uno-flex-shrink-0"></div>
+                </div>
               </div>
             </div>
           </div>
           <div v-else>
-            <div class="uno-flex uno-justify-between uno-items-center uno-flex-row uno-py-[20px] uno-px-[24px] uno-bg-[#FFFFFF]"
+            <div
+              class="uno-flex uno-justify-between uno-items-center uno-flex-row uno-py-[20px] uno-px-[24px] uno-bg-[#FFFFFF]"
               @click="toggle(idx)">
               <span class="uno-text-[#011813] uno-text-xl md:uno-text-2xl uno-font-['Outfit'] uno-font-medium">
                 {{ item.question }}
               </span>
-              <svg xmlns="http://www.w3.org/2000/svg" uno-xmlns:xlink="http://www.w3.org/1999/xlink" fill="none"
-                uno-version="1.1" width="24" height="24" viewBox="0 0 24 24">
+              <svg class="uno-w-6 uno-h-6 uno-min-w-6 uno-min-h-6 uno-flex-shrink-0" xmlns="http://www.w3.org/2000/svg"
+                uno-xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" uno-version="1.1" width="24" height="24"
+                viewBox="0 0 24 24">
                 <defs>
                   <clipPath id="master_svg0_0_17747">
                     <rect uno-x="0" uno-y="0" width="24" height="24" uno-rx="0" />
@@ -122,4 +129,3 @@ const toggle = (i: number) => {
   box-shadow: 0 12px 24px rgba(0, 157, 119, 0.12);
 }
 </style>
-

@@ -15,7 +15,7 @@
       },
       "why": {
         "title": "Why take the test?",
-        "desc": "Connect with top mentors. Guided questions and proven experience deliver personalized advice.",
+        "desc": "Connect with the next wave of expert mentors, guiding you with fresh perspectives, innovative insights, and proven expertise.",
         "main": {
           "title": "Boost self-awareness",
           "desc": "Gain UI design abilities through practice-driven coaching, with personalized guidance and feedback."
@@ -999,7 +999,14 @@
     },
     "api": {
       "error": "Error"
-    }
+    },
+    "viewResults": "View test results",
+    "retakeTest": "Retake test",
+    "points": "points",
+    "of": "of",
+    "lessons": "lessons",
+    "finished": "finished",
+    "certificate": "Certificate"
   },
   "seo": {
     "home": {

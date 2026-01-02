@@ -4,9 +4,9 @@
       <NuxtImg src="/theme/layout/footer-bg-1920.png" alt="uno-footer" width="1920" height="471"
         class="uno-w-full uno-h-[471px] uno-object-cover uno-object-center" />
     </div>
-    <div class="uno-w-full uno-bottom-0 uno-left-0 uno-z-[2] uno-relative">
+    <div class="page-container uno-w-full uno-bottom-0 uno-left-0 uno-z-[2] uno-relative">
       <UFooter :ui="{
-        container: 'py-80px px-40px xl:px-0 gap-0 z-[2] relative max-w-[1440px] mx-auto items-start max-md:max-w-[80%] max-sm:max-w-full max-sm:flex-col-reverse max-sm:flex max-sm:gap-32px max-sm:py-0 max-sm:p-b-24px',
+        container: 'py-80px px-40px xl:px-0 gap-0 z-[2] relative max-w-[1440px] mx-auto items-start max-md:max-w-[80%] max-sm:max-w-full max-sm:flex-col-reverse max-sm:flex max-sm:gap-32px max-sm:py-0 max-sm:p-b-24px uno-items-start',
         left: 'flex-none',
         right: 'flex-none',
         center: 'flex-none',
@@ -17,7 +17,7 @@
             <!-- logo -->
             <NuxtImg src="/theme/logo.png" alt="logo" width="175px" height="40px" />
             <!-- 介绍 -->
-            <p class="uno-text-[#4E5255] uno-font-['Outfit'] uno-text-sm uno-m-t-12px">
+            <p class="uno-text-[#4E5255] uno-font-['Outfit'] uno-text-[16px] uno-m-t-12px">
               Unlock knowledge with expert-led online courses.
             </p>
             <p class="uno-text-[#011813] uno-text-xl uno-font-['Outfit'] uno-font-medium uno-m-t-24px">
@@ -26,13 +26,13 @@
             <!-- 图标 -->
             <div class="uno-flex uno-gap-12px uno-m-t-16px">
               <!-- 推特 -->
-              <NuxtImg src="/images/footer/twitter.png" alt="twitter" width="32px" height="32px" />
+              <NuxtImg src="/images/footer/twitter.png" alt="twitter" width="40px" height="40px" />
               <!-- 脸书 -->
-              <NuxtImg src="/images/footer/facebook.png" alt="facebook" width="32px" height="32px" />
+              <NuxtImg src="/images/footer/facebook.png" alt="facebook" width="40px" height="40px" />
               <!-- Linkedin -->
-              <NuxtImg src="/images/footer/linkedin.png" alt="linkedin" width="32px" height="32px" />
+              <NuxtImg src="/images/footer/linkedin.png" alt="linkedin" width="40px" height="40px" />
               <!-- Instagram -->
-              <NuxtImg src="/images/footer/instagram.png" alt="instagram" width="32px" height="32px" />
+              <NuxtImg src="/images/footer/instagram.png" alt="instagram" width="40px" height="40px" />
             </div>
           </div>
 
