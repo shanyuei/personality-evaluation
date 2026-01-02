@@ -884,7 +884,94 @@
       "result": {
         "title": "Test Results",
         "description": "View your report and next actions."
+      },
+      "report": {
+        "title": "Your Personality Type Report is Ready!",
+        "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.",
+        "features": {
+          "identity": {
+            "title": "Find Out Who You Really Are",
+            "desc": "Dive deep into your core identity and uncover aspects of yourself you've never known."
+          },
+          "strengths": {
+            "title": "Explore Your Strengths and Weaknesses",
+            "desc": "Gain a clear understanding of what you excel at and where you can grow."
+          },
+          "relationships": {
+            "title": "Improve Your Relationship with Other",
+            "desc": "For media-related questions or press inquiries, please contact us at media{'@'}snappyapp.com."
+          }
+        },
+        "pricing": {
+          "access": "7-day full access",
+          "price": "HK$14.95",
+          "cta": "Get My Results",
+          "trial": "7-day trial for $1.99, auto-renews at $27.88/mo. Cancel anytime.",
+          "ordered": "reports ordered!"
+        },
+        "receive": {
+          "title": "What You Will Receive",
+          "subtitle": "Be always were to from of volunteers range times to mildcastingoppositehe its nor attribute how solitary saw more on his not",
+          "cards": {
+            "report": {
+              "title": "Comprehensive Personality Report",
+              "desc": "The to we considerable,explain the morals, to queen please"
+            },
+            "courses": {
+              "title": "Personalized Course Recommendations",
+              "desc": "Pervasively in evening best bad policy he first of he first to attempt"
+            },
+            "assessment": {
+              "title": "Skill Assessment Tests",
+              "desc": "Were control to late check though text a carefully anewer"
+            },
+            "challenges": {
+              "title": "Practical Daily Challenges",
+              "desc": "The to we considerable,explain the morals, to queen please"
+            },
+            "library": {
+              "title": "Learning and Development Library",
+              "desc": "Pervasively in evening best bad policy he first of he first to attempt"
+            },
+            "certificates": {
+              "title": "Certificates of Achievement",
+              "desc": "Were control to late check though textacarefullyanewer"
+            }
+          }
+        },
+        "trusted": {
+          "title": "Trusted by 20,000+ customers",
+          "subtitle": "Be always were to from of volunteers range times to mild, casting opposite he its nor attribute how solitary saw more on his not",
+          "card_text": "An exceptional platform for career development! The current curriculum, skilled instructors, and hands-on learning ensure every moment is impactful, enriching, and truly rewarding."
+        },
+        "worldwide": {
+          "title": "Trusted by over 100 thousand people worldwide",
+          "subtitle": "Latest results",
+          "orders": {
+            "amelia": "Amelia just ordered. Personality type:",
+            "diego": "Diego just ordered. Personality type:",
+            "mia": "Mia just ordered. Personality type:"
+          },
+          "types": {
+            "peacemaker": "Peacemaker",
+            "loyalist": "Loyalist"
+          }
+        },
+        "cta_full": {
+          "title": "Discover more about yourself with the full report",
+          "list": {
+            "1": "Get access to 50+ personal premium tests",
+            "2": "15+ pages of detailed and personal insights",
+            "3": "Learn how to use your strengths to reach higher and grow as a person",
+            "4": "Get better at navigating the professional world and achieve your professional goals"
+          },
+          "access": "7-day full access",
+          "price": "HK$14.95",
+          "btn": "Get My Results",
+          "note": "7-day trial for $1.99, auto-renews at $27.88/mo. Cancel anytime."
+        }
       }
+
     },
     "legal": {
       "privacy": {
