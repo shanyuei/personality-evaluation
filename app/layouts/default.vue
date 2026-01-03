@@ -17,10 +17,20 @@
         <!-- 页面顶部背景 -->
         <NuxtImg src="/theme/layout/bg-top.png" alt="bg-top" width="100%" height="100vh"
           class="uno-w-full uno-h-auto uno-max-h-100vh uno-absolute uno-top-0 uno-left-0 uno-z-0" />
-        <NuxtImg v-if="showPageTopIcons" src="/theme/layout/page-top-icon-1.png" width="124px" height="132px"
-          class="uno-absolute uno-top-331px uno-right-67px uno-z-1" />
-        <NuxtImg v-if="showPageTopIcons" src="/theme/layout/page-top-icon-2.png" width="163px" height="170px"
-          class="uno-absolute uno-top-431px uno-left-133px uno-z-1" />
+        <template v-if="showPageTopIcons">
+          <NuxtImg src="/theme/layout/page-top-icon-1.png" width="124px" height="132px"
+            class="uno-absolute uno-top-331px uno-right-67px uno-z-1" />
+          <NuxtImg src="/theme/layout/page-top-icon-2.png" width="163px" height="170px"
+            class="uno-absolute uno-top-431px uno-left-133px uno-z-1" />
+        </template>
+        <template v-if="showPageTopIcons3">
+          <NuxtImg  src="/theme/layout/page-top-icon-3.png" width="104" height="44"
+            class="uno-absolute uno-top-252px uno-right-120px uno-z-1" />
+        </template>
+
+
+
+
         <!-- 头部 -->
         <app-header :show-menu="showMenu" />
         <!-- 主要内容区域 -->
@@ -63,6 +73,10 @@ const showPageTopIcons = computed(() => {
     return props.layoutShowPageTopIcons
   }
   return route.meta.layoutShowPageTopIcons !== false
+})
+console.log(route,props)
+const showPageTopIcons3 = computed(() => {
+  return route.meta.layoutShowPageTopIcons3 === true
 })
 console.log(route?.meta?.title)
 const head = useLocaleHead()

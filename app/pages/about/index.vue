@@ -2,7 +2,7 @@
   <main class="">
 
     <section class="uno-relative uno-py-22 sm:uno-py-32">
-      <div class="page-container uno-px-6 sm:uno-px-10">
+      <div class="page-container uno-px-6 ">
         <div
           class="uno-flex uno-relative uno-flex-col md:uno-flex-row uno-items-start md:uno-justify-between uno-gap-72px">
           <NuxtImg src="/images/about/icon-1.png" alt="decor"
@@ -67,7 +67,7 @@
 
 
     <section class="uno-py-12 md:uno-py-20 uno-bg-#f8f8f8">
-      <div class="page-container uno-px-6 sm:uno-px-10">
+      <div class="page-container uno-px-6 ">
         <div v-for="(item, index) in missionItems" :key="index"
           class="uno-flex uno-flex-col md:uno-flex-row uno-gap-10 uno-items-center"
           :class="{ 'uno-mt-80px': index > 0 }">
@@ -107,7 +107,7 @@
     </section>
 
     <section class="uno-py-12 md:uno-py-20">
-      <div class="page-container uno-px-6 sm:uno-px-10">
+      <div class="page-container uno-px-6 ">
         <div class="uno-flex uno-flex-col md:uno-flex-row uno-gap-10 uno-items-start">
           <div>
             <h2

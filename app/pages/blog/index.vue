@@ -1,5 +1,5 @@
 <template>
-  <main class="page-container uno-py-64px blog-page">
+  <main class="page-container uno-py-46px blog-page">
     <!-- Hero -->
     <section class="">
       <p
@@ -205,6 +205,8 @@ const { t } = useI18n();
 
 definePageMeta({
   layoutShowCurious: true,
+  layoutShowPageTopIcons3: true,
+  layoutShowPageTopIcons: false,
   title: () => 'seo.blog.title'
 })
 

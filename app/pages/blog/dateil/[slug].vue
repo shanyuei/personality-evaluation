@@ -1,5 +1,5 @@
 <template>
-  <main class="page-container uno-py-64px blog-page">
+  <main class="page-container uno-py-46px blog-page">
     <section>
       <p
         class="uno-font-normal uno-text-[14px] md:uno-text-[16px] uno-text-[#011813] uno-leading-[20px] md:uno-leading-[24px]">
@@ -11,7 +11,7 @@
         <NuxtImg v-if="article?.cover?.[0]?.url" :src="getImageUrl(article.cover?.[0]?.url || '')" :alt="article.title"
           class="uno-w-full uno-h-420px uno-object-cover" />
       </div>
-      <div class="uno-grid md:uno-grid-cols-3 uno-gap-[24px] uno-mt-24px">
+      <div class="uno-grid md:uno-grid-cols-3 uno-gap-[24px] uno-mt-56px">
         <div class="md:uno-col-span-2" v-if="article">
           <p
             class="uno-font-normal uno-text-[14px] md:uno-text-[16px] uno-text-[#4e5255] uno-leading-[20px] md:uno-leading-[24px]">
@@ -31,7 +31,8 @@
 
         <div>
           <div class="uno-rounded-2xl uno-mb-6">
-            <h3 class="uno-text-[24px] uno-font-semibold uno-text-gray-900 uno-mb-4">{{ $t('pages.blog.sidebar.recent') }}
+            <h3 class="uno-text-[24px] uno-font-semibold uno-text-gray-900 uno-mb-4">{{ $t('pages.blog.sidebar.recent')
+              }}
             </h3>
             <ul class="uno-space-y-4">
               <li v-for="recent in recentArticles" :key="recent.id">
@@ -113,7 +114,9 @@ getLatestArticles().then(res => {
 updatePreviewBySlug(slug.value);
 // 使用文章标题作为页面标题，如果没有文章则使用默认标题
 definePageMeta({
-  title: () => 'seo.blog.slug.title'
+  title: () => 'seo.blog.slug.title',
+  layoutShowPageTopIcons3: true,
+  layoutShowPageTopIcons: false,
 })
 
 useSeoMeta({
