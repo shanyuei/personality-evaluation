@@ -77,7 +77,7 @@
 
       <div class="uno-flex uno-flex-col lg:uno-flex-row uno-gap-8">
         <!-- Grid -->
-        <div class="lg:uno-w-2/3">
+        <div class="lg:uno-w-3/5">
           <div class="uno-grid sm:uno-grid-cols-2 md:uno-grid-cols-3 uno-gap-6">
             <NuxtLink v-for="a in articles" :key="a.id" :to="{
               name: 'blog-dateil-slug',
@@ -108,7 +108,7 @@
         </div>
 
         <!-- Sidebar -->
-        <div class="lg:uno-w-1/3">
+        <div class="lg:uno-w-2/5">
           <!-- Categories -->
           <!-- <div class="uno-rounded-2xl uno-mb-12">
             <h3 class="uno-text-[22px] uno-font-['Outfit'] uno-font-semibold uno-text-[#011813] uno-mb-4">{{
@@ -126,7 +126,7 @@
 
           <!-- Recent Blogs -->
           <div class="uno-rounded-2xl uno-mb-6">
-            <h3 class="uno-text-lg uno-font-semibold uno-text-gray-900 uno-mb-4">{{ $t('pages.blog.sidebar.recent') }}
+            <h3 class="uno-text-[24px] uno-font-semibold uno-text-gray-900 uno-mb-4">{{ $t('pages.blog.sidebar.recent') }}
             </h3>
             <ul class="uno-space-y-4">
               <li v-for="recent in previewArticles" :key="recent.id">
@@ -155,36 +155,36 @@
 
           <!-- Tags -->
           <div class="uno-rounded-2xl uno-py-6">
-            <h3 class="uno-text-lg uno-font-semibold uno-text-gray-900 uno-mb-3">{{ $t('pages.blog.sidebar.tags') }}
+            <h3 class="uno-text-[24px] uno-font-semibold uno-text-gray-900 uno-mb-3">{{ $t('pages.blog.sidebar.tags') }}
             </h3>
             <div class="uno-flex uno-flex-wrap uno-gap-3">
               <span v-for="tag in tags" :key="tag.documentId" role="button" :class="[
-                'uno-text-[14px] uno-px-3 uno-py-1 uno-rounded-[999px] uno-border uno-bg-transparent uno-text-[#011813] uno-cursor-pointer hover:uno-border-[var(--color-pink-1)] hover:uno-text-[var(--color-pink-1)]',
+                'uno-text-[16px] uno-font-400 uno-px-3 uno-py-1 uno-rounded-[999px] uno-border uno-bg-transparent uno-text-[#011813] uno-cursor-pointer hover:uno-border-[var(--color-pink-1)] hover:uno-text-[var(--color-pink-1)]',
                 activeTagSlug === tag.slug ? 'uno-border-[var(--color-pink-1)] uno-text-[var(--color-pink-1)]' : 'uno-border-[var(--ui-border)]'
               ]" @click="onTagClick(tag)">{{ tag.name }}</span>
             </div>
           </div>
 
           <!-- Follow us -->
-          <div class="uno-rounded-2xl uno-py-6">
-            <h3 class="uno-text-lg uno-font-semibold uno-text-gray-900 uno-mb-3">{{ $t('pages.blog.sidebar.follow') }}
+          <div class="uno-rounded-2xl uno-py-6 uno-flex uno-items-center uno-gap-[12px]">
+            <h3 class="uno-text-[18px] uno-font-400 uno-text-gray-900">{{ $t('pages.blog.sidebar.follow') }}
             </h3>
-            <div class="uno-flex uno-gap-3">
+            <div class="uno-flex uno-gap-[12px]">
               <a href="#" aria-label="Twitter"
-                class="uno-w-[32px] uno-h-[32px] uno-rounded-full uno-flex uno-items-center uno-justify-center">
-                <NuxtImg src="/images/footer/twitter.png" alt="twitter" width="32" height="32" />
+                class="uno-w-[40px] uno-h-[40px] uno-rounded-full uno-flex uno-items-center uno-justify-center">
+                <NuxtImg src="/images/footer/twitter.png" alt="twitter" width="40" height="40" />
               </a>
               <a href="#" aria-label="Facebook"
-                class="uno-w-[32px] uno-h-[32px] uno-rounded-full uno-flex uno-items-center uno-justify-center">
-                <NuxtImg src="/images/footer/facebook.png" alt="facebook" width="32" height="32" />
+                class="uno-w-[40px] uno-h-[40px] uno-rounded-full uno-flex uno-items-center uno-justify-center">
+                <NuxtImg src="/images/footer/facebook.png" alt="facebook" width="40" height="40" />
               </a>
               <a href="#" aria-label="Instagram"
-                class="uno-w-[32px] uno-h-[32px] uno-rounded-full uno-flex uno-items-center uno-justify-center">
-                <NuxtImg src="/images/footer/instagram.png" alt="instagram" width="32" height="32" />
+                class="uno-w-[40px] uno-h-[40px] uno-rounded-full uno-flex uno-items-center uno-justify-center">
+                <NuxtImg src="/images/footer/instagram.png" alt="instagram" width="40" height="40" />
               </a>
               <a href="#" aria-label="LinkedIn"
-                class="uno-w-[32px] uno-h-[32px] uno-rounded-full uno-flex uno-items-center uno-justify-center">
-                <NuxtImg src="/images/footer/linkedin.png" alt="linkedin" width="32" height="32" />
+                class="uno-w-[40px] uno-h-[40px] uno-rounded-full uno-flex uno-items-center uno-justify-center">
+                <NuxtImg src="/images/footer/linkedin.png" alt="linkedin" width="40" height="40" />
               </a>
             </div>
           </div>
