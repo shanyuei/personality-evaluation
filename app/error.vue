@@ -1,6 +1,6 @@
 <template>
     <UApp>
-        <NuxtLayout>
+        <NuxtLayout :layout-show-page-top-icons="false">
             <section class="uno-flex uno-items-center uno-justify-center uno-px-6 uno-py-40">
                 <div class="uno-text-center uno-max-w-[680px] uno-mx-auto">
                     <template v-if="error?.statusCode === 404">

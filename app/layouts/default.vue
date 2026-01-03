@@ -17,9 +17,9 @@
         <!-- 页面顶部背景 -->
         <NuxtImg src="/theme/layout/bg-top.png" alt="bg-top" width="100%" height="100vh"
           class="uno-w-full uno-h-auto uno-max-h-100vh uno-absolute uno-top-0 uno-left-0 uno-z-0" />
-        <NuxtImg src="/theme/layout/page-top-icon-1.png" width="124px" height="132px"
+        <NuxtImg v-if="showPageTopIcons" src="/theme/layout/page-top-icon-1.png" width="124px" height="132px"
           class="uno-absolute uno-top-331px uno-right-67px uno-z-1" />
-        <NuxtImg src="/theme/layout/page-top-icon-2.png" width="163px" height="170px"
+        <NuxtImg v-if="showPageTopIcons" src="/theme/layout/page-top-icon-2.png" width="163px" height="170px"
           class="uno-absolute uno-top-431px uno-left-133px uno-z-1" />
         <!-- 头部 -->
         <app-header :show-menu="showMenu" />
@@ -44,6 +44,11 @@
 
 const route = useRoute()
 const { t } = useI18n()
+
+const props = defineProps<{
+  layoutShowPageTopIcons?: boolean
+}>()
+
 const showFooter = computed(() => {
   return route.meta.layoutShowFooter !== false
 })
@@ -52,6 +57,12 @@ const showMenu = computed(() => {
 })
 const showCurious = computed(() => {
   return route.meta.layoutShowCurious === true
+})
+const showPageTopIcons = computed(() => {
+  if (props.layoutShowPageTopIcons !== undefined) {
+    return props.layoutShowPageTopIcons
+  }
+  return route.meta.layoutShowPageTopIcons !== false
 })
 console.log(route?.meta?.title)
 const head = useLocaleHead()

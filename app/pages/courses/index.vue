@@ -84,7 +84,8 @@ import { ref, computed } from 'vue'
 const { t } = useI18n()
 
 definePageMeta({
-    title: () => 'seo.courses.title'
+    title: () => 'seo.courses.title',
+    layoutShowPageTopIcons: false
 })
 
 useSeoMeta({
