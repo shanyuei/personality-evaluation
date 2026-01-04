@@ -8,7 +8,7 @@ export const useLanguageStore = defineStore('language', () => {
     const language = useCookieLocale() ?? ref(useBrowserLocale()) ?? ref('en');
     const i18n = useI18n();
     const languageName = computed(() => {
-        return languageOptions.value.find(item => item.value === language.value)?.label || ''
+        return languageOptions.value.find(item => item.value === language.value)?.label || 'English'
     })
     const languageOptions = computed(() => {
         const list: any[] = i18n.locales.value || [];
