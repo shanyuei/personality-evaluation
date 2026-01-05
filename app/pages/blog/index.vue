@@ -15,14 +15,14 @@
     <section class="uno-my-[56px]">
       <div class="uno-grid md:uno-grid-cols-2 uno-gap-[24px]">
         <!-- Large card -->
-        <NuxtLink v-if="recommendArticles[0]" :to="{
+        <NuxtLink v-if="recommendArticles && recommendArticles[0]" :to="{
           name: 'blog-dateil-slug',
           params: {
             slug: recommendArticles[0].slug
           }
         }" class="uno-rounded-2xl uno-overflow-hidden">
           <div>
-            <NuxtImg :src="getImageUrl(recommendArticles[0].cover[0].url)" :alt="recommendArticles[0].title" width="588"
+            <NuxtImg :src="getImageUrl(recommendArticles[0]?.cover?.[0]?.url)" :alt="recommendArticles[0].title" width="588"
               height="392" class="uno-rounded-2xl uno-overflow-hidden" />
             <div class="uno-py-6">
               <p
@@ -52,7 +52,7 @@
               slug: a.slug
             }
           }" class="uno-rounded-2xl uno-overflow-hidden">
-            <NuxtImg width="282" height="188" :src="getImageUrl(a.cover[0].url)" :alt="a.title"
+            <NuxtImg width="282" height="188" :src="getImageUrl(a.cover?.[0]?.url)" :alt="a.title"
               class="uno-rounded-2xl uno-overflow-hidden" />
             <div class="uno-py-4">
               <p class="uno-text-[16px] uno-text-gray-500 uno-mb-1">
@@ -80,11 +80,11 @@
           <div class="uno-grid sm:uno-grid-cols-2 md:uno-grid-cols-2 uno-gap-6">
             <NuxtLink v-for="a in articles" :key="a.id" :to="{
               name: 'blog-dateil-slug',
-              params: {
-                slug: a.slug
-              }
-            }" class="uno-rounded-2xl">
-              <NuxtImg :src="getImageUrl(a.cover[0].url)" :alt="a.title" width="384" height="282"
+            params: {
+              slug: a.slug
+            }
+          }" class="uno-rounded-2xl">
+              <NuxtImg :src="getImageUrl(a.cover?.[0]?.url)" :alt="a.title" width="384" height="282"
                 class="uno-rounded-2xl uno-overflow-hidden" />
               <p
                 class="uno-font-normal uno-text-[16px] uno-text-[#4e5255] uno-leading-[24px] uno-mt-2 uno-line-clamp-2">
@@ -136,7 +136,7 @@
                   }
                 }" class="uno-flex uno-gap-4 uno-group">
                   <div class="uno-rounded-[12px] uno-overflow-hidden uno-flex-shrink-0">
-                    <NuxtImg :src="getImageUrl(recent.cover[0].url)" :alt="recent.title" width="102" height="102" />
+                    <NuxtImg :src="getImageUrl(recent.cover?.[0]?.url)" :alt="recent.title" width="102" height="102" />
                   </div>
                   <div>
                     <h4
@@ -226,16 +226,17 @@ const categories = ref<Category[]>([])
 const activeTagSlug = ref<string | null>(null)
 
 getCategories().then(({ data }) => {
-  categories.value = data.value.data;
+  console.log("getCategories", data);
+  categories.value = data.value;
 })
 getAllTags().then(({ data }) => {
-  tags.value = data.value.data;
+  tags.value = data.value;
 })
 getRecommendArticles().then(({ data }) => {
-  recommendArticles.value = data.value.data;
+  recommendArticles.value = Array.isArray(data.value?.data) ? data.value.data : [];
 })
 getLatestArticles().then(({ data }) => {
-  previewArticles.value = data.value.data;
+  previewArticles.value = Array.isArray(data.value?.data) ? data.value.data : [];
 })
 const getPageData = async (page: number = 1, append: boolean = false) => {
   const { data } = await getAllArticles(page, activeTagSlug.value ?? undefined);
@@ -253,7 +254,10 @@ const getPageData = async (page: number = 1, append: boolean = false) => {
 }
 getPageData(1);
 
-const smallArticles = computed(() => recommendArticles.value.slice(1, 5));
+const smallArticles = computed(() => {
+  const list = Array.isArray(recommendArticles.value) ? recommendArticles.value : [];
+  return list.slice(1, 5);
+});
 
 
 

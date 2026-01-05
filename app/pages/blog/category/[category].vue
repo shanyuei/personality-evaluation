@@ -15,14 +15,14 @@
     <section class="uno-my-[56px]">
       <div class="uno-grid md:uno-grid-cols-2 uno-gap-[24px]">
         <!-- Large card -->
-        <NuxtLink v-if="recommendArticles[0]" :to="{
+        <NuxtLink v-if="recommendArticles&&recommendArticles[0]" :to="{
           name: 'blog-dateil-slug',
           params: {
             slug: recommendArticles[0].slug
           }
         }" class="uno-rounded-2xl uno-overflow-hidden">
           <div>
-            <NuxtImg :src="getImageUrl(recommendArticles[0].cover[0].url)" :alt="recommendArticles[0].title" width="588"
+            <NuxtImg :src="getImageUrl(recommendArticles[0]?.cover?.[0]?.url)" :alt="recommendArticles[0].title" width="588"
               height="392" class="uno-rounded-2xl uno-overflow-hidden" />
             <div class="uno-py-6">
               <p
@@ -53,7 +53,7 @@
               slug: a.slug
             }
           }" class="uno-rounded-2xl uno-overflow-hidden">
-            <NuxtImg width="282" height="188" :src="getImageUrl(a.cover[0].url)" :alt="a.title"
+            <NuxtImg width="282" height="188" :src="getImageUrl(a.cover?.[0]?.url)" :alt="a.title"
               class="uno-rounded-2xl uno-overflow-hidden" />
             <div class="uno-py-4">
               <p class="uno-text-sm uno-text-gray-500 uno-mb-1">
@@ -85,7 +85,7 @@
                 slug: a.slug
               }
             }" class="uno-rounded-2xl">
-              <NuxtImg :src="getImageUrl(a.cover[0].url)" :alt="a.title" width="384" height="282"
+              <NuxtImg :src="getImageUrl(a.cover?.[0]?.url)" :alt="a.title" width="384" height="282"
                 class="uno-rounded-2xl uno-overflow-hidden" />
               <p
                 class="uno-font-normal uno-text-[16px] uno-text-[#4e5255] uno-leading-[24px] uno-mt-2 uno-line-clamp-2">
@@ -137,7 +137,7 @@
                   }
                 }" class="uno-flex uno-gap-4 uno-group">
                   <div class="uno-rounded-[12px] uno-overflow-hidden uno-flex-shrink-0">
-                    <NuxtImg :src="getImageUrl(recent.cover[0].url)" :alt="recent.title" width="102" height="102" />
+                    <NuxtImg :src="getImageUrl(recent.cover?.[0]?.url)" :alt="recent.title" width="102" height="102" />
                   </div>
                   <div>
                     <h4
@@ -233,10 +233,10 @@ getAllTags().then(res => {
   tags.value = res.data.value.data;
 })
 getRecommendArticles(route.params.category).then(res => {
-  recommendArticles.value = res.data.value.data;
+  recommendArticles.value = res.data.value;
 })
 getLatestArticles(route.params.category).then(res => {
-  previewArticles.value = res.data.value.data;
+  previewArticles.value = res.data.value;
 })
 const getPageData = async (page: number = 1, append: boolean = false) => {
   const res = await getAllArticles(page, activeTagSlug.value ?? undefined, route.params.category);
