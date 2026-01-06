@@ -32,7 +32,7 @@
         <div>
           <div class="uno-rounded-2xl uno-mb-6">
             <h3 class="uno-text-[24px] uno-font-semibold uno-text-gray-900 uno-mb-4">{{ $t('pages.blog.sidebar.recent')
-              }}
+            }}
             </h3>
             <ul class="uno-space-y-4">
               <li v-for="recent in recentArticles" :key="recent.id">
@@ -42,9 +42,9 @@
                     slug: recent.slug
                   }
                 }" class="uno-flex uno-gap-4 uno-group">
-                  <div class="uno-rounded-[12px] uno-overflow-hidden uno-flex-shrink-0">
+                  <div class="uno-rounded-[12px]  uno-flex-shrink-0">
                     <NuxtImg :src="getImageUrl(recent.cover?.[0]?.url || '')" :alt="recent.title" width="72"
-                      height="72" />
+                      class="uno-rounded-[12px]" height="72" />
                   </div>
                   <div>
                     <h4

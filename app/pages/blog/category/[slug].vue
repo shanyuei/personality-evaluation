@@ -141,8 +141,8 @@
                   }
                 }">
                   <div class="uno-flex uno-gap-4 uno-group">
-                    <div class="uno-rounded-[12px] uno-overflow-hidden uno-flex-shrink-0">
-                      <NuxtImg :src="getImageUrl(recent.cover?.[0]?.url)" :alt="recent.title" width="102" height="102" />
+                    <div class="uno-rounded-[12px] uno-flex-shrink-0">
+                      <NuxtImg :src="getImageUrl(recent.cover?.[0]?.url)" :alt="recent.title" width="102" height="102" class="uno-rounded-[12px]" />
                     </div>
                     <div>
                       <h4
