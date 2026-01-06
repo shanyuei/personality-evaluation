@@ -232,14 +232,14 @@ const activeTagSlug = ref<string | null>(null)
 getAllTags().then(res => {
   tags.value = res.data.value.data;
 })
-getRecommendArticles(route.params.category).then(res => {
+getRecommendArticles(route.params.slug).then(res => {
   recommendArticles.value = res.data.value;
 })
-getLatestArticles(route.params.category).then(res => {
+getLatestArticles(route.params.slug).then(res => {
   previewArticles.value = res.data.value;
 })
 const getPageData = async (page: number = 1, append: boolean = false) => {
-  const res = await getAllArticles(page, activeTagSlug.value ?? undefined, route.params.category);
+  const res = await getAllArticles(page, activeTagSlug.value ?? undefined, route.params.slug);
 
   // 如果是追加模式，将新数据添加到现有数组中
   if (append) {

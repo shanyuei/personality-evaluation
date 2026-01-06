@@ -74,6 +74,7 @@ const showPageTopIcons = computed(() => {
   }
   return route.meta.layoutShowPageTopIcons !== false
 })
+console.log(useRouter().getRoutes())
 console.log(route,props)
 const showPageTopIcons3 = computed(() => {
   return route.meta.layoutShowPageTopIcons3 === true

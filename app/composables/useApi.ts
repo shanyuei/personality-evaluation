@@ -32,9 +32,9 @@ const handleStrapiResponse = (response: any) => {
   if (response.status !== 200) {
     throw new Error(response.statusText)
   }
-  if (response._data?.data) {
-    response._data = response._data.data
-  }
+  // if (response._data?.data) {
+  //   response._data = response._data.data
+  // }
 }
 
 // 实现基础useFetch 

@@ -12,7 +12,7 @@
           class="uno-w-full uno-h-420px uno-object-cover" />
       </div>
       <div class="uno-grid md:uno-grid-cols-3 uno-gap-[24px] uno-mt-56px">
-        <div class="md:uno-col-span-2" v-if="article">
+        <div v-if="article" class="md:uno-col-span-2">
           <p
             class="uno-font-normal uno-text-[14px] md:uno-text-[16px] uno-text-[#4e5255] uno-leading-[20px] md:uno-leading-[24px]">
             <!-- {{ article.author.name }} -->

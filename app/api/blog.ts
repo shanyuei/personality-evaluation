@@ -42,7 +42,7 @@ export const getAllArticles = async (page: number = 1, tagSlug?: string, categor
 }
 
 // 根据 slug 获取文章详情
-export const getArticleBySlug = async (slug: string) => {
+export const getArticleBySlug = async (slug?: string) => {
   const str = buildStrapiQuery({
     filters: {
       slug: { $eq: slug },
