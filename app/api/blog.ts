@@ -34,7 +34,7 @@ export const getLatestArticles = async (categorySlug?: string | string[] | undef
 // 获取所有文章
 export const getAllArticles = async (page: number = 1, tagSlug?: string, categorySlug?: string | string[] | undefined) => {
   const str = buildStrapiQuery({
-    pagination: { page, pageSize: 3 },
+    pagination: { page, pageSize: 9 },
     tagSlug,
     categorySlug,
   })

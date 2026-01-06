@@ -15,10 +15,10 @@
     <section class="uno-my-[56px]">
       <div class="uno-grid md:uno-grid-cols-2 uno-gap-[24px]">
         <!-- Large card -->
-        <NuxtLink v-if="recommendArticles&&recommendArticles[0]" :to="{
+        <AppLink v-if="recommendArticles && recommendArticles[0]" :is-link="!!recommendArticles[0]?.slug" :to="{
           name: 'blog-dateil-slug',
           params: {
-            slug: recommendArticles[0].slug
+            slug: recommendArticles[0]?.slug || ''
           }
         }" class="uno-rounded-2xl uno-overflow-hidden">
           <div>
@@ -43,27 +43,29 @@
                   recommendArticles[0].excerpt }}</p>
             </div>
           </div>
-        </NuxtLink>
+        </AppLink>
 
         <!-- 4 small cards -->
         <div class="uno-hidden md:uno-grid md:uno-grid-cols-2 uno-gap-[24px]">
-          <NuxtLink v-for="a in smallArticles" :key="a.id" :to="{
+          <AppLink v-for="a in smallArticles" :key="a.id" :is-link="!!a?.slug" :to="{
             name: 'blog-dateil-slug',
             params: {
-              slug: a.slug
+              slug: a?.slug || ''
             }
-          }" class="uno-rounded-2xl uno-overflow-hidden">
-            <NuxtImg width="282" height="188" :src="getImageUrl(a.cover?.[0]?.url)" :alt="a.title"
-              class="uno-rounded-2xl uno-overflow-hidden" />
-            <div class="uno-py-4">
-              <p class="uno-text-sm uno-text-gray-500 uno-mb-1">
-                {{ a.updatedBy.firstname + " " + a.updatedBy.lastname }}
-                ·
-                {{ formatDate(a.publishedAt, 'date') }}
-              </p>
-              <h4 class="uno-text-lg uno-font-semibold uno-text-gray-900 uno-mb-2">{{ a.title }}</h4>
+          }">
+            <div class="uno-rounded-2xl uno-overflow-hidden">
+              <NuxtImg width="282" height="188" :src="getImageUrl(a.cover?.[0]?.url)" :alt="a.title"
+                class="uno-rounded-2xl uno-overflow-hidden" />
+              <div class="uno-py-4">
+                <p class="uno-text-[16px] uno-text-gray-500 uno-mb-1">
+                  {{ a.updatedBy.firstname + " " + a.updatedBy.lastname }}
+                  ·
+                  {{ formatDate(a.publishedAt, 'date') }}
+                </p>
+                <h4 class="uno-text-[20px] uno-font-500 uno-text-gray-900 uno-mb-2">{{ a.title }}</h4>
+              </div>
             </div>
-          </NuxtLink>
+          </AppLink>
         </div>
       </div>
     </section>
@@ -79,22 +81,24 @@
         <!-- Grid -->
         <div class="lg:uno-w-3/5">
           <div class="uno-grid sm:uno-grid-cols-2 md:uno-grid-cols-3 uno-gap-6">
-            <NuxtLink v-for="a in articles" :key="a.id" :to="{
+            <AppLink v-for="a in articles" :key="a.id" :is-link="!!a?.slug" :to="{
               name: 'blog-dateil-slug',
               params: {
-                slug: a.slug
+                slug: a?.slug || ''
               }
-            }" class="uno-rounded-2xl">
-              <NuxtImg :src="getImageUrl(a.cover?.[0]?.url)" :alt="a.title" width="384" height="282"
-                class="uno-rounded-2xl uno-overflow-hidden" />
-              <p
-                class="uno-font-normal uno-text-[16px] uno-text-[#4e5255] uno-leading-[24px] uno-mt-2 uno-line-clamp-2">
-                {{ a.updatedBy.firstname + " " + a.updatedBy.lastname }}
-                · {{ formatDate(a.publishedAt, 'date') }}
-              </p>
-              <h4 class="uno-font-medium uno-text-[24px] uno-text-[#011813] uno-leading-[33px] uno-line-clamp-2">{{
-                a.title }}</h4>
-            </NuxtLink>
+            }">
+              <div class="uno-rounded-2xl">
+                <NuxtImg :src="getImageUrl(a.cover?.[0]?.url)" :alt="a.title" width="384" height="282"
+                  class="uno-rounded-2xl uno-overflow-hidden" />
+                <p
+                  class="uno-font-normal uno-text-[16px] uno-text-[#4e5255] uno-leading-[24px] uno-mt-2 uno-line-clamp-2">
+                  {{ a.updatedBy.firstname + " " + a.updatedBy.lastname }}
+                  · {{ formatDate(a.publishedAt, 'date') }}
+                </p>
+                <h4 class="uno-font-medium uno-text-[24px] uno-text-[#011813] uno-leading-[33px] uno-line-clamp-2">{{
+                  a.title }}</h4>
+              </div>
+            </AppLink>
           </div>
           <div class="uno-flex uno-justify-center uno-mt-24px">
             <button
@@ -130,25 +134,27 @@
             </h3>
             <ul class="uno-space-y-4">
               <li v-for="recent in previewArticles" :key="recent.id">
-                <NuxtLink :to="{
+                <AppLink :is-link="!!recent?.slug" :to="{
                   name: 'blog-dateil-slug',
                   params: {
-                    slug: recent.slug
+                    slug: recent?.slug || ''
                   }
-                }" class="uno-flex uno-gap-4 uno-group">
-                  <div class="uno-rounded-[12px] uno-overflow-hidden uno-flex-shrink-0">
-                    <NuxtImg :src="getImageUrl(recent.cover?.[0]?.url)" :alt="recent.title" width="102" height="102" />
+                }">
+                  <div class="uno-flex uno-gap-4 uno-group">
+                    <div class="uno-rounded-[12px] uno-overflow-hidden uno-flex-shrink-0">
+                      <NuxtImg :src="getImageUrl(recent.cover?.[0]?.url)" :alt="recent.title" width="102" height="102" />
+                    </div>
+                    <div>
+                      <h4
+                        class="uno-font-medium uno-text-[20px] uno-text-[#011813] uno-leading-[30px] group-hover:uno-text-[var(--color-pink-1)] uno-transition-colors uno-duration-200 uno-line-clamp-1">
+                        {{ recent.title }}</h4>
+                      <p
+                        class="uno-font-normal uno-text-[16px] uno-text-[#4e5255] uno-leading-[24px] uno-mt-1 uno-line-clamp-2">
+                        {{
+                          recent.excerpt }}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h4
-                      class="uno-font-medium uno-text-[20px] uno-text-[#011813] uno-leading-[30px] group-hover:uno-text-[var(--color-pink-1)] uno-transition-colors uno-duration-200 uno-line-clamp-1">
-                      {{ recent.title }}</h4>
-                    <p
-                      class="uno-font-normal uno-text-[16px] uno-text-[#4e5255] uno-leading-[24px] uno-mt-1 uno-line-clamp-2">
-                      {{
-                        recent.excerpt }}</p>
-                  </div>
-                </NuxtLink>
+                </AppLink>
               </li>
             </ul>
           </div>
@@ -229,31 +235,37 @@ const previewArticles = ref<Post[]>([])
 const activeTagSlug = ref<string | null>(null)
 
 
-getAllTags().then(res => {
-  tags.value = res.data.value.data;
+getAllTags().then(({ data }) => {
+  tags.value = data.value?.data || [];
 })
-getRecommendArticles(route.params.slug).then(res => {
-  recommendArticles.value = res.data.value;
+getRecommendArticles(route.params.slug).then(({ data }) => {
+  const list = data.value?.data;
+  recommendArticles.value = Array.isArray(list) ? list : [];
 })
-getLatestArticles(route.params.slug).then(res => {
-  previewArticles.value = res.data.value;
+getLatestArticles(route.params.slug).then(({ data }) => {
+  const list = data.value?.data;
+  previewArticles.value = Array.isArray(list) ? list : [];
 })
 const getPageData = async (page: number = 1, append: boolean = false) => {
-  const res = await getAllArticles(page, activeTagSlug.value ?? undefined, route.params.slug);
+  const { data } = await getAllArticles(page, activeTagSlug.value ?? undefined, route.params.slug);
+  const dataV = data.value;
 
   // 如果是追加模式，将新数据添加到现有数组中
   if (append) {
-    articles.value = [...articles.value, ...res.data.value.data];
+    articles.value = [...articles.value, ...dataV.data];
   } else {
-    articles.value = res.data.value.data;
+    articles.value = dataV.data;
   }
 
-  hasMoreOther.value = articles.value.length < res.data.value.meta.total;
-  return res;
+  hasMoreOther.value = articles.value.length < (dataV?.meta?.total ?? 0);
+  return data;
 }
 getPageData(1);
 
-const smallArticles = computed(() => recommendArticles.value.slice(1, 5));
+const smallArticles = computed(() => {
+  const list = Array.isArray(recommendArticles.value) ? recommendArticles.value : [];
+  return list.slice(1, 5);
+});
 
 
 
