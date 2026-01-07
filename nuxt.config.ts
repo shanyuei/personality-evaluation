@@ -45,7 +45,7 @@ export default defineNuxtConfig({
       { code: 'zh', language: 'zh-CN', name: '中文', file: 'zh.json' },
     ],
     defaultLocale: 'en',
-    strategy: 'no_prefix',
+    strategy: 'prefix_except_default',
     detectBrowserLanguage: {
       useCookie: true,
       cookieKey: 'i18n_redirected',
@@ -55,7 +55,6 @@ export default defineNuxtConfig({
       cookieCrossOrigin: false
     },
     baseUrl: 'https://example.com',
-    vueI18n: "~/i18n/i18n.config.ts"
   },
   unocss: {
     nuxtLayers: true,
