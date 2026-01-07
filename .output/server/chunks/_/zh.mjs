@@ -85,6 +85,119 @@ var pages = {
 			description: "快速了解常见问题的答案，帮助你高效掌握功能与使用方式。"
 		}
 	},
+	pricing: {
+		title: "开启您的自我发现之旅",
+		subtitle: "探索内心，了解自我。通过专业测评与个性化指导，开启一段充满启发的旅程。",
+		plans: {
+			weekly: {
+				title: "7天访问权限",
+				description: "开始使用 AI 构建、实验和制作原型。",
+				price: "$14",
+				unit: "/月",
+				button: "立即购买"
+			},
+			monthly: {
+				title: "月付",
+				description: "适合不需要 CMS 的落地页、个人网站、作品集或 MVP。",
+				price: "$14",
+				unit: "/月",
+				billing: "按年计费",
+				button: "立即购买"
+			},
+			yearly: {
+				title: "年付",
+				description: "适合不需要 CMS 的落地页、个人网站、作品集或 MVP。",
+				price: "$23",
+				unit: "/月",
+				billing: "按年计费",
+				button: "立即购买",
+				badge: "最受欢迎"
+			}
+		},
+		features: {
+			publishing: "发布权限",
+			webflow: "Webflow.io 域名",
+			pages: "2 个页面",
+			cms: "20 个 CMS 集合",
+			ai: "AI 助手"
+		},
+		why: {
+			title: "为什么选择我们的测试",
+			subtitle: "始终以志愿者形式参与，时间灵活，为您带来积极的体验与真实见证"
+		},
+		faq: {
+			title: "常见问题",
+			subtitle: "快速了解常见问题的答案，帮助你高效掌握功能与使用方式。",
+			items: [
+				{
+					q: "我可以追踪我的任务和成绩吗？",
+					a: "是的，平台提供仪表板，用户可以在其中查看结果，监控进度并检查即将到来的挑战。"
+				},
+				{
+					q: "系统支持视频课程和直播吗？",
+					a: "是的，我们的平台完全支持高清视频内容，并集成了实时会话工具。"
+				},
+				{
+					q: "我如何与导师沟通？",
+					a: "您可以通过内置的消息系统、讨论论坛或在预定会话期间进行交流。"
+				},
+				{
+					q: "为用户提供什么支持？",
+					a: "我们提供 24/7 技术支持、全面的文档和专属的社区论坛。"
+				},
+				{
+					q: "有互动功能吗？",
+					a: "当然！我们有测验、投票、互动任务和同行评审功能。"
+				}
+			]
+		}
+	},
+	order: {
+		create: {
+			title: "获取无限报告",
+			subtitle: "发现你的优势，获取知识，在生活的方方面面成长",
+			summary: {
+				trial: "7天试用",
+				price: "$1.99",
+				benefit1: "我发现 Cacao 很难用。",
+				benefit2: "人格类型评估",
+				benefit3: "超过 50 个高级人格测试",
+				terms: "计费条款：$1.99 试用 7 天。点击“订阅”即授权每月自动扣款 $27.88，直到取消。随时取消：855-342 8558 / support{'@'}mypersonality.net"
+			},
+			form: {
+				email: "邮箱",
+				emailPlaceholder: "您的邮箱",
+				name: "持卡人姓名",
+				namePlaceholder: "您的全名",
+				cardNumber: "卡号",
+				cardNumberPlaceholder: "0000 0000 0000 0000",
+				expires: "过期日期",
+				expiresPlaceholder: "MM/YY",
+				cvv: "CVV",
+				cvvPlaceholder: "123",
+				zip: "邮政编码",
+				zipPlaceholder: "12345",
+				orderId: "订单编号",
+				emailError: "请输入有效的邮箱地址",
+				paymentError: "支付失败，请重试。",
+				paymentSuccess: "支付发起成功！",
+				consent: "点击“订阅”即表示我以电子方式授权 Mypersonality.net 根据计费条款从我的卡中扣款（包括自动续订），直到取消。我同意条款和隐私政策。",
+				subscribeBtn: "仅需 $1.99 订阅",
+				paypalBtn: "使用 PayPal 支付",
+				gpayBtn: "使用 G Pay 支付"
+			},
+			trust: {
+				us: "位于美国",
+				noCharge: "无额外费用",
+				refund: "30 天全额退款",
+				cancel: "随时取消"
+			},
+			testimonials: {
+				title: "深受 20,000+ 客户信赖",
+				subtitle: "无论何时何地，我们都致力于为您提供最优质的服务，帮助您发现自我，提升能力。"
+			}
+		}
+	},
 	testDetail: {
 		welcome: "欢迎，{name}!",
 		type: "类型",
@@ -398,7 +511,9 @@ var pages = {
 			q5: "改进与优化系统或流程是我的优先事项。"
 		},
 		notice: "在继续之前，必须回答所有问题。",
-		cta: "开始"
+		cta: "开始",
+		ctaNext: "下一步",
+		ctaSubmit: "提交"
 	},
 	testStart: {
 		title: "愤怒管理",
@@ -637,7 +752,39 @@ var pages = {
 		questions: "题目",
 		completed: "已完成",
 		tryAgain: "再试一次",
-		lessons: "课时"
+		lessons: "课时",
+		settings: {
+			title: "设置",
+			description: "编辑个人资料、修改密码、切换语言或注销账户。",
+			saveChanges: "保存更改",
+			profile: {
+				title: "个人资料详情",
+				namePlaceholder: "姓名",
+				emailPlaceholder: "邮箱地址",
+				submit: "开始",
+				success: "个人资料已更新",
+				fail: "更新失败，请稍后再试。"
+			},
+			password: {
+				title: "修改密码",
+				current: "当前密码",
+				"new": "新密码",
+				repeat: "重复新密码",
+				submit: "保存",
+				mismatch: "两次输入的密码不一致",
+				success: "密码已更新"
+			},
+			language: {
+				title: "修改语言",
+				submit: "开始",
+				success: "语言设置已保存"
+			},
+			"delete": {
+				title: "注销账户",
+				action: "注销账户",
+				success: "您的注销请求已提交"
+			}
+		}
 	},
 	courses: {
 		title: "课程",
@@ -663,7 +810,12 @@ var pages = {
 	auth: {
 		signIn: {
 			title: "登录",
-			description: "安全访问你的账户。"
+			description: "安全访问你的账户。",
+			passwordLabel: "密码",
+			passwordPlaceholder: "请输入密码",
+			submit: "登录",
+			noAccount: "还没有账号？",
+			signUp: "注册"
 		}
 	},
 	orders: {
@@ -689,7 +841,93 @@ var pages = {
 		},
 		result: {
 			title: "测试结果",
-			description: "查看你的报告与下一步行动。"
+			description: "查看你的报告与后续行动。"
+		},
+		report: {
+			title: "您的性格测试报告已准备就绪！",
+			subtitle: "深入了解您的个性特征、优势和潜在盲点。我们的详细分析将帮助您更好地认识自己，并在生活和工作中做出更明智的决策。",
+			features: {
+				identity: {
+					title: "发现真实的自己",
+					desc: "深入探索您的核心身份，发现您从未了解过的自己。"
+				},
+				strengths: {
+					title: "探索您的优势与劣势",
+					desc: "清晰了解您擅长的领域以及可以成长的方向。"
+				},
+				relationships: {
+					title: "改善人际关系",
+					desc: "了解如何与他人更好地互动，提升沟通与协作效率。"
+				}
+			},
+			pricing: {
+				access: "7天完整访问权限",
+				price: "HK$14.95",
+				cta: "获取我的结果",
+				trial: "7天试用仅需 $1.99，续费 $27.88/月。随时取消。",
+				ordered: "份报告已订购！"
+			},
+			receive: {
+				title: "您将获得什么",
+				subtitle: "无论何时何地，我们的志愿者都将为您提供全方位的支持与服务",
+				cards: {
+					report: {
+						title: "全面的性格报告",
+						desc: "深入解析您的性格特征，为您提供详尽的道德与行为解释"
+					},
+					courses: {
+						title: "个性化课程推荐",
+						desc: "根据您的特质推荐最佳学习路径，助您迈出成长的第一步"
+					},
+					assessment: {
+						title: "技能评估测试",
+						desc: "通过专业的测试题目，精准评估您的各项技能水平"
+					},
+					challenges: {
+						title: "每日实践挑战",
+						desc: "通过每日的小任务，帮助您在实践中不断进步与成长"
+					},
+					library: {
+						title: "学习与发展资料库",
+						desc: "海量学习资源供您查阅，全方位支持您的个人发展"
+					},
+					certificates: {
+						title: "成就证书",
+						desc: "完成课程与挑战后，您将获得官方认证的成就证书"
+					}
+				}
+			},
+			trusted: {
+				title: "受到 20,000+ 客户的信赖",
+				subtitle: "无论您身在何处，我们要做的就是为您提供最优质的服务与支持，让您的每一次体验都充满价值。",
+				card_text: "一个卓越的职业发展平台！当前的课程、熟练的讲师和实践学习确保每一刻都充满影响力、丰富且真正有益。"
+			},
+			worldwide: {
+				title: "受到全球超过 10 万人的信赖",
+				subtitle: "最新结果",
+				orders: {
+					amelia: "Amelia 刚刚订购。性格类型：",
+					diego: "Diego 刚刚订购。性格类型：",
+					mia: "Mia 刚刚订购。性格类型："
+				},
+				types: {
+					peacemaker: "和平主义者",
+					loyalist: "忠诚者"
+				}
+			},
+			cta_full: {
+				title: "通过完整报告发现更多关于您自己的信息",
+				list: {
+					"1": "获得 50+ 项个人高级测试的访问权限",
+					"2": "15+ 页详细的个人见解",
+					"3": "了解如何发挥优势以实现更高目标并获得个人成长",
+					"4": "更好地驾驭职业世界并实现您的职业目标"
+				},
+				access: "7天完整访问权限",
+				price: "HK$14.95",
+				btn: "获取我的结果",
+				note: "7天试用仅需 $1.99，续费 $27.88/月。随时取消。"
+			}
 		}
 	},
 	legal: {
@@ -703,6 +941,42 @@ var pages = {
 		}
 	}
 };
+var account = {
+	settings: {
+		title: "设置",
+		description: "编辑个人资料、修改密码、切换语言或注销账户。",
+		saveChanges: "保存更改",
+		profile: {
+			title: "个人资料详情",
+			namePlaceholder: "姓名",
+			emailPlaceholder: "邮箱地址",
+			submit: "开始",
+			success: "个人资料已更新",
+			fail: "更新失败，请稍后再试。"
+		},
+		password: {
+			title: "修改密码",
+			current: "当前密码",
+			"new": "新密码",
+			repeat: "重复新密码",
+			submit: "保存",
+			mismatch: "两次输入的密码不一致",
+			success: "密码已更新",
+			fail: "密码更新失败，请重试。"
+		},
+		language: {
+			title: "修改语言",
+			submit: "保存更改",
+			success: "语言设置已保存",
+			fail: "语言设置更新失败，请重试。"
+		},
+		"delete": {
+			title: "注销账户",
+			action: "注销账户",
+			success: "您的注销请求已提交"
+		}
+	}
+};
 var layouts = {
 	header: {
 		GetStarted: "开始"
@@ -710,7 +984,10 @@ var layouts = {
 };
 var common = {
 	getStarted: "开始",
-	siteDescription: "通过专家课程与工具，解锁知识与成长。"
+	siteDescription: "通过专家课程与工具，解锁知识与成长。",
+	api: {
+		error: "错误"
+	}
 };
 var seo = {
 	home: {
@@ -864,10 +1141,11 @@ var seo = {
 };
 const zh = {
 	pages: pages,
+	account: account,
 	layouts: layouts,
 	common: common,
 	seo: seo
 };
 
-export { common, zh as default, layouts, pages, seo };
+export { account, common, zh as default, layouts, pages, seo };
 //# sourceMappingURL=zh.mjs.map

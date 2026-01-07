@@ -1,1 +1,0 @@
-import{b3 as t,r as n,c as o,J as u}from"./DYacvIsm.js";function s(r){const e=t({dir:n("ltr")});return o(()=>r?.value||e.dir?.value||"ltr")}function i(r,e="reka"){return r||`${e}-${u?.()}`}export{i as a,s as u};

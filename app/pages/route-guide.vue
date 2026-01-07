@@ -27,7 +27,7 @@
             :key="route.path"
             class="uno-group"
           >
-            <NuxtLink 
+            <AppLink 
               :to="route.path"
               class="uno-block uno-p-3 sm:uno-p-4 uno-border uno-border-gray-200 uno-rounded-xl hover:uno-border-green-500 uno-transition-all uno-duration-300 hover:uno-bg-gray-50 uno-transform hover:uno--translate-y-0.5 hover:uno-shadow-md"
             >
@@ -49,7 +49,7 @@
                   </span>
                 </div>
               </div>
-            </NuxtLink>
+            </AppLink>
           </div>
         </div>
 
@@ -66,15 +66,15 @@
 
       <!-- 返回首页按钮 -->
       <div class="uno-mt-6 sm:uno-mt-8 uno-text-center">
-        <NuxtLink 
-          to="/" 
+        <AppLink 
+          :to="'/'" 
           class="uno-inline-flex uno-items-center uno-px-5 sm:uno-px-6 uno-py-2 sm:uno-py-3 uno-border uno-border-transparent uno-text-sm sm:uno-text-base uno-font-medium uno-rounded-md uno-text-white uno-bg-green-600 hover:uno-bg-green-700 uno-transition-colors uno-shadow-sm"
         >
           <svg class="uno-w-4 uno-h-4 sm:uno-w-5 sm:uno-h-5 uno-mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V7a2 2 0 00-2-2M5 12V7a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
           </svg>
           {{ $t('pages.routeGuide.back') }}
-        </NuxtLink>
+        </AppLink>
       </div>
     </div>
   </main>

@@ -130,6 +130,7 @@ const { totalSteps, currentStep, progress, userAnswers } = storeToRefs(questions
 const { t } = useI18n()
 const route = useRoute()
 const router = useRouter()
+const localePath = useLocalePath()
 definePageMeta({
   layoutShowFooter: false,
   title: () => 'seo.test.step.title'
@@ -142,16 +143,16 @@ useSeoMeta({
 const questions = ref<TestQuestion[]>([])
 const prevStep = () => {
   if (questionsStore.currentStep > 1) {
-    router.push({ name: 'test-step', query: { step: questionsStore.currentStep - 1 } })
+    router.push(localePath({ name: 'test-step', query: { step: questionsStore.currentStep - 1 } }))
   } else {
-    router.push({ name: 'test-start' })
+    router.push(localePath({ name: 'test-start' }))
   }
 }
 const nextStep = () => {
   if (questionsStore.currentStep < totalSteps.value) {
-    router.push({ name: 'test-step', query: { step: questionsStore.currentStep + 1 } })
+    router.push(localePath({ name: 'test-step', query: { step: questionsStore.currentStep + 1 } }))
   } else {
-    router.push({ name: 'test-analyzing' })
+    router.push(localePath({ name: 'test-analyzing' }))
   }
 }
 const useAnswers = (q: TestQuestion, i: number) => {

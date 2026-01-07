@@ -8,11 +8,11 @@
         <UButton
           :ui="{ base: `flex-1 h-[48px] flex justify-center items-center flex-row gap-1 py-1 px-[20px]  rounded-lg text-[#FFFFFF] text-[11px] md:text-sm font-['Outfit'] font-bold leading-normal` }">
           {{ $t('pages.ebooks.primary.download') }}</UButton>
-        <NuxtLink to="/ebooks/detail">
+        <AppLink :to="'/ebooks/detail'">
           <UButton variant="ghost"
             :ui="{ base: ` h-[48px] flex justify-center items-center flex-row gap-1 py-1 px-[20px] border-solid  border-2 rounded-lg  text-[11px] md:text-sm font-['Outfit'] font-bold leading-normal` }">
             {{ $t('pages.ebooks.primary.readOnline') }}</UButton>
-        </NuxtLink>
+        </AppLink>
       </div>
     </div>
     <NuxtImg :src="image" alt="ebook"  width="268" height="209" class="uno-rounded-[24px] uno-m-auto" />

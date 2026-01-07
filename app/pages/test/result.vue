@@ -27,12 +27,12 @@
           </div>
 
           <div class="uno-flex uno-flex-col md:uno-flex-row uno-items-center uno-justify-center uno-gap-3 uno-mt-6 md:uno-mt-8">
-            <NuxtLink to="/courses" class="uno-inline-block uno-w-full md:uno-w-auto">
+            <AppLink :to="'/courses'" class="uno-inline-block uno-w-full md:uno-w-auto">
               <UButton :ui="UButtonTheme">{{ $t('pages.testEnd.ctaPrimary') }}</UButton>
-            </NuxtLink>
-            <NuxtLink to="/tests" class="uno-inline-block uno-w-full md:uno-w-auto">
+            </AppLink>
+            <AppLink :to="'/tests'" class="uno-inline-block uno-w-full md:uno-w-auto">
               <UButton :ui="UButtonThemeDark" >{{ $t('pages.testEnd.ctaSecondary') }}</UButton>
-            </NuxtLink>
+            </AppLink>
           </div>
 
           <p class="uno-w-full uno-text-[#4E5255] uno-text-xs uno-font-['Outfit'] uno-text-center uno-leading-normal uno-mt-4 uno-mx-auto">{{ $t('pages.testEnd.disclaimer') }}</p>

@@ -14,7 +14,7 @@ var pages = {
 		},
 		why: {
 			title: "Why take the test?",
-			desc: "Connect with top mentors. Guided questions and proven experience deliver personalized advice.",
+			desc: "Connect with the next wave of expert mentors, guiding you with fresh perspectives, innovative insights, and proven expertise.",
 			main: {
 				title: "Boost self-awareness",
 				desc: "Gain UI design abilities through practice-driven coaching, with personalized guidance and feedback."
@@ -83,6 +83,119 @@ var pages = {
 		faq: {
 			title: "Frequently Asked Questions",
 			description: "Frequently Asked Questions offers a quick answers to common queries, guiding users through features and functionalities efficiently."
+		}
+	},
+	pricing: {
+		title: "Start Your Journey of Self-Discovery",
+		subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.",
+		plans: {
+			weekly: {
+				title: "7-Day Access",
+				description: "Get started building, experimenting, and prototyping with AI.",
+				price: "$14",
+				unit: "/mo",
+				button: "Buy Now"
+			},
+			monthly: {
+				title: "Monthly",
+				description: "Perfect for landing pages, personal sites, portfolios, or MVPs that don't require a CMS.",
+				price: "$14",
+				unit: "/mo",
+				billing: "Billed yearly",
+				button: "Buy Now"
+			},
+			yearly: {
+				title: "Yearly",
+				description: "Perfect for landing pages, personal sites, portfolios, or MVPs that don't require a CMS.",
+				price: "$23",
+				unit: "/mo",
+				billing: "Billed yearly",
+				button: "Buy Now",
+				badge: "POPULAR"
+			}
+		},
+		features: {
+			publishing: "Publishing",
+			webflow: "Webflow.io domain",
+			pages: "2 pages",
+			cms: "20 CMS Collections",
+			ai: "AI Assistant"
+		},
+		why: {
+			title: "Why Our Test Stands Out",
+			subtitle: "Be always were to from of volunteers range times to mild, casting opposite he its nor attribute how solitary saw more on his not"
+		},
+		faq: {
+			title: "Frequently Asked Questions",
+			subtitle: "Frequently Asked Questions offers quick answers to common queries, guiding users through features and functionalities effortlessly.",
+			items: [
+				{
+					q: "Can I Track My Assignments and Grades?",
+					a: "Yes, the platform offers a dashboard where users can view their results, monitor progress, and check upcoming challenges."
+				},
+				{
+					q: "Does the system support video lessons and live sessions?",
+					a: "Yes, our platform fully supports high-definition video content and integrates with tools for real-time sessions."
+				},
+				{
+					q: "How can I communicate with my mentor?",
+					a: "You can communicate through built-in messaging systems, discussion forums, or during scheduled sessions."
+				},
+				{
+					q: "What support is available for users?",
+					a: "We offer 24/7 technical support, comprehensive documentation, and a dedicated community forum."
+				},
+				{
+					q: "Are there interactive features?",
+					a: "Absolutely! We have quizzes, polls, interactive assignments, and peer review features."
+				}
+			]
+		}
+	},
+	order: {
+		create: {
+			title: "Get unlimited reports",
+			subtitle: "Discover your strengths and gain knowledge to grow in all aspects of life",
+			summary: {
+				trial: "7-day trial",
+				price: "$1.99",
+				benefit1: "I found Cacao difficult to use.",
+				benefit2: "Personality type evaluation",
+				benefit3: "Over 50 premium personality tests",
+				terms: "Billing terms: $1.99 7 days trial. \"Subscribe\" authorizes $27.88/mo after, unless canceled. Cancel anytime: 855-342 8558 / support{'@'}mypersonality.net"
+			},
+			form: {
+				email: "Email",
+				emailPlaceholder: "Your email",
+				name: "Cardholder name",
+				namePlaceholder: "Your full name",
+				cardNumber: "Card number",
+				cardNumberPlaceholder: "0000 0000 0000 0000",
+				expires: "Expires",
+				expiresPlaceholder: "MM/YY",
+				cvv: "CVV",
+				cvvPlaceholder: "123",
+				zip: "Postal code",
+				zipPlaceholder: "12345",
+				orderId: "Order ID",
+				emailError: "Please enter a valid email address",
+				paymentError: "Payment failed. Please try again.",
+				paymentSuccess: "Payment initiated successfully!",
+				consent: "By clicking \"Subscribe\", I electronically authorize Mypersonality.net to charge my card per Billing Terms, including automatic renewal, until cancellation. I agree to to the Terms and Privacy.",
+				subscribeBtn: "Subscribe for only $1.99",
+				paypalBtn: "Pay with PayPal",
+				gpayBtn: "Pay with G Pay"
+			},
+			trust: {
+				us: "Located in the US",
+				noCharge: "No additional charges",
+				refund: "30-day 100% refund",
+				cancel: "Cancel anytime"
+			},
+			testimonials: {
+				title: "Trusted by 20,000+ customers",
+				subtitle: "Be always were to from of volunteers range times to mild, casting opposite he its nor attribute how solitary saw more in his not"
+			}
 		}
 	},
 	testDetail: {
@@ -243,7 +356,7 @@ var pages = {
 		title: "About Us",
 		description: "Learn about our mission and team.",
 		hero: {
-			title: "Guide self-exploration with precision",
+			title: "Empowering Self-Discovery Through Precision",
 			desc: "We believe collaboration leads to outstanding results. With a professional team and a commitment to quality, we work with customers to turn ideas into reality and create solutions that stand the test of time."
 		},
 		faq: {
@@ -399,7 +512,9 @@ var pages = {
 			q5: "Improving and refining systems or processes is a priority for me."
 		},
 		notice: "All questions must be answered before you continue.",
-		cta: "Get Started"
+		cta: "Get Started",
+		ctaNext: "Next",
+		ctaSubmit: "Submit"
 	},
 	testStart: {
 		title: "Anger Management",
@@ -663,7 +778,7 @@ var pages = {
 			categories: "Categories",
 			recent: "Recent Blogs",
 			tags: "Tags",
-			follow: "Follow us"
+			follow: "Follow us:"
 		},
 		detail: {
 			breadcrumb: "Home / Blog / Blog Details",
@@ -707,27 +822,30 @@ var pages = {
 		settings: {
 			title: "Settings",
 			description: "Edit profile, change password, switch language, or delete your account.",
+			saveChanges: "Save changes",
 			profile: {
-				title: "Profile",
-				namePlaceholder: "Name",
+				title: "Profile details",
+				namePlaceholder: "First and last name",
 				emailPlaceholder: "Email address",
-				submit: "Get Started",
+				submit: "Save",
 				success: "Profile updated",
 				fail: "Update failed. Please try again later."
 			},
 			password: {
-				title: "Change Password",
+				title: "Change password",
 				current: "Current password",
 				"new": "New password",
 				repeat: "Repeat new password",
-				submit: "Get Started",
+				submit: "Save",
 				mismatch: "The two passwords do not match",
-				success: "Password updated"
+				success: "Password updated",
+				fail: "Failed to update password. Please try again."
 			},
 			language: {
-				title: "Language",
-				submit: "Get Started",
-				success: "Language settings saved"
+				title: "Change Language",
+				submit: "Save changes",
+				success: "Language settings saved",
+				fail: "Failed to update language settings. Please try again."
 			},
 			"delete": {
 				title: "Delete Account",
@@ -765,6 +883,92 @@ var pages = {
 		result: {
 			title: "Test Results",
 			description: "View your report and next actions."
+		},
+		report: {
+			title: "Your Personality Type Report is Ready!",
+			subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.",
+			features: {
+				identity: {
+					title: "Find Out Who You Really Are",
+					desc: "Dive deep into your core identity and uncover aspects of yourself you've never known."
+				},
+				strengths: {
+					title: "Explore Your Strengths and Weaknesses",
+					desc: "Gain a clear understanding of what you excel at and where you can grow."
+				},
+				relationships: {
+					title: "Improve Your Relationship with Other",
+					desc: "For media-related questions or press inquiries, please contact us at media{'@'}snappyapp.com."
+				}
+			},
+			pricing: {
+				access: "7-day full access",
+				price: "HK$14.95",
+				cta: "Get My Results",
+				trial: "7-day trial for $1.99, auto-renews at $27.88/mo. Cancel anytime.",
+				ordered: "reports ordered!"
+			},
+			receive: {
+				title: "What You Will Receive",
+				subtitle: "Be always were to from of volunteers range times to mildcastingoppositehe its nor attribute how solitary saw more on his not",
+				cards: {
+					report: {
+						title: "Comprehensive Personality Report",
+						desc: "The to we considerable,explain the morals, to queen please"
+					},
+					courses: {
+						title: "Personalized Course Recommendations",
+						desc: "Pervasively in evening best bad policy he first of he first to attempt"
+					},
+					assessment: {
+						title: "Skill Assessment Tests",
+						desc: "Were control to late check though text a carefully anewer"
+					},
+					challenges: {
+						title: "Practical Daily Challenges",
+						desc: "The to we considerable,explain the morals, to queen please"
+					},
+					library: {
+						title: "Learning and Development Library",
+						desc: "Pervasively in evening best bad policy he first of he first to attempt"
+					},
+					certificates: {
+						title: "Certificates of Achievement",
+						desc: "Were control to late check though textacarefullyanewer"
+					}
+				}
+			},
+			trusted: {
+				title: "Trusted by 20,000+ customers",
+				subtitle: "Be always were to from of volunteers range times to mild, casting opposite he its nor attribute how solitary saw more on his not",
+				card_text: "An exceptional platform for career development! The current curriculum, skilled instructors, and hands-on learning ensure every moment is impactful, enriching, and truly rewarding."
+			},
+			worldwide: {
+				title: "Trusted by over 100 thousand people worldwide",
+				subtitle: "Latest results",
+				orders: {
+					amelia: "Amelia just ordered. Personality type:",
+					diego: "Diego just ordered. Personality type:",
+					mia: "Mia just ordered. Personality type:"
+				},
+				types: {
+					peacemaker: "Peacemaker",
+					loyalist: "Loyalist"
+				}
+			},
+			cta_full: {
+				title: "Discover more about yourself with the full report",
+				list: {
+					"1": "Get access to 50+ personal premium tests",
+					"2": "15+ pages of detailed and personal insights",
+					"3": "Learn how to use your strengths to reach higher and grow as a person",
+					"4": "Get better at navigating the professional world and achieve your professional goals"
+				},
+				access: "7-day full access",
+				price: "HK$14.95",
+				btn: "Get My Results",
+				note: "7-day trial for $1.99, auto-renews at $27.88/mo. Cancel anytime."
+			}
 		}
 	},
 	legal: {
@@ -877,7 +1081,17 @@ var common = {
 		people: {
 			finished: "people already finished it"
 		}
-	}
+	},
+	api: {
+		error: "Error"
+	},
+	viewResults: "View test results",
+	retakeTest: "Retake test",
+	points: "points",
+	of: "of",
+	lessons: "lessons",
+	finished: "finished",
+	certificate: "Certificate"
 };
 var seo = {
 	home: {

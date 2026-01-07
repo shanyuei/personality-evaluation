@@ -1,5 +1,5 @@
 <template>
-    <NuxtLink v-if="isLink" :to="to">
+    <NuxtLink v-if="isLink" :to="finalTo">
         <slot/>
     </NuxtLink>
     <div v-else>
@@ -8,15 +8,20 @@
 </template>
 
 <script setup lang="ts">
-defineProps({
+const props = defineProps({
     to: {
-        type: Object,
+        type: [Object, String],
         default: () => ({})
     },
     isLink: {
         type: Boolean,
         default: true
     }
-
+})
+const localePath = useLocalePath()
+const finalTo = computed(() => {
+    const t = props.to as any
+    if (!t) return ''
+    return typeof t === 'string' ? localePath(t) : localePath(t)
 })
 </script>

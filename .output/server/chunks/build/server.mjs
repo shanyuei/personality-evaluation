@@ -1,12 +1,12 @@
 import process from 'node:process';globalThis._importMeta_=globalThis._importMeta_||{url:"file:///_entry.js",env:process.env};import * as Vue from 'vue';
-import { defineComponent, computed, toValue, getCurrentInstance as getCurrentInstance$1, onServerPrefetch, ref, toRef, inject, mergeProps, unref, withCtx, renderSlot, createBlock, openBlock, h, Suspense, shallowRef, resolveComponent, useSlots, createCommentVNode, toDisplayString as toDisplayString$1, createVNode, provide, cloneVNode, createElementBlock, hasInjectionContext, resolveDynamicComponent, watch, mergeModels, useModel, createTextVNode, isRef, shallowReactive, Fragment, useAttrs, useTemplateRef, nextTick, defineAsyncComponent, useSSRContext, createApp, Text, renderList, useId, onErrorCaptured, reactive, effectScope, isReadonly, isShallow, isReactive, toRaw, withModifiers, getCurrentScope, markRaw } from 'vue';
-import { w as serialize, x as hasProtocol, y as isScriptProtocol, z as joinURL, A as defu, B as parseQuery, C as klona, D as defuFn, E as withQuery, F as sanitizeStatusCode, d as destr, G as isEqual, H as getContext, I as parse$1, J as getRequestHeader, K as withTrailingSlash, L as withoutTrailingSlash, q as createError$1, M as setCookie, N as getCookie, O as deleteCookie, P as parsePath, Q as withLeadingSlash, R as parseURL, $ as $fetch$1, S as baseURL, p as publicAssetsURL, T as createHooks, U as executeAsync, V as toRouteMatcher, W as createRouter$1, X as getRequestURL, Y as createDefu, Z as encodeParam, _ as encodePath } from '../_/nitro.mjs';
+import { defineComponent, mergeModels, useModel, computed, unref, mergeProps, withCtx, renderSlot, createVNode, createBlock, createCommentVNode, openBlock, createTextVNode, toDisplayString as toDisplayString$1, inject, ref, toValue, getCurrentInstance as getCurrentInstance$1, onServerPrefetch, shallowRef, h, resolveComponent, toRef, Suspense, hasInjectionContext, useSlots, resolveDynamicComponent, provide, cloneVNode, createElementBlock, watch, isRef, shallowReactive, Fragment, useAttrs, useTemplateRef, nextTick, defineAsyncComponent, useSSRContext, createApp, Text, renderList, useId, onErrorCaptured, reactive, effectScope, isReadonly, isShallow, isReactive, toRaw, withModifiers, getCurrentScope, markRaw } from 'vue';
+import { w as serialize, d as destr, x as klona, y as parseQuery, z as defu, A as defuFn, B as hasProtocol, C as isScriptProtocol, D as joinURL, E as isEqual, F as parse$1, G as getRequestHeader, H as withQuery, I as sanitizeStatusCode, J as setCookie, K as getCookie, L as deleteCookie, M as getContext, N as withTrailingSlash, O as withoutTrailingSlash, q as createError$1, P as parsePath, Q as withLeadingSlash, R as parseURL, $ as $fetch$1, S as baseURL, p as publicAssetsURL, T as createHooks, U as executeAsync, V as toRouteMatcher, W as createRouter$1, X as getRequestURL, Y as createDefu, Z as encodeParam, _ as encodePath, a0 as isEqual$1 } from '../_/nitro.mjs';
 import { setActivePinia, createPinia, shouldHydrate } from 'pinia';
 import { RouterView, useRoute as useRoute$1, createMemoryHistory, createRouter, START_LOCATION } from 'vue-router';
 import colors from 'tailwindcss/colors';
 import { Icon, getIcon, loadIcon as loadIcon$1, _api, addAPIProvider, setCustomIconsLoader } from '@iconify/vue';
 import { ssrRenderComponent, ssrRenderSlot, ssrRenderClass, ssrInterpolate, ssrRenderVNode, ssrRenderAttrs, ssrRenderList, ssrRenderAttr, ssrRenderStyle, ssrRenderSuspense } from 'vue/server-renderer';
-import { useForwardProps, Primitive, Slot, ToastProvider, ToastPortal, ToastViewport, ConfigProvider, TooltipProvider, useForwardPropsEmits, ToastRoot, ToastTitle, ToastDescription, ToastAction, ToastClose, ProgressRoot, ProgressIndicator } from 'reka-ui';
+import { Primitive, Slot, useForwardProps, ToastProvider, ToastPortal, ToastViewport, ConfigProvider, TooltipProvider, useForwardPropsEmits, ToastRoot, ToastTitle, ToastDescription, ToastAction, ToastClose, ProgressRoot, ProgressIndicator } from 'reka-ui';
 import { reactiveOmit, reactivePick, useDebounceFn, createSharedComposable } from '@vueuse/core';
 import { createTV } from 'tailwind-variants';
 import { getIconCSS } from '@iconify/utils/lib/css/icon';
@@ -615,35 +615,44 @@ const unhead_Y_mBVY7T2diOSSpfNcSjcyicrZEU2TtisqlTt_BlEcU = /* @__PURE__ */ defin
 function toArray$2(value) {
   return Array.isArray(value) ? value : [value];
 }
-const __nuxt_page_meta$u = {
+const __nuxt_page_meta$w = {
+  layoutShowCurious: true
+};
+const __nuxt_page_meta$v = {
   layoutShowCurious: true,
   title: () => "seo.faq.title"
 };
-const __nuxt_page_meta$t = {
+const __nuxt_page_meta$u = {
   layoutShowFooter: false,
   title: () => "seo.test.step.title"
 };
-const __nuxt_page_meta$s = {
+const __nuxt_page_meta$t = {
   layoutShowCurious: true,
+  layoutShowPageTopIcons3: true,
+  layoutShowPageTopIcons: false,
   title: () => "seo.blog.title"
 };
-const __nuxt_page_meta$r = {
+const __nuxt_page_meta$s = {
   layoutShowFooter: false,
   title: () => "seo.test.title"
 };
-const __nuxt_page_meta$q = {
+const __nuxt_page_meta$r = {
   layoutShowFooter: false,
   title: () => "seo.test.start.title"
 };
-const __nuxt_page_meta$p = {
+const __nuxt_page_meta$q = {
   title: () => "seo.about.title"
 };
-const __nuxt_page_meta$o = {
+const __nuxt_page_meta$p = {
   title: "seo.home.title",
   layoutShowCurious: true
 };
-const __nuxt_page_meta$n = {
+const __nuxt_page_meta$o = {
   title: () => "seo.routeGuide.title"
+};
+const __nuxt_page_meta$n = {
+  title: "Test Report Ready",
+  layout: "default"
 };
 const __nuxt_page_meta$m = {
   layoutShowFooter: false,
@@ -660,7 +669,8 @@ const __nuxt_page_meta$j = {
   title: () => "seo.ebooks.title"
 };
 const __nuxt_page_meta$i = {
-  title: () => "seo.courses.title"
+  title: () => "seo.courses.title",
+  layoutShowPageTopIcons: false
 };
 const __nuxt_page_meta$h = {
   title: () => "seo.ebooks.detail.title"
@@ -691,17 +701,21 @@ const __nuxt_page_meta$a = {
   title: () => "seo.userCourse.test.title"
 };
 const __nuxt_page_meta$9 = {
-  title: () => "seo.blog.slug.title"
+  title: () => "seo.blog.slug.title",
+  layoutShowPageTopIcons3: true,
+  layoutShowPageTopIcons: false
 };
 const __nuxt_page_meta$8 = {
   title: () => "seo.userCourse.lesson.title"
 };
 const __nuxt_page_meta$7 = {
-  title: () => "seo.userCourse.chapters.title"
+  layoutShowCurious: true,
+  layoutShowPageTopIcons3: true,
+  layoutShowPageTopIcons: false,
+  title: () => "seo.blog.title"
 };
 const __nuxt_page_meta$6 = {
-  layoutShowCurious: true,
-  title: () => "seo.blog.title"
+  title: () => "seo.userCourse.chapters.title"
 };
 const __nuxt_page_meta$5 = {
   title: () => "pages.orders.purchaseComplete.title",
@@ -724,190 +738,410 @@ const __nuxt_page_meta = {
 };
 const _routes = [
   {
-    name: "faq",
+    name: "pricing___en",
+    path: "/pricing",
+    meta: __nuxt_page_meta$w || {},
+    component: () => import('./pricing-BN4wRwrB.mjs')
+  },
+  {
+    name: "pricing___zh",
+    path: "/zh/pricing",
+    meta: __nuxt_page_meta$w || {},
+    component: () => import('./pricing-BN4wRwrB.mjs')
+  },
+  {
+    name: "faq___en",
     path: "/faq",
-    meta: __nuxt_page_meta$u || {},
-    component: () => import('./index-3wtyGzU0.mjs')
+    meta: __nuxt_page_meta$v || {},
+    component: () => import('./index-DvnQ3GpM.mjs')
   },
   {
-    name: "test-step",
+    name: "faq___zh",
+    path: "/zh/faq",
+    meta: __nuxt_page_meta$v || {},
+    component: () => import('./index-DvnQ3GpM.mjs')
+  },
+  {
+    name: "test-step___en",
     path: "/test/step",
-    meta: __nuxt_page_meta$t || {},
-    component: () => import('./step-BFoEnLVt.mjs')
+    meta: __nuxt_page_meta$u || {},
+    component: () => import('./step-CzZ2dpAJ.mjs')
   },
   {
-    name: "blog",
+    name: "test-step___zh",
+    path: "/zh/test/step",
+    meta: __nuxt_page_meta$u || {},
+    component: () => import('./step-CzZ2dpAJ.mjs')
+  },
+  {
+    name: "blog___en",
     path: "/blog",
-    meta: __nuxt_page_meta$s || {},
-    component: () => import('./index-vaClFInH.mjs')
+    meta: __nuxt_page_meta$t || {},
+    component: () => import('./index-Cl63Fybj.mjs')
   },
   {
-    name: "test",
+    name: "blog___zh",
+    path: "/zh/blog",
+    meta: __nuxt_page_meta$t || {},
+    component: () => import('./index-Cl63Fybj.mjs')
+  },
+  {
+    name: "test___en",
     path: "/test",
-    meta: __nuxt_page_meta$r || {},
-    component: () => import('./index-TH3KL-aH.mjs')
+    meta: __nuxt_page_meta$s || {},
+    component: () => import('./index-CGaM-mjI.mjs')
   },
   {
-    name: "test-start",
+    name: "test___zh",
+    path: "/zh/test",
+    meta: __nuxt_page_meta$s || {},
+    component: () => import('./index-CGaM-mjI.mjs')
+  },
+  {
+    name: "test-start___en",
     path: "/test/start",
-    meta: __nuxt_page_meta$q || {},
-    component: () => import('./start-DduUKMYx.mjs')
+    meta: __nuxt_page_meta$r || {},
+    component: () => import('./start-D407b8J5.mjs')
   },
   {
-    name: "about",
+    name: "test-start___zh",
+    path: "/zh/test/start",
+    meta: __nuxt_page_meta$r || {},
+    component: () => import('./start-D407b8J5.mjs')
+  },
+  {
+    name: "about___en",
     path: "/about",
-    meta: __nuxt_page_meta$p || {},
-    component: () => import('./index-B_UuBmmz.mjs')
+    meta: __nuxt_page_meta$q || {},
+    component: () => import('./index-B509JzJs.mjs')
   },
   {
-    name: "index",
+    name: "about___zh",
+    path: "/zh/about",
+    meta: __nuxt_page_meta$q || {},
+    component: () => import('./index-B509JzJs.mjs')
+  },
+  {
+    name: "index___en",
     path: "/",
-    meta: __nuxt_page_meta$o || {},
-    component: () => import('./index-Dk7FTE6c.mjs')
+    meta: __nuxt_page_meta$p || {},
+    component: () => import('./index-DgAKw2Ty.mjs')
   },
   {
-    name: "route-guide",
+    name: "index___zh",
+    path: "/zh",
+    meta: __nuxt_page_meta$p || {},
+    component: () => import('./index-DgAKw2Ty.mjs')
+  },
+  {
+    name: "route-guide___en",
     path: "/route-guide",
-    meta: __nuxt_page_meta$n || {},
-    component: () => import('./route-guide-DbK-4hAA.mjs')
+    meta: __nuxt_page_meta$o || {},
+    component: () => import('./route-guide-DndbVLYf.mjs')
   },
   {
-    name: "test-result",
+    name: "route-guide___zh",
+    path: "/zh/route-guide",
+    meta: __nuxt_page_meta$o || {},
+    component: () => import('./route-guide-DndbVLYf.mjs')
+  },
+  {
+    name: "test-report___en",
+    path: "/test/report",
+    meta: __nuxt_page_meta$n || {},
+    component: () => import('./report-DMmTQeHU.mjs')
+  },
+  {
+    name: "test-report___zh",
+    path: "/zh/test/report",
+    meta: __nuxt_page_meta$n || {},
+    component: () => import('./report-DMmTQeHU.mjs')
+  },
+  {
+    name: "test-result___en",
     path: "/test/result",
     meta: __nuxt_page_meta$m || {},
-    component: () => import('./result-Db_zshhs.mjs')
+    component: () => import('./result-81lVIKl5.mjs')
   },
   {
-    name: "tests",
+    name: "test-result___zh",
+    path: "/zh/test/result",
+    meta: __nuxt_page_meta$m || {},
+    component: () => import('./result-81lVIKl5.mjs')
+  },
+  {
+    name: "tests___en",
     path: "/tests",
     meta: __nuxt_page_meta$l || {},
-    component: () => import('./index-Cv0vHX0O.mjs')
+    component: () => import('./index-Cow6G8qh.mjs')
   },
   {
-    name: "auth-sign-in",
+    name: "tests___zh",
+    path: "/zh/tests",
+    meta: __nuxt_page_meta$l || {},
+    component: () => import('./index-Cow6G8qh.mjs')
+  },
+  {
+    name: "auth-sign-in___en",
     path: "/auth/sign-in",
     meta: __nuxt_page_meta$k || {},
-    component: () => import('./sign-in-CTxWSgZO.mjs')
+    component: () => import('./sign-in-Iu3XbLoo.mjs')
   },
   {
-    name: "ebooks",
+    name: "auth-sign-in___zh",
+    path: "/zh/auth/sign-in",
+    meta: __nuxt_page_meta$k || {},
+    component: () => import('./sign-in-Iu3XbLoo.mjs')
+  },
+  {
+    name: "ebooks___en",
     path: "/ebooks",
     meta: __nuxt_page_meta$j || {},
-    component: () => import('./index-DPAjGhki.mjs')
+    component: () => import('./index-BHsCtANd.mjs')
   },
   {
-    name: "courses",
+    name: "ebooks___zh",
+    path: "/zh/ebooks",
+    meta: __nuxt_page_meta$j || {},
+    component: () => import('./index-BHsCtANd.mjs')
+  },
+  {
+    name: "courses___en",
     path: "/courses",
     meta: __nuxt_page_meta$i || {},
-    component: () => import('./index-Cs7nLOIH.mjs')
+    component: () => import('./index-tOdHdL7z.mjs')
   },
   {
-    name: "ebooks-detail",
+    name: "courses___zh",
+    path: "/zh/courses",
+    meta: __nuxt_page_meta$i || {},
+    component: () => import('./index-tOdHdL7z.mjs')
+  },
+  {
+    name: "ebooks-detail___en",
     path: "/ebooks/detail",
     meta: __nuxt_page_meta$h || {},
-    component: () => import('./detail-DGIhs_0B.mjs')
+    component: () => import('./detail-hm-21xaT.mjs')
   },
   {
-    name: "legal-privacy",
+    name: "ebooks-detail___zh",
+    path: "/zh/ebooks/detail",
+    meta: __nuxt_page_meta$h || {},
+    component: () => import('./detail-hm-21xaT.mjs')
+  },
+  {
+    name: "legal-privacy___en",
     path: "/legal/privacy",
     meta: __nuxt_page_meta$g || {},
-    component: () => import('./privacy-LeYHU1c4.mjs')
+    component: () => import('./privacy-9UdrGg8R.mjs')
   },
   {
-    name: "profile",
+    name: "legal-privacy___zh",
+    path: "/zh/legal/privacy",
+    meta: __nuxt_page_meta$g || {},
+    component: () => import('./privacy-9UdrGg8R.mjs')
+  },
+  {
+    name: "orders-create___en",
+    path: "/orders/create",
+    component: () => import('./create-B49p6xv3.mjs')
+  },
+  {
+    name: "orders-create___zh",
+    path: "/zh/orders/create",
+    component: () => import('./create-B49p6xv3.mjs')
+  },
+  {
+    name: "profile___en",
     path: "/profile",
     meta: __nuxt_page_meta$f || {},
-    component: () => import('./index-Cnp_sInY.mjs')
+    component: () => import('./index-DJqem8rQ.mjs')
   },
   {
-    name: "-mentors",
+    name: "profile___zh",
+    path: "/zh/profile",
+    meta: __nuxt_page_meta$f || {},
+    component: () => import('./index-DJqem8rQ.mjs')
+  },
+  {
+    name: "-mentors___en",
     path: "/-mentors",
     meta: __nuxt_page_meta$e || {},
-    component: () => import('./index-D0-Gvq9F.mjs')
+    component: () => import('./index-Dzw-H7lj.mjs')
   },
   {
-    name: "profile-detail",
+    name: "-mentors___zh",
+    path: "/zh/-mentors",
+    meta: __nuxt_page_meta$e || {},
+    component: () => import('./index-Dzw-H7lj.mjs')
+  },
+  {
+    name: "profile-detail___en",
     path: "/profile/detail",
     meta: __nuxt_page_meta$d || {},
-    component: () => import('./detail-ClFK3two.mjs')
+    component: () => import('./detail-DBau4GVt.mjs')
   },
   {
-    name: "test-analyzing",
+    name: "profile-detail___zh",
+    path: "/zh/profile/detail",
+    meta: __nuxt_page_meta$d || {},
+    component: () => import('./detail-DBau4GVt.mjs')
+  },
+  {
+    name: "test-analyzing___en",
     path: "/test/analyzing",
     meta: __nuxt_page_meta$c || {},
-    component: () => import('./analyzing-DQV87h1H.mjs')
+    component: () => import('./analyzing-DIM3b6U4.mjs')
   },
   {
-    name: "account-settings",
+    name: "test-analyzing___zh",
+    path: "/zh/test/analyzing",
+    meta: __nuxt_page_meta$c || {},
+    component: () => import('./analyzing-DIM3b6U4.mjs')
+  },
+  {
+    name: "account-settings___en",
     path: "/account/settings",
     meta: __nuxt_page_meta$b || {},
-    component: () => import('./settings-Br6J2XYX.mjs')
+    component: () => import('./settings-Cr7nDPId.mjs')
   },
   {
-    name: "user-course-test",
+    name: "account-settings___zh",
+    path: "/zh/account/settings",
+    meta: __nuxt_page_meta$b || {},
+    component: () => import('./settings-Cr7nDPId.mjs')
+  },
+  {
+    name: "user-course-test___en",
     path: "/user-course/test",
     meta: __nuxt_page_meta$a || {},
-    component: () => import('./test-BvoxHVaC.mjs')
+    component: () => import('./test-c5lKZuAz.mjs')
   },
   {
-    name: "blog-dateil-slug",
+    name: "user-course-test___zh",
+    path: "/zh/user-course/test",
+    meta: __nuxt_page_meta$a || {},
+    component: () => import('./test-c5lKZuAz.mjs')
+  },
+  {
+    name: "blog-dateil-slug___en",
     path: "/blog/dateil/:slug()",
     meta: __nuxt_page_meta$9 || {},
-    component: () => import('./_slug_-C7j1POvF.mjs')
+    component: () => import('./_slug_-DRlh4x4G.mjs')
   },
   {
-    name: "user-course-lesson",
+    name: "blog-dateil-slug___zh",
+    path: "/zh/blog/dateil/:slug()",
+    meta: __nuxt_page_meta$9 || {},
+    component: () => import('./_slug_-DRlh4x4G.mjs')
+  },
+  {
+    name: "user-course-lesson___en",
     path: "/user-course/lesson",
     meta: __nuxt_page_meta$8 || {},
-    component: () => import('./lesson-oImuvI_H.mjs')
+    component: () => import('./lesson-f5E9i34j.mjs')
   },
   {
-    name: "user-course-chapters",
-    path: "/user-course/chapters",
+    name: "user-course-lesson___zh",
+    path: "/zh/user-course/lesson",
+    meta: __nuxt_page_meta$8 || {},
+    component: () => import('./lesson-f5E9i34j.mjs')
+  },
+  {
+    name: "blog-category-slug___en",
+    path: "/blog/category/:slug()",
     meta: __nuxt_page_meta$7 || {},
-    component: () => import('./chapters-pIsSOE70.mjs')
+    component: () => import('./_slug_-Cs6vmSaw.mjs')
   },
   {
-    name: "blog-category-category",
-    path: "/blog/category/:category()",
+    name: "blog-category-slug___zh",
+    path: "/zh/blog/category/:slug()",
+    meta: __nuxt_page_meta$7 || {},
+    component: () => import('./_slug_-Cs6vmSaw.mjs')
+  },
+  {
+    name: "user-course-chapters___en",
+    path: "/user-course/chapters",
     meta: __nuxt_page_meta$6 || {},
-    component: () => import('./_category_-DjRMNneD.mjs')
+    component: () => import('./chapters-U5se3Jo8.mjs')
   },
   {
-    name: "orders-purchase-complete",
+    name: "user-course-chapters___zh",
+    path: "/zh/user-course/chapters",
+    meta: __nuxt_page_meta$6 || {},
+    component: () => import('./chapters-U5se3Jo8.mjs')
+  },
+  {
+    name: "orders-purchase-complete___en",
     path: "/orders/purchase-complete",
     meta: __nuxt_page_meta$5 || {},
-    component: () => import('./purchase-complete-CfOASVzO.mjs')
+    component: () => import('./purchase-complete-B2cdYofl.mjs')
   },
   {
-    name: "user-course-lesson-guide",
+    name: "orders-purchase-complete___zh",
+    path: "/zh/orders/purchase-complete",
+    meta: __nuxt_page_meta$5 || {},
+    component: () => import('./purchase-complete-B2cdYofl.mjs')
+  },
+  {
+    name: "user-course-lesson-guide___en",
     path: "/user-course/lesson-guide",
     meta: __nuxt_page_meta$4 || {},
-    component: () => import('./lesson-guide-BghOrmXQ.mjs')
+    component: () => import('./lesson-guide-Dz_60kP-.mjs')
   },
   {
-    name: "user-course-test-complete",
+    name: "user-course-lesson-guide___zh",
+    path: "/zh/user-course/lesson-guide",
+    meta: __nuxt_page_meta$4 || {},
+    component: () => import('./lesson-guide-Dz_60kP-.mjs')
+  },
+  {
+    name: "user-course-test-complete___en",
     path: "/user-course/test-complete",
     meta: __nuxt_page_meta$3 || {},
-    component: () => import('./test-complete-DyxkdyNK.mjs')
+    component: () => import('./test-complete-DL_xmjnk.mjs')
   },
   {
-    name: "orders-cancel-subscription",
+    name: "user-course-test-complete___zh",
+    path: "/zh/user-course/test-complete",
+    meta: __nuxt_page_meta$3 || {},
+    component: () => import('./test-complete-DL_xmjnk.mjs')
+  },
+  {
+    name: "orders-cancel-subscription___en",
     path: "/orders/cancel-subscription",
     meta: __nuxt_page_meta$2 || {},
-    component: () => import('./cancel-subscription-Bu1aAE7c.mjs')
+    component: () => import('./cancel-subscription-B7TKspFu.mjs')
   },
   {
-    name: "user-course-lesson-complete",
+    name: "orders-cancel-subscription___zh",
+    path: "/zh/orders/cancel-subscription",
+    meta: __nuxt_page_meta$2 || {},
+    component: () => import('./cancel-subscription-B7TKspFu.mjs')
+  },
+  {
+    name: "user-course-lesson-complete___en",
     path: "/user-course/lesson-complete",
     meta: __nuxt_page_meta$1 || {},
-    component: () => import('./lesson-complete-XbMnlrT3.mjs')
+    component: () => import('./lesson-complete-CO96Xe5q.mjs')
   },
   {
-    name: "user-course-chapter-complete",
+    name: "user-course-lesson-complete___zh",
+    path: "/zh/user-course/lesson-complete",
+    meta: __nuxt_page_meta$1 || {},
+    component: () => import('./lesson-complete-CO96Xe5q.mjs')
+  },
+  {
+    name: "user-course-chapter-complete___en",
     path: "/user-course/chapter-complete",
     meta: __nuxt_page_meta || {},
-    component: () => import('./chapter-complete-zZS5opDE.mjs')
+    component: () => import('./chapter-complete-C-jKoNUI.mjs')
+  },
+  {
+    name: "user-course-chapter-complete___zh",
+    path: "/zh/user-course/chapter-complete",
+    meta: __nuxt_page_meta || {},
+    component: () => import('./chapter-complete-C-jKoNUI.mjs')
   }
 ];
 const _wrapInTransition = (props, children) => {
@@ -1248,7 +1482,7 @@ defineComponent({
   }
 });
 const clientOnlySymbol = Symbol.for("nuxt:client-only");
-const __nuxt_component_0$2 = defineComponent({
+const __nuxt_component_0$3 = defineComponent({
   name: "ClientOnly",
   inheritAttrs: false,
   props: ["fallback", "placeholder", "placeholderTag", "fallbackTag"],
@@ -1929,7 +2163,7 @@ function defineNuxtLink(options) {
     }
   });
 }
-const __nuxt_component_1$1 = /* @__PURE__ */ defineNuxtLink(nuxtLinkDefaults);
+const __nuxt_component_0$2 = /* @__PURE__ */ defineNuxtLink(nuxtLinkDefaults);
 function applyTrailingSlashBehavior(to, trailingSlash) {
   const normalizeFn = trailingSlash === "append" ? withTrailingSlash : withoutTrailingSlash;
   const hasProtocolDifferentFromHttp = hasProtocol(to) && !to.startsWith("http");
@@ -2578,6 +2812,9 @@ function normalizeRouteName(routeName) {
 function getRouteBaseName(route) {
   return normalizeRouteName(typeof route === "object" ? route?.name : route).split(separator)[0];
 }
+function getLocalizedRouteName(routeName, locale, isDefault) {
+  return routeName + separator + locale ;
+}
 const pathLanguageParser = createPathIndexLanguageParser(0);
 const getLocaleFromRoutePath = (path) => pathLanguageParser(path);
 const getLocaleFromRouteName = (name) => name.split(separator).at(1) ?? "";
@@ -2589,14 +2826,10 @@ function getLocaleFromRoute(route) {
   return input[0] === "/" ? getLocaleFromRoutePath(input) : getLocaleFromRouteName(input);
 }
 function createLocaleRouteNameGetter(defaultLocale) {
-  {
-    return (routeName) => normalizeRouteName(routeName);
-  }
+  return (name, locale) => getLocalizedRouteName(normalizeRouteName(name), locale);
 }
 function createLocalizedRouteByPathResolver(router) {
-  {
-    return (route) => route;
-  }
+  return (route) => router.resolve(route);
 }
 const localeCodes = [
   "en",
@@ -2607,7 +2840,7 @@ const localeLoaders = {
     {
       key: "locale_en_46json_c4f7c814",
       load: () => import(
-        './en-DL6jG613.mjs'
+        './en-DRQJSJy8.mjs'
         /* webpackChunkName: "locale_en_46json_c4f7c814" */
       ),
       cache: true
@@ -2617,14 +2850,19 @@ const localeLoaders = {
     {
       key: "locale_zh_46json_906be1cb",
       load: () => import(
-        './zh-DC7kOxM2.mjs'
+        './zh-n0EV4Tpw.mjs'
         /* webpackChunkName: "locale_zh_46json_906be1cb" */
       ),
       cache: true
     }
   ]
 };
-const vueI18nConfigs = [];
+const vueI18nConfigs = [
+  () => import(
+    './i18n.config-DbHV2b-B.mjs'
+    /* webpackChunkName: "config_i18n_46config_46ts_030a8f52" */
+  )
+];
 const normalizedLocales = [
   {
     code: "en",
@@ -2801,7 +3039,7 @@ function createNuxtI18nContext(nuxt, vueI18n, defaultLocale) {
       return;
     }
     const headers = getLocaleConfig(locale)?.cacheable ? {} : { "Cache-Control": "no-cache" };
-    const messages = await $fetch(`${"/_i18n/kuJMJ09A"}/${locale}/messages.json`, { headers });
+    const messages = await $fetch(`${"/_i18n/_of9iluB"}/${locale}/messages.json`, { headers });
     for (const k of Object.keys(messages)) {
       i18n.mergeLocaleMessage(k, messages[k]);
     }
@@ -2952,22 +3190,25 @@ function createComposableContext(ctx, nuxtApp = useNuxtApp()) {
   const router = useRouter();
   useDetectors(useRequestEvent(), useI18nDetection(nuxtApp), nuxtApp);
   const defaultLocale = ctx.getDefaultLocale();
-  const getLocalizedRouteName = createLocaleRouteNameGetter();
+  const getLocalizedRouteName2 = createLocaleRouteNameGetter();
   function resolveLocalizedRouteByName(route, locale) {
     route.name = getRouteBaseName(route.name || router.currentRoute.value);
-    const localizedName = getLocalizedRouteName(route.name, locale);
+    const localizedName = getLocalizedRouteName2(route.name, locale);
     if (router.hasRoute(localizedName)) {
       route.name = localizedName;
     }
     return route;
   }
-  const routeByPathResolver = createLocalizedRouteByPathResolver();
+  const routeByPathResolver = createLocalizedRouteByPathResolver(router);
   function resolveLocalizedRouteByPath(input, locale) {
     const route = routeByPathResolver(input, locale);
     const baseName = getRouteBaseName(route);
     if (baseName) {
-      route.name = getLocalizedRouteName(baseName, locale);
+      route.name = getLocalizedRouteName2(baseName, locale);
       return route;
+    }
+    if (prefixable(locale, defaultLocale)) {
+      route.path = "/" + locale + route.path;
     }
     route.path = formatTrailingSlash(route.path, true);
     return route;
@@ -2989,7 +3230,7 @@ function createComposableContext(ctx, nuxtApp = useNuxtApp()) {
     routingOptions: {
       defaultLocale,
       strictCanonicals: ctx.config.experimental.alternateLinkCanonicalQueries ?? true,
-      hreflangLinks: false
+      hreflangLinks: true
     },
     getLocale: ctx.getLocale,
     getLocales: ctx.getLocales,
@@ -3032,9 +3273,13 @@ async function loadAndSetLocale(nuxtApp, locale) {
   return locale;
 }
 function skipDetect(detect, path, pathLocale) {
-  {
-    return false;
+  if (detect.redirectOn === "root" && path !== "/") {
+    return true;
   }
+  if (detect.redirectOn === "no prefix" && !detect.alwaysRedirect && isSupportedLocale(pathLocale)) {
+    return true;
+  }
+  return false;
 }
 function detectLocale(nuxtApp, route) {
   const detectConfig = useI18nDetection(nuxtApp);
@@ -3048,6 +3293,9 @@ function detectLocale(nuxtApp, route) {
       yield detectors.navigator();
       yield detectConfig.fallbackLocale;
     }
+    {
+      yield detectors.route(route);
+    }
   }
   for (const detected of detect()) {
     if (detected && isSupportedLocale(detected)) {
@@ -3057,9 +3305,26 @@ function detectLocale(nuxtApp, route) {
   return ctx.getLocale() || ctx.getDefaultLocale() || "";
 }
 function navigate(nuxtApp, to, locale) {
-  {
+  const ctx = useNuxtI18nContext(nuxtApp);
+  const _ctx = useComposableContext(nuxtApp);
+  if (to.path === "/" && ctx.rootRedirect) {
+    return navigateTo(localePath(_ctx, ctx.rootRedirect.path, locale), { redirectCode: ctx.rootRedirect.code });
+  }
+  if (ctx.vueI18n.__pendingLocale && useNuxtApp()._processingMiddleware) {
     return;
   }
+  const detectors = useDetectors(useRequestEvent(), useI18nDetection(nuxtApp), nuxtApp);
+  if (detectors.route(to) === locale) {
+    return;
+  }
+  const destination = switchLocalePath(_ctx, locale, to) || localePath(_ctx, to.fullPath, locale);
+  if (isEqual$1(destination, to.fullPath)) {
+    return;
+  }
+  return navigateTo(destination, { redirectCode: ctx.redirectStatusCode });
+}
+function prefixable(currentLocale, defaultLocale) {
+  return currentLocale !== defaultLocale || false;
 }
 function createBaseUrlGetter(nuxt, baseUrl, defaultLocale, getDomainFromLocale) {
   if (isFunction(baseUrl)) {
@@ -7056,7 +7321,7 @@ const i18n__7llSF6tZ9O9lxBRvhW1YsknH4FPqE5CFa24FZf_6dI = /* @__PURE__ */ defineN
     {
       localeConfigs.value = useRequestEvent().context.nuxtI18n?.localeConfigs || {};
     }
-    prerenderRoutes(localeCodes.map((locale) => `${"/_i18n/kuJMJ09A"}/${locale}/messages.json`));
+    prerenderRoutes(localeCodes.map((locale) => `${"/_i18n/_of9iluB"}/${locale}/messages.json`));
     const i18n = createI18n(optionsI18n);
     const detectors = useDetectors(useRequestEvent(nuxt), useI18nDetection(nuxt), nuxt);
     const ctx = createNuxtI18nContext(nuxt, i18n, optionsI18n.defaultLocale);
@@ -7067,13 +7332,13 @@ const i18n__7llSF6tZ9O9lxBRvhW1YsknH4FPqE5CFa24FZf_6dI = /* @__PURE__ */ defineN
         composer.localeCodes = computed(() => localeCodes);
         const _baseUrl = ref(ctx.getBaseUrl());
         composer.baseUrl = computed(() => _baseUrl.value);
-        composer.strategy = "no_prefix";
+        composer.strategy = "prefix_except_default";
         composer.localeProperties = computed(
           () => normalizedLocales.find((l) => l.code === composer.locale.value) || { code: composer.locale.value }
         );
         composer.setLocale = async (locale) => {
           await loadAndSetLocale(nuxt, locale);
-          await nuxt.runWithContext(() => navigate(nuxt, nuxt.$router.currentRoute.value));
+          await nuxt.runWithContext(() => navigate(nuxt, nuxt.$router.currentRoute.value, locale));
         };
         composer.loadLocaleMessages = ctx.loadMessages;
         composer.differentDomains = false;
@@ -7096,7 +7361,7 @@ const i18n__7llSF6tZ9O9lxBRvhW1YsknH4FPqE5CFa24FZf_6dI = /* @__PURE__ */ defineN
           ["locales", () => c.locales],
           ["localeCodes", () => c.localeCodes],
           ["baseUrl", () => c.baseUrl],
-          ["strategy", () => "no_prefix"],
+          ["strategy", () => "prefix_except_default"],
           ["localeProperties", () => c.localeProperties],
           ["setLocale", () => (locale) => Reflect.apply(c.setLocale, c, [locale])],
           ["loadLocaleMessages", () => (locale) => Reflect.apply(c.loadLocaleMessages, c, [locale])],
@@ -9037,7 +9302,7 @@ const _sfc_main$9 = /* @__PURE__ */ Object.assign({ inheritAttrs: false }, {
       return ui.value({ class: props.class, active, disabled: props.disabled });
     }
     return (_ctx, _push, _parent, _attrs) => {
-      const _component_NuxtLink = __nuxt_component_1$1;
+      const _component_NuxtLink = __nuxt_component_0$2;
       _push(ssrRenderComponent(_component_NuxtLink, mergeProps(unref(nuxtLinkProps), {
         to: to.value,
         custom: ""
@@ -11165,7 +11430,7 @@ _sfc_main$3.setup = (props, ctx) => {
 };
 const __nuxt_component_0 = Object.assign(_sfc_main$3, { __name: "UApp" });
 const layouts = {
-  default: defineAsyncComponent(() => import('./default-C1FWicfl.mjs').then((m) => m.default || m))
+  default: defineAsyncComponent(() => import('./default-BfmyRChG.mjs').then((m) => m.default || m))
 };
 const LayoutLoader = defineComponent({
   name: "LayoutLoader",
@@ -11377,6 +11642,46 @@ function normalizeSlot(slot, data) {
   const slotContent = slot(data);
   return slotContent.length === 1 ? h(slotContent[0]) : h(Fragment, void 0, slotContent);
 }
+const _sfc_main$2 = /* @__PURE__ */ defineComponent({
+  __name: "app",
+  __ssrInlineRender: true,
+  setup(__props) {
+    const toaster = ref({ position: "top-center" });
+    return (_ctx, _push, _parent, _attrs) => {
+      const _component_UApp = __nuxt_component_0;
+      const _component_NuxtLayout = __nuxt_component_1;
+      const _component_NuxtPage = __nuxt_component_8;
+      _push(ssrRenderComponent(_component_UApp, mergeProps({ toaster: unref(toaster) }, _attrs), {
+        default: withCtx((_, _push2, _parent2, _scopeId) => {
+          if (_push2) {
+            _push2(ssrRenderComponent(_component_NuxtLayout, null, {
+              default: withCtx((_2, _push3, _parent3, _scopeId2) => {
+                if (_push3) {
+                  _push3(ssrRenderComponent(_component_NuxtPage, null, null, _parent3, _scopeId2));
+                } else {
+                  return [
+                    createVNode(_component_NuxtPage)
+                  ];
+                }
+              }),
+              _: 1
+            }, _parent2, _scopeId));
+          } else {
+            return [
+              createVNode(_component_NuxtLayout, null, {
+                default: withCtx(() => [
+                  createVNode(_component_NuxtPage)
+                ]),
+                _: 1
+              })
+            ];
+          }
+        }),
+        _: 1
+      }, _parent));
+    };
+  }
+});
 const _export_sfc = (sfc, props) => {
   const target = sfc.__vccOpts || sfc;
   for (const [key, val] of props) {
@@ -11384,47 +11689,13 @@ const _export_sfc = (sfc, props) => {
   }
   return target;
 };
-const _sfc_main$2 = {};
-function _sfc_ssrRender(_ctx, _push, _parent, _attrs) {
-  const _component_UApp = __nuxt_component_0;
-  const _component_NuxtLayout = __nuxt_component_1;
-  const _component_NuxtPage = __nuxt_component_8;
-  _push(ssrRenderComponent(_component_UApp, _attrs, {
-    default: withCtx((_, _push2, _parent2, _scopeId) => {
-      if (_push2) {
-        _push2(ssrRenderComponent(_component_NuxtLayout, null, {
-          default: withCtx((_2, _push3, _parent3, _scopeId2) => {
-            if (_push3) {
-              _push3(ssrRenderComponent(_component_NuxtPage, null, null, _parent3, _scopeId2));
-            } else {
-              return [
-                createVNode(_component_NuxtPage)
-              ];
-            }
-          }),
-          _: 1
-        }, _parent2, _scopeId));
-      } else {
-        return [
-          createVNode(_component_NuxtLayout, null, {
-            default: withCtx(() => [
-              createVNode(_component_NuxtPage)
-            ]),
-            _: 1
-          })
-        ];
-      }
-    }),
-    _: 1
-  }, _parent));
-}
 const _sfc_setup$2 = _sfc_main$2.setup;
 _sfc_main$2.setup = (props, ctx) => {
   const ssrContext = useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("app.vue");
   return _sfc_setup$2 ? _sfc_setup$2(props, ctx) : void 0;
 };
-const AppComponent = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["ssrRender", _sfc_ssrRender], ["__scopeId", "data-v-2f4692a2"]]);
+const AppComponent = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["__scopeId", "data-v-0f177051"]]);
 const _imports_0 = publicAssetsURL("/theme/404.png");
 const _sfc_main$1 = /* @__PURE__ */ defineComponent({
   __name: "error",
@@ -11438,12 +11709,12 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
       _push(ssrRenderComponent(_component_UApp, _attrs, {
         default: withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(ssrRenderComponent(_component_NuxtLayout, null, {
+            _push2(ssrRenderComponent(_component_NuxtLayout, { "layout-show-page-top-icons": false }, {
               default: withCtx((_2, _push3, _parent3, _scopeId2) => {
                 if (_push3) {
                   _push3(`<section class="uno-flex uno-items-center uno-justify-center uno-px-6 uno-py-40"${_scopeId2}><div class="uno-text-center uno-max-w-[680px] uno-mx-auto"${_scopeId2}>`);
                   if (unref(error)?.statusCode === 404) {
-                    _push3(`<!--[--><img${ssrRenderAttr("src", _imports_0)} alt="" aria-hidden="true" class="uno-mx-auto uno-mb-8 uno-w-[320px] sm:uno-w-[480px]"${_scopeId2}><div class="uno-flex uno-justify-start uno-items-center uno-flex-col uno-gap-10"${_scopeId2}><div style="${ssrRenderStyle({ "flex-shrink": "0" })}" class="uno-flex uno-self-stretch uno-justify-start uno-items-center uno-flex-col uno-gap-3"${_scopeId2}><p style="${ssrRenderStyle({ "flex-shrink": "0" })}" class="uno-self-stretch uno-text-[#011813] uno-text-[32px] uno-font-[&#39;Outfit&#39;] uno-text-center uno-font-semibold"${_scopeId2}> Oops! that page doesn’t exist </p><p style="${ssrRenderStyle({ "flex-shrink": "0" })}" class="uno-self-stretch uno-text-[#4E5255] uno-font-[&#39;Outfit&#39;] uno-text-center"${_scopeId2}> Oops! It seems the page you&#39;re looking for doesn’t exist. Let&#39;s get you back on track—click below to return to the home page. </p></div><div style="${ssrRenderStyle({ "flex-shrink": "0" })}" class="uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-2 uno-py-4 uno-px-[24px] uno-bg-[#EA4C89] uno-rounded-[1000px]"${_scopeId2}><span class="uno-text-[#FFFFFF] uno-font-[&#39;Outfit&#39;] uno-font-medium uno-leading-normal"${_scopeId2}> Back to Home </span></div></div><!--]-->`);
+                    _push3(`<!--[--><img${ssrRenderAttr("src", _imports_0)} alt="" aria-hidden="true" class="uno-mx-auto uno-mb-8 uno-w-[320px] sm:uno-w-[480px]"${_scopeId2}><div class="uno-flex uno-justify-start uno-items-center uno-flex-col uno-gap-10"${_scopeId2}><div style="${ssrRenderStyle({ "flex-shrink": "0" })}" class="uno-flex uno-self-stretch uno-justify-start uno-items-center uno-flex-col uno-gap-3"${_scopeId2}><p style="${ssrRenderStyle({ "flex-shrink": "0" })}" class="uno-self-stretch uno-text-[#011813] uno-text-[32px] uno-font-[&#39;Outfit&#39;] uno-text-center uno-font-semibold"${_scopeId2}> Oops! that page doesn’t exist </p><p style="${ssrRenderStyle({ "flex-shrink": "0" })}" class="uno-self-stretch uno-text-[#4E5255] uno-font-[&#39;Outfit&#39;] uno-text-center"${_scopeId2}> Oops! It seems the page you&#39;re looking for doesn’t exist. Let&#39;s get you back on track—click below to return to the home page. </p></div><div style="${ssrRenderStyle({ "flex-shrink": "0" })}" class="uno-w-auto uno-h-[56px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-2 uno-py-4 uno-px-[24px] uno-bg-[#EA4C89] uno-rounded-[1000px]"${_scopeId2}><span class="uno-text-[#FFFFFF] uno-font-[&#39;Outfit&#39;] uno-font-[16px] uno-leading-normal"${_scopeId2}> Back to Home </span></div></div><!--]-->`);
                   } else {
                     _push3(`<!--[--><h1 class="uno-text-4xl sm:uno-text-5xl uno-font-bold uno-text-[#0F172A] uno-mb-4"${_scopeId2}>${ssrInterpolate(unref(error)?.statusCode)} - Something went wrong</h1><p class="uno-text-[#4E5255] uno-mb-8 uno-px-4"${_scopeId2}>${ssrInterpolate(unref(error)?.message)}</p><button class="uno-inline-flex uno-items-center uno-justify-center uno-px-6 uno-h-[48px] uno-rounded-[16px] uno-bg-[#009D77] uno-text-white hover:uno-bg-[#0AA17F]"${_scopeId2}> Back to Home </button><!--]-->`);
                   }
@@ -11475,10 +11746,10 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
                             ]),
                             createVNode("div", {
                               style: { "flex-shrink": "0" },
-                              class: "uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-2 uno-py-4 uno-px-[24px] uno-bg-[#EA4C89] uno-rounded-[1000px]",
+                              class: "uno-w-auto uno-h-[56px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-2 uno-py-4 uno-px-[24px] uno-bg-[#EA4C89] uno-rounded-[1000px]",
                               onClick: handleError
                             }, [
-                              createVNode("span", { class: "uno-text-[#FFFFFF] uno-font-['Outfit'] uno-font-medium uno-leading-normal" }, " Back to Home ")
+                              createVNode("span", { class: "uno-text-[#FFFFFF] uno-font-['Outfit'] uno-font-[16px] uno-leading-normal" }, " Back to Home ")
                             ])
                           ])
                         ], 64)) : (openBlock(), createBlock(Fragment, { key: 1 }, [
@@ -11498,7 +11769,7 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
             }, _parent2, _scopeId));
           } else {
             return [
-              createVNode(_component_NuxtLayout, null, {
+              createVNode(_component_NuxtLayout, { "layout-show-page-top-icons": false }, {
                 default: withCtx(() => [
                   createVNode("section", { class: "uno-flex uno-items-center uno-justify-center uno-px-6 uno-py-40" }, [
                     createVNode("div", { class: "uno-text-center uno-max-w-[680px] uno-mx-auto" }, [
@@ -11525,10 +11796,10 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
                           ]),
                           createVNode("div", {
                             style: { "flex-shrink": "0" },
-                            class: "uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-2 uno-py-4 uno-px-[24px] uno-bg-[#EA4C89] uno-rounded-[1000px]",
+                            class: "uno-w-auto uno-h-[56px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-2 uno-py-4 uno-px-[24px] uno-bg-[#EA4C89] uno-rounded-[1000px]",
                             onClick: handleError
                           }, [
-                            createVNode("span", { class: "uno-text-[#FFFFFF] uno-font-['Outfit'] uno-font-medium uno-leading-normal" }, " Back to Home ")
+                            createVNode("span", { class: "uno-text-[#FFFFFF] uno-font-['Outfit'] uno-font-[16px] uno-leading-normal" }, " Back to Home ")
                           ])
                         ])
                       ], 64)) : (openBlock(), createBlock(Fragment, { key: 1 }, [
@@ -11626,5 +11897,5 @@ let entry;
 }
 const entry_default = (ssrContext) => entry(ssrContext);
 
-export { fetchDefaults as A, useAsyncData as B, useRequestFetch as C, useNuxtApp as D, navigateTo as E, inputIdInjectionKey as F, formFieldInjectionKey as G, looseToNumber as H, useCookieLocale as I, useBrowserLocale as J, useHead as K, useLocale as L, getSlotChildrenText as M, _sfc_main$9 as N, pickLinkProps as O, _sfc_main$a as P, useLocaleHead as Q, __nuxt_component_8 as R, __nuxt_component_6 as _, useSeoMeta as a, __nuxt_component_1$1 as b, _sfc_main$8 as c, _export_sfc as d, entry_default as default, __nuxt_component_0$2 as e, useRoute as f, useAppConfig as g, formBusInjectionKey as h, formStateInjectionKey as i, formErrorsInjectionKey as j, formInputsInjectionKey as k, formLoadingInjectionKey as l, formOptionsInjectionKey as m, usePortal as n, useFormField as o, useFieldGroup as p, useComponentIcons as q, isArrayOfArray as r, _sfc_main$e as s, tv as t, useI18n as u, _sfc_main$b as v, get as w, _sfc_main$c as x, getDisplayValue as y, useRuntimeConfig as z };
+export { _sfc_main$c as A, getDisplayValue as B, useToast as C, useRuntimeConfig as D, fetchDefaults as E, useAsyncData as F, useRequestFetch as G, useCookie as H, useNuxtApp as I, __nuxt_component_0$2 as J, inputIdInjectionKey as K, formFieldInjectionKey as L, looseToNumber as M, useCookieLocale as N, useBrowserLocale as O, useLocale as P, getSlotChildrenText as Q, _sfc_main$9 as R, pickLinkProps as S, _sfc_main$a as T, omit as U, useLocaleHead as V, __nuxt_component_8 as W, __nuxt_component_6 as _, useLocalePath as a, useRoute as b, useHead as c, _export_sfc as d, entry_default as default, useSeoMeta as e, useRouter as f, _sfc_main$8 as g, useAppConfig as h, formBusInjectionKey as i, formStateInjectionKey as j, formErrorsInjectionKey as k, formInputsInjectionKey as l, formLoadingInjectionKey as m, formOptionsInjectionKey as n, navigateTo as o, _sfc_main$e as p, __nuxt_component_0$3 as q, usePortal as r, useFormField as s, tv as t, useI18n as u, useFieldGroup as v, useComponentIcons as w, isArrayOfArray as x, _sfc_main$b as y, get as z };
 //# sourceMappingURL=server.mjs.map

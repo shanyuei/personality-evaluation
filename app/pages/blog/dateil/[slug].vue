@@ -36,25 +36,27 @@
             </h3>
             <ul class="uno-space-y-4">
               <li v-for="recent in recentArticles" :key="recent.id">
-                <NuxtLink :to="{
+                <AppLink :is-link="!!recent?.slug" :to="{
                   name: 'blog-dateil-slug',
                   params: {
-                    slug: recent.slug
+                    slug: recent?.slug || ''
                   }
-                }" class="uno-flex uno-gap-4 uno-group">
-                  <div class="uno-rounded-[12px]  uno-flex-shrink-0">
-                    <NuxtImg :src="getImageUrl(recent.cover?.[0]?.url || '')" :alt="recent.title" width="72"
-                      class="uno-rounded-[12px]" height="72" />
+                }">
+                  <div class="uno-flex uno-gap-4 uno-group">
+                    <div class="uno-rounded-[12px]  uno-flex-shrink-0">
+                      <NuxtImg :src="getImageUrl(recent.cover?.[0]?.url || '')" :alt="recent.title" width="72"
+                        class="uno-rounded-[12px]" height="72" />
+                    </div>
+                    <div>
+                      <h4
+                        class="uno-font-medium uno-text-[20px] uno-text-[#011813] uno-leading-[26px] group-hover:uno-text-[var(--ui-primary)] uno-transition-colors uno-duration-200 uno-line-clamp-1">
+                        {{ recent.title }}</h4>
+                      <p
+                        class="uno-font-normal uno-text-[16px] uno-text-[#4e5255] uno-leading-[20px] uno-mt-1 uno-line-clamp-2">
+                        {{ recent.excerpt }}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h4
-                      class="uno-font-medium uno-text-[20px] uno-text-[#011813] uno-leading-[26px] group-hover:uno-text-[var(--ui-primary)] uno-transition-colors uno-duration-200 uno-line-clamp-1">
-                      {{ recent.title }}</h4>
-                    <p
-                      class="uno-font-normal uno-text-[16px] uno-text-[#4e5255] uno-leading-[20px] uno-mt-1 uno-line-clamp-2">
-                      {{ recent.excerpt }}</p>
-                  </div>
-                </NuxtLink>
+                </AppLink>
               </li>
             </ul>
           </div>

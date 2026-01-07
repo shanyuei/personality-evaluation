@@ -11,9 +11,9 @@
           <h1 class="uno-text-2xl md:uno-text-[32px] uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2] uno-text-[#011813]">{{ courseName }}</h1>
           <p class="uno-w-full uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-leading-normal">{{ $t('pages.userCourseTestComplete.description') }}</p>
 
-          <NuxtLink  class="uno-w-full md:uno-w-[520px]">
+          <AppLink :is-link="false" class="uno-w-full md:uno-w-[520px]">
             <UButton :ui="UButtonTheme"  class="uno-font-['Outfit']">{{ $t('pages.userCourseTestComplete.cta') }}</UButton>
-          </NuxtLink>
+          </AppLink>
         </div>
     </div>
   </main>

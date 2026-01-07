@@ -81,11 +81,11 @@
             <UButton
               :ui="{ base: `w-full md:w-[calc(50%-12px)] h-[48px] flex justify-center items-center flex-row gap-1 py-1 px-[20px] bg-[var(--ui-primary)] rounded-lg text-white text-sm md:text-lg font-['Outfit'] font-bold leading-normal` }">
               {{ $t('pages.ebookDetail.cta.download') }}</UButton>
-            <NuxtLink to="/ebooks" class="uno-inline-block w-full md:w-[calc(50%-12px)]">
+            <AppLink :to="'/ebooks'" class="uno-inline-block w-full md:w-[calc(50%-12px)]">
               <UButton variant="ghost"
                 :ui="{ base: `w-full h-[48px] flex justify-center items-center flex-row gap-1 py-1 px-[20px] border-solid border-[var(--ui-primary)] border-2 rounded-lg text-[var(--ui-primary)] text-sm md:text-lg font-['Outfit'] font-bold leading-normal` }">
                 {{ $t('pages.ebookDetail.cta.close') }}</UButton>
-            </NuxtLink>
+            </AppLink>
           </div>
         </div>
       </section>

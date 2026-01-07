@@ -143,10 +143,10 @@
               $t('pages.personalityDetail.growth.items.i1.title') }}</h3>
             <p class="uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-leading-normal">{{
               $t('pages.personalityDetail.growth.items.i1.body') }}</p>
-            <NuxtLink to="/courses" class="uno-inline-block">
+            <AppLink :to="'/courses'" class="uno-inline-block">
               <UButton :ui="UButtonTheme" class="uno-w-full md:uno-w-[151px]">{{
                 $t('pages.personalityDetail.growth.ctaCourses') }}</UButton>
-            </NuxtLink>
+            </AppLink>
           </div>
 
           <div class="uno-space-y-3">
@@ -167,10 +167,10 @@
               $t('pages.personalityDetail.growth.items.i3.title') }}</h3>
             <p class="uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-leading-normal">{{
               $t('pages.personalityDetail.growth.items.i3.body') }}</p>
-            <NuxtLink to="/test" class="uno-inline-block">
+            <AppLink :to="'/test'" class="uno-inline-block">
               <UButton :ui="UButtonTheme" class="uno-w-full md:uno-w-[151px]">{{
                 $t('pages.personalityDetail.growth.ctaTests') }}</UButton>
-            </NuxtLink>
+            </AppLink>
           </div>
         </div>
       </div>

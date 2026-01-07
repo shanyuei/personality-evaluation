@@ -29,10 +29,10 @@
           </div>
         </div>
 
-        <NuxtLink to="/user-course/test" class="uno-w-full">
+        <AppLink :to="'/user-course/test'" class="uno-w-full">
           <UButton :ui="UButtonTheme" class="uno-w-full uno-font-['Outfit']">{{ $t('pages.userCourseChapterComplete.cta') }}</UButton>
-        </NuxtLink>
-        <NuxtLink to="/user-course" class="uno-text-[var(--ui-muted-foreground)] uno-font-['Outfit'] uno-text-center hover:uno-text-[var(--ui-foreground)]">{{ $t('pages.userCourseChapterComplete.later') }}</NuxtLink>
+        </AppLink>
+        <AppLink :to="'/user-course'" class="uno-text-[var(--ui-muted-foreground)] uno-font-['Outfit'] uno-text-center hover:uno-text-[var(--ui-foreground)]">{{ $t('pages.userCourseChapterComplete.later') }}</AppLink>
       </div>
     </div>
   </div>

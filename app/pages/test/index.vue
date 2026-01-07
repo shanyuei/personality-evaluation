@@ -197,6 +197,7 @@ definePageMeta({
 })
 const { t } = useI18n()
 const router = useRouter()
+const localePath = useLocalePath()
 
 useSeoMeta({
   title: () => t('seo.test.title'),
@@ -214,7 +215,7 @@ getTestQuestions().then(res => {
 const nextStart = () => {
   questionsStore.currentStep = 1;
   questionsStore.setQuestions(allQuestions.value)
-  router.push({ name: 'test-start' })
+  router.push(localePath({ name: 'test-start' }))
 }
 
 </script>

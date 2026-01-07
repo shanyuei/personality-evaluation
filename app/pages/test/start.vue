@@ -61,6 +61,7 @@ import UButtonTheme from '~/theme/UButton'
 
 const { t } = useI18n()
 const router = useRouter()
+const localePath = useLocalePath()
 definePageMeta({
   layoutShowFooter: false,
   title: () => 'seo.test.start.title'
@@ -72,7 +73,7 @@ useSeoMeta({
 })
 const nextStep = () => {
   console.log('nextStep', router.getRoutes())
-  router.push({ name: 'test-step', query: { step: 1 } })
+  router.push(localePath({ name: 'test-step', query: { step: 1 } }))
 }
 </script>
 

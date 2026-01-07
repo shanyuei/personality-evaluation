@@ -21,9 +21,9 @@
 
         <!-- 导航栏 -->
         <UNavigationMenu v-if="showMenu" :ui="{
-          link: 'before:bg-[transparent!important] font-[\'Outfit\'] text-center font-medium text-[16px] text-[#001813] data-[active]:text-[var(--color-pink-1)] hover:text-[var(--color-pink-1)]',
+          link: `before:bg-[transparent!important] font-['Outfit'] text-center font-medium text-[16px] text-[#001813] data-[active]:text-[var(--color-pink-1)] hover:text-[var(--color-pink-1)]`,
           item: 'ml-[18px] mr-[18px]'
-        }" :items="items" class="uno-w-full uno-justify-center max-sm:uno-hidden" />
+        }" :items="itemsLocalized" class="uno-w-full uno-justify-center max-sm:uno-hidden" />
       </div>
 
     </template>
@@ -32,7 +32,7 @@
       <!-- 未登录状态 -->
       <div v-if="!token"
         class="uno-h-[48px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-3 uno-py-1 uno-pr-1 uno-pl-[20px] uno-border-solid uno-border-[#011813] uno-border uno-rounded-[100px] max-sm:uno-hidden cursor-pointer"
-        @click="navigateTo('/auth/sign-in')">
+        @click="navigateTo(localePath('/auth/sign-in'))">
         <span class="uno-text-[#011813] uno-font-['Outfit'] uno-font-medium">{{ $t("common.getStarted") }}</span>
         <NuxtImg src="/images/header/go-icon-1.png" alt="go-icon-1" width="40px" height="40px" />
       </div>
@@ -73,8 +73,8 @@
       <div
         class="uno-flex uno-flex-col uno-items-start uno-gap-4 uno-p-24px uno-bg-[#FFFFFF] uno-border-[1px] uno-border-[#F0F0F0] uno-rounded-[16px] uno-w-[374px]">
         <UNavigationMenu orientation="vertical"
-          :ui="{ link: 'before:bg-[transparent!important] font-[`Outfit`] text-center font-medium text-[#011813] data-[active]:text-[--color-pink-1] hover:text-[--color-pink-1]', item: 'line-height-[42px] min-h-[42px]' }"
-          :items="items" class="uno-w-full" />
+          :ui="{ link: `before:bg-[transparent!important] font-['Outfit'] text-center font-medium text-[#011813] data-[active]:text-[var(--color-pink-1)] hover:text-[var(--color-pink-1)]`, item: 'line-height-[42px] min-h-[42px]' }"
+          :items="itemsLocalized" class="uno-w-full" />
         <div>
           <div
             class="uno-h-[48px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-3 uno-py-1 uno-pr-1 uno-pl-[20px] uno-border-solid uno-border-[#011813] uno-border uno-rounded-[100px] uno-w-full">
@@ -105,7 +105,7 @@ const props = defineProps({
 
 const handleLogout = () => {
   userStore.logout();
-  navigateTo('/');
+  navigateTo(localePath('/'));
 };
 
 const accountItems = ref<any[]>([
@@ -138,6 +138,7 @@ const accountItems = ref<any[]>([
 
 
 
+const localePath = useLocalePath()
 const items = ref([
   {
     label: 'Home',
@@ -160,10 +161,11 @@ const items = ref([
     to: '/about',
   },
 ]);
+const itemsLocalized = computed(() => items.value.map(i => ({ ...i, to: localePath(i.to) })))
 const onClick = (item: any) => {
   console.log(item)
   if (item.to) {
-    navigateTo(item.to);
+    navigateTo(localePath(item.to));
   } else if (item.click) {
     item.click();
   }

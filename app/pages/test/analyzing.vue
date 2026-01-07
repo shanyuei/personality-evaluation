@@ -34,6 +34,7 @@ useSeoMeta({
   description: () => t('seo.test.analyzing.description')
 })
 const router = useRouter()
+const localePath = useLocalePath()
 
 const progress = ref(0)
 onMounted(async () => {
@@ -59,10 +60,10 @@ onMounted(async () => {
     const reportId = data.value?.data?.report_id
 
     setTimeout(() => {
-      router.push({
+      router.push(localePath({
         path: '/pricing',
         query: { reportId }
-      })
+      }))
     }, 500)
   } catch (e) {
     clearInterval(incre)

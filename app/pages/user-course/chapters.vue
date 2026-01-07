@@ -26,9 +26,9 @@
           </div>
         </div>
 
-        <NuxtLink to="/user-course/lesson-guide" class="uno-block">
+        <AppLink :to="'/user-course/lesson-guide'" class="uno-block">
           <UButton :ui="UButtonTheme" class="uno-font-['Outfit']">{{ $t('pages.userCourseChapters.cta') }}</UButton>
-        </NuxtLink>
+        </AppLink>
       </div>
     </div>
   </div>

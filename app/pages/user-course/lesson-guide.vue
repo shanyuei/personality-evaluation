@@ -2,9 +2,9 @@
     <div class="page-container uno-py-6">
       <div class="course-header">
         <div class="course-nav">
-          <NuxtLink to="/user-course/chapters" class="back-link">
+          <AppLink :to="'/user-course/chapters'" class="back-link">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path d="M15 19l-7-7 7-7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </NuxtLink>
+          </AppLink>
           <div class="progress-percent">{{ progress }}%</div>
           <div class="question-count">{{ $t('pages.userCourseLearn.lessonCount', { current, total }) }}</div>
         </div>
@@ -30,9 +30,9 @@
           </div>
 
           <div class="uno-mt-8">
-            <NuxtLink to="/user-course/lesson" class="uno-block">
+            <AppLink :to="'/user-course/lesson'" class="uno-block">
               <UButton :ui="UButtonTheme"  class="uno-font-['Outfit']">{{ $t('pages.userCourseLearn.cta') }}</UButton>
-            </NuxtLink>
+            </AppLink>
           </div>
         </div>
       </div>

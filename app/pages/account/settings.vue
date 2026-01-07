@@ -95,6 +95,7 @@ definePageMeta({
 })
 
 const { t } = useI18n()
+const localePath = useLocalePath()
 const toast = useToast()
 
 useSeoMeta({
@@ -187,7 +188,7 @@ const onChangePassword = async () => {
 
       // Logout and redirect to login page
       userStore.logout()
-      await navigateTo('/auth/sign-in')
+      await navigateTo(localePath('/auth/sign-in'))
     }
   } catch (e) {
     toast.add({

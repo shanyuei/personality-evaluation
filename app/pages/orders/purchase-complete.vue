@@ -38,7 +38,8 @@
   
   
   import UButtonTheme, { UButtonThemeDark } from '~/theme/UButton'
-  const { t } = useI18n()
+const { t } = useI18n()
+const localePath = useLocalePath()
 definePageMeta({
   title: () => 'pages.orders.purchaseComplete.title',
   layoutShowMenu:false,
@@ -48,7 +49,7 @@ useSeoMeta({
   description: () => t('seo.orders.purchaseComplete.description') as string
 })
 const goToReport = () => {
-  navigateTo('/test/result')
+  navigateTo(localePath('/test/result'))
 }
 
 const downloadGuidebook = () => {

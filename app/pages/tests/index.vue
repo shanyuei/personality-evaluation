@@ -30,11 +30,11 @@
           <p class="uno-text-[var(--ui-muted-foreground)] uno-text-xs md:uno-text-base uno-font-['Outfit'] uno-leading-normal">{{
             $t('pages.tests.hero.objective') }}</p>
           <div>
-            <NuxtLink to="/test/step">
+            <AppLink :to="'/test/step'">
               <UButton
                 class="uno-w-full md:uno-w-[151px] uno-h-[44px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-1 uno-py-1 uno-px-[20px] uno-bg-[var(--ui-primary)] uno-rounded-lg uno-text-[var(--ui-primary-foreground)] uno-text-sm md:uno-text-lg uno-font-['Outfit'] uno-font-bold uno-leading-normal">
                 {{ $t('pages.tests.cta.startNow') }}</UButton>
-            </NuxtLink>
+            </AppLink>
           </div>
         </div>
       </div>
@@ -75,16 +75,16 @@
                 {{ $t('pages.tests.cta.readMore') }}</UButton>
             </div>
             <div v-else class="uno-flex uno-gap-3">
-              <NuxtLink to="/test/result">
+              <AppLink :to="'/test/result'">
                 <UButton
                 class="uno-w-full md:uno-w-[151px] uno-h-[44px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-1 uno-py-1 uno-px-[20px] uno-bg-[var(--ui-primary)] uno-rounded-lg uno-text-[var(--ui-primary-foreground)] uno-text-sm md:uno-text-lg uno-font-['Outfit'] uno-font-bold uno-leading-normal">
                 {{ $t('pages.tests.cta.viewResults') }}</UButton>
-              </NuxtLink>
-              <NuxtLink to="/test/step">
+              </AppLink>
+              <AppLink :to="'/test/step'">
                 <UButton variant="ghost"
                   class="uno-w-full md:uno-w-[151px] uno-h-[44px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-1 uno-py-1 uno-px-[20px] uno-bg-white uno-border-solid uno-border-2 uno-border-[var(--ui-primary)] uno-rounded-lg uno-text-[var(--ui-primary)] uno-text-sm md:uno-text-lg uno-font-['Outfit'] uno-font-bold uno-leading-normal">
                   {{ $t('pages.tests.cta.tryAgain') }}</UButton>
-              </NuxtLink>
+              </AppLink>
             </div>
           </div>
         </div>

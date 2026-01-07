@@ -17,12 +17,12 @@
         </p>
 
         <!-- 主按钮 -->
-        <NuxtLink to="/user-course/chapters" class="uno-w-full md:uno-w-[520px]">
+        <AppLink :to="'/user-course/chapters'" class="uno-w-full md:uno-w-[520px]">
           <UButton :ui="UButtonTheme" class="uno-font-['Outfit']">{{ $t('pages.userCourseLessonComplete.cta') }}</UButton>
-        </NuxtLink>
+        </AppLink>
 
         <!-- 次链接 -->
-        <NuxtLink to="/" class="uno-text-[var(--ui-muted-foreground)] uno-font-['Outfit'] uno-text-center hover:uno-text-[var(--ui-foreground)]">{{ $t('pages.userCourseLessonComplete.toDashboard') }}</NuxtLink>
+        <AppLink :to="'/'" class="uno-text-[var(--ui-muted-foreground)] uno-font-['Outfit'] uno-text-center hover:uno-text-[var(--ui-foreground)]">{{ $t('pages.userCourseLessonComplete.toDashboard') }}</AppLink>
       </div>
     </div>
 </template>

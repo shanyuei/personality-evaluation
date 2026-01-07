@@ -30,7 +30,7 @@
         <!-- Sign Up Link -->
         <div class="uno-flex uno-items-center uno-justify-between uno-mt-6">
           <p class="uno-text-[#8d8e8f] uno-font-['Outfit']">{{ $t('pages.auth.signIn.noAccount') }}</p>
-          <NuxtLink to="/auth/sign-up" class="uno-text-[#0F172A] hover:uno-text-[#4E5255] uno-font-['Outfit'] uno-underline uno-underline-offset-4">{{ $t('pages.auth.signIn.signUp') }}</NuxtLink>
+          <AppLink :to="'/auth/sign-up'" class="uno-text-[#0F172A] hover:uno-text-[#4E5255] uno-font-['Outfit'] uno-underline uno-underline-offset-4">{{ $t('pages.auth.signIn.signUp') }}</AppLink>
         </div>
       </div>
     </div>
@@ -70,7 +70,8 @@ const canSubmit = computed(() => {
 const handleSignIn = () => {
   if (!canSubmit.value) return
   userStore.login({ email: email.value, password: password.value }).then(() => {
-    navigateTo('/')
+    const localePath = useLocalePath()
+    navigateTo(localePath('/'))
   })
 }
 </script>

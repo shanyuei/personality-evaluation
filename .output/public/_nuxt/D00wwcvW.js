@@ -1,0 +1,1 @@
+import{a as t,b as e}from"./BvK6Rsou.js";const a=()=>e("/personal/questions"),n=s=>t("/personal/submit",s),o=()=>e("/plan_list"),u=s=>t("/payment/create",s),c=s=>t("/payment/pay",s);export{a,u as c,o as g,c as p,n as s};
