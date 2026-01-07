@@ -1,0 +1,1039 @@
+var pages = {
+	home: {
+		title: "Discover your true self with a personality test",
+		description: "The test helps you identify your accurate personality type.",
+		accuracy: {
+			title: "Curious how accurate we are about you?",
+			description: "Connect to professional networks, gain valuable insights, and access resources to move toward your ideal career."
+		},
+		stats: {
+			testsToday: "Tests Today",
+			testsUS: "Tests in the U.S.",
+			totalTests: "Total Tests",
+			accurateRate: "Rated accurate or very accurate"
+		},
+		why: {
+			title: "Why take the test?",
+			desc: "Connect with top mentors. Guided questions and proven experience deliver personalized advice.",
+			main: {
+				title: "Boost self-awareness",
+				desc: "Gain UI design abilities through practice-driven coaching, with personalized guidance and feedback."
+			},
+			small1: {
+				title: "Better decisions",
+				desc: "Keep improving with expert coaching and personalized guidance."
+			},
+			small2: {
+				title: "Improved relationships",
+				desc: "Structured practice and feedback help you build better interpersonal interactions."
+			},
+			small3: {
+				title: "Career satisfaction",
+				desc: "Clear goals and continuous improvement lead to greater achievement and fulfillment."
+			}
+		},
+		how: {
+			title: "How it works",
+			desc: "The Meta template includes 7 pages, 30+ sections, and two home layouts.",
+			step1: {
+				title: "Get prepared",
+				desc: "A relaxed, focused environment leads to better results."
+			},
+			step2: {
+				title: "10+ common inner pages",
+				desc: "Includes commonly used business pages and supports full customization."
+			},
+			step3: {
+				title: "30+ detail sections",
+				desc: "Rich presentation sections help you build a portfolio site as needed."
+			}
+		},
+		receive: {
+			title: "What you'll get",
+			desc: "Participation is always voluntary and flexible in time, focusing on positive experiences and genuine outcomes.",
+			card1: {
+				title: "Comprehensive personality report",
+				desc: "Structured and actionable report content."
+			},
+			card2: {
+				title: "Daily practical challenges",
+				desc: "Improve continuously through small daily exercises."
+			},
+			card3: {
+				title: "Personalized course recommendations",
+				desc: "Recommendations for learning paths and courses that fit you better."
+			},
+			card4: {
+				title: "Learning and development library",
+				desc: "Systematic content to support continuous learning and growth."
+			},
+			card5: {
+				title: "Skills assessment tests",
+				desc: "Measure and track improvements in key skills."
+			},
+			card6: {
+				title: "Certificate of achievement",
+				desc: "Earn a certificate after learning to showcase your results."
+			}
+		},
+		testimonials: {
+			title: "Trusted by 20,000+ customers",
+			description: "Be always were in form of volunteers range time is mediatingappositive the in our affidavit how solitary saw more in his not"
+		},
+		faq: {
+			title: "Frequently Asked Questions",
+			description: "Frequently Asked Questions offers a quick answers to common queries, guiding users through features and functionalities efficiently."
+		}
+	},
+	testDetail: {
+		welcome: "Welcome, {name}!",
+		type: "Type",
+		allAbout: "All About You",
+		typeName: "Enthusiast",
+		readMore: "Read more",
+		aboutDesc: "Type 7 in the Enneagram is often called the Enthusiast: they are energetic, spontaneous and optimistic. Their core motivation is to avoid fear, pain, or discomfort and to maintain a pursuit of new experiences.",
+		totalScore: "Total score",
+		subtypesIntro: "The Enneagram outlines three subtypes for Type 7, each highlighting different expressions of their core characteristics:",
+		tab: {
+			core: "Core characteristics",
+			motivation: "Motivations & Fears",
+			relationships: "Relationships",
+			work: "Work",
+			stress: "Stress & Relaxation",
+			compatibility: "Compatibility"
+		},
+		core: {
+			title: "Core Characteristics of The Enthusiast",
+			cardTitle: "Optimism and Positivity",
+			cardDesc: "They tend to stay optimistic, seek pleasure, and avoid discomfort, driven by possibilities and new experiences."
+		}
+	},
+	personalityDetail: {
+		subtypes: {
+			title: "Enthusiast Subtypes",
+			subtitle: "Each subtype emphasizes different focuses and behavioral patterns:",
+			sp: "Self-Preservation (SP) Type 7",
+			spDesc: "Safety and resources oriented; plans, reserves, and self-soothes to reduce discomfort.",
+			social: "Social (SO) Type 7",
+			socialDesc: "Group and belonging focused; seeks experiences and connection, good at organizing and participating.",
+			oneToOne: "One-to-One (SX) Type 7",
+			oneToOneDesc: "Intense experiences and close bonds; pursues passion and deeper connection.",
+			cta: "Take a course"
+		},
+		conclusion: {
+			title: "Conclusion",
+			p1: "Based on your core characteristics and motivations, we recommend exploring and practicing in a gentle, structured way to build stable rhythms and clear priorities.",
+			p2: "In relationships and work, leverage your creativity and optimism while introducing appropriate constraints and commitments to improve execution and reflection.",
+			p3: "Start with the growth path below to gradually strengthen discomfort tolerance, mindfulness practice, and commitment—supporting long-term, sustainable growth."
+		},
+		growth: {
+			title: "Growth Path for The Enthusiast",
+			items: {
+				i1: {
+					title: "Confronting Fear of Discomfort",
+					body: "Progress involves gradually facing discomfort and negative experiences—such as boredom or sadness—without immediately seeking distraction or escape. Embracing the full spectrum builds resilience and emotional maturity."
+				},
+				i2: {
+					title: "Practicing Mindfulness and Presence",
+					body: "Cultivate present-moment awareness and self-connection. Avoid over-chasing novelty; move at a steadier pace and find deeper satisfaction in more meaningful experiences."
+				},
+				i3: {
+					title: "Embracing Commitment and Follow-Through",
+					body: "Learn to prioritize and complete tasks, resisting the pull of constant new opportunities. With focus and discipline, turn visions into reality and create meaningful impact in life and career."
+				}
+			},
+			ctaCourses: "View courses",
+			ctaTests: "View tests"
+		},
+		faq: {
+			title: "Frequently Asked Questions",
+			description: "Quick answers to common queries, guiding you through features and functionalities.",
+			q1: "Can I track my assignments and grades?",
+			a1: "Yes. The platform provides a Gradebook where students can view grades, monitor feedback on assignments, and check due dates. Instructors can post grades and comments for each submission.",
+			q2: "Does the LMS support video lessons and live classes?",
+			a2: "Yes. Courses can use recorded videos and live sessions depending on the instructor and course design.",
+			q3: "How can I communicate with my instructor?",
+			a3: "You can use in-course messaging, comments, or designated communication channels to contact instructors.",
+			q4: "What support is available for students and instructors?",
+			a4: "Support includes progress tracking, assessment reports, course management tools, and grading and feedback for instructors.",
+			q5: "Are there interactive features for students?",
+			a5: "Yes. Features include quizzes, discussions, assignments, and feedback to enhance the learning experience."
+		}
+	},
+	faq: {
+		title: "FAQ",
+		description: "Quickly understand the platform and testing flow. Categories on the left, Q&A on the right.",
+		nav: {
+			general: "General",
+			integration: "Integrations",
+			account: "Account & Security",
+			billing: "Billing & Payments"
+		},
+		sections: {
+			general: {
+				title: "General",
+				desc: "Common questions about the test flow and reports.",
+				q1: "How long does the test take?",
+				a1: "It usually takes 5-10 minutes. Stay focused and answer honestly.",
+				q2: "Will my report be kept long term?",
+				a2: "Reports and history are stored in your account and can be viewed anytime.",
+				q3: "Is mobile supported?",
+				a3: "Optimized for mobile and desktop. You can complete the test on any device."
+			},
+			integration: {
+				title: "Integrations",
+				desc: "Integration with LMS or enterprise systems.",
+				q1: "Do you support LMS gradebook integration?",
+				a1: "We can export assessment results and connect to common LMSs. Contact support for details.",
+				q2: "Is there an API?",
+				a2: "We provide read and write REST APIs. Keys are required to use them.",
+				q3: "How do I sync users and courses?",
+				a3: "Via batch import or API sync, with scheduled jobs supported."
+			},
+			account: {
+				title: "Account & Security",
+				desc: "Account management and privacy.",
+				q1: "What if I forget my password?",
+				a1: "Use the \"Forgot password\" feature on the sign-in page to reset it.",
+				q2: "How can I delete my account and data?",
+				a2: "Submit a deletion request in settings. We will process it according to compliance requirements.",
+				q3: "How is my data protected?",
+				a3: "We use encrypted transport and access control. See our privacy policy for details."
+			},
+			billing: {
+				title: "Billing & Payments",
+				desc: "Orders, refunds, and invoices.",
+				q1: "What payment methods are supported?",
+				a1: "Common bank cards and major payment channels are supported.",
+				q2: "Can I request a refund?",
+				a2: "Refunds can be requested within the policy window. See the user agreement.",
+				q3: "Do you provide invoices?",
+				a3: "Invoices for businesses and individuals are supported. Submit invoice details after the order is completed."
+			}
+		},
+		standout: {
+			title: "What makes our tests different: precision, depth, and clarity",
+			desc: "We blend innovation, expertise, and a customer-centric approach, focusing on quality and meaningful growth.",
+			items: {
+				precision: {
+					title: "Precision",
+					desc: "Learn from seasoned professionals in marketing, design, engineering, finance, and more."
+				},
+				deep: {
+					title: "Deep Insights",
+					desc: "Tailor your learning journey to your goals and pace, choosing courses that fit better."
+				},
+				expert: {
+					title: "Expert Guidance",
+					desc: "Engage with multimedia content, quizzes, and assignments for a more vivid learning experience."
+				}
+			}
+		}
+	},
+	routeGuide: {
+		title: "Route Guide",
+		intro: "All available routes in the system are listed below. Click to navigate.",
+		stats: "There are {count} available routes in the system",
+		pathLabel: "Path",
+		visit: "Visit",
+		empty: "No available routes found",
+		back: "Back to Home"
+	},
+	about: {
+		title: "About Us",
+		description: "Learn about our mission and team.",
+		hero: {
+			title: "Guide self-exploration with precision",
+			desc: "We believe collaboration leads to outstanding results. With a professional team and a commitment to quality, we work with customers to turn ideas into reality and create solutions that stand the test of time."
+		},
+		faq: {
+			title: "FAQ",
+			desc: "We've gathered the most asked topics to help you quickly understand the platform.",
+			q1: "How can I contact your support team?",
+			a1: "Use the contact methods on the right to email or call us. We'll respond within 24 hours.",
+			q2: "Do courses support live or recorded formats?",
+			a2: "Both live and recorded formats are supported, depending on the course and instructor. After purchase, check the course details page.",
+			q3: "Can I request a refund?",
+			a3: "If the course hasn't started or doesn't meet expectations, submit a refund request within 7 days and we'll process it according to policy.",
+			q4: "Do you offer group plans for companies or schools?",
+			a4: "Yes, we support group purchasing and custom plans. Contact us to discuss your needs.",
+			q5: "Is learning progress and grading tracked?",
+			a5: "We provide progress statistics and assessment records. View detailed reports in your dashboard."
+		},
+		content: {
+			desc: "We drive industry transformation through innovation, sustainability, and cost-effectiveness. With proven experience delivering excellent projects, we combine advanced technology, expertise, and a customer-centric approach to turn vision into reality."
+		},
+		stats: {
+			projects: {
+				value: "150+",
+				label: "Projects Completed"
+			},
+			team: {
+				value: "100+",
+				label: "Team Members"
+			},
+			reviews: {
+				value: "200+",
+				label: "Customer Reviews"
+			},
+			awards: {
+				value: "30",
+				label: "Awards Won"
+			}
+		},
+		sections: {
+			mission: {
+				badge: "Our Mission",
+				title: "Reveal the many facets of your personality",
+				desc: "Our mission is to guide individuals on a journey of self-awareness and growth. Through carefully designed personality tests and reports, we help you uncover unique patterns. We believe self-awareness strengthens relationships, supports mental health, and enables a more fulfilling life.",
+				list1: "Promote sustainable growth and green development",
+				list2: "Innovate continuously for a sustainable future",
+				list3: "Customer-centric methodology",
+				list4: "Build more resilient communities"
+			},
+			vision: {
+				badge: "Our Vision",
+				title: "A trusted partner on your growth journey",
+				desc: "We aim to be your reliable growth partner, using rigorous methods, modern tools, and human-centered design to help you grow clearly and confidently.",
+				list1: "Inspire modern architecture",
+				list2: "Pioneer sustainable construction",
+				list3: "Empower communities through innovation",
+				list4: "Lead future-ready solutions"
+			}
+		},
+		standout: {
+			title: "What makes our tests different: precision, depth, and clarity",
+			desc: "We blend innovation, expertise, and a customer-centric approach, focusing on quality and meaningful growth.",
+			items: {
+				precision: {
+					title: "Precision",
+					desc: "Learn from seasoned professionals in marketing, design, engineering, finance, and more."
+				},
+				deep: {
+					title: "Deep Insights",
+					desc: "Tailor your learning journey to your goals and pace, choosing courses that fit better."
+				},
+				expert: {
+					title: "Expert Guidance",
+					desc: "Engage with multimedia content, quizzes, and assignments for a more vivid learning experience."
+				}
+			}
+		}
+	},
+	tests: {
+		filters: {
+			all: "All Tests",
+			soft: "Soft Skills",
+			hard: "Hard Skills"
+		},
+		badges: {
+			soft: "Soft Skills",
+			hard: "Hard Skills"
+		},
+		questions: "{count} questions",
+		hero: {
+			title: "Financial Analysis",
+			objective: "Objective: To assess proficiency in a specific hard skill through multiple-choice questions designed to evaluate knowledge, application, and problem-solving."
+		},
+		cards: {
+			operations: {
+				title: "Operations Management",
+				desc: "Objective: Assess proficiency in a specific hard skill via multiple-choice questions evaluating knowledge, application, and problem-solving."
+			},
+			business: {
+				title: "Business Analysis",
+				desc: "Your score: 25 out of 40 points."
+			}
+		},
+		completed: "Completed",
+		cta: {
+			startNow: "Start now",
+			readMore: "Read more",
+			viewResults: "View results",
+			tryAgain: "Try again",
+			loadMore: "Load more tests"
+		}
+	},
+	testIntro: {
+		title: "Free Personality Test",
+		h5: {
+			step1: "Be yourself and answer honestly to find your personality type.",
+			step2: "Learn how your personality type influences many areas of your life.",
+			step3: "Find jobs that suit your personality and get career guidance that actually helps."
+		},
+		pc: {
+			step1: {
+				title: "Complete the Test",
+				desc: "Be yourself and answer honestly to find your personality type."
+			},
+			step2: {
+				title: "View Detailed Results",
+				desc: "Learn how your personality type influences many areas of your life."
+			},
+			step3: {
+				title: "Unlock Your Potential",
+				desc: "Find jobs that suit your personality and get career guidance that actually helps."
+			}
+		},
+		progress: {
+			title: "Your progress",
+			tests: "Completed tests",
+			courses: "Finished course",
+			challenges: "Completed challenge",
+			count: "{answered}/{total}",
+			step: "Step {current} of {total}"
+		},
+		instructions: "Choose how accurately each statement reflects you.",
+		scale: {
+			sd: "Strongly Disagree",
+			d: "Disagree",
+			n: "Neutral",
+			a: "Agree",
+			sa: "Strongly Agree"
+		},
+		q: {
+			q1: "I strive for accuracy and precision in all my tasks.",
+			q2: "I notice even the smallest inconsistencies and errors in my work.",
+			q3: "I am able to maintain high standards even under tight deadlines.",
+			q4: "I frequently check my work to ensure it meets the required standards.",
+			q5: "Improving and refining systems or processes is a priority for me."
+		},
+		notice: "All questions must be answered before you continue.",
+		cta: "Get Started"
+	},
+	testStart: {
+		title: "Anger Management",
+		format: {
+			title: "Format:",
+			body: "The test consists of 10 multiple-choice questions. Each question has four answer choices, reflecting different responses to anger-provoking scenarios."
+		},
+		scoring: {
+			title: "Scoring:",
+			body: "Each answer is assigned a point value. The total score is calculated by summing the points from all answers."
+		},
+		cta: {
+			getStarted: "Get Started"
+		},
+		disclaimer: "Taking our test should not be viewed as a comprehensive or precise evaluation of your personality and mental well-being."
+	},
+	testEnd: {
+		score: "{value}/{total} points",
+		title: "Developing Financial Analysis Skills",
+		description: "Your score suggests that you are in the early stages of developing your financial analysis skills. You may find basic concepts and calculations challenging and might not be familiar with many of the tools and techniques used in financial analysis.",
+		areasTitle: "Areas for Improvement:",
+		areas: {
+			format: {
+				title: "Format",
+				body: "The test consists of 10 multiple-choice questions with four answer choices, reflecting different responses."
+			},
+			financial: {
+				title: "Financial Statements",
+				body: "Improve understanding of the balance sheet, income statement, and cash flow statement."
+			},
+			ratio: {
+				title: "Ratio Analysis",
+				body: "Get familiar with basic financial ratios and their implications for a company’s financial health."
+			},
+			investment: {
+				title: "Investment Appraisal",
+				body: "Start with techniques like NPV and ROE to understand how to evaluate opportunities."
+			}
+		},
+		ctaPrimary: "Get Started",
+		ctaSecondary: "Get Started",
+		disclaimer: "Taking our test should not be viewed as a comprehensive or precise evaluation of your personality and mental well-being."
+	},
+	userCourseChapters: {
+		title: "People Leadership vs. Management",
+		description: "Leadership and management are two distinctive and complementary systems of actions in the business environment. Both are necessary for success in an increasingly complex and volatile business environment.",
+		coverQuestion: "What will we cover?",
+		cta: "Get Started"
+	},
+	userCourseLearn: {
+		lessonCount: "Lesson {current} of {total}",
+		title: "Communication Skills for Leaders",
+		objective: {
+			title: "Objective",
+			body: "By the end of this lesson, learners will understand the vital role of communication in leadership. They will explore key communication skills including active listening, effective speaking, and providing constructive feedback. Additionally, learners will learn strategies to improve their communication skills in various leadership contexts."
+		},
+		intro: {
+			title: "Introduction",
+			body: "Effective communication is the cornerstone of successful leadership. It involves not just the transmission of information but also ensuring that the intended message is received and understood. For leaders, mastering communication skills is essential for inspiring and motivating teams, setting clear expectations, and building trust."
+		},
+		cta: "Get Started"
+	},
+	userCourseLesson: {
+		lessonCount: "Lesson {current} of {total}",
+		title: "Key Communication Skills for Leaders",
+		sections: {
+			activeListening: {
+				title: "Active Listening",
+				descriptionTitle: "Description",
+				descriptionBody: "Active listening involves fully concentrating, understanding, responding, and then remembering what is being said.",
+				applicationTitle: "Application in Leadership",
+				applicationBody: "Leaders who are active listeners can better understand team needs, anticipate problems, and build stronger relationships."
+			},
+			effectiveSpeaking: {
+				title: "Effective Speaking"
+			},
+			takeaways: {
+				title: "Key Takeaways",
+				i1: "Change management is crucial for the successful implementation of organizational changes.",
+				i2: "The change management process involves preparing for change, managing the change, and reinforcing the change to ensure it is embedded in the organization.",
+				i3: "Effective leaders use clear communication, stakeholder engagement, and support mechanisms to facilitate change and overcome resistance."
+			}
+		},
+		ctaPrimary: "Get Started",
+		ctaSecondary: "Get Started"
+	},
+	userCourseLessonComplete: {
+		title: "Congratulations!",
+		desc: "You have successfully completed lesson {current} of {courseName} course.",
+		cta: "Get Started",
+		toDashboard: "Go to Dashboard"
+	},
+	userCourseChapterComplete: {
+		title: "Congratulations!",
+		desc1: "You have successfully completed all lessons of our {courseName} course.",
+		desc2: "Time to see what you've learned and get your certificate.",
+		format: {
+			title: "Format",
+			body: "The test consists of 10 multiple-choice questions. Each question has four answer choices, reflecting different attitudes and behaviors related to time management."
+		},
+		scoring: {
+			title: "Scoring",
+			body: "Each answer is assigned a point value. The total score is calculated by summing the points from all answers."
+		},
+		cta: "Get Started",
+		later: "I'll do it later"
+	},
+	userCourseTest: {
+		questionCount: "Question {current} of {total}",
+		question: "During the 'Storming' stage of team development, a leader should:",
+		o1: "Allow the team to resolve their conflicts without intervening.",
+		o2: "Facilitate open communication and mediate conflicts.",
+		o3: "Focus solely on task execution to avoid delays.",
+		o4: "Establish strict rules to control team dynamics.",
+		cta: "Get Started"
+	},
+	userCourseTestComplete: {
+		scoreLabel: "{score}/{total}",
+		description: "Great job! You’ve completed the test. Review your score and continue learning.",
+		cta: "Back to Course"
+	},
+	ebooks: {
+		myTitle: "My e-books",
+		otherTitle: "Other e-books",
+		primary: {
+			title: "Self-Esteem Guide: Build a Stronger You!",
+			desc: "This exclusive package is designed to empower you to recognize your worth, navigate life's challenges with confidence, and foster healthy relationships.",
+			download: "Download",
+			readOnline: "Read Online"
+		},
+		cardTitle: "Personal Growth Guidance: Unlock Your Best Self Today!",
+		sale: "SALE",
+		oneTime: "One-time payment",
+		buyNow: "Buy Now",
+		readMore: "Read More"
+	},
+	ebookDetail: {
+		hero: {
+			title: "What Is Self-Esteem?",
+			subtitle: "Understanding its importance for Well-being"
+		},
+		title: "Top Marketing Skills to Boost Your Brand Engagement and Reach",
+		intro: "In today's competitive digital landscape, building a strong brand presence and engaging effectively with your audience is more important than ever. With countless brands vying for attention, mastering key marketing skills can make the difference between a thriving brand and one that goes unnoticed. This blog explores the essential marketing skills that can elevate your brand’s engagement and broaden its reach.",
+		sections: {
+			contentCreation: {
+				title: "Content Creation and Storytelling",
+				body: "Creating valuable content is at the heart of effective marketing. Your brand’s content should not only inform but also inspire and connect emotionally with your audience. Whether through blog posts, videos, or social media updates, a good storyteller can transform a simple message into a memorable narrative that resonates."
+			},
+			keyTakeaway: {
+				title: "Key Takeaway:",
+				body: "Invest time in learning to craft compelling stories and produce high-quality, relevant content. It will help your brand stand out and build a loyal audience."
+			},
+			social: {
+				title: "Social Media Management",
+				body: "With billions of people on social media platforms, these channels are invaluable for brand engagement. Knowing how to leverage social media platforms effectively can help you reach new audiences, foster community, and create shareable content. Key skills include scheduling, engaging with followers, and staying on top of platform trends and algorithms."
+			},
+			about: {
+				title: "About the Course",
+				body: "This course offers a comprehensive introduction to the core building blocks of web development: HTML, CSS, and JavaScript. You'll start from the basics of structuring web pages, styling them, and adding interactivity. This hands-on approach is designed for beginners and is ideal for those looking to build a strong foundation in front-end web development, whether you’re aspiring to become a professional developer or want to create polished personal websites and projects."
+			},
+			analytics: {
+				title: "Data Analytics and Insights",
+				body: "Understanding analytics is crucial for measuring the success of your marketing efforts. Platforms like Google Analytics and social media insights help you track website traffic, user behavior, engagement rates, and more. Analyzing this data enables you to make data-driven decisions that refine your marketing strategies and enhance engagement."
+			},
+			video: {
+				title: "Video Marketing",
+				body: "Video content has become an essential tool for engaging audiences. It captures attention faster than text, allowing brands to communicate complex information in an easy-to-digest format. Video marketing skills include scriptwriting, editing, and understanding video trends that resonate with your audience."
+			},
+			copywriting: {
+				title: "Copywriting and Persuasive Communication",
+				body: "Copywriting is the art of using words to inspire action. From website copy to social media captions, well-crafted copy can attract readers, encourage readers, and drive conversions. Learn to write with your audience in mind and focus on clear, persuasive messaging."
+			}
+		},
+		learn: {
+			title: "What You'll Learn",
+			i1: "HTML Fundamentals: Structure and organize web pages using HTML tags, attributes, and elements.",
+			i2: "CSS Essentials: Style and layout web pages with CSS, including typography, colors, flexbox, and grid.",
+			i3: "JavaScript Basics: Add interactivity with JavaScript fundamentals, including variables, functions, loops, and DOM manipulation.",
+			i4: "Responsive Design: Build layouts that adapt to different screen sizes and devices.",
+			i5: "Project-Based Learning: Create real-world projects to showcase your skills and deepen your understanding of web development."
+		},
+		require: {
+			title: "Requirements",
+			i1: "Computer & Internet Access: A laptop or desktop with a stable internet connection.",
+			i2: "Basic Computer Skills: Familiarity with using a computer, installing software, and navigating the internet.",
+			i3: "No Prior Coding Knowledge Required: This course is designed for absolute beginners."
+		},
+		cta: {
+			download: "Download",
+			close: "Close"
+		}
+	},
+	profile: {
+		welcome: "Welcome, {name}!",
+		aboutTitle: "All About Your",
+		type: "Type",
+		typeName: "Enthusiast",
+		aboutDesc: "Type 7s on the Enneagram are often referred to as The Enthusiasts: energetic, spontaneous, and optimistic. Their core drive is to avoid fear, pain, or discomfort while pursuing new experiences.",
+		intro: "Type 7 in the Enneagram is often called the Enthusiast or Hedonist. They are vibrant, curious, and optimistic individuals always seeking new experiences and opportunities.",
+		optimisticDesc: "Type 7s are known for their optimistic outlook on life, seeing the silver lining even in difficult situations. They approach challenges with enthusiasm and curiosity, believing there's always a positive angle.",
+		detailedDesc: "Type 7 in the Enneagram is often called the Enthusiast or Hedonist. They are vibrant, curious, and optimistic individuals always seeking new experiences and opportunities. Type 7s fear being limited or missing out on anything life has to offer, so they tend to keep multiple options and possibilities open. They are creative, able to see connections between different things and often come up with innovative ideas. While Type 7s may appear carefree on the surface, deep down they fear pain and negative emotions, so they avoid these feelings by staying busy and pursuing pleasure.",
+		totalScore: "Total score",
+		dailyTrivia: "Daily trivia",
+		triviaQuestion: "What is an essential trait for problem-solving?",
+		viewResults: "Answer & view results",
+		dailyStreak: "Daily streak",
+		begin: "Days in a row Begin your transformation!",
+		continueLearning: "Continue Learning",
+		continueCourse: {
+			label: "Continue your course",
+			title: "Financial Management",
+			desc: "Financial management is a critical aspect of organizational success, involving the effective management of financial resources to achieve organizational goals and maximize shareholder value.",
+			cta: "Continue course"
+		},
+		progress: {
+			title: "Your progress",
+			tests: "Completed tests",
+			courses: "Finished course",
+			challenges: "Completed challenge",
+			count: "{answered}/{total}",
+			step: "Step {current} of {total}"
+		},
+		takeAnother: "Take another test",
+		tag: {
+			hard: "Hard Skills"
+		},
+		questions: "questions",
+		completed: "Completed",
+		tryAgain: "Try again",
+		lessons: "lessons"
+	},
+	courses: {
+		title: "Courses",
+		description: "Browse expert courses across fields."
+	},
+	mentors: {
+		title: "Mentors",
+		description: "Meet experienced mentors and instructors."
+	},
+	course: {
+		recommendedForYou: "Recommended for you",
+		lessons: "lessons",
+		certificate: "Certificate",
+		allCourses: "All courses",
+		cta: {
+			start: "Start"
+		}
+	},
+	blog: {
+		title: "Blog",
+		description: "Read team articles and latest updates.",
+		hero: {
+			title: "Empower Your Journey \nwith Expert Career Insights"
+		},
+		exploreTitle: "Explore All Insights",
+		breadcrumb: {
+			list: "Home / Blog"
+		},
+		loadMore: "Load more",
+		sidebar: {
+			categories: "Categories",
+			recent: "Recent Blogs",
+			tags: "Tags",
+			follow: "Follow us"
+		},
+		detail: {
+			breadcrumb: "Home / Blog / Blog Details",
+			sections: {
+				keyTakeaway: "Key Takeaway",
+				contentCreation: {
+					title: "Content Creation and Storytelling",
+					body: "Creating valuable content is at the heart of effective marketing. A strong storyteller can turn a simple message into a memorable narrative that resonates with audiences."
+				},
+				socialMedia: {
+					title: "Social Media Management",
+					body: "Leverage social platforms to reach new audiences, foster community, and create shareable content. Key skills include scheduling, engaging with followers, and staying on top of trends and algorithms."
+				},
+				analytics: {
+					title: "Data Analytics and Insights",
+					body: "Analytics help measure marketing success. Tools like Google Analytics and social platform insights track traffic, behavior, engagement, and more to inform data-driven decisions."
+				},
+				video: {
+					title: "Video Marketing",
+					body: "Video captures attention quickly and communicates complex information effectively. Skills include scripting, editing, and understanding video trends that resonate with audiences."
+				},
+				copywriting: {
+					title: "Copywriting and Persuasive Communication",
+					body: "Compelling copy inspires action. Clear messages, strong structure, and audience-focused tone turn ideas into outcomes."
+				}
+			}
+		}
+	},
+	auth: {
+		signIn: {
+			title: "Sign In",
+			description: "Securely access your account.",
+			passwordLabel: "Password",
+			passwordPlaceholder: "Password",
+			submit: "Sign In",
+			noAccount: "Don't have an account?",
+			signUp: "Sign Up"
+		}
+	},
+	account: {
+		settings: {
+			title: "Settings",
+			description: "Edit profile, change password, switch language, or delete your account.",
+			profile: {
+				title: "Profile",
+				namePlaceholder: "Name",
+				emailPlaceholder: "Email address",
+				submit: "Get Started",
+				success: "Profile updated",
+				fail: "Update failed. Please try again later."
+			},
+			password: {
+				title: "Change Password",
+				current: "Current password",
+				"new": "New password",
+				repeat: "Repeat new password",
+				submit: "Get Started",
+				mismatch: "The two passwords do not match",
+				success: "Password updated"
+			},
+			language: {
+				title: "Language",
+				submit: "Get Started",
+				success: "Language settings saved"
+			},
+			"delete": {
+				title: "Delete Account",
+				action: "Delete Account",
+				success: "Your deletion request has been submitted"
+			}
+		}
+	},
+	orders: {
+		cancelSubscription: {
+			title: "Cancel Subscription",
+			description: "Manage membership and cancel when needed."
+		},
+		purchaseComplete: {
+			title: "Thanks for your purchase!",
+			description: "Click below to get started and access your report.",
+			accessReport: "Open Report",
+			downloadGuidebook: "Download Guidebook",
+			accessNote: "Click the button above to open your report page.",
+			downloadNote: "If download fails, please check your email later for the link.",
+			goHome: "Back to Home"
+		}
+	},
+	test: {
+		title: "Personality Test",
+		description: "Start your personality assessment.",
+		step: {
+			title: "Test Steps",
+			description: "Answer the questions step by step."
+		},
+		analyzing: {
+			title: "Analyzing",
+			description: "Analyzing your answers."
+		},
+		result: {
+			title: "Test Results",
+			description: "View your report and next actions."
+		}
+	},
+	legal: {
+		privacy: {
+			title: "Privacy Policy",
+			description: "We value your privacy. Here's how we collect, use, and protect information.",
+			nav: {
+				general: "Overview",
+				usage: "How We Use Information",
+				sharing: "Sharing & Disclosure",
+				cookies: "Cookies & Tracking",
+				changes: "Policy Changes",
+				contact: "Contact Us"
+			},
+			sections: {
+				general: {
+					title: "Overview",
+					body: "We only collect and process data for lawful, necessary, and explicit purposes, and take reasonable security measures to protect your information."
+				},
+				usage: {
+					title: "How We Use Information",
+					desc: "The following scenarios describe how information is used.",
+					q1: "Provide and maintain services",
+					a1: "Used for core functions such as account creation, course access, assessments, and report generation.",
+					q2: "Communication and support",
+					a2: "Used to send important notices, service updates, and support responses.",
+					q3: "Improvement and analysis",
+					a3: "Anonymous or aggregated data is analyzed to optimize product experience and performance."
+				},
+				sharing: {
+					title: "Sharing & Disclosure",
+					desc: "We do not sell your personal information. We share only when necessary:",
+					q1: "Service providers",
+					a1: "Shared with contracted third-party providers for infrastructure and customer support.",
+					q2: "Legal compliance",
+					a2: "Information may be disclosed to comply with law, protect users, or prevent fraud."
+				},
+				cookies: {
+					title: "Cookies & Tracking",
+					body: "We use cookies to remember preferences and analyze the site. You can manage or disable cookies in your browser, but some functions may be affected."
+				},
+				changes: {
+					title: "Policy Changes",
+					body: "We may update this policy from time to time. Significant changes will be communicated via site notices or email."
+				},
+				contact: {
+					title: "Contact Us",
+					body: "For privacy questions or requests, please reach out using the contact information on the page."
+				}
+			}
+		},
+		terms: {
+			title: "Terms of Service",
+			description: "By using this service, you agree to the following terms and conditions.",
+			sections: {
+				accept: {
+					title: "Acceptance of Terms",
+					body: "Registering or using the service means you have read and agree to this agreement."
+				},
+				use: {
+					title: "Use of Service",
+					body: "Use the service according to applicable laws and this agreement. Do not abuse or disrupt the platform."
+				},
+				account: {
+					title: "Account & Security",
+					body: "Keep your credentials safe and are responsible for activity under your account. Notify us immediately if you notice abnormalities."
+				},
+				payments: {
+					title: "Fees & Payments",
+					body: "For paid courses or subscriptions, fees, billing, and refund policies follow the explanations on the pages."
+				},
+				content: {
+					title: "User Content",
+					body: "You retain ownership of your content, but authorize us to process and display it as needed to provide the service."
+				},
+				prohibited: {
+					title: "Prohibited Conduct",
+					body: "Includes but is not limited to illegal content, rights infringement, attacks, or interference with platform operations."
+				},
+				termination: {
+					title: "Termination",
+					body: "We may suspend or terminate the service if you violate the terms. You may stop using the service at any time and request data export."
+				},
+				disclaimer: {
+					title: "Disclaimer",
+					body: "The service is provided as-is. We make no guarantees of suitability or uninterrupted availability. Liability is limited to the extent permitted by law."
+				}
+			}
+		}
+	}
+};
+var common = {
+	getStarted: "Get Started",
+	siteDescription: "Unlock knowledge and growth with expert courses and tools.",
+	courseCard: {
+		status: {
+			completed: "You've completed this test.",
+			of: "of",
+			lessons: "lessons"
+		},
+		link: {
+			viewResults: "View test results"
+		},
+		badge: {
+			points: "points"
+		},
+		meta: {
+			certificate: "Certificate"
+		},
+		people: {
+			finished: "people already finished it"
+		}
+	}
+};
+var seo = {
+	home: {
+		title: "Unlock knowledge and growth with expert courses and tools.",
+		description: "An exceptional platform for career development. The current curriculum, skilled instructors, and hands-on learning are truly rewarding."
+	},
+	test: {
+		title: "Personality Test - Discover Your True Self",
+		description: "Take our comprehensive personality test to gain insights into your traits, strengths, and areas for growth."
+	},
+	"test.start": {
+		title: "Start Personality Test - Begin Your Journey",
+		description: "Ready to discover your true self? Start the personality test now."
+	},
+	"test.step": {
+		title: "Personality Test - Question",
+		description: "Answer questions to reveal your personality traits."
+	},
+	"test.analyzing": {
+		title: "Analyzing Your Personality - Please Wait",
+		description: "We're analyzing your responses to generate your personalized report."
+	},
+	"test.result": {
+		title: "Your Personality Results - Insights and Growth",
+		description: "View your detailed personality analysis and personalized insights."
+	},
+	ebooks: {
+		title: "Ebooks - Expert Knowledge and Resources",
+		description: "Explore our collection of expert-crafted ebooks on personal development and career growth."
+	},
+	"ebooks.detail": {
+		title: "Ebook Detail - In-Depth Learning Resource",
+		description: "Access detailed information about this expert ebook."
+	},
+	profile: {
+		title: "Your Profile - Personal Dashboard",
+		description: "Manage your profile and access your test results and learning materials."
+	},
+	"profile.detail": {
+		title: "Profile Details - Update Your Information",
+		description: "View and update your personal information and preferences."
+	},
+	tests: {
+		title: "Tests - Explore Available Assessments",
+		description: "Browse our selection of personality and career assessments."
+	},
+	blog: {
+		title: "Blog - Latest Insights and Articles",
+		description: "Read our latest articles on personal development, career growth, and industry trends."
+	},
+	"blog.category": {
+		title: "Blog Category - Articles by Topic",
+		description: "View articles in this blog category."
+	},
+	"blog.slug": {
+		title: "Blog Post - Detailed Article",
+		description: "Read this in-depth article on personal development."
+	},
+	faq: {
+		title: "Frequently Asked Questions - Get Answers",
+		description: "Find answers to common questions about our platform and services."
+	},
+	userCourse: {
+		title: "User Courses - Personalized Learning",
+		description: "Access your enrolled courses and track your learning progress."
+	},
+	"userCourse.chapters": {
+		title: "Course Chapters - Learning Modules",
+		description: "Navigate through course chapters and lessons."
+	},
+	"userCourse.lesson": {
+		title: "Course Lesson - Interactive Learning",
+		description: "Engage with course content and complete lesson activities."
+	},
+	"userCourse.lessonComplete": {
+		title: "Lesson Complete - Congratulations!",
+		description: "You've successfully completed this lesson."
+	},
+	"userCourse.chapterComplete": {
+		title: "Chapter Complete - Well Done!",
+		description: "You've finished this chapter. Move on to the next one."
+	},
+	"userCourse.test": {
+		title: "Course Test - Assess Your Knowledge",
+		description: "Take this test to evaluate your understanding of the course material."
+	},
+	"userCourse.testComplete": {
+		title: "Course Test Complete - Results",
+		description: "View your test results and feedback."
+	},
+	"userCourse.lessonGuide": {
+		title: "Lesson Guide - Learning Objectives",
+		description: "Review the learning objectives for this lesson."
+	},
+	about: {
+		title: "About Us - Our Mission and Team",
+		description: "Learn about our mission, team, and commitment to personal development."
+	},
+	orders: {
+		title: "Orders - Manage Your Purchases",
+		description: "View and manage your orders and subscriptions."
+	},
+	"orders.cancelSubscription": {
+		title: "Cancel Subscription - Manage Membership",
+		description: "Cancel your subscription and manage your membership settings."
+	},
+	"orders.purchaseComplete": {
+		title: "Purchase Complete - Thank You!",
+		description: "Your purchase has been successfully processed."
+	},
+	courses: {
+		title: "Courses - Expert Learning Resources",
+		description: "Explore our collection of expert-led courses for personal and professional growth."
+	},
+	legal: {
+		title: "Legal Information - Terms and Policies",
+		description: "Review our terms of service and privacy policies."
+	},
+	"legal.privacy": {
+		title: "Privacy Policy - Your Data Protection",
+		description: "Learn how we protect your personal information."
+	},
+	"legal.terms": {
+		title: "Terms of Service - Platform Rules",
+		description: "Review our terms of service and platform guidelines."
+	},
+	mentors: {
+		title: "Mentors - Expert Guidance",
+		description: "Connect with expert mentors for personalized guidance and support."
+	},
+	routeGuide: {
+		title: "Route Guide - Platform Navigation",
+		description: "Learn how to navigate our platform and access all features."
+	},
+	auth: {
+		title: "Authentication - Secure Access",
+		description: "Securely access your account with our authentication system."
+	},
+	"auth.signIn": {
+		title: "Sign In - Access Your Account",
+		description: "Log in to your account to access personalized features."
+	},
+	account: {
+		title: "Account Management - Settings and Preferences",
+		description: "Manage your account settings and preferences."
+	},
+	"account.settings": {
+		title: "Account Settings - Personalize Your Experience",
+		description: "Update your account settings and personal preferences."
+	}
+};
+const en = {
+	pages: pages,
+	common: common,
+	seo: seo
+};
+
+export { common, en as default, pages, seo };
+//# sourceMappingURL=en.mjs.map
