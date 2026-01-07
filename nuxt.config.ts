@@ -39,7 +39,6 @@ export default defineNuxtConfig({
     fonts: false,
   },
   i18n: {
-    lazy: true,
     langDir: '../i18n/locales',
     locales: [
       { code: 'en', language: 'en-US', name: 'English', file: 'en.json' },
@@ -56,6 +55,7 @@ export default defineNuxtConfig({
       cookieCrossOrigin: false
     },
     baseUrl: 'https://example.com',
+    vueI18n: "~/i18n/i18n.config.ts"
   },
   unocss: {
     nuxtLayers: true,
