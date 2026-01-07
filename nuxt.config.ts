@@ -58,7 +58,7 @@ export default defineNuxtConfig({
   },
   unocss: {
     nuxtLayers: true,
-    
+
   },
   imports: {
     presets: [
@@ -71,11 +71,12 @@ export default defineNuxtConfig({
     transpile: [],
   },
   nitro: {
+    errorHandler: '~/server/error-handler.ts',
     prerender: {
       ignore: ['/-mentors', '/legal/-terms.vue'] // 排除带有 "-" 的文件夹和文件
     }
   },
-  
+
   // 运行时配置
   runtimeConfig: {
     // 私有密钥（仅在服务器端可用）
@@ -86,7 +87,7 @@ export default defineNuxtConfig({
       strapiUrl: process.env.NUXT_PUBLIC_STRAPI_URL || 'http://localhost:1337',
       // 通用API配置
       apiBaseUrl: process.env.NUXT_PUBLIC_API_BASE_URL || 'https://api.example.com',
-  
+
     }
   }
 });
