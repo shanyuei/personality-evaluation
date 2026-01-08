@@ -805,7 +805,8 @@ var pages = {
 	},
 	blog: {
 		title: "博客",
-		description: "阅读团队文章与最新动态。"
+		description: "阅读团队文章与最新动态。",
+		loadMore: "查看更多博客"
 	},
 	auth: {
 		signIn: {

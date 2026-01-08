@@ -13,8 +13,8 @@ var pages = {
 			accurateRate: "Rated accurate or very accurate"
 		},
 		why: {
-			title: "Why take the test?",
-			desc: "Connect with the next wave of expert mentors, guiding you with fresh perspectives, innovative insights, and proven expertise.",
+			title: "Why You Should Take the Test?",
+			desc: "Connect with the next wave of expert mentors, guiding you with fresh \nperspectives, innovative insights, and proven expertise.",
 			main: {
 				title: "Boost self-awareness",
 				desc: "Gain UI design abilities through practice-driven coaching, with personalized guidance and feedback."
@@ -773,7 +773,7 @@ var pages = {
 		breadcrumb: {
 			list: "Home / Blog"
 		},
-		loadMore: "Load more",
+		loadMore: "View More Blogs",
 		sidebar: {
 			categories: "Categories",
 			recent: "Recent Blogs",

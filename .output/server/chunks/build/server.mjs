@@ -703,7 +703,8 @@ const __nuxt_page_meta$a = {
 const __nuxt_page_meta$9 = {
   title: () => "seo.blog.slug.title",
   layoutShowPageTopIcons3: true,
-  layoutShowPageTopIcons: false
+  layoutShowPageTopIcons: false,
+  layoutPageTopIcon3Class: "uno-top-150px uno-right-150px"
 };
 const __nuxt_page_meta$8 = {
   title: () => "seo.userCourse.lesson.title"
@@ -741,13 +742,13 @@ const _routes = [
     name: "pricing___en",
     path: "/pricing",
     meta: __nuxt_page_meta$w || {},
-    component: () => import('./pricing-BN4wRwrB.mjs')
+    component: () => import('./pricing-wk5S-P0n.mjs')
   },
   {
     name: "pricing___zh",
     path: "/zh/pricing",
     meta: __nuxt_page_meta$w || {},
-    component: () => import('./pricing-BN4wRwrB.mjs')
+    component: () => import('./pricing-wk5S-P0n.mjs')
   },
   {
     name: "faq___en",
@@ -777,13 +778,13 @@ const _routes = [
     name: "blog___en",
     path: "/blog",
     meta: __nuxt_page_meta$t || {},
-    component: () => import('./index-Cl63Fybj.mjs')
+    component: () => import('./index-CwExYEZd.mjs')
   },
   {
     name: "blog___zh",
     path: "/zh/blog",
     meta: __nuxt_page_meta$t || {},
-    component: () => import('./index-Cl63Fybj.mjs')
+    component: () => import('./index-CwExYEZd.mjs')
   },
   {
     name: "test___en",
@@ -813,25 +814,25 @@ const _routes = [
     name: "about___en",
     path: "/about",
     meta: __nuxt_page_meta$q || {},
-    component: () => import('./index-B509JzJs.mjs')
+    component: () => import('./index-DJyP9Kpp.mjs')
   },
   {
     name: "about___zh",
     path: "/zh/about",
     meta: __nuxt_page_meta$q || {},
-    component: () => import('./index-B509JzJs.mjs')
+    component: () => import('./index-DJyP9Kpp.mjs')
   },
   {
     name: "index___en",
     path: "/",
     meta: __nuxt_page_meta$p || {},
-    component: () => import('./index-DgAKw2Ty.mjs')
+    component: () => import('./index-BfaM1EQQ.mjs')
   },
   {
     name: "index___zh",
     path: "/zh",
     meta: __nuxt_page_meta$p || {},
-    component: () => import('./index-DgAKw2Ty.mjs')
+    component: () => import('./index-BfaM1EQQ.mjs')
   },
   {
     name: "route-guide___en",
@@ -909,13 +910,13 @@ const _routes = [
     name: "courses___en",
     path: "/courses",
     meta: __nuxt_page_meta$i || {},
-    component: () => import('./index-tOdHdL7z.mjs')
+    component: () => import('./index-CQ6pYYKG.mjs')
   },
   {
     name: "courses___zh",
     path: "/zh/courses",
     meta: __nuxt_page_meta$i || {},
-    component: () => import('./index-tOdHdL7z.mjs')
+    component: () => import('./index-CQ6pYYKG.mjs')
   },
   {
     name: "ebooks-detail___en",
@@ -944,12 +945,12 @@ const _routes = [
   {
     name: "orders-create___en",
     path: "/orders/create",
-    component: () => import('./create-B49p6xv3.mjs')
+    component: () => import('./create-DvQmzjGK.mjs')
   },
   {
     name: "orders-create___zh",
     path: "/zh/orders/create",
-    component: () => import('./create-B49p6xv3.mjs')
+    component: () => import('./create-DvQmzjGK.mjs')
   },
   {
     name: "profile___en",
@@ -979,13 +980,13 @@ const _routes = [
     name: "profile-detail___en",
     path: "/profile/detail",
     meta: __nuxt_page_meta$d || {},
-    component: () => import('./detail-DBau4GVt.mjs')
+    component: () => import('./detail-DUWKAZgG.mjs')
   },
   {
     name: "profile-detail___zh",
     path: "/zh/profile/detail",
     meta: __nuxt_page_meta$d || {},
-    component: () => import('./detail-DBau4GVt.mjs')
+    component: () => import('./detail-DUWKAZgG.mjs')
   },
   {
     name: "test-analyzing___en",
@@ -1027,13 +1028,13 @@ const _routes = [
     name: "blog-dateil-slug___en",
     path: "/blog/dateil/:slug()",
     meta: __nuxt_page_meta$9 || {},
-    component: () => import('./_slug_-DRlh4x4G.mjs')
+    component: () => import('./_slug_-DP6A-42S.mjs')
   },
   {
     name: "blog-dateil-slug___zh",
     path: "/zh/blog/dateil/:slug()",
     meta: __nuxt_page_meta$9 || {},
-    component: () => import('./_slug_-DRlh4x4G.mjs')
+    component: () => import('./_slug_-DP6A-42S.mjs')
   },
   {
     name: "user-course-lesson___en",
@@ -1051,13 +1052,13 @@ const _routes = [
     name: "blog-category-slug___en",
     path: "/blog/category/:slug()",
     meta: __nuxt_page_meta$7 || {},
-    component: () => import('./_slug_-Cs6vmSaw.mjs')
+    component: () => import('./_slug_-C8LSH5C-.mjs')
   },
   {
     name: "blog-category-slug___zh",
     path: "/zh/blog/category/:slug()",
     meta: __nuxt_page_meta$7 || {},
-    component: () => import('./_slug_-Cs6vmSaw.mjs')
+    component: () => import('./_slug_-C8LSH5C-.mjs')
   },
   {
     name: "user-course-chapters___en",
@@ -2840,7 +2841,7 @@ const localeLoaders = {
     {
       key: "locale_en_46json_c4f7c814",
       load: () => import(
-        './en-DRQJSJy8.mjs'
+        './en-B8ASmyKG.mjs'
         /* webpackChunkName: "locale_en_46json_c4f7c814" */
       ),
       cache: true
@@ -2850,7 +2851,7 @@ const localeLoaders = {
     {
       key: "locale_zh_46json_906be1cb",
       load: () => import(
-        './zh-n0EV4Tpw.mjs'
+        './zh-CxfffDpj.mjs'
         /* webpackChunkName: "locale_zh_46json_906be1cb" */
       ),
       cache: true
@@ -3039,7 +3040,7 @@ function createNuxtI18nContext(nuxt, vueI18n, defaultLocale) {
       return;
     }
     const headers = getLocaleConfig(locale)?.cacheable ? {} : { "Cache-Control": "no-cache" };
-    const messages = await $fetch(`${"/_i18n/_of9iluB"}/${locale}/messages.json`, { headers });
+    const messages = await $fetch(`${"/_i18n/5L_o8xr3"}/${locale}/messages.json`, { headers });
     for (const k of Object.keys(messages)) {
       i18n.mergeLocaleMessage(k, messages[k]);
     }
@@ -7321,7 +7322,7 @@ const i18n__7llSF6tZ9O9lxBRvhW1YsknH4FPqE5CFa24FZf_6dI = /* @__PURE__ */ defineN
     {
       localeConfigs.value = useRequestEvent().context.nuxtI18n?.localeConfigs || {};
     }
-    prerenderRoutes(localeCodes.map((locale) => `${"/_i18n/_of9iluB"}/${locale}/messages.json`));
+    prerenderRoutes(localeCodes.map((locale) => `${"/_i18n/5L_o8xr3"}/${locale}/messages.json`));
     const i18n = createI18n(optionsI18n);
     const detectors = useDetectors(useRequestEvent(nuxt), useI18nDetection(nuxt), nuxt);
     const ctx = createNuxtI18nContext(nuxt, i18n, optionsI18n.defaultLocale);
@@ -11430,7 +11431,7 @@ _sfc_main$3.setup = (props, ctx) => {
 };
 const __nuxt_component_0 = Object.assign(_sfc_main$3, { __name: "UApp" });
 const layouts = {
-  default: defineAsyncComponent(() => import('./default-BfmyRChG.mjs').then((m) => m.default || m))
+  default: defineAsyncComponent(() => import('./default-Dpc1b6IC.mjs').then((m) => m.default || m))
 };
 const LayoutLoader = defineComponent({
   name: "LayoutLoader",
@@ -11714,7 +11715,7 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
                 if (_push3) {
                   _push3(`<section class="uno-flex uno-items-center uno-justify-center uno-px-6 uno-py-40"${_scopeId2}><div class="uno-text-center uno-max-w-[680px] uno-mx-auto"${_scopeId2}>`);
                   if (unref(error)?.statusCode === 404) {
-                    _push3(`<!--[--><img${ssrRenderAttr("src", _imports_0)} alt="" aria-hidden="true" class="uno-mx-auto uno-mb-8 uno-w-[320px] sm:uno-w-[480px]"${_scopeId2}><div class="uno-flex uno-justify-start uno-items-center uno-flex-col uno-gap-10"${_scopeId2}><div style="${ssrRenderStyle({ "flex-shrink": "0" })}" class="uno-flex uno-self-stretch uno-justify-start uno-items-center uno-flex-col uno-gap-3"${_scopeId2}><p style="${ssrRenderStyle({ "flex-shrink": "0" })}" class="uno-self-stretch uno-text-[#011813] uno-text-[32px] uno-font-[&#39;Outfit&#39;] uno-text-center uno-font-semibold"${_scopeId2}> Oops! that page doesn’t exist </p><p style="${ssrRenderStyle({ "flex-shrink": "0" })}" class="uno-self-stretch uno-text-[#4E5255] uno-font-[&#39;Outfit&#39;] uno-text-center"${_scopeId2}> Oops! It seems the page you&#39;re looking for doesn’t exist. Let&#39;s get you back on track—click below to return to the home page. </p></div><div style="${ssrRenderStyle({ "flex-shrink": "0" })}" class="uno-w-auto uno-h-[56px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-2 uno-py-4 uno-px-[24px] uno-bg-[#EA4C89] uno-rounded-[1000px]"${_scopeId2}><span class="uno-text-[#FFFFFF] uno-font-[&#39;Outfit&#39;] uno-font-[16px] uno-leading-normal"${_scopeId2}> Back to Home </span></div></div><!--]-->`);
+                    _push3(`<!--[--><img${ssrRenderAttr("src", _imports_0)} alt="" aria-hidden="true" class="uno-mx-auto uno-mb-8 uno-w-[320px] sm:uno-w-[480px]"${_scopeId2}><div class="uno-flex uno-justify-start uno-items-center uno-flex-col uno-gap-10"${_scopeId2}><div style="${ssrRenderStyle({ "flex-shrink": "0" })}" class="uno-flex uno-self-stretch uno-justify-start uno-items-center uno-flex-col uno-gap-3"${_scopeId2}><p style="${ssrRenderStyle({ "flex-shrink": "0" })}" class="uno-self-stretch uno-text-[#011813] uno-text-[32px] uno-font-[&#39;Outfit&#39;] uno-text-center uno-font-semibold"${_scopeId2}> Oops! that page doesn’t exist </p><p style="${ssrRenderStyle({ "flex-shrink": "0" })}" class="uno-self-stretch uno-text-[#4E5255] uno-font-[&#39;Outfit&#39;] uno-text-center"${_scopeId2}> Oops! It seems the page you&#39;re looking for doesn’t exist. Let&#39;s get you back on track—click below to return to the home page. </p></div><div style="${ssrRenderStyle({ "flex-shrink": "0" })}" class="uno-w-148px uno-h-[56px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-2 uno-py-4 uno-px-[18px] uno-bg-[#EA4C89] uno-rounded-[1000px]"${_scopeId2}><span class="uno-text-[#FFFFFF] uno-font-[&#39;Outfit&#39;] uno-font-[16px] uno-leading-normal"${_scopeId2}> Back to Home </span></div></div><!--]-->`);
                   } else {
                     _push3(`<!--[--><h1 class="uno-text-4xl sm:uno-text-5xl uno-font-bold uno-text-[#0F172A] uno-mb-4"${_scopeId2}>${ssrInterpolate(unref(error)?.statusCode)} - Something went wrong</h1><p class="uno-text-[#4E5255] uno-mb-8 uno-px-4"${_scopeId2}>${ssrInterpolate(unref(error)?.message)}</p><button class="uno-inline-flex uno-items-center uno-justify-center uno-px-6 uno-h-[48px] uno-rounded-[16px] uno-bg-[#009D77] uno-text-white hover:uno-bg-[#0AA17F]"${_scopeId2}> Back to Home </button><!--]-->`);
                   }
@@ -11746,7 +11747,7 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
                             ]),
                             createVNode("div", {
                               style: { "flex-shrink": "0" },
-                              class: "uno-w-auto uno-h-[56px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-2 uno-py-4 uno-px-[24px] uno-bg-[#EA4C89] uno-rounded-[1000px]",
+                              class: "uno-w-148px uno-h-[56px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-2 uno-py-4 uno-px-[18px] uno-bg-[#EA4C89] uno-rounded-[1000px]",
                               onClick: handleError
                             }, [
                               createVNode("span", { class: "uno-text-[#FFFFFF] uno-font-['Outfit'] uno-font-[16px] uno-leading-normal" }, " Back to Home ")
@@ -11796,7 +11797,7 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
                           ]),
                           createVNode("div", {
                             style: { "flex-shrink": "0" },
-                            class: "uno-w-auto uno-h-[56px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-2 uno-py-4 uno-px-[24px] uno-bg-[#EA4C89] uno-rounded-[1000px]",
+                            class: "uno-w-148px uno-h-[56px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-2 uno-py-4 uno-px-[18px] uno-bg-[#EA4C89] uno-rounded-[1000px]",
                             onClick: handleError
                           }, [
                             createVNode("span", { class: "uno-text-[#FFFFFF] uno-font-['Outfit'] uno-font-[16px] uno-leading-normal" }, " Back to Home ")
