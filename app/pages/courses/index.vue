@@ -33,6 +33,7 @@
                                 class="uno-flex uno-items-center uno-flex-row uno-flex-wrap md:uno-flex-nowrap uno-gap-4 md:uno-gap-6 uno-mt-2">
                                 <AppArrowButton
                                     class="uno-h-[48px] md:uno-h-[56px] uno-gap-3 uno-py-1.5 uno-pr-1.5 uno-pl-[16px] md:uno-pl-[20px] uno-font-['Outfit'] uno-font-medium"
+                                    hover-class=""
                                 >
                                     {{ $t('common.getStarted') }}
                                 </AppArrowButton>

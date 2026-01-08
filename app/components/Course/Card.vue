@@ -13,6 +13,7 @@
           variant="dark"
           class="uno-h-[48px] uno-min-w-[158px] uno-gap-3 uno-pl-5 uno-pr-1 uno-py-1 max-md:uno-h-[44px] max-md:uno-min-w-[140px] max-md:uno-gap-2 max-md:uno-pl-[14px] max-md:uno-pr-[6px] max-md:uno-justify-between uno-font-medium"
           :icon-size="40"
+          hover-class=""
         >
           {{ $t('common.retakeTest') }}
         </AppArrowButton>
@@ -55,6 +56,7 @@
           variant="primary"
           class="uno-h-[48px] uno-min-w-[158px] uno-gap-3 uno-pl-5 uno-pr-1 uno-py-1 max-md:uno-h-[44px] max-md:uno-min-w-[140px] max-md:uno-gap-2 max-md:uno-pl-[14px] max-md:uno-pr-[6px] max-md:uno-justify-between uno-font-medium"
           :icon-size="40"
+          hover-class=""
         >
           {{ $t('common.getStarted') || 'Get Started' }}
         </AppArrowButton>
@@ -86,6 +88,7 @@
           variant="dark"
           class="uno-h-[48px] uno-min-w-[158px] uno-gap-3 uno-pl-5 uno-pr-1 uno-py-1 max-md:uno-h-[44px] max-md:uno-min-w-[140px] max-md:uno-gap-2 max-md:uno-pl-[14px] max-md:uno-pr-[6px] max-md:uno-justify-between uno-font-medium"
           :icon-size="40"
+          hover-class=""
         >
           {{ $t('common.getStarted') }}
         </AppArrowButton>
@@ -116,6 +119,7 @@
                 variant="primary"
                 class="uno-h-[48px] uno-min-w-[158px] uno-gap-3 uno-pl-5 uno-pr-1 uno-py-1 max-md:uno-h-[44px] max-md:uno-min-w-[140px] max-md:uno-gap-2 max-md:uno-pl-[14px] max-md:uno-pr-[6px] max-md:uno-justify-between uno-font-medium"
                 :icon-size="40"
+                hover-class=""
               >
                 {{ $t('common.getStarted') }}
               </AppArrowButton>

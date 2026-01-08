@@ -17,7 +17,6 @@
         <!-- 页面顶部背景 -->
         <NuxtImg src="/theme/layout/bg-top.png" alt="bg-top" width="100%" height="100vh"
           class="uno-w-full uno-h-auto uno-max-h-100vh uno-absolute uno-top-0 uno-left-0 uno-z-0" />
-          {{ showPageTopIcons }}
         <template v-if="showPageTopIcons">
           <NuxtImg src="/theme/layout/page-top-icon-1.png" width="124px" height="132px"
             class="uno-absolute uno-top-331px uno-right-67px uno-z-1" />

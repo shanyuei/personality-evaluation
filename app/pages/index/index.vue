@@ -19,11 +19,9 @@
                 </div>
 
                 <!-- 测试按钮 -->
-                <AppArrowButton
+                <AppArrowButton variant="primary"
                     class="uno-m-t-32px sm:uno-m-t-48px md:uno-m-t-72px uno-gap-[8px] sm:uno-gap-[12px] md:uno-gap-[18px] uno-py-2 sm:uno-py-3 md:uno-py-4 uno-pr-2 sm:uno-pr-3 md:uno-pr-3 uno-pl-[20px] sm:uno-pl-[24px] md:uno-pl-[48px] uno-text-[14px] sm:uno-text-[18px] md:uno-text-[32px] uno-font-['Outfit'] uno-font-medium"
-                    :icon-size="72"
-                    :to="localePath('/test')"
-                >
+                    :icon-size="72" :to="localePath('/test')">
                     Take the Test
                 </AppArrowButton>
             </div>
@@ -68,8 +66,8 @@
                             class="uno-text-[#011813] uno-text-2xl sm:uno-text-3xl md:uno-text-4xl lg:uno-text-5xl uno-font-['Outfit'] uno-text-center uno-font-semibold uno-m-b-6px sm:uno-m-b-8px md:uno-m-b-12px">
                             {{
                                 $t('pages.home.why.title') }}</h2>
-                        <p
-                            class="uno-text-[#4E5255] uno-font-['Outfit'] uno-text-center uno-text-sm sm:uno-text-base uno-mb-[56px] sm:uno-mb-[80px] " style="white-space: pre-line;">
+                        <p class="uno-text-[#4E5255] uno-font-['Outfit'] uno-text-center uno-text-sm sm:uno-text-base uno-mb-[56px] sm:uno-mb-[80px] "
+                            style="white-space: pre-line;">
                             {{ $t('pages.home.why.desc') }}
                         </p>
                     </div>
@@ -101,14 +99,11 @@
                                 <div class="uno-w-full uno-h-[1px] uno-bg-[#E7E7E8] uno-mb-6" />
 
                                 <div class="uno-relative uno-inline-flex">
-                                    <AppArrowButton
-                                    class="uno-pl-6 uno-pr-2 uno-py-2 uno-gap-3"
-                                    :icon-size="44"
-                                    :to="localePath('/test')"
-                                >
-                                    <span class="uno-font-['Outfit'] uno-font-medium uno-text-[16px]">{{
-                                        $t('common.getStarted') }}</span>
-                                </AppArrowButton>
+                                    <AppArrowButton class="uno-pl-6 uno-pr-2 uno-py-2 uno-gap-3" :icon-size="44"
+                                        :to="localePath('/test')" hover-class="">
+                                        <span class="uno-font-['Outfit'] uno-font-medium uno-text-[16px]">{{
+                                            $t('common.getStarted') }}</span>
+                                    </AppArrowButton>
 
 
                                 </div>
@@ -153,9 +148,7 @@
 
                         <AppArrowButton
                             class="uno-m-t-12px sm:uno-m-t-16px md:uno-m-t-24px uno-gap-[6px] sm:uno-gap-[8px] md:uno-gap-[12px] uno-py-2 sm:uno-py-2 uno-pr-[3px] sm:uno-pr-[4px] md:uno-pr-[6px] uno-pl-[12px] sm:uno-pl-[16px] md:uno-pl-[24px] uno-text-[12px] sm:uno-text-[14px] md:uno-text-[16px] uno-font-['Outfit'] uno-font-medium"
-                            :to="localePath('/test')"
-                            :icon-size="44"
-                        >
+                            :to="localePath('/test')" :icon-size="44" hover-class="">
                             {{ $t('common.getStarted') }}
                         </AppArrowButton>
                     </div>

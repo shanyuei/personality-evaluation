@@ -25,6 +25,7 @@
       <AppArrowButton
         class="uno-relative uno-z-10 uno-w-70% md:uno-w-190px uno-h-66px uno-justify-start uno-gap-[6px] sm:uno-gap-[8px] md:uno-gap-[12px] uno-py-2 sm:uno-py-2 uno-pr-[3px] sm:uno-pr-[4px] md:uno-pr-[6px] uno-pl-[12px] sm:uno-pl-[16px] md:uno-pl-[16px] uno-text-[12px] sm:uno-text-[14px] md:uno-text-[18px] uno-font-['Outfit'] uno-font-medium"
         :icon-size="44"
+        hover-class=""
       >
         <div class="w-[calc(100%-44px)] text-center uno-text-16px">
           Take the Test

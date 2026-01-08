@@ -30,12 +30,14 @@
 
     <template #right>
       <!-- 未登录状态 -->
-      <div v-if="!token"
-        class="uno-h-[48px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-3 uno-py-1 uno-pr-1 uno-pl-[20px] uno-border-solid uno-border-[#011813] uno-border uno-rounded-[100px] max-sm:uno-hidden cursor-pointer"
-        @click="navigateTo(localePath('/auth/sign-in'))">
-        <span class="uno-text-[#011813] uno-font-['Outfit'] uno-font-medium">{{ $t("common.getStarted") }}</span>
-        <NuxtImg src="/images/header/go-icon-1.png" alt="go-icon-1" width="40px" height="40px" />
-      </div>
+      <AppArrowButton
+        v-if="!token"
+        preset="header"
+        class="max-sm:uno-hidden uno-font-['Outfit'] uno-font-medium"
+        :to="localePath('/auth/sign-in')"
+      >
+        {{ $t('common.getStarted') }}
+      </AppArrowButton>
 
       <!-- 登录状态 -->
       <UDropdownMenu v-else :items="accountItems"
@@ -76,11 +78,15 @@
           :ui="{ link: `before:bg-[transparent!important] font-['Outfit'] text-center font-medium text-[#011813] data-[active]:text-[var(--color-pink-1)] hover:text-[var(--color-pink-1)]`, item: 'line-height-[42px] min-h-[42px]' }"
           :items="itemsLocalized" class="uno-w-full" />
         <div>
-          <div
-            class="uno-h-[48px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-3 uno-py-1 uno-pr-1 uno-pl-[20px] uno-border-solid uno-border-[#011813] uno-border uno-rounded-[100px] uno-w-full">
-            <span class="uno-text-[#011813] uno-font-['Outfit'] uno-font-medium">Get Started</span>
-            <NuxtImg src="/images/header/go-icon-1.png" alt="go-icon-1" width="40px" height="40px" />
-          </div>
+          <AppArrowButton
+            variant="outline"
+            class="uno-h-[48px] uno-gap-3 uno-py-1 uno-pr-1 uno-pl-[20px] uno-rounded-[100px] uno-w-full uno-font-['Outfit'] uno-font-medium"
+            :icon-size="40"
+            :to="localePath('/auth/sign-in')"
+            icon-src="/images/header/go-icon-1.png"
+          >
+            {{ $t('common.getStarted') }}
+          </AppArrowButton>
         </div>
       </div>
     </template>
