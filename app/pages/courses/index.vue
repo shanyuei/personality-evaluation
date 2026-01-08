@@ -31,13 +31,11 @@
                             </div>
                             <div
                                 class="uno-flex uno-items-center uno-flex-row uno-flex-wrap md:uno-flex-nowrap uno-gap-4 md:uno-gap-6 uno-mt-2">
-                                <div
-                                    class="uno-h-[48px] md:uno-h-[56px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-3 uno-py-1.5 uno-pr-1.5 uno-pl-[16px] md:uno-pl-[20px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-transition-all uno-rounded-[100px]">
-                                    <span class="uno-text-white uno-font-['Outfit'] uno-font-medium">{{
-                                        $t('common.getStarted') }}</span>
-                                    <NuxtImg width="44" height="44" src="/images/common/go-arrow-1.png"
-                                        class="uno-w-[36px] uno-h-[36px] md:uno-w-[44px] md:uno-h-[44px]" />
-                                </div>
+                                <AppArrowButton
+                                    class="uno-h-[48px] md:uno-h-[56px] uno-gap-3 uno-py-1.5 uno-pr-1.5 uno-pl-[16px] md:uno-pl-[20px] uno-font-['Outfit'] uno-font-medium"
+                                >
+                                    {{ $t('common.getStarted') }}
+                                </AppArrowButton>
                                 <div
                                     class="uno-flex uno-items-center uno-flex-row uno-gap-1 md:uno-gap-2 uno-rounded-xl  uno-mt-3 md:uno-mt-0">
                                     <div class="uno-flex uno-items-center uno-flex-row">

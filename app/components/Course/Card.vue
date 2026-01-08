@@ -9,14 +9,13 @@
         <div class="course-card__footer__status">
           {{ $t('common.courseCard.status.completed') }}
         </div>
-        <button class="course-card__footer__cta is-dark">
-          <span class="course-card__footer__cta-text">
-            {{ $t('common.retakeTest') }}
-          </span>
-          <span class="course-card__footer__cta-icon">
-            <NuxtImg src="/images/common/go-arrow-1.png" alt="arrow-right" width="40" height="40" />
-          </span>
-        </button>
+        <AppArrowButton
+          variant="dark"
+          class="uno-h-[48px] uno-min-w-[158px] uno-gap-3 uno-pl-5 uno-pr-1 uno-py-1 max-md:uno-h-[44px] max-md:uno-min-w-[140px] max-md:uno-gap-2 max-md:uno-pl-[14px] max-md:uno-pr-[6px] max-md:uno-justify-between uno-font-medium"
+          :icon-size="40"
+        >
+          {{ $t('common.retakeTest') }}
+        </AppArrowButton>
         <div class="course-card__footer__link">
           <span class="course-card__footer__link-text">
             {{ $t('common.viewResults') }}
@@ -52,14 +51,13 @@
         </span>
       </div>
       <div class="course-card__footer">
-        <button class="course-card__footer__cta is-green">
-          <span class="course-card__footer__cta-text">
-            {{ $t('common.getStarted') || 'Get Started' }}
-          </span>
-          <span class="course-card__footer__cta-icon">
-            <NuxtImg src="/images/common/go-arrow-1.png" alt="arrow-right" width="44" height="44" />
-          </span>
-        </button>
+        <AppArrowButton
+          variant="primary"
+          class="uno-h-[48px] uno-min-w-[158px] uno-gap-3 uno-pl-5 uno-pr-1 uno-py-1 max-md:uno-h-[44px] max-md:uno-min-w-[140px] max-md:uno-gap-2 max-md:uno-pl-[14px] max-md:uno-pr-[6px] max-md:uno-justify-between uno-font-medium"
+          :icon-size="40"
+        >
+          {{ $t('common.getStarted') || 'Get Started' }}
+        </AppArrowButton>
         <div class="course-card__footer__progress uno-relative" role="progressbar"
           :aria-valuenow="formatPercent(course.percent)" aria-valuemin="0" aria-valuemax="100">
 
@@ -84,14 +82,13 @@
             {{ $t('common.courseCard.status.completed') }}
           </span>
         </div>
-        <button class="course-card__footer__cta is-dark">
-          <span class="course-card__footer__cta-text">
-            {{ $t('common.getStarted') }}
-          </span>
-          <span class="course-card__footer__cta-icon">
-            <NuxtImg src="/images/common/go-arrow-1.png" alt="arrow-right" width="40" height="40" />
-          </span>
-        </button>
+        <AppArrowButton
+          variant="dark"
+          class="uno-h-[48px] uno-min-w-[158px] uno-gap-3 uno-pl-5 uno-pr-1 uno-py-1 max-md:uno-h-[44px] max-md:uno-min-w-[140px] max-md:uno-gap-2 max-md:uno-pl-[14px] max-md:uno-pr-[6px] max-md:uno-justify-between uno-font-medium"
+          :icon-size="40"
+        >
+          {{ $t('common.getStarted') }}
+        </AppArrowButton>
         <div class="course-card__footer__link">
           <span class="course-card__footer__link-text">
             {{ $t('common.viewResults') }}
@@ -115,12 +112,13 @@
         <div class="course-card__footer__row">
           <div class="course-card__footer__left">
             <div class="course-card__footer__actions">
-              <button class="course-card__footer__cta is-green">
-                <span class="course-card__footer__cta-text">{{ $t('common.getStarted') }}</span>
-                <span class="course-card__footer__cta-icon">
-                  <NuxtImg src="/images/common/go-arrow-1.png" alt="arrow-right" width="40" height="40" />
-                </span>
-              </button>
+              <AppArrowButton
+                variant="primary"
+                class="uno-h-[48px] uno-min-w-[158px] uno-gap-3 uno-pl-5 uno-pr-1 uno-py-1 max-md:uno-h-[44px] max-md:uno-min-w-[140px] max-md:uno-gap-2 max-md:uno-pl-[14px] max-md:uno-pr-[6px] max-md:uno-justify-between uno-font-medium"
+                :icon-size="40"
+              >
+                {{ $t('common.getStarted') }}
+              </AppArrowButton>
               <div class="course-card__footer__people">
                 <div class="course-card__footer__avatars">
                   <div
@@ -540,23 +538,7 @@ const progressOffset = computed(() => {
       font-size: 14px;
     }
 
-    .course-card__footer__cta {
-      height: 44px;
-      padding-left: 14px;
-      padding-right: 6px;
-      min-width: 140px;
-      gap: 8px;
-      justify-content: space-between;
-    }
 
-    .course-card__footer__cta-text {
-      font-size: 14px;
-    }
-
-    .course-card__footer__cta-icon {
-      width: 32px;
-      height: 32px;
-    }
 
     .course-card__footer__link {
       margin-top: 2px;

@@ -19,12 +19,13 @@
                 </div>
 
                 <!-- 测试按钮 -->
-                <button
-                    class="uno-m-t-32px sm:uno-m-t-48px md:uno-m-t-72px uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[8px] sm:uno-gap-[12px] md:uno-gap-[18px] uno-py-2 sm:uno-py-3 md:uno-py-4 uno-pr-2 sm:uno-pr-3 md:uno-pr-3 uno-pl-[20px] sm:uno-pl-[24px] md:uno-pl-[48px] uno-bg-[#009D77] hover:uno-bg-[var(--color-green-2)] uno-text-[#FFFFFF] uno-text-[14px] sm:uno-text-[18px] md:uno-text-[32px] uno-font-['Outfit'] uno-font-medium uno-rounded-[149.99px] uno-transition uno-duration-200 disabled:uno-opacity-50 disabled:uno-cursor-not-allowed"
-                    type="button" @click="navigateTo(localePath('/test'))">
+                <AppArrowButton
+                    class="uno-m-t-32px sm:uno-m-t-48px md:uno-m-t-72px uno-gap-[8px] sm:uno-gap-[12px] md:uno-gap-[18px] uno-py-2 sm:uno-py-3 md:uno-py-4 uno-pr-2 sm:uno-pr-3 md:uno-pr-3 uno-pl-[20px] sm:uno-pl-[24px] md:uno-pl-[48px] uno-text-[14px] sm:uno-text-[18px] md:uno-text-[32px] uno-font-['Outfit'] uno-font-medium"
+                    :icon-size="72"
+                    :to="localePath('/test')"
+                >
                     Take the Test
-                    <NuxtImg src="/images/common/go-arrow-1.png" alt="arrow-right" width="72" height="72" />
-                </button>
+                </AppArrowButton>
             </div>
         </div>
         <!-- 第二块区域 hero -->
@@ -100,15 +101,14 @@
                                 <div class="uno-w-full uno-h-[1px] uno-bg-[#E7E7E8] uno-mb-6" />
 
                                 <div class="uno-relative uno-inline-flex">
-                                    <button
-                                        class="uno-group uno-pl-6 uno-pr-2 uno-py-2 uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-white uno-rounded-full uno-flex uno-items-center uno-gap-3 uno-transition-all uno-duration-300"
-                                        type="button" @click="navigateTo(localePath('/test'))">
-                                        <span class="uno-font-['Outfit'] uno-font-medium uno-text-[16px]">{{
-                                            $t('common.getStarted') }}</span>
-
-                                        <NuxtImg src="/images/common/go-arrow-1.png" alt="arrow-right" width="44"
-                                            height="44" />
-                                    </button>
+                                    <AppArrowButton
+                                    class="uno-pl-6 uno-pr-2 uno-py-2 uno-gap-3"
+                                    :icon-size="44"
+                                    :to="localePath('/test')"
+                                >
+                                    <span class="uno-font-['Outfit'] uno-font-medium uno-text-[16px]">{{
+                                        $t('common.getStarted') }}</span>
+                                </AppArrowButton>
 
 
                                 </div>
@@ -151,12 +151,13 @@
                         </h2>
                         <p class="uno-text-gray-600 uno-mb-8 sm:uno-mb-12">{{ $t('pages.home.how.desc') }}</p>
 
-                        <button
-                            class="uno-m-t-12px sm:uno-m-t-16px md:uno-m-t-24px uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[6px] sm:uno-gap-[8px] md:uno-gap-[12px] uno-py-2 sm:uno-py-2 uno-pr-[3px] sm:uno-pr-[4px] md:uno-pr-[6px] uno-pl-[12px] sm:uno-pl-[16px] md:uno-pl-[24px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-[#FFFFFF] uno-text-[12px] sm:uno-text-[14px] md:uno-text-[16px] uno-font-['Outfit'] uno-font-medium uno-rounded-[149.99px] uno-transition uno-duration-200 disabled:uno-opacity-50 disabled:uno-cursor-not-allowed"
-                            type="button" @click="navigateTo(localePath('/test'))">
+                        <AppArrowButton
+                            class="uno-m-t-12px sm:uno-m-t-16px md:uno-m-t-24px uno-gap-[6px] sm:uno-gap-[8px] md:uno-gap-[12px] uno-py-2 sm:uno-py-2 uno-pr-[3px] sm:uno-pr-[4px] md:uno-pr-[6px] uno-pl-[12px] sm:uno-pl-[16px] md:uno-pl-[24px] uno-text-[12px] sm:uno-text-[14px] md:uno-text-[16px] uno-font-['Outfit'] uno-font-medium"
+                            :to="localePath('/test')"
+                            :icon-size="44"
+                        >
                             {{ $t('common.getStarted') }}
-                            <NuxtImg src="/images/common/go-arrow-1.png" alt="arrow-right" width="44" height="44" />
-                        </button>
+                        </AppArrowButton>
                     </div>
 
                     <!-- 右侧：三个步骤卡片 -->
