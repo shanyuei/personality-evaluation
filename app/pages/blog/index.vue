@@ -22,14 +22,14 @@
           }
         }" class="uno-rounded-2xl uno-overflow-hidden">
           <div>
-            <NuxtImg :src="getImageUrl(recommendArticles[0]?.cover?.[0]?.url)" :alt="recommendArticles[0].title"
-              width="588" height="392" class="uno-rounded-2xl uno-overflow-hidden" />
+            <NuxtImg :src="getImageUrl(recommendArticles[0]?.cover?.url)" :alt="recommendArticles[0].title" width="588"
+              height="392" class="uno-rounded-2xl uno-overflow-hidden" />
             <div class="uno-py-6">
               <p
                 class="uno-font-normal uno-text-[14px] md:uno-text-[16px] uno-text-[#4e5255] uno-leading-[20px] md:uno-leading-[24px] uno-mb-1">
                 {{ recommendArticles[0].updatedBy.firstname + " " + recommendArticles[0].updatedBy.lastname }}
                 ·
-                {{ formatDate(recommendArticles[0].publishedAt, 'datetime') }}
+                {{ formatDate(recommendArticles[0].publishedAt, 'relative') }}
                 <!-- min -->
               </p>
               <h3
@@ -53,13 +53,13 @@
             }
           }">
             <div class="uno-rounded-2xl uno-overflow-hidden">
-              <NuxtImg width="282" height="188" :src="getImageUrl(a.cover?.[0]?.url)" :alt="a.title"
+              <NuxtImg width="282" height="188" :src="getImageUrl(a.cover?.url)" :alt="a.title"
                 class="uno-rounded-2xl uno-overflow-hidden" />
               <div class="uno-py-4">
                 <p class="uno-text-[16px] uno-text-gray-500 uno-mb-1">
                   {{ a.updatedBy.firstname + " " + a.updatedBy.lastname }}
                   ·
-                  {{ formatDate(a.publishedAt, 'date') }}
+                  {{ formatDate(a.publishedAt, 'relative') }}
                 </p>
                 <h4 class="uno-text-[20px] uno-font-500 uno-text-gray-900 uno-mb-2">{{ a.title }}</h4>
               </div>
@@ -87,12 +87,12 @@
               }
             }">
               <div class="uno-rounded-2xl">
-                <NuxtImg :src="getImageUrl(a.cover?.[0]?.url)" :alt="a.title" width="384" height="282"
+                <NuxtImg :src="getImageUrl(a.cover?.url)" :alt="a.title" width="384" height="284"
                   class="uno-rounded-2xl uno-overflow-hidden" />
                 <p
                   class="uno-font-normal uno-text-[16px] uno-text-[#4e5255] uno-leading-[24px] uno-mt-2 uno-line-clamp-2">
                   {{ a.updatedBy.firstname + " " + a.updatedBy.lastname }}
-                  · {{ formatDate(a.publishedAt, 'date') }}
+                  · {{ formatDate(a.publishedAt, 'relative') }}
                 </p>
                 <h4 class="uno-font-medium uno-text-[24px] uno-text-[#011813] uno-leading-[33px] uno-line-clamp-2">{{
                   a.title }}</h4>
@@ -147,10 +147,8 @@
                   }
                 }">
                   <div class="uno-flex uno-gap-4 uno-group">
-                    <div class="uno-rounded-[12px]  uno-flex-shrink-0">
-                      <NuxtImg :src="getImageUrl(recent.cover?.[0]?.url)" :alt="recent.title" width="102" class="uno-rounded-[12px]"
-                        height="102" />
-                    </div>
+                    <NuxtImg :src="getImageUrl(recent.cover?.url)" :alt="recent.title" width="102"
+                      class="uno-rounded-[12px]" height="102" />
                     <div>
                       <h4
                         class="uno-font-medium uno-text-[20px] uno-text-[#011813] uno-leading-[30px] group-hover:uno-text-[var(--color-pink-1)] uno-transition-colors uno-duration-200 uno-line-clamp-1">
@@ -171,9 +169,9 @@
             <h3 class="uno-text-[24px] uno-font-semibold uno-text-gray-900 uno-mb-3">{{ $t('pages.blog.sidebar.tags') }}
             </h3>
             <div class="uno-flex uno-flex-wrap uno-gap-3">
-              <span v-for="tag in tags" :key="tag.documentId" role="button" :class="[
-                'uno-text-[16px] uno-font-400  uno-px-3 uno-py-1 uno-rounded-[999px] uno-border uno-bg-transparent uno-text-[#011813] uno-cursor-pointer hover:uno-border-[var(--color-pink-1)] hover:uno-text-[var(--color-pink-1)]',
-                activeTagSlug === tag?.slug || '' ? 'uno-border-[var(--color-pink-1)] uno-text-[var(--color-pink-1)]' : 'uno-border-[var(--ui-border)]'
+               <span v-for="tag in tags" :key="tag.documentId" role="button" :class="[
+                'uno-text-[16px] uno-font-400 uno-px-3 uno-py-1 uno-rounded-[999px] uno-border uno-bg-transparent uno-text-[#4E5255] uno-cursor-pointer hover:uno-border-[var(--color-pink-1)] hover:uno-text-[#011813]',
+                activeTagSlug === tag.slug ? 'uno-border-[var(--color-pink-1)] !uno-text-[#011813]' : 'uno-border-[var(--ui-border)]'
               ]" @click="onTagClick(tag)">{{ tag.name }}</span>
             </div>
           </div>

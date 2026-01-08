@@ -51,7 +51,8 @@ export const getArticleBySlug = async (slug?: string) => {
     populate: {
       cover: true,
       category: true,
-      tags: true
+      tags: true,
+      updatedBy: true
     }
   })
   return useStrapiGetFetch(`/posts` + str)

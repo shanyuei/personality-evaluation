@@ -8,16 +8,17 @@
 
     <section class="uno-my-[24px] md:uno-my-[40px]">
       <div v-if="article" class="uno-rounded-[24px] uno-overflow-hidden">
-        <NuxtImg v-if="article?.cover?.[0]?.url" :src="getImageUrl(article.cover?.[0]?.url || '')" :alt="article.title"
+        <NuxtImg v-if="article?.cover?.url" :src="getImageUrl(article.cover?.url || '')" :alt="article.title"
+        width="1200" height="460"
           class="uno-w-full uno-h-420px uno-object-cover" />
       </div>
       <div class="uno-grid md:uno-grid-cols-3 uno-gap-[24px] uno-mt-56px">
         <div v-if="article" class="md:uno-col-span-2">
           <p
             class="uno-font-normal uno-text-[14px] md:uno-text-[16px] uno-text-[#4e5255] uno-leading-[20px] md:uno-leading-[24px]">
-            <!-- {{ article.author.name }} -->
+            {{ article.updatedBy.firstname + " " + article.updatedBy.lastname }}
             ·
-            {{ formatDate(article.publishedAt, 'datetime') }}
+            {{ formatDate(article.publishedAt, 'relative') }}
           </p>
           <h1
             class="uno-font-semibold uno-text-[28px] md:uno-text-[48px] uno-text-[#011813] uno-leading-[36px] md:uno-leading-[58px] uno-mt-8px">
@@ -43,10 +44,8 @@
                   }
                 }">
                   <div class="uno-flex uno-gap-4 uno-group">
-                    <div class="uno-rounded-[12px]  uno-flex-shrink-0">
-                      <NuxtImg :src="getImageUrl(recent.cover?.[0]?.url || '')" :alt="recent.title" width="72"
-                        class="uno-rounded-[12px]" height="72" />
-                    </div>
+                    <NuxtImg :src="getImageUrl(recent.cover?.url)" :alt="recent.title" width="102"
+                      class="uno-rounded-[12px]" height="102" />
                     <div>
                       <h4
                         class="uno-font-medium uno-text-[20px] uno-text-[#011813] uno-leading-[26px] group-hover:uno-text-[var(--ui-primary)] uno-transition-colors uno-duration-200 uno-line-clamp-1">

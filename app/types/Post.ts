@@ -15,7 +15,7 @@ export type Post = {
         id: number;
         documentId: string;
         url: string;
-    }[];
+    };
     category: {
         id: number;
         documentId: string;
