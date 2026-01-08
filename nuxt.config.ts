@@ -71,7 +71,7 @@ export default defineNuxtConfig({
     transpile: [],
   },
   nitro: {
-    errorHandler: '~/server/error-handler.ts',
+    // errorHandler: '~/server/error-handler.ts',
     prerender: {
       ignore: ['/-mentors', '/legal/-terms.vue'] // 排除带有 "-" 的文件夹和文件
     }

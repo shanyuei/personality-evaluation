@@ -20,7 +20,7 @@
                                 </p>
                             </div>
                             <div style="flex-shrink: 0"
-                                class="uno-w-auto uno-h-[56px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-2 uno-py-4 uno-px-[24px] uno-bg-[#EA4C89] uno-rounded-[1000px]"
+                                class="uno-w-148px  uno-h-[56px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-2 uno-py-4 uno-px-[18px] uno-bg-[#EA4C89] uno-rounded-[1000px]"
                                 @click="handleError">
                                 <span class="uno-text-[#FFFFFF] uno-font-['Outfit'] uno-font-[16px] uno-leading-normal">
                                     Back to Home

@@ -2,7 +2,7 @@
   <div class="page-container uno-faq-section uno-py-16 sm:uno-py-20 md:uno-py-24">
     <div class=" uno-w-full md:uno-mx-auto md:uno-max-w-[80%] ">
       <div class="uno-text-center uno-mb-16 uno-max-w-3xl uno-mx-auto">
-        <h2 class="uno-text-[48px] md:uno-text-[48px] uno-font-['Outfit'] uno-font-bold uno-mb-3">{{ title }}</h2>
+        <h2 class="uno-text-[48px] md:uno-text-[48px] uno-font-['Outfit'] uno-font-600 uno-mb-3">{{ title }}</h2>
         <p v-if="description" class="uno-text-[var(--ui-muted-foreground)] uno-px-[50px]" style="white-space: pre-line;">{{ description }}</p>
       </div>
 

@@ -79,15 +79,15 @@
 
           <!-- Content Column -->
           <div :class="{ 'md:uno-order-1': index % 2 !== 0 }">
-            <div class="uno-flex uno-justify-center uno-items-center">
+            <div class="uno-flex  uno-items-center">
               <span
                 class="uno-px-16px uno-py-8px uno-rounded-8px uno-font-medium uno-text-[16px] uno-text-[#011813] uno-leading-[24px]"
-                :class="{ 'uno-mx-auto': index % 2 !== 0 }" :style="{ backgroundColor: item.badgeBg }">
+                :class="{  }" :style="{ backgroundColor: item.badgeBg }">
                 {{ item.badge }}
               </span>
             </div>
             <h2
-              class="uno-mt-4 uno-text-[32px] md:uno-text-[42px] uno-font-['Outfit'] uno-font-extrabold uno-text-[var(--ui-foreground)]">
+              class="uno-mt-4 uno-text-[32px] md:uno-text-[32px] uno-font-['Outfit'] uno-font-extrabold uno-text-[var(--ui-foreground)]">
               {{ item.title }}
             </h2>
             <p class="uno-mt-4 uno-text-[var(--ui-muted-foreground)]">
@@ -96,7 +96,7 @@
             <div class="uno-mt-6 uno-space-y-3">
               <div v-for="(listItem, listIndex) in item.list" :key="listIndex"
                 class="uno-flex uno-items-center uno-gap-3">
-                <NuxtImg src="/images/about/icon-2.png" alt="check" width="17" height="17" />
+                <NuxtImg src="/images/about/icon-2.png" alt="check" width="20" height="20" />
                 <span class="uno-text-[var(--ui-foreground)]">{{ listItem }}</span>
               </div>
             </div>
@@ -108,13 +108,13 @@
 
     <section class="uno-py-12 md:uno-py-20">
       <div class="page-container uno-px-6 ">
-        <div class="uno-flex uno-flex-col md:uno-flex-row uno-gap-10 uno-items-start">
+        <div class="uno-flex uno-flex-col md:uno-flex-row uno-gap-10 uno-items-end">
           <div>
             <h2
-              class="uno-text-3xl md:uno-text-5xl uno-font-['Outfit'] uno-font-extrabold uno-text-[var(--ui-foreground)]">
+              class="uno-text-3xl md:uno-text-5xl uno-leading-[60px] uno-font-['Outfit'] uno-font-extrabold uno-text-[var(--ui-foreground)]">
               {{
                 $t('pages.about.standout.title') }}</h2>
-            <p class="uno-mt-4 uno-text-[var(--ui-muted-foreground)] uno-max-w-xl">{{ $t('pages.about.standout.desc') }}
+            <p class="uno-mt-12px uno-text-[var(--ui-muted-foreground)] uno-max-w-xl uno-mb-40px">{{ $t('pages.about.standout.desc') }}
             </p>
             <div class="uno-mt-8 uno-space-y-6">
               <div class="uno-flex uno-items-start uno-gap-4">
