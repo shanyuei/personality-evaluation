@@ -3,7 +3,7 @@
     <div class=" uno-w-full md:uno-mx-auto md:uno-max-w-[80%] ">
       <div class="uno-text-center uno-mb-16 uno-max-w-3xl uno-mx-auto">
         <h2 class="uno-text-[48px] md:uno-text-[48px] uno-font-['Outfit'] uno-font-bold uno-mb-3">{{ title }}</h2>
-        <p v-if="description" class="uno-text-[var(--ui-muted-foreground)] uno-px-[50px]">{{ description }}</p>
+        <p v-if="description" class="uno-text-[var(--ui-muted-foreground)] uno-px-[50px]" style="white-space: pre-line;">{{ description }}</p>
       </div>
 
 
@@ -19,7 +19,7 @@
             <div class="uno-flex uno-justify-start uno-items-start uno-flex-col uno-relative">
               <div
                 class="uno-flex uno-self-stretch uno-justify-start uno-items-start uno-flex-col uno-gap-3 uno-py-[20px] uno-px-[24px] uno-bg-[#FFFFFF]">
-                <div style="flex-shrink: 0"
+                <div 
                   class="uno-w-full uno-flex uno-justify-between uno-items-center uno-flex-row" @click="toggle(idx)">
                   <p
                     class="uno-text-[#009D77] uno-text-xl md:uno-text-2xl uno-font-['Outfit'] uno-text-center uno-font-medium">
@@ -43,7 +43,7 @@
                   </svg>
                 </div>
                 <div class="uno-flex uno-justify-start uno-items-start">
-                  <p style="flex-shrink: 0"
+                  <p 
                     class="uno-self-stretch uno-text-[#4E5255] uno-font-['Outfit'] uno-break-words">
                     {{ item.answer }}
                   </p>

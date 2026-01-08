@@ -20,10 +20,8 @@
 
                 <!-- 测试按钮 -->
                 <button
-                    class="uno-m-t-32px sm:uno-m-t-48px md:uno-m-t-72px uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[8px] sm:uno-gap-[12px] md:uno-gap-[18px] uno-py-2 sm:uno-py-3 md:uno-py-4 uno-pr-2 sm:uno-pr-3 md:uno-pr-3 uno-pl-[20px] sm:uno-pl-[24px] md:uno-pl-[48px] uno-bg-[#009D77] hover:uno-bg-[var(--color-green-2)] uno-text-[#FFFFFF] uno-text-[14px] sm:uno-text-[18px] md:uno-text-[28px] uno-font-['Outfit'] uno-font-medium uno-rounded-[149.99px] uno-transition uno-duration-200 disabled:uno-opacity-50 disabled:uno-cursor-not-allowed"
-                    type="button"
-                    @click="navigateTo(localePath('/test'))"
-                >
+                    class="uno-m-t-32px sm:uno-m-t-48px md:uno-m-t-72px uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[8px] sm:uno-gap-[12px] md:uno-gap-[18px] uno-py-2 sm:uno-py-3 md:uno-py-4 uno-pr-2 sm:uno-pr-3 md:uno-pr-3 uno-pl-[20px] sm:uno-pl-[24px] md:uno-pl-[48px] uno-bg-[#009D77] hover:uno-bg-[var(--color-green-2)] uno-text-[#FFFFFF] uno-text-[14px] sm:uno-text-[18px] md:uno-text-[32px] uno-font-['Outfit'] uno-font-medium uno-rounded-[149.99px] uno-transition uno-duration-200 disabled:uno-opacity-50 disabled:uno-cursor-not-allowed"
+                    type="button" @click="navigateTo(localePath('/test'))">
                     Take the Test
                     <NuxtImg src="/images/common/go-arrow-1.png" alt="arrow-right" width="72" height="72" />
                 </button>
@@ -64,13 +62,13 @@
             <div class="uno-px-4">
                 <!-- Why You Should Take the Test 部分 -->
                 <div class="uno-mb-12 sm:uno-mb-16 md:uno-mb-20 lg:uno-mb-24">
-                    <div class="uno-max-w-[700px] uno-mx-auto">
+                    <div class="uno-max-w-[800px] uno-mx-auto">
                         <h2
                             class="uno-text-[#011813] uno-text-2xl sm:uno-text-3xl md:uno-text-4xl lg:uno-text-5xl uno-font-['Outfit'] uno-text-center uno-font-semibold uno-m-b-6px sm:uno-m-b-8px md:uno-m-b-12px">
                             {{
                                 $t('pages.home.why.title') }}</h2>
                         <p
-                            class="uno-text-[#4E5255] uno-font-['Outfit'] uno-text-center uno-text-sm sm:uno-text-base uno-mb-[56px] sm:uno-mb-[80px]">
+                            class="uno-text-[#4E5255] uno-font-['Outfit'] uno-text-center uno-text-sm sm:uno-text-base uno-mb-[56px] sm:uno-mb-[80px] " style="white-space: pre-line;">
                             {{ $t('pages.home.why.desc') }}
                         </p>
                     </div>
@@ -104,8 +102,7 @@
                                 <div class="uno-relative uno-inline-flex">
                                     <button
                                         class="uno-group uno-pl-6 uno-pr-2 uno-py-2 uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-white uno-rounded-full uno-flex uno-items-center uno-gap-3 uno-transition-all uno-duration-300"
-                                        type="button"
-                                        @click="navigateTo(localePath('/test'))">
+                                        type="button" @click="navigateTo(localePath('/test'))">
                                         <span class="uno-font-['Outfit'] uno-font-medium uno-text-[16px]">{{
                                             $t('common.getStarted') }}</span>
 
@@ -118,10 +115,8 @@
                             </div>
 
                             <!-- Right Image -->
-                            <div class="uno-w-full md:uno-w-[55%] uno-relative">
-                                <NuxtImg src="/images/home/1.png" alt="Self-awareness illustration"
-                                    class="uno-w-full uno-h-auto uno-object-contain uno-rounded-2xl" />
-                            </div>
+                            <NuxtImg src="/images/home/1.png" alt="Self-awareness illustration" width="564" height="376"
+                                class="uno-object-contain uno-rounded-2xl" />
                         </div>
                     </div>
 
@@ -158,8 +153,7 @@
 
                         <button
                             class="uno-m-t-12px sm:uno-m-t-16px md:uno-m-t-24px uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[6px] sm:uno-gap-[8px] md:uno-gap-[12px] uno-py-2 sm:uno-py-2 uno-pr-[3px] sm:uno-pr-[4px] md:uno-pr-[6px] uno-pl-[12px] sm:uno-pl-[16px] md:uno-pl-[24px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-[#FFFFFF] uno-text-[12px] sm:uno-text-[14px] md:uno-text-[16px] uno-font-['Outfit'] uno-font-medium uno-rounded-[149.99px] uno-transition uno-duration-200 disabled:uno-opacity-50 disabled:uno-cursor-not-allowed"
-                            type="button"
-                            @click="navigateTo(localePath('/test'))">
+                            type="button" @click="navigateTo(localePath('/test'))">
                             {{ $t('common.getStarted') }}
                             <NuxtImg src="/images/common/go-arrow-1.png" alt="arrow-right" width="44" height="44" />
                         </button>
@@ -201,9 +195,10 @@
             <NuxtImg src="/theme/home/receive-box-bg-pc.png" alt="" aria-hidden="true" width="100vw" height="100%"
                 class="uno-w-full uno-h-[100%]  uno-absolute uno-top-0 uno-left-0 uno--z-10 uno-pointer-events-none uno-hidden md:uno-block"
                 uno-preload />
-            <div class="page-container uno-px-4 uno-py-8 sm:uno-py-12 md:uno-py-16 lg:uno-py-20 xl:uno-py-24 relative z-10">
+            <div
+                class="page-container uno-px-4 uno-py-8 sm:uno-py-12 md:uno-py-16 lg:uno-py-20 xl:uno-py-24 relative z-10">
                 <h2
-                    class="uno-text-xl sm:uno-text-2xl md:uno-text-4xl uno-font-['Outfit'] uno-font-bold uno-text-center uno-mb-2 sm:uno-mb-3 md:uno-mb-4">
+                    class="uno-text-xl sm:uno-text-2xl md:uno-text-[48px] uno-font-['Outfit'] uno-font-bold uno-text-center uno-mb-2 sm:uno-mb-3 md:uno-mb-4">
                     {{
                         $t('pages.home.receive.title') }}</h2>
                 <p
@@ -216,13 +211,13 @@
                 <div
                     class="uno-grid uno-grid-cols-1 md:uno-grid-cols-3 uno-gap-[24px] sm:uno-gap-[24px] md:uno-gap-[24px]">
                     <div v-for="(card, index) in receiveCards" :key="index"
-                        class="uno-bg-white uno-rounded-[32px] uno-shadow-[0_2px_8px_rgba(0,0,0,0.04)] uno-p-8 sm:uno-p-10 uno-border uno-border-[#F0F0F0] uno-flex uno-flex-col uno-items-center uno-text-center uno-gap-4 sm:uno-gap-6 uno-min-h-[280px]">
+                        class="uno-bg-white uno-rounded-[32px] uno-shadow-[0_2px_8px_rgba(0,0,0,0.04)] uno-p-[32px] uno-border uno-border-solid uno-border-[#E7E7E8] uno-flex uno-flex-col uno-items-center uno-justify-between uno-text-center uno-min-h-[256px]">
                         <div
-                            class="uno-w-64px uno-h-64px sm:uno-w-64px sm:uno-h-64px uno-flex uno-items-center uno-justify-center uno-bg-gray-50 uno-rounded-full uno-mb-2">
+                            class="uno-w-64px uno-h-64px sm:uno-w-64px sm:uno-h-64px uno-flex uno-items-center uno-justify-center uno-bg-gray-50 uno-rounded-full uno-mb-8px">
                             <NuxtImg :src="card.icon" :alt="card.alt" width="64" height="64" />
                         </div>
                         <h3
-                            class="uno-text-lg sm:uno-text-xl md:uno-text-2xl uno-font-['Outfit'] uno-font-bold uno-leading-tight uno-px-2">
+                            class="uno-text-lg sm:uno-text-xl md:uno-text-[20px] uno-font-['Outfit'] uno-font-500 uno-leading-tight uno-px-2 uno-mb-12px">
                             {{ $t(card.titleKey) }}
                         </h3>
                         <p

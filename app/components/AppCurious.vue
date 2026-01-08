@@ -23,9 +23,9 @@
       </p>
 
       <button
-        class=" uno-relative uno-z-10 uno-w-40% md:uno-w-220px uno-h-66px   uno-flex uno-items-center uno-flex-row uno-gap-[6px] sm:uno-gap-[8px] md:uno-gap-[12px] uno-py-2 sm:uno-py-2 uno-pr-[3px] sm:uno-pr-[4px] md:uno-pr-[6px] uno-pl-[12px] sm:uno-pl-[16px] md:uno-pl-[24px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-[#FFFFFF] uno-text-[12px] sm:uno-text-[14px] md:uno-text-[18px] uno-font-['Outfit'] uno-font-medium uno-rounded-[149.99px] uno-transition uno-duration-200 disabled:uno-opacity-50 disabled:uno-cursor-not-allowed"
+        class=" uno-relative uno-z-10 uno-w-70% md:uno-w-190px uno-h-66px   uno-flex uno-items-center uno-flex-row uno-gap-[6px] sm:uno-gap-[8px] md:uno-gap-[12px] uno-py-2 sm:uno-py-2 uno-pr-[3px] sm:uno-pr-[4px] md:uno-pr-[6px] uno-pl-[12px] sm:uno-pl-[16px] md:uno-pl-[16px] uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--color-green-2)] uno-text-[#FFFFFF] uno-text-[12px] sm:uno-text-[14px] md:uno-text-[18px] uno-font-['Outfit'] uno-font-medium uno-rounded-[149.99px] uno-transition uno-duration-200 disabled:uno-opacity-50 disabled:uno-cursor-not-allowed"
         type="button">
-        <div class="w-[calc(100%-44px)] text-center">
+        <div class="w-[calc(100%-44px)] text-center uno-text-16px">
           Take the Test
         </div>
         <NuxtImg src="/images/common/go-arrow-1.png" alt="arrow-right" width="44" height="44"

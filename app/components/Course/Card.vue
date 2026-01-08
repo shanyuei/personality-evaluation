@@ -189,6 +189,7 @@ const progressOffset = computed(() => {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
 
   .course-card__img {
     border-radius: 12px;
@@ -213,6 +214,7 @@ const progressOffset = computed(() => {
     line-height: 1.5;
     margin-top: 8px;
   }
+
 
   .course-card__footer {
     margin-top: 16px;
@@ -483,6 +485,10 @@ const progressOffset = computed(() => {
       z-index: 2;
     }
   }
+  .course-card__status+ .course-card__footer{
+    margin-top: 0;
+
+  }
 
   .course-card__status {
     font-size: 14px;
@@ -490,10 +496,12 @@ const progressOffset = computed(() => {
     font-weight: 500;
     line-height: 1.5;
     margin-bottom: 0;
-    margin-top: 12px;
     display: flex;
     align-items: center;
+    margin-top: 12px;
     gap: 2px;
+    position: relative;
+    top: 4px;
   }
 
   .course-card__footer__meta {

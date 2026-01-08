@@ -3,14 +3,14 @@
     class="uno-testimonials-section uno-py-16 sm:uno-py-20 md:uno-py-24 uno-bg-[var(--ui-background)] uno-w-full uno-mx-auto uno-overflow-hidden">
     <div class="uno-px-4">
       <div class="uno-text-center uno-mb-16">
-        <h2 class="uno-text-[48px] uno-font-['Outfit'] uno-font-bold uno-mb-4 uno-text-[var(--ui-foreground)]">{{ title }}</h2>
+        <h2 class="uno-text-[48px] uno-font-['Outfit'] uno-font-bold uno-mb-4 uno-text-[var(--ui-foreground)]">{{ title
+          }}</h2>
         <p class="uno-text-[var(--ui-muted-foreground)] uno-max-w-3xl uno-mx-auto">{{ description }}</p>
       </div>
 
       <ClientOnly>
-        <div
-          class="uno-mt-[10px] uno-pb-[23px]">
-          <div class="uno-relative uno-right-0 sm:uno-right-12 md:uno-right-48px">
+        <div class="uno-mt-[10px] ">
+          <div class="uno-relative uno-right-0 sm:uno-right-12 md:uno-right-48px ">
             <Swiper v-if="firstRow.length" :modules="[Autoplay]" :slides-per-view="1" :space-between="16" :loop="true"
               :speed="800" :autoplay="{ delay: 2500, disableOnInteraction: false }" :breakpoints="{
                 375: { slidesPerView: 1, spaceBetween: 16 },
@@ -23,21 +23,25 @@
                 1920: { slidesPerView: 4.5, spaceBetween: 24 }
               }">
               <SwiperSlide v-for="(item, idx) in firstRow" :key="'f-' + idx">
-                <div
-                  class="uno-bg-[var(--ui-background)] uno-rounded-2xl uno-shadow-md hover:uno-shadow-[0_12px_24px_rgba(0,157,119,0.12)] uno-transition-all uno-duration-300 hover:uno-translate-y-[-4px] uno-p-6 uno-border uno-border-[var(--color-gray-7)] uno-w-full uno-max-w-[400px] uno-h-[331px]">
-                  <div class="uno-flex uno-items-center uno-gap-1 uno-mb-4 uno-text-amber-400">
-                    <span v-for="n in 5" :key="n" class="uno-text-[24px] uno-w-[24px] uno-h-[24px] uno-flex uno-justify-center uno-items-center">★</span>
-                  </div>
-                  <p class="uno-text-[var(--ui-muted-foreground)] uno-mb-6 uno-text-[16px]">{{ item.text }}</p>
-                  <div class="uno-flex uno-items-center">
-                    <div
-                      class="uno-w-[48px] uno-h-[48px] uno-rounded-full uno-bg-[var(--color-gray-7)] uno-flex uno-items-center uno-justify-center uno-mr-3">
-                      <img :src="item.avatarUrl" :alt="item.name"
-                        class="uno-w-full uno-h-full uno-rounded-full uno-object-cover">
+                <div class="uno-py-12px">
+                  <div
+                    class="uno-bg-[var(--ui-background)] uno-rounded-2xl uno-shadow-md hover:uno-shadow-[0_12px_24px_rgba(0,157,119,0.12)] uno-transition-all uno-duration-300 hover:uno-translate-y-[-4px] uno-p-6 uno-border uno-border-solid uno-border-[#F0F0F0] uno-w-full uno-max-w-[400px] uno-h-[331px]">
+                    <div class="uno-flex uno-items-center uno-gap-1 uno-mb-4 uno-text-amber-400">
+                      <span v-for="n in 5" :key="n"
+                        class="uno-text-[24px] uno-w-[24px] uno-h-[24px] uno-flex uno-justify-center uno-items-center">★</span>
                     </div>
-                    <div>
-                      <h4 class="uno-font-['Outfit'] uno-font-bold uno-text-[20px] uno-text-[var(--ui-foreground)]">{{ item.name }}</h4>
-                      <p class="uno-text-[var(--ui-muted-foreground)] uno-text-[16px]">{{ item.role }}</p>
+                    <p class="uno-text-[var(--ui-muted-foreground)] uno-mb-6 uno-text-[16px]">{{ item.text }}</p>
+                    <div class="uno-flex uno-items-center">
+                      <div
+                        class="uno-w-[48px] uno-h-[48px] uno-rounded-full uno-bg-[var(--color-gray-7)] uno-flex uno-items-center uno-justify-center uno-mr-3">
+                        <img :src="item.avatarUrl" :alt="item.name"
+                          class="uno-w-full uno-h-full uno-rounded-full uno-object-cover">
+                      </div>
+                      <div>
+                        <h4 class="uno-font-['Outfit'] uno-font-bold uno-text-[20px] uno-text-[var(--ui-foreground)]">{{
+                          item.name }}</h4>
+                        <p class="uno-text-[var(--ui-muted-foreground)] uno-text-[16px]">{{ item.role }}</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -48,7 +52,7 @@
       </ClientOnly>
 
       <ClientOnly>
-        <div class="uno-pb-[23px]">
+        <div class="">
           <div class="uno-relative uno-left-0 sm:uno-left-12 md:uno-left-48px">
             <Swiper v-if="secondRow.length" :modules="[Autoplay]" :slides-per-view="1" :space-between="16" :loop="true"
               :speed="800" :autoplay="{ delay: 2500, disableOnInteraction: false, reverseDirection: true }"
@@ -63,10 +67,12 @@
                 1920: { slidesPerView: 4.5, spaceBetween: 24 }
               }">
               <SwiperSlide v-for="(item, idx) in secondRow" :key="'s-' + idx">
-                <div
-                  class="uno-bg-[var(--ui-background)] uno-rounded-2xl uno-shadow-md hover:uno-shadow-[0_12px_24px_rgba(0,157,119,0.12)] uno-transition-all uno-duration-300 hover:uno-translate-y-[-4px] uno-p-6 uno-border uno-border-[var(--color-gray-7)] uno-w-full uno-max-w-[400px] uno-h-[331px]">
+                <div class="uno-py-12px">
+                  <div
+                  class="uno-bg-[var(--ui-background)] uno-rounded-2xl uno-shadow-md hover:uno-shadow-[0_12px_24px_rgba(0,157,119,0.12)] uno-transition-all uno-duration-300 hover:uno-translate-y-[-4px] uno-p-6 uno-border uno-border-solid uno-border-[#F0F0F0] uno-w-full uno-max-w-[400px] uno-h-[331px]">
                   <div class="uno-flex uno-items-center uno-gap-1 uno-mb-4 uno-text-amber-400">
-                    <span v-for="n in 5" :key="n" class="uno-text-[24px] uno-w-[24px] uno-h-[24px] uno-flex uno-justify-center uno-items-center">★</span>
+                    <span v-for="n in 5" :key="n"
+                      class="uno-text-[24px] uno-w-[24px] uno-h-[24px] uno-flex uno-justify-center uno-items-center">★</span>
                   </div>
                   <p class="uno-text-[var(--ui-muted-foreground)] uno-mb-6 uno-text-[16px]">{{ item.text }}</p>
                   <div class="uno-flex uno-items-center">
@@ -76,10 +82,12 @@
                         class="uno-w-full uno-h-full uno-rounded-full uno-object-cover">
                     </div>
                     <div>
-                      <h4 class="uno-font-['Outfit'] uno-font-bold uno-text-[20px] uno-text-[var(--ui-foreground)]">{{ item.name }}</h4>
+                      <h4 class="uno-font-['Outfit'] uno-font-bold uno-text-[20px] uno-text-[var(--ui-foreground)]">{{
+                        item.name }}</h4>
                       <p class="uno-text-[var(--ui-muted-foreground)] uno-text-[16px]">{{ item.role }}</p>
                     </div>
                   </div>
+                </div>
                 </div>
               </SwiperSlide>
             </Swiper>

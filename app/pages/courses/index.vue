@@ -48,7 +48,7 @@
                                         </div>
                                     </div>
                                     <p
-                                        class="uno-text-[var(--ui-muted-foreground)] uno-text-[12px] md:uno-text-[14px] uno-font-['Outfit'] uno-text-center md:uno-text-left">
+                                        class="uno-text-[var(--ui-muted-foreground)] uno-text-[12px] md:uno-text-[12px] uno-font-['Outfit'] uno-text-center md:uno-text-left">
                                         3067 people already finished it</p>
                                 </div>
                             </div>

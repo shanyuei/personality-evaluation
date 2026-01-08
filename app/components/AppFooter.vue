@@ -6,11 +6,11 @@
     </div>
     <div class="page-container uno-w-full uno-bottom-0 uno-left-0 uno-z-[2] uno-relative">
       <UFooter :ui="{
-        container: 'py-80px px-40px xl:px-0 gap-0 z-[2] relative max-w-[1440px] mx-auto items-start max-md:max-w-[80%] max-sm:max-w-full max-sm:flex-col-reverse max-sm:flex max-sm:gap-32px max-sm:py-0 max-sm:p-b-24px uno-items-start',
+        container: 'uno-pt-80px px-0 gap-0 z-[2] relative max-w-[1440px] mx-auto items-start max-md:max-w-[80%] max-sm:max-w-full max-sm:flex-col-reverse max-sm:flex max-sm:gap-32px max-sm:py-0  uno-items-start',
         left: 'flex-none',
         right: 'flex-none',
         center: 'flex-none',
-        bottom: 'p-t-0 uno-pb-32px',
+        bottom: 'p-t-0 uno-pb-32px uno-pt-22px',
       }">
         <template #left>
           <div class="uno-flex uno-flex-col uno-w-210px">
@@ -40,7 +40,7 @@
 
         <template #default>
           <!-- 导航 -->
-          <div class="uno-grid uno-grid-cols-2 uno-gap-40px uno-mb-32px">
+          <div class="uno-grid uno-grid-cols-2 uno-gap-80px uno-mb-32px">
             <div>
               <h3 class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold uno-mb-16px">Pages
               </h3>
