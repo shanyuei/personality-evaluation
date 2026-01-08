@@ -6,14 +6,14 @@
         {{ $t('pages.blog.detail.breadcrumb') }}</p>
     </section>
 
-    <section class="uno-my-[24px] md:uno-my-[40px]">
+    <section class="uno-my-[24px] md:uno-my-[50px]">
       <div v-if="article" class="uno-rounded-[24px] uno-overflow-hidden">
         <NuxtImg v-if="article?.cover?.url" :src="getImageUrl(article.cover?.url || '')" :alt="article.title"
         width="1200" height="460"
           class="uno-w-full uno-h-420px uno-object-cover" />
       </div>
-      <div class="uno-grid md:uno-grid-cols-3 uno-gap-[24px] uno-mt-56px">
-        <div v-if="article" class="md:uno-col-span-2">
+      <div class="uno-flex uno-flex-col md:uno-flex-row uno-gap-[24px] uno-mt-56px">
+        <div v-if="article" class="uno-flex-1 uno-min-w-0">
           <p
             class="uno-font-normal uno-text-[14px] md:uno-text-[16px] uno-text-[#4e5255] uno-leading-[20px] md:uno-leading-[24px]">
             {{ article.updatedBy.firstname + " " + article.updatedBy.lastname }}
@@ -30,7 +30,7 @@
           <div class="uno-mt-24px md:uno-mt-40px" v-html="article.content" />
         </div>
 
-        <div>
+        <div class="uno-w-full md:uno-w-[384px] uno-shrink-0">
           <div class="uno-rounded-2xl uno-mb-6">
             <h3 class="uno-text-[24px] uno-font-semibold uno-text-gray-900 uno-mb-4">{{ $t('pages.blog.sidebar.recent')
             }}
@@ -118,6 +118,7 @@ definePageMeta({
   title: () => 'seo.blog.slug.title',
   layoutShowPageTopIcons3: true,
   layoutShowPageTopIcons: false,
+  layoutPageTopIcon3Class: 'uno-top-150px uno-right-150px',
 })
 
 useSeoMeta({

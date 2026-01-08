@@ -25,7 +25,7 @@
         </template>
         <template v-if="showPageTopIcons3">
           <NuxtImg  src="/theme/layout/page-top-icon-3.png" width="104" height="44"
-            class="uno-absolute uno-top-252px uno-right-120px uno-z-1" />
+            class="uno-absolute uno-z-1" :class="pageTopIcon3Class" />
         </template>
 
 
@@ -80,6 +80,10 @@ console.log(useRouter().getRoutes())
 console.log(route,props)
 const showPageTopIcons3 = computed(() => {
   return route.meta.layoutShowPageTopIcons3 === true
+})
+
+const pageTopIcon3Class = computed(() => {
+  return (route.meta.layoutPageTopIcon3Class as string) || 'uno-top-252px uno-right-120px'
 })
 console.log(route?.meta?.title)
 const head = useLocaleHead()
