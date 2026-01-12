@@ -12,7 +12,7 @@
         width="1200" height="460"
           class="uno-w-full uno-h-420px uno-object-cover" />
       </div>
-      <div class="uno-flex uno-flex-col md:uno-flex-row uno-gap-[24px] uno-mt-56px">
+      <div class="uno-flex uno-flex-col md:uno-flex-row uno-gap-[56px] uno-mt-56px">
         <div v-if="article" class="uno-flex-1 uno-min-w-0">
           <p
             class="uno-font-normal uno-text-[14px] md:uno-text-[16px] uno-text-[#4e5255] uno-leading-[20px] md:uno-leading-[24px]">
