@@ -96,7 +96,7 @@
             <div class="uno-mt-6 uno-space-y-3">
               <div v-for="(listItem, listIndex) in item.list" :key="listIndex"
                 class="uno-flex uno-items-center uno-gap-3">
-                <NuxtImg src="/images/about/icon-2.png" alt="check" width="20" height="20" />
+                <NuxtImg src="/images/about/icon-2.png" alt="check" width="20" height="20" class="uno-w-[20px] uno-h-[20px] uno-shrink-0" />
                 <span class="uno-text-[var(--ui-foreground)]">{{ listItem }}</span>
               </div>
             </div>
@@ -120,7 +120,7 @@
               <div class="uno-flex uno-items-start uno-gap-4">
                 <span
                   class="uno-w-64px uno-h-64px uno-flex-shrink-0 uno-rounded-full  uno-flex uno-items-center uno-justify-center">
-                  <NuxtImg src="/images/about/icon-3.png" alt="precision" width="64" height="64" />
+                  <NuxtImg src="/images/about/icon-3.png" alt="precision" width="64" height="64" class="uno-w-[64px] uno-h-[64px] uno-shrink-0" />
                 </span>
                 <div>
                   <div class="uno-text-lg md:uno-text-[24px] uno-font-semibold uno-text-[var(--ui-foreground)]">{{
@@ -132,7 +132,7 @@
               <div class="uno-flex uno-items-start uno-gap-4">
                 <span
                   class="uno-w-64px uno-h-64px uno-flex-shrink-0 uno-rounded-full  uno-flex uno-items-center uno-justify-center">
-                  <NuxtImg src="/images/about/icon-4.png" alt="deep" width="64" height="64" />
+                  <NuxtImg src="/images/about/icon-4.png" alt="deep" width="64" height="64" class="uno-w-[64px] uno-h-[64px] uno-shrink-0" />
                 </span>
                 <div>
                   <div class="uno-text-lg md:uno-text-[24px] uno-font-semibold uno-text-[var(--ui-foreground)]">{{
@@ -143,7 +143,7 @@
               <div class="uno-flex uno-items-start uno-gap-4">
                 <span
                   class="uno-w-64px uno-h-64px uno-flex-shrink-0 uno-rounded-full  uno-flex uno-items-center uno-justify-center">
-                  <NuxtImg src="/images/about/icon-5.png" alt="expert" width="64" height="64" />
+                  <NuxtImg src="/images/about/icon-5.png" alt="expert" width="64" height="64" class="uno-w-[64px] uno-h-[64px] uno-shrink-0" />
                 </span>
                 <div>
                   <div class="uno-text-lg md:uno-text-[24px] uno-font-semibold uno-text-[var(--ui-foreground)]">{{

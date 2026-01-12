@@ -16,7 +16,8 @@
       alt="arrow-right"
       :width="finalIconSize"
       :height="finalIconSize"
-      :class="['uno-transform uno-transition-transform group-hover:uno-rotate-45', imgClass]"
+      :style="{ width: typeof finalIconSize === 'number' ? finalIconSize + 'px' : finalIconSize, height: typeof finalIconSize === 'number' ? finalIconSize + 'px' : finalIconSize }"
+      :class="['uno-transform uno-transition-transform group-hover:uno-rotate-45', 'uno-shrink-0', imgClass]"
     />
   </component>
 </template>
