@@ -61,7 +61,6 @@ const courseCards = [
   { id: 3, title: 'Brand Management', desc: 'Leadership and management are two distinctive and complementary systems of actions in the business environment.', image: '/images/blog/3.png' }
 ]
 getUserTestInfo().then(res => {
-  console.log('getUserTestInfo',res)
 })
 </script>
 

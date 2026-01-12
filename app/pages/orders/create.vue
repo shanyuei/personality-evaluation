@@ -242,7 +242,6 @@ const handleSubmit = async () => {
     })
 
     if (error.value) {
-      console.error('Payment failed:', error.value)
       // Using alert for simplicity, could be replaced with a toast
       return
     }
@@ -255,14 +254,12 @@ const handleSubmit = async () => {
       // router.push({ path: '/orders/success' })
     } else {
       // 处理 token 缺失的情况
-      console.error('Token not found in response')
       alert(t('pages.order.create.form.paymentError') || 'Payment failed. Please try again.')
     }
     
 
 
   } catch (err) {
-    console.error('Error submitting form:', err)
   } finally {
     isLoading.value = false
   }

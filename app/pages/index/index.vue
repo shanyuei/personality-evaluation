@@ -260,7 +260,6 @@ const reviews: Array<{ text: string; avatarUrl: string; name: string; role: stri
 }))
 
 const handleCTAClick = () => {
-    console.log('CTA button clicked')
 }
 
 const heroAvatars = Array.from({ length: 6 }, (_, i) => ({

@@ -29,8 +29,8 @@
                 class="uno-font-normal uno-text-[14px] md:uno-text-[16px] uno-text-[#4e5255] uno-leading-[20px] md:uno-leading-[24px] uno-mb-1">
                 <!-- {{ recommendArticles[0].author.name }}  -->
                 {{ recommendArticles[0].updatedBy.firstname + " " + recommendArticles[0].updatedBy.lastname }}
-                ·
-                {{ formatDate(recommendArticles[0].publishedAt, 'relative') }}
+                <!-- ·
+                {{ formatDate(recommendArticles[0].publishedAt, 'relative') }} -->
                 <!-- min -->
               </p>
               <h3
@@ -59,8 +59,8 @@
               <div class="uno-py-4">
                 <p class="uno-text-[16px] uno-text-gray-500 uno-mb-1">
                   {{ a.updatedBy.firstname + " " + a.updatedBy.lastname }}
-                  ·
-                  {{ formatDate(a.publishedAt, 'relative') }}
+                  <!-- ·
+                  {{ formatDate(a.publishedAt, 'relative') }} -->
                 </p>
                 <h4 class="uno-text-[20px] uno-font-500 uno-text-gray-900 uno-mb-2">{{ a.title }}</h4>
               </div>
@@ -93,7 +93,7 @@
                 <p
                   class="uno-font-normal uno-text-[16px] uno-text-[#4e5255] uno-leading-[24px] uno-mt-2 uno-line-clamp-2">
                   {{ a.updatedBy.firstname + " " + a.updatedBy.lastname }}
-                  · {{ formatDate(a.publishedAt, 'relative') }}
+                  <!-- · {{ formatDate(a.publishedAt, 'relative') }} -->
                 </p>
                 <h4 class="uno-font-medium uno-text-[24px] uno-text-[#011813] uno-leading-[33px] uno-line-clamp-2">{{
                   a.title }}</h4>

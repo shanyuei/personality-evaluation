@@ -17,8 +17,8 @@
           <p
             class="uno-font-normal uno-text-[14px] md:uno-text-[16px] uno-text-[#4e5255] uno-leading-[20px] md:uno-leading-[24px]">
             {{ article.updatedBy.firstname + " " + article.updatedBy.lastname }}
-            ·
-            {{ formatDate(article.publishedAt, 'relative') }}
+            <!-- ·
+            {{ formatDate(article.publishedAt, 'relative') }} -->
           </p>
           <h1
             class="uno-font-semibold uno-text-[28px] md:uno-text-[48px] uno-text-[#011813] uno-leading-[36px] md:uno-leading-[58px] uno-mt-8px">
@@ -106,7 +106,6 @@ const article = ref<Post>()
 const recentArticles = ref<Post[]>([])
 
 getArticleBySlug(slug.value).then(res => {
-  console.log('getArticleBySlug', res.data);
   article.value = res.data.value.data[0]
 })
 getLatestArticles().then(res => {

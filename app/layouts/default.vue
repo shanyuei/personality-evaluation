@@ -76,8 +76,6 @@ const showPageTopIcons = computed(() => {
   }
   return props.layoutShowPageTopIcons
 })
-console.log(useRouter().getRoutes())
-console.log(route,props)
 const showPageTopIcons3 = computed(() => {
   return route.meta.layoutShowPageTopIcons3 === true
 })
@@ -85,7 +83,6 @@ const showPageTopIcons3 = computed(() => {
 const pageTopIcon3Class = computed(() => {
   return (route.meta.layoutPageTopIcon3Class as string) || 'uno-top-252px uno-right-120px'
 })
-console.log(route?.meta?.title)
 const head = useLocaleHead()
 const title = computed(() => {
   if (route?.meta?.title) {

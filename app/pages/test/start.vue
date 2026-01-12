@@ -72,7 +72,6 @@ useSeoMeta({
   description: () => t('seo.test.start.description'),
 })
 const nextStep = () => {
-  console.log('nextStep', router.getRoutes())
   router.push(localePath({ name: 'test-step', query: { step: 1 } }))
 }
 </script>

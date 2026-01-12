@@ -121,7 +121,6 @@ const planConfig: Record<number, { key: string; badge?: string; billingFallback?
 const { data: plansData } = await getPlanList();
 
 const plans = computed(() => {
-  console.log('plansData:', plansData.value);
   const list = plansData.value?.data || [];
   return list.map((item: any) => {
     const config = planConfig[item.id] || { key: 'monthly' }; // Fallback to monthly key if unknown
@@ -144,7 +143,6 @@ const handleCreateOrder = async (plan: any) => {
     });
 
     if (error.value) {
-      console.error('Failed to create order:', error.value);
       // TODO: Show error notification
       return;
     }
@@ -162,7 +160,6 @@ const handleCreateOrder = async (plan: any) => {
       }));
     }
   } catch (err) {
-    console.error('Error in handleCreateOrder:', err);
   }
 };
 

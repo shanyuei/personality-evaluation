@@ -53,7 +53,6 @@ const goToReport = () => {
 }
 
 const downloadGuidebook = () => {
-  console.log('Download guidebook triggered')
 }
 </script>
 
