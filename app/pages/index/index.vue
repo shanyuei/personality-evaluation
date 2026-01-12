@@ -117,10 +117,10 @@
 
                     <!-- 三个小介绍卡片 -->
                     <div
-                        class="uno-grid uno-grid-cols-1 md:uno-grid-cols-3 uno-gap-3 sm:uno-gap-4 md:uno-gap-6 lg:uno-gap-8 uno-px-2 sm:uno-px-0">
+                        class="uno-grid uno-grid-cols-1 md:uno-grid-cols-3 uno-gap-[20px] uno-px-2 sm:uno-px-0">
                         <!-- 卡片循环 -->
                         <div v-for="(card, index) in whyCards" :key="index"
-                            class="uno-bg-[#F8F8F8] uno-border-solid uno-border-[#E7E7E8] uno-border uno-rounded-3xl uno-p-12px sm:uno-p-16px md:uno-p-24px uno-shadow-lg uno-relative">
+                            class="uno-bg-[#F8F8F8] uno-border-solid uno-border-[#E7E7E8] uno-border-1 uno-rounded-[12px] uno-p-12px sm:uno-p-16px md:uno-p-24px uno-relative uno-w-full md:uno-w-[384px] md:uno-h-[284px]">
                             <div class="uno-mb-2 sm:uno-mb-3 md:uno-mb-4" :class="card.iconColor">
                                 <!-- 图标 -->
                                 <NuxtImg :src="card.icon" :alt="card.alt" width="32" height="32"
