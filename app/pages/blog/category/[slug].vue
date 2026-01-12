@@ -104,7 +104,7 @@
             <button
               :class="!hasMoreOther ? 'uno-opacity-50 uno-cursor-not-allowed uno-border-[var(--ui-border)] uno-text-[var(--ui-muted-foreground)]' : ''"
               :disabled="!hasMoreOther"
-              class="uno-h-[40px] uno-px-24px uno-rounded-[999px] uno-bg-transparent uno-border uno-border-[var(--color-pink-1)] uno-text-[var(--color-pink-1)] uno-font-['Outfit'] uno-font-medium hover:uno-opacity-80"
+              class="uno-inline-flex uno-items-center uno-justify-center  uno-h-[56px] uno-py-16px uno-px-24px uno-rounded-[1000px] uno-bg-transparent uno-border-2 uno-border-[var(--ui-primary)] uno-text-[var(--ui-primary)] uno-font-['Outfit'] uno-font-medium"
               @click="loadMoreData">
               {{ $t('pages.blog.loadMore') }}
             </button>
@@ -131,7 +131,7 @@
           <!-- Recent Blogs -->
           <div class="uno-rounded-2xl uno-mb-6">
             <h3 class="uno-text-[24px] uno-font-semibold uno-text-gray-900 uno-mb-4">{{ $t('pages.blog.sidebar.recent')
-              }}
+            }}
             </h3>
             <ul class="uno-space-y-4">
               <li v-for="recent in previewArticles" :key="recent.id">
@@ -167,7 +167,7 @@
               <span v-for="tag in tags" :key="tag.documentId" role="button" :class="[
                 'uno-text-[16px] uno-font-400 uno-px-3 uno-py-1 uno-rounded-[999px] uno-border uno-bg-transparent uno-text-[#4E5255] uno-cursor-pointer hover:uno-border-[var(--color-pink-1)] hover:uno-text-[#011813]',
                 activeTagSlug === tag.slug ? 'uno-border-[var(--color-pink-1)] !uno-text-[#011813]' : 'uno-border-[#E7E7E8]'
-              ]" @click="onTagClick(tag)">{{ tag.name }}</span>
+              ]" @click="onTagClick(tag)">#{{ tag.name }}</span>
             </div>
           </div>
 
