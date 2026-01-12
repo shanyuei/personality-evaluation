@@ -14,13 +14,15 @@
             <Swiper v-if="firstRow.length" :modules="[Autoplay]" :slides-per-view="1" :space-between="16" :loop="true"
               :speed="800" :autoplay="{ delay: 2500, disableOnInteraction: false }" :breakpoints="{
                 375: { slidesPerView: 1, spaceBetween: 16 },
-                640: { slidesPerView: 1.5, spaceBetween: 20 },
+                640: { slidesPerView: 2, spaceBetween: 20 },
                 768: { slidesPerView: 2, spaceBetween: 20 },
-                1024: { slidesPerView: 2.5, spaceBetween: 24 },
+                1024: { slidesPerView: 3, spaceBetween: 24 },
                 1280: { slidesPerView: 3, spaceBetween: 24 },
-                1440: { slidesPerView: 3.5, spaceBetween: 24 },
+                1440: { slidesPerView: 4, spaceBetween: 24 },
                 1600: { slidesPerView: 4, spaceBetween: 24 },
-                1920: { slidesPerView: 4.5, spaceBetween: 24 }
+                1920: { slidesPerView: 5, spaceBetween: 24 },
+                2200: { slidesPerView: 6, spaceBetween: 24 },
+                2560: { slidesPerView: 7, spaceBetween: 24 }
               }">
               <SwiperSlide v-for="(item, idx) in firstRow" :key="'f-' + idx">
                 <div class="uno-py-12px">
@@ -54,17 +56,19 @@
       <ClientOnly>
         <div class="">
           <div class="uno-relative uno-left-0 sm:uno-left-12 md:uno-left-48px">
-            <Swiper v-if="secondRow.length" :modules="[Autoplay]" :slides-per-view="1" :space-between="16" :loop="true"
+            <Swiper v-if="secondRow.length" :modules="[Autoplay]" :slides-per-view="1"  :loop="true"
               :speed="800" :autoplay="{ delay: 2500, disableOnInteraction: false, reverseDirection: true }"
               :breakpoints="{
                 375: { slidesPerView: 1, spaceBetween: 16 },
-                640: { slidesPerView: 1.5, spaceBetween: 20 },
+                640: { slidesPerView: 2, spaceBetween: 20 },
                 768: { slidesPerView: 2, spaceBetween: 20 },
-                1024: { slidesPerView: 2.5, spaceBetween: 24 },
+                1024: { slidesPerView: 3, spaceBetween: 24 },
                 1280: { slidesPerView: 3, spaceBetween: 24 },
-                1440: { slidesPerView: 3.5, spaceBetween: 24 },
+                1440: { slidesPerView: 4, spaceBetween: 24 },
                 1600: { slidesPerView: 4, spaceBetween: 24 },
-                1920: { slidesPerView: 4.5, spaceBetween: 24 }
+                1920: { slidesPerView: 5, spaceBetween: 24 },
+                2200: { slidesPerView: 6, spaceBetween: 24 },
+                2560: { slidesPerView: 7, spaceBetween: 24 }
               }">
               <SwiperSlide v-for="(item, idx) in secondRow" :key="'s-' + idx">
                 <div class="uno-py-12px">
