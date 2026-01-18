@@ -155,7 +155,7 @@
             </div>
           </div>
 
-          <NuxtImg src="/images/about/4.png" alt="Vision" width="538px" height="538px" />
+          <NuxtImg src="/images/about/4.png" alt="Vision" width="600px" height="540px" class="uno-position-relative uno-top-[10px]" />
         </div>
       </div>
     </section>

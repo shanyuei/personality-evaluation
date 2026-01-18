@@ -58,9 +58,8 @@
         </div>
         <!-- 第四块 介绍区域 -->
         <div class="page-container uno-intro-section uno-py-12 sm:uno-py-16 md:uno-py-20 lg:uno-py-24">
-            <div class="uno-px-4">
                 <!-- Why You Should Take the Test 部分 -->
-                <div class="uno-mb-12 sm:uno-mb-16 md:uno-mb-20 lg:uno-mb-24">
+                <div class="uno-mb-12 sm:uno-mb-16 md:uno-mb-120px lg:uno-mb-120px">
                     <div class="uno-max-w-[800px] uno-mx-auto">
                         <h2
                             class="uno-text-[#011813] uno-text-2xl sm:uno-text-3xl md:uno-text-4xl lg:uno-text-5xl uno-font-['Outfit'] uno-text-center uno-font-semibold uno-m-b-6px sm:uno-m-b-8px md:uno-m-b-12px">
@@ -74,7 +73,7 @@
 
                     <!-- 主要介绍卡片 -->
                     <div
-                        class="uno-shadow-lg uno-mb-6 sm:uno-mb-8 md:uno-mb-10 lg:uno-mb-12 uno-w-full uno-bg-[#F8F8F8] uno-border-solid uno-border-[#E7E7E8] uno-border uno-rounded-[32px] uno-p-[24px]  uno-relative uno-overflow-hidden">
+                        class="uno-shadow-lg uno-mb-6 sm:uno-mb-8 md:uno-mb-24px lg:uno-mb-24px uno-w-full uno-bg-[#F8F8F8] uno-border-solid uno-border-[#E7E7E8] uno-border uno-rounded-[32px] uno-p-[24px]  uno-relative uno-overflow-hidden">
 
                         <div class="uno-flex uno-flex-col md:uno-flex-row uno-items-center uno-gap-8 md:uno-gap-12">
                             <!-- Left Content -->
@@ -136,7 +135,7 @@
                 </div>
 
                 <!-- How Does It Work 部分 -->
-                <div class="uno-flex uno-flex-col md:uno-flex-row uno-gap-8 sm:uno-gap-12 uno-items-center">
+                <div class="uno-flex uno-flex-col md:uno-flex-row uno-gap-8 sm:uno-gap-12 uno-items-center uno-pt-120px">
                     <!-- 左侧：标题、描述和按钮 -->
                     <div class="uno-w-full md:uno-w-1/2">
                         <h2
@@ -178,7 +177,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
 
         <!-- 第五块 What You Will Receive 区域 -->
