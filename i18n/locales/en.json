@@ -745,7 +745,8 @@
       "questions": "questions",
       "completed": "Completed",
       "tryAgain": "Try again",
-      "lessons": "lessons"
+      "lessons": "lessons",
+      "testDetail": "Read more"
     },
     "courses": {
       "title": "Courses",

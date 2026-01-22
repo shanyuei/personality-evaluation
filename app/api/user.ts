@@ -23,3 +23,7 @@ export const updatePassword = (data: { old_password?: string, new_password?: str
 export const getUserTestInfo = () => {
   return useGetFetch<any>(`/user/personal_info`)
 }
+
+export const postUserTestInfo = (data: { dominant_type?: number, dominant_types?: number[] }) => {
+  return usePostFetch<any>(`/user/personal_info`, data)
+}

@@ -19,36 +19,37 @@
             </div>
             <div class="uno-flex uno-flex-col uno-items-start uno-gap-1">
               <div class="uno-text-[#4E5255] uno-text-xs uno-font-['Outfit'] uno-leading-normal">{{
-                $t('pages.profile.type') }} 7</div>
+                $t('pages.profile.type') }} {{ profile?.type }}</div>
               <div class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{
-                $t('pages.profile.typeName') }}</div>
+                profile?.type_name }}</div>
             </div>
-            <div class="uno-h-[2px] uno-bg-[#4E5255]"></div>
+            <div class="uno-h-[2px] uno-bg-[#4E5255]" />
           </div>
-          <p class="uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-leading-normal uno-text-left uno-max-w-md">
-            {{ $t('profile.intro') }}
+          <p
+            class="uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-leading-normal uno-text-left uno-max-w-md uno-line-clamp-8 uno-overflow-hidden uno-text-ellipsis">
+            {{ profile?.type_text }}
           </p>
           <div>
-            <UButton :ui="UButtonTheme" class="uno-w-full md:uno-w-[151px]">{{ $t('pages.profile.readMore') }}</UButton>
+            <UButton :ui="UButtonTheme" class="uno-w-full md:uno-w-[151px]">{{ $t('pages.profile.testDetail') }}
+            </UButton>
           </div>
         </div>
         <div>
           <h3 class="uno-text-[#011813] uno-text-lg uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{
             $t('pages.profile.totalScore') }}</h3>
           <div class="uno-mt-3 uno-space-y-3">
-            <div v-for="bar in scoreBars" :key="bar.label" class="uno-flex uno-items-center uno-gap-3">
+            <div v-for="bar in typeScores" :key="bar.label" class="uno-flex uno-items-center uno-gap-3">
               <span
                 class="uno-w-[28px] uno-h-[28px] uno-flex uno-justify-center uno-items-center uno-flex-col uno-gap-[8.75px] uno-py-[3.5px] uno-px-[11.37px] uno-bg-[#F0F0F0] uno-rounded-[14px] uno-overflow-hidden uno-text-[#4E5255] uno-text-[14px] uno-font-['Outfit'] uno-font-medium uno-leading-normal">{{
-                bar.num }}</span>
-              <span class="uno-w-28 uno-text-sm uno-text-[#4E5255] uno-font-['Outfit'] uno-leading-normal">{{ bar.label
-                }}</span>
+                  bar.key }}</span>
+              <span class="uno-w-28 uno-text-sm uno-text-[#4E5255] uno-font-['Outfit'] uno-leading-normal">{{ bar.value
+              }}</span>
               <div class="uno-flex-1 uno-h-2 uno-rounded-full uno-bg-[var(--ui-input)]">
                 <div class="uno-h-2 uno-rounded-full"
-                  :style="{ width: bar.value + '%', background: bar.label === 'Individualist' ? '#E786DF' : bar.num === 2 ? '#F5CEA4' : bar.num === 5 ? '#B57AF5' : bar.num === 8 ? '#67DCA9' : bar.num === 3 ? '#E97274' : bar.num === 9 ? '#C7EB78' : bar.num === 6 ? '#7E6EE7' : bar.num === 1 ? '#F4DA8F' : '#8FADF6' }">
-                </div>
+                  :style="{ width: bar.value + '%', background: bar.key === 'Individualist' ? '#E786DF' : bar.key === 2 ? '#F5CEA4' : bar.key === 5 ? '#B57AF5' : bar.key === 8 ? '#67DCA9' : bar.key === 3 ? '#E97274' : bar.key === 9 ? '#C7EB78' : bar.key === 6 ? '#7E6EE7' : bar.key === 1 ? '#F4DA8F' : '#8FADF6' }" />
               </div>
               <span class="uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-leading-normal">{{ bar.value
-                }}%</span>
+              }}%</span>
             </div>
             <!-- <div class="uno-h-[2px] uno-bg-[#4E5255]"></div> -->
           </div>
@@ -61,134 +62,119 @@
     </section>
 
     <div class="uno-mt-4 uno-flex uno-gap-2 uno-flex-wrap uno-justify-center">
-      <button v-for="tab in tabs" :key="tab.id"
-        :class="[
-          'uno-px-4 uno-py-2 uno-h-48px uno-rounded-full uno-font-\'Outfit\' uno-text-sm',
-          activeTab === tab.id
-            ? 'uno-bg-[var(--ui-primary)] uno-text-white'
-            : 'uno-bg-transparent uno-text-[var(--ui-primary)] uno-border uno-border-[var(--ui-primary)]'
-        ]"
-        @click="activeTab = tab.id">{{ tab.label }}</button>
+      <button v-for="tab in tabs" :key="tab.id" :class="[
+        'uno-px-4 uno-py-2 uno-h-48px uno-rounded-full uno-font-\'Outfit\' uno-text-sm',
+        activeTab === tab.id
+          ? 'uno-bg-[var(--ui-primary)] uno-text-white'
+          : 'uno-bg-transparent uno-text-[var(--ui-primary)] uno-border uno-border-[var(--ui-primary)]'
+      ]" @click="activeTab = tab.id">{{ tab.label }}</button>
     </div>
 
-    <section
-      class="uno-mt-4 uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)]">
-      <div class="uno-p-6 md:uno-p-8">
-        <h2 class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{
-          $t('pages.testDetail.core.title') }}</h2>
-        <div class="uno-grid uno-gap-6 md:uno-grid-cols-2">
-          <div v-for="i in 8" :key="i" class="uno-space-y-2">
-            <h3 class="uno-text-[#011813] uno-text-lg uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{
-              $t('pages.testDetail.core.cardTitle') }}</h3>
-            <p class="uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-leading-normal">{{ $t('profile.optimisticDesc') }}</p>
+    <template v-if="activeTab === 'core'">
+      <section
+        class="uno-mt-4 uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)]">
+        <div class="uno-p-6 md:uno-p-8">
+          <h2
+            class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2] uno-mb-24px">
+            {{
+              profile?.characteristics?.core?.title }}</h2>
+          <div class="uno-grid uno-gap-6 md:uno-grid-cols-2">
+            <div v-for="i in profile?.characteristics?.core?.list" :key="i" class="uno-space-y-2">
+              <h3 class="uno-text-[#011813] uno-text-lg uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{
+                i.title }}</h3>
+              <p class="uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-leading-normal">{{ i.text }}</p>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section
-      class="uno-mt-6 uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)]">
-      <div class="uno-p-6 md:uno-p-8 uno-space-y-6">
-        <h2 class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{
-          $t('pages.personalityDetail.subtypes.title') }}</h2>
-        <p class="uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-leading-normal">{{ $t('profile.subtypesIntro') }}</p>
-        <div class="uno-grid uno-gap-6 md:uno-grid-cols-3">
-          <div class="uno-space-y-2">
-            <h3 class="uno-text-[#011813] uno-text-lg uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{
-              $t('pages.personalityDetail.subtypes.sp') }}</h3>
-            <p class="uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-leading-normal">{{
-              $t('pages.personalityDetail.subtypes.spDesc') }}</p>
+      </section>
+      <section
+        class="uno-mt-6 uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)]">
+        <div class="uno-p-6 md:uno-p-8 uno-space-y-6">
+          <h2 class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{
+            profile?.subtypes?.title }}</h2>
+          <p class="uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-leading-normal">{{ profile?.subtypes?.summary
+          }}</p>
+          <div class="uno-grid uno-gap-6 md:uno-grid-cols-3">
+            <div v-for="i in profile?.subtypes?.list" :key="i" class="uno-space-y-2">
+              <h3 class="uno-text-[#011813] uno-text-lg uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{
+                i.title }}</h3>
+              <p class="uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-leading-normal">{{
+                i.text }}</p>
+            </div>
           </div>
-          <div class="uno-space-y-2">
-            <h3 class="uno-text-[#011813] uno-text-lg uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{
-              $t('pages.personalityDetail.subtypes.social') }}</h3>
-            <p class="uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-leading-normal">{{
-              $t('pages.personalityDetail.subtypes.socialDesc') }}</p>
-          </div>
-          <div class="uno-space-y-2">
-            <h3 class="uno-text-[#011813] uno-text-lg uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{
-              $t('pages.personalityDetail.subtypes.oneToOne') }}</h3>
-            <p class="uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-leading-normal">{{
-              $t('pages.personalityDetail.subtypes.oneToOneDesc') }}</p>
-          </div>
-        </div>
-        <div class="uno-flex uno-justify-center">
-          <UButton :ui="UButtonTheme" class="uno-w-full md:uno-w-[151px]">{{ $t('pages.personalityDetail.subtypes.cta')
+          <div class="uno-flex uno-justify-center">
+            <UButton :ui="UButtonTheme" class="uno-w-full md:uno-w-[151px]">{{
+              $t('pages.personalityDetail.subtypes.cta')
             }}</UButton>
-        </div>
-      </div>
-    </section>
-
-    <section
-      class="uno-mt-6 uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)]">
-      <div class="uno-p-6 md:uno-p-8 uno-space-y-4">
-        <h2 class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{
-          $t('pages.personalityDetail.conclusion.title') }}</h2>
-        <p class="uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-leading-normal">{{ $t('profile.conclusion') }}</p>
-      </div>
-    </section>
-
-    <section
-      class="uno-mt-6 uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)]">
-      <div class="uno-p-6 md:uno-p-8 uno-space-y-6">
-        <h2 class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{
-          $t('pages.personalityDetail.growth.title') }}</h2>
-
-        <div class="uno-grid uno-gap-6 md:uno-grid-cols-3">
-          <div class="uno-space-y-3">
-            <div
-              class="uno-w-10 uno-h-10 uno-rounded-full uno-border uno-border-[var(--ui-border)] uno-flex uno-items-center uno-justify-center uno-text-[var(--ui-foreground)] uno-font-semibold">
-              1</div>
-            <h3 class="uno-text-[#011813] uno-text-lg uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{
-              $t('pages.personalityDetail.growth.items.i1.title') }}</h3>
-            <p class="uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-leading-normal">{{
-              $t('pages.personalityDetail.growth.items.i1.body') }}</p>
-            <AppLink :to="'/courses'" class="uno-inline-block">
-              <UButton :ui="UButtonTheme" class="uno-w-full md:uno-w-[151px]">{{
-                $t('pages.personalityDetail.growth.ctaCourses') }}</UButton>
-            </AppLink>
-          </div>
-
-          <div class="uno-space-y-3">
-            <div
-              class="uno-w-10 uno-h-10 uno-rounded-full uno-border uno-border-[var(--ui-border)] uno-flex uno-items-center uno-justify-center uno-text-[var(--ui-foreground)] uno-font-semibold">
-              2</div>
-            <h3 class="uno-text-[#011813] uno-text-lg uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{
-              $t('pages.personalityDetail.growth.items.i2.title') }}</h3>
-            <p class="uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-leading-normal">{{
-              $t('pages.personalityDetail.growth.items.i2.body') }}</p>
-          </div>
-
-          <div class="uno-space-y-3">
-            <div
-              class="uno-w-10 uno-h-10 uno-rounded-full uno-border uno-border-[var(--ui-border)] uno-flex uno-items-center uno-justify-center uno-text-[var(--ui-foreground)] uno-font-semibold">
-              3</div>
-            <h3 class="uno-text-[#011813] uno-text-lg uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{
-              $t('pages.personalityDetail.growth.items.i3.title') }}</h3>
-            <p class="uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-leading-normal">{{
-              $t('pages.personalityDetail.growth.items.i3.body') }}</p>
-            <AppLink :to="'/test'" class="uno-inline-block">
-              <UButton :ui="UButtonTheme" class="uno-w-full md:uno-w-[151px]">{{
-                $t('pages.personalityDetail.growth.ctaTests') }}</UButton>
-            </AppLink>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <FAQSection :title="$t('pages.personalityDetail.faq.title')"
-      :description="$t('pages.personalityDetail.faq.description')" :items="faqItems" :accordion="true"
-      :default-expanded-index="0" />
+      <section
+        class="uno-mt-6 uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)]">
+        <div class="uno-p-6 md:uno-p-8 uno-space-y-4">
+          <h2 class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{
+            profile.conclusion.title }}</h2>
+          <p class="uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-leading-normal">{{ profile.conclusion.text }}
+          </p>
+        </div>
+      </section>
+
+      <section
+        class="uno-mt-6 uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)]">
+        <div class="uno-p-6 md:uno-p-8 uno-space-y-6">
+          <h2 class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{
+            profile?.characteristics?.growth?.title }}</h2>
+
+          <div class="uno-grid uno-gap-6 md:uno-grid-cols-3">
+            <div v-for="(i, index) in profile?.characteristics?.growth?.list" :key="i" class="uno-space-y-3">
+              <div
+                class="uno-w-10 uno-h-10 uno-rounded-full uno-border uno-border-[var(--ui-border)] uno-flex uno-items-center uno-justify-center uno-text-[var(--ui-foreground)] uno-font-semibold">
+                {{ Number(index) + 1 }}</div>
+              <h3 class="uno-text-[#011813] uno-text-lg uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{
+                i.title }}</h3>
+              <p class="uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-leading-normal">
+                {{ i.text }}
+              </p>
+              <AppLink v-if="index != 1" :to="'/courses'" class="uno-inline-block">
+                <UButton :ui="UButtonTheme" class="uno-w-full md:uno-w-[151px]">{{
+                  $t('pages.personalityDetail.growth.ctaCourses') }}</UButton>
+              </AppLink>
+            </div>
+
+
+          </div>
+        </div>
+      </section>
+
+      <FAQSection :title="profile?.faq?.title" :items="profile?.faq?.list" :accordion="true"
+        :default-expanded-index="0" />
+    </template>
+
+
+    <section v-if="activeTab === 'motivation'" />
+
+
+
+
+    <section v-if="activeTab === 'relationships'" />
+    <section v-if="activeTab === 'work'" />
+    <section v-if="activeTab === 'stress'" />
+    <section v-if="activeTab === 'compatibility'" />
+
+
+
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
+import { getUserTestInfo } from '~/api/user'
 
 
 import UButtonTheme from '~/theme/UButton'
 definePageMeta({
-  layoutShowFooter:false,
+  layoutShowFooter: false,
   title: () => 'seo.profile.detail.title'
 })
 const name = 'liyangzhi'
@@ -199,6 +185,10 @@ useSeoMeta({
   description: () => t('seo.profile.detail.description'),
 })
 
+const profile = ref<any>({})
+const typeScores = ref<any>({})
+
+
 const tabs = [
   { id: 'core', label: useI18n().t('pages.testDetail.tab.core') },
   { id: 'motivation', label: useI18n().t('pages.testDetail.tab.motivation') },
@@ -208,6 +198,9 @@ const tabs = [
   { id: 'compatibility', label: useI18n().t('pages.testDetail.tab.compatibility') }
 ]
 const activeTab = ref('core')
+
+
+
 
 const scoreBars = [
   { num: 7, label: 'Enthusiast', value: 93, color: 'var(--ui-primary)' },
@@ -251,6 +244,18 @@ const faqItems = [
   { question: t('pages.personalityDetail.faq.q4'), answer: t('pages.personalityDetail.faq.a4') },
   { question: t('pages.personalityDetail.faq.q5'), answer: t('pages.personalityDetail.faq.a5') }
 ]
+getUserTestInfo().then(res => {
+  console.log(res.data.value.data)
+  profile.value = res.data.value.data.profile;
+  const percentages = res.data.value.data.percentages
+  typeScores.value = Object.entries(res.data.value.data.type_scores).map(([key, value]) => ({
+    label: key,
+    key: Number(key),
+    value,
+    percentage: percentages[key]
+  })).sort((a, b) => b.percentage - a.percentage);
+  console.log(typeScores.value)
+})
 </script>
 
 <style scoped></style>

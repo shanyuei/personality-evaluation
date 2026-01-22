@@ -135,6 +135,7 @@ const selectedPlan = ref('yearly');
 
 const handleCreateOrder = async (plan: any) => {
   const reportId = route.query.reportId as string || '';
+  console.log('reportId', reportId,route);
 
   try {
     const { data, error } = await createOrder({

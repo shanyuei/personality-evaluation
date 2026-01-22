@@ -23,7 +23,7 @@
                   class="uno-w-full uno-flex uno-justify-between uno-items-center uno-flex-row" @click="toggle(idx)">
                   <p
                     class="uno-text-[#009D77] uno-text-xl md:uno-text-2xl uno-font-['Outfit'] uno-text-center uno-font-medium">
-                    {{ item.question }}
+                    {{ item.question||item.title }}
                   </p>
                   <svg class="uno-w-6 uno-h-6 uno-min-w-6 uno-min-h-6 uno-flex-shrink-0"
                     xmlns="http://www.w3.org/2000/svg" uno-xmlns:xlink="http://www.w3.org/1999/xlink" fill="none"
@@ -45,7 +45,7 @@
                 <div class="uno-flex uno-justify-start uno-items-start">
                   <p 
                     class="uno-self-stretch uno-text-[#4E5255] uno-font-['Outfit'] uno-break-words">
-                    {{ item.answer }}
+                    {{ item.answer||item.text }}
                   </p>
                   <div class="uno-w-6 uno-h-6 uno-min-w-6 uno-min-h-6 uno-flex-shrink-0"></div>
                 </div>
@@ -57,7 +57,7 @@
               class="uno-flex uno-justify-between uno-items-center uno-flex-row uno-py-[20px] uno-px-[24px] uno-bg-[#FFFFFF]"
               @click="toggle(idx)">
               <span class="uno-text-[#011813] uno-text-xl md:uno-text-2xl uno-font-['Outfit'] uno-font-medium">
-                {{ item.question }}
+                {{ item.question||item.title }}
               </span>
               <svg class="uno-w-6 uno-h-6 uno-min-w-6 uno-min-h-6 uno-flex-shrink-0" xmlns="http://www.w3.org/2000/svg"
                 uno-xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" uno-version="1.1" width="24" height="24"
@@ -87,6 +87,8 @@
 interface FAQItem {
   question: string
   answer: string
+  title?: string
+  text?: string
 }
 
 interface Props {

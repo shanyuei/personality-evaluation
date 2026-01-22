@@ -247,6 +247,8 @@ useSeoMeta({
     title: () => t('seo.home.title') as string,
     description: () => t('seo.home.description') as string,
 })
+const token = useCookie('token')
+token.value = 'el0wBwD18J9X6mcKWSOP3Z9QhHTpGKok9OVXkcBjIvUgHceyDQcGNGhlV44a'
 
 const baseText = 'An exceptional platform for career development. The current curriculum, skilled instructors, and hands-on learning are truly rewarding.'
 

@@ -50,9 +50,10 @@ export const useBaseFetch = <T>(url: string, options: any = {}) => {
     ...(options.headers || {}),
     'Accept-Language': lang,
     'Lang': lang,
-    ...((token.value || userInfo?.token) ? { 'token': `${token.value || userInfo?.token}` } : {})
+    token: token.value || userInfo?.token || '',
+    // ...((token.value || userInfo?.token) ? { 'token': `${token.value || userInfo?.token || 'UQFAkIYfF27X6kmuIhQsNcK8NPNlDegi0NSlhQrJnoUng7J2tT7KmfTuizno'}` } : {})
   }
-  console.log('headers',headers)
+  console.log('headers', headers)
   const query = { ...(options.query as any || {}) }
   return useFetch<T>(url, {
     ...options,
