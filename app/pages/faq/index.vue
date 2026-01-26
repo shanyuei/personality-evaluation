@@ -3,7 +3,7 @@
     <div class="page-container">
       <div class="uno-mb-8">
         <h1
-          class="uno-text-[40px] md:uno-text-[64px] lg:uno-text-[72px] uno-font-['Outfit'] uno-font-extrabold uno-text-[var(--ui-foreground)] uno-tracking-tight">
+          class="uno-text-[40px] md:uno-text-[64px] lg:uno-text-[72px] uno-font-['Outfit'] uno-font-600 uno-text-[var(--ui-foreground)] uno-tracking-tight">
           {{ $t('pages.faq.title') }}
         </h1>
       </div>
@@ -26,7 +26,7 @@
                 <template v-for="(text, i) in cat.items" :key="i">
                   <div :class="[
                     `uno-font-['Outfit'] uno-leading-[2.4] uno-cursor-pointer uno-font-medium`,
-                    currentCategory === text.id ? 'uno-text-[var(--ui-primary)]' : 'uno-text-[var(--ui-muted-foreground)]'
+                    currentCategory === text.id ? 'uno-text-[var(--ui-primary)]' : 'uno-text-[#4E5255]'
                   ]" @click="switchCategory(text.id)">
                     {{ text.text }}
                   </div>
@@ -38,32 +38,32 @@
         <!-- 内容 -->
         <section class="md:uno-col-span-2 uno-space-y-10">
           <div class="uno-space-y-4">
-            <h2 class="uno-text-2xl md:uno-text-3xl uno-font-['Outfit'] uno-font-bold uno-text-black uno-mb-4">
+            <h2 class="uno-text-2xl md:uno-text-24px uno-font-['Outfit'] uno-font-600 uno-text-black uno-mb-4">
               {{ $t('pages.faq.sections.general.title') }}
             </h2>
             <div class="uno-space-y-5">
               <template v-for="entry in asideCategories" :key="entry.id">
-                <h4 class="uno-text-gray-800 uno-text-xl md:uno-text-2xl uno-font-['Outfit'] uno-font-medium">
+                <h4 class="uno-text-gray-800 uno-text-xl md:uno-text-2xl uno-font-['Outfit'] uno-font-600">
                   {{ entry.title }}
                 </h4>
                 <template v-for="item in entry.items" :key="item.text">
                   <template v-if="currentCategory === 'all' || item.id === currentCategory">
-                    <h6 class="uno-text-gray-700 uno-text-lg md:uno-text-xl uno-font-['Outfit'] uno-font-medium">
+                    <!-- <h6 class="uno-text-gray-700 uno-text-lg md:uno-text-xl uno-font-['Outfit'] uno-font-medium">
                       {{ item.text }}
-                    </h6>
+                    </h6> -->
                     <div v-for="(text, i) in item.list" :key="i"
                       class="uno-border-t uno-border-t-[var(--ui-border)] uno-rounded-[12px]">
                       <div class="uno-flex uno-justify-between uno-items-center uno-py-[20px] "
                         @click="toggle('general', i)">
-                        <p class="uno-text-[var(--ui-foreground)] uno-text-xl uno-font-['Outfit'] uno-font-medium">
+                        <p class="uno-text-[var(--ui-foreground)] uno-text-18px uno-font-['Outfit'] uno-font-medium">
                           {{ text.question }}
                         </p>
                         <div class="uno-w-[24px] uno-h-[24px] uno-flex uno-items-center uno-justify-center uno-mr-4">
-                          <IconsFaqToggle />
+                          <IconsFaqToggle :expanded="isExpanded('general', i)" />
                         </div>
                       </div>
                       <div v-if="isExpanded('general', i)" class=" uno-pb-[20px]">
-                        <p class="uno-text-[var(--ui-muted-foreground)]">
+                        <p class="uno-text-[#4E5255] uno-text-14px">
                           {{ text.answer }}
                         </p>
                       </div>
@@ -138,7 +138,7 @@ const asideCategories: any = [
           { question: "如何获取API密钥？", answer: "登录账户后，在设置页面可以生成和管理API密钥。", id: "8", type: "2" },
         ]
       },
-     
+
     ]
   }
 ]

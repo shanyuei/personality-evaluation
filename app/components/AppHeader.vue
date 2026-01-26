@@ -12,16 +12,16 @@
 
       <div class="uno-flex  uno-w-full">
         <!-- logo -->
-        <div class="uno-w-[249px] uno-flex uno-items-center  max-sm:uno-hidden">
+        <div class="uno-w-[249px] uno-flex uno-items-center uno-hidden max-sm:uno-hidden">
           <NuxtImg src="/theme/logo.png" width="249" height="40" alt="logo" />
         </div>
-        <div class="uno-w-[152px]  uno-items-center uno-hidden max-sm:uno-flex">
+        <div class="uno-w-[152px]  uno-items-center uno-hidden max-sm:uno-block">
           <NuxtImg src="/theme/logo-2.png" width="152" height="26" alt="logo" class="" />
         </div>
 
         <!-- 导航栏 -->
         <UNavigationMenu v-if="showMenu" :ui="{
-          link: `before:bg-[transparent!important] font-['Outfit'] text-center font-medium text-[16px] text-[#001813] data-[active]:text-[var(--color-pink-1)] hover:text-[var(--color-pink-1)]`,
+          link: 'before:bg-transparent font-Outfit text-center font-medium text-[16px] text-[#001813] data-[active]:text-[var(--color-pink-1)] hover:text-[var(--color-pink-1)]',
           item: 'ml-[18px] mr-[18px]'
         }" :items="itemsLocalized" class="uno-w-full uno-justify-center max-sm:uno-hidden" />
       </div>
@@ -44,16 +44,16 @@
         :ui="{ item: 'data-[disabled]:cursor-text data-[disabled]:select-text uno-px-3 uno-py-2', content: 'uno-p-1 uno-bg-white uno-ring-1 uno-ring-gray-200 uno-rounded-xl uno-shadow-lg uno-min-w-[200px]' }"
         :content="{ align: 'end', side: 'bottom', sideOffset: 8 }">
         <div class="uno-flex uno-items-center uno-gap-2 uno-cursor-pointer max-sm:uno-hidden">
-          <UIcon name="i-lucide-circle-user" class="uno-w-6 uno-h-6 uno-text-[var(--color-pink-1)]" />
-          <span class="uno-text-[var(--color-pink-1)] uno-font-['Outfit'] uno-font-medium uno-text-lg">{{
+          <UIcon name="i-lucide-circle-user" class="uno-w-28px uno-h-28px uno-text-[var(--color-pink-1)]" />
+          <span class="uno-text-[var(--color-pink-1)] uno-font-Outfit uno-font-medium uno-text-base">{{
             userStore.userInfo?.name || 'Account' }}</span>
           <UIcon name="i-heroicons-chevron-down-20-solid" class="uno-w-5 uno-h-5 uno-text-[var(--color-pink-1)]" />
         </div>
 
         <template #account="{ item }">
           <div class="uno-text-left">
-            <p class="uno-text-xs uno-font-['Outfit'] uno-text-[var(--ui-muted-foreground)]">Signed in as</p>
-            <p class="uno-truncate uno-font-medium uno-text-[var(--ui-foreground)] uno-font-['Outfit']">
+            <p class="uno-text-xs uno-font-Outfit uno-text-[var(--ui-muted-foreground)]">Signed in as</p>
+            <p class="uno-truncate uno-font-medium uno-text-[var(--ui-foreground)] uno-font-Outfit">
               {{ item.label }}
             </p>
           </div>
@@ -62,7 +62,7 @@
         <template #profile="{ item }">
           <div class="uno-flex uno-items-center uno-gap-2 uno-w-full" @click="onClick(item)">
             <UIcon :name="item.icon" class="uno-w-5 uno-h-5 uno-text-[var(--ui-muted-foreground)]" />
-            <span class="uno-truncate uno-font-['Outfit'] uno-text-[var(--ui-foreground)]">{{ item.label }}</span>
+            <span class="uno-truncate uno-font-Outfit uno-text-[var(--ui-foreground)]">{{ item.label }}</span>
           </div>
         </template>
       </UDropdownMenu>
@@ -75,12 +75,12 @@
       <div
         class="uno-flex uno-flex-col uno-items-start uno-gap-4 uno-p-24px uno-bg-[#FFFFFF] uno-border-[1px] uno-border-[#F0F0F0] uno-rounded-[16px] uno-w-[374px]">
         <UNavigationMenu orientation="vertical"
-          :ui="{ link: `before:bg-[transparent!important] font-['Outfit'] text-center font-medium text-[#011813] data-[active]:text-[var(--color-pink-1)] hover:text-[var(--color-pink-1)]`, item: 'line-height-[42px] min-h-[42px]' }"
+          :ui="{ link: 'before:bg-transparent font-Outfit text-center font-medium text-[#011813] data-[active]:text-[var(--color-pink-1)] hover:text-[var(--color-pink-1)]', item: 'line-height-[42px] min-h-[42px]' }"
           :items="itemsLocalized" class="uno-w-full" />
         <div>
           <AppArrowButton
             variant="outline"
-            class="uno-h-[48px] uno-gap-3 uno-py-1 uno-pr-1 uno-pl-[20px] uno-rounded-[100px] uno-w-full uno-font-['Outfit'] uno-font-medium"
+            class="uno-h-[48px] uno-gap-3 uno-py-1 uno-pr-1 uno-pl-[20px] uno-rounded-[100px] uno-w-full uno-font-Outfit uno-font-medium"
             :icon-size="40"
             :to="localePath('/auth/sign-in')"
             icon-src="/images/header/go-icon-1.png"
@@ -94,8 +94,10 @@
 
 </template>
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import { useUserStore } from '~/stores/modules/user';
+import { navigateTo, useCookie } from '#app';
+import { useLocalePath, useI18n } from '#i18n';
 
 const userStore = useUserStore();
 const token = useCookie('token');
