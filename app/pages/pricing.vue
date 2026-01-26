@@ -1,6 +1,6 @@
 <template>
   <div class="uno-font-['Outfit']">
-    
+
     <!-- Pricing Section -->
     <section class="page-container uno-pt-12 sm:uno-pt-16 md:uno-pt-20 uno-pb-12 sm:uno-pb-16 md:uno-pb-24">
       <div class="uno-text-center uno-mb-12 sm:uno-mb-16">
@@ -13,56 +13,51 @@
       </div>
 
       <div class="uno-grid uno-grid-cols-1 lg:uno-grid-cols-3 uno-gap-6 md:uno-gap-8 uno-items-start">
-        <div 
-          v-for="plan in plans" 
-          :key="plan.key"
+        <div v-for="plan in plans" :key="plan.key"
           class="uno-rounded-[24px] uno-p-6 sm:uno-p-8 uno-border uno-shadow-sm hover:uno-shadow-md uno-transition-all uno-cursor-pointer uno-relative uno-overflow-hidden"
           :class="[
-            selectedPlan === plan.key 
-              ? 'uno-bg-[#E8FAF5] uno-border-[#009D77] uno-shadow-lg' 
+            selectedPlan === plan.key
+              ? 'uno-bg-[#E8FAF5] uno-border-[#009D77] uno-shadow-lg'
               : 'uno-bg-white uno-border-[#E7E7E8]'
-          ]"
-          @click="selectedPlan = plan.key"
-        >
-          <div v-if="plan.badge" class="uno-absolute uno-top-6 uno-right-6 uno-bg-[#009D77] uno-text-[#011813] uno-text-sm uno-font-Outfit uno-font-[300] uno-px-3 uno-py-1 uno-rounded-full">
+          ]" @click="selectedPlan = plan.key">
+          <div v-if="plan.badge"
+            class="uno-absolute uno-top-6 uno-right-6 uno-bg-[#009D77] uno-text-[#011813] uno-text-sm uno-font-Outfit uno-font-[300] uno-px-3 uno-py-1 uno-rounded-full">
             {{ $t(plan.badge) }}
           </div>
-          
+
           <h3 class="uno-text-[24px] uno-font-Outfit uno-font-[600] uno-text-[#011813] uno-mb-2">{{ plan.name }}</h3>
           <!-- <p class="uno-text-[#4E5255] uno-text-sm uno-mb-6 uno-min-h-[40px]">{{ $t(`pages.pricing.plans.${plan.key}.description`) }}</p> -->
-          
+
           <div class="uno-flex uno-items-baseline uno-gap-1 uno-mb-1">
-            <span class="uno-text-[40px] uno-font-Outfit uno-font-bold uno-text-[#011813]">{{ plan.unit }}{{ plan.price }}</span>
+            <span class="uno-text-[40px] uno-font-Outfit uno-font-bold uno-text-[#011813]">{{ plan.unit }}{{ plan.price
+              }}</span>
             <!-- <span class="uno-text-[#4E5255] uno-text-sm">{{ $t(`pages.pricing.plans.${plan.key}.unit`) }}</span> -->
           </div>
           <!-- <div class="uno-text-xs uno-text-[#4E5255] uno-mb-6 uno-h-[20px]">
             {{ plan.billingFallback ? ($t('pages.ebooks.oneTime') || 'Auto-renews after 7 Days') : $t(`pages.pricing.plans.${plan.key}.billing`) }}
           </div> -->
 
-          <button 
-            :class="[
-              selectedPlan === plan.key
-                ? 'uno-bg-[#009D77] hover:uno-bg-[var(--color-green-2)] uno-text-white'
-                : 'uno-bg-[#009D77] hover:uno-bg-[var(--color-green-2)] uno-text-white'
-            ]"
+          <button :class="[
+            selectedPlan === plan.key
+              ? 'uno-bg-[#009D77] hover:uno-bg-[var(--color-green-2)] uno-text-white'
+              : 'uno-bg-[#009D77] hover:uno-bg-[var(--color-green-2)] uno-text-white'
+          ]"
             class="uno-w-full uno-mt-6 uno-h-[48px] uno-rounded-[12px] uno-font-Outfit uno-font-bold uno-text-[18px] uno-mb-8 uno-transition-colors"
-            @click.stop="handleCreateOrder(plan)"
-          >
+            @click.stop="handleCreateOrder(plan)">
             {{ $t(`pages.pricing.plans.${plan.key}.button`) }}
           </button>
 
           <div class="uno-space-y-4">
-            <div class="uno-text-sm uno-font-Outfit uno-font-normal uno-text-[#8D8E8F] uno-tracking-wider uno-uppercase">PUBLISHING</div>
+            <div
+              class="uno-text-sm uno-font-Outfit uno-font-normal uno-text-[#8D8E8F] uno-tracking-wider uno-uppercase">
+              PUBLISHING</div>
             <ul class="uno-space-y-3">
-              <li v-for="(feat, i) in features" :key="i" class="uno-flex uno-items-center uno-justify-between uno-gap-3">
-                <span class="uno-text-[#4E5255] uno-text-sm uno-font-Outfit" :class="{ 'uno-text-[#011813]': selectedPlan === plan.key }">{{ feat }}</span>
-                <NuxtImg 
-                  src="/images/pricing/1.png" 
-                  alt="Feature Included" 
-                  class="uno-w-5 uno-h-5 uno-object-contain"
-                  loading="lazy"
-                  format="webp"
-                />
+              <li v-for="(feat, i) in features" :key="i"
+                class="uno-flex uno-items-center uno-justify-between uno-gap-3">
+                <span class="uno-text-[#4E5255] uno-text-sm uno-font-Outfit"
+                  :class="{ 'uno-text-[#011813]': selectedPlan === plan.key }">{{ feat }}</span>
+                <NuxtImg src="/images/pricing/1.png" alt="Feature Included" class="uno-w-5 uno-h-5 uno-object-contain"
+                  loading="lazy" format="webp" />
               </li>
             </ul>
           </div>
@@ -82,13 +77,10 @@
       </div>
 
       <div class="uno-grid uno-grid-cols-1 md:uno-grid-cols-2 lg:uno-grid-cols-3 uno-gap-6">
-        <div v-for="(item, idx) in whyItems" :key="idx" class="uno-bg-white uno-rounded-[24px] uno-p-8 uno-text-center uno-border uno-border-[#E7E7E8] uno-shadow-sm hover:uno-shadow-md uno-transition-shadow">
+        <div v-for="(item, idx) in whyItems" :key="idx"
+          class="uno-bg-white uno-rounded-[24px] uno-p-8 uno-text-center uno-border uno-border-[#E7E7E8] uno-shadow-sm hover:uno-shadow-md uno-transition-shadow">
           <!-- Image only, removed fallback icon logic to ensure replacement -->
-          <img 
-            :src="item.image"
-            :alt="item.title"
-            class="uno-w-16 uno-h-16 uno-mx-auto uno-mb-6 uno-object-contain"
-          />
+          <img :src="item.image" :alt="item.title" class="uno-w-16 uno-h-16 uno-mx-auto uno-mb-6 uno-object-contain" />
           <h3 class="uno-text-[20px] uno-font-Outfit uno-font-[500] uno-text-[#011813] uno-mb-3">{{ item.title }}</h3>
           <p class="uno-text-[#4E5255] uno-text-base uno-font-Outfit">{{ item.desc }}</p>
         </div>
@@ -96,11 +88,8 @@
     </section>
 
     <!-- FAQ Section -->
-    <FAQSection 
-      :title="$t('pages.pricing.faq.title')" 
-      :description="$t('pages.pricing.faq.subtitle')"
-      :items="faqItems" 
-    />
+    <FAQSection :title="$t('pages.pricing.faq.title')" :description="$t('pages.pricing.faq.subtitle')"
+      :items="faqItems" />
 
   </div>
 </template>
@@ -111,6 +100,15 @@ import { useI18n } from 'vue-i18n';
 import FAQSection from '~/components/FAQSection.vue';
 import { getPlanList, createOrder } from '~/api/tests';
 
+definePageMeta({
+  title: () => 'seo.pricing.title',
+  layoutShowPageTopIcons: false,
+  layoutShowCurious: true,
+})
+useSeoMeta({
+  title: () => t('seo.ebooks.title') as string,
+  description: () => t('seo.ebooks.description') as string
+})
 // Base config to preserve UI logic (keys for i18n, badges)
 const planConfig: Record<number, { key: string; badge?: string; billingFallback?: boolean }> = {
   1: { key: 'weekly', billingFallback: true },
@@ -135,7 +133,7 @@ const selectedPlan = ref('yearly');
 
 const handleCreateOrder = async (plan: any) => {
   const reportId = route.query.reportId as string || '';
-  console.log('reportId', reportId,route);
+  console.log('reportId', reportId, route);
 
   try {
     const { data, error } = await createOrder({
@@ -244,16 +242,8 @@ const faqItems = computed(() => [
   }
 ]);
 
-useHead({
-  title: t('pages.pricing.title'),
-  meta: [
-    { name: 'description', content: t('pages.pricing.subtitle') }
-  ]
-})
-definePageMeta({
-    
-    layoutShowCurious: true,
-})
+
+
 </script>
 
 <style scoped>

@@ -1,7 +1,7 @@
 <template>
-  <div class="page-container uno-py-6">
+  <div class="uno-pt-6">
 
-    <div class="uno-flex uno-flex-col uno-items-center uno-gap-4">
+    <div class="page-container  uno-flex uno-flex-col uno-items-center uno-gap-32px">
       <div class="uno-w-[80px] uno-h-[80px] uno-flex uno-items-center uno-justify-center">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" version="1.1"
           width="80" height="80" viewBox="0 0 80 80">
@@ -15,13 +15,13 @@
         </svg>
       </div>
       <h1
-        class="uno-w-full uno-text-[#011813] uno-text-2xl md:uno-text-5xl uno-font-Outfit uno-text-center uno-font-semibold uno-leading-[1.2] uno-mb-8 md:uno-mb-12">
+        class="uno-w-full uno-text-[#011813] uno-text-2xl md:uno-text-5xl uno-font-Outfit uno-text-center uno-font-semibold uno-leading-[1.2] uno-mb-8 md:uno-mb-40px">
         {{ $t('pages.testIntro.title') }}</h1>
     </div>
-
-    <div class="uno-mt-6">
-      <div class="uno-flex  uno-justify-center uno-gap-6 md:uno-gap-8">
-        <div v-for="step in steps" :key="step.id" class="uno-w-full  uno-rounded-[24px] " :class="step.bgClass">
+    <div class="page-container ">
+      <div class="uno-flex  uno-justify-center uno-gap-6 md:uno-gap-24px">
+        <div v-for="step in steps" :key="step.id" class="uno-w-[384px] uno-h-[295px] uno-rounded-[24px] "
+          :class="step.bgClass">
           <div class="uno-inline-block uno-w-full uno-p-6 uno-space-y-2 uno-rounded-2xl" :class="step.innerBgClass">
             <div class="uno-flex uno-flex-col uno-items-center uno-gap-3">
               <span class="uno-w-24 uno-h-24 uno-rounded-full uno-flex uno-items-center uno-justify-center"
@@ -43,70 +43,81 @@
       </div>
     </div>
 
+    <!-- 背景图容器 -->
+    <div class="uno-relative uno-w-full uno-min-h-[600px] uno-bg-cover uno-bg-center uno-bg-no-repeat uno-mt-32px"
+      style="background-image: url('/images/test/7.png')">
 
+      <div class="page-container  uno-relative uno-z-10 uno-pb-12">
 
-    <!-- 进度条 -->
-    <div class="course-header md:!uno-w-[80%] md:!uno-max-w-[80%] uno-mx-auto uno-mt-4">
-      <div class="course-nav">
-        <div class="progress-percent">{{ 0 }}%</div>
-        <div class="question-count">{{ $t('pages.testIntro.progress.step', { current, total }) }}</div>
+        <!-- 进度条 -->
+        <div class="course-header md:!uno-w-[720px] md:!uno-max-w-[720px] uno-mx-auto ">
+          <div class="course-nav">
+            <div class="progress-percent">{{ 0 }}%</div>
+            <div class="question-count">{{ $t('pages.testIntro.progress.step', { current, total }) }}</div>
 
-      </div>
-      <div class="course-progress">
-        <div class="progress-bar" :style="{ width: 0 + '%' }" />
-      </div>
-    </div>
-
-    <!-- 评分说明 -->
-    <div class="uno-w-full md:uno-w-[80%] uno-mx-auto uno-mt-4">
-      <div class="uno-p-4 md:uno-p-6">
-        <h2
-          class="uno-text-[#011813] uno-text-base md:uno-text-lg uno-font-Outfit uno-text-center uno-font-semibold uno-leading-[1.2]">
-          {{ $t('pages.testIntro.instructions') }}</h2>
-        <div class="uno-flex uno-flex-row uno-items-baseline uno-justify-center uno-gap-0 uno-mt-4 uno-px-[5%]">
-          <div v-for="scale in scales" :key="scale.key"
-            class="uno-flex-1 uno-flex uno-flex-col uno-items-center uno-gap-1">
-            <div
-              class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px] uno-p-2.5 uno-border-solid uno-border-2"
-              :class="[scale.bgClass, scale.borderClass]" />
-            <span class="uno-text-xs uno-text-[#011813]">{{ $t(scale.labelKey) }}</span>
+          </div>
+          <div class="course-progress">
+            <div class="progress-bar" :style="{ width: 0 + '%' }" />
           </div>
         </div>
-      </div>
-    </div>
 
-    <!-- 问题卡片 -->
-    <div class="uno-w-full md:uno-w-[80%] uno-mx-auto uno-mt-4">
-      <div class="uno-space-y-4">
-        <div v-for="(q, qi) in questions" :key="qi"
-          class="uno-bg-white uno-rounded-[16px] md:uno-rounded-[20px] uno-border uno-border-[var(--ui-border)] uno-shadow-[0px_2px_8px_rgba(0,0,0,0.06)]">
-          <div class="uno-p-4 md:uno-p-6">
-            <p
-              class="uno-text-[#011813] uno-font-Outfit uno-text-base md:uno-text-lg uno-text-center uno-leading-[1.2] uno-mb-8">
-              {{ q }}</p>
-            <div
-              class="uno-flex uno-flex-row uno-items-center uno-justify-center uno-gap-2 md:uno-gap-[20px] uno-mt-4 uno-px-[5%]">
+        <!-- 评分说明 -->
+        <div class="uno-w-full md:uno-w-[720px] uno-mx-auto">
+          <h2
+            class="uno-text-[#011813] uno-text-base md:uno-text-base uno-font-Outfit uno-text-center uno-font-semibold uno-leading-[1.2]">
+            {{ $t('pages.testIntro.instructions') }}</h2>
+          <div class="uno-p-4 md:uno-p-6 md:uno-pt-32px">
+            <div class="uno-flex uno-flex-row uno-items-baseline uno-justify-between uno-gap-0 uno-px-[5%]">
               <div v-for="scale in scales" :key="scale.key"
-                class="uno-flex-1 uno-flex uno-justify-center uno-items-center">
+                class="uno-w-[49px] uno-flex uno-flex-col uno-items-center uno-gap-1">
                 <div
                   class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px] uno-p-2.5 uno-border-solid uno-border-2"
                   :class="[scale.bgClass, scale.borderClass]" />
+                <span class="uno-text-xs uno-text-[#011813]">{{ $t(scale.labelKey) }}</span>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- 问题卡片 -->
+        <div class="uno-w-full md:uno-w-[720px] uno-mx-auto uno-mt-4">
+          <div class="uno-space-y-4">
+            <div v-for="(q, qi) in questions" :key="qi"
+              class="uno-bg-white uno-rounded-[16px] md:uno-rounded-[20px] uno-border uno-border-[var(--ui-border)] uno-shadow-[0px_2px_8px_rgba(0,0,0,0.06)]">
+              <div class="uno-p-4 md:uno-p-6">
+                <p
+                  class="uno-text-[#011813] uno-font-Outfit uno-text-base md:uno-text-lg uno-text-center uno-leading-[1.2] uno-mb-8">
+                  {{ q }}</p>
+                <div
+                  class="uno-flex uno-flex-row uno-items-center uno-justify-center uno-gap-2 md:uno-gap-[20px] uno-mt-4 uno-px-[5%]">
+                  <template v-for="i in [1, 2, 3, 4, 5]" :key="i">
+                    <div class="uno-flex-1 uno-flex uno-justify-center uno-items-center">
+
+                      <div class="uno-flex-1 uno-flex uno-justify-center uno-items-center">
+                        <div
+                          class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px]   uno-border-solid  uno-border-2"
+                          :class="[i === 1 ? 'uno-bg-[#F4D0CB] uno-border-[#F6BAB2]' : i === 2 ? 'uno-bg-[#F1DACE] uno-border-[#F5CEB6]' : i === 3 ? 'uno-bg-[#F0F0F0] uno-border-[#D8D8D8]' : i === 4 ? 'uno-bg-[#C6EAD8] uno-border-[#9FE2AA]' : 'uno-bg-[#B3E1D6] uno-border-[#88D9BA]']">
+                          <IconsSad v-if="qi === 2" />
+                        </div>
+                      </div>
+                    </div>
+                  </template>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 提示文本 -->
+          <p class="uno-text-[#8D8E8F] uno-font-Outfit uno-text-sm uno-text-center uno-leading-[1.2] uno-mt-6">
+            {{
+              $t('pages.testIntro.notice') }}</p>
+        </div>
+
+        <!-- 提交按钮 -->
+        <div class="uno-w-full md:uno-w-[720px] uno-mx-auto uno-mt-6 uno-flex uno-justify-center uno-mb-12">
+          <UButton :ui="UButtonTheme" @click="nextStart">{{ $t('pages.testIntro.next') }}</UButton>
+        </div>
       </div>
-
-      <!-- 提示文本 -->
-      <p
-        class="uno-text-[#8D8E8F] uno-font-Outfit uno-text-sm uno-text-center uno-leading-[1.2] uno-mt-6">
-        {{
-          $t('pages.testIntro.notice') }}</p>
-    </div>
-
-    <!-- 提交按钮 -->
-    <div class="uno-w-full md:uno-w-[80%] uno-mx-auto uno-mt-6 uno-flex uno-justify-center uno-mb-12">
-      <UButton :ui="UButtonTheme" @click="nextStart">{{ $t('pages.testIntro.next') }}</UButton>
     </div>
   </div>
 </template>
@@ -122,7 +133,8 @@ const questionsStore = useQuestionsStore()
 
 definePageMeta({
   layoutShowFooter: false,
-  title: () => 'seo.test.title'
+  title: () => 'seo.test.title',
+  layoutShowPageTopIcons: false,
 })
 const { t } = useI18n()
 const router = useRouter()

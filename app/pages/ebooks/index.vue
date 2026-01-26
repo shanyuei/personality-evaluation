@@ -1,32 +1,30 @@
 <template>
   <main class="uno-py-10 uno-px-4 sm:uno-px-6">
     <div class="page-container uno-mx-auto">
-        <div class="uno-flex uno-flex-col md:uno-flex-row uno-gap-6 uno-w-full uno-mx-auto">
-            <section class="uno-w-full md:uno-w-[66.66%] md:uno-shrink-0">
-            <h2
-              class="uno-text-[32px] uno-font-Outfit uno-font-[700] uno-text-[var(--ui-foreground)] uno-mb-4">
-              {{ $t('pages.ebooks.myTitle') }}</h2>
-            <div class="uno-space-y-6">
-              <div v-for="book in primaryBooks" :key="book.id"
-                class="uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)]">
-                <EbooksMyCard :title="book.title" :description="book.description" :image="book.image" />
-              </div>
+      <div class="uno-flex uno-flex-col md:uno-flex-row uno-gap-6 uno-w-full uno-mx-auto">
+        <section class="uno-w-full md:uno-w-[66.66%] md:uno-shrink-0">
+          <h2 class="uno-text-[32px] uno-font-Outfit uno-font-[700] uno-text-[var(--ui-foreground)] uno-mb-4">
+            {{ $t('pages.ebooks.myTitle') }}</h2>
+          <div class="uno-space-y-6">
+            <div v-for="book in primaryBooks" :key="book.id"
+              class="uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)]">
+              <EbooksMyCard :title="book.title" :description="book.description" :image="book.image" />
             </div>
-          </section>
+          </div>
+        </section>
 
-          <section class="uno-w-full md:uno-w-[33.33%] md:uno-shrink-0">
-            <h2
-              class="uno-text-[32px] uno-font-Outfit uno-font-[700] uno-text-[var(--ui-foreground)] uno-mb-4">
-              {{ $t('pages.ebooks.otherTitle') }}</h2>
-            <div class="uno-space-y-6">
-              <div v-for="item in others" :key="item.id"
-                class="uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)]">
-                <EbooksOtherCard :title="item.title" :price="item.price" :original-price="item.originalPrice"
-                  :sale="item.sale" :image="item.image" />
-              </div>
+        <section class="uno-w-full md:uno-w-[33.33%] md:uno-shrink-0">
+          <h2 class="uno-text-[32px] uno-font-Outfit uno-font-[700] uno-text-[var(--ui-foreground)] uno-mb-4">
+            {{ $t('pages.ebooks.otherTitle') }}</h2>
+          <div class="uno-space-y-6">
+            <div v-for="item in others" :key="item.id"
+              class="uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)]">
+              <EbooksOtherCard :title="item.title" :price="item.price" :original-price="item.originalPrice"
+                :sale="item.sale" :image="item.image" />
             </div>
-          </section>
-        </div>
+          </div>
+        </section>
+      </div>
     </div>
   </main>
 </template>
@@ -36,7 +34,8 @@
 
 const { t } = useI18n()
 definePageMeta({
-  title: () => 'seo.ebooks.title'
+  title: () => 'seo.ebooks.title',
+  layoutShowPageTopIcons: false
 })
 useSeoMeta({
   title: () => t('seo.ebooks.title') as string,

@@ -23,10 +23,10 @@
           <NuxtImg src="/theme/layout/page-top-icon-2.png" width="163px" height="170px"
             class="uno-absolute uno-top-431px uno-left-133px uno-z-1" />
         </template>
-        <template v-if="showPageTopIcons3">
+        <div v-if="showPageTopIcons3" class="page-container relative">
           <NuxtImg  src="/theme/layout/page-top-icon-3.png" width="104" height="44"
             class="uno-absolute uno-z-1" :class="pageTopIcon3Class" />
-        </template>
+        </div>
 
 
 

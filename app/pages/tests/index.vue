@@ -107,7 +107,8 @@ const { t, locale } = useI18n()
 locale.value = 'en'
 definePageMeta({
  layoutShowFooter:false,
- title: () => 'seo.tests.title'
+ title: () => 'seo.tests.title',
+ layoutShowPageTopIcons: false
 })
 
 useSeoMeta({

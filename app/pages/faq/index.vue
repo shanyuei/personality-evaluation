@@ -87,7 +87,10 @@ import { reactive, ref } from 'vue'
 const { t } = useI18n()
 definePageMeta({
   layoutShowCurious: true,
-  title: () => 'seo.faq.title'
+  title: () => 'seo.faq.title',
+  layoutShowPageTopIcons: false,
+  layoutShowPageTopIcons3: true,
+  layoutPageTopIcon3Class: 'uno-top-160px uno-right-0'
 })
 
 useSeoMeta({
