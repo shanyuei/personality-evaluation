@@ -4,10 +4,10 @@
     <!-- Pricing Section -->
     <section class="page-container uno-pt-12 sm:uno-pt-16 md:uno-pt-20 uno-pb-12 sm:uno-pb-16 md:uno-pb-24">
       <div class="uno-text-center uno-mb-12 sm:uno-mb-16">
-        <h1 class="uno-text-[#011813] uno-text-3xl sm:uno-text-4xl md:uno-text-5xl uno-font-bold uno-mb-4 sm:uno-mb-6">
+        <h1 class="uno-text-[#011813] uno-text-[40px] uno-font-Outfit uno-font-[600] uno-mb-4 sm:uno-mb-6">
           {{ $t('pages.pricing.title') }}
         </h1>
-        <p class="uno-text-[#4E5255] uno-text-sm sm:uno-text-base md:uno-text-lg uno-max-w-3xl uno-mx-auto uno-px-4">
+        <p class="uno-text-[#4E5255] uno-text-sm uno-font-Outfit uno-max-w-3xl uno-mx-auto uno-px-4">
           {{ $t('pages.pricing.subtitle') }}
         </p>
       </div>
@@ -24,15 +24,15 @@
           ]"
           @click="selectedPlan = plan.key"
         >
-          <div v-if="plan.badge" class="uno-absolute uno-top-6 uno-right-6 uno-bg-[#009D77] uno-text-white uno-text-xs uno-font-bold uno-px-3 uno-py-1 uno-rounded-full">
+          <div v-if="plan.badge" class="uno-absolute uno-top-6 uno-right-6 uno-bg-[#009D77] uno-text-[#011813] uno-text-sm uno-font-Outfit uno-font-[300] uno-px-3 uno-py-1 uno-rounded-full">
             {{ $t(plan.badge) }}
           </div>
           
-          <h3 class="uno-text-xl uno-font-bold uno-text-[#011813] uno-mb-2">{{ plan.name }}</h3>
+          <h3 class="uno-text-[24px] uno-font-Outfit uno-font-[600] uno-text-[#011813] uno-mb-2">{{ plan.name }}</h3>
           <!-- <p class="uno-text-[#4E5255] uno-text-sm uno-mb-6 uno-min-h-[40px]">{{ $t(`pages.pricing.plans.${plan.key}.description`) }}</p> -->
           
           <div class="uno-flex uno-items-baseline uno-gap-1 uno-mb-1">
-            <span class="uno-text-4xl uno-font-bold uno-text-[#011813]">{{ plan.unit }}{{ plan.price }}</span>
+            <span class="uno-text-[40px] uno-font-Outfit uno-font-bold uno-text-[#011813]">{{ plan.unit }}{{ plan.price }}</span>
             <!-- <span class="uno-text-[#4E5255] uno-text-sm">{{ $t(`pages.pricing.plans.${plan.key}.unit`) }}</span> -->
           </div>
           <!-- <div class="uno-text-xs uno-text-[#4E5255] uno-mb-6 uno-h-[20px]">
@@ -40,22 +40,22 @@
           </div> -->
 
           <button 
-            @click.stop="handleCreateOrder(plan)"
-            class="uno-w-full uno-mt-6 uno-h-[48px] uno-rounded-[12px] uno-font-bold uno-mb-8 uno-transition-colors"
             :class="[
               selectedPlan === plan.key
                 ? 'uno-bg-[#009D77] hover:uno-bg-[var(--color-green-2)] uno-text-white'
                 : 'uno-bg-[#009D77] hover:uno-bg-[var(--color-green-2)] uno-text-white'
             ]"
+            class="uno-w-full uno-mt-6 uno-h-[48px] uno-rounded-[12px] uno-font-Outfit uno-font-bold uno-text-[18px] uno-mb-8 uno-transition-colors"
+            @click.stop="handleCreateOrder(plan)"
           >
             {{ $t(`pages.pricing.plans.${plan.key}.button`) }}
           </button>
 
           <div class="uno-space-y-4">
-            <div class="uno-text-xs uno-font-normal uno-text-[#8D8E8F] uno-tracking-wider uno-uppercase">PUBLISHING</div>
+            <div class="uno-text-sm uno-font-Outfit uno-font-normal uno-text-[#8D8E8F] uno-tracking-wider uno-uppercase">PUBLISHING</div>
             <ul class="uno-space-y-3">
               <li v-for="(feat, i) in features" :key="i" class="uno-flex uno-items-center uno-justify-between uno-gap-3">
-                <span class="uno-text-[#4E5255] uno-text-sm" :class="{ 'uno-text-[#011813]': selectedPlan === plan.key }">{{ feat }}</span>
+                <span class="uno-text-[#4E5255] uno-text-sm uno-font-Outfit" :class="{ 'uno-text-[#011813]': selectedPlan === plan.key }">{{ feat }}</span>
                 <NuxtImg 
                   src="/images/pricing/1.png" 
                   alt="Feature Included" 
@@ -73,10 +73,10 @@
     <!-- Why Our Test Stands Out -->
     <section class="page-container uno-py-12 sm:uno-py-16">
       <div class="uno-text-center uno-mb-12">
-        <h2 class="uno-text-[#011813] uno-text-2xl sm:uno-text-3xl md:uno-text-4xl uno-font-bold uno-mb-4">
+        <h2 class="uno-text-[#011813] uno-text-[48px] uno-font-Outfit uno-font-[600] uno-mb-4">
           {{ $t('pages.pricing.why.title') }}
         </h2>
-        <p class="uno-text-[#4E5255] uno-text-sm sm:uno-text-base uno-max-w-2xl uno-mx-auto">
+        <p class="uno-text-[#4E5255] uno-text-sm uno-font-Outfit uno-max-w-2xl uno-mx-auto">
           {{ $t('pages.pricing.why.subtitle') }}
         </p>
       </div>
@@ -89,8 +89,8 @@
             :alt="item.title"
             class="uno-w-16 uno-h-16 uno-mx-auto uno-mb-6 uno-object-contain"
           />
-          <h3 class="uno-text-lg uno-font-bold uno-text-[#011813] uno-mb-3">{{ item.title }}</h3>
-          <p class="uno-text-[#4E5255] uno-text-sm">{{ item.desc }}</p>
+          <h3 class="uno-text-[20px] uno-font-Outfit uno-font-[500] uno-text-[#011813] uno-mb-3">{{ item.title }}</h3>
+          <p class="uno-text-[#4E5255] uno-text-base uno-font-Outfit">{{ item.desc }}</p>
         </div>
       </div>
     </section>

@@ -5,36 +5,25 @@
         <div class="uno-flex uno-items-center uno-justify-center uno-mb-6">
         <NuxtImg
           src="/images/test/6.png"
-          class="uno-w-16 uno-h-16 uno-rounded-full"
+          class="uno-w-24 uno-h-24 uno-rounded-full"
           alt="Test icon"
         />
       </div>
 
         <h1
-          class="uno-text-[#011813] uno-text-2xl md:uno-text-5xl uno-font-['Outfit'] uno-text-center uno-font-semibold uno-leading-[1.2] uno-mb-4 md:uno-mb-6">
+          class="uno-text-[#011813] uno-text-2xl md:uno-text-5xl uno-font-Outfit uno-text-center uno-font-semibold uno-leading-[1.2] uno-mb-4 md:uno-mb-6">
           {{ $t('pages.testStart.title') }}</h1>
 
         <div class="uno-max-w-[880px] uno-mx-auto uno-space-y-4 uno-text-left">
-          <div class="uno-flex uno-items-center uno-gap-3">
-            <div class="uno-w-40px">
-              <IconsCheck :size="40" class="uno-mt-1" background-color="none" check-color="var(--ui-primary)" />
+          <div v-for="(step, index) in steps" :key="index" class="uno-flex uno-items-center uno-gap-3">
+            <div class="uno-w-24px">
+              <IconsCheck :size="24" class="uno-mt-1" background-color="none" check-color="var(--ui-primary)" />
             </div>
-            <p class="uno-text-[#4E5255] uno-text-sm uno-font-['Outfit']">
-              <span class="uno-font-semibold">
-                {{ $t('pages.testStart.format.title') }}
+            <p class="uno-text-[#4E5255] uno-text-[16px] uno-font-Outfit">
+              <span class="uno-font-[600]">
+                {{ step.title }}
               </span>
-              {{ $t('pages.testStart.format.body') }}
-            </p>
-          </div>
-          <div class="uno-flex uno-items-center uno-gap-3">
-            <div class="uno-w-40px">
-              <IconsCheck :size="40" class="uno-mt-1" background-color="none" check-color="var(--ui-primary)" />
-            </div>
-            <p class="uno-text-[#4E5255] uno-text-sm uno-font-['Outfit']">
-              <span class="uno-font-semibold">
-                {{ $t('pages.testStart.scoring.title') }}
-              </span>
-              {{ $t('pages.testStart.scoring.body') }}
+              {{ step.body }}
             </p>
           </div>
         </div>
@@ -48,7 +37,7 @@
         </div>
 
         <p
-          class="uno-w-full uno-max-w-[880px] uno-text-[#4E5255] uno-text-xs uno-font-['Outfit'] uno-text-center uno-leading-normal uno-mx-0 uno-mt-4">
+          class="uno-w-full uno-max-w-[880px] uno-text-[#4E5255] uno-text-xs uno-font-Outfit uno-text-center uno-leading-normal uno-mx-0 uno-mt-4">
           {{ $t('pages.testStart.disclaimer') }}</p>
       </div>
     </main>
@@ -58,10 +47,10 @@
 <script setup lang="ts">
 import UButtonTheme from '~/theme/UButton'
 
-
 const { t } = useI18n()
 const router = useRouter()
 const localePath = useLocalePath()
+
 definePageMeta({
   layoutShowFooter: false,
   title: () => 'seo.test.start.title'
@@ -71,6 +60,18 @@ useSeoMeta({
   title: () => t('seo.test.start.title'),
   description: () => t('seo.test.start.description'),
 })
+
+const steps = [
+  {
+    title: t('pages.testStart.format.title'),
+    body: t('pages.testStart.format.body')
+  },
+  {
+    title: t('pages.testStart.scoring.title'),
+    body: t('pages.testStart.scoring.body')
+  }
+]
+
 const nextStep = () => {
   router.push(localePath({ name: 'test-step', query: { step: 1 } }))
 }

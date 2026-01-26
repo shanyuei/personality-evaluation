@@ -3,7 +3,7 @@
     <div class="uno-w-full uno-max-w-[720px] uno-px-6 sm:uno-px-10">
       <!-- 登录表单（Nuxt UI） -->
       <div class="uno-rounded-[24px] uno-p-8 sm:uno-p-10">
-        <h1 class="uno-text-center uno-mb-10 uno-text-[#0F172A] uno-font-['Outfit'] uno-font-bold uno-text-4xl sm:uno-text-5xl">{{ $t('pages.auth.signIn.title') }}</h1>
+        <h1 class="uno-text-center uno-mb-10 uno-text-[#0F172A] uno-font-Outfit uno-font-[600] uno-text-4xl sm:uno-text-5xl">{{ $t('pages.auth.signIn.title') }}</h1>
 
         <UForm :state="{ email, password }" class="uno-space-y-6">
           <!-- Email -->
@@ -29,8 +29,8 @@
 
         <!-- Sign Up Link -->
         <div class="uno-flex uno-items-center uno-justify-between uno-mt-6">
-          <p class="uno-text-[#8d8e8f] uno-font-['Outfit']">{{ $t('pages.auth.signIn.noAccount') }}</p>
-          <AppLink :to="'/auth/sign-up'" class="uno-text-[#0F172A] hover:uno-text-[#4E5255] uno-font-['Outfit'] uno-underline uno-underline-offset-4">{{ $t('pages.auth.signIn.signUp') }}</AppLink>
+          <p class="uno-text-[#323233] uno-text-sm uno-font-Outfit">{{ $t('pages.auth.signIn.noAccount') }}</p>
+          <AppLink :to="'/auth/sign-up'" class="uno-text-[#323233] hover:uno-text-[#4E5255] uno-text-sm uno-font-Outfit uno-underline uno-underline-offset-4">{{ $t('pages.auth.signIn.signUp') }}</AppLink>
         </div>
       </div>
     </div>
