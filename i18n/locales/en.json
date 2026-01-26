@@ -515,7 +515,9 @@
       "notice": "All questions must be answered before you continue.",
       "cta": "Get Started",
       "ctaNext": "Next",
-      "ctaSubmit": "Submit"
+      "ctaSubmit": "Submit",
+      "step": "STEP",
+      "next": "Next"
     },
     "testStart": {
       "title": "Anger Management",

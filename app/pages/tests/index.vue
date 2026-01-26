@@ -2,10 +2,10 @@
   <div class="page-container uno-py-8 uno-px-4 md:uno-py-6 md:uno-px-6">
     <div class="uno-flex uno-gap-2 uno-flex-wrap uno-justify-center uno-mb-6">
       <UButton v-for="(f, i) in filters" :key="f.id"
-        class="uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-1 uno-py-2 uno-px-[16px] uno-text-xs md:uno-py-3 md:uno-px-[20px] md:uno-text-base uno-rounded-[100px] uno-font-['Outfit'] uno-font-medium"
-        :class="i === 0
-          ? 'uno-bg-[var(--ui-primary)] uno-text-[var(--ui-primary-foreground)]'
-          : 'uno-bg-white uno-text-[var(--ui-muted-foreground)] uno-border uno-border-solid uno-border-[var(--ui-border)]'"
+        class="uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-1 uno-py-2 uno-px-[16px] uno-h-[48px] uno-text-sm uno-font-Outfit uno-font-medium"
+        :class="activeFilter === f.id
+          ? 'uno-bg-[var(--ui-primary)] uno-text-[var(--ui-primary-foreground)] uno-rounded-[100px]'
+          : 'uno-bg-transparent uno-text-[var(--ui-muted-foreground)] uno-border uno-border-solid uno-border-[var(--ui-border)] uno-rounded-[100px]'"
         @click="activeFilter = f.id">{{ f.label }}</UButton>
     </div>
 
@@ -22,17 +22,17 @@
             {{ $t('pages.tests.hero.title') }}</h1>
           <div class="uno-flex uno-items-center uno-justify-between">
             <span
-              class="uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-2 uno-py-1 uno-px-3 uno-text-xs md:uno-py-2 md:uno-px-4 md:uno-text-base uno-bg-[var(--ui-muted)] uno-rounded-lg uno-text-[var(--ui-muted-foreground)] uno-font-['Outfit'] uno-font-medium uno-leading-normal">{{
+              class="uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-2 uno-py-1 uno-px-3 uno-text-xs md:uno-py-2 md:uno-px-4 md:uno-text-base uno-bg-[var(--ui-muted)] uno-rounded-lg uno-text-[#4E5255] uno-font-Outfit uno-font-medium uno-leading-normal">{{
               heroBadge }}</span>
-            <span class="uno-text-xs md:uno-text-base uno-text-[var(--ui-muted-foreground)] uno-font-['Outfit'] uno-text-right uno-font-medium uno-leading-normal">{{
+            <span class="uno-text-xs md:uno-text-base uno-text-[#4E5255] uno-font-Outfit uno-text-right uno-font-medium uno-leading-normal">{{ 
               $t('pages.tests.questions', { count: hero.questions }) }}</span>
           </div>
-          <p class="uno-text-[var(--ui-muted-foreground)] uno-text-xs md:uno-text-base uno-font-['Outfit'] uno-leading-normal">{{
+          <p class="uno-text-[#4E5255] uno-text-sm uno-font-Outfit uno-leading-normal">{{ 
             $t('pages.tests.hero.objective') }}</p>
           <div>
             <AppLink :to="'/test/step'">
               <UButton
-                class="uno-w-full md:uno-w-[151px] uno-h-[44px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-1 uno-py-1 uno-px-[20px] uno-bg-[var(--ui-primary)] uno-rounded-lg uno-text-[var(--ui-primary-foreground)] uno-text-sm md:uno-text-lg uno-font-['Outfit'] uno-font-bold uno-leading-normal">
+                class="uno-w-full md:uno-w-[151px] uno-h-[44px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-1 uno-py-1 uno-px-[20px] uno-bg-[var(--ui-primary)] uno-rounded-lg uno-text-[var(--ui-primary-foreground)] uno-text-sm md:uno-text-lg uno-font-Outfit uno-font-[700] uno-leading-normal">
                 {{ $t('pages.tests.cta.startNow') }}</UButton>
             </AppLink>
           </div>
@@ -47,13 +47,13 @@
           <div class="uno-p-4 md:uno-p-6 uno-space-y-3">
             <div class="uno-flex uno-items-center uno-justify-between">
               <span
-              class="uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-2 uno-py-1 uno-px-3 uno-text-xs md:uno-py-2 md:uno-px-4 md:uno-text-base uno-bg-[var(--ui-muted)] uno-rounded-lg uno-text-[var(--ui-muted-foreground)] uno-font-['Outfit'] uno-font-medium uno-leading-normal">{{
+              class="uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-2 uno-py-1 uno-px-3 uno-text-xs md:uno-py-2 md:uno-px-4 md:uno-text-base uno-bg-[var(--ui-muted)] uno-rounded-lg uno-text-[#4E5255] uno-font-Outfit uno-font-medium uno-leading-normal">{{
                 card.badge }}</span>
               <span v-if="!card.completed"
-                class="uno-text-xs md:uno-text-base uno-text-[var(--ui-muted-foreground)] uno-font-['Outfit'] uno-text-right uno-font-medium uno-leading-normal">{{
+                class="uno-text-xs md:uno-text-base uno-text-[#4E5255] uno-font-Outfit uno-text-right uno-font-medium uno-leading-normal">{{
                   $t('pages.tests.questions', { count: card.questions }) }}</span>
               <span v-else
-                class="uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-2 uno-py-1 uno-px-3 uno-text-xs md:uno-py-2 md:uno-px-4 md:uno-text-base uno-bg-[rgba(0,157,119,0.08)] uno-border uno-border-solid uno-border-[var(--ui-primary)] uno-rounded-lg uno-text-[#009D77] uno-font-['Outfit'] uno-font-medium uno-leading-normal">
+                class="uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-2 uno-py-1 uno-px-3 uno-text-xs md:uno-py-2 md:uno-px-4 md:uno-text-base uno-bg-[rgba(0,157,119,0.08)] uno-border uno-border-solid uno-border-[var(--ui-primary)] uno-rounded-lg uno-text-[#009D77] uno-font-Outfit uno-font-medium uno-leading-normal">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none"
                   version="1.1" width="13.749616384506226" height="12.499652670455933"
                   viewBox="0 0 13.749616384506226 12.499651670455933" aria-hidden="true">
@@ -66,23 +66,23 @@
                 {{ $t('pages.tests.completed') }}
               </span>
             </div>
-            <h3 class="uno-text-[var(--ui-foreground)] uno-text-lg md:uno-text-2xl uno-font-['Outfit'] uno-font-semibold uno-leading-[1.24]">
+            <h3 class="uno-text-[var(--ui-foreground)] uno-text-lg md:uno-text-2xl uno-font-Outfit uno-font-semibold uno-leading-[1.24]">
               {{ card.title }}</h3>
-            <p class="uno-text-[var(--ui-muted-foreground)] uno-text-xs md:uno-text-base uno-font-['Outfit'] uno-leading-normal">{{ card.desc }}</p>
+            <p class="uno-text-[#323233] uno-text-sm uno-font-Outfit uno-leading-normal">{{ card.desc }}</p>
             <div v-if="!card.completed">
               <UButton
-                class="uno-w-full md:uno-w-[151px] uno-h-[44px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-1 uno-py-1 uno-px-[20px] uno-bg-[var(--ui-primary)] uno-rounded-lg uno-text-[var(--ui-primary-foreground)] uno-text-sm md:uno-text-lg uno-font-['Outfit'] uno-font-bold uno-leading-normal">
+                class="uno-w-full md:uno-w-[151px] uno-h-[44px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-1 uno-py-1 uno-px-[20px] uno-bg-[var(--ui-primary)] uno-rounded-lg uno-text-[var(--ui-primary-foreground)] uno-text-sm md:uno-text-lg uno-font-Outfit uno-font-[700] uno-leading-normal">
                 {{ $t('pages.tests.cta.readMore') }}</UButton>
             </div>
             <div v-else class="uno-flex uno-gap-3">
               <AppLink :to="'/test/result'">
                 <UButton
-                class="uno-w-full md:uno-w-[151px] uno-h-[44px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-1 uno-py-1 uno-px-[20px] uno-bg-[var(--ui-primary)] uno-rounded-lg uno-text-[var(--ui-primary-foreground)] uno-text-sm md:uno-text-lg uno-font-['Outfit'] uno-font-bold uno-leading-normal">
+                class="uno-w-full md:uno-w-[151px] uno-h-[44px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-1 uno-py-1 uno-px-[20px] uno-bg-[var(--ui-primary)] uno-rounded-lg uno-text-[var(--ui-primary-foreground)] uno-text-sm md:uno-text-lg uno-font-Outfit uno-font-[700] uno-leading-normal">
                 {{ $t('pages.tests.cta.viewResults') }}</UButton>
               </AppLink>
               <AppLink :to="'/test/step'">
                 <UButton variant="ghost"
-                  class="uno-w-full md:uno-w-[151px] uno-h-[44px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-1 uno-py-1 uno-px-[20px] uno-bg-white uno-border-solid uno-border-2 uno-border-[var(--ui-primary)] uno-rounded-lg uno-text-[var(--ui-primary)] uno-text-sm md:uno-text-lg uno-font-['Outfit'] uno-font-bold uno-leading-normal">
+                  class="uno-w-full md:uno-w-[151px] uno-h-[44px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-1 uno-py-1 uno-px-[20px] uno-bg-white uno-border-solid uno-border-2 uno-border-[var(--ui-primary)] uno-rounded-lg uno-text-[var(--ui-primary)] uno-text-sm md:uno-text-lg uno-font-Outfit uno-font-[700] uno-leading-normal">
                   {{ $t('pages.tests.cta.tryAgain') }}</UButton>
               </AppLink>
             </div>
@@ -91,7 +91,7 @@
       </div>
       <div class="uno-flex uno-justify-center uno-mt-5">
         <UButton variant="ghost"
-          class="uno-w-full uno-h-[44px] uno-text-sm md:uno-h-[48px] md:uno-text-lg uno-rounded-[12px] uno-bg-white uno-border uno-border-[var(--ui-border)] uno-text-[var(--ui-muted-foreground)] uno-font-['Outfit'] uno-font-bold uno-leading-normal uno-flex uno-items-center uno-justify-center uno-text-center">
+          class="uno-w-full uno-h-[44px] uno-text-sm md:uno-h-[48px] md:uno-text-lg uno-rounded-[12px] uno-bg-white uno-border uno-border-[var(--ui-border)] uno-text-[#8D8E8F] uno-font-Outfit uno-font-[700] uno-leading-normal uno-flex uno-items-center uno-justify-center uno-text-center">
           {{ $t('pages.tests.cta.loadMore') }}</UButton>
       </div>
     </section>

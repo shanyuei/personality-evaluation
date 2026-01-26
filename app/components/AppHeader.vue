@@ -12,10 +12,10 @@
 
       <div class="uno-flex  uno-w-full">
         <!-- logo -->
-        <div class="uno-w-[249px] uno-flex uno-items-center uno-hidden max-sm:uno-hidden">
+        <div class="uno-w-[249px] uno-flex uno-items-center  max-sm:uno-hidden">
           <NuxtImg src="/theme/logo.png" width="249" height="40" alt="logo" />
         </div>
-        <div class="uno-w-[152px]  uno-items-center uno-hidden max-sm:uno-block">
+        <div class="uno-w-[152px]  uno-items-center uno-hidden max-sm:uno-flex">
           <NuxtImg src="/theme/logo-2.png" width="152" height="26" alt="logo" class="" />
         </div>
 
@@ -30,12 +30,8 @@
 
     <template #right>
       <!-- 未登录状态 -->
-      <AppArrowButton
-        v-if="!token"
-        preset="header"
-        class="max-sm:uno-hidden uno-font-['Outfit'] uno-font-medium"
-        :to="localePath('/auth/sign-in')"
-      >
+      <AppArrowButton v-if="!token" preset="header" class="max-sm:uno-hidden uno-font-['Outfit'] uno-font-medium"
+        :to="localePath('/auth/sign-in')">
         {{ $t('common.getStarted') }}
       </AppArrowButton>
 
@@ -78,13 +74,9 @@
           :ui="{ link: 'before:bg-transparent font-Outfit text-center font-medium text-[#011813] data-[active]:text-[var(--color-pink-1)] hover:text-[var(--color-pink-1)]', item: 'line-height-[42px] min-h-[42px]' }"
           :items="itemsLocalized" class="uno-w-full" />
         <div>
-          <AppArrowButton
-            variant="outline"
+          <AppArrowButton variant="outline"
             class="uno-h-[48px] uno-gap-3 uno-py-1 uno-pr-1 uno-pl-[20px] uno-rounded-[100px] uno-w-full uno-font-Outfit uno-font-medium"
-            :icon-size="40"
-            :to="localePath('/auth/sign-in')"
-            icon-src="/images/header/go-icon-1.png"
-          >
+            :icon-size="40" :to="localePath('/auth/sign-in')" icon-src="/images/header/go-icon-1.png">
             {{ $t('common.getStarted') }}
           </AppArrowButton>
         </div>

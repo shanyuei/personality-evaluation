@@ -4,7 +4,7 @@
     <div class="uno-flex uno-flex-col uno-items-center uno-gap-4">
       <div class="uno-w-[80px] uno-h-[80px] uno-flex uno-items-center uno-justify-center">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" version="1.1"
-          width="80" height="79.997802734375" viewBox="0 0 80 79.997802734375">
+          width="80" height="80" viewBox="0 0 80 80">
           <g>
             <g>
               <path
@@ -15,63 +15,29 @@
         </svg>
       </div>
       <h1
-        class="uno-w-full uno-text-[#011813] uno-text-2xl md:uno-text-5xl uno-font-['Outfit'] uno-text-center uno-font-semibold uno-leading-[1.2] uno-mb-8 md:uno-mb-12">
+        class="uno-w-full uno-text-[#011813] uno-text-2xl md:uno-text-5xl uno-font-Outfit uno-text-center uno-font-semibold uno-leading-[1.2] uno-mb-8 md:uno-mb-12">
         {{ $t('pages.testIntro.title') }}</h1>
     </div>
 
     <div class="uno-mt-6">
-      <div class="uno-grid uno-gap-6 md:uno-gap-8 md:uno-grid-cols-3">
-        <div class="uno-w-full uno-max-w-xs uno-bg-[#FBF0F4] uno-rounded-[24px]  uno-mx-auto">
-          <div class="uno-inline-block uno-w-full uno-p-6 uno-space-y-2 uno-bg-[#FBF0F4] uno-rounded-2xl">
+      <div class="uno-flex  uno-justify-center uno-gap-6 md:uno-gap-8">
+        <div v-for="step in steps" :key="step.id" class="uno-w-full  uno-rounded-[24px] " :class="step.bgClass">
+          <div class="uno-inline-block uno-w-full uno-p-6 uno-space-y-2 uno-rounded-2xl" :class="step.innerBgClass">
             <div class="uno-flex uno-flex-col uno-items-center uno-gap-3">
-              <span
-                class="uno-w-20 uno-h-20 uno-rounded-full uno-bg-[var(--color-pink-4)] uno-flex uno-items-center uno-justify-center">
-                <NuxtImg src="/images/test/1.png" alt="step1" width="80" height="80" />
+              <span class="uno-w-24 uno-h-24 uno-rounded-full uno-flex uno-items-center uno-justify-center"
+                :class="step.iconBgClass">
+                <NuxtImg :src="step.icon" :alt="'step' + step.id" width="96" height="96" />
               </span>
               <span
-                class="uno-inline-flex uno-justify-start uno-items-center uno-flex-row uno-gap-2.5 uno-py-1 uno-px-4 uno-bg-[#FD9AC0] uno-rounded-3xl uno-self-start uno-text-[#011813] uno-text-center uno-text-xs uno-font-['Outfit'] uno-font-medium uno-leading-[1.36]">STEP
-                1</span>
-            </div>
-            <div class="uno-text-[#011813] uno-text-base md:uno-text-xl uno-font-['Outfit'] uno-font-semibold">{{
-              $t('pages.testIntro.pc.step1.title') }}</div>
-            <p class="uno-text-xs md:uno-text-sm uno-text-[#4E5255] uno-font-['Outfit']">{{
-              $t('pages.testIntro.pc.step1.desc') }}</p>
-          </div>
-        </div>
-
-        <div class="uno-w-full uno-max-w-xs uno-bg-white uno-rounded-[24px]  uno-mx-auto">
-          <div class="uno-inline-block uno-w-full uno-p-6 uno-space-y-2 uno-bg-[#EEE5F8] uno-rounded-[24px]">
-            <div class="uno-flex uno-flex-col uno-items-center uno-gap-3">
-              <span
-                class="uno-w-20 uno-h-20 uno-rounded-full uno-bg-[var(--color-purple-4)] uno-flex uno-items-center uno-justify-center">
-                <NuxtImg src="/images/test/2.png" alt="step2" width="80" height="80" />
+                class="uno-inline-flex uno-justify-start uno-items-center uno-flex-row uno-gap-2.5 uno-py-1 uno-px-4 uno-rounded-3xl uno-self-start uno-text-[#011813] uno-text-center uno-text-base uno-font-Outfit uno-font-medium uno-leading-[1.36]"
+                :class="step.badgeBgClass">
+                {{ $t('pages.testIntro.step') }} {{ step.id }}
               </span>
-              <span
-                class="uno-inline-flex uno-justify-start uno-items-center uno-flex-row uno-gap-2.5 uno-py-1 uno-px-4 uno-bg-[#DEC4FA] uno-rounded-3xl uno-text-[#011813] uno-text-center uno-text-xs uno-font-['Outfit'] uno-font-medium uno-leading-[1.36] uno-self-start">STEP
-                2</span>
             </div>
-            <div class="uno-text-[#011813] uno-text-base md:uno-text-xl uno-font-['Outfit'] uno-font-semibold">{{
-              $t('pages.testIntro.pc.step2.title') }}</div>
-            <p class="uno-text-xs md:uno-text-sm uno-text-[#4E5255] uno-font-['Outfit']">{{
-              $t('pages.testIntro.pc.step2.desc') }}</p>
-          </div>
-        </div>
-
-        <div class="uno-w-full uno-max-w-xs uno-bg-[#D2F2E9] uno-rounded-[24px] uno-mx-auto">
-          <div class="uno-inline-block uno-w-full uno-p-6 uno-space-y-2 uno-bg-[#D2F2E9] uno-rounded-2xl">
-            <div class="uno-flex uno-flex-col uno-items-center uno-gap-3">
-              <span
-                class="uno-w-20 uno-h-20 uno-rounded-full uno-bg-[var(--color-green-3)] uno-flex uno-items-center uno-justify-center">
-                <NuxtImg src="/images/test/3.png" alt="step3" width="80" height="80" />
-              </span>
-              <span
-                class="uno-inline-block uno-rounded-full uno-bg-[var(--color-green-2)] uno-text-[#011813] uno-text-xs uno-font-['Outfit'] uno-px-3 uno-py-1 uno-self-start">STEP
-                3</span>
-            </div>
-            <div class="uno-text-[#011813] uno-text-base md:uno-text-xl uno-font-['Outfit'] uno-font-semibold">{{
-              $t('pages.testIntro.pc.step3.title') }}</div>
-            <p class="uno-text-xs md:uno-text-sm uno-text-[#4E5255] uno-font-['Outfit']">{{
-              $t('pages.testIntro.pc.step3.desc') }}</p>
+            <div class="uno-text-[#011813] uno-text-2xl md:uno-text-3xl uno-font-Outfit uno-font-semibold">{{
+              $t(step.titleKey) }}</div>
+            <p class="uno-text-base md:uno-text-lg uno-text-[#4E5255] uno-font-Outfit">
+              {{ $t(step.descKey) }}</p>
           </div>
         </div>
       </div>
@@ -95,33 +61,15 @@
     <div class="uno-w-full md:uno-w-[80%] uno-mx-auto uno-mt-4">
       <div class="uno-p-4 md:uno-p-6">
         <h2
-          class="uno-text-[#011813] uno-text-base md:uno-text-lg uno-font-['Outfit'] uno-text-center uno-font-semibold uno-leading-[1.2]">
+          class="uno-text-[#011813] uno-text-base md:uno-text-lg uno-font-Outfit uno-text-center uno-font-semibold uno-leading-[1.2]">
           {{ $t('pages.testIntro.instructions') }}</h2>
         <div class="uno-flex uno-flex-row uno-items-baseline uno-justify-center uno-gap-0 uno-mt-4 uno-px-[5%]">
-          <div class="uno-flex-1 uno-flex uno-flex-col uno-items-center uno-gap-1">
+          <div v-for="scale in scales" :key="scale.key"
+            class="uno-flex-1 uno-flex uno-flex-col uno-items-center uno-gap-1">
             <div
-              class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px] uno-p-2.5 uno-bg-[#F4D0CB] uno-border-solid uno-border-[#F6BAB2] uno-border-2" />
-            <span class="uno-text-xs uno-text-[var(--ui-muted-foreground)]">{{ $t('pages.testIntro.scale.sd') }}</span>
-          </div>
-          <div class="uno-flex-1 uno-flex uno-flex-col uno-items-center uno-gap-1">
-            <div
-              class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px] uno-p-2.5 uno-bg-[#F1DACE] uno-border-solid uno-border-[#F5CEB6] uno-border-2" />
-            <span class="uno-text-xs uno-text-[var(--ui-muted-foreground)]">{{ $t('pages.testIntro.scale.d') }}</span>
-          </div>
-          <div class="uno-flex-1 uno-flex uno-flex-col uno-items-center uno-gap-1">
-            <div
-              class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px] uno-p-2.5 uno-bg-[#F0F0F0] uno-border-solid uno-border-[#D8D8D8] uno-border-2" />
-            <span class="uno-text-xs uno-text-[var(--ui-muted-foreground)]">{{ $t('pages.testIntro.scale.n') }}</span>
-          </div>
-          <div class="uno-flex-1 uno-flex uno-flex-col uno-items-center uno-gap-1">
-            <div
-              class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px] uno-p-2.5 uno-bg-[#C6EAD8] uno-border-solid uno-border-[#9FE2AA] uno-border-2" />
-            <span class="uno-text-xs uno-text-[var(--ui-muted-foreground)]">{{ $t('pages.testIntro.scale.a') }}</span>
-          </div>
-          <div class="uno-flex-1 uno-flex uno-flex-col uno-items-center uno-gap-1">
-            <div
-              class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px] uno-p-2.5 uno-bg-[#B3E1D6] uno-border-solid uno-border-[#88D9BA] uno-border-2" />
-            <span class="uno-text-xs uno-text-[var(--ui-muted-foreground)]">{{ $t('pages.testIntro.scale.sa') }}</span>
+              class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px] uno-p-2.5 uno-border-solid uno-border-2"
+              :class="[scale.bgClass, scale.borderClass]" />
+            <span class="uno-text-xs uno-text-[#011813]">{{ $t(scale.labelKey) }}</span>
           </div>
         </div>
       </div>
@@ -134,34 +82,15 @@
           class="uno-bg-white uno-rounded-[16px] md:uno-rounded-[20px] uno-border uno-border-[var(--ui-border)] uno-shadow-[0px_2px_8px_rgba(0,0,0,0.06)]">
           <div class="uno-p-4 md:uno-p-6">
             <p
-              class="uno-text-[#011813] uno-font-['Outfit'] uno-text-base md:uno-text-lg uno-text-center uno-leading-[1.2] uno-mb-8">
+              class="uno-text-[#011813] uno-font-Outfit uno-text-base md:uno-text-lg uno-text-center uno-leading-[1.2] uno-mb-8">
               {{ q }}</p>
             <div
               class="uno-flex uno-flex-row uno-items-center uno-justify-center uno-gap-2 md:uno-gap-[20px] uno-mt-4 uno-px-[5%]">
-              <!-- 非常不同意 -->
-              <div class="uno-flex-1 uno-flex uno-justify-center uno-items-center">
+              <div v-for="scale in scales" :key="scale.key"
+                class="uno-flex-1 uno-flex uno-justify-center uno-items-center">
                 <div
-                  class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px] uno-p-2.5 uno-bg-[#F4D0CB] uno-border-solid uno-border-[#F6BAB2] uno-border-2" />
-              </div>
-              <!-- 不同意 -->
-              <div class="uno-flex-1 uno-flex uno-justify-center uno-items-center">
-                <div
-                  class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px] uno-p-2.5 uno-bg-[#F1DACE] uno-border-solid uno-border-[#F5CEB6] uno-border-2" />
-              </div>
-              <!-- 中立 -->
-              <div class="uno-flex-1 uno-flex uno-justify-center uno-items-center">
-                <div
-                  class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px] uno-p-2.5 uno-bg-[#F0F0F0] uno-border-solid uno-border-[#D8D8D8] uno-border-2" />
-              </div>
-              <!-- 同意 -->
-              <div class="uno-flex-1 uno-flex uno-justify-center uno-items-center">
-                <div
-                  class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px] uno-p-2.5 uno-bg-[#C6EAD8] uno-border-solid uno-border-[#9FE2AA] uno-border-2" />
-              </div>
-              <!-- 非常同意 -->
-              <div class="uno-flex-1 uno-flex uno-justify-center uno-items-center">
-                <div
-                  class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px] uno-p-2.5 uno-bg-[#B3E1D6] uno-border-solid uno-border-[#88D9BA] uno-border-2" />
+                  class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px] uno-p-2.5 uno-border-solid uno-border-2"
+                  :class="[scale.bgClass, scale.borderClass]" />
               </div>
             </div>
           </div>
@@ -170,14 +99,14 @@
 
       <!-- 提示文本 -->
       <p
-        class="uno-text-[#8D8E8F] uno-font-['Outfit'] uno-text-xs md:uno-text-sm uno-text-center uno-leading-[1.2] uno-mt-6">
+        class="uno-text-[#8D8E8F] uno-font-Outfit uno-text-sm uno-text-center uno-leading-[1.2] uno-mt-6">
         {{
           $t('pages.testIntro.notice') }}</p>
     </div>
 
     <!-- 提交按钮 -->
     <div class="uno-w-full md:uno-w-[80%] uno-mx-auto uno-mt-6 uno-flex uno-justify-center uno-mb-12">
-      <UButton :ui="UButtonTheme" @click="nextStart">{{ $t('pages.testIntro.cta') }}</UButton>
+      <UButton :ui="UButtonTheme" @click="nextStart">{{ $t('pages.testIntro.next') }}</UButton>
     </div>
   </div>
 </template>
@@ -206,6 +135,75 @@ useSeoMeta({
 const questions = ref<TestQuestion[]>([])
 const allQuestions = ref<TestQuestion[]>([])
 const current = 0, total = ref(0)
+
+// 步骤数据
+const steps = ref([
+  {
+    id: 1,
+    bgClass: 'uno-bg-[#FBF0F4]',
+    innerBgClass: 'uno-bg-[#FBF0F4]',
+    iconBgClass: 'uno-bg-[var(--color-pink-4)]',
+    badgeBgClass: 'uno-bg-[#FD9AC0]',
+    icon: '/images/test/1.png',
+    titleKey: 'pages.testIntro.pc.step1.title',
+    descKey: 'pages.testIntro.pc.step1.desc'
+  },
+  {
+    id: 2,
+    bgClass: 'uno-bg-white',
+    innerBgClass: 'uno-bg-[#EEE5F8]',
+    iconBgClass: 'uno-bg-[var(--color-purple-4)]',
+    badgeBgClass: 'uno-bg-[#DEC4FA]',
+    icon: '/images/test/2.png',
+    titleKey: 'pages.testIntro.pc.step2.title',
+    descKey: 'pages.testIntro.pc.step2.desc'
+  },
+  {
+    id: 3,
+    bgClass: 'uno-bg-[#D2F2E9]',
+    innerBgClass: 'uno-bg-[#D2F2E9]',
+    iconBgClass: 'uno-bg-[var(--color-green-3)]',
+    badgeBgClass: 'uno-bg-[var(--color-green-2)]',
+    icon: '/images/test/3.png',
+    titleKey: 'pages.testIntro.pc.step3.title',
+    descKey: 'pages.testIntro.pc.step3.desc'
+  }
+])
+
+// 评分等级数据
+const scales = ref([
+  {
+    key: 'sd',
+    bgClass: 'uno-bg-[#F4D0CB]',
+    borderClass: 'uno-border-[#F6BAB2]',
+    labelKey: 'pages.testIntro.scale.sd'
+  },
+  {
+    key: 'd',
+    bgClass: 'uno-bg-[#F1DACE]',
+    borderClass: 'uno-border-[#F5CEB6]',
+    labelKey: 'pages.testIntro.scale.d'
+  },
+  {
+    key: 'n',
+    bgClass: 'uno-bg-[#F0F0F0]',
+    borderClass: 'uno-border-[#D8D8D8]',
+    labelKey: 'pages.testIntro.scale.n'
+  },
+  {
+    key: 'a',
+    bgClass: 'uno-bg-[#C6EAD8]',
+    borderClass: 'uno-border-[#9FE2AA]',
+    labelKey: 'pages.testIntro.scale.a'
+  },
+  {
+    key: 'sa',
+    bgClass: 'uno-bg-[#B3E1D6]',
+    borderClass: 'uno-border-[#88D9BA]',
+    labelKey: 'pages.testIntro.scale.sa'
+  }
+])
+
 getTestQuestions().then(res => {
   const { data } = res.data.value;
   questions.value = data.list.map(q => q.text).slice(0, 5)
