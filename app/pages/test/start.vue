@@ -15,9 +15,9 @@
           {{ $t('pages.testStart.title') }}</h1>
 
         <div class="uno-max-w-[880px] uno-mx-auto uno-space-y-4 uno-text-left">
-          <div v-for="(step, index) in steps" :key="index" class="uno-flex uno-items-center uno-gap-3">
+          <div v-for="(step, index) in steps" :key="index" class="uno-flex uno-items-start uno-gap-4px">
             <div class="uno-w-24px">
-              <IconsCheck :size="24" class="uno-mt-1" background-color="none" check-color="var(--ui-primary)" />
+              <IconsCheck :size="24"  background-color="none" check-color="var(--ui-primary)" />
             </div>
             <p class="uno-text-[#4E5255] uno-text-[16px] uno-font-Outfit">
               <span class="uno-font-[600]">
@@ -53,7 +53,8 @@ const localePath = useLocalePath()
 
 definePageMeta({
   layoutShowFooter: false,
-  title: () => 'seo.test.start.title'
+  title: () => 'seo.test.start.title',
+  layoutShowPageTopIcons: false,
 })
 
 useSeoMeta({

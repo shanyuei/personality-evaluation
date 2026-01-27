@@ -40,7 +40,12 @@
           </slot>
         </main>
         <!--  curious -->
-        <app-curious v-if="showCurious" />
+        <app-curious v-if="showCurious" 
+          :title="route.meta.curiousTitle as string" 
+          :description="route.meta.curiousDescription as string" 
+          :buttonText="route.meta.curiousButtonText as string" 
+          :buttonDisabled="route.meta.curiousButtonDisabled as boolean" 
+        />
         <!-- 底部 -->
         <app-footer v-if="showFooter" />
       </div>

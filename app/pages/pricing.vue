@@ -3,8 +3,8 @@
 
     <!-- Pricing Section -->
     <section class="page-container uno-pt-12 sm:uno-pt-16 md:uno-pt-20 uno-pb-12 sm:uno-pb-16 md:uno-pb-24">
-      <div class="uno-text-center uno-mb-12 sm:uno-mb-16">
-        <h1 class="uno-text-[#011813] uno-text-[40px] uno-font-Outfit uno-font-[600] uno-mb-4 sm:uno-mb-6">
+      <div class="uno-text-center uno-mb-12 sm:uno-mb-23px">
+        <h1 class="uno-text-[#011813] uno-text-[40px] uno-font-Outfit uno-font-[600] uno-mb-12px">
           {{ $t('pages.pricing.title') }}
         </h1>
         <p class="uno-text-[#4E5255] uno-text-sm uno-font-Outfit uno-max-w-3xl uno-mx-auto uno-px-4">
@@ -14,24 +14,24 @@
 
       <div class="uno-grid uno-grid-cols-1 lg:uno-grid-cols-3 uno-gap-6 md:uno-gap-8 uno-items-start">
         <div v-for="plan in plans" :key="plan.key"
-          class="uno-rounded-[24px] uno-p-6 sm:uno-p-8 uno-border uno-shadow-sm hover:uno-shadow-md uno-transition-all uno-cursor-pointer uno-relative uno-overflow-hidden"
+          class="uno-rounded-[16px] uno-p-24px  uno-border uno-shadow-sm hover:uno-shadow-md uno-transition-all uno-cursor-pointer uno-relative uno-overflow-hidden"
           :class="[
             selectedPlan === plan.key
-              ? 'uno-bg-[#E8FAF5] uno-border-[#009D77] uno-shadow-lg'
-              : 'uno-bg-white uno-border-[#E7E7E8]'
+              ? 'uno-bg-[#E8FAF5] uno-border-1 uno-border-solid uno-border-[#E7E7E8] uno-shadow-lg'
+              : 'uno-bg-white uno-border-1 uno-border-solid uno-border-[#E7E7E8]'
           ]" @click="selectedPlan = plan.key">
           <div v-if="plan.badge"
-            class="uno-absolute uno-top-6 uno-right-6 uno-bg-[#009D77] uno-text-[#011813] uno-text-sm uno-font-Outfit uno-font-[300] uno-px-3 uno-py-1 uno-rounded-full">
+            class="uno-absolute uno-top-24px uno-right-24px uno-w-[96px] uno-h-[33px] uno-px-[16px] uno-py-[6px] uno-gap-8px uno-bg-[#39EDC1] uno-text-[#011813] uno-text-[14px] uno-font-Outfit uno-font-[500] uno-leading-[1.5] uno-rounded-[8px]">
             {{ $t(plan.badge) }}
           </div>
 
           <h3 class="uno-text-[24px] uno-font-Outfit uno-font-[600] uno-text-[#011813] uno-mb-2">{{ plan.name }}</h3>
-          <!-- <p class="uno-text-[#4E5255] uno-text-sm uno-mb-6 uno-min-h-[40px]">{{ $t(`pages.pricing.plans.${plan.key}.description`) }}</p> -->
+          <p class="uno-text-[#4E5255] uno-text-sm uno-mb-6 uno-min-h-[40px]"></p>
 
           <div class="uno-flex uno-items-baseline uno-gap-1 uno-mb-1">
             <span class="uno-text-[40px] uno-font-Outfit uno-font-bold uno-text-[#011813]">{{ plan.unit }}{{ plan.price
               }}</span>
-            <!-- <span class="uno-text-[#4E5255] uno-text-sm">{{ $t(`pages.pricing.plans.${plan.key}.unit`) }}</span> -->
+            <span class="uno-text-[#4E5255] uno-text-[28px] uno-font-Outfit uno-font-[500] uno-leading-[1.5] uno-text-center">/{{ plan.currency }}</span>
           </div>
           <!-- <div class="uno-text-xs uno-text-[#4E5255] uno-mb-6 uno-h-[20px]">
             {{ plan.billingFallback ? ($t('pages.ebooks.oneTime') || 'Auto-renews after 7 Days') : $t(`pages.pricing.plans.${plan.key}.billing`) }}
@@ -42,14 +42,15 @@
               ? 'uno-bg-[#009D77] hover:uno-bg-[var(--color-green-2)] uno-text-white'
               : 'uno-bg-[#009D77] hover:uno-bg-[var(--color-green-2)] uno-text-white'
           ]"
-            class="uno-w-full uno-mt-6 uno-h-[48px] uno-rounded-[12px] uno-font-Outfit uno-font-bold uno-text-[18px] uno-mb-8 uno-transition-colors"
+            class="uno-w-full uno-mt-6 uno-h-[48px] uno-rounded-[12px] uno-font-Outfit uno-font-bold uno-text-[18px]  uno-transition-colors"
             @click.stop="handleCreateOrder(plan)">
             {{ $t(`pages.pricing.plans.${plan.key}.button`) }}
           </button>
-
+          <!-- 分割线 -->
+          <div class="uno-w-full uno-h-[1px] uno-bg-[#E7E7E8] uno-mt-24px uno-mb-12px"></div>
           <div class="uno-space-y-4">
             <div
-              class="uno-text-sm uno-font-Outfit uno-font-normal uno-text-[#8D8E8F] uno-tracking-wider uno-uppercase">
+              class="uno-text-[14px] uno-font-Outfit uno-font-normal uno-text-[#8D8E8F] uno-tracking-wider uno-uppercase">
               PUBLISHING</div>
             <ul class="uno-space-y-3">
               <li v-for="(feat, i) in features" :key="i"
@@ -65,27 +66,47 @@
       </div>
     </section>
 
-    <!-- Why Our Test Stands Out -->
-    <section class="page-container uno-py-12 sm:uno-py-16">
-      <div class="uno-text-center uno-mb-12">
-        <h2 class="uno-text-[#011813] uno-text-[48px] uno-font-Outfit uno-font-[600] uno-mb-4">
-          {{ $t('pages.pricing.why.title') }}
-        </h2>
-        <p class="uno-text-[#4E5255] uno-text-sm uno-font-Outfit uno-max-w-2xl uno-mx-auto">
-          {{ $t('pages.pricing.why.subtitle') }}
-        </p>
-      </div>
+    <!-- What You Will Receive -->
+    <div class="uno-receive-section  uno-bg-gray-5 uno-relative">
+        <NuxtImg src="/theme/home/receive-box-bg-h5.png" alt="" aria-hidden="true" width="375" height="1920"
+            class="uno-absolute uno-inset-0 uno--z-10 uno-pointer-events-none uno-object-cover uno-object-center uno-block md:uno-hidden"
+            uno-preload />
+        <NuxtImg src="/theme/home/receive-box-bg-pc.png" alt="" aria-hidden="true" width="100vw" height="100%"
+            class="uno-w-full uno-h-[100%]  uno-absolute uno-top-0 uno-left-0 uno--z-10 uno-pointer-events-none uno-hidden md:uno-block"
+            uno-preload />
+        <div
+            class="page-container uno-px-4 uno-py-8 sm:uno-py-12 md:uno-py-16 lg:uno-py-20 xl:uno-py-24 relative z-10">
+            <h2
+                class="uno-text-xl sm:uno-text-2xl md:uno-text-[48px] uno-font-Outfit uno-font-bold uno-text-center uno-mb-2 sm:uno-mb-3 md:uno-mb-4">
+                {{ $t('pages.home.receive.title') }}
+            </h2>
+            <p
+                class="uno-text-center uno-text-gray-600 uno-text-xs sm:uno-text-sm md:uno-text-base uno-mb-6 sm:uno-mb-8 md:uno-mb-16 uno-max-w-3xl uno-mx-auto">
+                {{ $t('pages.home.receive.desc') }}
+            </p>
 
-      <div class="uno-grid uno-grid-cols-1 md:uno-grid-cols-2 lg:uno-grid-cols-3 uno-gap-6">
-        <div v-for="(item, idx) in whyItems" :key="idx"
-          class="uno-bg-white uno-rounded-[24px] uno-p-8 uno-text-center uno-border uno-border-[#E7E7E8] uno-shadow-sm hover:uno-shadow-md uno-transition-shadow">
-          <!-- Image only, removed fallback icon logic to ensure replacement -->
-          <img :src="item.image" :alt="item.title" class="uno-w-16 uno-h-16 uno-mx-auto uno-mb-6 uno-object-contain" />
-          <h3 class="uno-text-[20px] uno-font-Outfit uno-font-[500] uno-text-[#011813] uno-mb-3">{{ item.title }}</h3>
-          <p class="uno-text-[#4E5255] uno-text-base uno-font-Outfit">{{ item.desc }}</p>
+            <!-- 六个卡片布局 -->
+            <!-- 循环展示 receiveCards -->
+            <div
+                class="uno-grid uno-grid-cols-1 md:uno-grid-cols-3 uno-gap-[24px] sm:uno-gap-[24px] md:uno-gap-[24px]">
+                <div v-for="(card, index) in receiveCards" :key="index"
+                    class="uno-bg-white uno-rounded-[32px] uno-shadow-[0_2px_8px_rgba(0,0,0,0.04)] uno-p-[32px] uno-border uno-border-solid uno-border-[#E7E7E8] uno-flex uno-flex-col uno-items-center uno-justify-between uno-text-center uno-min-h-[256px]">
+                    <div
+                        class="uno-w-64px uno-h-64px sm:uno-w-64px sm:uno-h-64px uno-flex uno-items-center uno-justify-center uno-bg-gray-50 uno-rounded-full uno-mb-8px">
+                        <NuxtImg :src="card.icon" :alt="card.alt" width="64" height="64" />
+                    </div>
+                    <h3
+                        class="uno-text-lg sm:uno-text-xl md:uno-text-[20px] uno-font-Outfit uno-font-[500] uno-leading-tight uno-px-2 uno-mb-12px">
+                        {{ $t(card.titleKey) }}
+                    </h3>
+                    <p
+                        class="uno-text-gray-500 uno-text-sm sm:uno-text-base uno-font-Outfit uno-leading-relaxed">
+                        {{ $t(card.descKey) }}
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
-    </section>
+    </div>
 
     <!-- FAQ Section -->
     <FAQSection :title="$t('pages.pricing.faq.title')" :description="$t('pages.pricing.faq.subtitle')"
@@ -100,14 +121,16 @@ import { useI18n } from 'vue-i18n';
 import FAQSection from '~/components/FAQSection.vue';
 import { getPlanList, createOrder } from '~/api/tests';
 
+const { t } = useI18n();
+
 definePageMeta({
   title: () => 'seo.pricing.title',
   layoutShowPageTopIcons: false,
   layoutShowCurious: true,
 })
 useSeoMeta({
-  title: () => t('seo.ebooks.title') as string,
-  description: () => t('seo.ebooks.description') as string
+  title: () => t('seo.pricing.title') as string,
+  description: () => t('seo.pricing.description') as string
 })
 // Base config to preserve UI logic (keys for i18n, badges)
 const planConfig: Record<number, { key: string; badge?: string; billingFallback?: boolean }> = {
@@ -174,7 +197,6 @@ const IconDaily = { template: `<svg viewBox="0 0 24 24" fill="none" stroke="curr
 const IconLibrary = { template: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l9 4.9V17L12 22l-9-4.9V7z"></path></svg>` }
 const IconValue = { template: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>` }
 
-const { t } = useI18n();
 const localePath = useLocalePath()
 const route = useRoute();
 
@@ -185,6 +207,45 @@ const features = computed(() => [
   t('pages.pricing.features.cms'),
   t('pages.pricing.features.ai'),
 ]);
+
+const receiveCards = [
+  {
+    icon: '/images/home/7.png',
+    alt: 'Comprehensive Personality Report',
+    titleKey: 'pages.home.receive.card1.title',
+    descKey: 'pages.home.receive.card1.desc'
+  },
+  {
+    icon: '/images/home/8.png',
+    alt: 'Personalized Course Recommendations',
+    titleKey: 'pages.home.receive.card3.title',
+    descKey: 'pages.home.receive.card3.desc'
+  },
+  {
+    icon: '/images/home/9.png',
+    alt: 'Skill Assessment Tests',
+    titleKey: 'pages.home.receive.card5.title',
+    descKey: 'pages.home.receive.card5.desc'
+  },
+  {
+    icon: '/images/home/10.png',
+    alt: 'Practical Daily Challenges',
+    titleKey: 'pages.home.receive.card2.title',
+    descKey: 'pages.home.receive.card2.desc'
+  },
+  {
+    icon: '/images/home/11.png',
+    alt: 'Learning and Development Library',
+    titleKey: 'pages.home.receive.card4.title',
+    descKey: 'pages.home.receive.card4.desc'
+  },
+  {
+    icon: '/images/home/12.png',
+    alt: 'Certificates of Achievement',
+    titleKey: 'pages.home.receive.card6.title',
+    descKey: 'pages.home.receive.card6.desc'
+  }
+]
 
 const whyItems = computed(() => [
   {

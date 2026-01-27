@@ -1062,6 +1062,12 @@
           }
         }
       }
+    },
+    "contact": {
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "desc": "Have questions about our personality tests or how PersonalityTest101 works? Here are some of the most common questions we get — with clear, easy-to-understand answers to help you get started."
+      }
     }
   },
   "common": {
@@ -1245,6 +1251,10 @@
     "account.settings": {
       "title": "Account Settings - Personalize Your Experience",
       "description": "Update your account settings and personal preferences."
+    },
+    "contact": {
+      "title": "Contact PersonalityTest101 – We’re Here to Help",
+      "description": "Have questions about our personality tests or need support? Contact the PersonalityTest101 team for assistance, feedback, or collaboration opportunities. We’re happy to hear from you.\u000b"
     }
   }
 }
