@@ -1,106 +1,82 @@
 <template>
   <main class="uno-py-12 sm:uno-py-16 md:uno-py-24">
     <!-- 页面内容 -->
-    <div class="page-container uno-px-4 sm:uno-px-6 md:uno-px-8">
-      <div class="uno-flex uno-flex-col md:uno-flex-row uno-gap-8 md:uno-gap-12">
+    <div class="page-container">
+
+      <div class="uno-flex uno-flex-col md:uno-flex-row md:uno-justify-between  uno-relative">
+        <NuxtImg src="/images/about/icon-1.png" alt="decor"
+          class="uno-absolute uno-left-1/2 uno--translate-x-1/2 uno-top-0 uno-w-47px uno-h-36px" />
         <!-- 左侧内容 -->
-        <div class="uno-flex-1">
-          <h1 class="uno-text-[#011813] uno-text-3xl sm:uno-text-4xl md:uno-text-5xl uno-font-Outfit uno-font-bold uno-mb-4">
+        <div class="uno-w-[740px]">
+          <h1
+            class="uno-text-[#011813] uno-text-5xl sm:uno-text-6xl md:uno-text-[72px] uno-font-Outfit uno-font-[600] uno-mb-6 uno-leading-[1.2]">
             Contact Us
           </h1>
-          <p class="uno-text-[#4E5255] uno-text-base sm:uno-text-lg uno-font-Outfit uno-mb-8">
-            Email, call, or complete the form to learn how Snappy can solve your messaging problem.
+          <p class="uno-text-[#4E5255] uno-text-[18px] uno-font-Outfit uno-mb-12 uno-leading-[1.5]">
+            Have questions about our personality tests or need support? 
+            <br />
+            Contact the PersonalityTest101 team — we’re here to help.
           </p>
-          <a href="mailto:info@snappy.io" class="uno-text-[var(--ui-primary)] uno-text-base uno-font-Outfit uno-mb-12 inline-block">
-            info@snappy.io
+          <a href="mailto:support@personalitytest101.com"
+            class="uno-text-[var(--ui-primary)] uno-text-base uno-font-Outfit uno-mb-12 inline-block">
+            support@personalitytest101.com
           </a>
-          
+
           <!-- 联系选项卡片 -->
-          <div class="uno-grid uno-grid-cols-1 sm:uno-grid-cols-3 uno-gap-6">
-            <!-- Customer Support -->
-            <div class="uno-bg-white uno-rounded-[16px] uno-p-6 uno-border uno-border-[#E7E7E8] uno-shadow-sm">
-              <div class="uno-w-12 uno-h-12 uno-bg-[#dfffea] uno-rounded-full uno-flex uno-items-center uno-justify-center uno-mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="uno-text-[var(--ui-primary)]">
-                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-                </svg>
+          <div class="uno-grid uno-grid-cols-1 sm:uno-grid-cols-3 uno-gap-[20px]">
+            <div v-for="option in contactOptions" :key="option.id" class="uno-gap-16 ">
+              <div class="uno-w-12 uno-h-12 uno-rounded-full uno-flex uno-items-center uno-justify-center uno-mb-4">
+                <HeartIcon v-if="option.id === 'feedback'" />
+                <MailIcon v-else-if="option.id === 'media'" />
+                <BrainIcon v-else-if="option.id === 'support'" />
               </div>
-              <h3 class="uno-text-[#011813] uno-text-lg uno-font-Outfit uno-font-semibold uno-mb-2">
-                Customer Support
+              <h3 class="uno-text-[#011813] uno-text-[20px] uno-font-Outfit uno-font-[500] uno-mb-2 uno-leading-[1.36]">
+                {{ option.title }}
               </h3>
-              <p class="uno-text-[#4E5255] uno-text-sm uno-font-Outfit">
-                Our support team is available around the clock to address any concerns or queries you may have.
-              </p>
-            </div>
-            
-            <!-- Feedback and Suggestions -->
-            <div class="uno-bg-white uno-rounded-[16px] uno-p-6 uno-border uno-border-[#E7E7E8] uno-shadow-sm">
-              <div class="uno-w-12 uno-h-12 uno-bg-[#f9e8ff] uno-rounded-full uno-flex uno-items-center uno-justify-center uno-mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="uno-text-[#EA4C89]">
-                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-                </svg>
-              </div>
-              <h3 class="uno-text-[#011813] uno-text-lg uno-font-Outfit uno-font-semibold uno-mb-2">
-                Feedback and Suggestions
-              </h3>
-              <p class="uno-text-[#4E5255] uno-text-sm uno-font-Outfit">
-                We value your feedback and are continuously working to improve Snappy. Your input is crucial in shaping the future of Snappy.
-              </p>
-            </div>
-            
-            <!-- Media Inquiries -->
-            <div class="uno-bg-white uno-rounded-[16px] uno-p-6 uno-border uno-border-[#E7E7E8] uno-shadow-sm">
-              <div class="uno-w-12 uno-h-12 uno-bg-[#fff3e0] uno-rounded-full uno-flex uno-items-center uno-justify-center uno-mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="uno-text-[#FF9800]">
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="9" cy="7" r="4"></circle>
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                </svg>
-              </div>
-              <h3 class="uno-text-[#011813] uno-text-lg uno-font-Outfit uno-font-semibold uno-mb-2">
-                Media Inquiries
-              </h3>
-              <p class="uno-text-[#4E5255] uno-text-sm uno-font-Outfit">
-                For media-related questions or press inquiries, please contact us at media@snappyapp.com.
+              <p class="uno-text-[#4E5255] uno-text-[14px] uno-font-Outfit uno-font-[400] uno-leading-[1.36]">
+                {{ option.description }}
               </p>
             </div>
           </div>
         </div>
-        
+
         <!-- 右侧 Get in Touch 卡片 -->
-        <div class="uno-w-full md:uno-w-96">
-          <div class="uno-bg-[#f0fdfa] uno-rounded-[16px] uno-p-8 uno-border uno-border-[#E7E7E8]">
-            <div class="uno-w-10 uno-h-10 uno-bg-[#dfffea] uno-rounded-full uno-flex uno-items-center uno-justify-center uno-mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="uno-text-[var(--ui-primary)]">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                <polyline points="22,6 12,13 2,6"></polyline>
-              </svg>
+        <div class="uno-flex-1 uno-max-w-[411px]">
+          <div
+            class="uno-bg-[var(--Color-4,#DCFBF2)] uno-w-full uno-px-[32px] uno-py-[33px] uno-rounded-[32px] uno-border uno-border-[#E7E7E8] uno-flex uno-flex-col uno-items-center">
+            <div
+              class="uno-w-10 uno-h-10 uno-bg-[#dfffea] uno-rounded-full uno-flex uno-items-center uno-justify-center uno-mb-4">
+              <MailLargeIcon />
+
             </div>
-            <h3 class="uno-text-[#011813] uno-text-xl uno-font-Outfit uno-font-bold uno-mb-4">
+            <h3
+              class="uno-text-[#011813] uno-text-[24px] uno-font-Outfit uno-font-[500] uno-mb-4 uno-leading-[1.36] uno-text-center">
               Get in Touch
             </h3>
-            <p class="uno-text-[#4E5255] uno-text-sm uno-font-Outfit uno-mb-6">
-              Your feedback is greatly appreciated. If you have questions or want to know more about our services, don't hesitate to contact us via email. We'll try to get back to you as soon as possible. For refund requests, please visit the Refund Page.
+            <p
+              class="uno-text-[#4E5255] uno-text-[14px] uno-font-Outfit uno-font-[400] uno-mb-6 uno-leading-[1.36] uno-text-center">
+              If you have questions about our personality tests, need assistance, or want to share feedback, feel free
+              to reach out anytime. We’re always happy to hear from our users and provide clear, thoughtful support.
             </p>
-            <p class="uno-text-[#4E5255] uno-text-sm uno-font-Outfit uno-mb-8">
-              You may also find what you're looking for in our FAQ section. Here, we provide a comprehensive overview of our services and operations. However, if you can't find a satisfactory answer, shoot us an email, and we'll respond within 24 hours.
+            <p
+              class="uno-text-[#4E5255] uno-text-[14px] uno-font-Outfit uno-font-[400] uno-mb-8 uno-leading-[1.36] uno-text-center">
+              Click the button below to email the PersonalityTest101 team directly. Get in touch today — we’re here to
+              support you every step of the way.
+
             </p>
-            <button class="uno-w-full uno-h-[48px] uno-bg-[var(--ui-primary)] uno-text-white uno-text-base uno-font-Outfit uno-font-semibold uno-rounded-[8px] uno-transition-colors hover:uno-bg-[#0A8165]">
-              Contact Support
-            </button>
+            <a href="mailto:support@personalitytest101.com"
+              class="uno-w-full uno-h-[56px] uno-px-[20px] uno-py-[6px] uno-gap-4 uno-bg-[var(--Color,#009D77)] uno-text-white uno-text-base uno-font-Outfit uno-font-semibold uno-rounded-[8px] uno-transition-colors hover:uno-bg-[#0A8165] uno-flex uno-items-center uno-justify-center">
+              Get Support
+            </a>
           </div>
         </div>
       </div>
-      
+
       <!-- FAQ Section -->
       <div class="uno-mt-24">
-        <FAQSection 
-          :title="'Frequently Asked Questions'" 
-          :description="'Find answers to common questions about our services and operations.'" 
-          :items="faqItems"
-          :accordion="true" 
-          :default-expanded-index="0" 
-        />
+        <FAQSection :title="'Frequently Asked Questions'"
+          :description="'Find answers to common questions about our services and operations.'" :items="faqItems"
+          :accordion="true" :default-expanded-index="0" />
       </div>
     </div>
   </main>
@@ -108,16 +84,46 @@
 
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
+import HeartIcon from '@/components/icons/HeartIcon.vue'
+import MailIcon from '@/components/icons/MailIcon.vue'
+import BrainIcon from '@/components/icons/BrainIcon.vue'
+import MailLargeIcon from '@/components/icons/MailLargeIcon.vue'
 
 const { t } = useI18n()
 
 definePageMeta({
-    title: () => 'seo.contact.title'
+  title: () => 'seo.contact.title',
+  layoutShowCurious: true,
+  curious: {
+    title: 'Ready to Uncover Your True Personality?',
+    description: 'Find out your personality type, preferences, and hidden strengths in just a few minutes. Quick, fun, and insightful — your journey of self-discovery starts here!',
+    buttonText: 'Reveal Your Personality',
+    buttonDisabled: false
+  }
 })
 useSeoMeta({
-    title: () => t('seo.contact.title') as string,
-    description: () => t('seo.contact.description') as string
+  title: () => t('seo.contact.title') as string,
+  description: () => t('seo.contact.description') as string
 })
+
+// 联系选项数据
+const contactOptions = [
+  {
+    id: 'feedback',
+    title: 'Test Support',
+    description: 'Get help with taking personality tests, viewing results, or understanding your reports.',
+  },
+  {
+    id: 'media',
+    title: 'Feedback & Suggestions',
+    description: 'Share your thoughts, ideas, or suggestions to help us improve PersonalityTest101.',
+  },
+  {
+    id: 'support',
+    title: 'General Inquiries',
+    description: 'Have questions about PersonalityTest101 or our services? Reach out and we\'ll get back to you as soon as possible.',
+  }
+]
 
 const faqItems = [
   {

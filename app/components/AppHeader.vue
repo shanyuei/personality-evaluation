@@ -110,28 +110,16 @@ const handleLogout = () => {
 
 const accountItems = ref<any[]>([
   [{
-    label: userStore.userInfo?.name || 'User',
-    slot: 'account',
-    disabled: true
-  }],
-  [{
-    label: 'Profile',
-    icon: 'i-lucide-user',
-    slot: 'profile',
-    to: '/profile'
-  }, {
-    label: 'Billing',
-    icon: 'i-lucide-credit-card',
-    to: '/billing'
-  }, {
     label: 'Settings',
-    icon: 'i-lucide-cog',
     to: '/account/settings'
-  }],
-  [{
-    label: 'Sign out',
-    icon: 'i-heroicons-arrow-left-on-rectangle',
-    slot: 'profile',
+  }, {
+    label: 'Subscription',
+    to: '/subscription'
+  }, {
+    label: 'Contact Us',
+    to: '/contact'
+  },{
+    label: 'Logout',
     click: handleLogout
   }]
 ]);

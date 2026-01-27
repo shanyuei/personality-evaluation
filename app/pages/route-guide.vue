@@ -144,7 +144,7 @@ const formatRouteName = (path: string) => {
 
 // 过滤不需要显示的路由
 const filterRoutes = (allRoutes: any[]) => {
-  const ignoredPaths = ['/_nuxt', '/__nuxt_error', '/api']
+  const ignoredPaths = ['/_nuxt', '/__nuxt_error', '/api', '/zh']
 
   return allRoutes.filter(route => {
     // 过滤掉忽略的路径
