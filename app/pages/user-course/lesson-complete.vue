@@ -10,16 +10,18 @@
 
       <!-- 标题与说明 -->
       <h1
-        class="uno-text-3xl md:uno-text-5xl uno-text-center uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2] uno-text-[var(--ui-foreground)]">
+        class="uno-text-[48px] uno-text-center uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2] uno-text-[var(--ui-foreground)]">
         {{ $t('pages.userCourseLessonComplete.title') }}</h1>
       <p
-        class="uno-text-sm md:uno-text-base uno-text-[var(--ui-muted-foreground)] uno-font-['Outfit'] uno-text-center uno-max-w-[520px] uno-mx-auto">
+        class="uno-text-[16px] uno-text-[var(--ui-muted-foreground)] uno-font-['Outfit'] uno-text-center uno-max-w-[520px] uno-mx-auto">
         {{ $t('pages.userCourseLessonComplete.desc', { current, courseName }) }}
       </p>
 
       <!-- 主按钮 -->
       <AppLink :to="'/user-course/chapters'" class="uno-w-full md:uno-w-[520px]">
-        <UButton :ui="UButtonTheme" class="uno-font-['Outfit']">{{ $t('pages.userCourseLessonComplete.cta') }}</UButton>
+        <PrimaryButton>
+          {{ $t('pages.userCourseLessonComplete.cta') }}
+        </PrimaryButton>
       </AppLink>
 
       <!-- 次链接 -->
@@ -34,7 +36,7 @@
 import { ref } from 'vue'
 
 
-import UButtonTheme from '~/theme/UButton'
+import PrimaryButton from '@/components/ui/PrimaryButton.vue'
 
 const { t } = useI18n()
 const current = ref(3)

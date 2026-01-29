@@ -611,7 +611,7 @@
     "userCourseLessonComplete": {
       "title": "Congratulations!",
       "desc": "You have successfully completed lesson {current} of {courseName} course.",
-      "cta": "Get Started",
+      "cta": "Next Lesson",
       "toDashboard": "Go to Dashboard"
     },
     "userCourseChapterComplete": {
@@ -626,7 +626,7 @@
         "title": "Scoring",
         "body": "Each answer is assigned a point value. The total score is calculated by summing the points from all answers."
       },
-      "cta": "Get Started",
+      "cta": "Get Certified",
       "later": "I'll do it later"
     },
     "userCourseTest": {
