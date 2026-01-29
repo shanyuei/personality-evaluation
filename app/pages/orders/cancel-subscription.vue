@@ -10,7 +10,7 @@
           used to create your account.</p>
 
         <div class="uno-mb-4 sm:uno-mb-6">
-          <UFormField label="email" :ui="UFormFieldTheme">
+          <UFormField label="Email" :ui="UFormFieldTheme">
             <UInput id="email" v-model="email" type="email" placeholder="Email Address" :ui="UInputTheme" />
           </UFormField>
 
@@ -20,7 +20,7 @@
 
         <div class="uno-mb-6 sm:uno-mb-8">
           <h2
-            class="uno-text-[#0F172A] uno-font-['Outfit'] uno-font-semibold uno-text-lg sm:uno-text-xl uno-mb-3 sm:uno-mb-4">
+            class="uno-text-[#0F172A] uno-font-['Outfit'] uno-font-semibold uno-text-[16px] uno-mb-3 sm:uno-mb-4">
             Why did you decide
             to cancel your subscription?</h2>
           <div class="uno-space-y-2 sm:uno-space-y-3">
@@ -63,14 +63,14 @@
               class="uno-mt-0.5 uno-hidden md:uno-block " />
             <NuxtImg src="/images/common/email-icon-1.png" alt="Email Icon" width="50" height="50"
               class="uno-mt-0.5 uno-block md:uno-hidden" />
-            <div>
+            <div class="uno-text-xs">
               If you don't remember which email you used to register, check your inbox for emails from "Personality".
               Otherwise, contact our friendly customer support <span
                 class="uno-underline uno-text-[#009D77]">here</span>
 
             </div>
           </div>
-          <p class="uno-flex uno-items-start uno-gap-2 sm:uno-gap-3">
+          <p class="uno-flex uno-items-start uno-gap-2 sm:uno-gap-3 uno-text-xs">
             <NuxtImg src="/images/common/user-icon-1.png" alt="User Icon" width="16" height="16"
               class="uno-mt-0.5  uno-hidden md:uno-block" />
             <NuxtImg src="/images/common/user-icon-1.png" alt="User Icon" width="50" height="50"
@@ -94,7 +94,8 @@ import UCheckboxTheme from "~/theme/UCheckbox";
 import UButtonTheme from "~/theme/UButton";
 const { t } = useI18n()
 definePageMeta({
-  title: () => 'seo.orders.cancelSubscription.title'
+  title: () => 'seo.orders.cancelSubscription.title',
+      layoutShowPageTopIcons: false,
 })
 useSeoMeta({
   title: () => t('seo.orders.cancelSubscription.title') as string,
@@ -110,7 +111,7 @@ const reasons = ref({
   other: false,
 
 })
-const emailError = ref(false)
+const emailError = ref(true)
 
 const submit = () => {
   emailError.value = email.value.trim() === ''

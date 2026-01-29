@@ -7,7 +7,7 @@
       </div>
       <div class="uno-p-6 md:uno-p-8">
         <h1
-          class="uno-text-2xl md:uno-text-3xl uno-font-['Outfit'] uno-font-bold uno-text-[var(--ui-foreground)] uno-mb-3">
+          class="uno-text-[32px] uno-font-['Outfit'] uno-font-bold uno-text-[var(--ui-foreground)] uno-mb-3">
           {{ $t('pages.userCourseChapters.title') }}</h1>
         <p class="uno-text-sm md:uno-text-base uno-text-[var(--ui-muted-foreground)] uno-mb-6">{{
           $t('pages.userCourseChapters.description') }}</p>
@@ -20,9 +20,9 @@
         <div class="uno-space-y-3 uno-mb-8">
           <div v-for="(item, idx) in chapters" :key="idx" class="uno-flex uno-items-center uno-gap-4">
             <span
-              class="uno-inline-flex uno-items-center uno-justify-center uno-w-8 uno-h-8 uno-aspect-square uno-rounded-full uno-bg-[var(--ui-input)] uno-text-[var(--ui-muted-foreground)] uno-text-sm uno-font-['Outfit'] uno-font-medium uno-leading-normal">{{
+              class="uno-inline-flex uno-items-center uno-justify-center uno-w-8 uno-h-8 uno-aspect-square uno-rounded-full uno-bg-[var(--ui-input)] uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-font-medium uno-leading-normal">{{
               idx + 1 }}</span>
-            <span class="uno-text-[var(--ui-muted-foreground)] uno-font-['Outfit'] uno-leading-normal">{{ item }}</span>
+            <span class="uno-text-[#4E5255] uno-font-['Outfit'] uno-leading-normal">{{ item }}</span>
           </div>
         </div>
 

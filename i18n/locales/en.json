@@ -582,7 +582,7 @@
         "title": "Introduction",
         "body": "Effective communication is the cornerstone of successful leadership. It involves not just the transmission of information but also ensuring that the intended message is received and understood. For leaders, mastering communication skills is essential for inspiring and motivating teams, setting clear expectations, and building trust."
       },
-      "cta": "Get Started"
+      "cta": "Next"
     },
     "userCourseLesson": {
       "lessonCount": "Lesson {current} of {total}",
@@ -868,11 +868,11 @@
         "description": "Manage membership and cancel when needed."
       },
       "purchaseComplete": {
-        "title": "Thanks for your purchase!",
-        "description": "Click below to get started and access your report.",
+        "title": "Thank you for your purchase!",
+        "description": "Click below to get started and access your report！",
         "accessReport": "Open Report",
         "downloadGuidebook": "Download Guidebook",
-        "accessNote": "Click the button above to open your report page.",
+        "accessNote": "Click the button above to open your report page！",
         "downloadNote": "If download fails, please check your email later for the link.",
         "goHome": "Back to Home"
       }

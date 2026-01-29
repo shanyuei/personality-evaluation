@@ -6,43 +6,39 @@
         <nuxt-img src="/images/common/pay-card-1.png" alt="pay-card-1" width="96" height="96" />
       </div>
 
-      <h1 class="uno-text-3xl md:uno-text-5xl uno-font-bold uno-text-gray-900 uno-mb-3 md:uno-mb-4 uno-font-['Outfit']">
+      <h1 class="uno-text-3xl md:uno-text-5xl uno-font-600 uno-text-gray-900 uno-mb-3 md:uno-mb-4 uno-font-['Outfit']">
         {{ $t('pages.orders.purchaseComplete.title') }}</h1>
       <p class="uno-text-gray-600 uno-mb-6 md:uno-mb-8 uno-font-['Outfit'] uno-text-sm md:uno-text-lg">
         {{ $t('pages.orders.purchaseComplete.description') }}
       </p>
 
-      <UButton
-        class="uno-w-full uno-h-[48px] uno-font-['Outfit']"
-        :ui="UButtonTheme"
-        @click="goToReport">
-        {{ $t('pages.orders.purchaseComplete.accessReport') }}
-      </UButton>
+      <PrimaryButton @click="goToReport" class="uno-w-full">
+        Download my Report
+      </PrimaryButton>
 
       <p class="uno-text-gray-500 uno-mt-3 uno-mb-6 uno-font-['Outfit'] uno-text-sm md:uno-text-base">
         {{ $t('pages.orders.purchaseComplete.accessNote') }}
       </p>
 
-      <UButton
-        :ui="UButtonThemeDark"
-        class="uno-w-full uno-h-[48px] uno-font-['Outfit']"
-        @click="downloadGuidebook">
-        {{ $t('pages.orders.purchaseComplete.downloadGuidebook') }}
-      </UButton>
+      <OutlineButton @click="downloadGuidebook" class="uno-w-full">
+        Self-Esteem
+      </OutlineButton>
 
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-  
-  
-  import UButtonTheme, { UButtonThemeDark } from '~/theme/UButton'
+
+
+import PrimaryButton from '@/components/ui/PrimaryButton.vue'
+import OutlineButton from '@/components/ui/OutlineButton.vue'
 const { t } = useI18n()
 const localePath = useLocalePath()
 definePageMeta({
   title: () => 'pages.orders.purchaseComplete.title',
-  layoutShowMenu:false,
+  layoutShowMenu: false,
+  layoutShowPageTopIcons: false,
 })
 useSeoMeta({
   title: () => t('seo.orders.purchaseComplete.title') as string,
