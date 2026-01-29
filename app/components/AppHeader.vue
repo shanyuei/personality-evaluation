@@ -37,7 +37,9 @@
 
       <!-- 登录状态 -->
       <UDropdownMenu v-else :items="accountItems"
-        :ui="{ item: 'data-[disabled]:cursor-text data-[disabled]:select-text uno-px-3 uno-py-2', content: 'uno-p-1 uno-bg-white uno-ring-1 uno-ring-gray-200 uno-rounded-xl uno-shadow-lg uno-min-w-[200px]' }"
+        :ui="{ 
+          item: 'data-[disabled]:cursor-text data-[disabled]:select-text uno-px-3 uno-py-2',
+         content: 'uno-p-1 uno-bg-white uno-ring-1 uno-ring-gray-200 uno-rounded-xl uno-shadow-lg uno-min-w-[200px]' }"
         :content="{ align: 'end', side: 'bottom', sideOffset: 8 }">
         <div class="uno-flex uno-items-center uno-gap-2 uno-cursor-pointer max-sm:uno-hidden">
           <UIcon name="i-lucide-circle-user" class="uno-w-28px uno-h-28px uno-text-[var(--color-pink-1)]" />
@@ -46,14 +48,6 @@
           <UIcon name="i-heroicons-chevron-down-20-solid" class="uno-w-5 uno-h-5 uno-text-[var(--color-pink-1)]" />
         </div>
 
-        <template #account="{ item }">
-          <div class="uno-text-left">
-            <p class="uno-text-xs uno-font-Outfit uno-text-[var(--ui-muted-foreground)]">Signed in as</p>
-            <p class="uno-truncate uno-font-medium uno-text-[var(--ui-foreground)] uno-font-Outfit">
-              {{ item.label }}
-            </p>
-          </div>
-        </template>
 
         <template #profile="{ item }">
           <div class="uno-flex uno-items-center uno-gap-2 uno-w-full" @click="onClick(item)">
