@@ -1,6 +1,6 @@
 <template>
   <div
-    class="uno-gradient-cta-section uno-relative uno-w-full uno-flex uno-items-center uno-justify-center uno-mb-20 uno-relative">
+    class="uno-gradient-cta-section uno-relative uno-w-full uno-flex uno-items-center uno-justify-center uno-mb-20 uno-relative uno-whitespace-pre-line">
     <!-- 内容 -->
     <!-- 背景 -->
     <NuxtImg src="/images/footer/curious-h5-bg.png" alt="" aria-hidden="true" width="342px" height="438px"
