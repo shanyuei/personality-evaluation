@@ -73,7 +73,7 @@
       <section class="uno-mt-[34px]">
         <h2 class="uno-font-semibold uno-text-[24px] uno-text-[#323233] uno-leading-[36px] uno-mb-[16px]">{{
           $t('pages.account.settings.delete.title') }}</h2>
-        <button class="uno-text-[#EA4C89] uno-font-bold uno-text-[18px] hover:uno-underline" @click="onDeleteAccount">{{
+        <button class="uno-text-[#FF4747] uno-font-bold uno-text-[18px] hover:uno-underline" @click="onDeleteAccount">{{
           $t('pages.account.settings.delete.action') }}</button>
       </section>
     </div>

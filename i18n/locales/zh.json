@@ -182,7 +182,11 @@
           "emailError": "请输入有效的邮箱地址",
           "paymentError": "支付失败，请重试。",
           "paymentSuccess": "支付发起成功！",
-          "consent": "点击“订阅”即表示我以电子方式授权 Mypersonality.net 根据计费条款从我的卡中扣款（包括自动续订），直到取消。我同意条款和隐私政策。",
+          "consentPart1": "点击\"订阅\"即表示我以电子方式授权 Mypersonality.net 根据计费条款从我的卡中扣款（包括自动续订），直到取消。我同意",
+          "consentPart2": "和",
+          "consentPart3": "。",
+          "terms": "条款",
+          "privacy": "隐私政策",
           "subscribeBtn": "仅需 $1.99 订阅",
           "paypalBtn": "使用 PayPal 支付",
           "gpayBtn": "使用 G Pay 支付"
