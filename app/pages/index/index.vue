@@ -21,7 +21,7 @@
                 <!-- 测试按钮 -->
                 <AppArrowButton variant="primary"
                     class="uno-m-t-32px sm:uno-m-t-48px md:uno-m-t-72px uno-gap-[8px] sm:uno-gap-[12px] md:uno-gap-[18px] uno-py-2 sm:uno-py-3 md:uno-py-4 uno-pr-2 sm:uno-pr-3 md:uno-pr-3 uno-pl-[20px] sm:uno-pl-[24px] md:uno-pl-[48px] uno-text-[18px] sm:uno-text-[18px] md:uno-text-[32px] uno-font-['Outfit'] uno-font-medium"
-                    :icon-size="$device.isMobile?44:72" :to="localePath('/test')">
+                    :icon-size="$device.isMobile ? 44 : 72" :to="localePath('/test')">
                     Take the Test
                 </AppArrowButton>
             </div>
@@ -57,129 +57,131 @@
             </div>
         </div>
         <!-- 第四块 介绍区域 -->
-        <div class="page-container uno-intro-section uno-py-12 sm:uno-py-16 md:uno-py-20 lg:uno-py-24">
-                <!-- Why You Should Take the Test 部分 -->
-                <div class="uno-mb-12 sm:uno-mb-16 md:uno-mb-120px lg:uno-mb-120px">
-                    <div class="uno-max-w-[800px] uno-mx-auto uno-relative">
-                        <h2
-                            class="uno-text-[#011813] uno-text-[32px] sm:uno-text-3xl md:uno-text-4xl lg:uno-text-5xl uno-font-['Outfit'] uno-text-center uno-font-semibold uno-m-b-6px sm:uno-m-b-8px md:uno-m-b-12px">
-                            {{ $t('pages.home.why.title') }}</h2>
-                        <p v-if="!$device.isMobile" class="uno-text-[#4E5255] uno-font-['Outfit'] uno-font-normal uno-text-[16px] uno-leading-[150%] uno-tracking-[0%] uno-text-center uno-vertical-align-middle sm:uno-text-base uno-mb-[56px] sm:uno-mb-[80px] "
-                            style="white-space: pre-line;">
-                            {{ $t('pages.home.why.desc') }}
-                        </p>
-                        <p v-else class="uno-relative uno-left-[50%] translate-x-[-50%] uno-w-100vw uno-text-[#4E5255] uno-font-['Outfit'] uno-font-normal uno-text-[16px] uno-leading-[150%] uno-tracking-[0%] uno-text-center uno-vertical-align-middle sm:uno-text-base uno-mb-[56px] sm:uno-mb-[80px] "
-                            style="white-space: pre-line;">
-                            {{ $t('pages.home.why.desc-mobile') }}
-                        </p>
-                    </div>
+        <div class="page-container uno-intro-section  !uno-py-20 sm:uno-py-16 md:uno-py-20 lg:uno-py-24">
+            <!-- Why You Should Take the Test 部分 -->
+            <div class="uno-mb-12 sm:uno-mb-16 md:uno-mb-120px lg:uno-mb-120px">
+                <div class="uno-max-w-[800px] uno-mx-auto uno-relative">
+                    <h2
+                        class="uno-text-[#011813] uno-text-[32px] sm:uno-text-3xl md:uno-text-4xl lg:uno-text-5xl uno-font-['Outfit'] uno-text-center uno-font-semibold uno-m-b-6px sm:uno-m-b-8px md:uno-m-b-12px">
+                        {{ $t('pages.home.why.title') }}</h2>
+                    <p v-if="!$device.isMobile"
+                        class="uno-text-[#4E5255] uno-font-['Outfit'] uno-font-normal uno-text-[16px] uno-leading-[150%] uno-tracking-[0%] uno-text-center uno-vertical-align-middle sm:uno-text-base uno-mb-[56px] sm:uno-mb-[80px] "
+                        style="white-space: pre-line;">
+                        {{ $t('pages.home.why.desc') }}
+                    </p>
+                    <p v-else
+                        class="uno-relative uno-left-[50%] translate-x-[-50%] uno-w-100vw uno-text-[#4E5255] uno-font-['Outfit'] uno-font-normal uno-text-[16px] uno-leading-[150%] uno-tracking-[0%] uno-text-center uno-vertical-align-middle sm:uno-text-base uno-mb-[56px] sm:uno-mb-[80px] "
+                        style="white-space: pre-line;">
+                        {{ $t('pages.home.why.desc-mobile') }}
+                    </p>
+                </div>
 
-                    <!-- 主要介绍卡片 -->
-                    <div
-                        class="uno-shadow-lg uno-mb-6 sm:uno-mb-8 md:uno-mb-24px lg:uno-mb-24px uno-w-full uno-bg-[#F8F8F8] uno-border-solid uno-border-[#E7E7E8] uno-border uno-rounded-[32px] uno-p-[24px]  uno-relative uno-overflow-hidden">
+                <!-- 主要介绍卡片 -->
+                <div
+                    class="uno-shadow-lg uno-mb-6 sm:uno-mb-8 md:uno-mb-24px lg:uno-mb-24px uno-w-full uno-bg-[#F8F8F8] uno-border-solid uno-border-[#E7E7E8] uno-border uno-rounded-[32px] uno-p-[24px]  uno-relative uno-overflow-hidden">
 
-                        <div class="uno-flex uno-flex-col md:uno-flex-row uno-items-center uno-gap-8 md:uno-gap-12">
-                            <!-- Left Content -->
+                    <div class="uno-flex uno-flex-col md:uno-flex-row uno-items-center uno-gap-8 md:uno-gap-12">
+                        <!-- Left Content -->
+                        <div class="uno-w-full md:uno-w-[45%] uno-flex uno-flex-col uno-justify-center uno-relative">
+                            <!-- Top Icon -->
                             <div
-                                class="uno-w-full md:uno-w-[45%] uno-flex uno-flex-col uno-justify-center uno-relative">
-                                <!-- Top Icon -->
-                                <div
-                                    class="uno-w-12 uno-h-12 uno-bg-[#E0F2EF] uno-rounded-xl uno-flex uno-items-center uno-justify-center uno-mb-6">
-                                    <NuxtImg src="/images/home/2.png" alt="decor" width="48" height="48"
-                                        class="uno-w-10 uno-h-10 md:uno-w-14 md:uno-h-14 uno-object-contain" />
-                                </div>
-
-                                <h3
-                                    class="uno-text-[24px] sm:uno-text-[28px] md:uno-text-[32px] uno-font-['Outfit'] uno-font-bold uno-mb-4 uno-text-[#011813] uno-leading-tight">
-                                    {{ $t('pages.home.why.main.title') }}
-                                </h3>
-                                <p class="uno-text-[#4E5255] uno-text-base sm:uno-text-lg uno-mb-6 uno-leading-relaxed">
-                                    {{ $t('pages.home.why.main.desc') }}
-                                </p>
-
-                                <!-- Divider -->
-                                <div class="uno-w-full uno-h-[1px] uno-bg-[#E7E7E8] uno-mb-6" />
-
-                                <div class="uno-relative uno-inline-flex">
-                                    <AppArrowButton class="uno-pl-6 uno-pr-2 uno-py-2 uno-gap-3" :icon-size="44"
-                                        :to="localePath('/test')" hover-class="">
-                                        <span class="uno-font-['Outfit'] uno-font-medium uno-text-[16px]">{{
-                                            $t('common.getStarted') }}</span>
-                                    </AppArrowButton>
-
-
-                                </div>
+                                class="uno-w-12 uno-h-12 uno-bg-[#E0F2EF] uno-rounded-xl uno-flex uno-items-center uno-justify-center uno-mb-6">
+                                <NuxtImg v-if="!$device.isMobile" src="/images/home/2.png" alt="decor" width="48"
+                                    height="48" class="uno-w-10 uno-h-10 md:uno-w-14 md:uno-h-14 uno-object-contain" />
+                                <NuxtImg v-else src="/images/home/2.png" alt="decor" width="56" height="56"
+                                    class="uno-w-10 uno-h-10 md:uno-w-14 md:uno-h-14 uno-object-contain" />
                             </div>
 
-                            <!-- Right Image -->
-                            <NuxtImg src="/images/home/1.png" alt="Self-awareness illustration" width="564" height="376"
-                                class="uno-object-contain uno-rounded-2xl" />
-                        </div>
-                    </div>
-
-                    <!-- 三个小介绍卡片 -->
-                    <div
-                        class="uno-grid uno-grid-cols-1 md:uno-grid-cols-3 uno-gap-[20px] uno-px-2 sm:uno-px-0">
-                        <!-- 卡片循环 -->
-                        <div v-for="(card, index) in whyCards" :key="index"
-                            class="uno-bg-[#F8F8F8] uno-border-solid uno-border-[#E7E7E8] uno-border-1 uno-rounded-[12px] uno-p-12px sm:uno-p-16px md:uno-p-24px uno-relative uno-w-full md:uno-w-[384px] md:uno-h-[284px]">
-                            <div class="uno-mb-2 sm:uno-mb-3 md:uno-mb-4" :class="card.iconColor">
-                                <!-- 图标 -->
-                                <NuxtImg :src="card.icon" :alt="card.alt" width="32" height="32"
-                                    class="sm:uno-w-[40px] sm:uno-h-[40px] md:uno-w-[56px] md:uno-h-[56px]" />
-                            </div>
                             <h3
-                                class="uno-text-base sm:uno-text-lg md:uno-text-[32px] uno-font-['Outfit'] uno-font-bold uno-mb-2 sm:uno-mb-3">
-                                {{ $t(card.titleKey) }}</h3>
-                            <p class="uno-text-gray-600 uno-text-xs sm:uno-text-sm md:uno-text-base">{{
-                                $t(card.descKey) }}</p>
+                                class="uno-text-[32px] uno-font-['Outfit'] uno-font-semibold uno-mb-4 uno-text-[#011813] uno-leading-tight">
+                                {{ $t('pages.home.why.main.title') }}
+                            </h3>
+                            <p class="uno-text-[#4E5255] uno-text-base sm:uno-text-lg uno-mb-6 uno-leading-relaxed">
+                                {{ $t('pages.home.why.main.desc') }}
+                            </p>
+
+                            <!-- Divider -->
+                            <div class="uno-w-full uno-h-[1px] uno-bg-[#E7E7E8] uno-mb-6" />
+
+                            <div
+                                class="uno-relative uno-inline-flex uno-w-full uno-flex uno-justify-center md:uno-justify-start">
+                                <AppArrowButton class="uno-pl-6 uno-pr-2 uno-py-2 uno-gap-3" :icon-size="44"
+                                    :to="localePath('/test')" hover-class="">
+                                    <span class="uno-font-['Outfit'] uno-font-medium uno-text-[16px]">{{
+                                        $t('common.getStarted') }}</span>
+                                </AppArrowButton>
+                            </div>
                         </div>
+
+                        <!-- Right Image -->
+                        <NuxtImg v-if="!$device.isMobile" src="/images/home/1.png" alt="Self-awareness illustration"
+                            width="564" height="376" class="uno-object-contain uno-rounded-2xl" />
+                        <NuxtImg v-else src="/images/home/1.png" alt="Self-awareness illustration" width="309"
+                            height="206" class="uno-object-contain uno-rounded-2xl" />
                     </div>
                 </div>
 
-                <!-- How Does It Work 部分 -->
-                <div class="uno-flex uno-flex-col md:uno-flex-row uno-gap-8 sm:uno-gap-12 uno-items-center uno-pt-120px">
-                    <!-- 左侧：标题、描述和按钮 -->
-                    <div class="uno-w-full md:uno-w-1/2">
+                <!-- 三个小介绍卡片 -->
+                <div class="uno-grid uno-grid-cols-1 md:uno-grid-cols-3 uno-gap-[20px] sm:uno-px-0">
+                    <!-- 卡片循环 -->
+                    <div v-for="(card, index) in whyCards" :key="index"
+                        class="uno-bg-[#F8F8F8] uno-border-solid uno-border-[#E7E7E8] uno-border-1 uno-rounded-[12px] uno-p-18px sm:uno-p-24px md:uno-p-24px uno-relative uno-w-full md:uno-w-[384px] md:uno-h-[284px]">
+                        <!-- 图标 -->
+                        <NuxtImg v-if="!$device.isMobile" :src="card.icon" :alt="card.alt" width="32" height="32"
+                            class="sm:uno-w-[40px] sm:uno-h-[40px] md:uno-w-[56px] md:uno-h-[56px]" />
+                        <NuxtImg v-else :src="card.icon" :alt="card.alt" width="56" height="56" class="uno-mb-12px" />
+
+                        <h3
+                            class="uno-font-['Outfit'] uno-font-semibold uno-text-[26px] uno-leading-[124%] uno-tracking-[0%] sm:uno-text-lg md:uno-text-[32px] uno-mb-2 sm:uno-mb-3">
+                            {{ card.titleKey }}</h3>
+                        <p class="uno-text-gray-600 uno-font-['Outfit'] uno-font-normal uno-text-[16px] uno-leading-[150%] uno-tracking-[0%] sm:uno-text-sm md:uno-text-base">{{ card.descKey }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How Does It Work 部分 -->
+            <div class="uno-flex uno-flex-col md:uno-flex-row uno-gap-48px sm:uno-gap-12 uno-items-center uno-pt-40px sm:uno-pt-120px">
+                <!-- 左侧：标题、描述和按钮 -->
+                <div class="uno-w-full md:uno-w-1/2">
+                    <div class="uno-flex uno-flex-col uno-items-center md:uno-items-start">
                         <h2
-                            class="uno-text-[32px] sm:uno-text-[48px] md:uno-text-[48px] uno-font-['Outfit'] uno-font-bold uno-mb-6 sm:uno-mb-8">
-                            {{
-                                $t('pages.home.how.title') }}
+                            class="uno-text-[32px] sm:uno-text-[48px] md:uno-text-[48px] uno-font-['Outfit'] uno-font-semibold uno-mb-6 sm:uno-mb-8">
+                            {{ $t('pages.home.how.title') }}
                         </h2>
-                        <p class="uno-text-gray-600 uno-mb-8 sm:uno-mb-12">{{ $t('pages.home.how.desc') }}</p>
+                        <p class="uno-text-gray-600 uno-mb-8 sm:uno-mb-12 md:uno-text-left">{{ $t('pages.home.how.desc') }}</p>
 
                         <AppArrowButton
-                            class="uno-m-t-12px sm:uno-m-t-16px md:uno-m-t-24px uno-gap-[6px] sm:uno-gap-[8px] md:uno-gap-[12px] uno-py-2 sm:uno-py-2 uno-pr-[3px] sm:uno-pr-[4px] md:uno-pr-[6px] uno-pl-[12px] sm:uno-pl-[16px] md:uno-pl-[24px] uno-text-[12px] sm:uno-text-[14px] md:uno-text-[16px] uno-font-['Outfit'] uno-font-medium"
+                            class="uno-m-t-12px sm:uno-m-t-16px md:uno-m-t-24px uno-gap-[6px] sm:uno-gap-[8px] md:uno-gap-[12px] uno-py-2 sm:uno-py-2 uno-pr-[6px] sm:uno-pr-[4px] md:uno-pr-[6px] uno-pl-[12px] sm:uno-pl-[16px] md:uno-pl-[24px] uno-text-[16px] sm:uno-text-[14px] md:uno-text-[16px] uno-font-['Outfit'] uno-font-medium"
                             :to="localePath('/test')" :icon-size="44" hover-class="">
                             {{ $t('common.getStarted') }}
                         </AppArrowButton>
                     </div>
+                </div>
 
-                    <!-- 右侧：三个步骤卡片 -->
-                    <div class="uno-w-full md:uno-w-1/2">
-                        <div class="uno-flex uno-justify-start uno-items-end uno-flex-col uno-gap-4 sm:uno-gap-6">
-                            <!-- 步骤循环 -->
-                            <div v-for="(item, index) in howSteps" :key="index" style="flex-shrink: 0"
-                                class="uno-w-full uno-flex uno-justify-start uno-items-center uno-flex-row uno-gap-[12px] sm:uno-gap-[12px] uno-py-16px sm:uno-py-24px uno-px-16px sm:uno-px-24px uno-bg-[#FFFFFF] uno-rounded-2xl uno-shadow-[0_20px_40px_0_rgba(0,157,119,0.08)] uno-border uno-border-solid uno-border-[#F0F0F0]">
-                                <div style="flex: none"
-                                    class="uno-w-[48px] uno-h-[48px] sm:uno-w-[64px] sm:uno-h-[64px] uno-flex uno-justify-center uno-items-center  uno-rounded-[24px] sm:uno-rounded-[50px] uno-flex uno-items-center uno-justify-center"
-                                    :class="item.bgClass">
-                                    <span
-                                        class="uno-text-3xl sm:uno-text-[36px] uno-font-['Outfit'] uno-font-semibold uno-mb-[6px]"
-                                        :class="item.textClass">{{ item.step }}</span>
-                                </div>
-                                <div
-                                    class="uno-flex uno-justify-start uno-items-start uno-flex-col uno-gap-1 sm:uno-gap-2">
-                                    <p
-                                        class="uno-text-[#011813] uno-text-xl sm:uno-text-2xl uno-font-['Outfit'] uno-font-semibold">
-                                        {{ $t(item.titleKey) }}</p>
-                                    <p class="uno-w-full uno-text-[#4E5255] uno-font-['Outfit']">{{
-                                        $t(item.descKey) }}</p>
-                                </div>
+                <!-- 右侧：三个步骤卡片 -->
+                <div class="uno-w-full md:uno-w-1/2">
+                    <div class="uno-flex uno-justify-start uno-items-end uno-flex-col uno-gap-24px sm:uno-gap-6">
+                        <!-- 步骤循环 -->
+                        <div v-for="(item, index) in howSteps" :key="index" style="flex-shrink: 0"
+                            class="uno-w-full uno-flex uno-justify-start uno-items-center uno-flex-row uno-gap-[12px] sm:uno-gap-[12px] uno-py-16px sm:uno-py-24px uno-px-16px sm:uno-px-24px uno-bg-[#FFFFFF] uno-rounded-2xl uno-shadow-[0_20px_40px_0_rgba(0,157,119,0.08)] uno-border uno-border-solid uno-border-[#F0F0F0]">
+                            <div style="flex: none"
+                                class="uno-w-[64px] uno-h-[64px] sm:uno-w-[64px] sm:uno-h-[64px] uno-flex uno-justify-center uno-items-center  uno-rounded-[24px] sm:uno-rounded-[50px] uno-flex uno-items-center uno-justify-center"
+                                :class="item.bgClass">
+                                <span
+                                    class="uno-text-3xl sm:uno-text-[36px] uno-font-['Outfit'] uno-font-semibold uno-mb-[6px]"
+                                    :class="item.textClass">{{ item.step }}</span>
+                            </div>
+                            <div class="uno-flex uno-justify-start uno-items-start uno-flex-col uno-gap-1 sm:uno-gap-2">
+                                <p
+                                    class="uno-text-[#011813] uno-text-24px uno-font-500 sm:uno-text-2xl uno-font-['Outfit']  sm:uno-font-semibold">
+                                    {{ $t(item.titleKey) }}</p>
+                                <p class="uno-w-full uno-text-[#4E5255] uno-font-['Outfit']">{{
+                                    $t(item.descKey) }}</p>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
         </div>
 
         <!-- 第五块 What You Will Receive 区域 -->
@@ -191,15 +193,13 @@
                 class="uno-w-full uno-h-[100%]  uno-absolute uno-top-0 uno-left-0 uno--z-10 uno-pointer-events-none uno-hidden md:uno-block"
                 uno-preload />
             <div
-                class="page-container uno-px-4 uno-py-8 sm:uno-py-12 md:uno-py-16 lg:uno-py-20 xl:uno-py-24 relative z-10">
+                class="page-container uno-px-4 !uno-py-8 sm:uno-py-12 md:uno-py-16 lg:uno-py-20 xl:uno-py-24 relative z-10">
                 <h2
-                    class="uno-text-xl sm:uno-text-2xl md:uno-text-[48px] uno-font-['Outfit'] uno-font-bold uno-text-center uno-mb-2 sm:uno-mb-3 md:uno-mb-4">
-                    {{
-                        $t('pages.home.receive.title') }}</h2>
+                    class="uno-text-[32px] sm:uno-text-2xl md:uno-text-[48px] uno-font-['Outfit'] uno-font-semibold uno-text-center uno-mb-2 sm:uno-mb-3 md:uno-mb-4">
+                    {{ $t('pages.home.receive.title') }}</h2>
                 <p
-                    class="uno-text-center uno-text-gray-600 uno-text-xs sm:uno-text-sm md:uno-text-base uno-mb-6 sm:uno-mb-8 md:uno-mb-16 uno-max-w-3xl uno-mx-auto">
-                    {{
-                        $t('pages.home.receive.desc') }}</p>
+                    class="uno-text-center uno-text-gray-600 uno-text-[16px] sm:uno-text-sm md:uno-text-base uno-mb-6 sm:uno-mb-8 md:uno-mb-16 uno-max-w-3xl uno-mx-auto">
+                    {{ $t('pages.home.receive.desc') }}</p>
 
                 <!-- 六个卡片布局 -->
                 <!-- 循环展示 receiveCards -->
@@ -298,22 +298,22 @@ const whyCards = [
         icon: '/images/home/3.png',
         alt: 'Better decision-making icon',
         iconColor: 'uno-text-amber-500',
-        titleKey: 'pages.home.why.small1.title',
-        descKey: 'pages.home.why.small1.desc'
+        titleKey: $t('pages.home.why.small1.title'),
+        descKey: $t('pages.home.why.small1.desc')
     },
     {
         icon: '/images/home/4.png',
         alt: 'Enhanced relationships icon',
         iconColor: 'uno-text-pink-500',
-        titleKey: 'pages.home.why.small2.title',
-        descKey: 'pages.home.why.small2.desc'
+        titleKey: $t('pages.home.why.small2.title'),
+        descKey: $t('pages.home.why.small2.desc')
     },
     {
         icon: '/images/home/5.png',
         alt: 'Career satisfaction icon',
         iconColor: 'uno-text-indigo-500',
-        titleKey: 'pages.home.why.small3.title',
-        descKey: 'pages.home.why.small3.desc'
+        titleKey: $t('pages.home.why.small3.title'),
+        descKey: $t('pages.home.why.small3.desc')
     }
 ]
 

@@ -21,16 +21,16 @@
           "desc": "Gain UI design abilities through practice-driven coaching, with personalized guidance and feedback."
         },
         "small1": {
-          "title": "Better decisions",
-          "desc": "Keep improving with expert coaching and personalized guidance."
+          "title": "Better decision-making",
+          "desc": "Gain UI design mastery with hands-on expert mentorship, refining your skills through personalized guidance and feedback."
         },
         "small2": {
-          "title": "Improved relationships",
-          "desc": "Structured practice and feedback help you build better interpersonal interactions."
+          "title": "Enhanced relationships",
+          "desc": "Gain UI design mastery with hands-on expert mentorship, refining your skills through personalized guidance and feedback."
         },
         "small3": {
           "title": "Career satisfaction",
-          "desc": "Clear goals and continuous improvement lead to greater achievement and fulfillment."
+          "desc": "Gain UI design mastery with hands-on expert mentorship, refining your skills through personalized guidance and feedback."
         },
         "desc-mobile": "Connect with the next wave of expert mentors,\n guiding you with fresh perspectives, innovative\n insights, and proven expertise."
       },
@@ -1106,7 +1106,8 @@
     "of": "of",
     "lessons": "lessons",
     "finished": "finished",
-    "certificate": "Certificate"
+    "certificate": "Certificate",
+    "viewAllBlogs": "View All Blogs"
   },
   "seo": {
     "home": {
