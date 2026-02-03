@@ -17,16 +17,8 @@ export default defineNuxtConfig({
     }
   },
 
-  modules: [
-    '@nuxt/ui',
-    '@unocss/nuxt',
-    'pinia-plugin-persistedstate/nuxt',
-    '@pinia/nuxt',
-    '@nuxtjs/i18n', // Vue 3兼容版本
-    '@nuxt/image',
-    '@nuxt/eslint',
-    "@nuxt/devtools"
-  ],
+  modules: ['@nuxt/ui', '@unocss/nuxt', 'pinia-plugin-persistedstate/nuxt', '@pinia/nuxt', // Vue 3兼容版本
+  '@nuxtjs/i18n', '@nuxt/image', '@nuxt/eslint', "@nuxt/devtools", '@nuxtjs/device'],
   css: ['~/assets/css/main.css', '~/assets/css/common.less'],
   pinia: {
 
@@ -41,8 +33,8 @@ export default defineNuxtConfig({
   i18n: {
     langDir: '../i18n/locales',
     locales: [
-      { code: 'en', language: 'en-US', name: 'English', file: 'en.json' },
-      { code: 'zh', language: 'zh-CN', name: '中文', file: 'zh.json' },
+      { code: 'en', language: 'en-US', name: 'English', mobileName:  'EN', file: 'en.json' },
+      { code: 'zh', language: 'zh-CN', name: '中文', mobileName: '中文', file: 'zh.json' },
     ],
     defaultLocale: 'en',
     strategy: 'prefix_except_default',

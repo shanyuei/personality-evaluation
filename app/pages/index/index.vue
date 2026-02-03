@@ -9,43 +9,43 @@
                 <div
                     class="uno-flex uno-justify-start uno-items-center uno-flex-col uno-gap-12px sm:uno-gap-16px md:uno-gap-24px">
                     <h1
-                        class="uno-text-[#011813] uno-text-xl sm:uno-text-2xl md:uno-text-5xl lg:uno-text-7xl uno-font-['Outfit'] uno-text-center uno-font-semibold">
+                        class="uno-text-[#011813] uno-font-['Outfit'] uno-font-semibold uno-text-[40px] uno-leading-[120%] uno-tracking-[0%] uno-text-center sm:uno-text-2xl md:uno-text-5xl lg:uno-text-7xl">
                         {{ $t('pages.home.title') }}
                     </h1>
                     <h2
-                        class="uno-text-[#4E5255] uno-font-[400] uno-text-xs sm:uno-text-sm md:uno-text-lg uno-font-['Outfit'] uno-text-center">
+                        class="uno-text-[#4E5255] uno-font-[400] uno-text-[18px] sm:uno-text-sm md:uno-text-lg uno-font-['Outfit'] uno-text-center">
                         {{ $t('pages.home.description') }}
                     </h2>
                 </div>
 
                 <!-- 测试按钮 -->
                 <AppArrowButton variant="primary"
-                    class="uno-m-t-32px sm:uno-m-t-48px md:uno-m-t-72px uno-gap-[8px] sm:uno-gap-[12px] md:uno-gap-[18px] uno-py-2 sm:uno-py-3 md:uno-py-4 uno-pr-2 sm:uno-pr-3 md:uno-pr-3 uno-pl-[20px] sm:uno-pl-[24px] md:uno-pl-[48px] uno-text-[14px] sm:uno-text-[18px] md:uno-text-[32px] uno-font-['Outfit'] uno-font-medium"
-                    :icon-size="72" :to="localePath('/test')">
+                    class="uno-m-t-32px sm:uno-m-t-48px md:uno-m-t-72px uno-gap-[8px] sm:uno-gap-[12px] md:uno-gap-[18px] uno-py-2 sm:uno-py-3 md:uno-py-4 uno-pr-2 sm:uno-pr-3 md:uno-pr-3 uno-pl-[20px] sm:uno-pl-[24px] md:uno-pl-[48px] uno-text-[18px] sm:uno-text-[18px] md:uno-text-[32px] uno-font-['Outfit'] uno-font-medium"
+                    :icon-size="$device.isMobile?44:72" :to="localePath('/test')">
                     Take the Test
                 </AppArrowButton>
             </div>
         </div>
         <!-- 第二块区域 hero -->
-        <div class="page-container uno-hero-section uno-w-full uno-my-12 ">
+        <div class="page-container uno-hero-section uno-w-full uno-my-40px sm:uno-my-12 ">
             <div
                 class="uno-flex uno-justify-center uno-items-center uno-gap-2 sm:uno-gap-3 md:uno-gap-4 lg:uno-gap-6 xl:uno-gap-6">
                 <!-- 六个卡通人物头像 -->
                 <div v-for="(hero, index) in heroAvatars" :key="index"
-                    class="uno-hero-avatar uno-relative uno-w-26 uno-h-34  md:uno-w-32 md:uno-h-48 lg:uno-w-32 lg:uno-h-48 xl:uno-w-40 xl:uno-h-64 uno-overflow-hidden uno-flex uno-items-center uno-justify-center">
+                    class="uno-hero-avatar uno-relative uno-w-26 uno-h-85px sm:uno-h-34  md:uno-w-32 md:uno-h-48 lg:uno-w-32 lg:uno-h-48 xl:uno-w-40 xl:uno-h-64 uno-overflow-hidden uno-flex uno-items-center uno-justify-center">
                     <NuxtImg :src="hero.src" :alt="hero.alt" class="uno-w-full uno-h-full uno-object-contain" />
                 </div>
             </div>
         </div>
         <!-- 第三块 数据统计区域 -->
-        <div class="uno-data-stats uno-bg-[#F5F8FF] uno-my-12">
+        <div class="uno-data-stats uno-bg-[#F5F8FF] uno-my-40px sm:uno-my-12 ">
             <div class="page-container uno-px-4">
                 <div class="uno-grid uno-grid-cols-2 md:uno-grid-cols-4 uno-gap-3 sm:uno-gap-4 md:uno-gap-6">
                     <!-- 统计项循环 -->
                     <div v-for="(item, index) in statsItems" :key="index"
-                        class="uno-text-center uno-p-3 sm:uno-p-4 md:uno-p-6 uno-flex uno-flex-col uno-justify-center uno-items-center">
+                        class="uno-text-center uno-p-3 sm:uno-p-4 md:uno-p-6 uno-flex uno-flex-col uno-justify-start uno-items-center sm:uno-justify-center md:uno-justify-center lg:uno-justify-center">
                         <div :style="{ color: item.color }"
-                            class="uno-text-lg sm:uno-text-2xl md:uno-text-4xl lg:uno-text-5xl uno-font-['Outfit'] uno-font-semibold uno-m-b-1px sm:uno-m-b-2px md:uno-m-b-4px">
+                            class="uno-text-[20.75px] sm:uno-text-2xl md:uno-text-4xl lg:uno-text-5xl uno-font-['Outfit'] uno-font-semibold uno-m-b-1px sm:uno-m-b-2px md:uno-m-b-4px">
                             {{ item.value }}
                         </div>
                         <div
@@ -60,14 +60,17 @@
         <div class="page-container uno-intro-section uno-py-12 sm:uno-py-16 md:uno-py-20 lg:uno-py-24">
                 <!-- Why You Should Take the Test 部分 -->
                 <div class="uno-mb-12 sm:uno-mb-16 md:uno-mb-120px lg:uno-mb-120px">
-                    <div class="uno-max-w-[800px] uno-mx-auto">
+                    <div class="uno-max-w-[800px] uno-mx-auto uno-relative">
                         <h2
-                            class="uno-text-[#011813] uno-text-2xl sm:uno-text-3xl md:uno-text-4xl lg:uno-text-5xl uno-font-['Outfit'] uno-text-center uno-font-semibold uno-m-b-6px sm:uno-m-b-8px md:uno-m-b-12px">
-                            {{
-                                $t('pages.home.why.title') }}</h2>
-                        <p class="uno-text-[#4E5255] uno-font-['Outfit'] uno-text-center uno-text-sm sm:uno-text-base uno-mb-[56px] sm:uno-mb-[80px] "
+                            class="uno-text-[#011813] uno-text-[32px] sm:uno-text-3xl md:uno-text-4xl lg:uno-text-5xl uno-font-['Outfit'] uno-text-center uno-font-semibold uno-m-b-6px sm:uno-m-b-8px md:uno-m-b-12px">
+                            {{ $t('pages.home.why.title') }}</h2>
+                        <p v-if="!$device.isMobile" class="uno-text-[#4E5255] uno-font-['Outfit'] uno-font-normal uno-text-[16px] uno-leading-[150%] uno-tracking-[0%] uno-text-center uno-vertical-align-middle sm:uno-text-base uno-mb-[56px] sm:uno-mb-[80px] "
                             style="white-space: pre-line;">
                             {{ $t('pages.home.why.desc') }}
+                        </p>
+                        <p v-else class="uno-relative uno-left-[50%] translate-x-[-50%] uno-w-100vw uno-text-[#4E5255] uno-font-['Outfit'] uno-font-normal uno-text-[16px] uno-leading-[150%] uno-tracking-[0%] uno-text-center uno-vertical-align-middle sm:uno-text-base uno-mb-[56px] sm:uno-mb-[80px] "
+                            style="white-space: pre-line;">
+                            {{ $t('pages.home.why.desc-mobile') }}
                         </p>
                     </div>
 

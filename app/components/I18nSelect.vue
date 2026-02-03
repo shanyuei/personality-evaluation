@@ -1,7 +1,7 @@
 <template>
     <UPopover arrow mode="click" :dismissible="false" :ui="{ content: '' }">
         <div
-            class=" uno-w-137px uno-h-40px uno-flex uno-items-center uno-gap-4px uno-justify-center max-sm:uno-w-auto max-sm:uno-px-8px max-sm:uno-gap-2px">
+            class=" uno-w-137px uno-h-40px uno-flex uno-items-center uno-gap-8px uno-justify-center max-sm:uno-w-auto max-sm:uno-px-8px ">
             <!-- 地区图标 -->
             <NuxtImg src="/images/i18nSelect/en.png" alt="en" width="24px" height="24px" />
             <!-- 区域文字 -->

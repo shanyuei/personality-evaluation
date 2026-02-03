@@ -5,10 +5,16 @@ import { useI18n } from 'vue-i18n'
 
 
 export const useLanguageStore = defineStore('language', () => {
+    const { isMobile } = useDevice()
     const language = useCookieLocale() ?? ref(useBrowserLocale()) ?? ref('en');
     const i18n = useI18n();
     const languageName = computed(() => {
-        return languageOptions.value.find(item => item.value === language.value)?.label || 'English'
+        if (isMobile) {
+            return languageOptions.value.find(item => item.value === language.value)?.mobileName || 'EN'
+        } else {
+            return languageOptions.value.find(item => item.value === language.value)?.label || 'English'
+        }
+
     })
     const languageOptions = computed(() => {
         const list: any[] = i18n.locales.value || [];
