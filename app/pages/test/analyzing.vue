@@ -8,7 +8,7 @@
           <div class="bar-loading" :style="{ width: progress + '%' }" />
         </div>
         <p
-          class="uno-text-center uno-text-[#8D8E8F] uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2] uno-mt-3 md:uno-mt-4 uno-text-[10px] md:uno-text-xs uno-max-w-[70%] md:uno-max-w-[60%] uno-mx-auto">
+          class="uno-text-center uno-text-[#8D8E8F] uno-font-Outfit uno-font-semibold uno-leading-[1.2] uno-mt-3 md:uno-mt-4 uno-text-[10px] md:uno-text-xs uno-max-w-[70%] md:uno-max-w-[60%] uno-mx-auto">
           We are analyzing your answers and preparing your personality type report...</p>
       </div>
     </div>

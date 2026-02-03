@@ -4,7 +4,7 @@
     <div class="uno-p-4 md:uno-p-8 uno-grid uno-gap-6 md:uno-grid-cols-3">
       <div class="uno-col-span-full md:uno-col-span-1 uno-flex uno-flex-col uno-items-start uno-space-y-4">
         <div class="uno-space-y-2">
-          <div class="uno-text-[#4E5255] uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2] uno-text-sm">
+          <div class="uno-text-[#4E5255] uno-font-Outfit uno-font-semibold uno-leading-[1.2] uno-text-sm">
             {{ $t('pages.profile.aboutTitle') }}</div>
         </div>
         <div class="uno-flex uno-items-center uno-gap-4">
@@ -13,9 +13,9 @@
               class="uno-w-full uno-h-full uno-object-cover" />
           </div>
           <div class="uno-flex uno-flex-col uno-items-start uno-gap-1">
-            <div class="uno-text-[#4E5255] uno-text-xs uno-font-['Outfit'] uno-leading-normal">{{
+            <div class="uno-text-[#4E5255] uno-text-xs uno-font-Outfit uno-leading-normal">{{
               $t('pages.profile.type') }} 7</div>
-            <div class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{
+            <div class="uno-text-[#011813] uno-text-2xl uno-font-Outfit uno-font-semibold uno-leading-[1.2]">{{
               $t('pages.profile.typeName') }}</div>
           </div>
         </div>
@@ -30,15 +30,15 @@
       </div>
       <div class="uno-col-span-full md:uno-col-span-1">
         <h3
-          class="uno-text-[#323233] uno-text-base md:uno-text-lg uno-font-['Outfit'] uno-font-semibold uno-leading-normal">
+          class="uno-text-[#323233] uno-text-base md:uno-text-lg uno-font-Outfit uno-font-semibold uno-leading-normal">
           {{ $t('pages.profile.totalScore') }}</h3>
         <div class="uno-mt-3 uno-space-y-3">
           <div v-for="bar in scoreBars" :key="bar.label" class="uno-flex uno-items-center uno-gap-3">
             <span
-              class="uno-w-[28px] uno-h-[28px] uno-flex uno-justify-center uno-items-center uno-flex-col uno-gap-[8.75px] uno-py-[3.5px] uno-px-[11.37px] uno-bg-[#F0F0F0] uno-rounded-[14px] uno-overflow-hidden uno-text-[#4E5255] uno-text-[14px] uno-font-['Outfit'] uno-font-medium uno-leading-normal">{{
+              class="uno-w-[28px] uno-h-[28px] uno-flex uno-justify-center uno-items-center uno-flex-col uno-gap-[8.75px] uno-py-[3.5px] uno-px-[11.37px] uno-bg-[#F0F0F0] uno-rounded-[14px] uno-overflow-hidden uno-text-[#4E5255] uno-text-[14px] uno-font-Outfit uno-font-medium uno-leading-normal">{{
                 bar.num }}</span>
             <span
-              class="uno-w-28 uno-text-xs md:uno-text-sm uno-text-[#4E5255] uno-font-['Outfit'] uno-leading-normal">{{
+              class="uno-w-28 uno-text-xs md:uno-text-sm uno-text-[#4E5255] uno-font-Outfit uno-leading-normal">{{
                 bar.label }}</span>
             <div class="uno-flex-1 uno-h-2 uno-rounded-full uno-bg-[var(--ui-input)]">
               <div class="uno-h-2 uno-rounded-full"

@@ -26,13 +26,13 @@
         </div>
 
         <h1
-          class="uno-text-[var(--ui-foreground)] uno-text-[48px] uno-font-['Outfit'] uno-text-center uno-font-semibold uno-leading-[1.2]">
+          class="uno-text-[var(--ui-foreground)] uno-text-[48px] uno-font-Outfit uno-text-center uno-font-semibold uno-leading-[1.2]">
           {{ $t('pages.userCourseChapterComplete.title') }}</h1>
         <p
-          class="uno-text-[16px] uno-text-[var(--ui-muted-foreground)] uno-font-['Outfit'] uno-text-center uno-w-full uno-mx-auto uno-leading-relaxed uno-mb-2">
+          class="uno-text-[16px] uno-text-[var(--ui-muted-foreground)] uno-font-Outfit uno-text-center uno-w-full uno-mx-auto uno-leading-relaxed uno-mb-2">
           {{ $t('pages.userCourseChapterComplete.desc1', { courseName }) }}</p>
         <p
-          class="uno-text-[16px] uno-text-[var(--ui-muted-foreground)] uno-font-['Outfit'] uno-text-center uno-w-full uno-mx-auto uno-leading-relaxed">
+          class="uno-text-[16px] uno-text-[var(--ui-muted-foreground)] uno-font-Outfit uno-text-center uno-w-full uno-mx-auto uno-leading-relaxed">
           {{ $t('pages.userCourseChapterComplete.desc2') }}</p>
 
         <div class="uno-space-y-2 uno-mt-2 uno-w-full uno-mx-auto uno-px-2">
@@ -46,9 +46,9 @@
               </svg>
             </span>
             <p
-              class="uno-text-[var(--ui-muted-foreground)] uno-text-[12px] md:uno-text-sm uno-font-['Outfit'] uno-leading-relaxed uno-text-left">
+              class="uno-text-[var(--ui-muted-foreground)] uno-text-[12px] md:uno-text-sm uno-font-Outfit uno-leading-relaxed uno-text-left">
               <span
-                class="uno-text-[var(--ui-muted-foreground)] uno-text-[12px] md:uno-text-sm uno-font-['Outfit'] uno-font-bold uno-leading-relaxed">{{
+                class="uno-text-[var(--ui-muted-foreground)] uno-text-[12px] md:uno-text-sm uno-font-Outfit uno-font-bold uno-leading-relaxed">{{
                   $t('pages.userCourseChapterComplete.format.title') }}</span>: {{
                   $t('pages.userCourseChapterComplete.format.body') }}
             </p>
@@ -63,9 +63,9 @@
               </svg>
             </span>
             <p
-              class="uno-text-[var(--ui-muted-foreground)] uno-text-[12px] md:uno-text-sm uno-font-['Outfit'] uno-leading-relaxed uno-text-left">
+              class="uno-text-[var(--ui-muted-foreground)] uno-text-[12px] md:uno-text-sm uno-font-Outfit uno-leading-relaxed uno-text-left">
               <span
-                class="uno-text-[var(--ui-muted-foreground)] uno-text-[12px] md:uno-text-sm uno-font-['Outfit'] uno-font-bold uno-leading-relaxed">{{
+                class="uno-text-[var(--ui-muted-foreground)] uno-text-[12px] md:uno-text-sm uno-font-Outfit uno-font-bold uno-leading-relaxed">{{
                   $t('pages.userCourseChapterComplete.scoring.title') }}</span>: {{
                   $t('pages.userCourseChapterComplete.scoring.body') }}
             </p>
@@ -78,7 +78,7 @@
           </PrimaryButton>
         </AppLink>
         <AppLink :to="'/user-course'"
-          class="uno-text-[var(--ui-muted-foreground)] uno-font-['Outfit'] uno-text-center hover:uno-text-[var(--ui-foreground)]">
+          class="uno-text-[var(--ui-muted-foreground)] uno-font-Outfit uno-text-center hover:uno-text-[var(--ui-foreground)]">
           {{ $t('pages.userCourseChapterComplete.later') }}</AppLink>
       </div>
     </div>

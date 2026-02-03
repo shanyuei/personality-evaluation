@@ -7,10 +7,10 @@
       <!-- Left Column: Summary -->
       <div class="md:uno-col-span-12 lg:uno-col-span-6">
         <h1
-          class="uno-text-4xl md:uno-text-5xl uno-font-bold uno-text-[#011813] uno-mb-4 uno-font-['Outfit'] uno-whitespace-nowrap">
+          class="uno-text-4xl md:uno-text-5xl uno-font-bold uno-text-[#011813] uno-mb-4 uno-font-Outfit uno-whitespace-nowrap">
           {{ $t('pages.order.create.title') }}
         </h1>
-        <p class="uno-text-[#4E5255] uno-text-lg uno-mb-48px uno-font-['Outfit']">
+        <p class="uno-text-[#4E5255] uno-text-lg uno-mb-48px uno-font-Outfit">
           {{ $t('pages.order.create.subtitle') }}
         </p>
 
@@ -190,7 +190,7 @@
       <div v-for="(item, index) in trustItems" :key="index"
         class="uno-flex uno-flex-col uno-items-center uno-text-center">
         <NuxtImg :src="item.image" width="64" height="64" class="uno-w-16 uno-h-16 uno-mb-4" />
-        <h4 class="uno-text-[#4E5255] uno-font-[500] uno-font-['Outfit']">{{ item.text }}</h4>
+        <h4 class="uno-text-[#4E5255] uno-font-[500] uno-font-Outfit">{{ item.text }}</h4>
       </div>
     </div>
 

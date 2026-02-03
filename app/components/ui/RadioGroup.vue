@@ -20,7 +20,7 @@
             stroke="#4E5255" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
       </div>
-      <span class="uno-text-[#011813] uno-font-['Outfit'] uno-text-base uno-font-normal">{{ item.label }}</span>
+      <span class="uno-text-[#011813] uno-font-Outfit uno-text-base uno-font-normal">{{ item.label }}</span>
     </div>
   </div>
 </template>

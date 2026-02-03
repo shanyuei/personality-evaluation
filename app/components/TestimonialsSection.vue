@@ -3,7 +3,7 @@
     class="uno-testimonials-section uno-py-16 sm:uno-py-20 md:uno-py-24 uno-bg-[var(--ui-background)] uno-w-full uno-mx-auto uno-overflow-hidden">
     <div class="uno-px-4">
       <div class="uno-text-center uno-mb-16">
-        <h2 class="uno-text-[48px] uno-font-['Outfit'] uno-font-bold uno-mb-4 uno-text-[var(--ui-foreground)]">{{ title
+        <h2 class="uno-text-[48px] uno-font-Outfit uno-font-bold uno-mb-4 uno-text-[var(--ui-foreground)]">{{ title
         }}</h2>
         <p class="uno-text-[var(--ui-muted-foreground)] uno-max-w-2xl uno-mx-auto" style="white-space: pre-line;">{{
           description }}</p>
@@ -42,7 +42,7 @@
                           class="uno-w-full uno-h-full uno-rounded-full uno-object-cover">
                       </div>
                       <div>
-                        <h4 class="uno-font-['Outfit'] uno-font-bold uno-text-[20px] uno-text-[var(--ui-foreground)]">{{
+                        <h4 class="uno-font-Outfit uno-font-bold uno-text-[20px] uno-text-[var(--ui-foreground)]">{{
                           item.name }}</h4>
                         <p class="uno-text-[var(--ui-muted-foreground)] uno-text-[16px]">{{ item.role }}</p>
                       </div>
@@ -87,7 +87,7 @@
                           class="uno-w-full uno-h-full uno-rounded-full uno-object-cover">
                       </div>
                       <div>
-                        <h4 class="uno-font-['Outfit'] uno-font-bold uno-text-[20px] uno-text-[var(--ui-foreground)]">{{
+                        <h4 class="uno-font-Outfit uno-font-bold uno-text-[20px] uno-text-[var(--ui-foreground)]">{{
                           item.name }}</h4>
                         <p class="uno-text-[var(--ui-muted-foreground)] uno-text-[16px]">{{ item.role }}</p>
                       </div>

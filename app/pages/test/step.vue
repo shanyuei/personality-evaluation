@@ -6,7 +6,7 @@
           <NuxtImg src="/images/process/1.png" alt="Process Icon"
             class="uno-w-12 md:uno-w-14 uno-h-12 md:uno-h-14 uno-rounded-full" />
           <h1
-            class="uno-w-full uno-text-[#011813] uno-text-2xl md:uno-text-5xl uno-font-['Outfit'] uno-text-center uno-font-semibold uno-leading-[1.2]">
+            class="uno-w-full uno-text-[#011813] uno-text-2xl md:uno-text-5xl uno-font-Outfit uno-text-center uno-font-semibold uno-leading-[1.2]">
             {{ $t('pages.testIntro.title') }}</h1>
         </div>
 
@@ -33,7 +33,7 @@
               </svg>
             </div>
             <h2
-              class="uno-text-[#011813] uno-text-base md:uno-text-lg uno-font-['Outfit'] uno-text-center uno-font-semibold uno-leading-[1.2]">
+              class="uno-text-[#011813] uno-text-base md:uno-text-lg uno-font-Outfit uno-text-center uno-font-semibold uno-leading-[1.2]">
               {{ $t('pages.testIntro.instructions') }}</h2>
             <div class="uno-w-6" />
           </div>
@@ -80,7 +80,7 @@
               class="uno-bg-white uno-rounded-[16px] md:uno-rounded-[20px] uno-border uno-border-[var(--ui-border)] uno-shadow-[0px_2px_8px_rgba(0,0,0,0.06)]">
               <div class="uno-p-4 md:uno-p-6">
                 <p
-                  class="uno-text-[#011813] uno-font-['Outfit'] uno-text-base md:uno-text-lg uno-text-center uno-leading-[1.2] uno-mb-8">
+                  class="uno-text-[#011813] uno-font-Outfit uno-text-base md:uno-text-lg uno-text-center uno-leading-[1.2] uno-mb-8">
                   {{ q.text }}</p>
                 <div
                   class="uno-flex uno-flex-row uno-items-center uno-justify-center uno-gap-2 md:uno-gap-[20px] uno-mt-4 uno-px-[5%]">
@@ -103,7 +103,7 @@
           </div>
 
           <p
-            class="uno-text-[#8D8E8F] uno-font-['Outfit'] uno-text-xs md:uno-text-sm uno-text-center uno-leading-[1.2] uno-mt-6">
+            class="uno-text-[#8D8E8F] uno-font-Outfit uno-text-xs md:uno-text-sm uno-text-center uno-leading-[1.2] uno-mt-6">
             {{
               $t('pages.testIntro.notice') }}</p>
         </div>

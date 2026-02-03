@@ -56,7 +56,7 @@
             <div
               class="uno-flex uno-justify-between uno-items-center uno-flex-row uno-py-[20px] uno-px-[24px] uno-bg-[#FFFFFF]"
               @click="toggle(idx)">
-              <span class="uno-text-[#011813] uno-text-xl md:uno-text-2xl uno-font-['Outfit'] uno-font-medium">
+              <span class="uno-text-[#011813] uno-text-xl md:uno-text-2xl uno-font-Outfit uno-font-medium">
                 {{ item.question||item.title }}
               </span>
               <svg class="uno-w-6 uno-h-6 uno-min-w-6 uno-min-h-6 uno-flex-shrink-0" xmlns="http://www.w3.org/2000/svg"

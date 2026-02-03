@@ -10,11 +10,11 @@
                             <div style="flex-shrink: 0"
                                 class="uno-flex uno-self-stretch uno-justify-start uno-items-center uno-flex-col uno-gap-3">
                                 <p style="flex-shrink: 0"
-                                    class="uno-self-stretch uno-text-[#011813] uno-text-[32px] uno-font-['Outfit'] uno-text-center uno-font-semibold">
+                                    class="uno-self-stretch uno-text-[#011813] uno-text-[32px] uno-font-Outfit uno-text-center uno-font-semibold">
                                     Oops! that page doesn’t exist
                                 </p>
                                 <p style="flex-shrink: 0"
-                                    class="uno-self-stretch uno-text-[#4E5255] uno-font-['Outfit'] uno-text-center">
+                                    class="uno-self-stretch uno-text-[#4E5255] uno-font-Outfit uno-text-center">
                                     Oops! It seems the page you're looking for doesn’t exist. Let's get
                                     you back on track—click below to return to the home page.
                                 </p>
@@ -22,7 +22,7 @@
                             <div style="flex-shrink: 0"
                                 class="uno-w-148px  uno-h-[56px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-2 uno-py-4 uno-px-[18px] uno-bg-[#EA4C89] uno-rounded-[1000px]"
                                 @click="handleError">
-                                <span class="uno-text-[#FFFFFF] uno-font-['Outfit'] uno-font-[16px] uno-leading-normal">
+                                <span class="uno-text-[#FFFFFF] uno-font-Outfit uno-font-[16px] uno-leading-normal">
                                     Back to Home
                                 </span>
                             </div>

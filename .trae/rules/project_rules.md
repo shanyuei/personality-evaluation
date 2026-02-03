@@ -25,7 +25,7 @@ Nuxt 项目约定
 - 背景图常用类： `uno-absolute -uno-z-10 uno-object-cover uno-object-center`，依据卡片尺寸设置 w / h
 响应式与样式
 - UnoCSS 断点以 md 为分界：移动端 `uno-block md:uno-hidden`，桌面端 `uno-hidden md:uno-block`
-- 统一字号与字体：在模板中使用 `uno-font-['Outfit']`；圆角优先 `uno-rounded-[16px]` / `[24px]` / `[48px]`
+- 统一字号与字体：在模板中使用 `uno-font-Outfit`；圆角优先 `uno-rounded-[16px]` / `[24px]` / `[48px]`
 - 颜色与按钮：主色 #009D77 ，悬停 #0AA17F ，次要强调可用 #EA4C89
 - 常见卡片尺寸参考：H5 卡片约 342×440 ，PC 卡片约 1200×384
 页面模式参考

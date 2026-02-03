@@ -9,18 +9,18 @@
                 <div
                     class="uno-flex uno-justify-start uno-items-center uno-flex-col uno-gap-12px sm:uno-gap-16px md:uno-gap-24px">
                     <h1
-                        class="uno-text-[#011813] uno-font-['Outfit'] uno-font-semibold uno-text-[40px] uno-leading-[120%] uno-tracking-[0%] uno-text-center sm:uno-text-2xl md:uno-text-5xl lg:uno-text-7xl">
+                        class="uno-text-[#011813] uno-font-Outfit uno-font-semibold uno-text-[40px] uno-leading-[120%] uno-tracking-[0%] uno-text-center sm:uno-text-2xl md:uno-text-5xl lg:uno-text-7xl">
                         {{ $t('pages.home.title') }}
                     </h1>
                     <h2
-                        class="uno-text-[#4E5255] uno-font-[400] uno-text-[18px] sm:uno-text-sm md:uno-text-lg uno-font-['Outfit'] uno-text-center">
+                        class="uno-text-[#4E5255] uno-font-normal uno-text-[18px] sm:uno-text-sm md:uno-text-lg uno-font-Outfit uno-text-center">
                         {{ $t('pages.home.description') }}
                     </h2>
                 </div>
 
                 <!-- 测试按钮 -->
                 <AppArrowButton variant="primary"
-                    class="uno-m-t-32px sm:uno-m-t-48px md:uno-m-t-72px uno-gap-[8px] sm:uno-gap-[12px] md:uno-gap-[18px] uno-py-2 sm:uno-py-3 md:uno-py-4 uno-pr-2 sm:uno-pr-3 md:uno-pr-3 uno-pl-[20px] sm:uno-pl-[24px] md:uno-pl-[48px] uno-text-[18px] sm:uno-text-[18px] md:uno-text-[32px] uno-font-['Outfit'] uno-font-medium"
+                    class="uno-m-t-32px sm:uno-m-t-48px md:uno-m-t-72px uno-gap-[8px] sm:uno-gap-[12px] md:uno-gap-[18px] uno-py-2 sm:uno-py-3 md:uno-py-4 uno-pr-2 sm:uno-pr-3 md:uno-pr-3 uno-pl-[20px] sm:uno-pl-[24px] md:uno-pl-[48px] uno-text-[18px] sm:uno-text-[18px] md:uno-text-[32px] uno-font-Outfit uno-font-medium"
                     :icon-size="$device.isMobile ? 44 : 72" :to="localePath('/test')">
                     Take the Test
                 </AppArrowButton>
@@ -45,11 +45,11 @@
                     <div v-for="(item, index) in statsItems" :key="index"
                         class="uno-text-center uno-p-3 sm:uno-p-4 md:uno-p-6 uno-flex uno-flex-col uno-justify-start uno-items-center sm:uno-justify-center md:uno-justify-center lg:uno-justify-center">
                         <div :style="{ color: item.color }"
-                            class="uno-text-[20.75px] sm:uno-text-2xl md:uno-text-4xl lg:uno-text-5xl uno-font-['Outfit'] uno-font-semibold uno-m-b-1px sm:uno-m-b-2px md:uno-m-b-4px">
+                            class="uno-text-[20.75px] sm:uno-text-2xl md:uno-text-4xl lg:uno-text-5xl uno-font-Outfit uno-font-semibold uno-m-b-1px sm:uno-m-b-2px md:uno-m-b-4px">
                             {{ item.value }}
                         </div>
                         <div
-                            class="uno-text-[#4E5255] uno-text-xs sm:uno-text-sm md:uno-text-base lg:uno-text-lg uno-font-['Outfit']">
+                            class="uno-text-[#4E5255] uno-text-xs sm:uno-text-sm md:uno-text-base lg:uno-text-lg uno-font-Outfit">
                             {{ $t(item.labelKey) }}
                         </div>
                     </div>
@@ -62,15 +62,15 @@
             <div class="uno-mb-12 sm:uno-mb-16 md:uno-mb-120px lg:uno-mb-120px">
                 <div class="uno-max-w-[800px] uno-mx-auto uno-relative">
                     <h2
-                        class="uno-text-[#011813] uno-text-[32px] sm:uno-text-3xl md:uno-text-4xl lg:uno-text-5xl uno-font-['Outfit'] uno-text-center uno-font-semibold uno-m-b-6px sm:uno-m-b-8px md:uno-m-b-12px">
+                        class="uno-text-[#011813] uno-text-[32px] sm:uno-text-3xl md:uno-text-4xl lg:uno-text-5xl uno-font-Outfit uno-text-center uno-font-semibold uno-m-b-6px sm:uno-m-b-8px md:uno-m-b-12px">
                         {{ $t('pages.home.why.title') }}</h2>
                     <p v-if="!$device.isMobile"
-                        class="uno-text-[#4E5255] uno-font-['Outfit'] uno-font-normal uno-text-[16px] uno-leading-[150%] uno-tracking-[0%] uno-text-center uno-vertical-align-middle sm:uno-text-base uno-mb-[56px] sm:uno-mb-[80px] "
+                        class="uno-text-[#4E5255] uno-font-Outfit uno-font-normal uno-text-[16px] uno-leading-[150%] uno-tracking-[0%] uno-text-center uno-vertical-align-middle sm:uno-text-base uno-mb-[56px] sm:uno-mb-[80px] "
                         style="white-space: pre-line;">
                         {{ $t('pages.home.why.desc') }}
                     </p>
                     <p v-else
-                        class="uno-relative uno-left-[50%] translate-x-[-50%] uno-w-100vw uno-text-[#4E5255] uno-font-['Outfit'] uno-font-normal uno-text-[16px] uno-leading-[150%] uno-tracking-[0%] uno-text-center uno-vertical-align-middle sm:uno-text-base uno-mb-[56px] sm:uno-mb-[80px] "
+                        class="uno-relative uno-left-[50%] translate-x-[-50%] uno-w-100vw uno-text-[#4E5255] uno-font-Outfit uno-font-normal uno-text-[16px] uno-leading-[150%] uno-tracking-[0%] uno-text-center uno-vertical-align-middle sm:uno-text-base uno-mb-[56px] sm:uno-mb-[80px] "
                         style="white-space: pre-line;">
                         {{ $t('pages.home.why.desc-mobile') }}
                     </p>
@@ -93,7 +93,7 @@
                             </div>
 
                             <h3
-                                class="uno-text-[32px] uno-font-['Outfit'] uno-font-semibold uno-mb-4 uno-text-[#011813] uno-leading-tight">
+                                class="uno-text-[32px] uno-font-Outfit uno-font-semibold uno-mb-4 uno-text-[#011813] uno-leading-tight">
                                 {{ $t('pages.home.why.main.title') }}
                             </h3>
                             <p class="uno-text-[#4E5255] uno-text-base sm:uno-text-lg uno-mb-6 uno-leading-relaxed">
@@ -107,7 +107,7 @@
                                 class="uno-relative uno-inline-flex uno-w-full uno-flex uno-justify-center md:uno-justify-start">
                                 <AppArrowButton class="uno-pl-6 uno-pr-2 uno-py-2 uno-gap-3" :icon-size="44"
                                     :to="localePath('/test')" hover-class="">
-                                    <span class="uno-font-['Outfit'] uno-font-medium uno-text-[16px]">{{
+                                    <span class="uno-font-Outfit uno-font-medium uno-text-[16px]">{{
                                         $t('common.getStarted') }}</span>
                                 </AppArrowButton>
                             </div>
@@ -132,9 +132,9 @@
                         <NuxtImg v-else :src="card.icon" :alt="card.alt" width="56" height="56" class="uno-mb-12px" />
 
                         <h3
-                            class="uno-font-['Outfit'] uno-font-semibold uno-text-[26px] uno-leading-[124%] uno-tracking-[0%] sm:uno-text-lg md:uno-text-[32px] uno-mb-2 sm:uno-mb-3">
+                            class="uno-font-Outfit uno-font-semibold uno-text-[26px] uno-leading-[124%] uno-tracking-[0%] sm:uno-text-lg md:uno-text-[32px] uno-mb-2 sm:uno-mb-3">
                             {{ card.titleKey }}</h3>
-                        <p class="uno-text-gray-600 uno-font-['Outfit'] uno-font-normal uno-text-[16px] uno-leading-[150%] uno-tracking-[0%] sm:uno-text-sm md:uno-text-base">{{ card.descKey }}</p>
+                        <p class="uno-text-gray-600 uno-font-Outfit uno-font-normal uno-text-[16px] uno-leading-[150%] uno-tracking-[0%] sm:uno-text-sm md:uno-text-base">{{ card.descKey }}</p>
                     </div>
                 </div>
             </div>
@@ -145,13 +145,13 @@
                 <div class="uno-w-full md:uno-w-1/2">
                     <div class="uno-flex uno-flex-col uno-items-center md:uno-items-start">
                         <h2
-                            class="uno-text-[32px] sm:uno-text-[48px] md:uno-text-[48px] uno-font-['Outfit'] uno-font-semibold uno-mb-6 sm:uno-mb-8">
+                            class="uno-text-[32px] sm:uno-text-[48px] md:uno-text-[48px] uno-font-Outfit uno-font-semibold uno-mb-6 sm:uno-mb-8">
                             {{ $t('pages.home.how.title') }}
                         </h2>
                         <p class="uno-text-gray-600 uno-mb-8 sm:uno-mb-12 md:uno-text-left">{{ $t('pages.home.how.desc') }}</p>
 
                         <AppArrowButton
-                            class="uno-m-t-12px sm:uno-m-t-16px md:uno-m-t-24px uno-gap-[6px] sm:uno-gap-[8px] md:uno-gap-[12px] uno-py-2 sm:uno-py-2 uno-pr-[6px] sm:uno-pr-[4px] md:uno-pr-[6px] uno-pl-[12px] sm:uno-pl-[16px] md:uno-pl-[24px] uno-text-[16px] sm:uno-text-[14px] md:uno-text-[16px] uno-font-['Outfit'] uno-font-medium"
+                            class="uno-m-t-12px sm:uno-m-t-16px md:uno-m-t-24px uno-gap-[6px] sm:uno-gap-[8px] md:uno-gap-[12px] uno-py-2 sm:uno-py-2 uno-pr-[6px] sm:uno-pr-[4px] md:uno-pr-[6px] uno-pl-[12px] sm:uno-pl-[16px] md:uno-pl-[24px] uno-text-[16px] sm:uno-text-[14px] md:uno-text-[16px] uno-font-Outfit uno-font-medium"
                             :to="localePath('/test')" :icon-size="44" hover-class="">
                             {{ $t('common.getStarted') }}
                         </AppArrowButton>
@@ -168,14 +168,14 @@
                                 class="uno-w-[64px] uno-h-[64px] sm:uno-w-[64px] sm:uno-h-[64px] uno-flex uno-justify-center uno-items-center  uno-rounded-[24px] sm:uno-rounded-[50px] uno-flex uno-items-center uno-justify-center"
                                 :class="item.bgClass">
                                 <span
-                                    class="uno-text-3xl sm:uno-text-[36px] uno-font-['Outfit'] uno-font-semibold uno-mb-[6px]"
+                                    class="uno-text-3xl sm:uno-text-[36px] uno-font-Outfit uno-font-semibold uno-mb-[6px]"
                                     :class="item.textClass">{{ item.step }}</span>
                             </div>
                             <div class="uno-flex uno-justify-start uno-items-start uno-flex-col uno-gap-1 sm:uno-gap-2">
                                 <p
-                                    class="uno-text-[#011813] uno-text-24px uno-font-500 sm:uno-text-2xl uno-font-['Outfit']  sm:uno-font-semibold">
+                                    class="uno-text-[#011813] uno-text-[24px] uno-font-medium sm:uno-text-2xl uno-font-Outfit  sm:uno-font-semibold">
                                     {{ $t(item.titleKey) }}</p>
-                                <p class="uno-w-full uno-text-[#4E5255] uno-font-['Outfit']">{{
+                                <p class="uno-w-full uno-text-[#4E5255] uno-font-Outfit">{{
                                     $t(item.descKey) }}</p>
                             </div>
                         </div>
@@ -195,7 +195,7 @@
             <div
                 class="page-container uno-px-4 !uno-py-8 sm:uno-py-12 md:uno-py-16 lg:uno-py-20 xl:uno-py-24 relative z-10">
                 <h2
-                    class="uno-text-[32px] sm:uno-text-2xl md:uno-text-[48px] uno-font-['Outfit'] uno-font-semibold uno-text-center uno-mb-2 sm:uno-mb-3 md:uno-mb-4">
+                    class="uno-text-[32px] sm:uno-text-2xl md:uno-text-[48px] uno-font-Outfit uno-font-semibold uno-text-center uno-mb-2 sm:uno-mb-3 md:uno-mb-4">
                     {{ $t('pages.home.receive.title') }}</h2>
                 <p
                     class="uno-text-center uno-text-gray-600 uno-text-[16px] sm:uno-text-sm md:uno-text-base uno-mb-6 sm:uno-mb-8 md:uno-mb-16 uno-max-w-3xl uno-mx-auto">
@@ -212,11 +212,11 @@
                             <NuxtImg :src="card.icon" :alt="card.alt" width="64" height="64" />
                         </div>
                         <h3
-                            class="uno-text-lg sm:uno-text-xl md:uno-text-[20px] uno-font-['Outfit'] uno-font-500 uno-leading-tight uno-px-2 uno-mb-12px">
+                            class="uno-text-lg sm:uno-text-xl md:uno-text-[20px] uno-font-Outfit uno-font-medium uno-leading-tight uno-px-2 uno-mb-12px">
                             {{ $t(card.titleKey) }}
                         </h3>
                         <p
-                            class="uno-text-gray-500 uno-text-sm sm:uno-text-base uno-font-['Outfit'] uno-leading-relaxed">
+                            class="uno-text-gray-500 uno-text-sm sm:uno-text-base uno-font-Outfit uno-leading-relaxed">
                             {{ $t(card.descKey) }}
                         </p>
                     </div>

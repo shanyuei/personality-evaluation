@@ -1,5 +1,5 @@
 <template>
-  <div class="uno-font-['Outfit']">
+  <div class="uno-font-Outfit">
 
     <!-- Pricing Section -->
     <section class="page-container uno-pt-12 sm:uno-pt-16 md:uno-pt-20 uno-pb-12 sm:uno-pb-16 md:uno-pb-24">

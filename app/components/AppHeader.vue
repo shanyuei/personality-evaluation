@@ -31,7 +31,7 @@
     <template #right>
       <template v-if="showMenu">
         <!-- 未登录状态 -->
-        <AppArrowButton v-if="!token" preset="header" class="max-sm:uno-hidden uno-font-['Outfit'] uno-font-medium"
+        <AppArrowButton v-if="!token" preset="header" class="max-sm:uno-hidden uno-font-Outfit uno-font-medium"
           :to="localePath('/auth/sign-in')">
           {{ $t('common.getStarted') }}
         </AppArrowButton>

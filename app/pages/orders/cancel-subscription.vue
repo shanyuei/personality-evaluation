@@ -3,7 +3,7 @@
     <div class="uno-w-full uno-max-w-[720px] uno-px-4 sm:uno-px-6 md:uno-px-10">
       <div class="uno-p-4 sm:uno-p-6 md:uno-p-8">
         <h1
-          class="uno-text-center uno-mb-3 uno-text-[#0F172A] uno-font-['Outfit'] uno-font-bold uno-text-2xl sm:uno-text-3xl md:uno-text-4xl lg:uno-text-5xl">
+          class="uno-text-center uno-mb-3 uno-text-[#0F172A] uno-font-Outfit uno-font-bold uno-text-2xl sm:uno-text-3xl md:uno-text-4xl lg:uno-text-5xl">
           Cancel Subscription</h1>
         <p class="uno-text-center uno-text-[#4E5255] uno-mb-6 sm:uno-mb-8">Easily cancel your subscription by entering
           the email
@@ -20,7 +20,7 @@
 
         <div class="uno-mb-6 sm:uno-mb-8">
           <h2
-            class="uno-text-[#0F172A] uno-font-['Outfit'] uno-font-semibold uno-text-[16px] uno-mb-3 sm:uno-mb-4">
+            class="uno-text-[#0F172A] uno-font-Outfit uno-font-semibold uno-text-[16px] uno-mb-3 sm:uno-mb-4">
             Why did you decide
             to cancel your subscription?</h2>
           <div class="uno-space-y-2 sm:uno-space-y-3">

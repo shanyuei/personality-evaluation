@@ -5,7 +5,7 @@
       <!-- 页面标题 -->
       <div class="uno-text-center uno-mb-8 sm:uno-mb-12">
         <h1
-          class="uno-text-2xl sm:uno-text-3xl md:uno-text-4xl uno-font-['Outfit'] uno-font-bold uno-text-gray-900 uno-mb-4">
+          class="uno-text-2xl sm:uno-text-3xl md:uno-text-4xl uno-font-Outfit uno-font-bold uno-text-gray-900 uno-mb-4">
           {{ $t('pages.routeGuide.title') }}
         </h1>
         <p class="uno-text-base sm:uno-text-lg uno-text-gray-600 uno-max-w-2xl uno-mx-auto">
@@ -30,7 +30,7 @@
               <div class="uno-flex uno-flex-col md:uno-flex-row md:uno-items-center uno-justify-between">
                 <div class="uno-flex-1">
                   <h3
-                    class="uno-text-base sm:uno-text-lg uno-font-['Outfit'] uno-font-semibold uno-text-gray-900 group-hover:uno-text-green-600 uno-transition-colors">
+                    class="uno-text-base sm:uno-text-lg uno-font-Outfit uno-font-semibold uno-text-gray-900 group-hover:uno-text-green-600 uno-transition-colors">
                     {{ formatRouteName(route.path) }}
                   </h3>
                   <p class="uno-text-gray-500 uno-text-xs sm:uno-text-sm uno-mt-1 uno-truncate">

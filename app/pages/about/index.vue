@@ -87,7 +87,7 @@
               </span>
             </div>
             <h2
-              class="uno-mt-4 uno-text-[32px] md:uno-text-[32px] uno-font-['Outfit'] uno-font-extrabold uno-text-[var(--ui-foreground)]">
+              class="uno-mt-4 uno-text-[32px] md:uno-text-[32px] uno-font-Outfit uno-font-extrabold uno-text-[var(--ui-foreground)]">
               {{ item.title }}
             </h2>
             <p class="uno-mt-4 uno-text-[var(--ui-muted-foreground)]">
@@ -111,7 +111,7 @@
         <div class="uno-flex uno-flex-col md:uno-flex-row uno-gap-10 uno-items-end">
           <div>
             <h2
-              class="uno-text-3xl md:uno-text-5xl uno-leading-[60px] uno-font-['Outfit'] uno-font-extrabold uno-text-[var(--ui-foreground)]">
+              class="uno-text-3xl md:uno-text-5xl uno-leading-[60px] uno-font-Outfit uno-font-extrabold uno-text-[var(--ui-foreground)]">
               {{
                 $t('pages.about.standout.title') }}</h2>
             <p class="uno-mt-12px uno-text-[var(--ui-muted-foreground)] uno-max-w-xl uno-mb-40px">{{ $t('pages.about.standout.desc') }}

@@ -4,7 +4,7 @@ var pages = {
 		description: "The test helps you identify your accurate personality type.",
 		accuracy: {
 			title: "Curious how accurate we are about you?",
-			description: "Connect to professional networks, gain valuable insights, and access resources to move toward your ideal career."
+			description: "Connect to professional networks, gain valuable insights, and access \n resources to move toward your ideal career."
 		},
 		stats: {
 			testsToday: "Tests Today",
@@ -20,17 +20,18 @@ var pages = {
 				desc: "Gain UI design abilities through practice-driven coaching, with personalized guidance and feedback."
 			},
 			small1: {
-				title: "Better decisions",
-				desc: "Keep improving with expert coaching and personalized guidance."
+				title: "Better decision-making",
+				desc: "Gain UI design mastery with hands-on expert mentorship, refining your skills through personalized guidance and feedback."
 			},
 			small2: {
-				title: "Improved relationships",
-				desc: "Structured practice and feedback help you build better interpersonal interactions."
+				title: "Enhanced relationships",
+				desc: "Gain UI design mastery with hands-on expert mentorship, refining your skills through personalized guidance and feedback."
 			},
 			small3: {
 				title: "Career satisfaction",
-				desc: "Clear goals and continuous improvement lead to greater achievement and fulfillment."
-			}
+				desc: "Gain UI design mastery with hands-on expert mentorship, refining your skills through personalized guidance and feedback."
+			},
+			"desc-mobile": "Connect with the next wave of expert mentors,\n guiding you with fresh perspectives, innovative\n insights, and proven expertise."
 		},
 		how: {
 			title: "How it works",
@@ -82,7 +83,7 @@ var pages = {
 		},
 		faq: {
 			title: "Frequently Asked Questions",
-			description: "Frequently Asked Questions offers a quick answers to common queries, guiding users through features and functionalities efficiently."
+			description: "Frequently Asked Questions offers a quick answers to common queries, guiding users \n through features and functionalities efficiently."
 		}
 	},
 	pricing: {
@@ -181,10 +182,14 @@ var pages = {
 				emailError: "Please enter a valid email address",
 				paymentError: "Payment failed. Please try again.",
 				paymentSuccess: "Payment initiated successfully!",
-				consent: "By clicking \"Subscribe\", I electronically authorize Mypersonality.net to charge my card per Billing Terms, including automatic renewal, until cancellation. I agree to to the Terms and Privacy.",
+				consentPart1: "By clicking \"Subscribe\", I electronically authorize Mypersonality.net to charge my card per Billing Terms, including automatic renewal, until cancellation. I agree to to the ",
+				consentPart2: " and ",
+				consentPart3: ".",
+				terms: "Terms",
+				privacy: "Privacy",
 				subscribeBtn: "Subscribe for only $1.99",
-				paypalBtn: "Pay with PayPal",
-				gpayBtn: "Pay with G Pay"
+				paypalBtn: "Pay with",
+				gpayBtn: "Pay with"
 			},
 			trust: {
 				us: "Located in the US",
@@ -415,8 +420,8 @@ var pages = {
 			}
 		},
 		standout: {
-			title: "What makes our tests different: precision, depth, and clarity",
-			desc: "We blend innovation, expertise, and a customer-centric approach, focusing on quality and meaningful growth.",
+			title: "Why Our Test Stands Out：Precision, Depth, and Clarity",
+			desc: "Our team combines innovation, expertise, and a client-ceentered approach, delivering projects with outstanding quality, meticulous attention to detail, and a focus on meaningful growth.",
 			items: {
 				precision: {
 					title: "Precision",
@@ -514,7 +519,9 @@ var pages = {
 		notice: "All questions must be answered before you continue.",
 		cta: "Get Started",
 		ctaNext: "Next",
-		ctaSubmit: "Submit"
+		ctaSubmit: "Submit",
+		step: "STEP",
+		next: "Next"
 	},
 	testStart: {
 		title: "Anger Management",
@@ -575,7 +582,7 @@ var pages = {
 			title: "Introduction",
 			body: "Effective communication is the cornerstone of successful leadership. It involves not just the transmission of information but also ensuring that the intended message is received and understood. For leaders, mastering communication skills is essential for inspiring and motivating teams, setting clear expectations, and building trust."
 		},
-		cta: "Get Started"
+		cta: "Next"
 	},
 	userCourseLesson: {
 		lessonCount: "Lesson {current} of {total}",
@@ -598,13 +605,13 @@ var pages = {
 				i3: "Effective leaders use clear communication, stakeholder engagement, and support mechanisms to facilitate change and overcome resistance."
 			}
 		},
-		ctaPrimary: "Get Started",
-		ctaSecondary: "Get Started"
+		ctaPrimary: "Back",
+		ctaSecondary: "Next"
 	},
 	userCourseLessonComplete: {
 		title: "Congratulations!",
 		desc: "You have successfully completed lesson {current} of {courseName} course.",
-		cta: "Get Started",
+		cta: "Next Lesson",
 		toDashboard: "Go to Dashboard"
 	},
 	userCourseChapterComplete: {
@@ -619,7 +626,7 @@ var pages = {
 			title: "Scoring",
 			body: "Each answer is assigned a point value. The total score is calculated by summing the points from all answers."
 		},
-		cta: "Get Started",
+		cta: "Get Certified",
 		later: "I'll do it later"
 	},
 	userCourseTest: {
@@ -629,7 +636,7 @@ var pages = {
 		o2: "Facilitate open communication and mediate conflicts.",
 		o3: "Focus solely on task execution to avoid delays.",
 		o4: "Establish strict rules to control team dynamics.",
-		cta: "Get Started"
+		cta: "Next"
 	},
 	userCourseTestComplete: {
 		scoreLabel: "{score}/{total}",
@@ -744,7 +751,8 @@ var pages = {
 		questions: "questions",
 		completed: "Completed",
 		tryAgain: "Try again",
-		lessons: "lessons"
+		lessons: "lessons",
+		testDetail: "Read more"
 	},
 	courses: {
 		title: "Courses",
@@ -827,7 +835,7 @@ var pages = {
 				title: "Profile details",
 				namePlaceholder: "First and last name",
 				emailPlaceholder: "Email address",
-				submit: "Save",
+				submit: "Save Changes",
 				success: "Profile updated",
 				fail: "Update failed. Please try again later."
 			},
@@ -836,7 +844,7 @@ var pages = {
 				current: "Current password",
 				"new": "New password",
 				repeat: "Repeat new password",
-				submit: "Save",
+				submit: "Save Changes",
 				mismatch: "The two passwords do not match",
 				success: "Password updated",
 				fail: "Failed to update password. Please try again."
@@ -860,11 +868,11 @@ var pages = {
 			description: "Manage membership and cancel when needed."
 		},
 		purchaseComplete: {
-			title: "Thanks for your purchase!",
-			description: "Click below to get started and access your report.",
+			title: "Thank you for your purchase!",
+			description: "Click below to get started and access your report！",
 			accessReport: "Open Report",
 			downloadGuidebook: "Download Guidebook",
-			accessNote: "Click the button above to open your report page.",
+			accessNote: "Click the button above to open your report page！",
 			downloadNote: "If download fails, please check your email later for the link.",
 			goHome: "Back to Home"
 		}
@@ -1058,6 +1066,12 @@ var pages = {
 				}
 			}
 		}
+	},
+	contact: {
+		faq: {
+			title: "Frequently Asked Questions",
+			desc: "Have questions about our personality tests or how PersonalityTest101 works? Here are some of the most common questions we get — with clear, easy-to-understand answers to help you get started."
+		}
 	}
 };
 var common = {
@@ -1091,7 +1105,8 @@ var common = {
 	of: "of",
 	lessons: "lessons",
 	finished: "finished",
-	certificate: "Certificate"
+	certificate: "Certificate",
+	viewAllBlogs: "View All Blogs"
 };
 var seo = {
 	home: {
@@ -1241,6 +1256,10 @@ var seo = {
 	"account.settings": {
 		title: "Account Settings - Personalize Your Experience",
 		description: "Update your account settings and personal preferences."
+	},
+	contact: {
+		title: "Contact PersonalityTest101 – We’re Here to Help",
+		description: "Have questions about our personality tests or need support? Contact the PersonalityTest101 team for assistance, feedback, or collaboration opportunities. We’re happy to hear from you.\u000b"
 	}
 };
 const en = {

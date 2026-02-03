@@ -6,7 +6,7 @@
         class="flex self-stretch justify-start items-center flex-col gap-3">
         <p
           style="flex-shrink: 0"
-          class="w-[748px] text-[#011813] text-5xl font-['Outfit'] text-center font-semibold">
+          class="w-[748px] text-[#011813] text-5xl uno-font-Outfit text-center font-semibold">
           What You Will Receive
         </p>
         <div
@@ -14,7 +14,7 @@
           class="flex self-stretch justify-center items-center flex-row gap-2">
           <p
             style="flex: none; flex-shrink: 0"
-            class="w-[600px] text-[#4E5255] font-['Outfit'] text-center">
+            class="w-[600px] text-[#4E5255] uno-font-Outfit text-center">
             Be always were to from of volunteers range times to
             mildcastingoppositehe its nor attribute how solitary saw more on his
             not
@@ -108,12 +108,12 @@
               class="flex self-stretch justify-start items-center flex-col gap-3">
               <p
                 style="flex-shrink: 0"
-                class="w-[250px] text-[#011813] text-xl font-['Outfit'] text-center font-medium">
+                class="w-[250px] text-[#011813] text-xl uno-font-Outfit text-center font-medium">
                 Comprehensive Personality Report
               </p>
               <p
                 style="flex-shrink: 0"
-                class="self-stretch text-[#4E5255] font-['Outfit'] text-center">
+                class="self-stretch text-[#4E5255] uno-font-Outfit text-center">
                 The to we considerable,explain
                 <br />
                 the morals, to queen please
@@ -216,12 +216,12 @@
               class="flex self-stretch justify-start items-center flex-col gap-3">
               <p
                 style="flex-shrink: 0"
-                class="w-[250px] text-[#011813] text-xl font-['Outfit'] text-center font-medium">
+                class="w-[250px] text-[#011813] text-xl uno-font-Outfit text-center font-medium">
                 Personalized Course Recommendations
               </p>
               <p
                 style="flex-shrink: 0"
-                class="self-stretch text-[#4E5255] font-['Outfit'] text-center">
+                class="self-stretch text-[#4E5255] uno-font-Outfit text-center">
                 Pervasively in evening best bad
                 <br />
                 policy he first of he first to attempt
@@ -279,13 +279,13 @@
               class="flex self-stretch justify-start items-center flex-col gap-3">
               <p
                 style="flex-shrink: 0"
-                class="w-[250px] text-[#011813] text-xl font-['Outfit'] text-center font-medium">
+                class="w-[250px] text-[#011813] text-xl uno-font-Outfit text-center font-medium">
                 Skill Assessment Tests
                 <br />
               </p>
               <p
                 style="flex-shrink: 0"
-                class="self-stretch text-[#4E5255] font-['Outfit'] text-center">
+                class="self-stretch text-[#4E5255] uno-font-Outfit text-center">
                 Were control to late check though
                 <br />
                 text a carefully anewer
@@ -435,13 +435,13 @@
               class="flex self-stretch justify-start items-center flex-col gap-3">
               <p
                 style="flex-shrink: 0"
-                class="w-[250px] text-[#011813] text-xl font-['Outfit'] text-center font-medium">
+                class="w-[250px] text-[#011813] text-xl uno-font-Outfit text-center font-medium">
                 Practical Daily Challenges
                 <br />
               </p>
               <p
                 style="flex-shrink: 0"
-                class="self-stretch text-[#4E5255] font-['Outfit'] text-center">
+                class="self-stretch text-[#4E5255] uno-font-Outfit text-center">
                 The to we considerable,explain
                 <br />
                 the morals, to queen please
@@ -535,12 +535,12 @@
               class="flex self-stretch justify-start items-center flex-col gap-3">
               <p
                 style="flex-shrink: 0"
-                class="w-[250px] text-[#011813] text-xl font-['Outfit'] text-center font-medium">
+                class="w-[250px] text-[#011813] text-xl uno-font-Outfit text-center font-medium">
                 Learning and Development Library
               </p>
               <p
                 style="flex-shrink: 0"
-                class="self-stretch text-[#4E5255] font-['Outfit'] text-center">
+                class="self-stretch text-[#4E5255] uno-font-Outfit text-center">
                 Pervasively in evening best bad
                 <br />
                 policy he first of he first to attempt
@@ -620,13 +620,13 @@
               class="flex self-stretch justify-start items-center flex-col gap-3">
               <p
                 style="flex-shrink: 0"
-                class="w-[250px] text-[#011813] text-xl font-['Outfit'] text-center font-medium">
+                class="w-[250px] text-[#011813] text-xl uno-font-Outfit text-center font-medium">
                 Certificates of Achievement
                 <br />
               </p>
               <p
                 style="flex-shrink: 0"
-                class="self-stretch text-[#4E5255] font-['Outfit'] text-center">
+                class="self-stretch text-[#4E5255] uno-font-Outfit text-center">
                 Were control to late check though
                 <br />
                 textacarefullyanewer

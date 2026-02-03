@@ -3,7 +3,7 @@
     <div class="page-container px-6 md:px-10">
       <div
         class="uno-bg-[var(--ui-primary)] uno-text-white uno-rounded-[20px] uno-px-6 uno-py-8 md:uno-px-10 md:uno-py-12 uno-shadow-[0_8px_24px_rgba(0,0,0,0.12)]">
-        <h1 class="uno-text-2xl md:uno-text-4xl uno-font-['Outfit'] uno-font-extrabold uno-text-center">{{
+        <h1 class="uno-text-2xl md:uno-text-4xl uno-font-Outfit uno-font-extrabold uno-text-center">{{
           $t('pages.ebookDetail.hero.title') }}</h1>
         <p class="uno-text-center uno-mt-3 uno-text-sm md:uno-text-base">{{ $t('pages.ebookDetail.hero.subtitle') }}</p>
       </div>
@@ -12,7 +12,7 @@
         class="uno-mt-6">
         <div class="uno-py-6 uno-space-y-6">
           <h2
-            class="uno-text-2xl md:uno-text-3xl uno-font-['Outfit'] uno-font-[600] uno-text-[var(--ui-foreground)]">
+            class="uno-text-2xl md:uno-text-3xl uno-font-Outfit uno-font-[600] uno-text-[var(--ui-foreground)]">
             {{ $t('pages.ebookDetail.title') }}</h2>
           <p class="uno-text-[#4E5255] uno-text-sm md:uno-text-base">{{ $t('pages.ebookDetail.intro')
           }}</p>
@@ -89,11 +89,11 @@
           <div
             class="uno-flex uno-flex-col md:uno-flex-row uno-items-center uno-justify-center uno-gap-3 uno-mx-auto uno-mt-6  uno-p-4 md:uno-p-5 uno-w-full md:uno-w-[440px] md:uno-h-[72px] uno-rounded-[12px] uno-bg-[var(--color-green-7)]">
             <UButton
-              :ui="{ base: `w-full md:w-[calc(50%-12px)] h-[48px] flex justify-center items-center flex-row gap-1 py-1 px-[20px] bg-[var(--ui-primary)] rounded-lg text-white text-sm md:text-lg font-['Outfit'] font-bold leading-normal` }">
+              :ui="{ base: `w-full md:w-[calc(50%-12px)] h-[48px] flex justify-center items-center flex-row gap-1 py-1 px-[20px] bg-[var(--ui-primary)] rounded-lg text-white text-sm md:text-lg uno-font-Outfit font-bold leading-normal` }">
               {{ $t('pages.ebookDetail.cta.download') }}</UButton>
             <AppLink :to="'/ebooks'" class="uno-inline-block w-full md:w-[calc(50%-12px)]">
               <UButton variant="ghost"
-                :ui="{ base: `w-full h-[48px] flex justify-center items-center flex-row gap-1 py-1 px-[20px] border-solid border-[var(--ui-primary)] border-2 rounded-lg text-[var(--ui-primary)] text-sm md:text-lg font-['Outfit'] font-bold leading-normal` }">
+                :ui="{ base: `w-full h-[48px] flex justify-center items-center flex-row gap-1 py-1 px-[20px] border-solid border-[var(--ui-primary)] border-2 rounded-lg text-[var(--ui-primary)] text-sm md:text-lg uno-font-Outfit font-bold leading-normal` }">
                 {{ $t('pages.ebookDetail.cta.close') }}</UButton>
             </AppLink>
           </div>

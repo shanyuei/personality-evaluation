@@ -7,7 +7,7 @@
       </div>
 
       <div class="uno-mb-20">
-        <h1 class="uno-text-4xl md:uno-text-5xl uno-font-['Outfit'] uno-font-bold uno-text-gray-900">Privacy Policy</h1>
+        <h1 class="uno-text-4xl md:uno-text-5xl uno-font-Outfit uno-font-bold uno-text-gray-900">Privacy Policy</h1>
       </div>
 
       <div class="uno-grid uno-grid-cols-1 md:uno-grid-cols-4 uno-gap-8">
@@ -28,7 +28,7 @@
         <div class="uno-col-span-3">
           <div class="uno-space-y-8">
             <section v-for="section in sections" :key="section.id" :id="section.id">
-              <h2 class="uno-text-[24px] uno-font-[\'Outfit\'] uno-font-[600] uno-text-gray-900 uno-mb-4">{{
+              <h2 class="uno-text-[24px] uno-font-[Outfit] uno-font-[600] uno-text-gray-900 uno-mb-4">{{
                 section.title }}</h2>
               <p v-if="section.subtitle" class="uno-text-[16px] uno-font-[500] uno-text-[#011813] uno-mb-6">{{ section.subtitle }}</p>
               <p class="uno-text-gray-700 uno-mb-4">{{ section.content }}</p>

@@ -16,7 +16,7 @@
 
         <div class="uno-flex-grow uno-flex uno-flex-col uno-justify-center uno-space-y-3">
           <h1
-            class="uno-w-full  uno-text-[var(--ui-foreground)] uno-text-[clamp(1.5rem,5vw,2rem)] md:uno-text-5xl uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">
+            class="uno-w-full  uno-text-[var(--ui-foreground)] uno-text-[clamp(1.5rem,5vw,2rem)] md:uno-text-5xl uno-font-Outfit uno-font-semibold uno-leading-[1.2]">
             {{ $t('pages.tests.hero.title') }}</h1>
           <div class="uno-flex uno-items-center uno-justify-between">
             <span

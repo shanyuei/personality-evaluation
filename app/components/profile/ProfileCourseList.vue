@@ -1,7 +1,7 @@
 <template>
   <section class="uno-mt-8">
     <h2
-      class="uno-text-2xl md:uno-text-[32px] uno-text-[#011813] uno-font-['Outfit'] uno-font-bold uno-leading-normal uno-mt-12 uno-mb-6">
+      class="uno-text-2xl md:uno-text-[32px] uno-text-[#011813] uno-font-Outfit uno-font-bold uno-leading-normal uno-mt-12 uno-mb-6">
       {{ $t('pages.profile.continueLearning') }}</h2>
     <div class="uno-grid uno-gap-6 md:uno-grid-cols-3">
       <div v-for="(course, index) in courseCards" :key="course.id"

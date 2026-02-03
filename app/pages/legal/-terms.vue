@@ -2,14 +2,14 @@
   <main class=" uno-py-12 uno-px-6 md:uno-px-10">
     <div class="page-container">
       <div class="uno-text-center uno-mb-8">
-        <h1 class="uno-text-3xl md:uno-text-4xl uno-font-['Outfit'] uno-font-bold uno-text-gray-900">{{
+        <h1 class="uno-text-3xl md:uno-text-4xl uno-font-Outfit uno-font-bold uno-text-gray-900">{{
           $t('pages.legal.terms.title') }}</h1>
         <p class="uno-text-gray-600 uno-max-w-2xl uno-mx-auto uno-mt-3">{{ $t('pages.legal.terms.description') }}</p>
       </div>
 
       <div class="uno-space-y-8">
         <section v-for="(sec, idx) in sections" :key="idx" class=" uno-p-6">
-          <h2 class="uno-text-xl md:uno-text-2xl uno-font-['Outfit'] uno-font-semibold uno-text-gray-900 uno-mb-3">{{
+          <h2 class="uno-text-xl md:uno-text-2xl uno-font-Outfit uno-font-semibold uno-text-gray-900 uno-mb-3">{{
             sec.title }}</h2>
           <p class="uno-text-gray-700">{{ sec.body }}</p>
         </section>

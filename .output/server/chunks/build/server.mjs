@@ -1,6 +1,6 @@
 import process from 'node:process';globalThis._importMeta_=globalThis._importMeta_||{url:"file:///_entry.js",env:process.env};import * as Vue from 'vue';
-import { defineComponent, mergeModels, useModel, computed, unref, mergeProps, withCtx, renderSlot, createVNode, createBlock, createCommentVNode, openBlock, createTextVNode, toDisplayString as toDisplayString$1, inject, ref, toValue, getCurrentInstance as getCurrentInstance$1, onServerPrefetch, shallowRef, h, resolveComponent, toRef, Suspense, hasInjectionContext, useSlots, resolveDynamicComponent, provide, cloneVNode, createElementBlock, watch, isRef, shallowReactive, Fragment, useAttrs, useTemplateRef, nextTick, defineAsyncComponent, useSSRContext, createApp, Text, renderList, useId, onErrorCaptured, reactive, effectScope, isReadonly, isShallow, isReactive, toRaw, withModifiers, getCurrentScope, markRaw } from 'vue';
-import { w as serialize, d as destr, x as klona, y as parseQuery, z as defu, A as defuFn, B as hasProtocol, C as isScriptProtocol, D as joinURL, E as isEqual, F as parse$1, G as getRequestHeader, H as withQuery, I as sanitizeStatusCode, J as setCookie, K as getCookie, L as deleteCookie, M as getContext, N as withTrailingSlash, O as withoutTrailingSlash, q as createError$1, P as parsePath, Q as withLeadingSlash, R as parseURL, $ as $fetch$1, S as baseURL, p as publicAssetsURL, T as createHooks, U as executeAsync, V as toRouteMatcher, W as createRouter$1, X as getRequestURL, Y as createDefu, Z as encodeParam, _ as encodePath, a0 as isEqual$1 } from '../_/nitro.mjs';
+import { defineComponent, mergeModels, useModel, computed, unref, mergeProps, withCtx, renderSlot, createVNode, createBlock, createCommentVNode, openBlock, createTextVNode, toDisplayString as toDisplayString$1, inject, ref, toValue, getCurrentInstance as getCurrentInstance$1, onServerPrefetch, shallowRef, h, resolveComponent, toRef, Suspense, hasInjectionContext, useSlots, provide, cloneVNode, createElementBlock, resolveDynamicComponent, watch, isRef, shallowReactive, Fragment, useAttrs, useTemplateRef, nextTick, defineAsyncComponent, useSSRContext, createApp, Text, renderList, useId, onErrorCaptured, reactive, effectScope, isReadonly, isShallow, isReactive, toRaw, withModifiers, getCurrentScope, markRaw } from 'vue';
+import { w as serialize, x as parseQuery, y as defu, d as destr, z as klona, A as defuFn, B as hasProtocol, C as isScriptProtocol, D as joinURL, E as isEqual, F as parse$1, G as getRequestHeader, H as withQuery, I as sanitizeStatusCode, J as getContext, K as withTrailingSlash, L as withoutTrailingSlash, M as setCookie, N as getCookie, O as deleteCookie, q as createError$1, P as parsePath, Q as withLeadingSlash, R as parseURL, $ as $fetch$1, S as baseURL, p as publicAssetsURL, T as createHooks, U as executeAsync, V as toRouteMatcher, W as createRouter$1, X as getRequestHeaders, Y as getRequestURL, Z as createDefu, _ as encodeParam, a0 as encodePath, a1 as isEqual$1 } from '../_/nitro.mjs';
 import { setActivePinia, createPinia, shouldHydrate } from 'pinia';
 import { RouterView, useRoute as useRoute$1, createMemoryHistory, createRouter, START_LOCATION } from 'vue-router';
 import colors from 'tailwindcss/colors';
@@ -615,65 +615,86 @@ const unhead_Y_mBVY7T2diOSSpfNcSjcyicrZEU2TtisqlTt_BlEcU = /* @__PURE__ */ defin
 function toArray$2(value) {
   return Array.isArray(value) ? value : [value];
 }
-const __nuxt_page_meta$w = {
+const __nuxt_page_meta$x = {
+  title: () => "seo.pricing.title",
+  layoutShowPageTopIcons: false,
   layoutShowCurious: true
 };
-const __nuxt_page_meta$v = {
+const __nuxt_page_meta$w = {
   layoutShowCurious: true,
-  title: () => "seo.faq.title"
+  title: () => "seo.faq.title",
+  layoutShowPageTopIcons: false,
+  layoutShowPageTopIcons3: true,
+  layoutPageTopIcon3Class: "uno-top-160px uno-right-0"
 };
-const __nuxt_page_meta$u = {
+const __nuxt_page_meta$v = {
   layoutShowFooter: false,
   title: () => "seo.test.step.title"
 };
-const __nuxt_page_meta$t = {
+const __nuxt_page_meta$u = {
   layoutShowCurious: true,
   layoutShowPageTopIcons3: true,
   layoutShowPageTopIcons: false,
   title: () => "seo.blog.title"
 };
+const __nuxt_page_meta$t = {
+  layoutShowFooter: false,
+  title: () => "seo.test.title",
+  layoutShowPageTopIcons: false
+};
 const __nuxt_page_meta$s = {
   layoutShowFooter: false,
-  title: () => "seo.test.title"
+  title: () => "seo.test.start.title",
+  layoutShowPageTopIcons: false
 };
 const __nuxt_page_meta$r = {
-  layoutShowFooter: false,
-  title: () => "seo.test.start.title"
-};
-const __nuxt_page_meta$q = {
   title: () => "seo.about.title"
 };
-const __nuxt_page_meta$p = {
+const __nuxt_page_meta$q = {
   title: "seo.home.title",
   layoutShowCurious: true
 };
-const __nuxt_page_meta$o = {
+const __nuxt_page_meta$p = {
   title: () => "seo.routeGuide.title"
 };
-const __nuxt_page_meta$n = {
+const __nuxt_page_meta$o = {
   title: "Test Report Ready",
   layout: "default"
 };
-const __nuxt_page_meta$m = {
+const __nuxt_page_meta$n = {
   layoutShowFooter: false,
   title: () => "seo.test.result.title"
 };
-const __nuxt_page_meta$l = {
+const __nuxt_page_meta$m = {
   layoutShowFooter: false,
-  title: () => "seo.tests.title"
+  title: () => "seo.tests.title",
+  layoutShowPageTopIcons: false
+};
+const __nuxt_page_meta$l = {
+  title: () => "seo.auth.signIn.title",
+  layoutShowPageTopIcons: false
 };
 const __nuxt_page_meta$k = {
-  title: () => "seo.auth.signIn.title"
+  title: () => "seo.ebooks.title",
+  layoutShowPageTopIcons: false
 };
 const __nuxt_page_meta$j = {
-  title: () => "seo.ebooks.title"
+  title: () => "seo.contact.title",
+  layoutShowCurious: true,
+  curious: {
+    title: "Ready to Uncover Your True Personality?",
+    description: "Find out your personality type, preferences, and hidden strengths in just a few minutes. Quick, fun, and insightful — your journey of self-discovery starts here!",
+    buttonText: "Reveal Your Personality",
+    buttonDisabled: false
+  }
 };
 const __nuxt_page_meta$i = {
   title: () => "seo.courses.title",
   layoutShowPageTopIcons: false
 };
 const __nuxt_page_meta$h = {
-  title: () => "seo.ebooks.detail.title"
+  title: () => "seo.ebooks.detail.title",
+  layoutShowPageTopIcons: false
 };
 const __nuxt_page_meta$g = {
   layoutShowCurious: true,
@@ -698,7 +719,8 @@ const __nuxt_page_meta$b = {
   title: () => "seo.account.settings.title"
 };
 const __nuxt_page_meta$a = {
-  title: () => "seo.userCourse.test.title"
+  title: () => "seo.userCourse.test.title",
+  layoutShowPageTopIcons: false
 };
 const __nuxt_page_meta$9 = {
   title: () => "seo.blog.slug.title",
@@ -720,429 +742,447 @@ const __nuxt_page_meta$6 = {
 };
 const __nuxt_page_meta$5 = {
   title: () => "pages.orders.purchaseComplete.title",
-  layoutShowMenu: false
+  layoutShowMenu: false,
+  layoutShowPageTopIcons: false
 };
 const __nuxt_page_meta$4 = {
-  title: () => "seo.userCourse.lessonGuide.title"
+  title: () => "seo.userCourse.lessonGuide.title",
+  layoutShowPageTopIcons: false
 };
 const __nuxt_page_meta$3 = {
-  title: () => "seo.userCourse.testComplete.title"
+  title: () => "seo.userCourse.testComplete.title",
+  layoutShowPageTopIcons: false
 };
 const __nuxt_page_meta$2 = {
-  title: () => "seo.orders.cancelSubscription.title"
+  title: () => "seo.orders.cancelSubscription.title",
+  layoutShowPageTopIcons: false
 };
 const __nuxt_page_meta$1 = {
-  title: () => "seo.userCourse.lessonComplete.title"
+  title: () => "seo.userCourse.lessonComplete.title",
+  layoutShowPageTopIcons: false
 };
 const __nuxt_page_meta = {
-  title: () => "seo.userCourse.chapterComplete.title"
+  title: () => "seo.userCourse.chapterComplete.title",
+  layoutShowPageTopIcons: false
 };
 const _routes = [
   {
     name: "pricing___en",
     path: "/pricing",
-    meta: __nuxt_page_meta$w || {},
-    component: () => import('./pricing-wk5S-P0n.mjs')
+    meta: __nuxt_page_meta$x || {},
+    component: () => import('./pricing-CYR1DGMQ.mjs')
   },
   {
     name: "pricing___zh",
     path: "/zh/pricing",
-    meta: __nuxt_page_meta$w || {},
-    component: () => import('./pricing-wk5S-P0n.mjs')
+    meta: __nuxt_page_meta$x || {},
+    component: () => import('./pricing-CYR1DGMQ.mjs')
   },
   {
     name: "faq___en",
     path: "/faq",
-    meta: __nuxt_page_meta$v || {},
-    component: () => import('./index-DvnQ3GpM.mjs')
+    meta: __nuxt_page_meta$w || {},
+    component: () => import('./index-1b4nbnz1.mjs')
   },
   {
     name: "faq___zh",
     path: "/zh/faq",
-    meta: __nuxt_page_meta$v || {},
-    component: () => import('./index-DvnQ3GpM.mjs')
+    meta: __nuxt_page_meta$w || {},
+    component: () => import('./index-1b4nbnz1.mjs')
   },
   {
     name: "test-step___en",
     path: "/test/step",
-    meta: __nuxt_page_meta$u || {},
-    component: () => import('./step-CzZ2dpAJ.mjs')
+    meta: __nuxt_page_meta$v || {},
+    component: () => import('./step-CGkOYYwZ.mjs')
   },
   {
     name: "test-step___zh",
     path: "/zh/test/step",
-    meta: __nuxt_page_meta$u || {},
-    component: () => import('./step-CzZ2dpAJ.mjs')
+    meta: __nuxt_page_meta$v || {},
+    component: () => import('./step-CGkOYYwZ.mjs')
   },
   {
     name: "blog___en",
     path: "/blog",
-    meta: __nuxt_page_meta$t || {},
-    component: () => import('./index-CwExYEZd.mjs')
+    meta: __nuxt_page_meta$u || {},
+    component: () => import('./index-DPpSVoMl.mjs')
   },
   {
     name: "blog___zh",
     path: "/zh/blog",
-    meta: __nuxt_page_meta$t || {},
-    component: () => import('./index-CwExYEZd.mjs')
+    meta: __nuxt_page_meta$u || {},
+    component: () => import('./index-DPpSVoMl.mjs')
   },
   {
     name: "test___en",
     path: "/test",
-    meta: __nuxt_page_meta$s || {},
-    component: () => import('./index-CGaM-mjI.mjs')
+    meta: __nuxt_page_meta$t || {},
+    component: () => import('./index-BR6AWnA6.mjs')
   },
   {
     name: "test___zh",
     path: "/zh/test",
-    meta: __nuxt_page_meta$s || {},
-    component: () => import('./index-CGaM-mjI.mjs')
+    meta: __nuxt_page_meta$t || {},
+    component: () => import('./index-BR6AWnA6.mjs')
   },
   {
     name: "test-start___en",
     path: "/test/start",
-    meta: __nuxt_page_meta$r || {},
-    component: () => import('./start-D407b8J5.mjs')
+    meta: __nuxt_page_meta$s || {},
+    component: () => import('./start-CIVFiY0B.mjs')
   },
   {
     name: "test-start___zh",
     path: "/zh/test/start",
-    meta: __nuxt_page_meta$r || {},
-    component: () => import('./start-D407b8J5.mjs')
+    meta: __nuxt_page_meta$s || {},
+    component: () => import('./start-CIVFiY0B.mjs')
   },
   {
     name: "about___en",
     path: "/about",
-    meta: __nuxt_page_meta$q || {},
-    component: () => import('./index-DJyP9Kpp.mjs')
+    meta: __nuxt_page_meta$r || {},
+    component: () => import('./index-7h4byswl.mjs')
   },
   {
     name: "about___zh",
     path: "/zh/about",
-    meta: __nuxt_page_meta$q || {},
-    component: () => import('./index-DJyP9Kpp.mjs')
+    meta: __nuxt_page_meta$r || {},
+    component: () => import('./index-7h4byswl.mjs')
   },
   {
     name: "index___en",
     path: "/",
-    meta: __nuxt_page_meta$p || {},
-    component: () => import('./index-BfaM1EQQ.mjs')
+    meta: __nuxt_page_meta$q || {},
+    component: () => import('./index-ZCPCDT82.mjs')
   },
   {
     name: "index___zh",
     path: "/zh",
-    meta: __nuxt_page_meta$p || {},
-    component: () => import('./index-BfaM1EQQ.mjs')
+    meta: __nuxt_page_meta$q || {},
+    component: () => import('./index-ZCPCDT82.mjs')
   },
   {
     name: "route-guide___en",
     path: "/route-guide",
-    meta: __nuxt_page_meta$o || {},
-    component: () => import('./route-guide-DndbVLYf.mjs')
+    meta: __nuxt_page_meta$p || {},
+    component: () => import('./route-guide-BxV9_bZg.mjs')
   },
   {
     name: "route-guide___zh",
     path: "/zh/route-guide",
-    meta: __nuxt_page_meta$o || {},
-    component: () => import('./route-guide-DndbVLYf.mjs')
+    meta: __nuxt_page_meta$p || {},
+    component: () => import('./route-guide-BxV9_bZg.mjs')
   },
   {
     name: "test-report___en",
     path: "/test/report",
-    meta: __nuxt_page_meta$n || {},
+    meta: __nuxt_page_meta$o || {},
     component: () => import('./report-DMmTQeHU.mjs')
   },
   {
     name: "test-report___zh",
     path: "/zh/test/report",
-    meta: __nuxt_page_meta$n || {},
+    meta: __nuxt_page_meta$o || {},
     component: () => import('./report-DMmTQeHU.mjs')
   },
   {
     name: "test-result___en",
     path: "/test/result",
-    meta: __nuxt_page_meta$m || {},
-    component: () => import('./result-81lVIKl5.mjs')
+    meta: __nuxt_page_meta$n || {},
+    component: () => import('./result-B6zEdrvz.mjs')
   },
   {
     name: "test-result___zh",
     path: "/zh/test/result",
-    meta: __nuxt_page_meta$m || {},
-    component: () => import('./result-81lVIKl5.mjs')
+    meta: __nuxt_page_meta$n || {},
+    component: () => import('./result-B6zEdrvz.mjs')
   },
   {
     name: "tests___en",
     path: "/tests",
-    meta: __nuxt_page_meta$l || {},
-    component: () => import('./index-Cow6G8qh.mjs')
+    meta: __nuxt_page_meta$m || {},
+    component: () => import('./index-BanDguD3.mjs')
   },
   {
     name: "tests___zh",
     path: "/zh/tests",
-    meta: __nuxt_page_meta$l || {},
-    component: () => import('./index-Cow6G8qh.mjs')
+    meta: __nuxt_page_meta$m || {},
+    component: () => import('./index-BanDguD3.mjs')
   },
   {
     name: "auth-sign-in___en",
     path: "/auth/sign-in",
-    meta: __nuxt_page_meta$k || {},
-    component: () => import('./sign-in-Iu3XbLoo.mjs')
+    meta: __nuxt_page_meta$l || {},
+    component: () => import('./sign-in-qnf6jmpK.mjs')
   },
   {
     name: "auth-sign-in___zh",
     path: "/zh/auth/sign-in",
-    meta: __nuxt_page_meta$k || {},
-    component: () => import('./sign-in-Iu3XbLoo.mjs')
+    meta: __nuxt_page_meta$l || {},
+    component: () => import('./sign-in-qnf6jmpK.mjs')
   },
   {
     name: "ebooks___en",
     path: "/ebooks",
-    meta: __nuxt_page_meta$j || {},
-    component: () => import('./index-BHsCtANd.mjs')
+    meta: __nuxt_page_meta$k || {},
+    component: () => import('./index-C0bRHizH.mjs')
   },
   {
     name: "ebooks___zh",
     path: "/zh/ebooks",
+    meta: __nuxt_page_meta$k || {},
+    component: () => import('./index-C0bRHizH.mjs')
+  },
+  {
+    name: "contact___en",
+    path: "/contact",
     meta: __nuxt_page_meta$j || {},
-    component: () => import('./index-BHsCtANd.mjs')
+    component: () => import('./index-NoUGw51e.mjs')
+  },
+  {
+    name: "contact___zh",
+    path: "/zh/contact",
+    meta: __nuxt_page_meta$j || {},
+    component: () => import('./index-NoUGw51e.mjs')
   },
   {
     name: "courses___en",
     path: "/courses",
     meta: __nuxt_page_meta$i || {},
-    component: () => import('./index-CQ6pYYKG.mjs')
+    component: () => import('./index-D_vXwl7E.mjs')
   },
   {
     name: "courses___zh",
     path: "/zh/courses",
     meta: __nuxt_page_meta$i || {},
-    component: () => import('./index-CQ6pYYKG.mjs')
+    component: () => import('./index-D_vXwl7E.mjs')
   },
   {
     name: "ebooks-detail___en",
     path: "/ebooks/detail",
     meta: __nuxt_page_meta$h || {},
-    component: () => import('./detail-hm-21xaT.mjs')
+    component: () => import('./detail-DRcqBWns.mjs')
   },
   {
     name: "ebooks-detail___zh",
     path: "/zh/ebooks/detail",
     meta: __nuxt_page_meta$h || {},
-    component: () => import('./detail-hm-21xaT.mjs')
+    component: () => import('./detail-DRcqBWns.mjs')
   },
   {
     name: "legal-privacy___en",
     path: "/legal/privacy",
     meta: __nuxt_page_meta$g || {},
-    component: () => import('./privacy-9UdrGg8R.mjs')
+    component: () => import('./privacy-CXMmKhPf.mjs')
   },
   {
     name: "legal-privacy___zh",
     path: "/zh/legal/privacy",
     meta: __nuxt_page_meta$g || {},
-    component: () => import('./privacy-9UdrGg8R.mjs')
+    component: () => import('./privacy-CXMmKhPf.mjs')
   },
   {
     name: "orders-create___en",
     path: "/orders/create",
-    component: () => import('./create-DvQmzjGK.mjs')
+    component: () => import('./create-BxtC5PZY.mjs')
   },
   {
     name: "orders-create___zh",
     path: "/zh/orders/create",
-    component: () => import('./create-DvQmzjGK.mjs')
+    component: () => import('./create-BxtC5PZY.mjs')
   },
   {
     name: "profile___en",
     path: "/profile",
     meta: __nuxt_page_meta$f || {},
-    component: () => import('./index-DJqem8rQ.mjs')
+    component: () => import('./index-V0gy-yB4.mjs')
   },
   {
     name: "profile___zh",
     path: "/zh/profile",
     meta: __nuxt_page_meta$f || {},
-    component: () => import('./index-DJqem8rQ.mjs')
+    component: () => import('./index-V0gy-yB4.mjs')
   },
   {
     name: "-mentors___en",
     path: "/-mentors",
     meta: __nuxt_page_meta$e || {},
-    component: () => import('./index-Dzw-H7lj.mjs')
+    component: () => import('./index-B913iIlM.mjs')
   },
   {
     name: "-mentors___zh",
     path: "/zh/-mentors",
     meta: __nuxt_page_meta$e || {},
-    component: () => import('./index-Dzw-H7lj.mjs')
+    component: () => import('./index-B913iIlM.mjs')
   },
   {
     name: "profile-detail___en",
     path: "/profile/detail",
     meta: __nuxt_page_meta$d || {},
-    component: () => import('./detail-DUWKAZgG.mjs')
+    component: () => import('./detail-D0nKN3tk.mjs')
   },
   {
     name: "profile-detail___zh",
     path: "/zh/profile/detail",
     meta: __nuxt_page_meta$d || {},
-    component: () => import('./detail-DUWKAZgG.mjs')
+    component: () => import('./detail-D0nKN3tk.mjs')
   },
   {
     name: "test-analyzing___en",
     path: "/test/analyzing",
     meta: __nuxt_page_meta$c || {},
-    component: () => import('./analyzing-DIM3b6U4.mjs')
+    component: () => import('./analyzing-CTVGvDGc.mjs')
   },
   {
     name: "test-analyzing___zh",
     path: "/zh/test/analyzing",
     meta: __nuxt_page_meta$c || {},
-    component: () => import('./analyzing-DIM3b6U4.mjs')
+    component: () => import('./analyzing-CTVGvDGc.mjs')
   },
   {
     name: "account-settings___en",
     path: "/account/settings",
     meta: __nuxt_page_meta$b || {},
-    component: () => import('./settings-Cr7nDPId.mjs')
+    component: () => import('./settings-BvI-SnX0.mjs')
   },
   {
     name: "account-settings___zh",
     path: "/zh/account/settings",
     meta: __nuxt_page_meta$b || {},
-    component: () => import('./settings-Cr7nDPId.mjs')
+    component: () => import('./settings-BvI-SnX0.mjs')
   },
   {
     name: "user-course-test___en",
     path: "/user-course/test",
     meta: __nuxt_page_meta$a || {},
-    component: () => import('./test-c5lKZuAz.mjs')
+    component: () => import('./test-DODvlJdo.mjs')
   },
   {
     name: "user-course-test___zh",
     path: "/zh/user-course/test",
     meta: __nuxt_page_meta$a || {},
-    component: () => import('./test-c5lKZuAz.mjs')
+    component: () => import('./test-DODvlJdo.mjs')
   },
   {
     name: "blog-dateil-slug___en",
     path: "/blog/dateil/:slug()",
     meta: __nuxt_page_meta$9 || {},
-    component: () => import('./_slug_-DP6A-42S.mjs')
+    component: () => import('./_slug_-BjOzjeXv.mjs')
   },
   {
     name: "blog-dateil-slug___zh",
     path: "/zh/blog/dateil/:slug()",
     meta: __nuxt_page_meta$9 || {},
-    component: () => import('./_slug_-DP6A-42S.mjs')
+    component: () => import('./_slug_-BjOzjeXv.mjs')
   },
   {
     name: "user-course-lesson___en",
     path: "/user-course/lesson",
     meta: __nuxt_page_meta$8 || {},
-    component: () => import('./lesson-f5E9i34j.mjs')
+    component: () => import('./lesson-KbrKIJ-g.mjs')
   },
   {
     name: "user-course-lesson___zh",
     path: "/zh/user-course/lesson",
     meta: __nuxt_page_meta$8 || {},
-    component: () => import('./lesson-f5E9i34j.mjs')
+    component: () => import('./lesson-KbrKIJ-g.mjs')
   },
   {
     name: "blog-category-slug___en",
     path: "/blog/category/:slug()",
     meta: __nuxt_page_meta$7 || {},
-    component: () => import('./_slug_-C8LSH5C-.mjs')
+    component: () => import('./_slug_-Bm6UJMby.mjs')
   },
   {
     name: "blog-category-slug___zh",
     path: "/zh/blog/category/:slug()",
     meta: __nuxt_page_meta$7 || {},
-    component: () => import('./_slug_-C8LSH5C-.mjs')
+    component: () => import('./_slug_-Bm6UJMby.mjs')
   },
   {
     name: "user-course-chapters___en",
     path: "/user-course/chapters",
     meta: __nuxt_page_meta$6 || {},
-    component: () => import('./chapters-U5se3Jo8.mjs')
+    component: () => import('./chapters-B5C_2njO.mjs')
   },
   {
     name: "user-course-chapters___zh",
     path: "/zh/user-course/chapters",
     meta: __nuxt_page_meta$6 || {},
-    component: () => import('./chapters-U5se3Jo8.mjs')
+    component: () => import('./chapters-B5C_2njO.mjs')
   },
   {
     name: "orders-purchase-complete___en",
     path: "/orders/purchase-complete",
     meta: __nuxt_page_meta$5 || {},
-    component: () => import('./purchase-complete-B2cdYofl.mjs')
+    component: () => import('./purchase-complete-DNBtIa_O.mjs')
   },
   {
     name: "orders-purchase-complete___zh",
     path: "/zh/orders/purchase-complete",
     meta: __nuxt_page_meta$5 || {},
-    component: () => import('./purchase-complete-B2cdYofl.mjs')
+    component: () => import('./purchase-complete-DNBtIa_O.mjs')
   },
   {
     name: "user-course-lesson-guide___en",
     path: "/user-course/lesson-guide",
     meta: __nuxt_page_meta$4 || {},
-    component: () => import('./lesson-guide-Dz_60kP-.mjs')
+    component: () => import('./lesson-guide-CUDZS9MP.mjs')
   },
   {
     name: "user-course-lesson-guide___zh",
     path: "/zh/user-course/lesson-guide",
     meta: __nuxt_page_meta$4 || {},
-    component: () => import('./lesson-guide-Dz_60kP-.mjs')
+    component: () => import('./lesson-guide-CUDZS9MP.mjs')
   },
   {
     name: "user-course-test-complete___en",
     path: "/user-course/test-complete",
     meta: __nuxt_page_meta$3 || {},
-    component: () => import('./test-complete-DL_xmjnk.mjs')
+    component: () => import('./test-complete-Cg-N5q_v.mjs')
   },
   {
     name: "user-course-test-complete___zh",
     path: "/zh/user-course/test-complete",
     meta: __nuxt_page_meta$3 || {},
-    component: () => import('./test-complete-DL_xmjnk.mjs')
+    component: () => import('./test-complete-Cg-N5q_v.mjs')
   },
   {
     name: "orders-cancel-subscription___en",
     path: "/orders/cancel-subscription",
     meta: __nuxt_page_meta$2 || {},
-    component: () => import('./cancel-subscription-B7TKspFu.mjs')
+    component: () => import('./cancel-subscription-C6srWHGE.mjs')
   },
   {
     name: "orders-cancel-subscription___zh",
     path: "/zh/orders/cancel-subscription",
     meta: __nuxt_page_meta$2 || {},
-    component: () => import('./cancel-subscription-B7TKspFu.mjs')
+    component: () => import('./cancel-subscription-C6srWHGE.mjs')
   },
   {
     name: "user-course-lesson-complete___en",
     path: "/user-course/lesson-complete",
     meta: __nuxt_page_meta$1 || {},
-    component: () => import('./lesson-complete-CO96Xe5q.mjs')
+    component: () => import('./lesson-complete-DJIPiVW1.mjs')
   },
   {
     name: "user-course-lesson-complete___zh",
     path: "/zh/user-course/lesson-complete",
     meta: __nuxt_page_meta$1 || {},
-    component: () => import('./lesson-complete-CO96Xe5q.mjs')
+    component: () => import('./lesson-complete-DJIPiVW1.mjs')
   },
   {
     name: "user-course-chapter-complete___en",
     path: "/user-course/chapter-complete",
     meta: __nuxt_page_meta || {},
-    component: () => import('./chapter-complete-C-jKoNUI.mjs')
+    component: () => import('./chapter-complete-cVjtdW3g.mjs')
   },
   {
     name: "user-course-chapter-complete___zh",
     path: "/zh/user-course/chapter-complete",
     meta: __nuxt_page_meta || {},
-    component: () => import('./chapter-complete-C-jKoNUI.mjs')
+    component: () => import('./chapter-complete-cVjtdW3g.mjs')
   }
 ];
 const _wrapInTransition = (props, children) => {
@@ -1824,6 +1864,13 @@ function useRequestEvent(nuxtApp) {
   nuxtApp ||= useNuxtApp();
   return nuxtApp.ssrContext?.event;
 }
+function useRequestHeaders(include) {
+  const event = useRequestEvent();
+  const _headers = event ? getRequestHeaders(event) : {};
+  {
+    return _headers;
+  }
+}
 function useRequestFetch() {
   return useRequestEvent()?.$fetch || globalThis.$fetch;
 }
@@ -2473,6 +2520,138 @@ const components_plugin_4kY4pyzJIYX99vmMAAIorFf3CnAaptHitJgf7JxiED8 = /* @__PURE
     }
   }
 });
+const REGEX_CRAWLER = new RegExp(/Googlebot\/|Googlebot-Mobile|Googlebot-Image|Googlebot-News|Googlebot-Video|AdsBot-Google([^-]|$)|AdsBot-Google-Mobile|Feedfetcher-Google|Mediapartners-Google|Mediapartners \(Googlebot\)|APIs-Google|Google-InspectionTool|Storebot-Google|GoogleOther|bingbot|Slurp|[wW]get|LinkedInBot|Python-urllib|python-requests|aiohttp|httpx|libwww-perl|httpunit|Nutch|Go-http-client|phpcrawl|msnbot|jyxobot|FAST-WebCrawler|FAST Enterprise Crawler|BIGLOTRON|Teoma|convera|seekbot|Gigabot|Gigablast|exabot|ia_archiver|GingerCrawler|webmon |HTTrack|grub\.org|UsineNouvelleCrawler|antibot|netresearchserver|speedy|fluffy|findlink|msrbot|panscient|yacybot|AISearchBot|ips-agent|tagoobot|MJ12bot|woriobot|yanga|buzzbot|mlbot|yandex\.com\/bots|purebot|Linguee Bot|CyberPatrol|voilabot|Baiduspider|citeseerxbot|spbot|twengabot|postrank|Turnitin|scribdbot|page2rss|sitebot|linkdex|Adidxbot|ezooms|dotbot|Mail\.RU_Bot|discobot|heritrix|findthatfile|europarchive\.org|NerdByNature\.Bot|(sistrix|SISTRIX) [cC]rawler|Ahrefs(Bot|SiteAudit)|fuelbot|CrunchBot|IndeedBot|mappydata|woobot|ZoominfoBot|PrivacyAwareBot|Multiviewbot|SWIMGBot|Grobbot|eright|Apercite|semanticbot|Aboundex|domaincrawler|wbsearchbot|summify|CCBot|edisterbot|SeznamBot|ec2linkfinder|gslfbot|aiHitBot|intelium_bot|facebookexternalhit|Yeti|RetrevoPageAnalyzer|lb-spider|Sogou|lssbot|careerbot|wotbox|wocbot|ichiro|DuckDuckBot|lssrocketcrawler|drupact|webcompanycrawler|acoonbot|openindexspider|gnam gnam spider|web-archive-net\.com\.bot|backlinkcrawler|coccoc|integromedb|content crawler spider|toplistbot|it2media-domain-crawler|ip-web-crawler\.com|siteexplorer\.info|elisabot|proximic|changedetection|arabot|WeSEE:Search|niki-bot|CrystalSemanticsBot|rogerbot|360Spider|psbot|InterfaxScanBot|CC Metadata Scaper|g00g1e\.net|GrapeshotCrawler|urlappendbot|brainobot|fr-crawler|binlar|SimpleCrawler|Twitterbot|cXensebot|smtbot|bnf\.fr_bot|A6-Indexer|ADmantX|Facebot|OrangeBot\/|memorybot|AdvBot|MegaIndex|SemanticScholarBot|ltx71|nerdybot|xovibot|BUbiNG|Qwantify|archive\.org_bot|Applebot|TweetmemeBot|crawler4j|findxbot|S[eE][mM]rushBot|yoozBot|lipperhey|Y!J|Domain Re-Animator Bot|AddThis|Screaming Frog SEO Spider|MetaURI|Scrapy|Livelap[bB]ot|OpenHoseBot|CapsuleChecker|collection@infegy\.com|IstellaBot|DeuSu\/|betaBot|Cliqzbot\/|MojeekBot\/|netEstate NE Crawler|SafeSearch microdata crawler|Gluten Free Crawler\/|Sonic|Sysomos|Trove|deadlinkchecker|Slack-ImgProxy|Embedly|RankActiveLinkBot|iskanie|SafeDNSBot|SkypeUriPreview|Veoozbot|Slackbot|redditbot|datagnionbot|Google-Adwords-Instant|adbeat_bot|WhatsApp|contxbot|pinterest\.com\/bot|electricmonk|GarlikCrawler|BingPreview\/|vebidoobot|FemtosearchBot|Yahoo Link Preview|MetaJobBot|DomainStatsBot|mindUpBot|Daum\/|Jugendschutzprogramm-Crawler|Xenu Link Sleuth|Pcore-HTTP|moatbot|KosmioBot|[pP]ingdom|AppInsights|PhantomJS|Gowikibot|PiplBot|Discordbot|TelegramBot|Jetslide|newsharecounts|James BOT|Bark[rR]owler|TinEye|SocialRankIOBot|trendictionbot|Ocarinabot|epicbot|Primalbot|DuckDuckGo-Favicons-Bot|GnowitNewsbot|Leikibot|LinkArchiver|YaK\/|PaperLiBot|Digg Deeper|dcrawl|Snacktory|AndersPinkBot|Fyrebot|EveryoneSocialBot|Mediatoolkitbot|Luminator-robots|ExtLinksBot|SurveyBot|NING\/|okhttp|Nuzzel|omgili|PocketParser|YisouSpider|um-LN|ToutiaoSpider|MuckRack|Jamie's Spider|AHC\/|NetcraftSurveyAgent|Laserlikebot|^Apache-HttpClient|AppEngine-Google|Jetty|Upflow|Thinklab|Traackr\.com|Twurly|Mastodon|http_get|DnyzBot|botify|007ac9 Crawler|BehloolBot|BrandVerity|check_http|BDCbot|ZumBot|EZID|ICC-Crawler|ArchiveBot|^LCC |filterdb\.iss\.net\/crawler|BLP_bbot|BomboraBot|Buck\/|Companybook-Crawler|Genieo|magpie-crawler|MeltwaterNews|Moreover|newspaper\/|ScoutJet|(^| )sentry\/|StorygizeBot|UptimeRobot|OutclicksBot|seoscanners|Hatena|Google Web Preview|MauiBot|AlphaBot|SBL-BOT|IAS crawler|adscanner|Netvibes|acapbot|Baidu-YunGuanCe|bitlybot|blogmuraBot|Bot\.AraTurka\.com|bot-pge\.chlooe\.com|BoxcarBot|BTWebClient|ContextAd Bot|Digincore bot|Disqus|Feedly|Fetch\/|Fever|Flamingo_SearchEngine|FlipboardProxy|g2reader-bot|G2 Web Services|imrbot|K7MLWCBot|Kemvibot|Landau-Media-Spider|linkapediabot|vkShare|Siteimprove\.com|BLEXBot\/|DareBoost|ZuperlistBot\/|Miniflux\/|Feedspot|Diffbot\/|SEOkicks|tracemyfile|Nimbostratus-Bot|zgrab|PR-CY\.RU|AdsTxtCrawler|Datafeedwatch|Zabbix|TangibleeBot|google-xrawler|axios|Amazon CloudFront|Pulsepoint|CloudFlare-AlwaysOnline|Cloudflare-Healthchecks|Cloudflare-Traffic-Manager|CloudFlare-Prefetch|Cloudflare-SSLDetector|https:\/\/developers\.cloudflare\.com\/security-center\/|Google-Structured-Data-Testing-Tool|WordupInfoSearch|WebDataStats|HttpUrlConnection|ZoomBot|VelenPublicWebCrawler|MoodleBot|jpg-newsbot|outbrain|W3C_Validator|Validator\.nu|W3C-checklink|W3C-mobileOK|W3C_I18n-Checker|FeedValidator|W3C_CSS_Validator|W3C_Unicorn|Google-PhysicalWeb|Blackboard|ICBot\/|BazQux|Twingly|Rivva|Experibot|awesomecrawler|Dataprovider\.com|GroupHigh\/|theoldreader\.com|AnyEvent|Uptimebot\.org|Nmap Scripting Engine|2ip\.ru|Clickagy|Caliperbot|MBCrawler|online-webceo-bot|B2B Bot|AddSearchBot|Google Favicon|HubSpot|Chrome-Lighthouse|HeadlessChrome|CheckMarkNetwork\/|www\.uptime\.com|Streamline3Bot\/|serpstatbot\/|MixnodeCache\/|^curl|SimpleScraper|RSSingBot|Jooblebot|fedoraplanet|Friendica|NextCloud|Tiny Tiny RSS|RegionStuttgartBot|Bytespider|Datanyze|Google-Site-Verification|TrendsmapResolver|tweetedtimes|NTENTbot|Gwene|SimplePie|SearchAtlas|Superfeedr|feedbot|UT-Dorkbot|Amazonbot|SerendeputyBot|Eyeotabot|officestorebot|Neticle Crawler|SurdotlyBot|LinkisBot|AwarioSmartBot|AwarioRssBot|RyteBot|FreeWebMonitoring SiteChecker|AspiegelBot|NAVER Blog Rssbot|zenback bot|SentiBot|Domains Project\/|Pandalytics|VKRobot|bidswitchbot|tigerbot|NIXStatsbot|Atom Feed Robot|[Cc]urebot|PagePeeker\/|Vigil\/|rssbot\/|startmebot\/|JobboerseBot|seewithkids|NINJA bot|Cutbot|BublupBot|BrandONbot|RidderBot|Taboolabot|Dubbotbot|FindITAnswersbot|infoobot|Refindbot|BlogTraffic\/\d\.\d+ Feed-Fetcher|SeobilityBot|Cincraw|Dragonbot|VoluumDSP-content-bot|FreshRSS|BitBot|^PHP-Curl-Class|Google-Certificates-Bridge|centurybot|Viber|e\.ventures Investment Crawler|evc-batch|PetalBot|virustotal|(^| )PTST\/|minicrawler|Cookiebot|trovitBot|seostar\.co|IonCrawl|Uptime-Kuma|Seekport|FreshpingBot|Feedbin|CriteoBot|Snap URL Preview Service|Better Uptime Bot|RuxitSynthetic|Google-Read-Aloud|Valve\/Steam|OdklBot\/|GPTBot|ChatGPT-User|OAI-SearchBot|YandexRenderResourcesBot\/|LightspeedSystemsCrawler|ev-crawler\/|BitSightBot\/|woorankreview\/|Google-Safety|AwarioBot|DataForSeoBot|Linespider|WellKnownBot|A Patent Crawler|StractBot|search\.marginalia\.nu|YouBot|Nicecrawler|Neevabot|BrightEdge Crawler|SiteCheckerBotCrawler|TombaPublicWebCrawler|CrawlyProjectCrawler|KomodiaBot|KStandBot|CISPA Webcrawler|MTRobot|hyscore\.io|AlexandriaOrgBot|2ip bot|Yellowbrandprotectionbot|SEOlizer|vuhuvBot|INETDEX-BOT|Synapse|t3versionsBot|deepnoc|Cocolyzebot|hypestat|ReverseEngineeringBot|sempi\.tech|Iframely|MetaInspector|node-fetch|l9explore|python-opengraph|OpenGraphCheck|developers\.google\.com\/\+\/web\/snippet|SenutoBot|MaCoCu|NewsBlur|inoreader|NetSystemsResearch|PageThing|WordPress\/|PhxBot|ImagesiftBot|Expanse|InternetMeasurement|^BW\/|GeedoBot|Audisto Crawler|PerplexityBot\/|[cC]laude[bB]ot|Monsidobot|GroupMeBot|Vercelbot|vercel-screenshot|facebookcatalog\/|meta-externalads\/|meta-externalagent\/|meta-externalfetcher\/|AcademicBotRTU|KeybaseBot|Lemmy|CookieHubScan|Hydrozen\.io|HTTP Banner Detection|SummalyBot|MicrosoftPreview\/|GeedoProductSearch|TikTokSpider|OnCrawl\/|sindresorhus\/got|CensysInspect\/|SBIntuitionsBot\/|sitebulb|YextBot\/|DatadogSynthetics|Google-Ads-Conversions/);
+const REGEX_MOBILE1 = /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|FBAN|FBAV|fennec|hiptop|iemobile|ip(hone|od)|Instagram|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i;
+const REGEX_MOBILE2 = /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i;
+const REGEX_MOBILE_OR_TABLET1 = /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|FBAN|FBAV|fennec|hiptop|iemobile|ip(hone|od)|Instagram|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino|android|ipad|playbook|silk/i;
+const REGEX_MOBILE_OR_TABLET2 = /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i;
+function isMobile(userAgent) {
+  return REGEX_MOBILE1.test(userAgent) || REGEX_MOBILE2.test(userAgent.slice(0, 4));
+}
+function isMobileOrTablet(userAgent) {
+  return REGEX_MOBILE_OR_TABLET1.test(userAgent) || REGEX_MOBILE_OR_TABLET2.test(userAgent.slice(0, 4));
+}
+function isIos(userAgent) {
+  return /iPad|iPhone|iPod/.test(userAgent);
+}
+function isAndroid(userAgent) {
+  return /android/i.test(userAgent);
+}
+function isWindows(userAgent) {
+  return /Windows/.test(userAgent);
+}
+function isMacOS(userAgent) {
+  return /Mac OS X/.test(userAgent);
+}
+function isLinux(userAgent) {
+  return /Linux/i.test(userAgent) && !isAndroid(userAgent);
+}
+const browsers = [
+  { name: "Samsung", regex: /SamsungBrowser/i },
+  { name: "Edge", regex: /edg(?:[ea]|ios)?\//i },
+  { name: "Firefox", regex: /firefox|iceweasel|fxios/i },
+  { name: "Chrome", regex: /chrome|crios|crmo/i },
+  { name: "Safari", regex: /safari|applewebkit/i }
+];
+function getBrowserName(userAgent) {
+  for (const browser of browsers) {
+    if (browser.regex.test(userAgent)) {
+      return browser.name;
+    }
+  }
+  return "";
+}
+function generateFlags(userAgent, headers = {}) {
+  let mobile = false;
+  let mobileOrTablet = false;
+  let ios = false;
+  let android = false;
+  if (userAgent === "Amazon CloudFront") {
+    if (headers["cloudfront-is-mobile-viewer"] === "true") {
+      mobile = true;
+      mobileOrTablet = true;
+    }
+    if (headers["cloudfront-is-tablet-viewer"] === "true") {
+      mobile = false;
+      mobileOrTablet = true;
+    }
+    if (headers["cloudfront-is-desktop-viewer"] === "true") {
+      mobile = false;
+      mobileOrTablet = false;
+    }
+    if (headers["cloudfront-is-ios-viewer"] === "true") {
+      ios = true;
+    }
+    if (headers["cloudfront-is-android-viewer"] === "true") {
+      android = true;
+    }
+  } else if (headers && headers["cf-device-type"]) {
+    switch (headers["cf-device-type"]) {
+      case "mobile":
+        mobile = true;
+        mobileOrTablet = true;
+        break;
+      case "tablet":
+        mobile = false;
+        mobileOrTablet = true;
+        break;
+      case "desktop":
+        mobile = false;
+        mobileOrTablet = false;
+        break;
+    }
+  } else {
+    mobile = isMobile(userAgent);
+    mobileOrTablet = isMobileOrTablet(userAgent);
+    ios = isIos(userAgent);
+    android = isAndroid(userAgent);
+  }
+  const windows = isWindows(userAgent);
+  const macOS = isMacOS(userAgent);
+  const linux = isLinux(userAgent);
+  const browserName = getBrowserName(userAgent);
+  const isSafari = browserName === "Safari";
+  const isFirefox = browserName === "Firefox";
+  const isEdge = browserName === "Edge";
+  const isChrome = browserName === "Chrome";
+  const isSamsung = browserName === "Samsung";
+  const isCrawler = REGEX_CRAWLER.test(userAgent);
+  return {
+    userAgent,
+    isMobile: mobile,
+    isMobileOrTablet: mobileOrTablet,
+    isTablet: !mobile && mobileOrTablet,
+    isDesktop: !mobileOrTablet,
+    isIos: ios,
+    isAndroid: android,
+    isWindows: windows,
+    isLinux: linux,
+    isMacOS: macOS,
+    isApple: macOS || ios,
+    isDesktopOrTablet: !mobile,
+    isSafari,
+    isFirefox,
+    isEdge,
+    isChrome,
+    isSamsung,
+    isCrawler
+  };
+}
+const plugin_Y4YhgLnDGY7I9_IKblSkOOwxbhPE1BoekKeA3mjjrBs = /* @__PURE__ */ defineNuxtPlugin(() => {
+  const runtimeConfig = /* @__PURE__ */ useRuntimeConfig();
+  const defaultUserAgent = runtimeConfig.public.device.defaultUserAgent;
+  let flags;
+  {
+    const headers = useRequestHeaders();
+    const userAgent = headers["user-agent"] || defaultUserAgent;
+    flags = reactive(generateFlags(userAgent, headers));
+  }
+  return {
+    provide: {
+      device: flags
+    }
+  };
+});
 function warn(msg, err) {
   if (typeof console !== "undefined") {
     console.warn(`[intlify] ` + msg);
@@ -2841,7 +3020,7 @@ const localeLoaders = {
     {
       key: "locale_en_46json_c4f7c814",
       load: () => import(
-        './en-B8ASmyKG.mjs'
+        './en-CJZuiYGy.mjs'
         /* webpackChunkName: "locale_en_46json_c4f7c814" */
       ),
       cache: true
@@ -2851,7 +3030,7 @@ const localeLoaders = {
     {
       key: "locale_zh_46json_906be1cb",
       load: () => import(
-        './zh-CxfffDpj.mjs'
+        './zh-Ck7Q27hY.mjs'
         /* webpackChunkName: "locale_zh_46json_906be1cb" */
       ),
       cache: true
@@ -2868,12 +3047,14 @@ const normalizedLocales = [
   {
     code: "en",
     language: "en-US",
-    name: "English"
+    name: "English",
+    mobileName: "EN"
   },
   {
     code: "zh",
     language: "zh-CN",
-    name: "中文"
+    name: "中文",
+    mobileName: "中文"
   }
 ];
 const cacheMessages = /* @__PURE__ */ new Map();
@@ -3040,7 +3221,7 @@ function createNuxtI18nContext(nuxt, vueI18n, defaultLocale) {
       return;
     }
     const headers = getLocaleConfig(locale)?.cacheable ? {} : { "Cache-Control": "no-cache" };
-    const messages = await $fetch(`${"/_i18n/5L_o8xr3"}/${locale}/messages.json`, { headers });
+    const messages = await $fetch(`${"/_i18n/2DfTLQuu"}/${locale}/messages.json`, { headers });
     for (const k of Object.keys(messages)) {
       i18n.mergeLocaleMessage(k, messages[k]);
     }
@@ -7322,7 +7503,7 @@ const i18n__7llSF6tZ9O9lxBRvhW1YsknH4FPqE5CFa24FZf_6dI = /* @__PURE__ */ defineN
     {
       localeConfigs.value = useRequestEvent().context.nuxtI18n?.localeConfigs || {};
     }
-    prerenderRoutes(localeCodes.map((locale) => `${"/_i18n/5L_o8xr3"}/${locale}/messages.json`));
+    prerenderRoutes(localeCodes.map((locale) => `${"/_i18n/2DfTLQuu"}/${locale}/messages.json`));
     const i18n = createI18n(optionsI18n);
     const detectors = useDetectors(useRequestEvent(nuxt), useI18nDetection(nuxt), nuxt);
     const ctx = createNuxtI18nContext(nuxt, i18n, optionsI18n.defaultLocale);
@@ -7514,6 +7695,7 @@ const plugins = [
   revive_payload_server_Yb2T85yw7lzVN9H12pIdZGMyA8wY26MofK1eYk0_bu8,
   plugin,
   components_plugin_4kY4pyzJIYX99vmMAAIorFf3CnAaptHitJgf7JxiED8,
+  plugin_Y4YhgLnDGY7I9_IKblSkOOwxbhPE1BoekKeA3mjjrBs,
   switch_locale_path_ssr_VBVSvb_jO2mKDfs0pQWGEKgaoB7BdMFN_BzLvrbe4aM,
   route_locale_detect_Qv_GIBCq94XtXwew9PEkxUBJT0YCaG4pl_DHQ1f8KK0,
   preload_yXqaHZFxT2DtdWIfpFw_Iv7sTqBqTNyk3VIqrSVW31Y,
@@ -11431,7 +11613,7 @@ _sfc_main$3.setup = (props, ctx) => {
 };
 const __nuxt_component_0 = Object.assign(_sfc_main$3, { __name: "UApp" });
 const layouts = {
-  default: defineAsyncComponent(() => import('./default-Dpc1b6IC.mjs').then((m) => m.default || m))
+  default: defineAsyncComponent(() => import('./default-hMXlb0NG.mjs').then((m) => m.default || m))
 };
 const LayoutLoader = defineComponent({
   name: "LayoutLoader",
@@ -11715,7 +11897,7 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
                 if (_push3) {
                   _push3(`<section class="uno-flex uno-items-center uno-justify-center uno-px-6 uno-py-40"${_scopeId2}><div class="uno-text-center uno-max-w-[680px] uno-mx-auto"${_scopeId2}>`);
                   if (unref(error)?.statusCode === 404) {
-                    _push3(`<!--[--><img${ssrRenderAttr("src", _imports_0)} alt="" aria-hidden="true" class="uno-mx-auto uno-mb-8 uno-w-[320px] sm:uno-w-[480px]"${_scopeId2}><div class="uno-flex uno-justify-start uno-items-center uno-flex-col uno-gap-10"${_scopeId2}><div style="${ssrRenderStyle({ "flex-shrink": "0" })}" class="uno-flex uno-self-stretch uno-justify-start uno-items-center uno-flex-col uno-gap-3"${_scopeId2}><p style="${ssrRenderStyle({ "flex-shrink": "0" })}" class="uno-self-stretch uno-text-[#011813] uno-text-[32px] uno-font-[&#39;Outfit&#39;] uno-text-center uno-font-semibold"${_scopeId2}> Oops! that page doesn’t exist </p><p style="${ssrRenderStyle({ "flex-shrink": "0" })}" class="uno-self-stretch uno-text-[#4E5255] uno-font-[&#39;Outfit&#39;] uno-text-center"${_scopeId2}> Oops! It seems the page you&#39;re looking for doesn’t exist. Let&#39;s get you back on track—click below to return to the home page. </p></div><div style="${ssrRenderStyle({ "flex-shrink": "0" })}" class="uno-w-148px uno-h-[56px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-2 uno-py-4 uno-px-[18px] uno-bg-[#EA4C89] uno-rounded-[1000px]"${_scopeId2}><span class="uno-text-[#FFFFFF] uno-font-[&#39;Outfit&#39;] uno-font-[16px] uno-leading-normal"${_scopeId2}> Back to Home </span></div></div><!--]-->`);
+                    _push3(`<!--[--><img${ssrRenderAttr("src", _imports_0)} alt="" aria-hidden="true" class="uno-mx-auto uno-mb-8 uno-w-[320px] sm:uno-w-[480px]"${_scopeId2}><div class="uno-flex uno-justify-start uno-items-center uno-flex-col uno-gap-10"${_scopeId2}><div style="${ssrRenderStyle({ "flex-shrink": "0" })}" class="uno-flex uno-self-stretch uno-justify-start uno-items-center uno-flex-col uno-gap-3"${_scopeId2}><p style="${ssrRenderStyle({ "flex-shrink": "0" })}" class="uno-self-stretch uno-text-[#011813] uno-text-[32px] uno-font-Outfit uno-text-center uno-font-semibold"${_scopeId2}> Oops! that page doesn’t exist </p><p style="${ssrRenderStyle({ "flex-shrink": "0" })}" class="uno-self-stretch uno-text-[#4E5255] uno-font-Outfit uno-text-center"${_scopeId2}> Oops! It seems the page you&#39;re looking for doesn’t exist. Let&#39;s get you back on track—click below to return to the home page. </p></div><div style="${ssrRenderStyle({ "flex-shrink": "0" })}" class="uno-w-148px uno-h-[56px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-2 uno-py-4 uno-px-[18px] uno-bg-[#EA4C89] uno-rounded-[1000px]"${_scopeId2}><span class="uno-text-[#FFFFFF] uno-font-Outfit uno-font-[16px] uno-leading-normal"${_scopeId2}> Back to Home </span></div></div><!--]-->`);
                   } else {
                     _push3(`<!--[--><h1 class="uno-text-4xl sm:uno-text-5xl uno-font-bold uno-text-[#0F172A] uno-mb-4"${_scopeId2}>${ssrInterpolate(unref(error)?.statusCode)} - Something went wrong</h1><p class="uno-text-[#4E5255] uno-mb-8 uno-px-4"${_scopeId2}>${ssrInterpolate(unref(error)?.message)}</p><button class="uno-inline-flex uno-items-center uno-justify-center uno-px-6 uno-h-[48px] uno-rounded-[16px] uno-bg-[#009D77] uno-text-white hover:uno-bg-[#0AA17F]"${_scopeId2}> Back to Home </button><!--]-->`);
                   }
@@ -11738,11 +11920,11 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
                             }, [
                               createVNode("p", {
                                 style: { "flex-shrink": "0" },
-                                class: "uno-self-stretch uno-text-[#011813] uno-text-[32px] uno-font-['Outfit'] uno-text-center uno-font-semibold"
+                                class: "uno-self-stretch uno-text-[#011813] uno-text-[32px] uno-font-Outfit uno-text-center uno-font-semibold"
                               }, " Oops! that page doesn’t exist "),
                               createVNode("p", {
                                 style: { "flex-shrink": "0" },
-                                class: "uno-self-stretch uno-text-[#4E5255] uno-font-['Outfit'] uno-text-center"
+                                class: "uno-self-stretch uno-text-[#4E5255] uno-font-Outfit uno-text-center"
                               }, " Oops! It seems the page you're looking for doesn’t exist. Let's get you back on track—click below to return to the home page. ")
                             ]),
                             createVNode("div", {
@@ -11750,7 +11932,7 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
                               class: "uno-w-148px uno-h-[56px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-2 uno-py-4 uno-px-[18px] uno-bg-[#EA4C89] uno-rounded-[1000px]",
                               onClick: handleError
                             }, [
-                              createVNode("span", { class: "uno-text-[#FFFFFF] uno-font-['Outfit'] uno-font-[16px] uno-leading-normal" }, " Back to Home ")
+                              createVNode("span", { class: "uno-text-[#FFFFFF] uno-font-Outfit uno-font-[16px] uno-leading-normal" }, " Back to Home ")
                             ])
                           ])
                         ], 64)) : (openBlock(), createBlock(Fragment, { key: 1 }, [
@@ -11788,11 +11970,11 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
                           }, [
                             createVNode("p", {
                               style: { "flex-shrink": "0" },
-                              class: "uno-self-stretch uno-text-[#011813] uno-text-[32px] uno-font-['Outfit'] uno-text-center uno-font-semibold"
+                              class: "uno-self-stretch uno-text-[#011813] uno-text-[32px] uno-font-Outfit uno-text-center uno-font-semibold"
                             }, " Oops! that page doesn’t exist "),
                             createVNode("p", {
                               style: { "flex-shrink": "0" },
-                              class: "uno-self-stretch uno-text-[#4E5255] uno-font-['Outfit'] uno-text-center"
+                              class: "uno-self-stretch uno-text-[#4E5255] uno-font-Outfit uno-text-center"
                             }, " Oops! It seems the page you're looking for doesn’t exist. Let's get you back on track—click below to return to the home page. ")
                           ]),
                           createVNode("div", {
@@ -11800,7 +11982,7 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
                             class: "uno-w-148px uno-h-[56px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-2 uno-py-4 uno-px-[18px] uno-bg-[#EA4C89] uno-rounded-[1000px]",
                             onClick: handleError
                           }, [
-                            createVNode("span", { class: "uno-text-[#FFFFFF] uno-font-['Outfit'] uno-font-[16px] uno-leading-normal" }, " Back to Home ")
+                            createVNode("span", { class: "uno-text-[#FFFFFF] uno-font-Outfit uno-font-[16px] uno-leading-normal" }, " Back to Home ")
                           ])
                         ])
                       ], 64)) : (openBlock(), createBlock(Fragment, { key: 1 }, [
@@ -11898,5 +12080,5 @@ let entry;
 }
 const entry_default = (ssrContext) => entry(ssrContext);
 
-export { _sfc_main$c as A, getDisplayValue as B, useToast as C, useRuntimeConfig as D, fetchDefaults as E, useAsyncData as F, useRequestFetch as G, useCookie as H, useNuxtApp as I, __nuxt_component_0$2 as J, inputIdInjectionKey as K, formFieldInjectionKey as L, looseToNumber as M, useCookieLocale as N, useBrowserLocale as O, useLocale as P, getSlotChildrenText as Q, _sfc_main$9 as R, pickLinkProps as S, _sfc_main$a as T, omit as U, useLocaleHead as V, __nuxt_component_8 as W, __nuxt_component_6 as _, useLocalePath as a, useRoute as b, useHead as c, _export_sfc as d, entry_default as default, useSeoMeta as e, useRouter as f, _sfc_main$8 as g, useAppConfig as h, formBusInjectionKey as i, formStateInjectionKey as j, formErrorsInjectionKey as k, formInputsInjectionKey as l, formLoadingInjectionKey as m, formOptionsInjectionKey as n, navigateTo as o, _sfc_main$e as p, __nuxt_component_0$3 as q, usePortal as r, useFormField as s, tv as t, useI18n as u, useFieldGroup as v, useComponentIcons as w, isArrayOfArray as x, _sfc_main$b as y, get as z };
+export { _sfc_main$c as A, getDisplayValue as B, useToast as C, useRuntimeConfig as D, fetchDefaults as E, useAsyncData as F, useRequestFetch as G, useNuxtApp as H, __nuxt_component_0$2 as I, inputIdInjectionKey as J, formFieldInjectionKey as K, looseToNumber as L, useCookieLocale as M, useBrowserLocale as N, useHead as O, useLocale as P, getSlotChildrenText as Q, _sfc_main$9 as R, pickLinkProps as S, _sfc_main$a as T, omit as U, useLocaleHead as V, __nuxt_component_8 as W, __nuxt_component_6 as _, useSeoMeta as a, useLocalePath as b, useRoute as c, _export_sfc as d, entry_default as default, useRouter as e, _sfc_main$8 as f, useCookie as g, useAppConfig as h, formBusInjectionKey as i, formStateInjectionKey as j, formErrorsInjectionKey as k, formInputsInjectionKey as l, formLoadingInjectionKey as m, formOptionsInjectionKey as n, navigateTo as o, __nuxt_component_0$3 as p, useFormField as q, get as r, usePortal as s, tv as t, useI18n as u, useFieldGroup as v, useComponentIcons as w, isArrayOfArray as x, _sfc_main$e as y, _sfc_main$b as z };
 //# sourceMappingURL=server.mjs.map

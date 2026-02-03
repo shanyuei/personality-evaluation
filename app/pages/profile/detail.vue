@@ -1,7 +1,7 @@
 <template>
   <div class="page-container uno-w-full md:uno-w-[90%] uno-mx-auto uno-py-12">
     <h1
-      class="uno-text-2xl md:uno-text-3xl uno-font-['Outfit'] uno-font-extrabold uno-text-[var(--ui-foreground)] uno-mb-6">
+      class="uno-text-2xl md:uno-text-3xl uno-font-Outfit uno-font-extrabold uno-text-[var(--ui-foreground)] uno-mb-6">
       {{ $t('pages.testDetail.welcome', { name }) }}</h1>
 
     <section
@@ -9,7 +9,7 @@
       <div class="uno-p-6 md:uno-p-8 uno-grid uno-gap-6 md:uno-grid-cols-3">
         <div class="uno-col-span-full md:uno-col-span-1 uno-flex uno-flex-col uno-items-start uno-space-y-4">
           <div class="uno-space-y-2">
-            <div class="uno-text-[#4E5255] uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2] uno-text-sm">{{
+            <div class="uno-text-[#4E5255] uno-font-Outfit uno-font-semibold uno-leading-[1.2] uno-text-sm">{{
               $t('pages.profile.aboutTitle') }}</div>
           </div>
           <div class="uno-flex uno-items-center uno-gap-4">
@@ -18,15 +18,15 @@
                 class="uno-w-full uno-h-full uno-object-cover" />
             </div>
             <div class="uno-flex uno-flex-col uno-items-start uno-gap-1">
-              <div class="uno-text-[#4E5255] uno-text-xs uno-font-['Outfit'] uno-leading-normal">{{
+              <div class="uno-text-[#4E5255] uno-text-xs uno-font-Outfit uno-leading-normal">{{
                 $t('pages.profile.type') }} {{ profile?.type }}</div>
-              <div class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{
+              <div class="uno-text-[#011813] uno-text-2xl uno-font-Outfit uno-font-semibold uno-leading-[1.2]">{{
                 profile?.type_name }}</div>
             </div>
             <div class="uno-h-[2px] uno-bg-[#4E5255]" />
           </div>
           <p
-            class="uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-leading-normal uno-text-left uno-max-w-md uno-line-clamp-8 uno-overflow-hidden uno-text-ellipsis">
+            class="uno-text-[#4E5255] uno-text-sm uno-font-Outfit uno-leading-normal uno-text-left uno-max-w-md uno-line-clamp-8 uno-overflow-hidden uno-text-ellipsis">
             {{ profile?.type_text }}
           </p>
           <div>
@@ -35,20 +35,20 @@
           </div>
         </div>
         <div>
-          <h3 class="uno-text-[#011813] uno-text-lg uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{
+          <h3 class="uno-text-[#011813] uno-text-lg uno-font-Outfit uno-font-semibold uno-leading-[1.2]">{{
             $t('pages.profile.totalScore') }}</h3>
           <div class="uno-mt-3 uno-space-y-3">
             <div v-for="bar in typeScores" :key="bar.label" class="uno-flex uno-items-center uno-gap-3">
               <span
-                class="uno-w-[28px] uno-h-[28px] uno-flex uno-justify-center uno-items-center uno-flex-col uno-gap-[8.75px] uno-py-[3.5px] uno-px-[11.37px] uno-bg-[#F0F0F0] uno-rounded-[14px] uno-overflow-hidden uno-text-[#4E5255] uno-text-[14px] uno-font-['Outfit'] uno-font-medium uno-leading-normal">{{
+                class="uno-w-[28px] uno-h-[28px] uno-flex uno-justify-center uno-items-center uno-flex-col uno-gap-[8.75px] uno-py-[3.5px] uno-px-[11.37px] uno-bg-[#F0F0F0] uno-rounded-[14px] uno-overflow-hidden uno-text-[#4E5255] uno-text-[14px] uno-font-Outfit uno-font-medium uno-leading-normal">{{
                   bar.key }}</span>
-              <span class="uno-w-28 uno-text-sm uno-text-[#4E5255] uno-font-['Outfit'] uno-leading-normal">{{ bar.value
+              <span class="uno-w-28 uno-text-sm uno-text-[#4E5255] uno-font-Outfit uno-leading-normal">{{ bar.value
               }}</span>
               <div class="uno-flex-1 uno-h-2 uno-rounded-full uno-bg-[var(--ui-input)]">
                 <div class="uno-h-2 uno-rounded-full"
                   :style="{ width: bar.value + '%', background: bar.key === 'Individualist' ? '#E786DF' : bar.key === 2 ? '#F5CEA4' : bar.key === 5 ? '#B57AF5' : bar.key === 8 ? '#67DCA9' : bar.key === 3 ? '#E97274' : bar.key === 9 ? '#C7EB78' : bar.key === 6 ? '#7E6EE7' : bar.key === 1 ? '#F4DA8F' : '#8FADF6' }" />
               </div>
-              <span class="uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-leading-normal">{{ bar.value
+              <span class="uno-text-[#4E5255] uno-text-sm uno-font-Outfit uno-leading-normal">{{ bar.value
               }}%</span>
             </div>
             <!-- <div class="uno-h-[2px] uno-bg-[#4E5255]"></div> -->
@@ -63,7 +63,7 @@
 
     <div class="uno-mt-4 uno-flex uno-gap-2 uno-flex-wrap uno-justify-center">
       <button v-for="tab in tabs" :key="tab.id" :class="[
-        'uno-px-4 uno-py-2 uno-h-48px uno-rounded-full uno-font-\'Outfit\' uno-text-sm',
+        'uno-px-4 uno-py-2 uno-h-48px uno-rounded-full uno-font-Outfit uno-text-sm',
         activeTab === tab.id
           ? 'uno-bg-[var(--ui-primary)] uno-text-white'
           : 'uno-bg-transparent uno-text-[var(--ui-primary)] uno-border uno-border-[var(--ui-primary)]'
@@ -75,14 +75,14 @@
         class="uno-mt-4 uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)]">
         <div class="uno-p-6 md:uno-p-8">
           <h2
-            class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2] uno-mb-24px">
+            class="uno-text-[#011813] uno-text-2xl uno-font-Outfit uno-font-semibold uno-leading-[1.2] uno-mb-24px">
             {{
               profile?.characteristics?.core?.title }}</h2>
           <div class="uno-grid uno-gap-6 md:uno-grid-cols-2">
             <div v-for="i in profile?.characteristics?.core?.list" :key="i" class="uno-space-y-2">
-              <h3 class="uno-text-[#011813] uno-text-lg uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{
+              <h3 class="uno-text-[#011813] uno-text-lg uno-font-Outfit uno-font-semibold uno-leading-[1.2]">{{
                 i.title }}</h3>
-              <p class="uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-leading-normal">{{ i.text }}</p>
+              <p class="uno-text-[#4E5255] uno-text-sm uno-font-Outfit uno-leading-normal">{{ i.text }}</p>
             </div>
           </div>
         </div>
@@ -90,15 +90,15 @@
       <section
         class="uno-mt-6 uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)]">
         <div class="uno-p-6 md:uno-p-8 uno-space-y-6">
-          <h2 class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{
+          <h2 class="uno-text-[#011813] uno-text-2xl uno-font-Outfit uno-font-semibold uno-leading-[1.2]">{{
             profile?.subtypes?.title }}</h2>
-          <p class="uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-leading-normal">{{ profile?.subtypes?.summary
+          <p class="uno-text-[#4E5255] uno-text-sm uno-font-Outfit uno-leading-normal">{{ profile?.subtypes?.summary
           }}</p>
           <div class="uno-grid uno-gap-6 md:uno-grid-cols-3">
             <div v-for="i in profile?.subtypes?.list" :key="i" class="uno-space-y-2">
-              <h3 class="uno-text-[#011813] uno-text-lg uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{
+              <h3 class="uno-text-[#011813] uno-text-lg uno-font-Outfit uno-font-semibold uno-leading-[1.2]">{{
                 i.title }}</h3>
-              <p class="uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-leading-normal">{{
+              <p class="uno-text-[#4E5255] uno-text-sm uno-font-Outfit uno-leading-normal">{{
                 i.text }}</p>
             </div>
           </div>
@@ -113,9 +113,9 @@
       <section
         class="uno-mt-6 uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)]">
         <div class="uno-p-6 md:uno-p-8 uno-space-y-4">
-          <h2 class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{
+          <h2 class="uno-text-[#011813] uno-text-2xl uno-font-Outfit uno-font-semibold uno-leading-[1.2]">{{
             profile.conclusion.title }}</h2>
-          <p class="uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-leading-normal">{{ profile.conclusion.text }}
+          <p class="uno-text-[#4E5255] uno-text-sm uno-font-Outfit uno-leading-normal">{{ profile.conclusion.text }}
           </p>
         </div>
       </section>
@@ -123,7 +123,7 @@
       <section
         class="uno-mt-6 uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)]">
         <div class="uno-p-6 md:uno-p-8 uno-space-y-6">
-          <h2 class="uno-text-[#011813] uno-text-2xl uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{
+          <h2 class="uno-text-[#011813] uno-text-2xl uno-font-Outfit uno-font-semibold uno-leading-[1.2]">{{
             profile?.characteristics?.growth?.title }}</h2>
 
           <div class="uno-grid uno-gap-6 md:uno-grid-cols-3">
@@ -131,9 +131,9 @@
               <div
                 class="uno-w-10 uno-h-10 uno-rounded-full uno-border uno-border-[var(--ui-border)] uno-flex uno-items-center uno-justify-center uno-text-[var(--ui-foreground)] uno-font-semibold">
                 {{ Number(index) + 1 }}</div>
-              <h3 class="uno-text-[#011813] uno-text-lg uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">{{
+              <h3 class="uno-text-[#011813] uno-text-lg uno-font-Outfit uno-font-semibold uno-leading-[1.2]">{{
                 i.title }}</h3>
-              <p class="uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-leading-normal">
+              <p class="uno-text-[#4E5255] uno-text-sm uno-font-Outfit uno-leading-normal">
                 {{ i.text }}
               </p>
               <AppLink v-if="index != 1" :to="'/courses'" class="uno-inline-block">

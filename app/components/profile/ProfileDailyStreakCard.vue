@@ -2,13 +2,13 @@
   <section
     class="uno-col-span-full md:uno-col-span-2 uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)]">
     <div class="uno-p-4 md:uno-p-8">
-      <span class="uno-text-[#4E5255] uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2] uno-mb-3">{{
+      <span class="uno-text-[#4E5255] uno-font-Outfit uno-font-semibold uno-leading-[1.2] uno-mb-3">{{
         $t('pages.profile.dailyStreak') }}</span>
       <div class="uno-flex uno-items-center uno-gap-2 uno-my-4">
         <div
-          class="uno-text-[#011813] uno-text-[64px] md:uno-text-[88px] uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">
+          class="uno-text-[#011813] uno-text-[64px] md:uno-text-[88px] uno-font-Outfit uno-font-semibold uno-leading-[1.2]">
           0</div>
-        <p class="uno-text-[#4E5255] uno-text-sm md:uno-text-base uno-font-['Outfit'] uno-leading-[1.6]">{{
+        <p class="uno-text-[#4E5255] uno-text-sm md:uno-text-base uno-font-Outfit uno-leading-[1.6]">{{
           $t('pages.profile.begin') }}</p>
       </div>
       <div class="uno-flex uno-gap-2 uno-mt-2 uno-flex-wrap">

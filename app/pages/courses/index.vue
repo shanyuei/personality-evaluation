@@ -6,7 +6,7 @@
         <section class="uno-py-10 page-container ">
             <div class="uno-flex uno-justify-start uno-items-center uno-flex-col uno-gap-[15px]">
                 <div class="uno-w-full ">
-                    <p class="uno-text-[var(--ui-muted-foreground)] uno-font-['Outfit'] uno-font-medium">{{
+                    <p class="uno-text-[var(--ui-muted-foreground)] uno-font-Outfit uno-font-medium">{{
                         $t('pages.course.recommendedForYou') }}</p>
                 </div>
                 <div
@@ -16,23 +16,23 @@
                         <div class="uno-flex uno-flex-col uno-gap-6">
                             <div class="uno-flex uno-flex-col uno-gap-4">
                                 <p
-                                    class="uno-text-[var(--ui-foreground)] uno-text-2xl md:uno-text-5xl uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2]">
+                                    class="uno-text-[var(--ui-foreground)] uno-text-2xl md:uno-text-5xl uno-font-Outfit uno-font-semibold uno-leading-[1.2]">
                                     {{ recommended.title }}</p>
-                                <p class="uno-text-[var(--ui-muted-foreground)] uno-text-sm uno-font-['Outfit']">{{
+                                <p class="uno-text-[var(--ui-muted-foreground)] uno-text-sm uno-font-Outfit">{{
                                     recommended.description }}</p>
                             </div>
                             <div class="uno-flex uno-flex-row uno-gap-6">
-                                <span class="uno-text-[var(--ui-foreground)] uno-font-['Outfit'] uno-font-medium">{{
+                                <span class="uno-text-[var(--ui-foreground)] uno-font-Outfit uno-font-medium">{{
                                     recommended.lessons }} {{ $t('pages.course.lessons') }}</span>
-                                <span class="uno-text-[var(--ui-foreground)] uno-font-['Outfit'] uno-font-medium">{{
+                                <span class="uno-text-[var(--ui-foreground)] uno-font-Outfit uno-font-medium">{{
                                     recommended.duration }}</span>
-                                <span class="uno-text-[var(--ui-foreground)] uno-font-['Outfit'] uno-font-medium">{{
+                                <span class="uno-text-[var(--ui-foreground)] uno-font-Outfit uno-font-medium">{{
                                     $t('pages.course.certificate') }}</span>
                             </div>
                             <div
                                 class="uno-flex uno-items-center uno-flex-row uno-flex-wrap md:uno-flex-nowrap uno-gap-4 md:uno-gap-6 uno-mt-2">
                                 <AppArrowButton
-                                    class="uno-h-[48px] md:uno-h-[56px] uno-gap-3 uno-py-1.5 uno-pr-1.5 uno-pl-[16px] md:uno-pl-[20px] uno-font-['Outfit'] uno-font-medium"
+                                    class="uno-h-[48px] md:uno-h-[56px] uno-gap-3 uno-py-1.5 uno-pr-1.5 uno-pl-[16px] md:uno-pl-[20px] uno-font-Outfit uno-font-medium"
                                     hover-class=""
                                 >
                                     {{ $t('common.getStarted') }}
@@ -47,7 +47,7 @@
                                         </div>
                                     </div>
                                     <p
-                                        class="uno-text-[var(--ui-muted-foreground)] uno-text-[12px] md:uno-text-[12px] uno-font-['Outfit'] uno-text-center md:uno-text-left">
+                                        class="uno-text-[var(--ui-muted-foreground)] uno-text-[12px] md:uno-text-[12px] uno-font-Outfit uno-text-center md:uno-text-left">
                                         3067 people already finished it</p>
                                 </div>
                             </div>
@@ -61,7 +61,7 @@
 
         <section class="uno-pt-[32px] uno-pb-[120px] uno-bg-[var(--color-gray-9)]">
             <div class="uno-mx-auto page-container ">
-                <p class="uno-text-[var(--ui-muted-foreground)] uno-text-xl uno-font-['Outfit'] uno-font-medium">{{
+                <p class="uno-text-[var(--ui-muted-foreground)] uno-text-xl uno-font-Outfit uno-font-medium">{{
                     $t('pages.course.allCourses') }}</p>
 
                 <div class="uno-mt-4">

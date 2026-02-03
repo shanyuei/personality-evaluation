@@ -104,7 +104,7 @@
             <button
               :class="!hasMoreOther ? 'uno-opacity-50 uno-cursor-not-allowed uno-border-[var(--ui-border)] uno-text-[var(--ui-muted-foreground)]' : ''"
               :disabled="!hasMoreOther"
-              class="uno-inline-flex uno-items-center uno-justify-center  uno-h-[56px] uno-py-16px uno-px-24px uno-rounded-[1000px] uno-bg-transparent uno-border-2 uno-border-[var(--ui-primary)] uno-text-[var(--ui-primary)] uno-font-['Outfit'] uno-font-medium"
+              class="uno-inline-flex uno-items-center uno-justify-center  uno-h-[56px] uno-py-16px uno-px-24px uno-rounded-[1000px] uno-bg-transparent uno-border-2 uno-border-[var(--ui-primary)] uno-text-[var(--ui-primary)] uno-font-Outfit uno-font-medium"
               @click="loadMoreData">
               {{ $t('pages.blog.loadMore') }}
             </button>
@@ -115,13 +115,13 @@
         <div class="lg:uno-w-2/5">
           <!-- Categories -->
           <!-- <div class="uno-rounded-2xl uno-mb-12">
-            <h3 class="uno-text-[22px] uno-font-['Outfit'] uno-font-semibold uno-text-[#011813] uno-mb-4">{{
+            <h3 class="uno-text-[22px] uno-font-Outfit uno-font-semibold uno-text-[#011813] uno-mb-4">{{
               $t('pages.blog.sidebar.categories') }}</h3>
             <ul class="uno-space-y-3">
               <li v-for="(c, i) in categories" :key="c.documentId">
                 <NuxtLink :to="`/blog/category/${c.slug}`"
                   class="uno-flex uno-items-center hover:uno-text-[var(--color-pink-1)]">
-                  <span class="uno-text-[18px] uno-font-['Outfit'] uno-font-medium">{{ c.name }}</span>
+                  <span class="uno-text-[18px] uno-font-Outfit uno-font-medium">{{ c.name }}</span>
                   <span class="uno-text-[18px] uno-ml-2">({{ c.posts.count }})</span>
                 </NuxtLink>
               </li>

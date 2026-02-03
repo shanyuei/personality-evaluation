@@ -23,23 +23,23 @@
       class="uno-mt-4 uno-w-full md:uno-w-[860px] uno-mx-auto uno-bg-white uno-rounded-[20px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)]">
       <div class="uno-p-6 md:uno-p-8">
         <h1
-          class="uno-text-[#011813] uno-text-2xl md:uno-text-[32px] uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2] uno-mb-4">
+          class="uno-text-[#011813] uno-text-2xl md:uno-text-[32px] uno-font-Outfit uno-font-semibold uno-leading-[1.2] uno-mb-4">
           {{ $t('pages.userCourseLesson.title') }}</h1>
 
         <!-- Active Listening -->
         <section class="uno-space-y-2 uno-mb-6">
-          <p class="uno-text-[#323233] uno-text-lg uno-font-['Outfit'] uno-font-semibold uno-leading-normal">{{
+          <p class="uno-text-[#323233] uno-text-lg uno-font-Outfit uno-font-semibold uno-leading-normal">{{
             $t('pages.userCourseLesson.sections.activeListening.title') }}:</p>
           <div class="">
-            <span class="uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-font-bold uno-leading-normal">{{
+            <span class="uno-text-[#4E5255] uno-text-sm uno-font-Outfit uno-font-bold uno-leading-normal">{{
               $t('pages.userCourseLesson.sections.activeListening.descriptionTitle') }}:</span>
-            <span class="uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-leading-normal">{{
+            <span class="uno-text-[#4E5255] uno-text-sm uno-font-Outfit uno-leading-normal">{{
               $t('pages.userCourseLesson.sections.activeListening.descriptionBody') }}</span>
           </div>
           <div class="">
-            <span class="uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-font-bold uno-leading-normal">{{
+            <span class="uno-text-[#4E5255] uno-text-sm uno-font-Outfit uno-font-bold uno-leading-normal">{{
               $t('pages.userCourseLesson.sections.activeListening.applicationTitle') }}:</span>
-            <span class="uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-leading-normal">{{
+            <span class="uno-text-[#4E5255] uno-text-sm uno-font-Outfit uno-leading-normal">{{
               $t('pages.userCourseLesson.sections.activeListening.applicationBody') }}</span>
           </div>
 
@@ -47,14 +47,14 @@
 
         <!-- Effective Speaking -->
         <section class="uno-space-y-2 uno-mb-6">
-          <p class="uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-font-bold uno-leading-normal">{{
+          <p class="uno-text-[#4E5255] uno-text-sm uno-font-Outfit uno-font-bold uno-leading-normal">{{
             $t('pages.userCourseLesson.sections.effectiveSpeaking.title') }}:</p>
         </section>
 
         <!-- Key Takeaways -->
         <section>
           <p
-            class="uno-text-[#323233] uno-text-2xl md:uno-text-[32px] uno-font-['Outfit'] uno-font-semibold uno-leading-normal uno-mb-3">
+            class="uno-text-[#323233] uno-text-2xl md:uno-text-[32px] uno-font-Outfit uno-font-semibold uno-leading-normal uno-mb-3">
             {{ $t('pages.userCourseLesson.sections.takeaways.title') }}</p>
           <div class="uno-space-y-3">
             <div class="uno-flex uno-items-start uno-gap-3">
@@ -65,7 +65,7 @@
                     stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </span>
-              <span class="uno-w-full uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-leading-normal">{{
+              <span class="uno-w-full uno-text-[#4E5255] uno-text-sm uno-font-Outfit uno-leading-normal">{{
                 $t('pages.userCourseLesson.sections.takeaways.i1') }}</span>
             </div>
             <div class="uno-flex uno-items-start uno-gap-3">
@@ -76,7 +76,7 @@
                     stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </span>
-              <span class="uno-w-full uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-leading-normal">{{
+              <span class="uno-w-full uno-text-[#4E5255] uno-text-sm uno-font-Outfit uno-leading-normal">{{
                 $t('pages.userCourseLesson.sections.takeaways.i2') }}</span>
             </div>
             <div class="uno-flex uno-items-start uno-gap-3">
@@ -87,7 +87,7 @@
                     stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </span>
-              <span class="uno-w-full uno-text-[#4E5255] uno-text-sm uno-font-['Outfit'] uno-leading-normal">{{
+              <span class="uno-w-full uno-text-[#4E5255] uno-text-sm uno-font-Outfit uno-leading-normal">{{
                 $t('pages.userCourseLesson.sections.takeaways.i3') }}</span>
             </div>
           </div>
