@@ -134,13 +134,16 @@
                         <h3
                             class="uno-font-Outfit uno-font-semibold uno-text-[26px] uno-leading-[124%] uno-tracking-[0%] sm:uno-text-lg md:uno-text-[32px] uno-mb-2 sm:uno-mb-3">
                             {{ card.titleKey }}</h3>
-                        <p class="uno-text-gray-600 uno-font-Outfit uno-font-normal uno-text-[16px] uno-leading-[150%] uno-tracking-[0%] sm:uno-text-sm md:uno-text-base">{{ card.descKey }}</p>
+                        <p
+                            class="uno-text-gray-600 uno-font-Outfit uno-font-normal uno-text-[16px] uno-leading-[150%] uno-tracking-[0%] sm:uno-text-sm md:uno-text-base">
+                            {{ card.descKey }}</p>
                     </div>
                 </div>
             </div>
 
             <!-- How Does It Work 部分 -->
-            <div class="uno-flex uno-flex-col md:uno-flex-row uno-gap-48px sm:uno-gap-12 uno-items-center uno-pt-40px sm:uno-pt-120px">
+            <div
+                class="uno-flex uno-flex-col md:uno-flex-row uno-gap-48px sm:uno-gap-12 uno-items-center uno-pt-40px sm:uno-pt-120px">
                 <!-- 左侧：标题、描述和按钮 -->
                 <div class="uno-w-full md:uno-w-1/2">
                     <div class="uno-flex uno-flex-col uno-items-center md:uno-items-start">
@@ -148,7 +151,8 @@
                             class="uno-text-[32px] sm:uno-text-[48px] md:uno-text-[48px] uno-font-Outfit uno-font-semibold uno-mb-6 sm:uno-mb-8">
                             {{ $t('pages.home.how.title') }}
                         </h2>
-                        <p class="uno-text-gray-600 uno-mb-8 sm:uno-mb-12 md:uno-text-left">{{ $t('pages.home.how.desc') }}</p>
+                        <p class="uno-text-gray-600 uno-mb-8 sm:uno-mb-12 md:uno-text-left">{{ $t('pages.home.how.desc')
+                            }}</p>
 
                         <AppArrowButton
                             class="uno-m-t-12px sm:uno-m-t-16px md:uno-m-t-24px uno-gap-[6px] sm:uno-gap-[8px] md:uno-gap-[12px] uno-py-2 sm:uno-py-2 uno-pr-[6px] sm:uno-pr-[4px] md:uno-pr-[6px] uno-pl-[12px] sm:uno-pl-[16px] md:uno-pl-[24px] uno-text-[16px] sm:uno-text-[14px] md:uno-text-[16px] uno-font-Outfit uno-font-medium"
@@ -206,17 +210,17 @@
                 <div
                     class="uno-grid uno-grid-cols-1 md:uno-grid-cols-3 uno-gap-[24px] sm:uno-gap-[24px] md:uno-gap-[24px]">
                     <div v-for="(card, index) in receiveCards" :key="index"
-                        class="uno-bg-white uno-rounded-[32px] uno-shadow-[0_2px_8px_rgba(0,0,0,0.04)] uno-p-[32px] uno-border uno-border-solid uno-border-[#E7E7E8] uno-flex uno-flex-col uno-items-center uno-justify-between uno-text-center uno-min-h-[256px]">
+                        class="uno-bg-white sm:uno-w-full md:uno-w-full uno-rounded-[32px] uno-shadow-[0_2px_8px_rgba(0,0,0,0.04)] uno-p-[32px] uno-border uno-border-solid uno-border-[#E7E7E8] uno-flex uno-flex-col uno-items-center uno-justify-between uno-text-center uno-min-h-[256px]">
                         <div
                             class="uno-w-64px uno-h-64px sm:uno-w-64px sm:uno-h-64px uno-flex uno-items-center uno-justify-center uno-bg-gray-50 uno-rounded-full uno-mb-8px">
                             <NuxtImg :src="card.icon" :alt="card.alt" width="64" height="64" />
                         </div>
                         <h3
-                            class="uno-text-lg sm:uno-text-xl md:uno-text-[20px] uno-font-Outfit uno-font-medium uno-leading-tight uno-px-2 uno-mb-12px">
+                            class=" uno-w-[250px]  uno-text-[20px] sm:uno-text-xl md:uno-text-[20px] uno-font-Outfit uno-font-medium uno-leading-tight uno-px-2 uno-mb-12px">
                             {{ $t(card.titleKey) }}
                         </h3>
                         <p
-                            class="uno-text-gray-500 uno-text-sm sm:uno-text-base uno-font-Outfit uno-leading-relaxed">
+                            class=" uno-w-[250px]  uno-text-gray-500 uno-text-[16px] sm:uno-text-base uno-font-Outfit uno-leading-relaxed">
                             {{ $t(card.descKey) }}
                         </p>
                     </div>
@@ -229,6 +233,7 @@
             :description="$t('pages.home.testimonials.description')" :rating="5" :reviews="reviews" />
 
         <FAQSection :title="$t('pages.home.faq.title')" :description="$t('pages.home.faq.description')"
+            :description-mobile="$t('pages.home.faq.description-mobile')"
             :items="faqItems" />
 
         <!-- <GradientCTASection @button-click="handleCTAClick" /> -->

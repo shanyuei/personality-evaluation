@@ -3,14 +3,15 @@
     class="uno-gradient-cta-section uno-relative uno-w-full uno-flex uno-items-center uno-justify-center uno-mb-20 uno-relative uno-whitespace-pre-line">
     <!-- 内容 -->
     <!-- 背景 -->
-    <NuxtImg src="/images/footer/curious-h5-bg.png" alt="" aria-hidden="true" width="342px" height="438px"
+     <div class="uno-w-438px uno-h-534px uno-absolute  uno--z-10 "  style="background-image: url(/images/footer/curious-h5-bg.png);"></div>
+    <!-- <NuxtImg src="/images/footer/curious-h5-bg.png" alt="" aria-hidden="true" width="438px" height="534px"
       class="uno-absolute  uno--z-10 uno-pointer-events-none uno-object-cover uno-object-center uno-block md:uno-hidden"
-      uno-preload />
+      uno-preload /> -->
     <NuxtImg src="/images/footer/curious-pc-bg.png" alt="" aria-hidden="true" width="1300px" height="600px"
       class="uno-absolute  uno--z-10 uno-pointer-events-none uno-object-cover uno-object-center uno-hidden md:uno-block"
       uno-preload />
     <div
-      class="page-container uno-relative uno-z-10 uno-flex uno-flex-col uno-items-center uno-justify-center uno-gap-2 uno-rounded-[32px] sm:uno-rounded-[48px] uno-w-full uno-max-w-[342px] md:uno-max-w-[1200px] uno-h-[438px] uno-px-0 sm:uno-px-8 md:uno-px-12 lg:uno-px-24 uno-py-12 sm:uno-py-16 md:uno-py-20">
+      class="page-container uno-relative uno-z-10 uno-flex uno-flex-col uno-items-center uno-justify-center uno-gap-2 uno-rounded-[32px] sm:uno-rounded-[48px] uno-w-[342px] sm:uno-w-full md:uno-max-w-[1200px] uno-h-[438px] sm:uno-h-auto md:uno-h-auto uno-px-0 sm:uno-px-8 md:uno-px-12 lg:uno-px-24 uno-py-12 sm:uno-py-16 md:uno-py-20">
 
       <h2
         class="uno-w-80% uno-text-[#0F172A] uno-relative uno-z-10 uno-font-Outfit uno-font-[600] uno-text-xl sm:uno-text-2xl md:uno-text-3xl lg:uno-text-4xl xl:uno-text-5xl uno-mb-2 sm:uno-mb-3 md:uno-mb-4 uno-text-center">

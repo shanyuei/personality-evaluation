@@ -84,7 +84,8 @@
       },
       "faq": {
         "title": "Frequently Asked Questions",
-        "description": "Frequently Asked Questions offers a quick answers to common queries, guiding users \n through features and functionalities efficiently."
+        "description": "Frequently Asked Questions offers a quick answers to common queries, guiding users \n through features and functionalities efficiently.",
+        "description-mobile": "Frequently Asked Questions offers quick\n answers to common queries, guiding users\n through features and functionalities effortlessly."
       }
     },
     "pricing": {

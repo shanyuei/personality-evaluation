@@ -1,9 +1,10 @@
 <template>
   <div class="page-container uno-faq-section uno-py-16 sm:uno-py-20 md:uno-py-24">
     <div class=" uno-w-full md:uno-mx-auto md:uno-max-w-[80%] ">
-      <div class="uno-text-center uno-mb-16 uno-max-w-3xl uno-mx-auto">
-        <h2 class="uno-text-[48px] md:uno-text-[48px] uno-font-Outfit uno-font-[600] uno-mb-3">{{ title }}</h2>
-        <p v-if="description" class="uno-text-[#4E5255] uno-text-sm uno-font-Outfit uno-px-[50px]" style="white-space: pre-line;">{{ description }}</p>
+      <div class="uno-text-center uno-mb-8 sm:uno-mb-16 uno-max-w-3xl uno-mx-auto">
+        <h2 class="uno-text-[32px] md:uno-text-[48px] uno-font-Outfit uno-font-[600] uno-mb-3">{{ title }}</h2>
+        <p v-if="$device.isMobile" class="uno-text-[#4E5255] uno-text-sm uno-font-Outfit uno-px-[0px] sm:uno-px-[50px] sm:uno-hidden" style="white-space: pre-line;">{{ descriptionMobile||description }}</p>
+        <p v-else class="uno-text-[#4E5255] uno-text-sm uno-font-Outfit uno-px-[50px] uno-hidden sm:uno-block" style="white-space: pre-line;">{{ description }}</p>
       </div>
 
 
@@ -22,7 +23,7 @@
                 <div 
                   class="uno-w-full uno-flex uno-justify-between uno-items-center uno-flex-row" @click="toggle(idx)">
                   <p
-                    class="uno-text-[#009D77] uno-text-xl md:uno-text-2xl uno-font-Outfit uno-text-center uno-font-medium">
+                    class="uno-text-[#009D77] uno-text-xl md:uno-text-2xl uno-font-Outfit uno-text-left sm:uno-text-center uno-font-medium">
                     {{ item.question||item.title }}
                   </p>
                   <svg class="uno-w-6 uno-h-6 uno-min-w-6 uno-min-h-6 uno-flex-shrink-0"
@@ -47,7 +48,7 @@
                     class="uno-self-stretch uno-text-[#4E5255] uno-text-base uno-font-Outfit uno-break-words">
                     {{ item.answer||item.text }}
                   </p>
-                  <div class="uno-w-6 uno-h-6 uno-min-w-6 uno-min-h-6 uno-flex-shrink-0"></div>
+                  <div class="uno-w-6 uno-h-6 uno-min-w-6 uno-min-h-6 uno-flex-shrink-0 uno-hidden sm:uno-block"></div>
                 </div>
               </div>
             </div>
@@ -94,6 +95,7 @@ interface FAQItem {
 interface Props {
   title?: string
   description?: string
+  descriptionMobile?: string
   items: FAQItem[]
   accordion?: boolean
   defaultExpandedIndex?: number | null
@@ -102,6 +104,7 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
   title: 'Frequently Asked Questions',
   description: '',
+  descriptionMobile: '',
   accordion: true,
   defaultExpandedIndex: 0
 })
