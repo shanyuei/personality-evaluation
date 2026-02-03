@@ -6,14 +6,14 @@
     </div>
     <div class="page-container uno-w-full uno-bottom-0 uno-left-0 uno-z-[2] uno-relative">
       <UFooter :ui="{
-        container: 'uno-pt-80px px-0 gap-0 z-[2] relative max-w-[1440px] mx-auto items-start max-md:max-w-[80%] max-sm:max-w-full max-sm:flex-col-reverse max-sm:flex max-sm:gap-32px max-sm:py-0  uno-items-start',
+        container: 'md:uno-pt-80px px-0 gap-0 z-[2] relative max-w-[1440px] mx-auto items-start max-md:max-w-[80%] max-sm:max-w-full max-sm:flex-col-reverse max-sm:flex max-sm:gap-32px max-sm:py-0  uno-items-start',
         left: 'flex-none',
         right: 'flex-none',
-        center: 'flex-none',
+        center: 'flex-none uno-mt-32px',
         bottom: 'p-t-0 uno-pb-32px uno-pt-22px',
       }">
         <template #left>
-          <div class="uno-flex uno-flex-col uno-w-210px">
+          <div class="uno-flex uno-flex-col uno-w-[260px] sm:uno-w-210px">
             <!-- logo -->
             <NuxtImg src="/theme/logo.png" alt="logo" width="175px" height="40px" />
             <!-- 介绍 -->
@@ -40,7 +40,7 @@
 
         <template #default>
           <!-- 导航 -->
-          <div class="uno-grid uno-grid-cols-2 uno-gap-80px uno-mb-32px">
+          <div class="uno-grid uno-grid-cols-2 uno-gap-[64px] sm:uno-gap-80px uno-mb-32px">
             <div>
               <h3 class="uno-text-[#011813] uno-text-2xl uno-font-Outfit uno-font-semibold uno-mb-16px">Pages
               </h3>
@@ -105,13 +105,13 @@
         <template #bottom>
           <!-- 分割线 -->
           <div
-            class="uno-w-full uno-flex uno-justify-center uno-max-w-[1440px] uno-m-b-32px uno-mx-auto uno-px-40px xl:uno-px-0 max-md:uno-max-w-[80%] sm:uno-w-full">
+            class="uno-w-full uno-flex uno-justify-center uno-max-w-[1440px] uno-m-b-24px sm:uno-m-b-32px uno-mx-auto uno-px-0 sm:uno-px-40px xl:uno-px-0 max-md:uno-max-w-[80%] sm:uno-w-full">
             <NuxtImg src="/images/footer/line.png" alt="line" width="100%" height="1px" object-fit="contain" />
           </div>
           <div
-            class="uno-w-full uno-max-w-[1440px] uno-mx-auto uno-px-40px xl:uno-px-0 uno-flex uno-items-center uno-justify-between max-md:uno-max-w-[80%] max-sm:uno-max-w-full max-sm:uno-flex-col max-sm:uno-items-start max-sm:uno-gap-16px max-xs:uno-gap-12px">
+            class="uno-w-full uno-max-w-[1440px] uno-mx-auto uno-px-0 sm:uno-px-40px xl:uno-px-0 uno-flex uno-items-center uno-justify-between max-md:uno-max-w-[80%] max-sm:uno-max-w-full max-sm:uno-flex-col max-sm:uno-items-start uno-gap-0 sm:uno-gap-16px max-xs:uno-gap-12px">
             <div
-              class="uno-text-[#011813] uno-font-Outfit uno-text-center uno-text-16px max-sm:uno-text-14px max-xs:uno-text-12px">
+              class="uno-text-[#011813] uno-font-Outfit uno-text-center uno-text-16px">
               2024 ©Design Monks. All rights reserved.
             </div>
             <!-- 支付方式 -->
