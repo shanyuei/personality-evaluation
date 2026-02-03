@@ -1,6 +1,7 @@
 <template>
-    <div class="page-container uno-py-6">
-      <div class="course-header">
+  <div class="uno-pt-6">
+    <div class="page-container">
+      <div class="course-header md:!uno-w-[720px] md:!uno-max-w-[720px] uno-mx-auto">
         <!-- 顶部导航与进度 -->
         <div class="course-nav">
           <AppLink :to="'/user-course/chapter-complete'" class="back-link">
@@ -9,8 +10,9 @@
                 stroke-linejoin="round" />
             </svg>
           </AppLink>
-          <div class="progress-percent">{{ progress }}%</div>
+
           <div class="question-count">{{ $t('pages.userCourseTest.questionCount', { current, total }) }}</div>
+                    <div class="progress-percent">{{ progress }}%</div>
         </div>
 
         <div class="course-progress">
@@ -20,32 +22,33 @@
 
       <!-- 题卡 -->
       <div
-        class="uno-mt-4 uno-w-full uno-max-w-[860px] uno-mx-auto uno-bg-white uno-rounded-[20px] md:uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] md:uno-border md:uno-border-[var(--ui-border)]">
-        <div class="uno-p-0 md:uno-p-8">
-          <h1
-            class="uno-text-[#011813] uno-text-[20px] md:uno-text-[32px] uno-font-['Outfit'] uno-font-semibold uno-leading-[1.2] uno-mb-6">
-            {{ question }}</h1>
-
-          <div class="uno-space-y-4  uno-mx-auto">
-            <URadioGroup v-model="selected" :items="radioItems" :ui="URadioTheme" />
+        class="uno-w-full md:uno-w-[720px] uno-mx-auto uno-mt-4 uno-bg-white uno-rounded-[16px] md:uno-rounded-[20px] ">
+        <div class="uno-space-y-4">
+          <div class="uno-p-4 md:uno-p-6">
+            <p
+              class="uno-text-[#011813] uno-font-['Outfit'] uno-text-base md:uno-text-lg uno-text-center uno-leading-[1.2] uno-mb-8">
+              {{ question }}</p>
+            <RadioGroup v-model="selected" :items="radioItems" />
           </div>
+        </div>
 
-          <div class="uno-mt-8">
-            <AppLink :to="'/user-course/test-complete'" class="uno-block">
-              <UButton :ui="UButtonTheme" class="uno-font-['Outfit']">{{ $t('pages.userCourseTest.cta') }}</UButton>
-            </AppLink>
-          </div>
+
+        <!-- 提交按钮 -->
+        <div class="uno-w-full md:uno-w-[720px] uno-mx-auto uno-mt-6 uno-flex uno-justify-center uno-mb-12">
+          <AppLink :to="'/user-course/test-complete'" class="uno-block uno-w-[672px]">
+            <PrimaryButton>{{ $t('pages.userCourseTest.cta') }}</PrimaryButton>
+          </AppLink>
         </div>
       </div>
     </div>
+  </div>
 </template>
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 
-
-import UButtonTheme from '~/theme/UButton'
-import URadioTheme from '~/theme/URadio'
+import PrimaryButton from '@/components/ui/PrimaryButton.vue'
+import RadioGroup from '@/components/ui/RadioGroup.vue'
 
 const { t } = useI18n()
 const current = ref(4)
@@ -69,7 +72,8 @@ const radioItems = computed(() => {
 })
 
 definePageMeta({
-  title: () => 'seo.userCourse.test.title'
+  title: () => 'seo.userCourse.test.title',
+  layoutShowPageTopIcons: false,
 })
 
 useSeoMeta({
