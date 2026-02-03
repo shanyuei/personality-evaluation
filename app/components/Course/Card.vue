@@ -9,12 +9,9 @@
         <div class="course-card__footer__status">
           {{ $t('common.courseCard.status.completed') }}
         </div>
-        <AppArrowButton
-          variant="dark"
-          class="uno-h-[48px] uno-min-w-[158px] uno-gap-3 uno-pl-5 uno-pr-1 uno-py-1 max-md:uno-h-[44px] max-md:uno-min-w-[140px] max-md:uno-gap-2 max-md:uno-pl-[14px] max-md:uno-pr-[6px] max-md:uno-justify-between uno-font-medium"
-          :icon-size="40"
-          hover-class=""
-        >
+        <AppArrowButton variant="dark"
+          class="uno-gap-3 uno-pl-5 uno-pr-1 uno-py-1 md:uno-gap-2 md:uno-pl-[14px] md:uno-pr-[6px] md:uno-justify-between uno-font-medium"
+          :icon-size="$device.isMobile ? 32 : 40" hover-class="">
           {{ $t('common.retakeTest') }}
         </AppArrowButton>
         <div class="course-card__footer__link">
@@ -52,12 +49,9 @@
         </span>
       </div>
       <div class="course-card__footer">
-        <AppArrowButton
-          variant="primary"
-          class="uno-h-[48px] uno-min-w-[158px] uno-gap-3 uno-pl-5 uno-pr-1 uno-py-1 max-md:uno-h-[44px] max-md:uno-min-w-[140px] max-md:uno-gap-2 max-md:uno-pl-[14px] max-md:uno-pr-[6px] max-md:uno-justify-between uno-font-medium"
-          :icon-size="40"
-          hover-class=""
-        >
+        <AppArrowButton variant="primary"
+          class="uno-gap-3 uno-pl-5 uno-pr-1 uno-py-1 md:uno-gap-2 md:uno-pl-[14px] md:uno-pr-[6px] md:uno-justify-between uno-font-medium"
+          :icon-size="$device.isMobile ? 32 : 40" hover-class="">
           {{ $t('common.getStarted') || 'Get Started' }}
         </AppArrowButton>
         <div class="course-card__footer__progress uno-relative" role="progressbar"
@@ -84,12 +78,9 @@
             {{ $t('common.courseCard.status.completed') }}
           </span>
         </div>
-        <AppArrowButton
-          variant="dark"
-          class="uno-h-[48px] uno-min-w-[158px] uno-gap-3 uno-pl-5 uno-pr-1 uno-py-1 max-md:uno-h-[44px] max-md:uno-min-w-[140px] max-md:uno-gap-2 max-md:uno-pl-[14px] max-md:uno-pr-[6px] max-md:uno-justify-between uno-font-medium"
-          :icon-size="40"
-          hover-class=""
-        >
+        <AppArrowButton variant="dark"
+          class="uno-gap-3 uno-pl-5 uno-pr-1 uno-py-1 md:uno-gap-2 md:uno-pl-[14px] md:uno-pr-[6px] md:uno-justify-between uno-font-medium"
+          :icon-size="$device.isMobile ? 32 : 40" hover-class="">
           {{ $t('common.getStarted') }}
         </AppArrowButton>
         <div class="course-card__footer__link">
@@ -97,10 +88,11 @@
             {{ $t('common.viewResults') }}
           </span>
         </div>
-        <NuxtImg src="/images/common/check-mark-1.png" alt="check-mark" width="64" height="64"
-          class="max-sm:hidden max-xs:hidden" />
-        <NuxtImg src="/images/common/check-mark-1.png" alt="check-mark" width="24" height="24"
-          class="hidden max-sm:block max-xs:block" />
+        <NuxtImg v-if="!$device.isMobile" src="/images/common/check-mark-1.png" alt="check-mark" width="64" height="64"
+          class="" />
+        <NuxtImg v-else src="/images/common/check-mark-1.png" alt="check-mark" width="40" height="40" class="" />
+        <!-- <NuxtImg src="/images/common/check-mark-1.png" alt="check-mark" width="24" height="24"
+          class="hidden sm:block xs:block" /> -->
       </div>
     </template>
     <template v-if="course.footerType === 4">
@@ -115,12 +107,9 @@
         <div class="course-card__footer__row">
           <div class="course-card__footer__left">
             <div class="course-card__footer__actions">
-              <AppArrowButton
-                variant="primary"
-                class="uno-h-[48px] uno-min-w-[158px] uno-gap-3 uno-pl-5 uno-pr-1 uno-py-1 max-md:uno-h-[44px] max-md:uno-min-w-[140px] max-md:uno-gap-2 max-md:uno-pl-[14px] max-md:uno-pr-[6px] max-md:uno-justify-between uno-font-medium"
-                :icon-size="40"
-                hover-class=""
-              >
+              <AppArrowButton variant="primary"
+                class="uno-gap-3 uno-pl-5 uno-pr-1 uno-py-1 md:uno-gap-2 md:uno-pl-[14px] md:uno-pr-[6px] md:uno-justify-between uno-font-medium"
+                :icon-size="$device.isMobile ? 32 : 40" hover-class="">
                 {{ $t('common.getStarted') }}
               </AppArrowButton>
               <div class="course-card__footer__people">
@@ -217,15 +206,58 @@ const progressOffset = computed(() => {
     margin-top: 8px;
   }
 
+  /* 响应式字号适配 - 针对 1920px 到 1200px 屏幕 */
+  @media (min-width: 1200px) and (max-width: 1920px) {
+    .course-card__title {
+      font-size: clamp(20px, 2vw, 24px);
+    }
+
+    .course-card__desc {
+      font-size: clamp(13px, 1vw, 14px);
+    }
+
+    .course-card__footer__status-text {
+      font-size: clamp(13px, 1vw, 14px);
+    }
+
+    .course-card__footer__people-text {
+      font-size: clamp(11px, 0.8vw, 12px);
+    }
+
+    .course-card__footer__badge-value {
+      font-size: clamp(14px, 1.2vw, 16px);
+    }
+
+    .course-card__footer__badge-label {
+      font-size: clamp(9px, 0.7vw, 10px);
+    }
+
+    .course-card__footer__progress-text {
+      font-size: clamp(16px, 1.3vw, 18px);
+    }
+
+    .course-card__status {
+      font-size: clamp(13px, 1vw, 14px);
+    }
+
+    .course-card__footer__meta {
+      font-size: clamp(13px, 1vw, 14px);
+    }
+  }
+
 
   .course-card__footer {
     margin-top: 16px;
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: end;
     flex-direction: row;
-    gap: 4px;
-    flex-wrap: wrap;
+    gap: 8px;
+
+    /* 移动端允许换行 */
+    @media (max-width: 767px) {
+      flex-wrap: wrap;
+    }
 
     &__left {
       display: flex;
@@ -235,37 +267,42 @@ const progressOffset = computed(() => {
     }
 
     .course-card__footer__status {
-      font-size: 14px;
+      font-size: 12px;
+
+      /* 移动端允许换行 */
+      @media (max-width: 767px) {
+        width: 100%;
+      }
     }
 
     &__actions {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 12px;
     }
 
 
     &__status {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
     }
 
     &__status-text {
       color: var(--ui-muted-foreground);
-      font-size: 14px;
+      font-size: 12px;
       font-family: 'Outfit';
       font-weight: 500;
       line-height: 1.5;
     }
 
     &__cta {
-      height: 48px;
-      min-width: 158px;
+      height: 40px;
+      min-width: 130px;
       display: flex;
       align-items: center;
-      gap: 12px;
-      padding: 4px 4px 4px 20px;
+      gap: 10px;
+      padding: 4px 4px 4px 16px;
       border-radius: 100px;
       background: var(--ui-primary);
       border: none;
@@ -289,12 +326,13 @@ const progressOffset = computed(() => {
       color: #fff;
       font-family: 'Outfit';
       font-weight: 500;
+      font-size: 12px;
       line-height: 1.5;
     }
 
     &__cta-icon {
-      width: 40px;
-      height: 40px;
+      width: 32px;
+      height: 32px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -307,11 +345,18 @@ const progressOffset = computed(() => {
     &__people {
       display: flex;
       align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
-      border-radius: 16px;
+      gap: 6px;
+      padding: 6px 10px;
+      border-radius: 14px;
       background: #fff;
       box-shadow: 10px 30px 50px rgba(0, 157, 119, 0.08);
+      
+      /* 移动端上下布局 */
+      @media (max-width: 767px) {
+        flex-direction: column;
+        gap: 4px;
+        padding: 8px 6px;
+      }
     }
 
     &__avatars {
@@ -321,9 +366,9 @@ const progressOffset = computed(() => {
     }
 
     &__avatar {
-      width: 24px;
-      height: 24px;
-      border-radius: 22px;
+      width: 20px;
+      height: 20px;
+      border-radius: 18px;
       overflow: hidden;
       border: 2px solid #fff;
       position: relative;
@@ -332,7 +377,7 @@ const progressOffset = computed(() => {
       justify-content: center;
 
       &:not(:first-child) {
-        margin-left: -8px;
+        margin-left: -6px;
       }
 
       img {
@@ -346,7 +391,7 @@ const progressOffset = computed(() => {
 
     &__people-text {
       color: var(--ui-muted-foreground);
-      font-size: 12px;
+      font-size: 10px;
       font-family: 'Outfit';
       line-height: 1.5;
       text-align: center;
@@ -363,7 +408,7 @@ const progressOffset = computed(() => {
 
     &__link-text {
       color: var(--ui-foreground);
-      font-size: 14px;
+      font-size: 12px;
       font-family: 'Outfit';
       line-height: 1.5;
       text-decoration: underline;
@@ -371,8 +416,8 @@ const progressOffset = computed(() => {
     }
 
     &__badge {
-      width: 64px;
-      height: 64px;
+      width: 52px;
+      height: 52px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -380,6 +425,15 @@ const progressOffset = computed(() => {
       background: rgba(255, 211, 204, 0.5);
       border: 1px solid var(--color-pink-2);
       overflow: hidden;
+      flex-shrink: 0;
+      flex-grow: 0;
+
+      &--points {
+        flex-shrink: 0;
+        flex-grow: 0;
+      }
+
+
 
       &-wrap {
         display: flex;
@@ -390,31 +444,35 @@ const progressOffset = computed(() => {
 
       &-value {
         color: var(--color-pink-1);
-        font-size: 20px;
+        font-size: 14px;
         font-family: 'Outfit';
         font-weight: 600;
         line-height: 1.2;
+
+
       }
 
       &-label {
         color: var(--color-pink-1);
-        font-size: 12px;
+        font-size: 9px;
         font-family: 'Outfit';
         line-height: 1.2;
+
+
       }
     }
 
     &__progress {
-      width: 64px;
-      height: 64px;
+      width: 52px;
+      height: 52px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
     }
 
     &__progress-svg {
-      width: 64px;
-      height: 64px;
+      width: 52px;
+      height: 52px;
       display: block;
       overflow: visible;
     }
@@ -422,13 +480,13 @@ const progressOffset = computed(() => {
     &__progress-track {
       fill: none;
       stroke: var(--ui-input);
-      stroke-width: 6;
+      stroke-width: 4;
     }
 
     &__progress-bar {
       fill: none;
       stroke: var(--ui-primary);
-      stroke-width: 6;
+      stroke-width: 4;
       stroke-linecap: round;
       transform: rotate(-90deg);
       transform-origin: 50% 50%;
@@ -436,15 +494,15 @@ const progressOffset = computed(() => {
 
     &__progress-text {
       fill: var(--ui-foreground);
-      font-size: 12px;
+      font-size: 10px;
       font-family: 'Outfit';
       font-weight: 600;
     }
 
     &__badge--percent {
-      width: 64px;
-      height: 64px;
-      flex: 0 0 64px;
+      width: 52px;
+      height: 52px;
+      flex: 0 0 52px;
       position: relative;
       border-radius: 50%;
       background: conic-gradient(var(--ui-primary) var(--pct), var(--ui-input) 0);
@@ -453,7 +511,7 @@ const progressOffset = computed(() => {
     &__badge--percent::after {
       content: '';
       position: absolute;
-      inset: 12px;
+      inset: 10px;
       border-radius: 50%;
       background: #fff;
       z-index: 1;
@@ -487,8 +545,10 @@ const progressOffset = computed(() => {
       z-index: 2;
     }
   }
-  .course-card__status+ .course-card__footer{
-    margin-top: 0;
+
+  .course-card__status+.course-card__footer {
+    margin-top: 12px;
+
 
   }
 
@@ -526,119 +586,6 @@ const progressOffset = computed(() => {
 
   .course-card__footer__progress-text {
     font-size: 18px;
-  }
-}
-
-@media (max-width: 767px) {
-  .course-card {
-    .course-card__footer {
-      // flex-direction: column;
-      // align-items: flex-start;
-      // gap: 8px;
-    }
-
-    .course-card__footer__status {
-      margin-bottom: 2px;
-      font-size: 14px;
-    }
-
-
-
-    .course-card__footer__link {
-      margin-top: 2px;
-    }
-
-    .course-card__footer__badge {
-      width: 40px;
-      height: 40px;
-    }
-
-    .course-card__footer__badge-value {
-      font-size: 14px;
-    }
-
-    .course-card__footer__badge-label {
-      font-size: 10px;
-    }
-
-    .course-card__footer__people {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 6px;
-      width: 100%;
-    }
-
-    .course-card__footer__people-text {
-      text-align: left;
-    }
-
-    .course-card__footer__avatar {
-      width: 20px;
-      height: 20px;
-    }
-
-    .course-card__footer__avatar:not(:first-child) {
-      margin-left: -6px;
-    }
-
-    .course-card__footer__badge--percent {
-      width: 36px;
-      height: 36px;
-      flex: 0 0 36px;
-      position: relative;
-      border-radius: 50%;
-      background: conic-gradient(var(--ui-primary) var(--pct), var(--ui-input) 0);
-    }
-
-    .course-card__footer__badge--percent::after {
-      content: '';
-      position: absolute;
-      inset: 6px;
-      border-radius: 50%;
-      background: #fff;
-      z-index: 1;
-    }
-
-    .course-card__footer__badge--percent::before {
-      content: '';
-      position: absolute;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--ui-primary);
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) rotate(var(--pct-angle)) translate(0, -18px);
-      z-index: 3;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    }
-
-    .course-card__footer__badge--percent-percent {
-      font-size: 11px;
-      z-index: 2;
-    }
-
-    .course-card__footer__progress {
-      width: 40px;
-      height: 40px;
-    }
-
-    .course-card__footer__progress-svg {
-      width: 40px;
-      height: 40px;
-    }
-
-    .course-card__footer__progress-track {
-      stroke-width: 5;
-    }
-
-    .course-card__footer__progress-bar {
-      stroke-width: 5;
-    }
-
-    .course-card__footer__progress-text {
-      font-size: 10px;
-    }
   }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <main class="uno-py-64px">
+    <main class="uno-pt-64px">
         <!-- <NuxtLink :to="{
       name: 'test'
     }">111</NuxtLink> -->
@@ -34,6 +34,7 @@
                                 <AppArrowButton
                                     class="uno-h-[48px] md:uno-h-[56px] uno-gap-3 uno-py-1.5 uno-pr-1.5 uno-pl-[16px] md:uno-pl-[20px] uno-font-Outfit uno-font-medium"
                                     hover-class=""
+                                    :icon-size="$device.isMobile ? 32 : 40"
                                 >
                                     {{ $t('common.getStarted') }}
                                 </AppArrowButton>

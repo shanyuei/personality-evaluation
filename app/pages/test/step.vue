@@ -6,7 +6,7 @@
           <NuxtImg src="/images/process/1.png" alt="Process Icon"
             class="uno-w-12 md:uno-w-14 uno-h-12 md:uno-h-14 uno-rounded-full" />
           <h1
-            class="uno-w-full uno-text-[#011813] uno-text-2xl md:uno-text-5xl uno-font-Outfit uno-text-center uno-font-semibold uno-leading-[1.2]">
+            class="uno-w-full uno-text-[#011813] uno-text-32px md:uno-text-5xl uno-font-Outfit uno-text-center uno-font-semibold uno-leading-[1.2]">
             {{ $t('pages.testIntro.title') }}</h1>
         </div>
 
@@ -39,7 +39,7 @@
           </div>
 
           <div class="uno-p-4 md:uno-p-6">
-            <div class="uno-flex uno-flex-row uno-items-baseline uno-justify-center uno-gap-0 uno-mt-4 uno-px-[5%]">
+            <div class="uno-flex uno-flex-row uno-items-baseline uno-justify-between uno-gap-0 uno-mt-4 uno-px-[5%]">
               <div class="uno-flex-1 uno-flex uno-flex-col uno-items-center uno-gap-1">
                 <div
                   class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px] uno-p-2.5 uno-bg-[#F4D0CB] uno-border-solid uno-border-[#F6BAB2] uno-border-2" />
@@ -103,15 +103,15 @@
           </div>
 
           <p
-            class="uno-text-[#8D8E8F] uno-font-Outfit uno-text-xs md:uno-text-sm uno-text-center uno-leading-[1.2] uno-mt-6">
-            {{
+            class="uno-text-[#8D8E8F] uno-font-Outfit uno-text-sm uno-text-center uno-leading-[1.2] uno-mt-16px md:uno-mt-6">
+            {{ 
               $t('pages.testIntro.notice') }}</p>
         </div>
 
         <div class="uno-w-full md:uno-w-[602px] uno-mx-auto uno-mt-6 uno-flex uno-justify-center">
-          <UButton :ui="UButtonTheme" @click="nextStep">
+          <PrimaryButton @click="nextStep">
             {{ currentStep < totalSteps ? $t('pages.testIntro.ctaNext') : $t('pages.testIntro.ctaSubmit') }}
-          </UButton>
+          </PrimaryButton>
         </div>
       </div>
     </main>
@@ -121,7 +121,7 @@
 <script setup lang="ts">
 import { ref, computed, watch } from 'vue'
 
-import UButtonTheme from '~/theme/UButton'
+import PrimaryButton from '~/components/ui/PrimaryButton.vue'
 import { useQuestionsStore } from '~/stores/modules/questions'
 import { storeToRefs } from 'pinia'
 import type { TestQuestion } from '~/types/TestQuestion'

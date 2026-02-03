@@ -10,9 +10,12 @@
       <div v-if="article" class="uno-rounded-[24px] uno-overflow-hidden">
         <NuxtImg v-if="article?.cover?.url" :src="getImageUrl(article.cover?.url || '')" :alt="article.title"
         width="1200" height="460"
-          class="uno-w-full uno-h-420px uno-object-cover" />
+          :class="[ 
+            'uno-w-full uno-object-cover', 
+            $device.isMobile ? 'uno-h-auto' : 'uno-h-420px' 
+          ]" />
       </div>
-      <div class="uno-flex uno-flex-col md:uno-flex-row uno-gap-[56px] uno-mt-56px">
+      <div class="uno-flex uno-flex-col md:uno-flex-row uno-gap-[56px] uno-mt-20px md:uno-mt-56px">
         <div v-if="article" class="uno-flex-1 uno-min-w-0">
           <p
             class="uno-font-normal uno-text-[14px] md:uno-text-[16px] uno-text-[#4e5255] uno-leading-[20px] md:uno-leading-[24px]">

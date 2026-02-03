@@ -1,5 +1,5 @@
 const UButtonTheme = {
-  base: "uno-rounded-[8px] uno-w-full uno-h-[56px] uno-font-bold uno-text-[16px] md:uno-text-[18px] uno-text-[#ffffff] uno-leading-[27px] uno-justify-center hover:!uno-bg-[var(--Color-31,#0A8165)]",
+  base: "uno-rounded-[8px] uno-w-full uno-h-[56px] uno-font-bold uno-text-[15px] md:uno-text-[18px] uno-text-[#ffffff] uno-leading-[27px] uno-justify-center hover:!uno-bg-[var(--Color-31,#0A8165)]",
   variants: {
     // default: "uno-bg-[var(--ui-primary)] hover:uno-bg-[var(--Color-31,#0A8165)]",
     // secondary: "uno-bg-[var(--color-pink-1)] hover:uno-bg-[#F06B9D]",

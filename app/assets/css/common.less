@@ -5,7 +5,8 @@
 
     @media (max-width: 767px) {
         width: 100%;
-        padding: 0 16px !important;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
     }
 
     @media (min-width: 768px) and (max-width: 1440px) {
@@ -22,7 +23,11 @@
 .course-header {
     width: 100%;
     max-width: 860px;
-    padding: 32px 0;
+    padding: 12px 0;
+    
+    @media (min-width: 768px) {
+        padding: 32px 0;
+    }
 
     .course-nav {
         display: flex;

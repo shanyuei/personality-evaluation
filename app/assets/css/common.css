@@ -24,7 +24,13 @@
 .course-header {
   width: 100%;
   max-width: 860px;
-  padding: 24px 0;
+  padding: 12px 0;
+}
+
+@media (min-width: 768px) {
+  .course-header {
+    padding: 24px 0;
+  }
 }
 .course-header .course-nav {
   display: flex;

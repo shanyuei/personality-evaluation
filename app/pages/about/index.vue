@@ -73,8 +73,17 @@
           :class="{ 'uno-mt-80px': index > 0 }">
 
           <!-- Image Column -->
-          <div class="uno-min-w-564px" :class="{ 'md:uno-order-2': index % 2 !== 0 }">
-            <NuxtImg :src="item.image" :alt="item.title" width="564px" height="440px" class="uno-w-full uno-h-auto" />
+          <div :class="[ 
+            $device.isMobile ? '' : 'uno-min-w-564px', 
+            { 'md:uno-order-2': index % 2 !== 0 }
+          ]">
+            <NuxtImg 
+              :src="item.image" 
+              :alt="item.title" 
+              :width="$device.isMobile ? '100%' : '564px'" 
+              :height="$device.isMobile ? 'auto' : '440px'" 
+              class="uno-w-full uno-h-auto" 
+            />
           </div>
 
           <!-- Content Column -->

@@ -15,29 +15,35 @@
         </svg>
       </div>
       <h1
-        class="uno-w-full uno-text-[#011813] uno-text-2xl md:uno-text-5xl uno-font-Outfit uno-text-center uno-font-semibold uno-leading-[1.2] uno-mb-8 md:uno-mb-40px">
+        class="uno-w-full uno-text-[#011813] uno-text-32px md:uno-text-5xl uno-font-Outfit uno-text-center uno-font-semibold uno-leading-[1.2] uno-mb-20px md:uno-mb-40px">
         {{ $t('pages.testIntro.title') }}</h1>
     </div>
     <div class="page-container ">
-      <div class="uno-flex  uno-justify-center uno-gap-6 md:uno-gap-24px">
-        <div v-for="step in steps" :key="step.id" class="uno-w-[384px] uno-h-[295px] uno-rounded-[24px] "
-          :class="step.bgClass">
-          <div class="uno-inline-block uno-w-full uno-p-6 uno-space-y-2 uno-rounded-2xl" :class="step.innerBgClass">
-            <div class="uno-flex uno-flex-col uno-items-center uno-gap-3">
-              <span class="uno-w-24 uno-h-24 uno-rounded-full uno-flex uno-items-center uno-justify-center"
-                :class="step.iconBgClass">
-                <NuxtImg :src="step.icon" :alt="'step' + step.id" width="96" height="96" />
-              </span>
+      <div class="uno-flex uno-flex-col md:uno-flex-row uno-justify-center uno-gap-6 md:uno-gap-24px">
+        <div v-for="step in steps" :key="step.id"
+          class="uno-w-[342px] uno-h-[60px] md:uno-w-[384px] md:uno-h-[295px] uno-rounded-[24px] uno-gap-[13.36px]" :class="step.bgClass">
+          <div class="uno-inline-block uno-w-full uno-p-12px sm:uno-p-6 uno-space-y-2 uno-rounded-2xl" :class="step.innerBgClass">
+            <div class="uno-flex uno-flex-row md:uno-flex-col md:uno-items-center uno-gap-3">
               <span
-                class="uno-inline-flex uno-justify-start uno-items-center uno-flex-row uno-gap-2.5 uno-py-1 uno-px-4 uno-rounded-3xl uno-self-start uno-text-[#011813] uno-text-center uno-text-base uno-font-Outfit uno-font-medium uno-leading-[1.36]"
-                :class="step.badgeBgClass">
-                {{ $t('pages.testIntro.step') }} {{ step.id }}
+                class="uno-w-8 md:uno-w-24 uno-h-8 md:uno-h-24 uno-rounded-[18.19px] md:uno-rounded-full uno-flex uno-items-center uno-justify-center"
+                :class="step.iconBgClass">
+                <NuxtImg :src="step.icon" :alt="'step' + step.id" width="32" height="32" md:width="96" md:height="96" />
               </span>
+              <div class="uno-flex-1 uno-text-left md:uno-text-left">
+                <span
+                  class="uno-hidden md:uno-inline-flex uno-justify-start uno-items-center uno-flex-row uno-gap-2.5 uno-py-1 uno-px-4 uno-rounded-3xl uno-self-start uno-text-[#011813] uno-text-center uno-text-base uno-font-Outfit uno-font-medium uno-leading-[1.36]"
+                  :class="step.badgeBgClass">
+                  {{ $t('pages.testIntro.step') }} {{ step.id }}
+                </span>
+                <div
+                  class="uno-hidden md:uno-block uno-text-[#011813] uno-text-2xl md:uno-text-3xl uno-font-Outfit uno-font-semibold">
+                  {{
+                    $t(step.titleKey) }}</div>
+                <p
+                  class="uno-text-[12px] md:uno-text-base md:uno-text-lg uno-text-[#4E5255] uno-font-Outfit uno-font-normal uno-leading-[150%] uno-text-left">
+                  {{ $t(step.descKey) }}</p>
+              </div>
             </div>
-            <div class="uno-text-[#011813] uno-text-2xl md:uno-text-3xl uno-font-Outfit uno-font-semibold">{{
-              $t(step.titleKey) }}</div>
-            <p class="uno-text-base md:uno-text-lg uno-text-[#4E5255] uno-font-Outfit">
-              {{ $t(step.descKey) }}</p>
           </div>
         </div>
       </div>
@@ -64,7 +70,7 @@
         <!-- 评分说明 -->
         <div class="uno-w-full md:uno-w-[720px] uno-mx-auto">
           <h2
-            class="uno-text-[#011813] uno-text-base md:uno-text-base uno-font-Outfit uno-text-center uno-font-semibold uno-leading-[1.2]">
+            class="uno-text-[#011813] uno-text-18px md:uno-text-base uno-font-Outfit uno-text-center uno-font-semibold uno-leading-[1.2]">
             {{ $t('pages.testIntro.instructions') }}</h2>
           <div class="uno-p-4 md:uno-p-6 md:uno-pt-32px">
             <div class="uno-flex uno-flex-row uno-items-baseline uno-justify-between uno-gap-0 uno-px-[5%]">
@@ -108,14 +114,14 @@
           </div>
 
           <!-- 提示文本 -->
-          <p class="uno-text-[#8D8E8F] uno-font-Outfit uno-text-sm uno-text-center uno-leading-[1.2] uno-mt-6">
+          <p class="uno-text-[#8D8E8F] uno-font-Outfit uno-text-sm uno-text-center uno-leading-[1.2] uno-mt-16px md:uno-mt-6">
             {{
               $t('pages.testIntro.notice') }}</p>
         </div>
 
         <!-- 提交按钮 -->
         <div class="uno-w-full md:uno-w-[720px] uno-mx-auto uno-mt-6 uno-flex uno-justify-center uno-mb-12">
-          <UButton :ui="UButtonTheme" @click="nextStart">{{ $t('pages.testIntro.next') }}</UButton>
+          <PrimaryButton @click="nextStart">{{ $t('pages.testIntro.next') }}</PrimaryButton>
         </div>
       </div>
     </div>
@@ -124,7 +130,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import UButtonTheme from '~/theme/UButton'
+import PrimaryButton from '~/components/ui/PrimaryButton.vue'
 import { getTestQuestions } from '~/api/tests'
 import type { TestQuestion } from '~/types/TestQuestion'
 import { useQuestionsStore } from '~/stores/modules/questions'
