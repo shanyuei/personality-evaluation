@@ -54,74 +54,65 @@
         "title": "Core Trait Analysis",
         "desc": "Generating your comprehensive personality profile based on your unique responses..."
       },
-      "title": "Personality Test",
-      "description": "Start your personality assessment.",
-      "step": {
-        "title": "Test Steps",
-        "description": "Answer the questions step by step."
-      },
-      "result": {
-        "title": "Test Results",
-        "description": "View your report and next actions."
-      },
       "report": {
-        "title": "Your Personality Type Report is Ready!",
-        "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.",
+        "title": "Your Full Personality Report is Ready!",
+        "subtitle": "Our analysis has successfully decoded your unique behavioral patterns. Gain the clarity you need to navigate your career and personal life with confidence.",
         "features": {
           "identity": {
-            "title": "Find Out Who You Really Are",
-            "desc": "Dive deep into your core identity and uncover aspects of yourself you've never known."
+            "title": "Unveil Your Authentic Self",
+            "desc": "Dive deep into your core identity to uncover hidden potential and motivations."
           },
           "strengths": {
-            "title": "Explore Your Strengths and Weaknesses",
-            "desc": "Gain a clear understanding of what you excel at and where you can grow."
+            "title": "The Anatomy of Your Strengths",
+            "desc": "Gain a clear understanding of your natural advantages and specific areas for growth."
           },
           "relationships": {
-            "title": "Improve Your Relationship with Other",
-            "desc": "For media-related questions or press inquiries, please contact us at media{'@'}snappyapp.com."
+            "title": "Decode Your Social Dynamics",
+            "desc": "Enhance your social intelligence to build stronger, more meaningful connections."
           }
         },
         "pricing": {
           "access": "7-day full access",
           "price": "HK$14.95",
-          "cta": "Get My Results",
+          "cta": "VIEW MY REPORT",
           "trial": "7-day trial for $1.99, auto-renews at $27.88/mo. Cancel anytime.",
           "ordered": "reports ordered!"
         },
         "receive": {
-          "title": "What You Will Receive",
+          "title": " Pathways to Personal Excellence",
           "subtitle": "Be always were to from of volunteers range times to mildcastingoppositehe its nor attribute how solitary saw more on his not",
-          "cards": {
-            "report": {
-              "title": "Comprehensive Personality Report",
-              "desc": "The to we considerable,explain the morals, to queen please"
-            },
-            "courses": {
-              "title": "Personalized Course Recommendations",
-              "desc": "Pervasively in evening best bad policy he first of he first to attempt"
-            },
-            "assessment": {
-              "title": "Skill Assessment Tests",
-              "desc": "Were control to late check though text a carefully anewer"
-            },
-            "challenges": {
-              "title": "Practical Daily Challenges",
-              "desc": "The to we considerable,explain the morals, to queen please"
-            },
-            "library": {
-              "title": "Learning and Development Library",
-              "desc": "Pervasively in evening best bad policy he first of he first to attempt"
-            },
-            "certificates": {
-              "title": "Certificates of Achievement",
-              "desc": "Were control to late check though textacarefullyanewer"
-            }
+          "card1": {
+            "title": "Comprehensive Personality Report ",
+            "desc": "An in-depth analysis that decodes your unique personality architecture and behavioral drivers."
+          },
+          "card3": {
+            "title": "Personalized Course Recommendations ",
+            "desc": "Tailored educational strategies designed to bridge your skill gaps and accelerate growth."
+          },
+          "card5": {
+            "title": "Skill Assessment Tests ",
+            "desc": "Targeted evaluations to quantify your natural advantages and professional core strengths."
+          },
+          "card2": {
+            "title": "Practical Daily Challenges ",
+            "desc": "Actionable daily tasks focused on building resilient habits and sustainable development."
+          },
+          "card4": {
+            "title": "Relationship Guide ",
+            "desc": "Actionable tips to improve your social interactions and build stronger professional connections."
+          },
+          "card6": {
+            "title": "Certificates of Achievement ",
+            "desc": "Formal recognition of your profile insights and your commitment to personal excellence."
           }
         },
         "trusted": {
           "title": "Trusted by 20,000+ customers",
-          "subtitle": "Be always were to from of volunteers range times to mild, casting opposite he its nor attribute how solitary saw more on his not",
-          "card_text": "An exceptional platform for career development! The current curriculum, skilled instructors, and hands-on learning ensure every moment is impactful, enriching, and truly rewarding."
+          "subtitle": "Join thousands who have unlocked their potential through our expert-led personality framework. Real growth starts with deep self-awareness.",
+          "card_text": "I was skeptical, but the depth of this report is impressive. It’s a powerful tool for self-discovery that feels incredibly personal and surprisingly accurate.",
+          "card_text3": "I was skeptical, but the depth of this report is impressive. It’s a powerful tool for self-discovery that feels incredibly personal and surprisingly accurate.",
+          "card_text2": "Finally, a test that goes beyond surface-level traits. It explained my creative blocks perfectly and gave me practical steps to regain my focus and drive.",
+          "card_text1": "The insights into my subconscious motivations were eye-opening. It has completely changed how I handle workplace stress and helped me build much stronger team dynamics."
         },
         "worldwide": {
           "title": "Trusted by over 100 thousand people worldwide",
@@ -137,18 +128,23 @@
           }
         },
         "cta_full": {
-          "title": "Discover more about yourself with the full report",
           "list": {
-            "1": "Get access to 50+ personal premium tests",
-            "2": "15+ pages of detailed and personal insights",
-            "3": "Learn how to use your strengths to reach higher and grow as a person",
-            "4": "Get better at navigating the professional world and achieve your professional goals"
-          },
-          "access": "7-day full access",
-          "price": "HK$14.95",
-          "btn": "Get My Results",
-          "note": "7-day trial for $1.99, auto-renews at $27.88/mo. Cancel anytime."
+            "1": "Unlock 50+ Premium Personality Assessments",
+            "2": "Deep Evidence-Based Psychological Insights",
+            "3": "Strategic Tools for Sustainable Personal Growth",
+            "4": "Master Professional Dynamics and Career Goals"
+          }
         }
+      },
+      "title": "Personality Test",
+      "description": "Start your personality assessment.",
+      "step": {
+        "title": "Test Steps",
+        "description": "Answer the questions step by step."
+      },
+      "result": {
+        "title": "Test Results",
+        "description": "View your report and next actions."
       }
     },
     "home": {
@@ -1124,6 +1120,10 @@
       "analyzing": {
         "title": "Title Analysis in Progress {separator} PersonalityTest101 – Decoding Your Unique Traits",
         "description": "Meta Description Our system is decoding your responses to generate a precise personality profile. Discover the science behind your behavior and unlock deep insights into your core traits and potential."
+      },
+      "report": {
+        "title": "Your Personality Report {separator} PersonalityTest101 – Expert Insights",
+        "description": "Your personality profile is ready. Explore the science behind your traits, unlock deep behavioral insights, and get a tailored roadmap for your personal and professional growth."
       }
     },
     "home": {
