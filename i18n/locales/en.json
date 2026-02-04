@@ -104,6 +104,109 @@
         }
       }
     },
+    "auth": {
+      "signIn": {
+        "title": "Sign In",
+        "description": "Securely access your account.",
+        "passwordLabel": "Password",
+        "passwordPlaceholder": "Enter your password",
+        "submit": "Continue",
+        "noAccount": "Don't have an account?",
+        "signUp": "Sign Up"
+      }
+    },
+    "faq": {
+      "title": "Personality Test FAQs",
+      "integration": "Integration",
+      "general": {
+        "faqs": "General FAQs"
+      },
+      "integrations": {
+        "title1": "How We Use Your Information",
+        "title2": "Data Sharing and Disclosure",
+        "title3": "Cookies and Tracking Technologies",
+        "title4": "Changes to This Privacy Policy",
+        "title5": "Contact Us",
+        "list1": {
+          "question1": "How is my personal assessment data utilized?",
+          "answer1": "We use your responses to generate your comprehensive personality archetype and provide personalized growth insights. Your data also helps us refine our psychometric algorithms to ensure the highest level of accuracy for all users."
+        },
+        "list2": {
+          "question1": "Will my individual test results be shared with third parties?",
+          "answer1": "We do not sell your personal data or test results to anyone. Information is only shared with trusted service providers (e.g., payment processors) to facilitate our services. All such parties are bound by strict confidentiality agreements."
+        },
+        "list3": {
+          "question1": "Why does the platform use cookies and tracking tools?",
+          "answer1": "Cookies allow us to recognize your session and sync your premium reports across multiple devices. We also use these technologies to analyze site performance and deliver a more seamless, personalized user experience."
+        },
+        "list4": {
+          "question1": "How will I be informed of updates to the Privacy Policy?",
+          "answer1": "As privacy laws evolve, we may update our terms. Any significant changes will be communicated to you via the email address linked to your account or through a prominent notice on our member dashboard."
+        },
+        "list5": {
+          "question1": "How can I reach support regarding privacy or billing?",
+          "answer1": "Our dedicated support team is available 24/7. You can use the \"Contact Us\" form located at the bottom of the page or email us directly at {email}. We strive to respond to all inquiries within 24 hours."
+        },
+        "list": {
+          "1": {
+            "q": "Platform & Sharing",
+            "desc": "Can I sync my results with my LinkedIn profile?  Yes, premium members can generate a \"Professional Summary\" badge that can be easily shared or linked to your LinkedIn and other professional portfolios."
+          },
+          "2": {
+            "q": "How do I invite my partner or team to compare results? ",
+            "desc": "Inside your dashboard, use the \"Invite to Compare\" feature. You can view compatibility reports once both parties have completed their assessments."
+          },
+          "3": {
+            "q": "Is there a mobile app available? ",
+            "desc": "While we don't have a standalone app yet, our website is fully mobile-optimized, allowing you to access all your reports and tools on the go."
+          },
+          "4": {
+            "q": "What should I do if my report didn't generate? ",
+            "desc": "This is rare, but if it happens, try refreshing the page or checking your email for a direct link. You can also contact our support for an immediate manual reset."
+          },
+          "5": {
+            "q": "Can I hide my results from search engines? ",
+            "desc": "Absolutely. Your privacy is our priority. All test results are set to \"Private\" by default and will never appear in public search results."
+          },
+          "6": {
+            "q": "How do I update my account email or password? ",
+            "desc": "You can manage all your personal information under the Account Settings > Profile section at any time."
+          }
+        },
+        "type2": "(2)Technical & Privacy",
+        "type1": "(1)Platform & Sharing"
+      },
+      "faqs": {
+        "personalityScience": "Personality & Science",
+        "membershipBilling": "Membership & Billing",
+        "list": {
+          "1": {
+            "q": "What psychological models do you use?",
+            "desc": "Our core assessments are based on the Five-Factor Model (Big Five) and Jungian typology, ensuring a balance between scientific rigor and practical insights."
+          },
+          "2": {
+            "q": "Can my personality type change over time?",
+            "desc": "While core traits tend to be stable, your behaviors and coping mechanisms evolve. We recommend retaking the test every 6 months to track your personal growth."
+          },
+          "3": {
+            "q": "Is this test suitable for professional career planning?",
+            "desc": "Yes. Our Premium reports include a \"Career Architect\" section that matches your traits with 100+ professional paths and workplace environments."
+          },
+          "4": {
+            "q": "Why is there a charge for premium results?",
+            "desc": "The $1.99 covers the cost of our advanced analytical engine and allows us to provide a high-quality, ad-free experience with personalized growth tools."
+          },
+          "5": {
+            "q": "What happens if I forget to cancel my trial?",
+            "desc": "We send a reminder email 24 hours before your trial ends. If you miss it, our 30-day money-back guarantee still applies to your first monthly charge."
+          },
+          "6": {
+            "q": "Do you offer a one-time purchase option?",
+            "desc": "Currently, we focus on a membership model to provide ongoing value, including weekly updated content and long-term trait tracking."
+          }
+        }
+      }
+    },
     "test": {
       "index": {
         "title": "Free Personality Test",
@@ -261,13 +364,14 @@
         }
       },
       "purchaseComplete": {
-        "title": "Thank you for your purchase!",
-        "description": "Click below to get started and access your report！",
+        "title": "Unlock Your Potential",
+        "description": "Your assessment results are prepared.",
         "accessReport": "Open Report",
         "downloadGuidebook": "Download Guidebook",
-        "accessNote": "Click the button above to open your report page！",
-        "downloadNote": "If download fails, please check your email later for the link.",
-        "goHome": "Back to Home"
+        "accessNote": "Click below to download your guidebook!",
+        "btn2": "Self-Esteem Blueprint ",
+        "goHome": "Back to Home",
+        "btn1": "Reveal My Profile"
       }
     },
     "home": {
@@ -548,76 +652,6 @@
         "a4": "Support includes progress tracking, assessment reports, course management tools, and grading and feedback for instructors.",
         "q5": "Are there interactive features for students?",
         "a5": "Yes. Features include quizzes, discussions, assignments, and feedback to enhance the learning experience."
-      }
-    },
-    "faq": {
-      "title": "FAQ",
-      "description": "Quickly understand the platform and testing flow. Categories on the left, Q&A on the right.",
-      "nav": {
-        "general": "General",
-        "integration": "Integrations",
-        "account": "Account & Security",
-        "billing": "Billing & Payments"
-      },
-      "sections": {
-        "general": {
-          "title": "General",
-          "desc": "Common questions about the test flow and reports.",
-          "q1": "How long does the test take?",
-          "a1": "It usually takes 5-10 minutes. Stay focused and answer honestly.",
-          "q2": "Will my report be kept long term?",
-          "a2": "Reports and history are stored in your account and can be viewed anytime.",
-          "q3": "Is mobile supported?",
-          "a3": "Optimized for mobile and desktop. You can complete the test on any device."
-        },
-        "integration": {
-          "title": "Integrations",
-          "desc": "Integration with LMS or enterprise systems.",
-          "q1": "Do you support LMS gradebook integration?",
-          "a1": "We can export assessment results and connect to common LMSs. Contact support for details.",
-          "q2": "Is there an API?",
-          "a2": "We provide read and write REST APIs. Keys are required to use them.",
-          "q3": "How do I sync users and courses?",
-          "a3": "Via batch import or API sync, with scheduled jobs supported."
-        },
-        "account": {
-          "title": "Account & Security",
-          "desc": "Account management and privacy.",
-          "q1": "What if I forget my password?",
-          "a1": "Use the \"Forgot password\" feature on the sign-in page to reset it.",
-          "q2": "How can I delete my account and data?",
-          "a2": "Submit a deletion request in settings. We will process it according to compliance requirements.",
-          "q3": "How is my data protected?",
-          "a3": "We use encrypted transport and access control. See our privacy policy for details."
-        },
-        "billing": {
-          "title": "Billing & Payments",
-          "desc": "Orders, refunds, and invoices.",
-          "q1": "What payment methods are supported?",
-          "a1": "Common bank cards and major payment channels are supported.",
-          "q2": "Can I request a refund?",
-          "a2": "Refunds can be requested within the policy window. See the user agreement.",
-          "q3": "Do you provide invoices?",
-          "a3": "Invoices for businesses and individuals are supported. Submit invoice details after the order is completed."
-        }
-      },
-      "standout": {
-        "title": "What makes our tests different: precision, depth, and clarity",
-        "desc": "We blend innovation, expertise, and a customer-centric approach, focusing on quality and meaningful growth.",
-        "items": {
-          "precision": {
-            "title": "Precision",
-            "desc": "Learn from seasoned professionals in marketing, design, engineering, finance, and more."
-          },
-          "deep": {
-            "title": "Deep Insights",
-            "desc": "Tailor your learning journey to your goals and pace, choosing courses that fit better."
-          },
-          "expert": {
-            "title": "Expert Guidance",
-            "desc": "Engage with multimedia content, quizzes, and assignments for a more vivid learning experience."
-          }
-        }
       }
     },
     "routeGuide": {
@@ -955,17 +989,6 @@
         }
       }
     },
-    "auth": {
-      "signIn": {
-        "title": "Sign In",
-        "description": "Securely access your account.",
-        "passwordLabel": "Password",
-        "passwordPlaceholder": "Password",
-        "submit": "Submit",
-        "noAccount": "Don't have an account?",
-        "signUp": "Sign Up"
-      }
-    },
     "account": {
       "settings": {
         "title": "Settings",
@@ -974,7 +997,7 @@
         "profile": {
           "title": "Profile details",
           "namePlaceholder": "First and last name",
-          "emailPlaceholder": "Email Address",
+          "emailPlaceholder": "",
           "submit": "Save Changes",
           "success": "Profile updated",
           "fail": "Update failed. Please try again later.",
@@ -1161,14 +1184,20 @@
       "title": "Title About Us {separator} PersonalityTest101 – Our Mission for Self-Discovery",
       "description": "Discover the story behind PersonalityTest101. We combine psychological precision with data-driven insights to help individuals uncover their core traits, improve relationships, and achieve personal growth. Learn more about our mission and vision."
     },
+    "auth.signIn": {
+      "title": "Sign In - Access Your Account",
+      "description": "Log in to your account to access personalized features."
+    },
     "orders": {
       "cancelSubscription": {
         "title": "Cancel Subscription {separator} PersonalityTest101 – Manage Your Account",
         "description": "Easily manage or cancel your PersonalityTest101 subscription. We’re sorry to see you go, but you can deactivate your account or change your plan at any time through our secure portal."
+      },
+      "purchaseComplete": {
+        "title": "Payment Successful {separator} PersonalityTest101 - Start Your Growth Journey",
+        "description": "Thank you for your purchase! Your premium personality analysis and self-esteem guidebook are ready. Access your insights now on PersonalityTest101."
       }
     },
-
-
     "home": {
       "title": "Unlock knowledge and growth with expert courses and tools.",
       "description": "An exceptional platform for career development. The current curriculum, skilled instructors, and hands-on learning are truly rewarding."
@@ -1291,11 +1320,11 @@
     },
     "auth": {
       "title": "Authentication - Secure Access",
-      "description": "Securely access your account with our authentication system."
-    },
-    "auth.signIn": {
-      "title": "Sign In - Access Your Account",
-      "description": "Log in to your account to access personalized features."
+      "description": "Securely access your account with our authentication system.",
+      "signIn": {
+        "title": "Sign In | PersonalityTest101 - Access Your Reports",
+        "description": "Sign in to PersonalityTest101 to access your professional personality reports, track your growth, and unlock career insights. Secure and easy access."
+      }
     },
     "account": {
       "title": "Account Management - Settings and Preferences",

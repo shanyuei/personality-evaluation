@@ -15,7 +15,7 @@
             <div class="uno-flex uno-justify-start uno-items-start uno-flex-col uno-gap-4">
               <span
                 class="uno-text-[var(--ui-foreground)] uno-text-2xl uno-font-Outfit uno-font-medium uno-leading-normal">
-                {{ $t('pages.faq.sections.general.title') }}
+                {{ $t('pages.faq.general.faqs') }}
               </span>
               <div v-for="cat in asideCategories" :key="cat.id"
                 class="uno-flex uno-justify-start uno-items-start uno-flex-col uno-gap-3 uno-cursor-pointer">
@@ -23,6 +23,7 @@
                   class="uno-text-xl uno-font-Outfit uno-leading-normal uno-text-[var(--ui-foreground)] uno-font-medium">
                   {{ cat.title }}
                 </div>
+
                 <template v-for="(text, i) in cat.items" :key="i">
                   <div :class="[
                     `uno-font-Outfit uno-leading-[2.4] uno-cursor-pointer uno-font-medium`,
@@ -39,7 +40,7 @@
         <section class="md:uno-col-span-2 uno-space-y-10">
           <div class="uno-space-y-4">
             <h2 class="uno-text-2xl md:uno-text-24px uno-font-Outfit uno-font-600 uno-text-black uno-mb-4">
-              {{ $t('pages.faq.sections.general.title') }}
+              {{ $t('pages.faq.general.faqs') }}
             </h2>
             <div class="uno-space-y-5">
               <template v-for="entry in asideCategories" :key="entry.id">
@@ -116,32 +117,135 @@ const toggle = (section: string, i: number) => {
 const switchCategory = (id: string) => {
   currentCategory.value = id
 }
+const faqs = [
+  {
+    type: t('pages.faq.faqs.personalityScience'),
+    title: t('pages.faq.faqs.list.1.q'),
+    desc: t('pages.faq.faqs.list.1.desc')
+  },
+  {
+    type: t('pages.faq.faqs.personalityScience'),
+    title: t('pages.faq.faqs.list.2.q'),
+    desc: t('pages.faq.faqs.list.2.desc')
+  },
+  {
+    type: t('pages.faq.faqs.personalityScience'),
+    title: t('pages.faq.faqs.list.3.q'),
+    desc: t('pages.faq.faqs.list.3.desc')
+  },
+  {
+    type: t('pages.faq.faqs.membershipBilling'),
+    title: t('pages.faq.faqs.list.4.q'),
+    desc: t('pages.faq.faqs.list.4.desc')
+  },
+  {
+    type: t('pages.faq.faqs.membershipBilling'),
+    title: t('pages.faq.faqs.list.5.q'),
+    desc: t('pages.faq.faqs.list.5.desc')
+  },
+  {
+    type: t('pages.faq.faqs.membershipBilling'),
+    title: t('pages.faq.faqs.list.6.q'),
+    desc: t('pages.faq.faqs.list.6.desc')
+  }
+];
+const integrations = [
+  {
+    type: t('pages.faq.integrations.type1'),
+    title: t('pages.faq.integrations.list.1.q'),
+    desc: t('pages.faq.integrations.list.1.desc'),
+  },
+  {
+        type: t('pages.faq.integrations.type1'),
+    title: t('pages.faq.integrations.list.2.q'),
+    desc: t('pages.faq.integrations.list.2.desc'),
+  },
+  {
+        type: t('pages.faq.integrations.type1'),
+    title: t('pages.faq.integrations.list.3.q'),
+    desc: t('pages.faq.integrations.list.3.desc'),
+  },
+  {
+    type: t('pages.faq.integrations.type2'),
+    title: t('pages.faq.integrations.list.4.q'),
+    desc: t('pages.faq.integrations.list.4.desc'),
+  },
+  {
+    type: t('pages.faq.integrations.type2'),
+    title: t('pages.faq.integrations.list.5.q'),
+    desc: t('pages.faq.integrations.list.5.desc'),
+  }, {
+    type: t('pages.faq.integrations.type2'),
+    title: t('pages.faq.integrations.list.6.q'),
+    desc: t('pages.faq.integrations.list.6.desc'),
+  }
+];
 const asideCategories: any = [
   {
     id: 'integration',
-    title: 'Integration',
+    title: t('pages.faq.integration'),
+
     items: [
       {
-        text: "How We Use Your Information",
+        text: t('pages.faq.integrations.title1'),
         id: "1",
         list: [
-          { question: "什么是我们的服务？", answer: "我们提供专业的测评服务，帮助你了解自己的优势和不足。", id: "1", type: "1" },
-          { question: "如何注册账户？", answer: "点击右上角注册按钮，填写邮箱和密码即可完成注册。", id: "2", type: "1" },
-          { question: "忘记密码怎么办？", answer: "点击登录页忘记密码链接，输入邮箱即可重置密码。", id: "3", type: "1" },
-          { question: "如何注册账户？", answer: "点击右上角注册按钮，填写邮箱和密码即可完成注册。", id: "4", type: "1" },
-          { question: "忘记密码怎么办？", answer: "点击登录页忘记密码链接，输入邮箱即可重置密码。", id: "5", type: "1" },
+          {
+            question: t('pages.faq.integrations.list1.question1'),
+            answer: t('pages.faq.integrations.list1.answer1'),
+            id: "1",
+            type: "1"
+          }
         ]
       },
       {
-        text: "Data Sharing and Disclosure",
+        text: t('pages.faq.integrations.title2'),
         id: "2",
         list: [
-          { question: "如何集成我们的API？", answer: "你可以参考我们的API文档，按照步骤完成集成。", id: "6", type: "2" },
-          { question: "API调用有频率限制吗？", answer: "免费用户每分钟最多调用10次，付费用户无限制。", id: "7", type: "2" },
-          { question: "如何获取API密钥？", answer: "登录账户后，在设置页面可以生成和管理API密钥。", id: "8", type: "2" },
+          {
+            question: t('pages.faq.integrations.list2.question1'),
+            answer: t('pages.faq.integrations.list2.answer1'),
+            id: "1",
+            type: "1"
+          }
         ]
       },
-
+      {
+        text: t('pages.faq.integrations.title3'),
+        id: "3",
+        list: [
+          {
+            question: t('pages.faq.integrations.list3.question1'),
+            answer: t('pages.faq.integrations.list3.answer1'),
+            id: "1",
+            type: "1"
+          }
+        ]
+      },
+      {
+        text: t('pages.faq.integrations.title4'),
+        id: "4",
+        list: [
+          {
+            question: t('pages.faq.integrations.list4.question1'),
+            answer: t('pages.faq.integrations.list4.answer1'),
+            id: "1",
+            type: "1"
+          }
+        ]
+      },
+      {
+        text: t('pages.faq.integrations.title5'),
+        id: "5",
+        list: [
+          {
+            question: t('pages.faq.integrations.list5.question1'),
+            answer: t('pages.faq.integrations.list5.answer1', { email: 'support@personalitytest101.com' }),
+            id: "1",
+            type: "1"
+          }
+        ]
+      }
     ]
   }
 ]

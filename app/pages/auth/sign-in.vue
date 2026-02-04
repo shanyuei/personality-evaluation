@@ -10,7 +10,7 @@
         <UForm :state="{ email, password }" class="uno-space-y-6">
           <!-- Email -->
           <UFormField :label="$t('pages.account.settings.profile.email')" :ui="UFormFieldTheme">
-            <UInput v-model="email" type="email" :placeholder="$t('pages.account.settings.profile.emailPlaceholder')"
+            <UInput v-model="email" type="email" placeholder=" e.g., alex@example.com"
               :ui="UInputTheme" />
           </UFormField>
 
@@ -56,7 +56,7 @@ definePageMeta({
 })
 
 useSeoMeta({
-  title: () => t('seo.auth.signIn.title') as string,
+  title: () => t('seo.auth.signIn.title', { separator: '|' }) as string,
   description: () => t('seo.auth.signIn.description') as string
 })
 const userStore = useUserStore()

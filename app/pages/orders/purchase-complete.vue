@@ -13,7 +13,7 @@
       </p>
 
       <PrimaryButton @click="goToReport" class="uno-w-full">
-        Download my Report
+        {{ $t('pages.orders.purchaseComplete.btn1') }}
       </PrimaryButton>
 
       <p class="uno-text-gray-500 uno-mt-3 uno-mb-6 uno-font-Outfit uno-text-sm md:uno-text-base">
@@ -21,7 +21,7 @@
       </p>
 
       <OutlineButton @click="downloadGuidebook" class="uno-w-full">
-        Self-Esteem
+        {{ $t('pages.orders.purchaseComplete.btn2') }}
       </OutlineButton>
 
     </div>
@@ -41,7 +41,7 @@ definePageMeta({
   layoutShowPageTopIcons: false,
 })
 useSeoMeta({
-  title: () => t('seo.orders.purchaseComplete.title') as string,
+  title: () => t('seo.orders.purchaseComplete.title', { separator: '|' }) as string,
   description: () => t('seo.orders.purchaseComplete.description') as string
 })
 const goToReport = () => {
