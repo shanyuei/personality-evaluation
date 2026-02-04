@@ -17,11 +17,17 @@
         <!-- 页面顶部背景 -->
         <NuxtImg src="/theme/layout/bg-top.png" alt="bg-top" width="100%" height="100vh"
           class="uno-w-full uno-h-auto uno-max-h-100vh uno-absolute uno-top-0 uno-left-0 uno-z-0" />
-        <template v-if="showPageTopIcons">
+        <template v-if="showPageTopIcons && !$device.isMobile">
           <NuxtImg src="/theme/layout/page-top-icon-1.png" width="124px" height="132px"
             class="uno-absolute uno-top-331px uno-right-67px uno-z-1" />
           <NuxtImg src="/theme/layout/page-top-icon-2.png" width="163px" height="170px"
             class="uno-absolute uno-top-431px uno-left-133px uno-z-1" />
+        </template>
+        <template v-if="showPageTopIcons && $device.isMobile">
+          <NuxtImg src="/theme/layout/page-top-icon-1.png" width="42" height="47"
+            class="uno-absolute uno-top-50px uno-right-13px uno-z-1" />
+          <NuxtImg src="/theme/layout/page-top-icon-2.png" width="38" height="43"
+            class="uno-absolute uno-top-361px uno-left-8px uno-z-1" />
         </template>
         <div v-if="showPageTopIcons3" class="page-container relative">
           <NuxtImg  src="/theme/layout/page-top-icon-3.png" width="104" height="44"

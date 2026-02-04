@@ -1,18 +1,18 @@
 <template>
   <main class="">
 
-    <section class="uno-relative uno-py-22 sm:uno-py-32">
+    <section class="uno-relative uno-py-12 sm:uno-py-32">
       <div class="page-container uno-px-6 ">
         <div
           class="uno-flex uno-relative uno-flex-col md:uno-flex-row uno-items-start md:uno-justify-between uno-gap-72px">
           <NuxtImg src="/images/about/icon-1.png" alt="decor"
-            class="uno-absolute uno-left-1/2 uno--translate-x-1/2 uno-top-0 uno-w-47px uno-h-36px" />
+            class="uno-absolute uno-left-1/2 uno--translate-x-1/2 uno-top--28px sm:uno-top-0 uno-w-47px uno-h-36px" />
           <div class="uno-text-center md:uno-text-left md:uno-w-1/2">
             <h1
-              class="uno-font-semibold uno-text-[42px] md:uno-text-[72px] uno-text-[#011813] md:uno-leading-[86px] uno-text-left">
+              class="uno-font-semibold uno-text-[36px] md:uno-text-[72px] uno-text-[#011813] uno-leading-[42px] md:uno-leading-[86px] uno-text-left">
               {{ $t('pages.about.hero.title') }}</h1>
             <p
-              class="uno-font-normal uno-text-[16px] md:uno-text-[18px] uno-text-[#4e5255] md:uno-leading-[27px] uno-text-left uno-m-t-16px">
+              class="uno-font-normal uno-text-[16px] md:uno-text-[18px] uno-text-[#4e5255] uno-leading-[22px] md:uno-leading-[27px] uno-text-left uno-m-t-16px">
               {{
                 $t('pages.about.hero.desc') }}
             </p>
