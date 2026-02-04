@@ -1,16 +1,16 @@
 <template>
   <div class="page-container uno-py-8  md:uno-py-6 ">
     <div class="uno-flex uno-gap-2 uno-flex-wrap uno-justify-center uno-mb-6">
-      <UButton v-for="(f, i) in filters" :key="f.id"
+      <button v-for="(f, i) in filters" :key="f.id"
         class="uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-1 uno-py-2 uno-px-[16px] uno-h-[48px] uno-text-sm uno-font-Outfit uno-font-medium"
         :class="activeFilter === f.id
           ? 'uno-bg-[var(--ui-primary)] uno-text-[var(--ui-primary-foreground)] uno-rounded-[100px]'
           : 'uno-bg-transparent uno-text-[var(--ui-muted-foreground)] uno-border uno-border-solid uno-border-[var(--ui-border)] uno-rounded-[100px]'"
-        @click="activeFilter = f.id">{{ f.label }}</UButton>
+        @click="activeFilter = f.id">{{ f.label }}</button>
     </div>
 
     <section class="uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_0px_#0000000D] ">
-      <div class="uno-flex uno-p-6 md:uno-p-8 uno-flex-col md:uno-flex-row uno-gap-6">
+      <div class="uno-flex uno-p-6 md:uno-p-8 uno-flex-col md:uno-flex-row uno-gap-6 md:uno-gap-18">
         <NuxtImg src="/images/blog/2.png" alt="hero"
           class="uno-w-full md:uno-w-[425px] uno-h-[270px] uno-object-cover uno-rounded-[24px]" />
 

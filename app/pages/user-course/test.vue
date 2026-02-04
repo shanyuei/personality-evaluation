@@ -26,7 +26,7 @@
           class="uno-w-full md:uno-w-[720px] uno-mx-auto uno-mt-4 uno-bg-white uno-rounded-[16px] md:uno-rounded-[20px] ">
           <div class="uno-space-y-4">
               <p
-                class="uno-text-[#011813] uno-font-Outfit uno-text-base md:uno-text-lg uno-text-center uno-leading-[1.2] uno-mb-8">
+                class="uno-text-[#011813] uno-font-Outfit uno-text-base md:uno-text-16px uno-text-center uno-leading-[1.2] uno-mb-8">
                 {{ question }}</p>
               <RadioGroup v-model="selected" :items="radioItems" />
           </div>

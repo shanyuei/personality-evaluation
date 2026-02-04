@@ -21,26 +21,28 @@
     <div class="page-container ">
       <div class="uno-flex uno-flex-col md:uno-flex-row uno-justify-center uno-gap-6 md:uno-gap-24px">
         <div v-for="step in steps" :key="step.id"
-          class="uno-w-[342px] uno-h-[60px] md:uno-w-[384px] md:uno-h-[295px] uno-rounded-[24px] uno-gap-[13.36px]" :class="step.bgClass">
-          <div class="uno-inline-block uno-w-full uno-p-12px sm:uno-p-6 uno-space-y-2 uno-rounded-2xl" :class="step.innerBgClass">
+          class="uno-w-[342px] uno-h-[60px] md:uno-w-[384px] md:uno-h-100% uno-rounded-[24px] uno-gap-[13.36px]" :class="step.bgClass">
+          <div class=" uno-inline-block uno-w-full uno-p-12px sm:uno-p-6 uno-space-y-2 uno-rounded-2xl" :class="step.innerBgClass">
             <div class="uno-flex uno-flex-row md:uno-flex-col md:uno-items-center uno-gap-3">
               <span
                 class="uno-w-8 md:uno-w-24 uno-h-8 md:uno-h-24 uno-rounded-[18.19px] md:uno-rounded-full uno-flex uno-items-center uno-justify-center"
                 :class="step.iconBgClass">
-                <NuxtImg :src="step.icon" :alt="'step' + step.id" width="32" height="32" md:width="96" md:height="96" />
+                <NuxtImg v-if="!$device.isMobile" :src="step.icon" :alt="'step' + step.id"  width="96" height="96" />
+                <NuxtImg v-else :src="step.icon" :alt="'step' + step.id"  width="32" height="32" />
+                
               </span>
-              <div class="uno-flex-1 uno-text-left md:uno-text-left">
+              <div class="uno-flex uno-flex-col uno-flex-1 uno-text-left md:uno-text-left !uno-gap-12px">
                 <span
                   class="uno-hidden md:uno-inline-flex uno-justify-start uno-items-center uno-flex-row uno-gap-2.5 uno-py-1 uno-px-4 uno-rounded-3xl uno-self-start uno-text-[#011813] uno-text-center uno-text-base uno-font-Outfit uno-font-medium uno-leading-[1.36]"
                   :class="step.badgeBgClass">
                   {{ $t('pages.testIntro.step') }} {{ step.id }}
                 </span>
                 <div
-                  class="uno-hidden md:uno-block uno-text-[#011813] uno-text-2xl md:uno-text-3xl uno-font-Outfit uno-font-semibold">
+                  class="uno-hidden md:uno-block uno-text-[#011813] uno-text-2xl md:uno-text-24px uno-font-Outfit uno-font-semibold">
                   {{
                     $t(step.titleKey) }}</div>
                 <p
-                  class="uno-text-[12px] md:uno-text-base md:uno-text-lg uno-text-[#4E5255] uno-font-Outfit uno-font-normal uno-leading-[150%] uno-text-left">
+                  class="uno-text-[12px] md:uno-text-16px uno-text-[#4E5255] uno-font-Outfit uno-font-normal uno-leading-[150%] uno-text-left">
                   {{ $t(step.descKey) }}</p>
               </div>
             </div>
@@ -92,7 +94,7 @@
               class="uno-bg-white uno-rounded-[16px] md:uno-rounded-[20px] uno-border uno-border-[var(--ui-border)] uno-shadow-[0px_2px_8px_rgba(0,0,0,0.06)]">
               <div class="uno-p-4 md:uno-p-6">
                 <p
-                  class="uno-text-[#011813] uno-font-Outfit uno-text-base md:uno-text-lg uno-text-center uno-leading-[1.2] uno-mb-8">
+                  class="uno-text-[#011813] uno-font-Outfit uno-text-base md:uno-text-16px uno-text-center uno-leading-[1.2] uno-mb-8">
                   {{ q }}</p>
                 <div
                   class="uno-flex uno-flex-row uno-items-center uno-justify-center uno-gap-2 md:uno-gap-[20px] uno-mt-4 uno-px-[5%]">
@@ -114,7 +116,7 @@
           </div>
 
           <!-- 提示文本 -->
-          <p class="uno-text-[#8D8E8F] uno-font-Outfit uno-text-sm uno-text-center uno-leading-[1.2] uno-mt-16px md:uno-mt-6">
+          <p class="uno-text-[#8D8E8F] uno-font-Outfit uno-text-sm md:uno-text-16px uno-text-center uno-leading-[1.2] uno-mt-16px md:uno-mt-6">
             {{
               $t('pages.testIntro.notice') }}</p>
         </div>

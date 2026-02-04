@@ -22,7 +22,7 @@
           </div>
 
           <div class="uno-space-y-4">
-            <h3 class="uno-text-[24px] uno-font-bold uno-text-[var(--ui-foreground)]">{{
+            <h3 class="uno-text-[24px] uno-font-600 uno-text-[var(--ui-foreground)]">{{
               $t('pages.ebookDetail.sections.contentCreation.title') }}</h3>
             <p class="uno-text-[#4E5255]">{{ $t('pages.ebookDetail.sections.contentCreation.body') }}
             </p>
@@ -32,19 +32,19 @@
           </div>
 
           <div class="uno-space-y-4">
-            <h3 class="uno-text-[24px] uno-font-bold uno-text-[var(--ui-foreground)]">{{
+            <h3 class="uno-text-[24px] uno-font-600 uno-text-[var(--ui-foreground)]">{{
               $t('pages.ebookDetail.sections.social.title') }}</h3>
             <p class="uno-text-[#4E5255]">{{ $t('pages.ebookDetail.sections.social.body') }}</p>
           </div>
 
           <div class="uno-space-y-4">
-            <h3 class="uno-text-[24px] uno-font-bold uno-text-[var(--ui-foreground)]">{{
+            <h3 class="uno-text-[24px] uno-font-600 uno-text-[var(--ui-foreground)]">{{
               $t('pages.ebookDetail.sections.about.title') }}</h3>
             <p class="uno-text-[#4E5255]">{{ $t('pages.ebookDetail.sections.about.body') }}</p>
           </div>
 
           <div class="uno-space-y-3">
-            <h3 class="uno-text-[24px] uno-font-bold uno-text-[var(--ui-foreground)]">{{
+            <h3 class="uno-text-[24px] uno-font-600 uno-text-[var(--ui-foreground)]">{{
               $t('pages.ebookDetail.learn.title')
               }}</h3>
             <ul class="uno-space-y-2">
@@ -57,7 +57,7 @@
           </div>
 
           <div class="uno-space-y-3">
-            <h3 class="uno-text-[24px] uno-font-bold uno-text-[var(--ui-foreground)]">{{
+            <h3 class="uno-text-[24px] uno-font-600 uno-text-[var(--ui-foreground)]">{{
               $t('pages.ebookDetail.require.title') }}</h3>
             <ul class="uno-space-y-2 uno-pl-5">
               <li v-for="(item, i) in requireList" :key="i"
@@ -69,19 +69,19 @@
           </div>
 
           <div class="uno-space-y-4">
-            <h3 class="uno-text-[24px] uno-font-bold uno-text-[var(--ui-foreground)]">{{
+            <h3 class="uno-text-[24px] uno-font-600 uno-text-[var(--ui-foreground)]">{{
               $t('pages.ebookDetail.sections.analytics.title') }}</h3>
             <p class="uno-text-[#4E5255]">{{ $t('pages.ebookDetail.sections.analytics.body') }}</p>
           </div>
 
           <div class="uno-space-y-4">
-            <h3 class="uno-text-[24px] uno-font-bold uno-text-[var(--ui-foreground)]">{{
+            <h3 class="uno-text-[24px] uno-font-600 uno-text-[var(--ui-foreground)]">{{
               $t('pages.ebookDetail.sections.video.title') }}</h3>
             <p class="uno-text-[#4E5255]">{{ $t('pages.ebookDetail.sections.video.body') }}</p>
           </div>
 
           <div class="uno-space-y-4">
-            <h3 class="uno-text-[24px] uno-font-bold uno-text-[var(--ui-foreground)]">{{
+            <h3 class="uno-text-[24px] uno-font-600 uno-text-[var(--ui-foreground)]">{{
               $t('pages.ebookDetail.sections.copywriting.title') }}</h3>
             <p class="uno-text-[#4E5255]">
               {{ $t('pages.ebookDetail.sections.copywriting.body') }}

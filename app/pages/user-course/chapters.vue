@@ -7,7 +7,7 @@
       </div>
       <div class="uno-p-6 md:uno-p-8">
         <h1
-          class="uno-text-[32px] uno-font-Outfit uno-font-bold uno-text-[var(--ui-foreground)] uno-mb-3">
+          class="uno-text-[32px] uno-font-Outfit uno-font-600 uno-text-[var(--ui-foreground)] uno-mb-3">
           {{ $t('pages.userCourseChapters.title') }}</h1>
         <p class="uno-text-sm md:uno-text-base uno-text-[var(--ui-muted-foreground)] uno-mb-6">{{
           $t('pages.userCourseChapters.description') }}</p>

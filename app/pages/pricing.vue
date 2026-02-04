@@ -14,14 +14,14 @@
 
       <div class="uno-grid uno-grid-cols-1 lg:uno-grid-cols-3 uno-gap-6 md:uno-gap-8 uno-items-start">
         <div v-for="plan in plans" :key="plan.key"
-          class="uno-rounded-[16px] uno-p-24px  uno-border uno-shadow-sm hover:uno-shadow-md uno-transition-all uno-cursor-pointer uno-relative uno-overflow-hidden"
+          class="uno-rounded-[16px] uno-p-24px  uno-border uno-shadow-none hover:uno-shadow-md uno-transition-all uno-cursor-pointer uno-relative uno-overflow-hidden"
           :class="[
             selectedPlan === plan.key
-              ? 'uno-bg-[#E8FAF5] uno-border-1 uno-border-solid uno-border-[#E7E7E8] uno-shadow-lg'
+              ? 'uno-bg-[#E8FAF5] uno-border-1 uno-border-solid uno-border-[#E7E7E8] '
               : 'uno-bg-white uno-border-1 uno-border-solid uno-border-[#E7E7E8]'
           ]" @click="selectedPlan = plan.key">
           <div v-if="plan.badge"
-            class="uno-absolute uno-top-24px uno-right-24px uno-w-[96px] uno-h-[33px] uno-px-[16px] uno-py-[6px] uno-gap-8px uno-bg-[#39EDC1] uno-text-[#011813] uno-text-[14px] uno-font-Outfit uno-font-[500] uno-leading-[1.5] uno-rounded-[8px]">
+            class="uno-absolute uno-top-24px uno-right-24px uno-w-[96px] uno-h-[33px] uno-px-[16px] uno-py-[6px] uno-gap-8px uno-bg-[#39EDC1] uno-text-[#011813] uno-text-[14px] uno-font-Outfit uno-font-[300] uno-leading-[1.5] uno-rounded-[8px]">
             {{ $t(plan.badge) }}
           </div>
 
@@ -77,7 +77,7 @@
         <div
             class="page-container uno-px-4 uno-py-8 sm:uno-py-12 md:uno-py-16 lg:uno-py-20 xl:uno-py-24 relative z-10">
             <h2
-                class="uno-text-xl sm:uno-text-2xl md:uno-text-[48px] uno-font-Outfit uno-font-bold uno-text-center uno-mb-2 sm:uno-mb-3 md:uno-mb-4">
+                class="uno-text-xl sm:uno-text-2xl md:uno-text-[48px] uno-font-Outfit uno-font-600 uno-text-center uno-mb-2 sm:uno-mb-3 md:uno-mb-4">
                 {{ $t('pages.home.receive.title') }}
             </h2>
             <p

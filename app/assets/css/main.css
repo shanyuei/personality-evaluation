@@ -129,7 +129,7 @@
     --ui-border: var(--color-gray-6);
     --ui-input: var(--color-gray-8);
     --ui-muted: var(--color-gray-7);
-    --ui-muted-foreground: var(--color-gray-4);
+    --ui-muted-foreground: #4E5255;
 }
 
 @theme static {

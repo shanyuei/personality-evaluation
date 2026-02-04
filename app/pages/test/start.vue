@@ -19,8 +19,8 @@
             <div class="uno-w-24px">
               <IconsCheck :size="24"  background-color="none" check-color="var(--ui-primary)" />
             </div>
-            <p class="uno-text-[#4E5255] uno-text-[16px] uno-font-Outfit">
-              <span class="uno-font-[600]">
+            <p class="uno-text-[#4E5255] uno-text-[16px] uno-font-400 uno-font-Outfit">
+              <span class="uno-font-[700]">
                 {{ step.title }}
               </span>
               {{ step.body }}
