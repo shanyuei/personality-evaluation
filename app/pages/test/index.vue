@@ -16,34 +16,36 @@
       </div>
       <h1
         class="uno-w-full uno-text-[#011813] uno-text-32px md:uno-text-5xl uno-font-Outfit uno-text-center uno-font-semibold uno-leading-[1.2] uno-mb-20px md:uno-mb-40px">
-        {{ $t('pages.testIntro.title') }}</h1>
+        {{ $t('pages.test.index.title') }}</h1>
     </div>
     <div class="page-container ">
       <div class="uno-flex uno-flex-col md:uno-flex-row uno-justify-center uno-gap-6 md:uno-gap-24px">
         <div v-for="step in steps" :key="step.id"
-          class="uno-w-[342px] uno-h-[60px] md:uno-w-[384px] md:uno-h-100% uno-rounded-[24px] uno-gap-[13.36px]" :class="step.bgClass">
-          <div class=" uno-inline-block uno-w-full uno-p-12px sm:uno-p-6 uno-space-y-2 uno-rounded-2xl" :class="step.innerBgClass">
+          class="uno-w-[342px] uno-h-[60px] md:uno-w-[384px] md:uno-h-100% uno-rounded-[24px] uno-gap-[13.36px]"
+          :class="step.bgClass">
+          <div class=" uno-inline-block uno-w-full uno-p-12px sm:uno-p-6 uno-space-y-2 uno-rounded-2xl"
+            :class="step.innerBgClass">
             <div class="uno-flex uno-flex-row md:uno-flex-col md:uno-items-center uno-gap-3">
               <span
                 class="uno-w-8 md:uno-w-24 uno-h-8 md:uno-h-24 uno-rounded-[18.19px] md:uno-rounded-full uno-flex uno-items-center uno-justify-center"
                 :class="step.iconBgClass">
-                <NuxtImg v-if="!$device.isMobile" :src="step.icon" :alt="'step' + step.id"  width="96" height="96" />
-                <NuxtImg v-else :src="step.icon" :alt="'step' + step.id"  width="32" height="32" />
-                
+                <NuxtImg v-if="!$device.isMobile" :src="step.icon" :alt="'step' + step.id" width="96" height="96" />
+                <NuxtImg v-else :src="step.icon" :alt="'step' + step.id" width="32" height="32" />
+
               </span>
               <div class="uno-flex uno-flex-col uno-flex-1 uno-text-left md:uno-text-left !uno-gap-12px">
                 <span
                   class="uno-hidden md:uno-inline-flex uno-justify-start uno-items-center uno-flex-row uno-gap-2.5 uno-py-1 uno-px-4 uno-rounded-3xl uno-self-start uno-text-[#011813] uno-text-center uno-text-base uno-font-Outfit uno-font-medium uno-leading-[1.36]"
                   :class="step.badgeBgClass">
-                  {{ $t('pages.testIntro.step') }} {{ step.id }}
+                  {{ $t('common.step') }} {{ step.id }}
                 </span>
                 <div
                   class="uno-hidden md:uno-block uno-text-[#011813] uno-text-2xl md:uno-text-24px uno-font-Outfit uno-font-semibold">
                   {{
-                    $t(step.titleKey) }}</div>
+                    step.titleKey }}</div>
                 <p
                   class="uno-text-[12px] md:uno-text-16px uno-text-[#4E5255] uno-font-Outfit uno-font-normal uno-leading-[150%] uno-text-left">
-                  {{ $t(step.descKey) }}</p>
+                  {{ step.descKey }}</p>
               </div>
             </div>
           </div>
@@ -60,8 +62,8 @@
         <!-- 进度条 -->
         <div class="course-header md:!uno-w-[720px] md:!uno-max-w-[720px] uno-mx-auto ">
           <div class="course-nav">
-            <div class="progress-percent">{{ 0 }}%</div>
-            <div class="question-count">{{ $t('pages.testIntro.progress.step', { current, total }) }}</div>
+            <div class="progress-percent">{{ 0 }}{{ $t('common.percentIcon') }}</div>
+            <div class="question-count">{{ $t('common.stepTotal', { current, total }) }}</div>
 
           </div>
           <div class="course-progress">
@@ -73,7 +75,7 @@
         <div class="uno-w-full md:uno-w-[720px] uno-mx-auto">
           <h2
             class="uno-text-[#011813] uno-text-18px md:uno-text-base uno-font-Outfit uno-text-center uno-font-semibold uno-leading-[1.2]">
-            {{ $t('pages.testIntro.instructions') }}</h2>
+            {{ $t('pages.test.index.instructions') }}</h2>
           <div class="uno-p-4 md:uno-p-6 md:uno-pt-32px">
             <div class="uno-flex uno-flex-row uno-items-baseline uno-justify-between uno-gap-0 uno-px-[5%]">
               <div v-for="scale in scales" :key="scale.key"
@@ -116,14 +118,15 @@
           </div>
 
           <!-- 提示文本 -->
-          <p class="uno-text-[#8D8E8F] uno-font-Outfit uno-text-sm md:uno-text-16px uno-text-center uno-leading-[1.2] uno-mt-16px md:uno-mt-6">
+          <p
+            class="uno-text-[#8D8E8F] uno-font-Outfit uno-text-sm md:uno-text-16px uno-text-center uno-leading-[1.2] uno-mt-16px md:uno-mt-6">
             {{
-              $t('pages.testIntro.notice') }}</p>
+              $t('pages.test.index.notice') }}</p>
         </div>
 
         <!-- 提交按钮 -->
         <div class="uno-w-full md:uno-w-[720px] uno-mx-auto uno-mt-6 uno-flex uno-justify-center uno-mb-12">
-          <PrimaryButton @click="nextStart">{{ $t('pages.testIntro.next') }}</PrimaryButton>
+          <PrimaryButton @click="nextStart">{{ $t('common.continue') }}</PrimaryButton>
         </div>
       </div>
     </div>
@@ -138,11 +141,11 @@ import type { TestQuestion } from '~/types/TestQuestion'
 import { useQuestionsStore } from '~/stores/modules/questions'
 const questionsStore = useQuestionsStore()
 
-
 definePageMeta({
   layoutShowFooter: false,
   title: () => 'seo.test.title',
   layoutShowPageTopIcons: false,
+  path: '/free-personality-test',  // 自定义路径
 })
 const { t } = useI18n()
 const router = useRouter()
@@ -165,8 +168,8 @@ const steps = ref([
     iconBgClass: 'uno-bg-[var(--color-pink-4)]',
     badgeBgClass: 'uno-bg-[#FD9AC0]',
     icon: '/images/test/1.png',
-    titleKey: 'pages.testIntro.pc.step1.title',
-    descKey: 'pages.testIntro.pc.step1.desc'
+    titleKey: t('pages.test.index.step1.title'),
+    descKey: t('pages.test.index.step1.desc')
   },
   {
     id: 2,
@@ -175,8 +178,8 @@ const steps = ref([
     iconBgClass: 'uno-bg-[var(--color-purple-4)]',
     badgeBgClass: 'uno-bg-[#DEC4FA]',
     icon: '/images/test/2.png',
-    titleKey: 'pages.testIntro.pc.step2.title',
-    descKey: 'pages.testIntro.pc.step2.desc'
+    titleKey: t('pages.test.index.step2.title'),
+    descKey: t('pages.test.index.step2.desc')
   },
   {
     id: 3,
@@ -185,8 +188,8 @@ const steps = ref([
     iconBgClass: 'uno-bg-[var(--color-green-3)]',
     badgeBgClass: 'uno-bg-[var(--color-green-2)]',
     icon: '/images/test/3.png',
-    titleKey: 'pages.testIntro.pc.step3.title',
-    descKey: 'pages.testIntro.pc.step3.desc'
+    titleKey: t('pages.test.index.step3.title'),
+    descKey: t('pages.test.index.step3.desc')
   }
 ])
 
@@ -196,31 +199,31 @@ const scales = ref([
     key: 'sd',
     bgClass: 'uno-bg-[#F4D0CB]',
     borderClass: 'uno-border-[#F6BAB2]',
-    labelKey: 'pages.testIntro.scale.sd'
+    labelKey: t('pages.test.index.scale.sd')
   },
   {
     key: 'd',
     bgClass: 'uno-bg-[#F1DACE]',
     borderClass: 'uno-border-[#F5CEB6]',
-    labelKey: 'pages.testIntro.scale.d'
+    labelKey: t('pages.test.index.scale.d')
   },
   {
     key: 'n',
     bgClass: 'uno-bg-[#F0F0F0]',
     borderClass: 'uno-border-[#D8D8D8]',
-    labelKey: 'pages.testIntro.scale.n'
+    labelKey: t('pages.test.index.scale.n')
   },
   {
     key: 'a',
     bgClass: 'uno-bg-[#C6EAD8]',
     borderClass: 'uno-border-[#9FE2AA]',
-    labelKey: 'pages.testIntro.scale.a'
+    labelKey: t('pages.test.index.scale.a')
   },
   {
     key: 'sa',
     bgClass: 'uno-bg-[#B3E1D6]',
     borderClass: 'uno-border-[#88D9BA]',
-    labelKey: 'pages.testIntro.scale.sa'
+    labelKey: t('pages.test.index.scale.sa')
   }
 ])
 
