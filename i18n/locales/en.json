@@ -50,15 +50,15 @@
         },
         "notice": "Please respond to all statements to view your results."
       },
+      "analyzing": {
+        "title": "Core Trait Analysis",
+        "desc": "Generating your comprehensive personality profile based on your unique responses..."
+      },
       "title": "Personality Test",
       "description": "Start your personality assessment.",
       "step": {
         "title": "Test Steps",
         "description": "Answer the questions step by step."
-      },
-      "analyzing": {
-        "title": "Analyzing",
-        "description": "Analyzing your answers."
       },
       "result": {
         "title": "Test Results",
@@ -1116,17 +1116,20 @@
       "title": "Contact {separator} PersonalityTest101 – We’re Here to Help",
       "description": "Have questions about our personality tests or need support? Contact the PersonalityTest101 team for assistance, feedback, or collaboration opportunities. We’re happy to hear from you.\u000b"
     },
-    "test":{
-      "index":{
+    "test": {
+      "index": {
         "title": "Free Personality Test {separator} PersonalityTest101 – Discover Your True Self",
         "description": "Take our free personality test to uncover your unique traits and strengths. Get detailed insights into your personality type and learn how to unlock your full potential in life and career. Start your journey today with PersonalityTest101."
+      },
+      "analyzing": {
+        "title": "Title Analysis in Progress {separator} PersonalityTest101 – Decoding Your Unique Traits",
+        "description": "Meta Description Our system is decoding your responses to generate a precise personality profile. Discover the science behind your behavior and unlock deep insights into your core traits and potential."
       }
     },
     "home": {
       "title": "Unlock knowledge and growth with expert courses and tools.",
       "description": "An exceptional platform for career development. The current curriculum, skilled instructors, and hands-on learning are truly rewarding."
     },
-   
     "test.start": {
       "title": "Start Personality Test - Begin Your Journey",
       "description": "Ready to discover your true self? Start the personality test now."

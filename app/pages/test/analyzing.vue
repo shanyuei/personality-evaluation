@@ -1,15 +1,24 @@
 <template>
   <div class="page-container uno-py-6">
     <div class=" uno-flex uno-flex-col uno-items-center uno-justify-center uno-py-6 md:uno-py-12 uno-px-4 md:uno-px-6">
-      <NuxtImg src="/images/test/4.png" alt="test image" width="450" height="450" />
+      <!-- 只显示当前图片 -->
+      <NuxtImg 
+        :src="`/images/test/analyzing/${currentImage}.png`" 
+        alt="test image" 
+        width="450" 
+        height="450" 
+      />
       <!-- 底部进度条和提示文本 -->
       <div class="uno-w-full uno-max-w-md md:uno-max-w-lg uno-px-2">
         <div class="uno-w-full uno-h-2 uno-bg-[var(--ui-muted)] uno-rounded-full uno-overflow-hidden uno-shadow-sm uno-relative">
           <div class="bar-loading" :style="{ width: progress + '%' }" />
         </div>
+        <h2>
+          {{  t("pages.test.analyzing.title")  }}
+        </h2>
         <p
           class="uno-text-center uno-text-[#8D8E8F] uno-font-Outfit uno-font-semibold uno-leading-[1.2] uno-mt-3 md:uno-mt-4 uno-text-[10px] md:uno-text-xs uno-max-w-[70%] md:uno-max-w-[60%] uno-mx-auto">
-          We are analyzing your answers and preparing your personality type report...</p>
+          {{ t("pages.test.analyzing.desc") }}</p>
       </div>
     </div>
   </div>
@@ -30,13 +39,14 @@ definePageMeta({
   title: () => 'seo.test.analyzing.title'
 })
 useSeoMeta({
-  title: () => t('seo.test.analyzing.title'),
+  title: () => t('seo.test.analyzing.title', {separator: "|"}),
   description: () => t('seo.test.analyzing.description')
 })
 const router = useRouter()
 const localePath = useLocalePath()
 
 const progress = ref(0)
+const currentImage = ref(1)
 onMounted(async () => {
   const answers = []
   for (const key in userAnswers.value) {
@@ -50,12 +60,17 @@ onMounted(async () => {
   // 进度模拟到 85%
   let incre = setInterval(() => {
     progress.value = Math.min(85, progress.value + 3)
+    // 每增加约 9% 进度，切换一张图片
+    if (progress.value >= currentImage.value * 9 && currentImage.value < 9) {
+      currentImage.value++
+    }
   }, 120)
   try {
     const { data } = await submitTestAnswers({ answers })
     // 请求完成后进度拉满并跳转
     clearInterval(incre)
     progress.value = 100
+    currentImage.value = 9 // 确保显示最后一张图片
 
     const reportId = data.value?.data?.report_id
 
@@ -68,6 +83,7 @@ onMounted(async () => {
   } catch (e) {
     clearInterval(incre)
     progress.value = 100
+    currentImage.value = 9 // 确保显示最后一张图片
     // 请求失败也收尾，后续可在此提示错误
   }
 })

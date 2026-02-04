@@ -143,7 +143,7 @@ const questionsStore = useQuestionsStore()
 
 definePageMeta({
   layoutShowFooter: false,
-  title: () => 'seo.test.title',
+  title: () => 'seo.test.index.title',
   layoutShowPageTopIcons: false,
   path: '/free-personality-test',  // 自定义路径
 })
