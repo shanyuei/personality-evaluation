@@ -221,6 +221,7 @@
         "button": "VIEW MY REPORT",
         "reviewAnswers": "Review My Answers"
       },
+      "以下没有更改": "",
       "title": "Personality Test",
       "description": "Start your personality assessment.",
       "step": {
@@ -230,6 +231,37 @@
       "result": {
         "title": "Test Results",
         "description": "View your report and next actions."
+      }
+    },
+    "orders": {
+      "cancel": {
+        "subscription": {
+          "title": "Cancel Subscription",
+          "description": " To initiate the cancellation process, please enter the email address associated with your account.",
+          "emailLabel": "Email",
+          "emailPlaceholder": "Email Address",
+          "emailError": "Please enter your email address to continue",
+          "reasonDifficult": "The insights did not meet my personal expectations.",
+          "reasonTitle": "Why did you decide to cancel your subscription?",
+          "reasonMissing": "I have achieved my current self-discovery goals.",
+          "reasonTechnical": "The reporting depth was insufficient for my needs.",
+          "reasonSwitching": "I encountered technical issues during the assessment.",
+          "reasonTeam": "I am looking for a different psychological framework.",
+          "reasonBudget": "The subscription cost does not fit my budget.",
+          "reasonOther": "Other.",
+          "submitButton": "NEXT",
+          "contactSupport": "If you cannot recall the email address used for registration, please check your inbox for messages from \"PersonalityTest101.\" Alternatively, feel free to contact our dedicated support team for assistance.",
+          "cancelSubscription": "You may also cancel your subscription by logging into your account, navigating to the \"Membership\" tab, and selecting \"Cancel Subscription.\""
+        }
+      },
+      "purchaseComplete": {
+        "title": "Thank you for your purchase!",
+        "description": "Click below to get started and access your report！",
+        "accessReport": "Open Report",
+        "downloadGuidebook": "Download Guidebook",
+        "accessNote": "Click the button above to open your report page！",
+        "downloadNote": "If download fails, please check your email later for the link.",
+        "goHome": "Back to Home"
       }
     },
     "home": {
@@ -963,21 +995,6 @@
           "action": "Delete Account",
           "success": "Your deletion request has been submitted"
         }
-      }
-    },
-    "orders": {
-      "cancelSubscription": {
-        "title": "Cancel Subscription",
-        "description": "Manage membership and cancel when needed."
-      },
-      "purchaseComplete": {
-        "title": "Thank you for your purchase!",
-        "description": "Click below to get started and access your report！",
-        "accessReport": "Open Report",
-        "downloadGuidebook": "Download Guidebook",
-        "accessNote": "Click the button above to open your report page！",
-        "downloadNote": "If download fails, please check your email later for the link.",
-        "goHome": "Back to Home"
       }
     },
     "legal": {

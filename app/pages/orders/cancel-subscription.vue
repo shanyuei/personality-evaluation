@@ -4,48 +4,53 @@
       <div class="uno-p-4 sm:uno-p-6 md:uno-p-8">
         <h1
           class="uno-text-center uno-mb-3 uno-text-[#0F172A] uno-font-Outfit uno-font-bold uno-text-2xl sm:uno-text-3xl md:uno-text-4xl lg:uno-text-5xl">
-          Cancel Subscription</h1>
-        <p class="uno-text-center uno-text-[#4E5255] uno-mb-6 sm:uno-mb-8">Easily cancel your subscription by entering
-          the email
-          used to create your account.</p>
+          {{ t('pages.orders.cancel.subscription.title') }}</h1>
+        <p class="uno-text-center uno-text-[#4E5255] uno-mb-6 sm:uno-mb-8">
+          {{ t('pages.orders.cancel.subscription.description') }}
+        </p>
 
         <div class="uno-mb-4 sm:uno-mb-6">
-          <UFormField label="Email" :ui="UFormFieldTheme">
-            <UInput id="email" v-model="email" type="email" placeholder="Email Address" :ui="UInputTheme" />
+          <UFormField :label="t('pages.orders.cancel.subscription.emailLabel')" :ui="UFormFieldTheme">
+            <UInput id="email" v-model="email" type="email"
+              :placeholder="t('pages.orders.cancel.subscription.emailPlaceholder')" :ui="UInputTheme" />
           </UFormField>
 
-          <p v-if="emailError" class="uno-mt-2 uno-text-sm uno-text-[#EA4C89]">Email Address is required. This field
-            cannot be left blank.</p>
+          <p v-if="emailError" class="uno-mt-2 uno-text-sm uno-text-[#EA4C89]">
+            {{ t('pages.orders.cancel.subscription.emailError') }}
+          </p>
         </div>
 
         <div class="uno-mb-6 sm:uno-mb-8">
           <h2 class="uno-text-[#0F172A] uno-font-Outfit uno-font-semibold uno-text-[16px] uno-mb-3 sm:uno-mb-4">
-            Why did you decide
-            to cancel your subscription?</h2>
+            {{ t('pages.orders.cancel.subscription.reasonTitle') }}</h2>
           <CheckboxGroup>
             <label class="uno-flex uno-items-start uno-gap-3 uno-cursor-pointer">
               <Checkbox v-model="reasons.difficult" value="difficult" />
-              <span>I found Cacaoo difficult to use.</span>
+              <span>{{ t('pages.orders.cancel.subscription.reasonDifficult') }}</span>
             </label>
             <label class="uno-flex uno-items-start uno-gap-3 uno-cursor-pointer">
               <Checkbox v-model="reasons.missing" value="missing" />
-              <span>I didn't find the necessary function.</span>
+              <span>{{ t('pages.orders.cancel.subscription.reasonMissing') }}</span>
             </label>
             <label class="uno-flex uno-items-start uno-gap-3 uno-cursor-pointer">
               <Checkbox v-model="reasons.technical" value="technical" />
-              <span>I faced technical issues while working with Cacaoo.</span>
+              <span>{{ t('pages.orders.cancel.subscription.reasonTechnical') }}</span>
             </label>
             <label class="uno-flex uno-items-start uno-gap-3 uno-cursor-pointer">
               <Checkbox v-model="reasons.switching" value="switching" />
-              <span>I had problems switching plans.</span>
+              <span>{{ t('pages.orders.cancel.subscription.reasonSwitching') }}</span>
             </label>
             <label class="uno-flex uno-items-start uno-gap-3 uno-cursor-pointer">
               <Checkbox v-model="reasons.team" value="team" />
-              <span>My team members do not want to use Cacaoo.</span>
+              <span>{{ t('pages.orders.cancel.subscription.reasonTeam') }}</span>
+            </label>
+              <label class="uno-flex uno-items-start uno-gap-3 uno-cursor-pointer">
+              <Checkbox v-model="reasons.budget" value="budget" />
+              <span>{{ t('pages.orders.cancel.subscription.reasonBudget') }}</span>
             </label>
             <label class="uno-flex uno-items-start uno-gap-3 uno-cursor-pointer">
               <Checkbox v-model="reasons.other" value="other" />
-              <span>Other.</span>
+              <span>{{ t('pages.orders.cancel.subscription.reasonOther') }}</span>
             </label>
           </CheckboxGroup>
         </div>
@@ -53,7 +58,7 @@
         <PrimaryButton
           class="uno-w-full uno-py-3 sm:uno-py-4 uno-px-4 uno-rounded-[16px] uno-transition-colors uno-duration-300 uno-mb-4 sm:uno-mb-6"
           @click="submit">
-          Get Started
+          {{ t('pages.orders.cancel.subscription.submitButton') }}
         </PrimaryButton>
 
         <div class="uno-space-y-3 sm:uno-space-y-4 uno-text-sm uno-text-[#4E5255]">
@@ -63,9 +68,9 @@
             <NuxtImg src="/images/common/email-icon-1.png" alt="Email Icon" width="50" height="50"
               class="uno-mt-0.5 uno-block md:uno-hidden" />
             <div class="uno-text-xs">
-              If you don't remember which email you used to register, check your inbox for emails from "Personality".
-              Otherwise, contact our friendly customer support <span
-                class="uno-underline uno-text-[#009D77]">here</span>
+              {{ t('pages.orders.cancel.subscription.contactSupport') }}
+              <!-- <span
+                class="uno-underline uno-text-[#009D77]">here</span> -->
 
             </div>
           </div>
@@ -74,8 +79,9 @@
               class="uno-mt-0.5  uno-hidden md:uno-block" />
             <NuxtImg src="/images/common/user-icon-1.png" alt="User Icon" width="50" height="50"
               class="uno-mt-0.5 uno-block md:uno-hidden" />
-            You can also cancel your subscription by logging into your account, going to the "Membership" tab and
-            clicking "Cancel Subscription".
+            <!-- You can also cancel your subscription by logging into your account, going to the "Membership" tab and
+            clicking "Cancel Subscription". -->
+            {{ t('pages.orders.cancel.subscription.cancelSubscription') }}
           </p>
         </div>
       </div>
@@ -170,6 +176,7 @@ const reasons = ref({
   switching: false,
   team: false,
   other: false,
+  budget: false,
 
 })
 const emailError = ref(true)
