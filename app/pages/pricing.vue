@@ -25,13 +25,13 @@
             {{ $t(plan.badge) }}
           </div>
 
-          <h3 class="uno-text-[24px] uno-font-Outfit uno-font-[600] uno-text-[#011813] uno-mb-2">{{ plan.name }}</h3>
-          <p class="uno-text-[#4E5255] uno-text-sm uno-mb-6 uno-min-h-[40px]"></p>
+          <h3 class="uno-text-[20px] md:uno-text-[24px] uno-font-Outfit uno-font-[600] uno-text-[#011813] uno-mb-2">{{ plan.name }}</h3>
+          <p class="uno-text-[#4E5255] uno-text-sm uno-mb-6 uno-min-h-[40px] uno-hidden md:uno-block"></p>
 
           <div class="uno-flex uno-items-baseline uno-gap-1 uno-mb-1">
-            <span class="uno-text-[40px] uno-font-Outfit uno-font-bold uno-text-[#011813]">{{ plan.unit }}{{ plan.price
+            <span class="uno-text-[32px] md:uno-text-[40px] uno-font-Outfit uno-font-bold uno-text-[#011813]">{{ plan.unit }}{{ plan.price
               }}</span>
-            <span class="uno-text-[#4E5255] uno-text-[28px] uno-font-Outfit uno-font-[500] uno-leading-[1.5] uno-text-center">/{{ plan.currency }}</span>
+            <span class="uno-text-[#4E5255] uno-text-[20px] md:uno-text-[28px] uno-font-Outfit uno-font-[500] uno-leading-[1.5] uno-text-center">/{{ plan.currency }}</span>
           </div>
           <!-- <div class="uno-text-xs uno-text-[#4E5255] uno-mb-6 uno-h-[20px]">
             {{ plan.billingFallback ? ($t('pages.ebooks.oneTime') || 'Auto-renews after 7 Days') : $t(`pages.pricing.plans.${plan.key}.billing`) }}
@@ -67,7 +67,7 @@
     </section>
 
     <!-- What You Will Receive -->
-    <div class="uno-receive-section  uno-bg-gray-5 uno-relative">
+    <div class="uno-receive-section  uno-bg-gray-5 uno-relative uno-h-[1920px] md:uno-h-auto">
         <NuxtImg src="/theme/home/receive-box-bg-h5.png" alt="" aria-hidden="true" width="375" height="1920"
             class="uno-absolute uno-inset-0 uno--z-10 uno-pointer-events-none uno-object-cover uno-object-center uno-block md:uno-hidden"
             uno-preload />

@@ -6,11 +6,11 @@
       <p class="uno-text-sm uno-text-[#4E5255]">{{ description }}</p>
       <div class="uno-flex uno-gap-3 uno-pt-2 uno-justify-between">
         <UButton
-          :ui="{ base: `flex-1 h-[48px] flex justify-center items-center flex-row gap-1 py-1 px-[20px]  rounded-lg text-[#FFFFFF] text-[18px] uno-font-Outfit font-bold leading-normal` }">
+          :ui="{ base: `flex-1 h-[48px] flex justify-center items-center flex-row gap-1 py-1 px-[20px]  rounded-lg text-[#FFFFFF] text-[14px] md:text-[18px] uno-font-Outfit font-bold leading-normal` }">
           {{ $t('pages.ebooks.primary.download') }}</UButton>
         <AppLink :to="'/ebooks/detail'">
           <UButton variant="ghost"
-            :ui="{ base: ` h-[48px] flex justify-center items-center flex-row gap-1 py-1 px-[20px] border-solid  border-2 rounded-lg  text-[18px] uno-font-Outfit font-bold leading-normal` }">
+            :ui="{ base: `flex-1 h-[48px] flex justify-center items-center flex-row gap-1 py-1 px-[20px] border-solid  border-2 rounded-lg  text-[14px] md:text-[18px] uno-font-Outfit font-bold leading-normal` }">
             {{ $t('pages.ebooks.primary.readOnline') }}</UButton>
         </AppLink>
       </div>

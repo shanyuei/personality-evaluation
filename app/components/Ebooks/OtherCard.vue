@@ -7,7 +7,7 @@
       <h3 class="uno-text-[24px] uno-font-Outfit uno-font-[600] uno-text-[var(--ui-foreground)]">
         {{ title }}
       </h3>
-      <div class="uno-flex uno-items-center  uno-flex-wrap uno-justify-between uno-mt-3">
+      <div class="uno-flex uno-items-center  uno-flex-wrap uno-justify-between uno-mt-auto">
         <span v-if="originalPrice" class="uno-w-full uno-text-sm uno-text-[#4E5255] uno-line-through">{{ originalPrice }}</span>
         <span class="uno-text-[24px] uno-font-Outfit uno-font-[700] uno-leading-[1.5] uno-align-middle uno-text-[var(--ui-primary)]">{{ price }}</span>
         <span class="uno-text-sm uno-text-[#4E5255]">{{ $t('pages.ebooks.oneTime') }}</span>
