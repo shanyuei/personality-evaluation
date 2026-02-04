@@ -94,23 +94,26 @@
       <template #content>
         <div class="uno-p-6 sm:uno-p-8">
           <h2 class="uno-font-Outfit uno-font-semibold uno-text-[24px] uno-leading-[150%] uno-text-center uno-mb-4">
-            Confirmation
+            {{ t('pages.orders.cancel.subscription.confirmTitle') }}
           </h2>
           <p
             class="uno-text-[#4E5255] uno-font-Outfit uno-font-normal uno-text-[16px] uno-leading-[150%] uno-text-center uno-mb-6">
-            Are you sure you want to cancel your subscription? You will lose access to your data and this action
-            <span class="uno-font-Outfit uno-font-bold uno-text-[16px] uno-leading-[150%]">can't be undone!</span>
+            {{ t('pages.orders.cancel.subscription.confirmDesc') }}
+            <!-- Are you sure you want to cancel your subscription? You will lose access to your data and this action
+            <span class="uno-font-Outfit uno-font-bold uno-text-[16px] uno-leading-[150%]">can't be undone!</span> -->
           </p>
           <div class="uno-flex uno-flex-col sm:uno-flex-row uno-gap-4 uno-justify-center">
             <button
-              class="uno-w-full uno-h-[40px] uno-gap-2 uno-pt-2 uno-pr-6 uno-pb-2 uno-pl-6 uno-rounded-[8px] uno-bg-gray-300 uno-text-[#0F172A] uno-font-Outfit uno-font-medium uno-text-[16px] uno-leading-[150%] uno-transition-colors hover:uno-bg-gray-400 focus-visible:uno-outline-none focus-visible:uno-ring-0 sm:uno-w-[130px] sm:uno-h-[40px] uno-order-2 sm:uno-order-1"
+              class="uno-w-full uno-h-[40px] uno-gap-2 uno-pt-2 uno-pr-6 uno-pb-2 uno-pl-6 uno-rounded-[8px] uno-bg-gray-300 uno-text-[#0F172A] uno-font-Outfit uno-font-medium uno-text-[16px] uno-leading-[150%] uno-transition-colors hover:uno-bg-gray-400 focus-visible:uno-outline-none focus-visible:uno-ring-0 sm:uno-w-[160px] sm:uno-h-[40px] uno-order-2 sm:uno-order-1"
               @click="showConfirmModal = false">
-              Never mind
+              <!-- Never mind -->
+               {{ t('pages.orders.cancel.subscription.confirmCancel') }}
             </button>
             <button
               class="uno-w-full uno-h-[40px] uno-gap-2 uno-pt-2 uno-pr-6 uno-pb-2 uno-pl-6 uno-rounded-[8px] uno-bg-[#EA4C89] uno-text-white uno-font-Outfit uno-font-medium uno-text-[16px] uno-leading-[150%] uno-transition-colors hover:uno-bg-[#F06B99] focus-visible:uno-outline-none focus-visible:uno-ring-0 sm:uno-w-[218px] sm:uno-h-[40px] uno-order-1 sm:uno-order-2"
               @click="confirmCancel">
-              Yes, Cancel subscription
+              <!-- Yes, Cancel subscription -->
+               {{ t('pages.orders.cancel.subscription.confirmSubmit') }}
             </button>
           </div>
         </div>
@@ -133,11 +136,11 @@
           </svg>
 
           <h2 class="uno-font-Outfit uno-font-semibold uno-text-[24px] uno-leading-[150%] uno-text-center uno-mb-8px">
-            Cancellation is Confirmed!
+            {{ t('pages.orders.cancel.subscription.successTitle') }}
           </h2>
           <p
             class="uno-text-[#4E5255] uno-font-Outfit uno-font-normal uno-text-[16px] uno-leading-[150%] uno-text-center">
-            You will receive an email confirming the cancellation of your subscription on April 1, 2025 at 12:33pm.
+            {{ t('pages.orders.cancel.subscription.successDesc') }}
           </p>
 
         </div>
@@ -165,7 +168,7 @@ definePageMeta({
   layoutShowPageTopIcons: false,
 })
 useSeoMeta({
-  title: () => t('seo.orders.cancelSubscription.title') as string,
+  title: () => t('seo.orders.cancelSubscription.title', { separator: '|' }) as string,
   description: () => t('seo.orders.cancelSubscription.description') as string
 })
 const email = ref('')

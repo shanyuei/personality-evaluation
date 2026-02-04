@@ -251,7 +251,13 @@
           "reasonOther": "Other.",
           "submitButton": "NEXT",
           "contactSupport": "If you cannot recall the email address used for registration, please check your inbox for messages from \"PersonalityTest101.\" Alternatively, feel free to contact our dedicated support team for assistance.",
-          "cancelSubscription": "You may also cancel your subscription by logging into your account, navigating to the \"Membership\" tab, and selecting \"Cancel Subscription.\""
+          "cancelSubscription": "You may also cancel your subscription by logging into your account, navigating to the \"Membership\" tab, and selecting \"Cancel Subscription.\"",
+          "confirmTitle": "Cancel Subscription",
+          "confirmDesc": "This action cannot be undone. All premium insights will be deleted.",
+          "confirmCancel": "Keep My Plan",
+          "confirmSubmit": "Cancel Anyway",
+          "successTitle": "Subscription Cancelled",
+          "successDesc": "Your subscription has been successfully cancelled.A confirmation email will be sent shortly.Premium access remains active until April 1, 2025 at 12:33 PM."
         }
       },
       "purchaseComplete": {
@@ -1155,6 +1161,14 @@
       "title": "Title About Us {separator} PersonalityTest101 – Our Mission for Self-Discovery",
       "description": "Discover the story behind PersonalityTest101. We combine psychological precision with data-driven insights to help individuals uncover their core traits, improve relationships, and achieve personal growth. Learn more about our mission and vision."
     },
+    "orders": {
+      "cancelSubscription": {
+        "title": "Cancel Subscription {separator} PersonalityTest101 – Manage Your Account",
+        "description": "Easily manage or cancel your PersonalityTest101 subscription. We’re sorry to see you go, but you can deactivate your account or change your plan at any time through our secure portal."
+      }
+    },
+
+
     "home": {
       "title": "Unlock knowledge and growth with expert courses and tools.",
       "description": "An exceptional platform for career development. The current curriculum, skilled instructors, and hands-on learning are truly rewarding."
@@ -1242,10 +1256,6 @@
     "userCourse.lessonGuide": {
       "title": "Lesson Guide - Learning Objectives",
       "description": "Review the learning objectives for this lesson."
-    },
-    "orders": {
-      "title": "Orders - Manage Your Purchases",
-      "description": "View and manage your orders and subscriptions."
     },
     "orders.cancelSubscription": {
       "title": "Cancel Subscription - Manage Membership",
