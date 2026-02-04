@@ -1,5 +1,10 @@
 {
   "pages": {
+    "404": {
+      "title": "404: Page Not Found ",
+      "description": "The page you’re looking for doesn’t exist. Click below to return to the home page and resume your journey.",
+      "backToHome": "Back to Dashboard"
+    },
     "home": {
       "title": "Discover your true self with a personality test",
       "description": "The test helps you identify your accurate personality type.",
@@ -1112,6 +1117,10 @@
     "viewAllBlogs": "View All Blogs"
   },
   "seo": {
+    "404": {
+      "title": "Page Not Found {separator} PersonalityTest101 – Let’s Get You Back on Track",
+      "description": "It looks like this path of self-discovery took an unexpected turn. Whether you’re lost or looking for your Enneagram results, let the PersonalityTest101 team guide you back to your journey of personal growth."
+    },
     "home": {
       "title": "Unlock knowledge and growth with expert courses and tools.",
       "description": "An exceptional platform for career development. The current curriculum, skilled instructors, and hands-on learning are truly rewarding."

@@ -11,19 +11,19 @@
                                 class="uno-flex uno-self-stretch uno-justify-start uno-items-center uno-flex-col uno-gap-3">
                                 <p style="flex-shrink: 0"
                                     class="uno-self-stretch uno-text-[#011813] uno-text-[32px] uno-font-Outfit uno-text-center uno-font-semibold">
-                                    Oops! that page doesn’t exist
+                                    {{ t('pages.404.title') }}
                                 </p>
                                 <p style="flex-shrink: 0"
                                     class="uno-self-stretch uno-text-[#4E5255] uno-font-Outfit uno-text-center">
-                                    Oops! It seems the page you're looking for doesn’t exist. Let's get
-                                    you back on track—click below to return to the home page.
+                                    {{ t('pages.404.description') }}
                                 </p>
                             </div>
                             <div style="flex-shrink: 0"
-                                class="uno-w-148px  uno-h-[56px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-2 uno-py-4 uno-px-[18px] uno-bg-[#EA4C89] uno-rounded-[1000px]"
+                                class="uno-min-w-148px  uno-h-[56px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-2 uno-py-4 uno-px-[18px] uno-bg-[#EA4C89] uno-rounded-[1000px]"
                                 @click="handleError">
                                 <span class="uno-text-[#FFFFFF] uno-font-Outfit uno-font-[16px] uno-leading-normal">
-                                    Back to Home
+                                    <!-- Back to Home -->
+                                    {{ t('pages.404.backToHome') }}
                                 </span>
                             </div>
                         </div>
@@ -47,7 +47,21 @@
 
 <script setup lang="ts">
 const error = useError()
+const { t } = useI18n();
 const handleError = () => clearError({ redirect: '/' })
+// definePageMeta({
+//     title: () => 'Page Not Found | PersonalityTest101 – Let’s Get You Back on Track',
+// })
+
+definePageMeta({
+//   title: () => 'seo.pricing.title',
+//   layoutShowPageTopIcons: false,
+//   layoutShowCurious: true,
+})
+useSeoMeta({
+  title: () => t('seo.404.title', { separator: '|' }) as string,
+  description: () => t('seo.404.description') as string
+})
 </script>
 
 <style scoped></style>
