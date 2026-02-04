@@ -5,6 +5,28 @@
       "description": "The page you’re looking for doesn’t exist. Click below to return to the home page and resume your journey.",
       "backToHome": "Back to Dashboard"
     },
+    "contact": {
+      "title": "Contact Us",
+      "desc1": "Have questions about our personality tests or need support?",
+      "desc2": "Contact the PersonalityTest101 team — we’re here to help.",
+      "support": "Test Support",
+      "supportDesc": "Get help with taking personality tests, viewing results, or understanding your reports.",
+      "media": "Feedback & Suggestions",
+      "mediaDesc": "Share your thoughts, ideas, or suggestions to help us improve PersonalityTest101.",
+      "feedback": "General Inquiries",
+      "feedbackDesc": "Have questions about PersonalityTest101 or our services? Reach out and we'll get back to you as soon as possible.",
+      "contactUs": "Get in Touch",
+      "contactDesc1": "If you have questions about our personality tests, need assistance, or want to share feedback, feel free to reach out anytime. We’re always happy to hear from our users and provide clear, thoughtful support.",
+      "contactDesc2": "Click the button below to email the PersonalityTest101 team directly. Get in touch today — we’re here to support you every step of the way.",
+      "getSupport": "Get Support",
+      "faqTitle": "Frequently Asked Questions",
+      "faqDesc": "Have questions about our personality tests or how PersonalityTest101 works? Here are some of the most common questions we get — with clear, easy-to-understand answers to help you get started.",
+      "curiousTitle": "Ready to Uncover Your True Personality?",
+      "curiousDesc": "Find out your personality type, preferences, and hidden strengths in just a few minutes. Quick, fun, and insightful — your journey of self-discovery starts here!",
+      "curiousButtonText": "Reveal Your Personality"
+    },
+
+
     "home": {
       "title": "Discover your true self with a personality test",
       "description": "The test helps you identify your accurate personality type.",
@@ -1074,12 +1096,6 @@
           }
         }
       }
-    },
-    "contact": {
-      "faq": {
-        "title": "Frequently Asked Questions",
-        "desc": "Have questions about our personality tests or how PersonalityTest101 works? Here are some of the most common questions we get — with clear, easy-to-understand answers to help you get started."
-      }
     }
   },
   "common": {
@@ -1120,6 +1136,10 @@
     "404": {
       "title": "Page Not Found {separator} PersonalityTest101 – Let’s Get You Back on Track",
       "description": "It looks like this path of self-discovery took an unexpected turn. Whether you’re lost or looking for your Enneagram results, let the PersonalityTest101 team guide you back to your journey of personal growth."
+    },
+    "contact": {
+      "title": "Contact {separator} PersonalityTest101 – We’re Here to Help",
+      "description": "Have questions about our personality tests or need support? Contact the PersonalityTest101 team for assistance, feedback, or collaboration opportunities. We’re happy to hear from you.\u000b"
     },
     "home": {
       "title": "Unlock knowledge and growth with expert courses and tools.",
@@ -1268,10 +1288,26 @@
     "account.settings": {
       "title": "Account Settings - Personalize Your Experience",
       "description": "Update your account settings and personal preferences."
-    },
+    }
+  },
+  "datas": {
     "contact": {
-      "title": "Contact PersonalityTest101 – We’re Here to Help",
-      "description": "Have questions about our personality tests or need support? Contact the PersonalityTest101 team for assistance, feedback, or collaboration opportunities. We’re happy to hear from you.\u000b"
+      "question1": "'What is the PersonalityTest101 assessment and how does it work?'",
+      "answer1": "Our personality assessments are designed to help you understand your traits, preferences, and behavioral patterns through a structured set of questions. Once you complete the test, you\\'ll receive a personalized report with insights into your personality type and practical suggestions for growth.",
+      "question2": "How do you handle my personal data and privacy?",
+      "answer2": "We value your privacy and protect your information with secure systems. Your test responses and results are kept confidential and are not shared without your consent. You can review our full Privacy Policy for more details.",
+      "question3": "How accurate are the personality test results?",
+      "answer3": "Our tests are designed using trusted psychological frameworks, giving you reliable insights into your personality traits. While no test can capture every detail, the results are meaningful and can help you better understand yourself.",
+      "question4": "Are there different types of tests available?",
+      "answer4": "Yes! PersonalityTest101 offers a variety of assessments that explore different aspects of your personality, including traits, strengths, career preferences, and relationship patterns. You can choose the tests that interest you most.",
+      "question5": "How long will it take to receive my test results?",
+      "answer5": "You will usually receive your results immediately after completing the test. The exact time the test takes depends on how quickly you answer each question.",
+      "question6": "How often can I retake the tests?",
+      "answer6": "You can retake our tests as often as you like. Your results may change over time as your experiences, self-perception, or perspective evolves.",
+      "question7": "Are the tests scientifically validated?",
+      "answer7": "Yes, our main assessments are based on widely recognized psychological frameworks and have been tested for reliability and validity, ensuring meaningful results for users.",
+      "question8": "Are the tests suitable for all age groups?",
+      "answer8": "Our tests are designed for teens and adults. Some specialized tests may have recommended age ranges — always check the description before starting."
     }
   }
 }
