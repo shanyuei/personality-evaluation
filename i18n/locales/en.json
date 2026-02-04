@@ -25,6 +25,85 @@
       "curiousDesc": "Find out your personality type, preferences, and hidden strengths in just a few minutes. Quick, fun, and insightful — your journey of self-discovery starts here!",
       "curiousButtonText": "Reveal Your Personality"
     },
+    "about": {
+      "hero": {
+        "title": "Empowering Self-Discovery Through Precision",
+        "desc": "PersonalityTest101 delivers science-backed assessments to decode your unique traits. We translate complex behavioral data into actionable insights, helping you navigate your personal and professional growth with confidence."
+      },
+      "sections": {
+        "mission": {
+          "badge": "Our Mission ",
+          "title": "Unveiling the Layers of Your Personality",
+          "desc": "Mission Statement: Our mission is to guide individuals on a journey of deep self-understanding and personal growth. By leveraging profound insights from our meticulously crafted personality assessments, we aim to illuminate the unique behavioral patterns that define each individual. We believe in the transformative power of self-knowledge to enhance relationships, promote mental well-being, and foster a fulfilling life.",
+          "list1": "Fostering Personal Growth & Self-Awareness ",
+          "list2": "Innovating Precision-Based Assessments ",
+          "list3": "User-Centric Insight Delivery ",
+          "list4": "Empowering Stronger Human Connections"
+        },
+        "vision": {
+          "badge": "Our Vision ",
+          "title": "A Trusted Partner in Your Journey of Discovery",
+          "desc": "Vision Statement: Our vision is to become the global standard for personal and professional growth through psychological precision. We strive to create a world where self-awareness is the foundation for every decision, empowering a community that thrives on clarity, empathy, and continuous development.",
+          "list1": "Evidence-Based Insights ",
+          "list2": "Psychological Innovation ",
+          "list3": "User-Centric Growth ",
+          "list4": "Strengthening Human Connections "
+        }
+      },
+      "stats": {
+        "projects": {
+          "value": "150+",
+          "label": "Assessment Frameworks"
+        },
+        "team": {
+          "value": "100+",
+          "label": "Behavioral Experts"
+        },
+        "reviews": {
+          "value": "200K+",
+          "label": "Verified User Insights"
+        },
+        "awards": {
+          "value": "30+",
+          "label": "Global Industry Awards"
+        }
+      },
+      "content": {
+        "desc": "At PersonalityTest101, we are committed to revolutionizing self-discovery with science-backed, accessible, and transformative insights. By combining psychological expertise with advanced data analytics, we provide the clarity you need to master your strengths and achieve your personal goals."
+      },
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "desc": "Find quick answers to common inquiries regarding our assessment process, report insights, and platform features.",
+        "q1": "How accurate are the personality test results?",
+        "a1": "Our assessments are built on validated psychological frameworks and refined through data science to ensure high reliability. While no test can capture every nuance, 95% of our users report that their results provide a highly accurate reflection of their core traits and behaviors.",
+        "q2": " Can I access my reports from any device?",
+        "a2": "Yes, your PersonalityTest101 dashboard is fully responsive. You can complete tests on your mobile device and later access your detailed PDF reports or interactive insights from your tablet or desktop at any time.",
+        "q3": "Is my personal data and test history secure?",
+        "a3": "Privacy is our priority. We use industry-standard encryption to protect your data. Your individual results are never shared with third parties without your explicit consent, ensuring a safe space for your self-discovery journey.",
+        "q4": "How can I use these insights in my professional life?",
+        "a4": "Your report includes a dedicated section on workplace dynamics. It provides actionable strategies for leadership, communication, and team collaboration, helping you leverage your natural strengths to advance your career.",
+        "q5": "5.Are there different types of tests available?",
+        "a5": "Yes! PersonalityTest101 offers a variety of assessments that explore different aspects of your personality, including traits, strengths, career preferences, and relationship patterns. You can choose the tests that interest you most."
+      },
+      "standout": {
+        "title": "Precision, Depth, and Clarity: The Gold Standard of Personality Assessment",
+        "desc": "Our methodology integrates psychological expertise with advanced behavioral analytics to deliver high-fidelity insights. We focus on the intricate details of your personality to ensure a transformative and meaningful journey of self-discovery.",
+        "items": {
+          "precision": {
+            "title": "Psychological Precision",
+            "desc": "Developed by behavioral scientists to ensure the highest accuracy in every assessment result."
+          },
+          "deep": {
+            "title": "Deep Insights",
+            "desc": "Move beyond the surface with in-depth analysis tailored to your unique personal and professional growth."
+          },
+          "expert": {
+            "title": "Expert Guidance",
+            "desc": "Unlock actionable clarity through comprehensive reports and expert-backed resources designed for lasting impact."
+          }
+        }
+      }
+    },
     "test": {
       "index": {
         "title": "Free Personality Test",
@@ -135,6 +214,12 @@
             "4": "Master Professional Dynamics and Career Goals"
           }
         }
+      },
+      "finish": {
+        "title": "Congratulations!",
+        "subtitle": "Your personality profile is now complete.",
+        "button": "VIEW MY REPORT",
+        "reviewAnswers": "Review My Answers"
       },
       "title": "Personality Test",
       "description": "Start your personality assessment.",
@@ -505,87 +590,6 @@
       "visit": "Visit",
       "empty": "No available routes found",
       "back": "Back to Home"
-    },
-    "about": {
-      "title": "About Us",
-      "description": "Learn about our mission and team.",
-      "hero": {
-        "title": "Empowering Self-Discovery Through Precision",
-        "desc": "We believe collaboration leads to outstanding results. With a professional team and a commitment to quality, we work with customers to turn ideas into reality and create solutions that stand the test of time."
-      },
-      "faq": {
-        "title": "FAQ",
-        "desc": "We've gathered the most asked topics to help you quickly understand the platform.",
-        "q1": "How can I contact your support team?",
-        "a1": "Use the contact methods on the right to email or call us. We'll respond within 24 hours.",
-        "q2": "Do courses support live or recorded formats?",
-        "a2": "Both live and recorded formats are supported, depending on the course and instructor. After purchase, check the course details page.",
-        "q3": "Can I request a refund?",
-        "a3": "If the course hasn't started or doesn't meet expectations, submit a refund request within 7 days and we'll process it according to policy.",
-        "q4": "Do you offer group plans for companies or schools?",
-        "a4": "Yes, we support group purchasing and custom plans. Contact us to discuss your needs.",
-        "q5": "Is learning progress and grading tracked?",
-        "a5": "We provide progress statistics and assessment records. View detailed reports in your dashboard."
-      },
-      "content": {
-        "desc": "We drive industry transformation through innovation, sustainability, and cost-effectiveness. With proven experience delivering excellent projects, we combine advanced technology, expertise, and a customer-centric approach to turn vision into reality."
-      },
-      "stats": {
-        "projects": {
-          "value": "150+",
-          "label": "Projects Completed"
-        },
-        "team": {
-          "value": "100+",
-          "label": "Team Members"
-        },
-        "reviews": {
-          "value": "200+",
-          "label": "Customer Reviews"
-        },
-        "awards": {
-          "value": "30",
-          "label": "Awards Won"
-        }
-      },
-      "sections": {
-        "mission": {
-          "badge": "Our Mission",
-          "title": "Reveal the many facets of your personality",
-          "desc": "Our mission is to guide individuals on a journey of self-awareness and growth. Through carefully designed personality tests and reports, we help you uncover unique patterns. We believe self-awareness strengthens relationships, supports mental health, and enables a more fulfilling life.",
-          "list1": "Promote sustainable growth and green development",
-          "list2": "Innovate continuously for a sustainable future",
-          "list3": "Customer-centric methodology",
-          "list4": "Build more resilient communities"
-        },
-        "vision": {
-          "badge": "Our Vision",
-          "title": "A trusted partner on your growth journey",
-          "desc": "We aim to be your reliable growth partner, using rigorous methods, modern tools, and human-centered design to help you grow clearly and confidently.",
-          "list1": "Inspire modern architecture",
-          "list2": "Pioneer sustainable construction",
-          "list3": "Empower communities through innovation",
-          "list4": "Lead future-ready solutions"
-        }
-      },
-      "standout": {
-        "title": "Why Our Test Stands Out：Precision, Depth, and Clarity",
-        "desc": "Our team combines innovation, expertise, and a client-ceentered approach, delivering projects with outstanding quality, meticulous attention to detail, and a focus on meaningful growth.",
-        "items": {
-          "precision": {
-            "title": "Precision",
-            "desc": "Learn from seasoned professionals in marketing, design, engineering, finance, and more."
-          },
-          "deep": {
-            "title": "Deep Insights",
-            "desc": "Tailor your learning journey to your goals and pace, choosing courses that fit better."
-          },
-          "expert": {
-            "title": "Expert Guidance",
-            "desc": "Engage with multimedia content, quizzes, and assignments for a more vivid learning experience."
-          }
-        }
-      }
     },
     "tests": {
       "filters": {
@@ -1124,6 +1128,10 @@
       "report": {
         "title": "Your Personality Report {separator} PersonalityTest101 – Expert Insights",
         "description": "Your personality profile is ready. Explore the science behind your traits, unlock deep behavioral insights, and get a tailored roadmap for your personal and professional growth."
+      },
+      "finish": {
+        "title": "Analysis in Progress {separator} PersonalityTest101 – Decoding Your Traits",
+        "description": "Our system is decoding your responses to generate a precise personality profile. Discover the science behind your behavior and unlock deep insights into your core potential."
       }
     },
     "home": {

@@ -173,7 +173,7 @@
 const { t } = useI18n()
 
 definePageMeta({
-  title: 'Test Report Ready',
+  title: 'pages.test.report.title',
   layout: 'default',
   layoutShowPageTopIcons: false
 })
