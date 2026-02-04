@@ -26,13 +26,13 @@
         </div>
 
         <h1
-          class="uno-text-[var(--ui-foreground)] uno-text-[48px] uno-font-Outfit uno-text-center uno-font-semibold uno-leading-[1.2]">
+          class="uno-text-[var(--ui-foreground)] uno-text-[32px] md:uno-text-[48px] uno-font-Outfit uno-text-center uno-font-semibold uno-leading-[1.2]">
           {{ $t('pages.userCourseChapterComplete.title') }}</h1>
         <p
-          class="uno-text-[16px] uno-text-[var(--ui-muted-foreground)] uno-font-Outfit uno-text-center uno-w-full uno-mx-auto uno-leading-relaxed uno-mb-2">
+          class="uno-text-[14px] md:uno-text-[16px] uno-text-[var(--ui-muted-foreground)] uno-font-Outfit uno-text-center uno-w-full uno-mx-auto uno-leading-relaxed uno-mb-2">
           {{ $t('pages.userCourseChapterComplete.desc1', { courseName }) }}</p>
         <p
-          class="uno-text-[16px] uno-text-[var(--ui-muted-foreground)] uno-font-Outfit uno-text-center uno-w-full uno-mx-auto uno-leading-relaxed">
+          class="uno-text-[14px] md:uno-text-[16px] uno-text-[var(--ui-muted-foreground)] uno-font-Outfit uno-text-center uno-w-full uno-mx-auto uno-leading-relaxed">
           {{ $t('pages.userCourseChapterComplete.desc2') }}</p>
 
         <div class="uno-space-y-2 uno-mt-2 uno-w-full uno-mx-auto uno-px-2">
@@ -78,7 +78,7 @@
           </PrimaryButton>
         </AppLink>
         <AppLink :to="'/user-course'"
-          class="uno-text-[var(--ui-muted-foreground)] uno-font-Outfit uno-text-center hover:uno-text-[var(--ui-foreground)]">
+          class="uno-text-[var(--ui-muted-foreground)] uno-font-Outfit uno-text-center hover:uno-text-[var(--ui-foreground)] uno-underline">
           {{ $t('pages.userCourseChapterComplete.later') }}</AppLink>
       </div>
     </div>

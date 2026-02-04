@@ -10,10 +10,10 @@
 
       <!-- 标题与说明 -->
       <h1
-        class="uno-text-[48px] uno-text-center uno-font-Outfit uno-font-semibold uno-leading-[1.2] uno-text-[var(--ui-foreground)]">
+        class="uno-text-3xl md:uno-text-[48px] uno-text-center uno-font-Outfit uno-font-semibold uno-leading-[1.2] uno-text-[#011813]">
         {{ $t('pages.userCourseLessonComplete.title') }}</h1>
       <p
-        class="uno-text-[16px] uno-text-[var(--ui-muted-foreground)] uno-font-Outfit uno-text-center uno-max-w-[520px] uno-mx-auto">
+        class="uno-text-[16px] uno-text-[#4E5255] uno-font-Outfit uno-text-center uno-max-w-[520px] uno-mx-auto">
         {{ $t('pages.userCourseLessonComplete.desc', { current, courseName }) }}
       </p>
 
@@ -26,7 +26,7 @@
 
       <!-- 次链接 -->
       <AppLink :to="'/'"
-        class="uno-text-[var(--ui-muted-foreground)] uno-font-Outfit uno-text-center hover:uno-text-[var(--ui-foreground)]">
+        class="uno-text-[#4E5255] uno-font-Outfit uno-text-center hover:uno-text-[var(--ui-foreground)] uno-underline">
         {{ $t('pages.userCourseLessonComplete.toDashboard') }}</AppLink>
     </div>
   </div>

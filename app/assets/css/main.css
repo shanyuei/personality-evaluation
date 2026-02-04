@@ -111,7 +111,7 @@
     --color-gray-1: #0181B1;
     --color-gray-2: #323233;
     --color-gray-3: #4E5235;
-    --color-gray-4: #8D8E8F;
+    --color-gray-4: #4E5255;
     --color-gray-5: #818282;
     --color-gray-6: #DDDDDD;
     --color-gray-7: #E7E7E8;
@@ -125,7 +125,7 @@
     --ui-secondary: var(--color-purple-1);
     --ui-secondary-foreground: #FFFFFF;
     --ui-background: var(--color-white);
-    --ui-foreground: var(--color-gray-2);
+    --ui-foreground: #011813;
     --ui-border: var(--color-gray-6);
     --ui-input: var(--color-gray-8);
     --ui-muted: var(--color-gray-7);
