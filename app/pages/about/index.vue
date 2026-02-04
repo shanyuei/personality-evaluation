@@ -212,7 +212,7 @@ definePageMeta({
   title: () => 'seo.about.title'
 })
 useSeoMeta({
-  title: () => t('seo.about.title') as string,
+  title: () => t('seo.about.title',{ separator: '|' }) as string,
   description: () => t('seo.about.description') as string
 })
 

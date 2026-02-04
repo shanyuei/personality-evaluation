@@ -1134,6 +1134,10 @@
         "description": "Our system is decoding your responses to generate a precise personality profile. Discover the science behind your behavior and unlock deep insights into your core potential."
       }
     },
+    "about": {
+      "title": "Title About Us {separator} PersonalityTest101 – Our Mission for Self-Discovery",
+      "description": "Discover the story behind PersonalityTest101. We combine psychological precision with data-driven insights to help individuals uncover their core traits, improve relationships, and achieve personal growth. Learn more about our mission and vision."
+    },
     "home": {
       "title": "Unlock knowledge and growth with expert courses and tools.",
       "description": "An exceptional platform for career development. The current curriculum, skilled instructors, and hands-on learning are truly rewarding."
@@ -1221,10 +1225,6 @@
     "userCourse.lessonGuide": {
       "title": "Lesson Guide - Learning Objectives",
       "description": "Review the learning objectives for this lesson."
-    },
-    "about": {
-      "title": "About Us - Our Mission and Team",
-      "description": "Learn about our mission, team, and commitment to personal development."
     },
     "orders": {
       "title": "Orders - Manage Your Purchases",
