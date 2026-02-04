@@ -143,13 +143,24 @@ const { data: plansData } = await getPlanList();
 
 const plans = computed(() => {
   const list = plansData.value?.data || [];
-  return list.map((item: any) => {
+  const processedList = list.map((item: any) => {
     const config = planConfig[item.id] || { key: 'monthly' }; // Fallback to monthly key if unknown
     return {
       ...item,
       ...config
     };
   });
+  
+  // 在移动端，将携带 badge 的计划排在前面
+  if (typeof window !== 'undefined' && window.innerWidth < 768) {
+    return processedList.sort((a: any, b: any) => {
+      if (a.badge && !b.badge) return -1;
+      if (!a.badge && b.badge) return 1;
+      return 0;
+    });
+  }
+  
+  return processedList;
 });
 
 const selectedPlan = ref('yearly');
