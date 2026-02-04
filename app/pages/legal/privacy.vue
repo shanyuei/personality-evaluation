@@ -12,12 +12,12 @@
 
       <div class="uno-grid uno-grid-cols-1 md:uno-grid-cols-4 uno-gap-8">
         <!-- 侧边栏菜单 -->
-        <div class="uno-col-span-1 uno-hidden md:uno-block">
-          <nav class="uno-sticky uno-top-8">
-            <ul class="uno-space-y-4">
+        <div class="uno-col-span-1">
+          <nav>
+            <ul class="uno-space-y-3 md:uno-space-y-4">
               <li v-for="item in navItems" :key="item.id">
                 <a :href="`#${item.id}`"
-                  :class="['uno-block uno-text-[20px] uno-font-medium hover:text-[var(--color-pink-1)]', activeSection === item.id ? 'text-[var(--color-pink-1)]' : '']"
+                  :class="['uno-block uno-text-[16px] md:uno-text-[20px] uno-font-medium hover:text-[var(--color-pink-1)]', activeSection === item.id ? 'text-[var(--color-pink-1)]' : '']"
                   @click="handleClick(item.id)">{{ item.label }}</a>
               </li>
             </ul>
@@ -25,7 +25,7 @@
         </div>
 
         <!-- 主内容区域 -->
-        <div class="uno-col-span-3">
+        <div class="uno-col-span-1 md:uno-col-span-3">
           <div class="uno-space-y-8">
             <section v-for="section in sections" :key="section.id" :id="section.id">
               <h2 class="uno-text-[24px] uno-font-[Outfit] uno-font-[600] uno-text-gray-900 uno-mb-4">{{

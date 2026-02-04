@@ -23,39 +23,39 @@
             class="uno-text-[#0F172A] uno-font-Outfit uno-font-semibold uno-text-[16px] uno-mb-3 sm:uno-mb-4">
             Why did you decide
             to cancel your subscription?</h2>
-          <div class="uno-space-y-2 sm:uno-space-y-3">
+          <CheckboxGroup>
             <label class="uno-flex uno-items-start uno-gap-3 uno-cursor-pointer">
-              <UCheckbox v-model="reasons.difficult" value="difficult" :ui="UCheckboxTheme" />
+              <Checkbox v-model="reasons.difficult" value="difficult" />
               <span>I found Cacaoo difficult to use.</span>
             </label>
             <label class="uno-flex uno-items-start uno-gap-3 uno-cursor-pointer">
-              <UCheckbox v-model="reasons.missing" value="missing" :ui="UCheckboxTheme" />
+              <Checkbox v-model="reasons.missing" value="missing" />
               <span>I didn't find the necessary function.</span>
             </label>
             <label class="uno-flex uno-items-start uno-gap-3 uno-cursor-pointer">
-              <UCheckbox v-model="reasons.technical" value="technical" :ui="UCheckboxTheme" />
+              <Checkbox v-model="reasons.technical" value="technical" />
               <span>I faced technical issues while working with Cacaoo.</span>
             </label>
             <label class="uno-flex uno-items-start uno-gap-3 uno-cursor-pointer">
-              <UCheckbox v-model="reasons.switching" value="switching" :ui="UCheckboxTheme" />
+              <Checkbox v-model="reasons.switching" value="switching" />
               <span>I had problems switching plans.</span>
             </label>
             <label class="uno-flex uno-items-start uno-gap-3 uno-cursor-pointer">
-              <UCheckbox v-model="reasons.team" value="team" :ui="UCheckboxTheme" />
+              <Checkbox v-model="reasons.team" value="team" />
               <span>My team members do not want to use Cacaoo.</span>
             </label>
             <label class="uno-flex uno-items-start uno-gap-3 uno-cursor-pointer">
-              <UCheckbox v-model="reasons.other" value="other" :ui="UCheckboxTheme" />
+              <Checkbox v-model="reasons.other" value="other" />
               <span>Other.</span>
             </label>
-          </div>
+          </CheckboxGroup>
         </div>
 
-        <UButton
+        <PrimaryButton
           class="uno-w-full uno-py-3 sm:uno-py-4 uno-px-4 uno-rounded-[16px] uno-transition-colors uno-duration-300 uno-mb-4 sm:uno-mb-6"
-          :ui="UButtonTheme" @click="submit">
+          @click="submit">
           Get Started
-        </UButton>
+        </PrimaryButton>
 
         <div class="uno-space-y-3 sm:uno-space-y-4 uno-text-sm uno-text-[#4E5255]">
           <div class="uno-flex uno-items-start uno-gap-2 sm:uno-gap-3">
@@ -90,8 +90,9 @@ import { ref } from 'vue'
 
 import UFormFieldTheme from "~/theme/UFormField";
 import UInputTheme from "~/theme/UInput";
-import UCheckboxTheme from "~/theme/UCheckbox";
-import UButtonTheme from "~/theme/UButton";
+import Checkbox from '~/components/ui/Checkbox.vue';
+import CheckboxGroup from '~/components/ui/CheckboxGroup.vue';
+import PrimaryButton from '~/components/ui/PrimaryButton.vue';
 const { t } = useI18n()
 definePageMeta({
   title: () => 'seo.orders.cancelSubscription.title',

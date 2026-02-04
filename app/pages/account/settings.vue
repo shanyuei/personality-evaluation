@@ -1,5 +1,5 @@
 <template>
-  <div class="uno-max-w-[720px] uno-mx-auto my-[32px]">
+  <div class="page-container uno-max-w-[720px] uno-mx-auto my-[32px]">
     <h1
       class="uno-text-3xl md:uno-text-4xl uno-font-Outfit uno-font-bold uno-text-center uno-text-gray-900 uno-mb-8">
       {{ $t('pages.account.settings.title') }}</h1>
@@ -20,10 +20,10 @@
               :placeholder="$t('pages.account.settings.profile.emailPlaceholder')" />
           </UFormField>
           <div>
-            <UButton :ui="UButtonTheme" class="!uno-w-[217px]" :loading="profileLoading" :disabled="!profileValid"
+            <PrimaryButton class="!uno-w-[217px]" :loading="profileLoading"
               @click="onSaveProfile">
               {{ $t('pages.account.settings.profile.submit') }}
-            </UButton>
+            </PrimaryButton>
           </div>
         </div>
       </section>
@@ -46,10 +46,10 @@
               :placeholder="$t('pages.account.settings.password.repeat')" />
           </UFormField>
           <div>
-            <UButton :ui="UButtonTheme" class="!uno-w-[217px]" :loading="passwordLoading" :disabled="!passwordValid"
+            <PrimaryButton class="!uno-w-[217px]" :loading="passwordLoading"
               @click="onChangePassword">
               {{ $t('pages.account.settings.password.submit') }}
-            </UButton>
+            </PrimaryButton>
           </div>
         </div>
       </section>
@@ -63,9 +63,9 @@
             option-attribute="label" />
         </UFormField>
         <div class="uno-mt-4">
-          <UButton :ui="UButtonTheme" class="!uno-w-[217px]" :loading="languageLoading" @click="onLanguageSaved">
+          <PrimaryButton class="!uno-w-[217px]" :loading="languageLoading" @click="onLanguageSaved">
             {{ $t('pages.account.settings.saveChanges') }}
-          </UButton>
+          </PrimaryButton>
         </div>
       </section>
 
@@ -87,7 +87,7 @@ import { storeToRefs } from 'pinia'
 import UFormFieldTheme from "~/theme/UFormField";
 import UInputTheme from "~/theme/UInput";
 import USelectTheme from "~/theme/USelect";
-import UButtonTheme from "~/theme/UButton";
+import PrimaryButton from '~/components/ui/PrimaryButton.vue';
 
 definePageMeta({
   layoutShowFooter: false,

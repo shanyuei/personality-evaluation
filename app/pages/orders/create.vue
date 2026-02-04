@@ -39,11 +39,11 @@
                 $t('pages.order.create.summary.benefit3') }}</span>
             </li>
           </ul>
-
-          <p class="uno-text-xs uno-text-[#8D8E8F] uno-leading-relaxed">
+        </div>
+        
+          <p class="uno-text-xs uno-text-[#8D8E8F] uno-leading-relaxed uno-mt-12px">
             {{ $t('pages.order.create.summary.terms') }}
           </p>
-        </div>
       </div>
 
       <!-- Right Column: Payment Form -->

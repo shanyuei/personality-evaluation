@@ -8,14 +8,18 @@
         <p class="uno-text-center uno-mt-3 uno-text-sm md:uno-text-base">{{ $t('pages.ebookDetail.hero.subtitle') }}</p>
       </div>
 
-      <section
-        class="uno-mt-6">
+      <section class="uno-mt-6">
         <div class="uno-py-6 uno-space-y-6">
-          <h2
-            class="uno-text-2xl md:uno-text-3xl uno-font-Outfit uno-font-[600] uno-text-[var(--ui-foreground)]">
-            {{ $t('pages.ebookDetail.title') }}</h2>
-          <p class="uno-text-[#4E5255] uno-text-sm md:uno-text-base">{{ $t('pages.ebookDetail.intro')
-          }}</p>
+          <div>
+            <h2
+              class="uno-text-2xl md:uno-text-3xl uno-font-Outfit uno-font-[600] uno-text-[var(--ui-foreground)] uno-border-b uno-border-[#BDF1E5] uno-pb-16px">
+              {{ $t('pages.ebookDetail.title') }}</h2>
+
+
+
+            <p class="uno-text-[#4E5255] uno-text-sm md:uno-text-base uno-mt-12px">{{ $t('pages.ebookDetail.intro')
+              }}</p>
+          </div>
 
           <div class="uno-space-y-4">
             <h3 class="uno-text-[24px] uno-font-bold uno-text-[var(--ui-foreground)]">{{
@@ -40,8 +44,9 @@
           </div>
 
           <div class="uno-space-y-3">
-            <h3 class="uno-text-[24px] uno-font-bold uno-text-[var(--ui-foreground)]">{{ $t('pages.ebookDetail.learn.title')
-            }}</h3>
+            <h3 class="uno-text-[24px] uno-font-bold uno-text-[var(--ui-foreground)]">{{
+              $t('pages.ebookDetail.learn.title')
+              }}</h3>
             <ul class="uno-space-y-2">
               <li v-for="(item, i) in learnList" :key="i" class="uno-text-[var(--ui-foreground)]">
                 <span class="uno-mr-2">{{ i + 1 }}.</span>
@@ -55,7 +60,8 @@
             <h3 class="uno-text-[24px] uno-font-bold uno-text-[var(--ui-foreground)]">{{
               $t('pages.ebookDetail.require.title') }}</h3>
             <ul class="uno-space-y-2 uno-pl-5">
-              <li v-for="(item, i) in requireList" :key="i" class="uno-text-[var(--ui-foreground)] uno-list-disc  uno-m-0">
+              <li v-for="(item, i) in requireList" :key="i"
+                class="uno-text-[var(--ui-foreground)] uno-list-disc  uno-m-0">
                 <span class="uno-text-[#011813]">{{ item.split(':')[0] }}:</span>
                 <span class="uno-text-[#4E5255]">{{ item.split(':')[1] }}</span>
               </li>
@@ -81,7 +87,9 @@
               {{ $t('pages.ebookDetail.sections.copywriting.body') }}
             </p>
             <p class="uno-text-[#4E5255]">
-              <span class="uno-font-bold uno-text-[var(--ui-foreground)]">Ready to boost your brand's reach?</span> Start by applying one or two of these skills today and watch your engagement grow! Let us know in the comments which strategies have worked best for your brand.
+              <span class="uno-font-bold uno-text-[var(--ui-foreground)]">Ready to boost your brand's reach?</span>
+              Start by applying one or two of these skills today and watch your engagement grow! Let us know in the
+              comments which strategies have worked best for your brand.
             </p>
           </div>
 

@@ -9,7 +9,7 @@
 
         <UForm :state="{ email, password }" class="uno-space-y-6">
           <!-- Email -->
-          <UFormField :label="$t('pages.account.settings.profile.emailPlaceholder')" :ui="UFormFieldTheme">
+          <UFormField :label="$t('pages.account.settings.profile.email')" :ui="UFormFieldTheme">
             <UInput v-model="email" type="email" :placeholder="$t('pages.account.settings.profile.emailPlaceholder')"
               :ui="UInputTheme" />
           </UFormField>

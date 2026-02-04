@@ -27,7 +27,7 @@
         </div>
 
         <AppLink :to="'/user-course/lesson-guide'" class="uno-block">
-          <UButton :ui="UButtonTheme" class="uno-font-Outfit">{{ $t('pages.userCourseChapters.cta') }}</UButton>
+          <PrimaryButton class="uno-font-Outfit">{{ $t('pages.userCourseChapters.cta') }}</PrimaryButton>
         </AppLink>
       </div>
     </div>
@@ -35,7 +35,7 @@
 </template>
 
 <script setup lang="ts">
-import UButtonTheme from '~/theme/UButton'
+import PrimaryButton from '~/components/ui/PrimaryButton.vue'
 
 
 
