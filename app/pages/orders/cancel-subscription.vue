@@ -166,6 +166,7 @@ const { t } = useI18n()
 definePageMeta({
   title: () => 'seo.orders.cancelSubscription.title',
   layoutShowPageTopIcons: false,
+  path: '/cancel-subscription'
 })
 useSeoMeta({
   title: () => t('seo.orders.cancelSubscription.title', { separator: '|' }) as string,

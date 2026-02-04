@@ -96,6 +96,7 @@ const { t } = useI18n()
 definePageMeta({
   title: () => 'seo.contact.title',
   layoutShowCurious: true,
+    path: '/contact-us'
 })
 useSeoMeta({
   title: () => t('seo.contact.title', { separator: '|' }) as string,

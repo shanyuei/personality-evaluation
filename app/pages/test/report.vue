@@ -175,7 +175,8 @@ const { t } = useI18n()
 definePageMeta({
   title: 'pages.test.report.title',
   layout: 'default',
-  layoutShowPageTopIcons: false
+  layoutShowPageTopIcons: false,
+  path: '/unlock-report'
 })
 
 useSeoMeta({

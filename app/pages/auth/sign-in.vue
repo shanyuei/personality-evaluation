@@ -53,6 +53,7 @@ const { t } = useI18n()
 definePageMeta({
   title: () => 'seo.auth.signIn.title',
   layoutShowPageTopIcons: false,
+  path: '/login'
 })
 
 useSeoMeta({

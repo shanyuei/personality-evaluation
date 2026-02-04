@@ -36,7 +36,8 @@ const { t } = useI18n()
 const questionsStore = useQuestionsStore()
 const { userAnswers } = storeToRefs(questionsStore)
 definePageMeta({
-  title: () => 'seo.test.analyzing.title'
+  title: () => 'seo.test.analyzing.title',
+  path: '/calculating-results'
 })
 useSeoMeta({
   title: () => t('seo.test.analyzing.title', {separator: "|"}),

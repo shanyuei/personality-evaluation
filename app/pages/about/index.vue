@@ -209,7 +209,9 @@ const missionItems = computed(() => [
 ])
 
 definePageMeta({
-  title: () => 'seo.about.title'
+  title: () => 'seo.about.title',
+  path: '/about-us'
+
 })
 useSeoMeta({
   title: () => t('seo.about.title',{ separator: '|' }) as string,

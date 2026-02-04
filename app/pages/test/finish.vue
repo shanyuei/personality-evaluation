@@ -49,7 +49,8 @@ const { t } = useI18n()
 
 definePageMeta({
   title: () => 'seo.test.finish.title',
-  layoutShowPageTopIcons: false
+  layoutShowPageTopIcons: false,
+  path: '/my-results'
 })
 
 useSeoMeta({
