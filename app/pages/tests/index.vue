@@ -10,9 +10,9 @@
     </div>
 
     <section class="uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_0px_#0000000D] ">
-      <div class="uno-p-6 md:uno-p-8 uno-flex uno-gap-6">
+      <div class="uno-flex uno-p-6 md:uno-p-8 uno-flex-col md:uno-flex-row uno-gap-6">
         <NuxtImg src="/images/blog/2.png" alt="hero"
-          class="uno-w-[425px] uno-h-[270px] uno-object-cover uno-rounded-[24px]" />
+          class="uno-w-full md:uno-w-[425px] uno-h-[270px] uno-object-cover uno-rounded-[24px]" />
 
         <div class="uno-flex-grow uno-flex uno-flex-col uno-justify-center uno-space-y-3">
           <h1

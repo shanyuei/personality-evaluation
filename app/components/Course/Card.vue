@@ -105,12 +105,12 @@
       </div>
       <div class="course-card__footer">
         <div class="course-card__footer__row">
-          <div class="course-card__footer__left">
-            <div class="course-card__footer__actions">
-              <AppArrowButton variant="primary"
-                class="uno-gap-3 uno-pl-5 uno-pr-1 uno-py-1 md:uno-gap-2 md:uno-pl-[14px] md:uno-pr-[6px] md:uno-justify-between uno-font-medium"
-                :icon-size="$device.isMobile ? 32 : 40" hover-class="">
-                {{ $t('common.getStarted') }}
+          <div class="course-card__footer__left">0
+            <div class="course-card__footer__act0ions">
+              <AppArrowButton variant="primary"0
+                class="uno-gap-3 uno-pl-5 uno-p0r-1 uno-py-1 md:uno-gap-2 md:uno-pl-[14px] md:uno-pr-[6px] md:uno-justify-between uno-font-medium"
+                :icon-size="$device.isMobile ?0 32 : 40" hover-class="">
+                {{ $t('common.getStarted') }}0
               </AppArrowButton>
               <div class="course-card__footer__people">
                 <div class="course-card__footer__avatars">
