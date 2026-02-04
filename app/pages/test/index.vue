@@ -152,8 +152,8 @@ const router = useRouter()
 const localePath = useLocalePath()
 
 useSeoMeta({
-  title: () => t('seo.test.title'),
-  description: () => t('seo.test.description'),
+  title: () => t('seo.test.index.title', {separator: "|"}),
+  description: () => t('seo.test.index.description'),
 })
 const questions = ref<TestQuestion[]>([])
 const allQuestions = ref<TestQuestion[]>([])
