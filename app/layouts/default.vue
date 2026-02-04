@@ -46,7 +46,7 @@
           </slot>
         </main>
         <!--  curious -->
-        <app-curious v-if="showCurious" v-bind="curiousProps" />
+        <app-curious v-if="showCurious"  />
         <!-- 底部 -->
         <app-footer v-if="showFooter" />
       </div>
@@ -89,14 +89,7 @@ const showPageTopIcons3 = computed(() => {
 const pageTopIcon3Class = computed(() => {
   return (route.meta.layoutPageTopIcon3Class as string) || 'uno-top-252px uno-right-120px'
 })
-const curiousProps = computed(() => {
-  return {
-    title: (route.meta.curious as any)?.title,
-    description: (route.meta.curious as any)?.description,
-    buttonText: (route.meta.curious as any)?.buttonText,
-    buttonDisabled: (route.meta.curious as any)?.buttonDisabled
-  }
-})
+
 const head = useLocaleHead()
 const title = computed(() => {
   if (route?.meta?.title) {

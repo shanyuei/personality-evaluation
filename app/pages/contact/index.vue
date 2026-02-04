@@ -1,5 +1,5 @@
 <template>
-  <main class="uno-py-12 sm:uno-py-16 md:uno-py-24">
+  <main class="uno-pt-12 sm:uno-pt-16 md:uno-pt-24">
     <!-- 页面内容 -->
     <div class="page-container">
 
@@ -86,30 +86,25 @@ import HeartIcon from '@/components/icons/HeartIcon.vue'
 import MailIcon from '@/components/icons/MailIcon.vue'
 import BrainIcon from '@/components/icons/BrainIcon.vue'
 import MailLargeIcon from '@/components/icons/MailLargeIcon.vue'
+import { useCurious } from '@/composables/useCurious'
 
 const { t } = useI18n()
 
-const curiousData = computed(() => ({
-  title: t('pages.contact.curiousTitle'),
-  description: t('pages.contact.curiousDesc'),
-  buttonText: t('pages.contact.curiousButtonText'),
-}))
+
 
 
 definePageMeta({
   title: () => 'seo.contact.title',
   layoutShowCurious: true,
-  curious: curiousData
-  // {
-  //   // title: t('pages.contact.curiousTitle'),
-  //   // description: t('pages.contact.curiousDesc'),
-  //   // buttonText: t('pages.contact.curiousButtonText'),
-  // }
 })
 useSeoMeta({
   title: () => t('seo.contact.title', { separator: '|' }) as string,
   description: () => t('seo.contact.description') as string
 })
+const curious = useCurious()
+curious.setButtonText(t('pages.contact.curiousButtonText'))
+curious.setDescription(t('pages.contact.curiousDesc'))
+curious.setTitle(t('pages.contact.curiousTitle'))
 
 // 联系选项数据
 const contactOptions = [
