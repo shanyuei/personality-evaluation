@@ -42,11 +42,51 @@
             <h2 class="uno-text-2xl md:uno-text-24px uno-font-Outfit uno-font-600 uno-text-black uno-mb-4">
               {{ $t('pages.faq.general.faqs') }}
             </h2>
+            <!-- 内容 faqs -->
+            <div v-show="false" class="uno-space-y-5">
+              <div v-for="(faq, i) in faqs" :key="i"
+                class="uno-border-t uno-border-t-[var(--ui-border)] uno-rounded-[12px]">
+                <div class="uno-flex uno-justify-between uno-items-center uno-py-[20px] " @click="toggle('general', i)">
+                  <p class="uno-text-[var(--ui-foreground)] uno-text-18px uno-font-Outfit uno-font-medium">
+                    {{ faq.title }}
+                  </p>
+                  <div class="uno-w-[24px] uno-h-[24px] uno-flex uno-items-center uno-justify-center uno-mr-4">
+                    <IconsFaqToggle :expanded="isExpanded('general', i)" />
+                  </div>
+                </div>
+                <div v-if="isExpanded('general', i)" class=" uno-pb-[20px]">
+                  <p class="uno-text-[#4E5255] uno-text-14px">
+                    {{ faq.desc }}
+                  </p>
+                </div>
+              </div>
+            </div>
+
             <div class="uno-space-y-5">
               <template v-for="entry in asideCategories" :key="entry.id">
                 <h4 class="uno-text-gray-800 uno-text-xl md:uno-text-2xl uno-font-Outfit uno-font-600">
                   {{ entry.title }}
                 </h4>
+                <!-- 内容 integrations -->
+                <div v-show="false" class="uno-space-y-5">
+                  <div v-for="(integration, i) in integrations" :key="i"
+                    class="uno-border-t uno-border-t-[var(--ui-border)] uno-rounded-[12px]">
+                    <div class="uno-flex uno-justify-between uno-items-center uno-py-[20px] "
+                      @click="toggle('integration', i)">
+                      <p class="uno-text-[var(--ui-foreground)] uno-text-18px uno-font-Outfit uno-font-medium">
+                        {{ integration.title }}
+                      </p>
+                      <div class="uno-w-[24px] uno-h-[24px] uno-flex uno-items-center uno-justify-center uno-mr-4">
+                        <IconsFaqToggle :expanded="isExpanded('integration', i)" />
+                      </div>
+                    </div>
+                    <div v-if="isExpanded('integration', i)" class=" uno-pb-[20px]">
+                      <p class="uno-text-[#4E5255] uno-text-14px">
+                        {{ integration.desc }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
                 <template v-for="item in entry.items" :key="item.text">
                   <template v-if="currentCategory === 'all' || item.id === currentCategory">
                     <!-- <h6 class="uno-text-gray-700 uno-text-lg md:uno-text-xl uno-font-Outfit uno-font-medium">
@@ -95,7 +135,7 @@ definePageMeta({
 })
 
 useSeoMeta({
-  title: () => t('seo.faq.title'),
+  title: () => t('seo.faq.title', { separator: '|' }),
   description: () => t('seo.faq.description')
 })
 
@@ -156,12 +196,12 @@ const integrations = [
     desc: t('pages.faq.integrations.list.1.desc'),
   },
   {
-        type: t('pages.faq.integrations.type1'),
+    type: t('pages.faq.integrations.type1'),
     title: t('pages.faq.integrations.list.2.q'),
     desc: t('pages.faq.integrations.list.2.desc'),
   },
   {
-        type: t('pages.faq.integrations.type1'),
+    type: t('pages.faq.integrations.type1'),
     title: t('pages.faq.integrations.list.3.q'),
     desc: t('pages.faq.integrations.list.3.desc'),
   },

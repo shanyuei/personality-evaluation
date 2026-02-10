@@ -372,6 +372,124 @@
         "btn2": "Self-Esteem Blueprint ",
         "goHome": "Back to Home",
         "btn1": "Reveal My Profile"
+      },
+      "create": {
+        "title": "Unlock All Reports",
+        "subtitle": "Discover your unique strengths and master your path to personal growth.",
+        "summary": {
+          "trial": "{day}-day trial",
+          "benefit1": "Personalized Career Matches",
+          "benefit2": "Deep Personality Insights",
+          "benefit3": "50+ Premium Assessments",
+          "terms": "Trial Details: {price1} for {day} days. Once the trial ends, a monthly subscription of {price2} will apply automatically. Cancel anytime: "
+        },
+        "form": {
+          "email": "Email",
+          "emailPlaceholder": "Email address",
+          "name": "Cardholder name",
+          "namePlaceholder": "Full name on card",
+          "cardNumber": "Card number",
+          "cardNumberPlaceholder": "0000 0000 00000000",
+          "expires": "Expires",
+          "expiresPlaceholder": "MM / YY",
+          "cvv": "CVV",
+          "cvvPlaceholder": "CVC / CVV",
+          "zip": "Postal code",
+          "zipPlaceholder": "Zip / Postal code",
+          "orderId": "Order ID",
+          "emailError": "Please enter a valid email address",
+          "paymentError": "Payment failed. Please try again.",
+          "paymentSuccess": "Payment initiated successfully!",
+          "consentPart1": "By clicking \"Subscribe\", I electronically authorize PersonalityTest101 to charge my card per the Billing Terms, including automatic renewal, until cancellation. I agree to the",
+          "consentPart2": "and",
+          "terms": "Terms of Service",
+          "privacy": "Privacy Policy",
+          "subscribeBtn": "Subscribe Now · {price}",
+          "paypalBtn": "Pay with",
+          "gpayBtn": "Pay with"
+        },
+        "trust": {
+          "us": "US-Based Company",
+          "noCharge": " No Hidden Fees",
+          "refund": "30-Day Money Back Guarantee",
+          "cancel": " Cancel Anytime"
+        },
+        "testimonials": {
+          "title": "Trusted by 20,000+ customers",
+          "subtitle": "Join thousands who have unlocked their potential through our expert-led personality framework. Real growth starts with deep self-awareness.",
+          "reviews": {
+            "review1": {
+              "name": "Sarah Jenkins",
+              "role": "Marketing Manager",
+              "review": "A total game-changer for my self-awareness! The depth of the report was startlingly accurate, helping me understand my work habits in a way I never could before."
+            },
+            "review2": {
+              "name": "David Chen",
+              "role": "Senior Developer",
+              "review": "I’ve taken many personality tests, but this is by far the most comprehensive. The actionable insights for personal growth provided me with a clear roadmap for my next career move."
+            },
+            "review3": {
+              "name": "Elena Rodriguez",
+              "role": "HR Specialist",
+              "review": "Finally, a personality assessment that goes beyond surface-level traits. It gave me the vocabulary to explain my needs and improved my communication with my team overnight."
+            },
+            "review4": {
+              "name": "James Thornton",
+              "role": "Creative Director",
+              "review": "The premium reports are worth every penny. Seeing my strengths and blind spots mapped out so clearly helped me lead with much more confidence and empathy."
+            },
+            "review5": {
+              "name": "Lisa Nakamura",
+              "role": "Freelance Illustrator",
+              "review": "I was skeptical at first, but the results were spot-on. It’s not just a test; it’s a deep dive into what makes you tick. Highly recommended for anyone feeling stuck in their life."
+            },
+            "review6": {
+              "name": "Mark Peterson",
+              "role": "Financial Analyst",
+              "review": "Fast, intuitive, and surprisingly profound. The career matching feature helped me realize why I was unhappy in my previous role and guided me toward a professional path that truly fits."
+            },
+            "review7": {
+              "name": "Sophia Williams",
+              "role": "Content Strategist",
+              "review": "The most user-friendly platform I’ve used. The reports are beautifully designed and easy to digest, making complex psychological concepts accessible and immediately useful."
+            },
+            "review8": {
+              "name": "Kevin Al-Sabah",
+              "role": "Project Manager",
+              "review": "A fascinating experience from start to finish. The insights into my personality type helped me manage my stress levels and find a much better work-life balance."
+            },
+            "review9": {
+              "name": "Emma Johnson",
+              "role": "Marketing Consultant",
+              "review": "This personality test completely transformed my understanding of myself. The insights were so accurate that I immediately shared the results with my close friends and family."
+            },
+            "review10": {
+              "name": "Michael Brown",
+              "role": "Psychology Student",
+              "review": "As someone who's always been interested in psychology, I was impressed by the scientific approach behind this test. The results provided me with actionable steps to improve my personal and professional relationships."
+            },
+            "review11": {
+              "name": "Olivia Garcia",
+              "role": "Elementary School Teacher",
+              "review": "I took this test on a whim and was blown away by how much it resonated with me. It helped me understand why I react certain ways in different situations and gave me tools to manage my emotions better."
+            },
+            "review12": {
+              "name": "Christopher Lee",
+              "role": "Sales Representative",
+              "review": "The career guidance section of the premium report was worth every penny. It confirmed some suspicions I had about my current job and pointed me in the direction of careers that would be a better fit for my personality."
+            },
+            "review13": {
+              "name": "Jessica Taylor",
+              "role": "Project Coordinator",
+              "review": "I've recommended this test to all of my colleagues. The team-building insights alone were invaluable for our department, helping us understand each other's working styles and communication preferences."
+            },
+            "review14": {
+              "name": "Daniel Martinez",
+              "role": "Business Analyst",
+              "review": "What sets this test apart from others I've taken is the depth of analysis. It doesn't just tell you what your personality type is; it explains why you behave the way you do and how to leverage your strengths."
+            }
+          }
+        }
       }
     },
     "home": {
@@ -527,56 +645,6 @@
             "a": "Absolutely! We have quizzes, polls, interactive assignments, and peer review features."
           }
         ]
-      }
-    },
-    "order": {
-      "create": {
-        "title": "Get unlimited reports",
-        "subtitle": "Discover your strengths and gain knowledge to grow in all aspects of life",
-        "summary": {
-          "trial": "7-day trial",
-          "price": "$1.99",
-          "benefit1": "I found Cacao difficult to use.",
-          "benefit2": "Personality type evaluation",
-          "benefit3": "Over 50 premium personality tests",
-          "terms": "Billing terms: $1.99 7 days trial. \"Subscribe\" authorizes $27.88/mo after, unless canceled. Cancel anytime: 855-342 8558 / support{'@'}mypersonality.net"
-        },
-        "form": {
-          "email": "Email",
-          "emailPlaceholder": "Your email",
-          "name": "Cardholder name",
-          "namePlaceholder": "Your full name",
-          "cardNumber": "Card number",
-          "cardNumberPlaceholder": "0000 0000 0000 0000",
-          "expires": "Expires",
-          "expiresPlaceholder": "MM/YY",
-          "cvv": "CVV",
-          "cvvPlaceholder": "123",
-          "zip": "Postal code",
-          "zipPlaceholder": "12345",
-          "orderId": "Order ID",
-          "emailError": "Please enter a valid email address",
-          "paymentError": "Payment failed. Please try again.",
-          "paymentSuccess": "Payment initiated successfully!",
-          "consentPart1": "By clicking \"Subscribe\", I electronically authorize Mypersonality.net to charge my card per Billing Terms, including automatic renewal, until cancellation. I agree to to the ",
-          "consentPart2": " and ",
-          "consentPart3": ".",
-          "terms": "Terms",
-          "privacy": "Privacy",
-          "subscribeBtn": "Subscribe for only $1.99",
-          "paypalBtn": "Pay with",
-          "gpayBtn": "Pay with"
-        },
-        "trust": {
-          "us": "Located in the US",
-          "noCharge": "No additional charges",
-          "refund": "30-day 100% refund",
-          "cancel": "Cancel anytime"
-        },
-        "testimonials": {
-          "title": "Trusted by 20,000+ customers",
-          "subtitle": "Be always were to from of volunteers range times to mild, casting opposite he its nor attribute how solitary saw more in his not"
-        }
       }
     },
     "testDetail": {
@@ -1140,6 +1208,10 @@
     "api": {
       "error": "Error"
     },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "desc": "Find quick answers to common inquiries regarding our assessment process, report insights, and platform features."
+    },
     "viewResults": "View test results",
     "retakeTest": "Retake test",
     "points": "points",
@@ -1151,7 +1223,9 @@
     "step": "STEP",
     "stepTotal": "Step {current} of {total}",
     "percentIcon": "%",
-    "continue": "CONTINUE"
+    "continue": "CONTINUE",
+    "price": "$",
+    "period": "."
   },
   "seo": {
     "404": {
@@ -1196,7 +1270,15 @@
       "purchaseComplete": {
         "title": "Payment Successful {separator} PersonalityTest101 - Start Your Growth Journey",
         "description": "Thank you for your purchase! Your premium personality analysis and self-esteem guidebook are ready. Access your insights now on PersonalityTest101."
+      },
+      "create": {
+        "title": "Secure Checkout {separator} PersonalityTest101 – Start Your 7-Day Trial",
+        "description": "Unlock unlimited personality reports for just $1.99. Start your 7-day trial today and get professional insights into your strengths and behavioral patterns. Secure payment powered by SSL."
       }
+    },
+    "faq": {
+      "title": "Privacy & Help Center {separator} PersonalityTest101 - Your Data Security",
+      "description": "Find answers to common questions about PersonalityTest101. Learn how we use your assessment data, our data sharing policies, and how to manage your cookies for a secure experience."
     },
     "home": {
       "title": "Unlock knowledge and growth with expert courses and tools.",
@@ -1249,10 +1331,6 @@
     "blog.slug": {
       "title": "Blog Post - Detailed Article",
       "description": "Read this in-depth article on personal development."
-    },
-    "faq": {
-      "title": "Frequently Asked Questions - Get Answers",
-      "description": "Find answers to common questions about our platform and services."
     },
     "userCourse": {
       "title": "User Courses - Personalized Learning",
@@ -1337,7 +1415,7 @@
   },
   "datas": {
     "contact": {
-      "question1": "'What is the PersonalityTest101 assessment and how does it work?'",
+      "question1": "What is the PersonalityTest101 assessment and how does it work?",
       "answer1": "Our personality assessments are designed to help you understand your traits, preferences, and behavioral patterns through a structured set of questions. Once you complete the test, you\\'ll receive a personalized report with insights into your personality type and practical suggestions for growth.",
       "question2": "How do you handle my personal data and privacy?",
       "answer2": "We value your privacy and protect your information with secure systems. Your test responses and results are kept confidential and are not shared without your consent. You can review our full Privacy Policy for more details.",

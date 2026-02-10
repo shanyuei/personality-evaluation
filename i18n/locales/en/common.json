@@ -1,0 +1,44 @@
+{
+    "getStarted": "Get Started",
+    "siteDescription": "Unlock knowledge and growth with expert courses and tools.",
+    "courseCard": {
+      "status": {
+        "completed": "You've completed this test.",
+        "of": "of",
+        "lessons": "lessons"
+      },
+      "link": {
+        "viewResults": "View test results"
+      },
+      "badge": {
+        "points": "points"
+      },
+      "meta": {
+        "certificate": "Certificate"
+      },
+      "people": {
+        "finished": "people already finished it"
+      }
+    },
+    "api": {
+      "error": "Error"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "desc": "Find quick answers to common inquiries regarding our assessment process, report insights, and platform features."
+    },
+    "viewResults": "View test results",
+    "retakeTest": "Retake test",
+    "points": "points",
+    "of": "of",
+    "lessons": "lessons",
+    "finished": "finished",
+    "certificate": "Certificate",
+    "viewAllBlogs": "View All Blogs",
+    "step": "STEP",
+    "stepTotal": "Step {current} of {total}",
+    "percentIcon": "%",
+    "continue": "CONTINUE",
+    "price": "$",
+    "period": "."
+  }

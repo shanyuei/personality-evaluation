@@ -44,7 +44,6 @@ definePageMeta({
 useSeoMeta({
   title: () => t('seo.orders.purchaseComplete.title', { separator: '|' }) as string,
   description: () => t('seo.orders.purchaseComplete.description') as string
-  
 })
 const goToReport = () => {
   navigateTo(localePath('/test/result'))

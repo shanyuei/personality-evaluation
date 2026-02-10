@@ -1,0 +1,186 @@
+{
+    "404": {
+        "title": "Page Not Found {separator} PersonalityTest101 – Let’s Get You Back on Track",
+        "description": "It looks like this path of self-discovery took an unexpected turn. Whether you’re lost or looking for your Enneagram results, let the PersonalityTest101 team guide you back to your journey of personal growth."
+    },
+    "contact": {
+        "title": "Contact {separator} PersonalityTest101 – We’re Here to Help",
+        "description": "Have questions about our personality tests or need support? Contact the PersonalityTest101 team for assistance, feedback, or collaboration opportunities. We’re happy to hear from you.\u000b"
+    },
+    "test": {
+        "index": {
+            "title": "Free Personality Test {separator} PersonalityTest101 – Discover Your True Self",
+            "description": "Take our free personality test to uncover your unique traits and strengths. Get detailed insights into your personality type and learn how to unlock your full potential in life and career. Start your journey today with PersonalityTest101."
+        },
+        "analyzing": {
+            "title": "Title Analysis in Progress {separator} PersonalityTest101 – Decoding Your Unique Traits",
+            "description": "Meta Description Our system is decoding your responses to generate a precise personality profile. Discover the science behind your behavior and unlock deep insights into your core traits and potential."
+        },
+        "report": {
+            "title": "Your Personality Report {separator} PersonalityTest101 – Expert Insights",
+            "description": "Your personality profile is ready. Explore the science behind your traits, unlock deep behavioral insights, and get a tailored roadmap for your personal and professional growth."
+        },
+        "finish": {
+            "title": "Analysis in Progress {separator} PersonalityTest101 – Decoding Your Traits",
+            "description": "Our system is decoding your responses to generate a precise personality profile. Discover the science behind your behavior and unlock deep insights into your core potential."
+        }
+    },
+    "about": {
+        "title": "Title About Us {separator} PersonalityTest101 – Our Mission for Self-Discovery",
+        "description": "Discover the story behind PersonalityTest101. We combine psychological precision with data-driven insights to help individuals uncover their core traits, improve relationships, and achieve personal growth. Learn more about our mission and vision."
+    },
+    "auth.signIn": {
+        "title": "Sign In - Access Your Account",
+        "description": "Log in to your account to access personalized features."
+    },
+    "orders": {
+        "cancelSubscription": {
+            "title": "Cancel Subscription {separator} PersonalityTest101 – Manage Your Account",
+            "description": "Easily manage or cancel your PersonalityTest101 subscription. We’re sorry to see you go, but you can deactivate your account or change your plan at any time through our secure portal."
+        },
+        "purchaseComplete": {
+            "title": "Payment Successful {separator} PersonalityTest101 - Start Your Growth Journey",
+            "description": "Thank you for your purchase! Your premium personality analysis and self-esteem guidebook are ready. Access your insights now on PersonalityTest101."
+        },
+        "create": {
+            "title": "Secure Checkout {separator} PersonalityTest101 – Start Your 7-Day Trial",
+            "description": "Unlock unlimited personality reports for just $1.99. Start your 7-day trial today and get professional insights into your strengths and behavioral patterns. Secure payment powered by SSL."
+        }
+    },
+    "faq": {
+        "title": "Privacy & Help Center {separator} PersonalityTest101 - Your Data Security",
+        "description": "Find answers to common questions about PersonalityTest101. Learn how we use your assessment data, our data sharing policies, and how to manage your cookies for a secure experience."
+    },
+    "home": {
+        "title": "Unlock knowledge and growth with expert courses and tools.",
+        "description": "An exceptional platform for career development. The current curriculum, skilled instructors, and hands-on learning are truly rewarding."
+    },
+    "test.start": {
+        "title": "Start Personality Test - Begin Your Journey",
+        "description": "Ready to discover your true self? Start the personality test now."
+    },
+    "test.step": {
+        "title": "Personality Test - Question",
+        "description": "Answer questions to reveal your personality traits."
+    },
+    "test.analyzing": {
+        "title": "Analyzing Your Personality - Please Wait",
+        "description": "We're analyzing your responses to generate your personalized report."
+    },
+    "test.result": {
+        "title": "Your Personality Results - Insights and Growth",
+        "description": "View your detailed personality analysis and personalized insights."
+    },
+    "ebooks": {
+        "title": "Ebooks - Expert Knowledge and Resources",
+        "description": "Explore our collection of expert-crafted ebooks on personal development and career growth."
+    },
+    "ebooks.detail": {
+        "title": "Ebook Detail - In-Depth Learning Resource",
+        "description": "Access detailed information about this expert ebook."
+    },
+    "profile": {
+        "title": "Your Profile - Personal Dashboard",
+        "description": "Manage your profile and access your test results and learning materials."
+    },
+    "profile.detail": {
+        "title": "Profile Details - Update Your Information",
+        "description": "View and update your personal information and preferences."
+    },
+    "tests": {
+        "title": "Tests - Explore Available Assessments",
+        "description": "Browse our selection of personality and career assessments."
+    },
+    "blog": {
+        "title": "Blog - Latest Insights and Articles",
+        "description": "Read our latest articles on personal development, career growth, and industry trends."
+    },
+    "blog.category": {
+        "title": "Blog Category - Articles by Topic",
+        "description": "View articles in this blog category."
+    },
+    "blog.slug": {
+        "title": "Blog Post - Detailed Article",
+        "description": "Read this in-depth article on personal development."
+    },
+    "userCourse": {
+        "title": "User Courses - Personalized Learning",
+        "description": "Access your enrolled courses and track your learning progress."
+    },
+    "userCourse.chapters": {
+        "title": "Course Chapters - Learning Modules",
+        "description": "Navigate through course chapters and lessons."
+    },
+    "userCourse.lesson": {
+        "title": "Course Lesson - Interactive Learning",
+        "description": "Engage with course content and complete lesson activities."
+    },
+    "userCourse.lessonComplete": {
+        "title": "Lesson Complete - Congratulations!",
+        "description": "You've successfully completed this lesson."
+    },
+    "userCourse.chapterComplete": {
+        "title": "Chapter Complete - Well Done!",
+        "description": "You've finished this chapter. Move on to the next one."
+    },
+    "userCourse.test": {
+        "title": "Course Test - Assess Your Knowledge",
+        "description": "Take this test to evaluate your understanding of the course material."
+    },
+    "userCourse.testComplete": {
+        "title": "Course Test Complete - Results",
+        "description": "View your test results and feedback."
+    },
+    "userCourse.lessonGuide": {
+        "title": "Lesson Guide - Learning Objectives",
+        "description": "Review the learning objectives for this lesson."
+    },
+    "orders.cancelSubscription": {
+        "title": "Cancel Subscription - Manage Membership",
+        "description": "Cancel your subscription and manage your membership settings."
+    },
+    "orders.purchaseComplete": {
+        "title": "Purchase Complete - Thank You!",
+        "description": "Your purchase has been successfully processed."
+    },
+    "courses": {
+        "title": "Courses - Expert Learning Resources",
+        "description": "Explore our collection of expert-led courses for personal and professional growth."
+    },
+    "legal": {
+        "title": "Legal Information - Terms and Policies",
+        "description": "Review our terms of service and privacy policies."
+    },
+    "legal.privacy": {
+        "title": "Privacy Policy - Your Data Protection",
+        "description": "Learn how we protect your personal information."
+    },
+    "legal.terms": {
+        "title": "Terms of Service - Platform Rules",
+        "description": "Review our terms of service and platform guidelines."
+    },
+    "mentors": {
+        "title": "Mentors - Expert Guidance",
+        "description": "Connect with expert mentors for personalized guidance and support."
+    },
+    "routeGuide": {
+        "title": "Route Guide - Platform Navigation",
+        "description": "Learn how to navigate our platform and access all features."
+    },
+    "auth": {
+        "title": "Authentication - Secure Access",
+        "description": "Securely access your account with our authentication system.",
+        "signIn": {
+            "title": "Sign In | PersonalityTest101 - Access Your Reports",
+            "description": "Sign in to PersonalityTest101 to access your professional personality reports, track your growth, and unlock career insights. Secure and easy access."
+        }
+    },
+    "account": {
+        "title": "Account Management - Settings and Preferences",
+        "description": "Manage your account settings and preferences."
+    },
+    "account.settings": {
+        "title": "Account Settings - Personalize Your Experience",
+        "description": "Update your account settings and personal preferences."
+    }
+}

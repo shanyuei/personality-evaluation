@@ -8,41 +8,41 @@
       <div class="md:uno-col-span-12 lg:uno-col-span-6">
         <h1
           class="uno-text-4xl md:uno-text-5xl uno-font-600 uno-text-[#011813] uno-mb-4 uno-font-Outfit uno-whitespace-nowrap">
-          {{ $t('pages.order.create.title') }}
+          {{ $t('pages.orders.create.title') }}
         </h1>
         <p class="uno-text-[#4E5255] uno-text-lg uno-mb-48px uno-font-Outfit">
-          {{ $t('pages.order.create.subtitle') }}
+          {{ $t('pages.orders.create.subtitle') }}
         </p>
 
         <!-- Summary Card -->
         <div class="uno-bg-[#EAFBF6] uno-rounded-[24px] uno-p-6 md:uno-p-8">
           <div class="uno-flex uno-justify-between uno-items-baseline uno-mb-6">
-            <h3 class="uno-text-2xl uno-font-bold uno-text-[#009D77]">{{ $t('pages.order.create.summary.trial') }}</h3>
-            <span class="uno-text-2xl uno-font-bold uno-text-[#009D77]">{{ $t('pages.order.create.summary.price')
-            }}</span>
+            <h3 class="uno-text-2xl uno-font-bold uno-text-[#009D77]">{{ $t('pages.orders.create.summary.trial', { day: 7 }) }}</h3>
+            <span class="uno-text-2xl uno-font-bold uno-text-[#009D77]">{{ $t("common.price") }} 1.99</span>
           </div>
 
           <ul class="uno-space-y-4 uno-mb-8">
             <li class="uno-flex uno-items-center uno-gap-3">
               <AppCheckIcon class="uno-text-white uno-w-4 uno-h-4" />
               <span class="uno-text-[18px] uno-text-[#323233] uno-font-[400]">{{
-                $t('pages.order.create.summary.benefit1') }}</span>
+                $t('pages.orders.create.summary.benefit1') }}</span>
             </li>
             <li class="uno-flex uno-items-center uno-gap-3">
               <AppCheckIcon class="uno-text-white uno-w-4 uno-h-4" />
               <span class="uno-text-[18px] uno-text-[#323233] uno-font-[400]">{{
-                $t('pages.order.create.summary.benefit2') }}</span>
+                $t('pages.orders.create.summary.benefit2') }}</span>
             </li>
             <li class="uno-flex uno-items-center uno-gap-3">
               <AppCheckIcon class="uno-text-white uno-w-4 uno-h-4" />
               <span class="uno-text-[18px] uno-text-[#323233] uno-font-[400]">{{
-                $t('pages.order.create.summary.benefit3') }}</span>
+                $t('pages.orders.create.summary.benefit3') }}</span>
             </li>
           </ul>
         </div>
         
           <p class="uno-text-xs uno-text-[#8D8E8F] uno-leading-relaxed uno-mt-12px">
-            {{ $t('pages.order.create.summary.terms') }}
+            {{ $t('pages.orders.create.summary.terms', { price1: $t("common.price") + "1.99", price2: $t("common.price") + "27.88", day: 7 }) }}
+            <a href="mailto:support@personalitytest101.com">support@personalitytest101.com</a>
           </p>
       </div>
 
@@ -53,25 +53,25 @@
             <!-- Email -->
             <div class="uno-space-y-2">
               <label class="uno-block uno-text-sm uno-font-medium uno-text-[#011813]">{{
-                $t('pages.order.create.form.email') }}</label>
+                $t('pages.orders.create.form.email') }}</label>
 
-              <UInput v-model="form.email" :placeholder="$t('pages.order.create.form.emailPlaceholder')" size="xl"
+              <UInput v-model="form.email" :placeholder="$t('pages.orders.create.form.emailPlaceholder')" size="xl"
                 :ui="{ rounded: 'rounded-[12px]' }" class="uno-w-full" />
             </div>
 
             <!-- Cardholder Name -->
             <div class="uno-space-y-2">
               <label class="uno-block uno-text-sm uno-font-medium uno-text-[#011813]">{{
-                $t('pages.order.create.form.name') }}</label>
-              <UInput v-model="form.name" :placeholder="$t('pages.order.create.form.namePlaceholder')" size="xl"
+                $t('pages.orders.create.form.name') }}</label>
+              <UInput v-model="form.name" :placeholder="$t('pages.orders.create.form.namePlaceholder')" size="xl"
                 :ui="{ rounded: 'rounded-[12px]' }" class="uno-w-full" />
             </div>
 
             <!-- Card Number -->
             <div class="uno-space-y-2">
               <label class="uno-block uno-text-sm uno-font-medium uno-text-[#011813]">{{
-                $t('pages.order.create.form.cardNumber') }}</label>
-              <UInput v-model="form.cardNumber" :placeholder="$t('pages.order.create.form.cardNumberPlaceholder')"
+                $t('pages.orders.create.form.cardNumber') }}</label>
+              <UInput v-model="form.cardNumber" :placeholder="$t('pages.orders.create.form.cardNumberPlaceholder')"
                 size="xl" icon="i-lucide-credit-card" :ui="{ rounded: 'rounded-[12px]' }" class="uno-w-full" />
             </div>
 
@@ -79,20 +79,20 @@
             <div class="uno-grid uno-grid-cols-3 uno-gap-4">
               <div class="uno-space-y-2">
                 <label class="uno-block uno-text-sm uno-font-medium uno-text-[#011813]">{{
-                  $t('pages.order.create.form.expires') }}</label>
-                <UInput v-model="form.expires" :placeholder="$t('pages.order.create.form.expiresPlaceholder')" size="xl"
+                  $t('pages.orders.create.form.expires') }}</label>
+                <UInput v-model="form.expires" :placeholder="$t('pages.orders.create.form.expiresPlaceholder')" size="xl"
                   :ui="{ rounded: 'rounded-[12px]' }" class="uno-w-full" />
               </div>
               <div class="uno-space-y-2">
                 <label class="uno-block uno-text-sm uno-font-medium uno-text-[#011813]">{{
-                  $t('pages.order.create.form.cvv') }}</label>
-                <UInput v-model="form.cvv" :placeholder="$t('pages.order.create.form.cvvPlaceholder')" size="xl"
+                  $t('pages.orders.create.form.cvv') }}</label>
+                <UInput v-model="form.cvv" :placeholder="$t('pages.orders.create.form.cvvPlaceholder')" size="xl"
                   :ui="{ rounded: 'rounded-[12px]' }" class="uno-w-full" />
               </div>
               <div class="uno-space-y-2">
                 <label class="uno-block uno-text-sm uno-font-medium uno-text-[#011813]">{{
-                  $t('pages.order.create.form.zip') }}</label>
-                <UInput v-model="form.zip" :placeholder="$t('pages.order.create.form.zipPlaceholder')" size="xl"
+                  $t('pages.orders.create.form.zip') }}</label>
+                <UInput v-model="form.zip" :placeholder="$t('pages.orders.create.form.zipPlaceholder')" size="xl"
                   :ui="{ rounded: 'rounded-[12px]' }" class="uno-w-full" />
               </div>
             </div>
@@ -101,11 +101,11 @@
             <div class="uno-flex uno-items-start uno-gap-3">
               <UCheckbox v-model="form.consent" :ui="{ base: 'uno-w-5 uno-h-5 uno-border uno-border-[#4E5255]', rounded: 'rounded' }" />
               <div class="uno-text-xs uno-text-[#4E5255] uno-leading-tight uno-mt-0.5">
-                <span>{{ $t('pages.order.create.form.consentPart1') }}</span>
-                <span class="uno-text-[#009D77]">{{ $t('pages.order.create.form.terms') }}</span>
-                <span>{{ $t('pages.order.create.form.consentPart2') }}</span>
-                <span class="uno-text-[#009D77]">{{ $t('pages.order.create.form.privacy') }}</span>
-                <span>{{ $t('pages.order.create.form.consentPart3') }}</span>
+                <span>{{ $t('pages.orders.create.form.consentPart1') }}</span>
+                <span class="uno-text-[#009D77]">{{ $t('pages.orders.create.form.terms') }}</span>
+                <span>{{ $t('pages.orders.create.form.consentPart2') }}</span>
+                <span class="uno-text-[#009D77]">{{ $t('pages.orders.create.form.privacy') }}</span>
+                <span>{{ $t('common.period') }}</span>
               </div>
             </div>
 
@@ -114,12 +114,12 @@
               <button
                 class="uno-w-full uno-h-[56px] uno-bg-[#009D77] hover:uno-bg-[var(--color-green-2)] uno-text-white uno-rounded-[12px] uno-font-bold uno-transition-colors"
                 @click="handleSubmit">
-                {{ $t('pages.order.create.form.subscribeBtn') }}
+                {{ $t('pages.orders.create.form.subscribeBtn', { price: $t("common.price") + "1.99" }) }}
               </button>
 
               <button type="button"
                 class="uno-w-full uno-h-[48px] uno-bg-[#191919] hover:uno-bg-black uno-text-white uno-rounded-[12px] uno-font-bold uno-transition-colors uno-flex uno-items-center uno-justify-center uno-gap-2">
-                {{ $t('pages.order.create.form.paypalBtn') }}
+                {{ $t('pages.orders.create.form.paypalBtn') }}
                 <svg width="78" height="21" viewBox="0 0 78 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M33.2518 20.2653L42.8401 6.3224C42.9239 6.23866 42.9239 6.15491 42.9239 6.07117C42.9239 5.81995 42.7145 5.52686 42.4633 5.52686H39.5742C39.323 5.52686 39.0299 5.69434 38.9043 5.90369L34.9266 11.7656L33.2518 6.11304C33.1261 5.77808 32.7912 5.52686 32.4143 5.52686H29.609C29.3578 5.52686 29.1484 5.77808 29.1484 6.07117C29.1484 6.23866 32.0794 14.6128 32.3306 15.4083C31.9119 15.9945 29.2322 19.721 29.2322 20.1816C29.2322 20.4328 29.4415 20.6421 29.6928 20.6421H32.5818C32.8331 20.6421 33.0843 20.4747 33.2518 20.2653Z"
@@ -145,7 +145,7 @@
 
               <button type="button"
                 class="uno-w-full uno-h-[48px] uno-bg-[#191919] hover:uno-bg-black uno-text-white uno-rounded-[12px] uno-font-bold uno-transition-colors uno-flex uno-items-center uno-justify-center uno-gap-2">
-                {{ $t('pages.order.create.form.gpayBtn') }}
+                {{ $t('pages.orders.create.form.gpayBtn') }}
                 <svg width="50" height="20" viewBox="0 0 50 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M35.4409 5.37703C36.8154 5.37703 37.8776 5.75186 38.6898 6.50164C39.502 7.25142 39.8769 8.25108 39.8769 9.50064V15.4987H38.1275V14.1241H38.065C37.3152 15.2488 36.2531 15.8111 35.0035 15.8111C33.9414 15.8111 33.0041 15.4987 32.2544 14.8739C31.5671 14.2491 31.1298 13.3744 31.1298 12.4372C31.1298 11.4375 31.5046 10.6253 32.2544 10.0005C33.0041 9.37569 34.0663 9.1258 35.3159 9.1258C36.4405 9.1258 37.3152 9.31319 38.0025 9.75058V9.31325C38.0025 8.73006 37.7848 8.14693 37.3494 7.76699L37.2527 7.68875C36.7529 7.25142 36.1281 7.00147 35.4409 7.00147C34.3787 7.00147 33.5665 7.43886 33.0041 8.31353L31.3797 7.31386C32.3794 6.0018 33.6914 5.37703 35.4409 5.37703ZM26.6313 1.12842C27.7524 1.12842 28.8178 1.51852 29.6696 2.24611L29.8177 2.37797C30.6924 3.12775 31.1298 4.25236 31.1298 5.43947C31.1298 6.62658 30.6924 7.68875 29.8177 8.50097C28.943 9.31324 27.8808 9.75058 26.6313 9.75058L23.6322 9.68808V15.4987H21.7578V1.12842H26.6313ZM35.6907 10.6253C34.941 10.6253 34.3162 10.8127 33.8164 11.1876C33.3165 11.5 33.0666 11.9374 33.0666 12.4997C33.0666 12.9995 33.3165 13.4369 33.6914 13.6868C34.1288 13.9992 34.6286 14.1866 35.1285 14.1866C35.8282 14.1866 36.528 13.9145 37.0754 13.421L37.1903 13.3119C37.8151 12.7496 38.1275 12.0623 38.1275 11.3126C37.5652 10.8752 36.7529 10.6253 35.6907 10.6253ZM26.7562 2.87781H23.6322V7.87619H26.7562C27.4435 7.87619 28.1308 7.62625 28.5681 7.12642C29.5678 6.18925 29.5678 4.62725 28.6306 3.69008L28.5681 3.62758C28.0683 3.12775 27.4435 2.81536 26.7562 2.87781ZM49.9986 5.68942L43.8131 19.8722H41.9387L44.2505 14.9364L40.1893 5.75186H42.1886L45.1252 12.8121H45.1877L48.0617 5.75186H49.9986V5.68942Z"
@@ -195,11 +195,11 @@
     </div>
 
     <!-- Testimonials Section -->
-    <TestimonialsSection :title="$t('pages.order.create.testimonials.title')"
-      :description="$t('pages.order.create.testimonials.subtitle')" :rating="5" :reviews="reviews" />
+    <TestimonialsSection :title="$t('pages.orders.create.testimonials.title')"
+      :description="$t('pages.orders.create.testimonials.subtitle')" :rating="5" :reviews="reviews" />
 
     <!-- FAQ Section -->
-    <FAQSection :title="$t('pages.home.faq.title')" :description="$t('pages.home.faq.description')" :items="faqItems" />
+    <FAQSection :title="$t('common.faq.title')" :description="$t('common.faq.desc')" :items="faqItems" />
   </div>
 </template>
 
@@ -209,6 +209,17 @@ import AppCheckIcon from '~/components/AppCheckIcon.vue';
 
 const { t } = useI18n()
 const route = useRoute()
+
+
+
+definePageMeta({
+  title: () => 'pages.orders.create.title',
+  path: '/checkout'
+})
+useSeoMeta({
+  title: () => t('seo.orders.create.title', { separator: '|' }) as string,
+  description: () => t('seo.orders.create.description') as string
+})
 
 // Form State
 const form = ref({
@@ -273,7 +284,7 @@ const handleSubmit = async () => {
       // router.push({ path: '/orders/success' })
     } else {
       // 处理 token 缺失的情况
-      alert(t('pages.order.create.form.paymentError') || 'Payment failed. Please try again.')
+      alert(t('pages.orders.create.form.paymentError') || 'Payment failed. Please try again.')
     }
 
 
@@ -286,42 +297,134 @@ const handleSubmit = async () => {
 
 // Trust Badges Data
 const trustItems = computed(() => [
-  { text: t('pages.order.create.trust.us'), image: '/images/orders/create/5.png' },
-  { text: t('pages.order.create.trust.noCharge'), image: '/images/orders/create/6.png' },
-  { text: t('pages.order.create.trust.refund'), image: '/images/orders/create/7.png' },
-  { text: t('pages.order.create.trust.cancel'), image: '/images/orders/create/8.png' },
+  { text: t('pages.orders.create.trust.us'), image: '/images/orders/create/5.png' },
+  { text: t('pages.orders.create.trust.noCharge'), image: '/images/orders/create/6.png' },
+  { text: t('pages.orders.create.trust.refund'), image: '/images/orders/create/7.png' },
+  { text: t('pages.orders.create.trust.cancel'), image: '/images/orders/create/8.png' },
 ])
-const baseText = 'An exceptional platform for career development. The current curriculum, skilled instructors, and hands-on learning are truly rewarding.'
 // Testimonials Data
-const reviews: Array<{ text: string; avatarUrl: string; name: string; role: string }> = Array.from({ length: 30 }, (_, i) => ({
-  text: baseText,
-  avatarUrl: `https://randomuser.me/api/portraits/${i % 2 === 0 ? 'men' : 'women'}/${(i % 99) + 1}.jpg`,
-  name: 'Brandon Michael',
-  role: 'UX/UI Designer'
-}))
+const reviews = computed(() => {
+  return [
+    {
+      text: t('pages.orders.create.testimonials.reviews.review1.review'),
+      avatarUrl: 'https://randomuser.me/api/portraits/women/32.jpg',
+      name: t('pages.orders.create.testimonials.reviews.review1.name'),
+      role: t('pages.orders.create.testimonials.reviews.review1.role')
+    },
+    {
+      text: t('pages.orders.create.testimonials.reviews.review2.review'),
+      avatarUrl: 'https://randomuser.me/api/portraits/men/45.jpg',
+      name: t('pages.orders.create.testimonials.reviews.review2.name'),
+      role: t('pages.orders.create.testimonials.reviews.review2.role')
+    },
+    {
+      text: t('pages.orders.create.testimonials.reviews.review3.review'),
+      avatarUrl: 'https://randomuser.me/api/portraits/women/67.jpg',
+      name: t('pages.orders.create.testimonials.reviews.review3.name'),
+      role: t('pages.orders.create.testimonials.reviews.review3.role')
+    },
+    {
+      text: t('pages.orders.create.testimonials.reviews.review4.review'),
+      avatarUrl: 'https://randomuser.me/api/portraits/men/78.jpg',
+      name: t('pages.orders.create.testimonials.reviews.review4.name'),
+      role: t('pages.orders.create.testimonials.reviews.review4.role')
+    },
+    {
+      text: t('pages.orders.create.testimonials.reviews.review5.review'),
+      avatarUrl: 'https://randomuser.me/api/portraits/women/23.jpg',
+      name: t('pages.orders.create.testimonials.reviews.review5.name'),
+      role: t('pages.orders.create.testimonials.reviews.review5.role')
+    },
+    {
+      text: t('pages.orders.create.testimonials.reviews.review6.review'),
+      avatarUrl: 'https://randomuser.me/api/portraits/men/56.jpg',
+      name: t('pages.orders.create.testimonials.reviews.review6.name'),
+      role: t('pages.orders.create.testimonials.reviews.review6.role')
+    },
+    {
+      text: t('pages.orders.create.testimonials.reviews.review7.review'),
+      avatarUrl: 'https://randomuser.me/api/portraits/women/89.jpg',
+      name: t('pages.orders.create.testimonials.reviews.review7.name'),
+      role: t('pages.orders.create.testimonials.reviews.review7.role')
+    },
+    {
+      text: t('pages.orders.create.testimonials.reviews.review8.review'),
+      avatarUrl: 'https://randomuser.me/api/portraits/men/92.jpg',
+      name: t('pages.orders.create.testimonials.reviews.review8.name'),
+      role: t('pages.orders.create.testimonials.reviews.review8.role')
+    },
+    {
+      text: t('pages.orders.create.testimonials.reviews.review9.review'),
+      avatarUrl: 'https://randomuser.me/api/portraits/women/44.jpg',
+      name: t('pages.orders.create.testimonials.reviews.review9.name'),
+      role: t('pages.orders.create.testimonials.reviews.review9.role')
+    },
+    {
+      text: t('pages.orders.create.testimonials.reviews.review10.review'),
+      avatarUrl: 'https://randomuser.me/api/portraits/men/63.jpg',
+      name: t('pages.orders.create.testimonials.reviews.review10.name'),
+      role: t('pages.orders.create.testimonials.reviews.review10.role')
+    },
+    {
+      text: t('pages.orders.create.testimonials.reviews.review11.review'),
+      avatarUrl: 'https://randomuser.me/api/portraits/women/75.jpg',
+      name: t('pages.orders.create.testimonials.reviews.review11.name'),
+      role: t('pages.orders.create.testimonials.reviews.review11.role')
+    },
+    {
+      text: t('pages.orders.create.testimonials.reviews.review12.review'),
+      avatarUrl: 'https://randomuser.me/api/portraits/men/87.jpg',
+      name: t('pages.orders.create.testimonials.reviews.review12.name'),
+      role: t('pages.orders.create.testimonials.reviews.review12.role')
+    },
+    {
+      text: t('pages.orders.create.testimonials.reviews.review13.review'),
+      avatarUrl: 'https://randomuser.me/api/portraits/women/51.jpg',
+      name: t('pages.orders.create.testimonials.reviews.review13.name'),
+      role: t('pages.orders.create.testimonials.reviews.review13.role')
+    },
+    {
+      text: t('pages.orders.create.testimonials.reviews.review14.review'),
+      avatarUrl: 'https://randomuser.me/api/portraits/men/39.jpg',
+      name: t('pages.orders.create.testimonials.reviews.review14.name'),
+      role: t('pages.orders.create.testimonials.reviews.review14.role')
+    }
+  ]
+})
 
 
-const faqItems = [
+const faqItems = computed(() => [
   {
-    question: 'Can I Track My Assignments and Grades?',
-    answer:
-      'Yes, the LMS offers a "Gradebook" where students can view their grades, mentor feedback on assignments, and class attendance data. You can view your grade and comments for each submission.'
+    question: t('datas.contact.question1'),
+    answer: t('datas.contact.answer1')
   },
   {
-    question: 'Does the LMS support video lessons and live classes?',
-    answer: 'Yes, it supports both pre-recorded video lessons and live classes with interactive features.'
+    question: t('datas.contact.question2'),
+    answer: t('datas.contact.answer2')
   },
   {
-    question: 'How can I communicate with my instructor?',
-    answer: 'You can use messaging tools, discussion boards, and scheduled office hours to communicate.'
+    question: t('datas.contact.question3'),
+    answer: t('datas.contact.answer3')
   },
   {
-    question: 'What support is available for students and instructors?',
-    answer: 'Help center articles, email support, and live chat are available for both students and instructors.'
+    question: t('datas.contact.question4'),
+    answer: t('datas.contact.answer4')
   },
   {
-    question: 'Are there interactive features for students?',
-    answer: 'Quizzes, assignments, polls, and peer discussions are available to enhance engagement.'
+    question: t('datas.contact.question5'),
+    answer: t('datas.contact.answer5')
+  },
+  {
+    question: t('datas.contact.question6'),
+    answer: t('datas.contact.answer6')
+  },
+  {
+    question: t('datas.contact.question7'),
+    answer: t('datas.contact.answer7')
+  },
+  {
+    question: t('datas.contact.question8'),
+    answer: t('datas.contact.answer8')
   }
-]
+])
 </script>
