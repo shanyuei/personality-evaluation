@@ -11,18 +11,18 @@
         <h2 class="uno-font-semibold uno-text-[24px] uno-text-[#323233] uno-leading-[36px] uno-mb-[16px]">{{
           $t('pages.account.settings.profile.title') }}</h2>
         <div class="uno-space-y-4">
-          <UFormField :ui="UFormFieldTheme" :label="$t('pages.account.settings.profile.namePlaceholder')">
+          <UFormField :ui="UFormFieldTheme" :label="$t('pages.account.settings.profile.name')">
             <UInput v-model="name" :ui="UInputTheme" type="text"
               :placeholder="$t('pages.account.settings.profile.namePlaceholder')" />
           </UFormField>
-          <UFormField :ui="UFormFieldTheme" :label="$t('pages.account.settings.profile.emailPlaceholder')">
+          <UFormField :ui="UFormFieldTheme" :label="$t('pages.account.settings.profile.email')">
             <UInput v-model="email" :ui="UInputTheme" type="email"
               :placeholder="$t('pages.account.settings.profile.emailPlaceholder')" />
           </UFormField>
           <div>
             <PrimaryButton class="!uno-w-[217px]" :loading="profileLoading"
               @click="onSaveProfile">
-              {{ $t('pages.account.settings.profile.submit') }}
+              {{ $t('common.saveChanges') }}
             </PrimaryButton>
           </div>
         </div>
@@ -48,7 +48,7 @@
           <div>
             <PrimaryButton class="!uno-w-[217px]" :loading="passwordLoading"
               @click="onChangePassword">
-              {{ $t('pages.account.settings.password.submit') }}
+              {{ $t('common.confirm') }}
             </PrimaryButton>
           </div>
         </div>
@@ -59,12 +59,12 @@
         <h2 class="uno-font-semibold uno-text-[24px] uno-text-[#323233] uno-leading-[36px] uno-mb-[16px]">{{
           $t('pages.account.settings.language.title') }}</h2>
         <UFormField :ui="UFormFieldTheme">
-          <USelect v-model="language" :ui="USelectTheme" :items="languageOptions" value-attribute="value"
+          <USelect v-model="language" :ui="USelectTheme" :placeholder="$t('pages.account.settings.language.placeholder')" :items="languageOptions" value-attribute="value"
             option-attribute="label" />
         </UFormField>
         <div class="uno-mt-4">
           <PrimaryButton class="!uno-w-[217px]" :loading="languageLoading" @click="onLanguageSaved">
-            {{ $t('pages.account.settings.saveChanges') }}
+            {{ $t('common.confirm') }}
           </PrimaryButton>
         </div>
       </section>
@@ -91,7 +91,8 @@ import PrimaryButton from '~/components/ui/PrimaryButton.vue';
 
 definePageMeta({
   layoutShowFooter: false,
-  title: () => 'seo.account.settings.title'
+  title: () => 'seo.account.settings.title',
+  path: '/settings'
 })
 
 const { t } = useI18n()
@@ -101,8 +102,6 @@ const toast = useToast()
 useSeoMeta({
   title: () => t('seo.account.settings.title') as string,
   description: () => t('seo.account.settings.description') as string,
-  ogTitle: () => t('seo.account.settings.title') as string,
-  ogDescription: () => t('seo.account.settings.description') as string
 })
 
 const userStore = useUserStore()
@@ -228,7 +227,7 @@ const onLanguageSaved = async () => {
 const onDeleteAccount = async () => {
   await new Promise(resolve => setTimeout(resolve, 600))
   toast.add({
-    title: t('pages.account.settings.delete.success') as string,
+    title: t('pages.account.settings.delete.tips') as string,
     icon: 'i-heroicons-check-circle'
   })
 }

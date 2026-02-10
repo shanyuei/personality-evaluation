@@ -57,9 +57,12 @@
 </template>
 
 <script setup lang="ts">
-
+import { useCurious } from '~/composables/useCurious';
 const route = useRoute()
 const { t } = useI18n()
+
+const curious = useCurious();
+
 
 const props = withDefaults(defineProps<{
   layoutShowPageTopIcons?: boolean
@@ -98,6 +101,7 @@ const title = computed(() => {
     return ""
   }
 });
+curious.reset();
 
 </script>
 

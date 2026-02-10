@@ -44,5 +44,7 @@
   "percentIcon": "%",
   "continue": "CONTINUE",
   "price": "$",
-  "period": "."
+  "period": ".",
+  "confirm": "Confirm",
+  "saveChanges": "Save Changes"
 }

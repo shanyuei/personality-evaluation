@@ -23,7 +23,6 @@
         class="uno-w-80% uno-text-[#4E5255] uno-relative uno-z-10 uno-font-Outfit uno-max-w-[720px] uno-mx-auto uno-mb-4 sm:uno-mb-6 md:uno-mb-8 lg:uno-mb-10 uno-text-center uno-px-4 uno-text-[16px] sm:uno-text-base md:uno-text-[16px] uno-leading-[1.5] sm:uno-leading-normal">
         {{ props.description || curious.description  }}
       </p>
-
       <AppArrowButton
         class="uno-relative uno-z-10 uno-min-w-175px md:uno-min-w-190px uno-h-66px uno-justify-start uno-gap-[6px] sm:uno-gap-[8px] md:uno-gap-[12px] uno-py-2 sm:uno-py-2 uno-pr-[6px]  md:uno-pr-[6px] uno-pl-[12px] sm:uno-pl-[16px] md:uno-pl-[16px] uno-text-[12px] sm:uno-text-[14px] md:uno-text-[18px] uno-font-Outfit uno-font-medium"
         :icon-size="44" hover-class=""

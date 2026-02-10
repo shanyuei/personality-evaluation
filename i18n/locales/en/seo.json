@@ -55,6 +55,16 @@
         "title": "Affordable Pricing Plans {separator} PersonalityTest101 - Unlock Your Potential",
         "description": "Choose the perfect plan for your self-discovery journey. Get premium personality reports, career blueprints, and growth toolkits starting at just $14/mo. Secure and scientifically validated."
     },
+    "legal.privacy": {
+        "title": "Privacy Policy {separator} PersonalityTest101 - Your Data Security Matters",
+        "description": "Read our Privacy Policy to understand how PersonalityTest101 collects, protects, and manages your personal data and assessment results. Committed to your privacy and security."
+    },
+    "account.settings": {
+        "title": "Account Settings {separator} Manage Profile, Security & Language Preferences",
+        "description": "Manage your account settings, update personal information, change your password, select your preferred language, or delete your account securely."
+    },
+
+
     "home": {
         "title": "Unlock knowledge and growth with expert courses and tools.",
         "description": "An exceptional platform for career development. The current curriculum, skilled instructors, and hands-on learning are truly rewarding."
@@ -155,10 +165,6 @@
         "title": "Legal Information - Terms and Policies",
         "description": "Review our terms of service and privacy policies."
     },
-    "legal.privacy": {
-        "title": "Privacy Policy - Your Data Protection",
-        "description": "Learn how we protect your personal information."
-    },
     "legal.terms": {
         "title": "Terms of Service - Platform Rules",
         "description": "Review our terms of service and platform guidelines."
@@ -182,9 +188,6 @@
     "account": {
         "title": "Account Management - Settings and Preferences",
         "description": "Manage your account settings and preferences."
-    },
-    "account.settings": {
-        "title": "Account Settings - Personalize Your Experience",
-        "description": "Update your account settings and personal preferences."
     }
+    
 }

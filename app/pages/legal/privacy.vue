@@ -30,8 +30,9 @@
             <section v-for="section in sections" :key="section.id" :id="section.id">
               <h2 class="uno-text-[24px] uno-font-[Outfit] uno-font-[600] uno-text-gray-900 uno-mb-4">{{
                 section.title }}</h2>
-              <p v-if="section.subtitle" class="uno-text-[16px] uno-font-[500] uno-text-[#011813] uno-mb-6">{{ section.subtitle }}</p>
-              <p class="uno-text-gray-700 uno-mb-4">{{ section.content }}</p>
+              <p v-if="section.subtitle" class="uno-text-[16px] uno-font-[500] uno-text-[#011813] uno-mb-6">{{
+                section.subtitle }}</p>
+              <div class="uno-text-gray-700 uno-mb-4" v-html="section.content"></div>
             </section>
           </div>
         </div>
@@ -48,7 +49,8 @@ const { t } = useI18n()
 
 definePageMeta({
   layoutShowCurious: true,
-  title: () => 'seo.legal.privacy.title'
+  title: () => 'seo.legal.privacy.title',
+  path: "/privacy-policy"
 })
 
 useSeoMeta({
@@ -63,9 +65,11 @@ const navItems = [
   { id: 'privacy-policy', label: 'Privacy Policy' },
   { id: 'information-we-collect', label: 'Information We Collect' },
   { id: 'how-we-use-your-information', label: 'How We Use Your Information' },
+  { id: 'anonymization-of-test-data', label: 'Anonymization of Test Data' },
   { id: 'data-sharing-and-disclosure', label: 'Data Sharing and Disclosure' },
   { id: 'cookies-and-tracking-technologies', label: 'Cookies and Tracking Technologies' },
   { id: 'changes-to-this-privacy-policy', label: 'Changes to This Privacy Policy' },
+  { id: 'informational-purpose-disclaimer', label: 'Informational Purpose Disclaimer' },
   { id: 'contact-us', label: 'Contact Us' }
 ]
 
@@ -74,38 +78,98 @@ const sections = [
   {
     id: 'privacy-policy',
     title: 'Privacy Policy',
-    subtitle: 'Last Update: 25-11-2024',
-    content: 'At MH. Masters Hub, we value and prioritize your privacy. This Privacy Policy describes how we collect, use, share, and protect your information while you use our Learning Management System (LMS) website and services. We are committed to ensuring that your personal data remains secure and that you are informed about your rights and options regarding your information.'
+    subtitle: 'Last Updated: November 25, 2024',
+    content: `
+      <p>We respect your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, store, and protect your information when you use our website and personality testing services.</p>
+      <p>By accessing or using our services, you agree to the practices described in this Privacy Policy.</p>
+    `
   },
   {
     id: 'information-we-collect',
     title: 'Information We Collect',
-    content: 'We collect personal information such as your name, email, and contact details to manage your account and improve your learning experience. We track your course progress, assignments, and assessments to tailor our services. For purchases, we collect payment details for secure processing. We also gather usage data, including IP address and device information, to enhance our platform\'s performance.'
+    content: `
+      <p>We may collect the following types of information when you use our services:</p>
+      <ul style="padding-left: 20px;list-style: disc;">
+        <li><strong>Personal Information:</strong> Such as an email address or username if you voluntarily provide it.</li>
+        <li><strong>Assessment Data:</strong> Responses, results, and interactions related to personality tests, quizzes, or questionnaires.</li>
+        <li><strong>Usage Information:</strong> Pages visited, features used, test completion status, and interaction behavior.</li>
+        <li><strong>Technical Information:</strong> IP address, browser type, device type, operating system, and language preferences.</li>
+      </ul>
+      <p>We collect only the information necessary to provide and improve our services.</p>
+    `
   },
   {
     id: 'how-we-use-your-information',
     title: 'How We Use Your Information',
-    content: 'We use your data to manage your account, personalize your learning, and communicate important updates. With your consent, we may send you promotional offers. Your payment information is used for secure transactions and fraud prevention. We also use your data to improve our website, customer services, and comply with legal requirements.'
+    content: `
+      <p>We use the collected information to:</p>
+      <ul style="padding-left: 20px;list-style: disc;">
+        <li>Provide, operate, and maintain our personality testing services</li>
+        <li>Generate and display test results and personalized insights</li>
+        <li>Improve website performance, content, and overall user experience</li>
+        <li>Communicate service-related updates or respond to inquiries</li>
+        <li>Detect and prevent fraud, abuse, or unauthorized access</li>
+        <li>Comply with applicable legal and regulatory requirements</li>
+      </ul>
+    `
+  },
+  {
+    id: 'anonymization-of-test-data',
+    title: 'Anonymization of Test Data',
+    content: `
+      <p>To enhance user privacy, personality test responses and results may be processed in an aggregated or anonymized manner. This means such data cannot be used to directly identify individual users. Anonymized data may be used for statistical analysis, service improvement, and research purposes.</p>
+    `
   },
   {
     id: 'data-sharing-and-disclosure',
     title: 'Data Sharing and Disclosure',
-    content: 'Your privacy is important to us, and we ensure your information is kept confidential. We do not sell or rent your data. But may share it with trusted third-party vendors for services like hosting and payment processing. These providers are required to protect your data. We may also share information to comply with legal obligations or with your consent.'
+    content: `
+      <p>We do not sell, rent, or trade your personal information.</p>
+      <p>We may share your information only in the following circumstances:</p>
+      <ul style="padding-left: 20px;list-style: disc;">
+        <li>With trusted third-party service providers who assist in website hosting, analytics, customer support, or payment processing</li>
+        <li>When required by law, regulation, or legal process</li>
+        <li>To protect the rights, safety, or security of users or the platform</li>
+        <li>With your explicit consent</li>
+      </ul>
+      <p>All third parties are required to handle data securely and only for authorized purposes.</p>
+    `
   },
   {
     id: 'cookies-and-tracking-technologies',
     title: 'Cookies and Tracking Technologies',
-    content: 'Our website uses cookies and similar tracking technologies to improve user experience and functionality. Cookies enable us to remember your preferences, analyze site usage, and enhance our services. Cookies are small files stored on your device, and while you may choose to disable them via your browser settings, doing so could limit certain functionalities or features on our website.'
+    content: `
+      <p>We use cookies and similar tracking technologies to:</p>
+      <ul style="padding-left: 20px;list-style: disc;">
+        <li>Remember user preferences and settings</li>
+        <li>Analyze website usage and traffic</li>
+        <li>Improve functionality and user experience</li>
+      </ul>
+      <p>You can manage or disable cookies through your browser settings. Please note that disabling cookies may limit certain features of the website.</p>
+    `
   },
   {
     id: 'changes-to-this-privacy-policy',
     title: 'Changes to This Privacy Policy',
-    content: 'We may update this Privacy Policy to reflect changes in our practices or legal requirements. Updates will be posted here, and significant changes will be communicated via email or notifications. We encourage you to review this policy regularly to stay informed. By continuing to use our website, you accept the updated terms.'
+    content: `
+      <p>We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. Any updates will be posted on this page with a revised "Last Updated" date. Continued use of the website after such changes constitutes acceptance of the updated policy.</p>
+    `
+  },
+  {
+    id: 'informational-purpose-disclaimer',
+    title: 'Informational Purpose Disclaimer',
+    content: `
+      <p>All personality test results and related content provided on this website are for <strong>informational and educational purposes only</strong>. They are not intended to diagnose, treat, or replace professional psychological, medical, or mental health advice. Users are encouraged to seek qualified professionals for personalized guidance when appropriate.</p>
+    `
   },
   {
     id: 'contact-us',
     title: 'Contact Us',
-    content: 'If you have any questions, concerns, or feedback regarding this Privacy Policy, please reach out to us. We are here to address any inquiries you may have to ensure your experience with MH. Masters Hub is secure and trustworthy.'
+    content: `
+      <p>If you have any questions, concerns, or requests regarding this Privacy Policy or how we handle your information, please contact us at:</p>
+      <p><strong>Email:</strong> support@personalitytest101.com</p>
+      <p>We will make reasonable efforts to respond to your inquiry in a timely manner.</p>
+    `
   }
 ]
 
