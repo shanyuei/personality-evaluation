@@ -200,10 +200,10 @@
                 class="page-container uno-px-4 !uno-py-8 sm:uno-py-12 md:uno-py-16 lg:uno-py-20 xl:uno-py-24 relative z-10">
                 <h2
                     class="uno-text-[32px] sm:uno-text-2xl md:uno-text-[48px] uno-font-Outfit uno-font-semibold uno-text-center uno-mb-2 sm:uno-mb-3 md:uno-mb-4">
-                    {{ $t('pages.home.receive.title') }}</h2>
+                    {{ $t('common.receive.title') }}</h2>
                 <p
                     class="uno-text-center uno-text-gray-600 uno-text-[16px] sm:uno-text-sm md:uno-text-base uno-mb-6 sm:uno-mb-8 md:uno-mb-16 uno-max-w-3xl uno-mx-auto">
-                    {{ $t('pages.home.receive.desc') }}</p>
+                    {{ $t('common.receive.desc') }}</p>
 
                 <!-- 六个卡片布局 -->
                 <!-- 循环展示 receiveCards -->
@@ -230,10 +230,9 @@
 
         <!-- 第六块 客户评价模块 -->
         <TestimonialsSection :title="$t('pages.home.testimonials.title')"
-            :description="$t('pages.home.testimonials.description')" :rating="5" :reviews="reviews" />
+            :subtitle="$t('pages.home.testimonials.subtitle')" :rating="5" :reviews="reviews" />
 
-        <FAQSection :title="$t('pages.home.faq.title')" :description="$t('pages.home.faq.description')"
-            :description-mobile="$t('pages.home.faq.description-mobile')"
+        <FAQSection :title="$t('common.faq.title')" :description="$t('common.faq.desc')"
             :items="faqItems" />
 
         <!-- <GradientCTASection @button-click="handleCTAClick" /> -->
@@ -241,6 +240,7 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue';
 import GradientCTASection from '../../components/AppCurious.vue';
 import TestimonialsSection from '../../components/TestimonialsSection.vue';
 import FAQSection from '../../components/FAQSection.vue';
@@ -349,65 +349,76 @@ const howSteps = [
 const receiveCards = [
     {
         icon: '/images/home/7.png',
-        alt: 'Comprehensive Personality Report',
-        titleKey: 'pages.home.receive.card1.title',
-        descKey: 'pages.home.receive.card1.desc'
+        alt: t('datas.receives.archetypeAnalysis.title'),
+        titleKey: t('datas.receives.archetypeAnalysis.title'),
+        descKey: t('datas.receives.archetypeAnalysis.desc')
     },
     {
         icon: '/images/home/8.png',
-        alt: 'Personalized Course Recommendations',
-        titleKey: 'pages.home.receive.card3.title',
-        descKey: 'pages.home.receive.card3.desc'
+        alt: t('datas.receives.courseRecommendations.title'),
+        titleKey: t('datas.receives.courseRecommendations.title'),
+        descKey: t('datas.receives.courseRecommendations.desc')
     },
     {
         icon: '/images/home/9.png',
-        alt: 'Skill Assessment Tests',
-        titleKey: 'pages.home.receive.card5.title',
-        descKey: 'pages.home.receive.card5.desc'
+        alt: t('datas.receives.skillAssessment.title'),
+        titleKey: t('datas.receives.skillAssessment.title'),
+        descKey: t('datas.receives.skillAssessment.desc')
     },
     {
         icon: '/images/home/10.png',
-        alt: 'Practical Daily Challenges',
-        titleKey: 'pages.home.receive.card2.title',
-        descKey: 'pages.home.receive.card2.desc'
+        alt: t('datas.receives.dailyChallenges.title'),
+        titleKey: t('datas.receives.dailyChallenges.title'),
+        descKey: t('datas.receives.dailyChallenges.desc')
     },
     {
         icon: '/images/home/11.png',
-        alt: 'Learning and Development Library',
-        titleKey: 'pages.home.receive.card4.title',
-        descKey: 'pages.home.receive.card4.desc'
+        alt: t('datas.receives.learningLibrary.title'),
+        titleKey: t('datas.receives.learningLibrary.title'),
+        descKey: t('datas.receives.learningLibrary.desc')
     },
     {
         icon: '/images/home/12.png',
-        alt: 'Certificates of Achievement',
-        titleKey: 'pages.home.receive.card6.title',
-        descKey: 'pages.home.receive.card6.desc'
+        alt: t('datas.receives.transparency.title'),
+        titleKey: t('datas.receives.transparency.title'),
+        descKey: t('datas.receives.transparency.desc')
     }
 ]
 
-const faqItems: Array<{ question: string; answer: string }> = [
+const faqItems = computed(() => [
     {
-        question: 'Can I Track My Assignments and Grades?',
-        answer:
-            'Yes, the LMS offers a "Gradebook" where students can view their grades, mentor feedback on assignments, and class attendance data. You can view your grade and comments for each submission.'
+        question: t('datas.faq.question1'),
+        answer: t('datas.faq.answer1')
     },
     {
-        question: 'Does the LMS support video lessons and live classes?',
-        answer: 'Yes, it supports both pre-recorded video lessons and live classes with interactive features.'
+        question: t('datas.faq.question2'),
+        answer: t('datas.faq.answer2')
     },
     {
-        question: 'How can I communicate with my instructor?',
-        answer: 'You can use messaging tools, discussion boards, and scheduled office hours to communicate.'
+        question: t('datas.faq.question3'),
+        answer: t('datas.faq.answer3')
     },
     {
-        question: 'What support is available for students and instructors?',
-        answer: 'Help center articles, email support, and live chat are available for both students and instructors.'
+        question: t('datas.faq.question4'),
+        answer: t('datas.faq.answer4')
     },
     {
-        question: 'Are there interactive features for students?Are there interactive features for students?Are there interactive features for students?Are there interactive features for students?Are there interactive features for students?',
-        answer: 'Quizzes, assignments, polls, and peer discussions are available to enhance engagement.Quizzes, assignments, polls, and peer discussions are available to enhance engagement.Quizzes, assignments, polls, and peer discussions are available to enhance engagement.Quizzes, assignments, polls, and peer discussions are available to enhance engagement.Quizzes, assignments, polls, and peer discussions are available to enhance engagement.Quizzes, assignments, polls, and peer discussions are available to enhance engagement.Quizzes, assignments, polls, and peer discussions are available to enhance engagement.'
+        question: t('datas.faq.question5'),
+        answer: t('datas.faq.answer5')
+    },
+    {
+        question: t('datas.faq.question6'),
+        answer: t('datas.faq.answer6')
+    },
+    {
+        question: t('datas.faq.question7'),
+        answer: t('datas.faq.answer7')
+    },
+    {
+        question: t('datas.faq.question8'),
+        answer: t('datas.faq.answer8')
     }
-]
+])
 </script>
 
 <style scoped>
