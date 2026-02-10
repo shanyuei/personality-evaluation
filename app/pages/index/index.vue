@@ -22,7 +22,7 @@
                 <AppArrowButton variant="primary"
                     class="uno-m-t-32px sm:uno-m-t-48px md:uno-m-t-72px uno-gap-[8px] sm:uno-gap-[12px] md:uno-gap-[18px] uno-py-2 sm:uno-py-3 md:uno-py-4 uno-pr-2 sm:uno-pr-3 md:uno-pr-3 uno-pl-[20px] sm:uno-pl-[24px] md:uno-pl-[48px] uno-text-[18px] sm:uno-text-[18px] md:uno-text-[32px] uno-font-Outfit uno-font-medium"
                     :icon-size="$device.isMobile ? 44 : 72" :to="localePath('/test')">
-                    Take the Test
+                    {{ $t('pages.home.cta') }}
                 </AppArrowButton>
             </div>
         </div>
@@ -107,7 +107,7 @@
                                 class="uno-relative uno-inline-flex uno-w-full uno-flex uno-justify-center md:uno-justify-start">
                                 <AppArrowButton class="uno-pl-6 uno-pr-2 uno-py-2 uno-gap-3" :icon-size="44"
                                     :to="localePath('/test')" hover-class="">
-                                    <span class="uno-font-Outfit uno-font-medium uno-text-[16px]">Take the Test
+                                    <span class="uno-font-Outfit uno-font-medium uno-text-[16px]">{{ $t('pages.home.cta') }}
 </span>
                                 </AppArrowButton>
                             </div>
@@ -157,7 +157,7 @@
                         <AppArrowButton
                             class="uno-m-t-12px sm:uno-m-t-16px md:uno-m-t-24px uno-gap-[6px] sm:uno-gap-[8px] md:uno-gap-[12px] uno-py-2 sm:uno-py-2 uno-pr-[6px] sm:uno-pr-[4px] md:uno-pr-[6px] uno-pl-[12px] sm:uno-pl-[16px] md:uno-pl-[24px] uno-text-[16px] sm:uno-text-[14px] md:uno-text-[16px] uno-font-Outfit uno-font-medium"
                             :to="localePath('/test')" :icon-size="44" hover-class="">
-                Take the Test
+                {{ $t('pages.home.cta') }}
 
                         </AppArrowButton>
                     </div>
@@ -278,22 +278,22 @@ const heroAvatars = Array.from({ length: 6 }, (_, i) => ({
 
 const statsItems = [
     {
-        value: '241K+',
+        value: t('pages.home.stats.value1'),
         color: '#009D77',
         labelKey: t('pages.home.stats.testsToday')
     },
     {
-        value: '172M+',
+        value: t('pages.home.stats.value2'),
         color: '#EA4C89',
         labelKey: t('pages.home.stats.testsUS')
     },
     {
-        value: '1460M+',
+        value: t('pages.home.stats.value3'),
         color: '#FD9AC0',
         labelKey: t('pages.home.stats.totalTests')
     },
     {
-        value: '91.2%',
+        value: t('pages.home.stats.value4'),
         color: '#B273F2',
         labelKey: t('pages.home.stats.accurateRate')
     }
@@ -302,21 +302,21 @@ const statsItems = [
 const whyCards = [
     {
         icon: '/images/home/3.png',
-        alt: 'Better decision-making icon',
+        alt: t('pages.home.why.small1.title'),
         iconColor: 'uno-text-amber-500',
         titleKey: $t('pages.home.why.small1.title'),
         descKey: $t('pages.home.why.small1.desc')
     },
     {
         icon: '/images/home/4.png',
-        alt: 'Enhanced relationships icon',
+        alt: t('pages.home.why.small2.title'),
         iconColor: 'uno-text-pink-500',
         titleKey: $t('pages.home.why.small2.title'),
         descKey: $t('pages.home.why.small2.desc')
     },
     {
         icon: '/images/home/5.png',
-        alt: 'Career satisfaction icon',
+        alt: t('pages.home.why.small3.title'),
         iconColor: 'uno-text-indigo-500',
         titleKey: $t('pages.home.why.small3.title'),
         descKey: $t('pages.home.why.small3.desc')

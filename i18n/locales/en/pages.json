@@ -519,6 +519,7 @@
   "home": {
     "title": "Uncover your authentic personality",
     "description": "Learn what makes you unique with our accurate personality assessment",
+    "cta": "Take the Test",
     "accuracy": {
       "title": "Curious how accurate we are about you?",
       "description": "Connect to professional networks, gain valuable insights, and access \n resources to move toward your ideal career."
@@ -527,7 +528,11 @@
       "testsToday": "Daily Discoveries",
       "testsUS": "Global Community",
       "totalTests": "Insights Delivered",
-      "accurateRate": "Scientifically Validated Accuracy"
+      "accurateRate": "Scientifically Validated Accuracy",
+      "value1": "241K+",
+      "value2": "172M+",
+      "value3": "1460M+",
+      "value4": "91.2%"
     },
     "why": {
       "title": "Why Take the Test?",
