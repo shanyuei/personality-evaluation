@@ -50,7 +50,7 @@
                         </div>
                         <div
                             class="uno-text-[#4E5255] uno-text-xs sm:uno-text-sm md:uno-text-base lg:uno-text-lg uno-font-Outfit">
-                            {{ $t(item.labelKey) }}
+                            {{ item.labelKey }}
                         </div>
                     </div>
                 </div>
@@ -107,8 +107,8 @@
                                 class="uno-relative uno-inline-flex uno-w-full uno-flex uno-justify-center md:uno-justify-start">
                                 <AppArrowButton class="uno-pl-6 uno-pr-2 uno-py-2 uno-gap-3" :icon-size="44"
                                     :to="localePath('/test')" hover-class="">
-                                    <span class="uno-font-Outfit uno-font-medium uno-text-[16px]">{{
-                                        $t('common.getStarted') }}</span>
+                                    <span class="uno-font-Outfit uno-font-medium uno-text-[16px]">Take the Test
+</span>
                                 </AppArrowButton>
                             </div>
                         </div>
@@ -157,7 +157,8 @@
                         <AppArrowButton
                             class="uno-m-t-12px sm:uno-m-t-16px md:uno-m-t-24px uno-gap-[6px] sm:uno-gap-[8px] md:uno-gap-[12px] uno-py-2 sm:uno-py-2 uno-pr-[6px] sm:uno-pr-[4px] md:uno-pr-[6px] uno-pl-[12px] sm:uno-pl-[16px] md:uno-pl-[24px] uno-text-[16px] sm:uno-text-[14px] md:uno-text-[16px] uno-font-Outfit uno-font-medium"
                             :to="localePath('/test')" :icon-size="44" hover-class="">
-                            {{ $t('common.getStarted') }}
+                Take the Test
+
                         </AppArrowButton>
                     </div>
                 </div>
@@ -178,9 +179,9 @@
                             <div class="uno-flex uno-justify-start uno-items-start uno-flex-col uno-gap-1 sm:uno-gap-2">
                                 <p
                                     class="uno-text-[#011813] uno-text-[24px] uno-font-medium sm:uno-text-2xl uno-font-Outfit  sm:uno-font-semibold">
-                                    {{ $t(item.titleKey) }}</p>
+                                    {{ item.titleKey }}</p>
                                 <p class="uno-w-full uno-text-[#4E5255] uno-font-Outfit">{{
-                                    $t(item.descKey) }}</p>
+                                    item.descKey }}</p>
                             </div>
                         </div>
                     </div>
@@ -200,10 +201,10 @@
                 class="page-container uno-px-4 !uno-py-8 sm:uno-py-12 md:uno-py-16 lg:uno-py-20 xl:uno-py-24 relative z-10">
                 <h2
                     class="uno-text-[32px] sm:uno-text-2xl md:uno-text-[48px] uno-font-Outfit uno-font-semibold uno-text-center uno-mb-2 sm:uno-mb-3 md:uno-mb-4">
-                    {{ $t('common.receive.title') }}</h2>
+                    What You'll Gain</h2>
                 <p
                     class="uno-text-center uno-text-gray-600 uno-text-[16px] sm:uno-text-sm md:uno-text-base uno-mb-6 sm:uno-mb-8 md:uno-mb-16 uno-max-w-3xl uno-mx-auto">
-                    {{ $t('common.receive.desc') }}</p>
+                    Participate at your own pace, in a supportive and positive environment designed to deliver genuine self-insight and meaningful outcomes.</p>
 
                 <!-- 六个卡片布局 -->
                 <!-- 循环展示 receiveCards -->
@@ -217,11 +218,11 @@
                         </div>
                         <h3
                             class=" uno-w-[250px]  uno-text-[20px] sm:uno-text-xl md:uno-text-[20px] uno-font-Outfit uno-font-medium uno-leading-tight uno-px-2 uno-mb-12px">
-                            {{ $t(card.titleKey) }}
+                            {{ card.titleKey }}
                         </h3>
                         <p
                             class=" uno-w-[250px]  uno-text-gray-500 uno-text-[16px] sm:uno-text-base uno-font-Outfit uno-leading-relaxed">
-                            {{ $t(card.descKey) }}
+                            {{ card.descKey }}
                         </p>
                     </div>
                 </div>
@@ -279,22 +280,22 @@ const statsItems = [
     {
         value: '241K+',
         color: '#009D77',
-        labelKey: 'pages.home.stats.testsToday'
+        labelKey: t('pages.home.stats.testsToday')
     },
     {
         value: '172M+',
         color: '#EA4C89',
-        labelKey: 'pages.home.stats.testsUS'
+        labelKey: t('pages.home.stats.testsUS')
     },
     {
         value: '1460M+',
         color: '#FD9AC0',
-        labelKey: 'pages.home.stats.totalTests'
+        labelKey: t('pages.home.stats.totalTests')
     },
     {
         value: '91.2%',
         color: '#B273F2',
-        labelKey: 'pages.home.stats.accurateRate'
+        labelKey: t('pages.home.stats.accurateRate')
     }
 ]
 
@@ -327,61 +328,61 @@ const howSteps = [
         step: 1,
         bgClass: 'uno-bg-[#E8FAF5]',
         textClass: 'uno-text-[#009D77]',
-        titleKey: 'pages.home.how.step1.title',
-        descKey: 'pages.home.how.step1.desc'
+        titleKey: t('pages.home.how.step1.title'),
+        descKey: t('pages.home.how.step1.desc')
     },
     {
         step: 2,
         bgClass: 'uno-bg-[#FFF5F9]',
         textClass: 'uno-text-[#EA4C89]',
-        titleKey: 'pages.home.how.step2.title',
-        descKey: 'pages.home.how.step2.desc'
+        titleKey: t('pages.home.how.step2.title'),
+        descKey: t('pages.home.how.step2.desc')
     },
     {
         step: 3,
         bgClass: 'uno-bg-[#F5EFFC]',
         textClass: 'uno-text-[#932EFA]',
-        titleKey: 'pages.home.how.step3.title',
-        descKey: 'pages.home.how.step3.desc'
+        titleKey: t('pages.home.how.step3.title'), 
+        descKey: t('pages.home.how.step3.desc')
     }
 ]
 
 const receiveCards = [
     {
         icon: '/images/home/7.png',
-        alt: t('datas.receives.archetypeAnalysis.title'),
-        titleKey: t('datas.receives.archetypeAnalysis.title'),
-        descKey: t('datas.receives.archetypeAnalysis.desc')
+        alt: 'Comprehensive Personality Report',
+        titleKey: 'Comprehensive Personality Report',
+        descKey: 'Understand your strengths, preferences, and potential blind spots.'
     },
     {
         icon: '/images/home/8.png',
-        alt: t('datas.receives.courseRecommendations.title'),
-        titleKey: t('datas.receives.courseRecommendations.title'),
-        descKey: t('datas.receives.courseRecommendations.desc')
+        alt: 'Tailored Growth Recommendations',
+        titleKey: 'Tailored Growth Recommendations',
+        descKey: 'Get personalized suggestions to support your personal development and decisions.'
     },
     {
         icon: '/images/home/9.png',
-        alt: t('datas.receives.skillAssessment.title'),
-        titleKey: t('datas.receives.skillAssessment.title'),
-        descKey: t('datas.receives.skillAssessment.desc')
+        alt: 'Skill & Behavior Insights',
+        titleKey: 'Skill & Behavior Insights',
+        descKey: 'Explore your tendencies and track your growth over time.'
     },
     {
         icon: '/images/home/10.png',
-        alt: t('datas.receives.dailyChallenges.title'),
-        titleKey: t('datas.receives.dailyChallenges.title'),
-        descKey: t('datas.receives.dailyChallenges.desc')
+        alt: 'Practical Self-Discovery Exercises',
+        titleKey: 'Practical Self-Discovery Exercises',
+        descKey: 'Apply insights through small, actionable exercises in daily life.'
     },
     {
         icon: '/images/home/11.png',
-        alt: t('datas.receives.learningLibrary.title'),
-        titleKey: t('datas.receives.learningLibrary.title'),
-        descKey: t('datas.receives.learningLibrary.desc')
+        alt: 'Curated Knowledge Library',
+        titleKey: 'Curated Knowledge Library',
+        descKey: 'Access resources to deepen self-understanding and ongoing growth.'
     },
     {
         icon: '/images/home/12.png',
-        alt: t('datas.receives.transparency.title'),
-        titleKey: t('datas.receives.transparency.title'),
-        descKey: t('datas.receives.transparency.desc')
+        alt: 'Certificates of Self-Awareness',
+        titleKey: 'Certificates of Self-Awareness',
+        descKey: 'Celebrate your self-discovery journey with certificates of achievement.'
     }
 ]
 

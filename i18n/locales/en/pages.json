@@ -517,53 +517,53 @@
     }
   },
   "home": {
-    "title": "Discover your true self with a personality test",
-    "description": "The test helps you identify your accurate personality type.",
+    "title": "Uncover your authentic personality",
+    "description": "Learn what makes you unique with our accurate personality assessment",
     "accuracy": {
       "title": "Curious how accurate we are about you?",
       "description": "Connect to professional networks, gain valuable insights, and access \n resources to move toward your ideal career."
     },
     "stats": {
-      "testsToday": "Tests Today",
-      "testsUS": "Tests in the U.S.",
-      "totalTests": "Total Tests",
-      "accurateRate": "Rated accurate or very accurate"
+      "testsToday": "Daily Discoveries",
+      "testsUS": "Global Community",
+      "totalTests": "Insights Delivered",
+      "accurateRate": "Scientifically Validated Accuracy"
     },
     "why": {
-      "title": "Why You Should Take the Test?",
-      "desc": "Connect with the next wave of expert mentors, guiding you with fresh \nperspectives, innovative insights, and proven expertise.",
+      "title": "Why Take the Test?",
+      "desc": "Gain guidance from expert mentors who offer fresh perspectives, innovative insights, and proven strategies to help you understand yourself better.",
       "main": {
-        "title": "Boost self-awareness",
-        "desc": "Gain UI design abilities through practice-driven coaching, with personalized guidance and feedback."
+        "title": "Master Your Inner Self",
+        "desc": "Gain deep psychological insights through data-driven analysis, with personalized guidance to master your core traits and behaviors."
       },
       "small1": {
-        "title": "Better decision-making",
-        "desc": "Gain UI design mastery with hands-on expert mentorship, refining your skills through personalized guidance and feedback."
+        "title": "Smarter Life Choices",
+        "desc": "Leverage psychological clarity to navigate complex choices with confidence and reduce cognitive bias."
       },
       "small2": {
-        "title": "Enhanced relationships",
-        "desc": "Gain UI design mastery with hands-on expert mentorship, refining your skills through personalized guidance and feedback."
+        "title": "Healthier Connections",
+        "desc": "Decode your social dynamics to foster deeper empathy and build more authentic interpersonal bonds."
       },
       "small3": {
-        "title": "Career satisfaction",
-        "desc": "Gain UI design mastery with hands-on expert mentorship, refining your skills through personalized guidance and feedback."
+        "title": "Professional Alignment",
+        "desc": "Align your career path with your natural strengths to achieve sustainable success and genuine fulfillment."
       },
-      "desc-mobile": "Connect with the next wave of expert mentors,\n guiding you with fresh perspectives, innovative\n insights, and proven expertise."
+      "desc-mobile": "Gain guidance from expert mentors who offer fresh perspectives,\n innovative insights, and proven strategies to help you\n understand yourself better."
     },
     "how": {
-      "title": "How it works",
-      "desc": "The Meta template includes 7 pages, 30+ sections, and two home layouts.",
+      "title": "How Our Analysis Works",
+      "desc": "From honest answers to profound self-discovery in minutes.",
       "step1": {
-        "title": "Get prepared",
-        "desc": "A relaxed, focused environment leads to better results."
+        "title": "Prepare Your Mind",
+        "desc": "Take a deep breath and create a calm, focused space — the best insights come when you're relaxed and attentive."
       },
       "step2": {
-        "title": "10+ common inner pages",
-        "desc": "Includes commonly used business pages and supports full customization."
+        "title": "Explore Your Personality",
+        "desc": "Dive into the different facets of your character, from strengths to hidden tendencies, and see how they shape your behavior."
       },
       "step3": {
-        "title": "30+ detail sections",
-        "desc": "Rich presentation sections help you build a portfolio site as needed."
+        "title": "Gain Personal Insights",
+        "desc": "Receive detailed guidance and actionable suggestions to better understand yourself and grow personally and professionally."
       }
     },
     "receive": {
