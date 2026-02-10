@@ -395,36 +395,36 @@ const reviews = computed(() => {
 
 const faqItems = computed(() => [
   {
-    question: t('datas.contact.question1'),
-    answer: t('datas.contact.answer1')
+    question: t('datas.faq.question1'),
+    answer: t('datas.faq.answer1')
   },
   {
-    question: t('datas.contact.question2'),
-    answer: t('datas.contact.answer2')
+    question: t('datas.faq.question2'),
+    answer: t('datas.faq.answer2')
   },
   {
-    question: t('datas.contact.question3'),
-    answer: t('datas.contact.answer3')
+    question: t('datas.faq.question3'),
+    answer: t('datas.faq.answer3')
   },
   {
-    question: t('datas.contact.question4'),
-    answer: t('datas.contact.answer4')
+    question: t('datas.faq.question4'),
+    answer: t('datas.faq.answer4')
   },
   {
-    question: t('datas.contact.question5'),
-    answer: t('datas.contact.answer5')
+    question: t('datas.faq.question5'),
+    answer: t('datas.faq.answer5')
   },
   {
-    question: t('datas.contact.question6'),
-    answer: t('datas.contact.answer6')
+    question: t('datas.faq.question6'),
+    answer: t('datas.faq.answer6')
   },
   {
-    question: t('datas.contact.question7'),
-    answer: t('datas.contact.answer7')
+    question: t('datas.faq.question7'),
+    answer: t('datas.faq.answer7')
   },
   {
-    question: t('datas.contact.question8'),
-    answer: t('datas.contact.answer8')
+    question: t('datas.faq.question8'),
+    answer: t('datas.faq.answer8')
   }
 ])
 </script>

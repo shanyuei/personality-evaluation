@@ -1,44 +1,48 @@
 {
-    "getStarted": "Get Started",
-    "siteDescription": "Unlock knowledge and growth with expert courses and tools.",
-    "courseCard": {
-      "status": {
-        "completed": "You've completed this test.",
-        "of": "of",
-        "lessons": "lessons"
-      },
-      "link": {
-        "viewResults": "View test results"
-      },
-      "badge": {
-        "points": "points"
-      },
-      "meta": {
-        "certificate": "Certificate"
-      },
-      "people": {
-        "finished": "people already finished it"
-      }
+  "getStarted": "Get Started",
+  "siteDescription": "Unlock knowledge and growth with expert courses and tools.",
+  "courseCard": {
+    "status": {
+      "completed": "You've completed this test.",
+      "of": "of",
+      "lessons": "lessons"
     },
-    "api": {
-      "error": "Error"
+    "link": {
+      "viewResults": "View test results"
     },
-    "faq": {
-      "title": "Frequently Asked Questions",
-      "desc": "Find quick answers to common inquiries regarding our assessment process, report insights, and platform features."
+    "badge": {
+      "points": "points"
     },
-    "viewResults": "View test results",
-    "retakeTest": "Retake test",
-    "points": "points",
-    "of": "of",
-    "lessons": "lessons",
-    "finished": "finished",
-    "certificate": "Certificate",
-    "viewAllBlogs": "View All Blogs",
-    "step": "STEP",
-    "stepTotal": "Step {current} of {total}",
-    "percentIcon": "%",
-    "continue": "CONTINUE",
-    "price": "$",
-    "period": "."
-  }
+    "meta": {
+      "certificate": "Certificate"
+    },
+    "people": {
+      "finished": "people already finished it"
+    }
+  },
+  "api": {
+    "error": "Error"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "desc": "Find quick answers to common inquiries regarding our assessment process, report insights, and platform features."
+  },
+  "receive": {
+    "title": "What Makes Our Test Different",
+    "desc": "Built on validated psychometric frameworks, our assessment transcends surface-level traits. We utilize advanced algorithms to decode the complex psychological drivers that shape your professional and personal identity."
+  },
+  "viewResults": "View test results",
+  "retakeTest": "Retake test",
+  "points": "points",
+  "of": "of",
+  "lessons": "lessons",
+  "finished": "finished",
+  "certificate": "Certificate",
+  "viewAllBlogs": "View All Blogs",
+  "step": "STEP",
+  "stepTotal": "Step {current} of {total}",
+  "percentIcon": "%",
+  "continue": "CONTINUE",
+  "price": "$",
+  "period": "."
+}

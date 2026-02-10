@@ -1,5 +1,5 @@
 {
-    "contact": {
+    "faq": {
         "question1": "What is the PersonalityTest101 assessment and how does it work?",
         "answer1": "Our personality assessments are designed to help you understand your traits, preferences, and behavioral patterns through a structured set of questions. Once you complete the test, you\\'ll receive a personalized report with insights into your personality type and practical suggestions for growth.",
         "question2": "How do you handle my personal data and privacy?",
@@ -16,5 +16,51 @@
         "answer7": "Yes, our main assessments are based on widely recognized psychological frameworks and have been tested for reliability and validity, ensuring meaningful results for users.",
         "question8": "Are the tests suitable for all age groups?",
         "answer8": "Our tests are designed for teens and adults. Some specialized tests may have recommended age ranges — always check the description before starting."
+    },
+    "receives": {
+        "archetypeAnalysis": {
+            "title": "Comprehensive Archetype Analysis",
+            "desc": "Uncover your unique archetype with our detailed analysis. Gain insights into your strengths, weaknesses, and unique personality traits."
+        },
+        "careerMapping": {
+            "title": "Career Alignment Mapping",
+            "desc": "Discover your ideal career path with our detailed mapping. Understand how your personality aligns with different industries and roles."
+        },
+        "interpersonalGuide": {
+            "title": "Interpersonal Dynamics Guide",
+            "desc": "Enhance your relationships with our guide on understanding and managing interpersonal dynamics."
+        },
+        "aiGrowthCoach": {
+            "title": "Personalized AI Growth Coach",
+            "desc": "Receive personalized coaching from our AI-powered growth coach. Receive tailored strategies to help you achieve your personal and professional goals."
+        },
+        "selfEsteemBlueprint": {
+            "title": "Self-Esteem Mastery Blueprint",
+            "desc": "Master the art of self-esteem with our blueprint. Learn effective techniques to boost your self-confidence and self-esteem."
+        },
+        "personalityReport": {
+            "title": "Comprehensive Personality Report",
+            "desc": "Explore data-driven insights into your core traits, behavioral patterns, and hidden potential."
+        },
+        "courseRecommendations": {
+            "title": "Personalized Course Recommendations",
+            "desc": "Customized learning paths tailored to your personality archetype to accelerate professional growth."
+        },
+        "skillAssessment": {
+            "title": "Skill Assessment Tests",
+            "desc": "Validate your competencies with targeted evaluations aligned to your specific career ambitions."
+        },
+        "dailyChallenges": {
+            "title": "Practical Daily Challenges",
+            "desc": "Actionable daily tasks designed to turn psychological insights into lasting personal habits."
+        },
+        "learningLibrary": {
+            "title": "Learning and Development Library",
+            "desc": "Explore a comprehensive digital archive designed to fuel your personal growth."
+        },
+        "transparency": {
+            "title": "Transparency and Value",
+            "desc": "Clear, measurable insights prioritizing data integrity and delivering exceptional value without complexity."
+        }
     }
 }

@@ -25,13 +25,17 @@
             {{ $t(plan.badge) }}
           </div>
 
-          <h3 class="uno-text-[20px] md:uno-text-[24px] uno-font-Outfit uno-font-[600] uno-text-[#011813] uno-mb-2">{{ plan.name }}</h3>
+          <h3 class="uno-text-[20px] md:uno-text-[24px] uno-font-Outfit uno-font-[600] uno-text-[#011813] uno-mb-2">{{
+            plan.name }}</h3>
           <p class="uno-text-[#4E5255] uno-text-sm uno-mb-6 uno-min-h-[40px] uno-hidden md:uno-block"></p>
 
           <div class="uno-flex uno-items-baseline uno-gap-1 uno-mb-1">
-            <span class="uno-text-[32px] md:uno-text-[40px] uno-font-Outfit uno-font-bold uno-text-[#011813]">{{ plan.unit }}{{ plan.price
+            <span class="uno-text-[32px] md:uno-text-[40px] uno-font-Outfit uno-font-bold uno-text-[#011813]">{{
+              plan.unit }}{{ plan.price
               }}</span>
-            <span class="uno-text-[#4E5255] uno-text-[20px] md:uno-text-[28px] uno-font-Outfit uno-font-[500] uno-leading-[1.5] uno-text-center">/{{ plan.currency }}</span>
+            <span
+              class="uno-text-[#4E5255] uno-text-[20px] md:uno-text-[28px] uno-font-Outfit uno-font-[500] uno-leading-[1.5] uno-text-center">/{{
+                plan.currency }}</span>
           </div>
           <!-- <div class="uno-text-xs uno-text-[#4E5255] uno-mb-6 uno-h-[20px]">
             {{ plan.billingFallback ? ($t('pages.ebooks.oneTime') || 'Auto-renews after 7 Days') : $t(`pages.pricing.plans.${plan.key}.billing`) }}
@@ -51,7 +55,8 @@
           <div class="uno-space-y-4">
             <div
               class="uno-text-[14px] uno-font-Outfit uno-font-normal uno-text-[#8D8E8F] uno-tracking-wider uno-uppercase">
-              PUBLISHING</div>
+              {{ $t('pages.pricing.includedFeatures') }}
+            </div>
             <ul class="uno-space-y-3">
               <li v-for="(feat, i) in features" :key="i"
                 class="uno-flex uno-items-center uno-justify-between uno-gap-3">
@@ -68,48 +73,45 @@
 
     <!-- What You Will Receive -->
     <div class="uno-receive-section  uno-bg-gray-5 uno-relative uno-h-[1920px] md:uno-h-auto">
-        <NuxtImg src="/theme/home/receive-box-bg-h5.png" alt="" aria-hidden="true" width="375" height="1920"
-            class="uno-absolute uno-inset-0 uno--z-10 uno-pointer-events-none uno-object-cover uno-object-center uno-block md:uno-hidden"
-            uno-preload />
-        <NuxtImg src="/theme/home/receive-box-bg-pc.png" alt="" aria-hidden="true" width="100vw" height="100%"
-            class="uno-w-full uno-h-[100%]  uno-absolute uno-top-0 uno-left-0 uno--z-10 uno-pointer-events-none uno-hidden md:uno-block"
-            uno-preload />
-        <div
-            class="page-container uno-px-4 uno-py-8 sm:uno-py-12 md:uno-py-16 lg:uno-py-20 xl:uno-py-24 relative z-10">
-            <h2
-                class="uno-text-xl sm:uno-text-2xl md:uno-text-[48px] uno-font-Outfit uno-font-600 uno-text-center uno-mb-2 sm:uno-mb-3 md:uno-mb-4">
-                {{ $t('pages.home.receive.title') }}
-            </h2>
-            <p
-                class="uno-text-center uno-text-gray-600 uno-text-xs sm:uno-text-sm md:uno-text-base uno-mb-6 sm:uno-mb-8 md:uno-mb-16 uno-max-w-3xl uno-mx-auto">
-                {{ $t('pages.home.receive.desc') }}
-            </p>
+      <NuxtImg src="/theme/home/receive-box-bg-h5.png" alt="" aria-hidden="true" width="375" height="1920"
+        class="uno-absolute uno-inset-0 uno--z-10 uno-pointer-events-none uno-object-cover uno-object-center uno-block md:uno-hidden"
+        uno-preload />
+      <NuxtImg src="/theme/home/receive-box-bg-pc.png" alt="" aria-hidden="true" width="100vw" height="100%"
+        class="uno-w-full uno-h-[100%]  uno-absolute uno-top-0 uno-left-0 uno--z-10 uno-pointer-events-none uno-hidden md:uno-block"
+        uno-preload />
+      <div class="page-container uno-px-4 uno-py-8 sm:uno-py-12 md:uno-py-16 lg:uno-py-20 xl:uno-py-24 relative z-10">
+        <h2
+          class="uno-text-xl sm:uno-text-2xl md:uno-text-[48px] uno-font-Outfit uno-font-600 uno-text-center uno-mb-2 sm:uno-mb-3 md:uno-mb-4">
+          {{ $t('common.receive.title') }}
+        </h2>
+        <p
+          class="uno-text-center uno-text-gray-600 uno-text-xs sm:uno-text-sm md:uno-text-base uno-mb-6 sm:uno-mb-8 md:uno-mb-16 uno-max-w-3xl uno-mx-auto">
+          {{ $t('common.receive.desc') }}
+        </p>
 
-            <!-- 六个卡片布局 -->
-            <!-- 循环展示 receiveCards -->
+        <!-- 六个卡片布局 -->
+        <!-- 循环展示 receiveCards -->
+        <div class="uno-grid uno-grid-cols-1 md:uno-grid-cols-3 uno-gap-[24px] sm:uno-gap-[24px] md:uno-gap-[24px]">
+          <div v-for="(card, index) in receiveCards" :key="index"
+            class="uno-bg-white uno-rounded-[32px] uno-shadow-[0_2px_8px_rgba(0,0,0,0.04)] uno-p-[32px] uno-border uno-border-solid uno-border-[#E7E7E8] uno-flex uno-flex-col uno-items-center uno-justify-between uno-text-center uno-min-h-[256px]">
             <div
-                class="uno-grid uno-grid-cols-1 md:uno-grid-cols-3 uno-gap-[24px] sm:uno-gap-[24px] md:uno-gap-[24px]">
-                <div v-for="(card, index) in receiveCards" :key="index"
-                    class="uno-bg-white uno-rounded-[32px] uno-shadow-[0_2px_8px_rgba(0,0,0,0.04)] uno-p-[32px] uno-border uno-border-solid uno-border-[#E7E7E8] uno-flex uno-flex-col uno-items-center uno-justify-between uno-text-center uno-min-h-[256px]">
-                    <div
-                        class="uno-w-64px uno-h-64px sm:uno-w-64px sm:uno-h-64px uno-flex uno-items-center uno-justify-center uno-bg-gray-50 uno-rounded-full uno-mb-8px">
-                        <NuxtImg :src="card.icon" :alt="card.alt" width="64" height="64" />
-                    </div>
-                    <h3
-                        class="uno-text-lg sm:uno-text-xl md:uno-text-[20px] uno-font-Outfit uno-font-[500] uno-leading-tight uno-px-2 uno-mb-12px">
-                        {{ $t(card.titleKey) }}
-                    </h3>
-                    <p
-                        class="uno-text-gray-500 uno-text-sm sm:uno-text-base uno-font-Outfit uno-leading-relaxed">
-                        {{ $t(card.descKey) }}
-                    </p>
-                </div>
+              class="uno-w-64px uno-h-64px sm:uno-w-64px sm:uno-h-64px uno-flex uno-items-center uno-justify-center uno-bg-gray-50 uno-rounded-full uno-mb-8px">
+              <NuxtImg :src="card.icon" :alt="card.alt" width="64" height="64" />
             </div>
+            <h3
+              class="uno-text-lg sm:uno-text-xl md:uno-text-[20px] uno-font-Outfit uno-font-[500] uno-leading-tight uno-px-2 uno-mb-12px">
+              {{ $t(card.titleKey) }}
+            </h3>
+            <p class="uno-text-gray-500 uno-text-sm sm:uno-text-base uno-font-Outfit uno-leading-relaxed">
+              {{ $t(card.descKey) }}
+            </p>
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- FAQ Section -->
-    <FAQSection :title="$t('pages.pricing.faq.title')" :description="$t('pages.pricing.faq.subtitle')"
+    <FAQSection :title="$t('common.faq.title')" :description="$t('common.faq.subtitle')"
       :items="faqItems" />
 
   </div>
@@ -129,14 +131,14 @@ definePageMeta({
   layoutShowCurious: true,
 })
 useSeoMeta({
-  title: () => t('seo.pricing.title') as string,
+  title: () => t('seo.pricing.title', { separator: '|' }) as string,
   description: () => t('seo.pricing.description') as string
 })
 // Base config to preserve UI logic (keys for i18n, badges)
 const planConfig: Record<number, { key: string; badge?: string; billingFallback?: boolean }> = {
-  1: { key: 'weekly', billingFallback: true },
+  1: { key: 'weekly', },
   2: { key: 'monthly' },
-  3: { key: 'yearly', badge: 'pages.pricing.plans.yearly.badge' }
+  3: { key: 'yearly', badge: t("pages.pricing.badge") }
 };
 
 const { data: plansData } = await getPlanList();
@@ -150,7 +152,7 @@ const plans = computed(() => {
       ...config
     };
   });
-  
+
   // 在移动端，将携带 badge 的计划排在前面
   if (typeof window !== 'undefined' && window.innerWidth < 768) {
     return processedList.sort((a: any, b: any) => {
@@ -159,7 +161,7 @@ const plans = computed(() => {
       return 0;
     });
   }
-  
+
   return processedList;
 });
 
@@ -196,124 +198,92 @@ const handleCreateOrder = async (plan: any) => {
   }
 };
 
-// Inline Icon Components
-const IconCheck = {
-  template: `<svg viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.6667 1.33334L4.00001 8.00001L1.33334 5.33334" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`
-}
-
-const IconReport = { template: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>` }
-const IconCourse = { template: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>` }
-const IconSkill = { template: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>` }
-const IconDaily = { template: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>` }
-const IconLibrary = { template: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l9 4.9V17L12 22l-9-4.9V7z"></path></svg>` }
-const IconValue = { template: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>` }
-
 const localePath = useLocalePath()
 const route = useRoute();
 
 const features = computed(() => [
-  t('pages.pricing.features.publishing'),
-  t('pages.pricing.features.webflow'),
-  t('pages.pricing.features.pages'),
-  t('pages.pricing.features.cms'),
-  t('pages.pricing.features.ai'),
+  t('pages.pricing.features.archetypeAnalysis'),
+  t('pages.pricing.features.careerMapping'),
+  t('pages.pricing.features.interpersonalGuide'),
+  t('pages.pricing.features.aiGrowthCoach'),
+  t('pages.pricing.features.selfEsteemBlueprint'),
+  t('pages.pricing.features.priorityAccess'),
 ]);
 
 const receiveCards = [
   {
     icon: '/images/home/7.png',
-    alt: 'Comprehensive Personality Report',
-    titleKey: 'pages.home.receive.card1.title',
-    descKey: 'pages.home.receive.card1.desc'
+    alt: t('datas.receives.archetypeAnalysis.title'),
+    titleKey: t('datas.receives.archetypeAnalysis.title'),
+    descKey: t('datas.receives.archetypeAnalysis.desc')
   },
   {
     icon: '/images/home/8.png',
-    alt: 'Personalized Course Recommendations',
-    titleKey: 'pages.home.receive.card3.title',
-    descKey: 'pages.home.receive.card3.desc'
+    alt: t('datas.receives.courseRecommendations.title'),
+    titleKey: t('datas.receives.courseRecommendations.title'),
+    descKey: t('datas.receives.courseRecommendations.desc')
   },
   {
     icon: '/images/home/9.png',
-    alt: 'Skill Assessment Tests',
-    titleKey: 'pages.home.receive.card5.title',
-    descKey: 'pages.home.receive.card5.desc'
+    alt: t('datas.receives.skillAssessment.title'),
+    titleKey: t('datas.receives.skillAssessment.title'),
+    descKey: t('datas.receives.skillAssessment.desc')
   },
   {
     icon: '/images/home/10.png',
-    alt: 'Practical Daily Challenges',
-    titleKey: 'pages.home.receive.card2.title',
-    descKey: 'pages.home.receive.card2.desc'
+    alt: t('datas.receives.dailyChallenges.title'),
+    titleKey: t('datas.receives.dailyChallenges.title'),
+    descKey: t('datas.receives.dailyChallenges.desc')
   },
   {
     icon: '/images/home/11.png',
-    alt: 'Learning and Development Library',
-    titleKey: 'pages.home.receive.card4.title',
-    descKey: 'pages.home.receive.card4.desc'
+    alt: t('datas.receives.learningLibrary.title'),
+    titleKey: t('datas.receives.learningLibrary.title'),
+    descKey: t('datas.receives.learningLibrary.desc')
   },
   {
     icon: '/images/home/12.png',
-    alt: 'Certificates of Achievement',
-    titleKey: 'pages.home.receive.card6.title',
-    descKey: 'pages.home.receive.card6.desc'
+    alt: t('datas.receives.transparency.title'),
+    titleKey: t('datas.receives.transparency.title'),
+    descKey: t('datas.receives.transparency.desc')
   }
 ]
 
-const whyItems = computed(() => [
-  {
-    title: t('pages.home.receive.card1.title'),
-    desc: t('pages.home.receive.card1.desc'),
-    image: '/images/pricing/2.png',
-  },
-  {
-    title: t('pages.home.receive.card3.title'),
-    desc: t('pages.home.receive.card3.desc'),
-    image: '/images/pricing/3.png',
-  },
-  {
-    title: t('pages.home.receive.card5.title'),
-    desc: t('pages.home.receive.card5.desc'),
-    image: '/images/pricing/4.png',
-  },
-  {
-    title: t('pages.home.receive.card2.title'),
-    desc: t('pages.home.receive.card2.desc'),
-    image: '/images/pricing/5.png',
-  },
-  {
-    title: t('pages.home.receive.card4.title'),
-    desc: t('pages.home.receive.card4.desc'),
-    image: '/images/pricing/6.png',
-  },
-  {
-    title: t('pages.home.receive.card6.title') || 'Transparency and Value',
-    desc: t('pages.home.receive.card6.desc'),
-    image: '/images/pricing/7.png',
-  },
-]);
 
 const faqItems = computed(() => [
   {
-    question: t('pages.pricing.faq.items.0.q'),
-    answer: t('pages.pricing.faq.items.0.a')
+    question: t('datas.faq.question1'),
+    answer: t('datas.faq.answer1')
   },
   {
-    question: t('pages.pricing.faq.items.1.q'),
-    answer: t('pages.pricing.faq.items.1.a')
+    question: t('datas.faq.question2'),
+    answer: t('datas.faq.answer2')
   },
   {
-    question: t('pages.pricing.faq.items.2.q'),
-    answer: t('pages.pricing.faq.items.2.a')
+    question: t('datas.faq.question3'),
+    answer: t('datas.faq.answer3')
   },
   {
-    question: t('pages.pricing.faq.items.3.q'),
-    answer: t('pages.pricing.faq.items.3.a')
+    question: t('datas.faq.question4'),
+    answer: t('datas.faq.answer4')
   },
   {
-    question: t('pages.pricing.faq.items.4.q'),
-    answer: t('pages.pricing.faq.items.4.a')
+    question: t('datas.faq.question5'),
+    answer: t('datas.faq.answer5')
+  },
+  {
+    question: t('datas.faq.question6'),
+    answer: t('datas.faq.answer6')
+  },
+  {
+    question: t('datas.faq.question7'),
+    answer: t('datas.faq.answer7')
+  },
+  {
+    question: t('datas.faq.question8'),
+    answer: t('datas.faq.answer8')
   }
-]);
-
+])
 
 
 </script>

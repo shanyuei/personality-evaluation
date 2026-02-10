@@ -491,6 +491,31 @@
             }
         }
     },
+    "pricing": {
+        "subtitle": "Leverage psychometric data to navigate your career, enhance relationships, and master your personal growth strategy.",
+        "title": "Empower Your Future with Expert Insights",
+        "includedFeatures": "INCLUDED FEATURES",
+        "badge": "POPULAR",
+        "plans": {
+            "weekly": {
+                "button": "Begin Trial"
+            },
+            "monthly": {
+                "button": "Start Monthly Plan"
+            },
+            "yearly": {
+                "button": "Get Yearly Access"
+            }
+        },
+        "features": {
+            "priorityAccess": "Priority Access to New Assessments ",
+            "archetypeAnalysis": "Comprehensive Archetype Analysis ",
+            "careerMapping": "Career Alignment Mapping ",
+            "interpersonalGuide": "Interpersonal Dynamics Guide ",
+            "aiGrowthCoach": "Personalized AI Growth Coach ",
+            "selfEsteemBlueprint": "Self-Esteem Mastery Blueprint "
+        }
+    },
     "home": {
         "title": "Discover your true self with a personality test",
         "description": "The test helps you identify your accurate personality type.",
@@ -577,73 +602,6 @@
             "title": "Frequently Asked Questions",
             "description": "Frequently Asked Questions offers a quick answers to common queries, guiding users \n through features and functionalities efficiently.",
             "description-mobile": "Frequently Asked Questions offers quick\n answers to common queries, guiding users\n through features and functionalities effortlessly."
-        }
-    },
-    "pricing": {
-        "title": "Start Your Journey of Self-Discovery",
-        "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.",
-        "plans": {
-            "weekly": {
-                "title": "7-Day Access",
-                "description": "Get started building, experimenting, and prototyping with AI.",
-                "price": "$14",
-                "unit": "/mo",
-                "button": "Buy Now"
-            },
-            "monthly": {
-                "title": "Monthly",
-                "description": "Perfect for landing pages, personal sites, portfolios, or MVPs that don't require a CMS.",
-                "price": "$14",
-                "unit": "/mo",
-                "billing": "Billed yearly",
-                "button": "Buy Now"
-            },
-            "yearly": {
-                "title": "Yearly",
-                "description": "Perfect for landing pages, personal sites, portfolios, or MVPs that don't require a CMS.",
-                "price": "$23",
-                "unit": "/mo",
-                "billing": "Billed yearly",
-                "button": "Buy Now",
-                "badge": "POPULAR"
-            }
-        },
-        "features": {
-            "publishing": "Publishing",
-            "webflow": "Webflow.io domain",
-            "pages": "2 pages",
-            "cms": "20 CMS Collections",
-            "ai": "AI Assistant"
-        },
-        "why": {
-            "title": "Why Our Test Stands Out",
-            "subtitle": "Be always were to from of volunteers range times to mild, casting opposite he its nor attribute how solitary saw more on his not"
-        },
-        "faq": {
-            "title": "Frequently Asked Questions",
-            "subtitle": "Frequently Asked Questions offers quick answers to common queries, guiding users through features and functionalities effortlessly.",
-            "items": [
-                {
-                    "q": "Can I Track My Assignments and Grades?",
-                    "a": "Yes, the platform offers a dashboard where users can view their results, monitor progress, and check upcoming challenges."
-                },
-                {
-                    "q": "Does the system support video lessons and live sessions?",
-                    "a": "Yes, our platform fully supports high-definition video content and integrates with tools for real-time sessions."
-                },
-                {
-                    "q": "How can I communicate with my mentor?",
-                    "a": "You can communicate through built-in messaging systems, discussion forums, or during scheduled sessions."
-                },
-                {
-                    "q": "What support is available for users?",
-                    "a": "We offer 24/7 technical support, comprehensive documentation, and a dedicated community forum."
-                },
-                {
-                    "q": "Are there interactive features?",
-                    "a": "Absolutely! We have quizzes, polls, interactive assignments, and peer review features."
-                }
-            ]
         }
     },
     "testDetail": {
