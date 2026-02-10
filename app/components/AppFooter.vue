@@ -9,7 +9,7 @@
         container: 'md:uno-pt-80px px-0 gap-0 z-[2] relative max-w-[1440px] mx-auto items-start max-md:max-w-[80%] max-sm:max-w-full max-sm:flex-col-reverse max-sm:flex max-sm:gap-32px max-sm:py-0  uno-items-start',
         left: 'flex-none',
         right: 'flex-none',
-        center: 'flex-none uno-mt-32px',
+        center: 'flex-none ',
         bottom: 'p-t-0 uno-pb-32px uno-pt-22px',
       }">
         <template #left>
@@ -116,7 +116,7 @@
             </div>
             <!-- 支付方式 -->
             <div
-              class="uno-flex uno-items-center uno-gap-12px uno-flex-wrap uno-justify-center max-sm:uno-gap-8px max-xs:uno-gap-6px">
+              class="uno-flex uno-items-center uno-gap-8px uno-flex-wrap uno-justify-center ">
               <span
                 class="uno-text-[#011813] uno-font-Outfit uno-mr-12px max-sm:uno-mr-8px max-xs:uno-mr-6px max-sm:uno-text-14px max-xs:uno-text-12px">
                 Payments:</span>

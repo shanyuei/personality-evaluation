@@ -3,7 +3,7 @@
     <!-- 页面内容 -->
     <div class="page-container">
 
-      <div class="uno-flex uno-flex-col md:uno-flex-row md:uno-justify-between  uno-relative">
+      <div class="uno-flex uno-flex-col md:uno-flex-row md:uno-justify-between uno-flex-wrap uno-gap-20px  uno-relative">
         <NuxtImg src="/images/about/icon-1.png" alt="decor"
           class="uno-absolute uno-left-1/2 uno--translate-x-1/2 uno-top-0 uno-w-47px uno-h-36px" />
         <!-- 左侧内容 -->
@@ -13,20 +13,20 @@
             <!-- Contact Us -->
             {{ t('pages.contact.title') }}
           </h1>
-          <p class="uno-text-[#4E5255] uno-text-[18px] uno-font-Outfit uno-mb-12 uno-leading-[1.5]">
+          <p class="uno-text-[#4E5255] uno-text-[18px] uno-font-Outfit uno-mb-12px uno-leading-[1.5]">
             {{ t('pages.contact.desc1') }}
             <br>
             {{ t('pages.contact.desc2') }}
           </p>
           <a href="mailto:support@personalitytest101.com"
-            class="uno-text-[var(--ui-primary)] uno-text-base uno-font-Outfit uno-mb-12 inline-block">
+            class="uno-text-[var(--ui-primary)] uno-text-18px uno-font-Outfit uno-mb-24px inline-block uno-underline">
             support@personalitytest101.com
           </a>
 
           <!-- 联系选项卡片 -->
           <div class="uno-grid uno-grid-cols-1 sm:uno-grid-cols-3 uno-gap-[20px]">
             <div v-for="option in contactOptions" :key="option.id" class="uno-gap-16 ">
-              <div class="uno-w-12 uno-h-12 uno-rounded-full uno-flex uno-items-center uno-justify-center uno-mb-4">
+              <div class="uno-w-64px uno-h-64px uno-rounded-full uno-flex uno-items-center uno-justify-center uno-mb-4">
                 <HeartIcon v-if="option.id === 'feedback'" />
                 <MailIcon v-else-if="option.id === 'support'" />
                 <BrainIcon v-else-if="option.id === 'media'" />
@@ -42,9 +42,9 @@
         </div>
 
         <!-- 右侧 Get in Touch 卡片 -->
-        <div class="uno-flex-1 uno-max-w-[411px]">
+        <div class="uno-flex-1 ">
           <div
-            class="uno-bg-[var(--Color-4,#DCFBF2)] uno-w-full uno-px-[32px] uno-py-[33px] uno-rounded-[32px] uno-border uno-border-[#E7E7E8] uno-flex uno-flex-col uno-items-center">
+            class="uno-bg-[var(--Color-4,#DCFBF2)] uno-w-full uno-px-[32px] uno-py-[33px] uno-rounded-[32px]  uno-flex uno-flex-col uno-items-center">
             <div
               class="uno-w-10 uno-h-10 uno-bg-[#dfffea] uno-rounded-full uno-flex uno-items-center uno-justify-center uno-mb-4">
               <MailLargeIcon />
@@ -96,6 +96,7 @@ const { t } = useI18n()
 definePageMeta({
   title: () => 'seo.contact.title',
   layoutShowCurious: true,
+  layoutShowPageTopIcons: false,
   path: '/contact-us'
 })
 useSeoMeta({

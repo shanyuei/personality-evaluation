@@ -1,6 +1,6 @@
 <template>
     <!-- 首页 -->
-    <div class="uno-py-12 sm:uno-py-16 md:uno-py-24 lg:uno-py-32">
+    <div class="uno-py-80px sm:uno-py-80px md:uno-py-80px lg:uno-py-80px">
         <!-- 第一块区域 -->
         <div
             class="page-container uno-relative uno-rounded-xl uno-border uno-border-transparent uno-px-4 sm:uno-px-6 md:uno-px-8">
@@ -29,7 +29,7 @@
         <!-- 第二块区域 hero -->
         <div class="page-container uno-hero-section uno-w-full uno-my-40px sm:uno-my-12 ">
             <div
-                class="uno-flex uno-justify-center uno-items-center uno-gap-2 sm:uno-gap-3 md:uno-gap-4 lg:uno-gap-6 xl:uno-gap-6">
+                class="uno-flex uno-justify-between uno-items-center uno-gap-2 sm:uno-gap-3 md:uno-gap-4 lg:uno-gap-6 xl:uno-gap-6">
                 <!-- 六个卡通人物头像 -->
                 <div v-for="(hero, index) in heroAvatars" :key="index"
                     class="uno-hero-avatar uno-relative uno-w-26 uno-h-85px sm:uno-h-34  md:uno-w-32 md:uno-h-48 lg:uno-w-32 lg:uno-h-48 xl:uno-w-40 xl:uno-h-64 uno-overflow-hidden uno-flex uno-items-center uno-justify-center">
@@ -38,12 +38,12 @@
             </div>
         </div>
         <!-- 第三块 数据统计区域 -->
-        <div class="uno-data-stats uno-bg-[#F5F8FF] uno-my-40px sm:uno-my-12 ">
-            <div class="page-container uno-px-4">
-                <div class="uno-grid uno-grid-cols-2 md:uno-grid-cols-4 uno-gap-3 sm:uno-gap-4 md:uno-gap-6">
+        <div class="uno-data-stats uno-bg-[#F5F8FF] uno-mt-40px ">
+            <div class="page-container ">
+                <div class="uno-flex uno-flex-wrap uno-gap-3 sm:uno-gap-4 md:uno-gap-6">
                     <!-- 统计项循环 -->
                     <div v-for="(item, index) in statsItems" :key="index"
-                        class="uno-text-center uno-p-3 sm:uno-p-4 md:uno-p-6 uno-flex uno-flex-col uno-justify-start uno-items-center sm:uno-justify-center md:uno-justify-center lg:uno-justify-center">
+                        class="uno-w-[calc(50%-0.375rem)] md:uno-w-[calc(25%-1.125rem)] uno-text-center uno-py-3 sm:uno-py-4 md:uno-py-53px uno-flex uno-flex-col uno-justify-start uno-items-center sm:uno-justify-center md:uno-justify-center lg:uno-justify-center">
                         <div :style="{ color: item.color }"
                             class="uno-text-[20.75px] sm:uno-text-2xl md:uno-text-4xl lg:uno-text-5xl uno-font-Outfit uno-font-semibold uno-m-b-1px sm:uno-m-b-2px md:uno-m-b-4px">
                             {{ item.value }}
@@ -57,7 +57,7 @@
             </div>
         </div>
         <!-- 第四块 介绍区域 -->
-        <div class="page-container uno-intro-section  !uno-py-20 sm:uno-py-16 md:uno-py-20 lg:uno-py-24">
+        <div class="page-container uno-intro-section uno-mt-120px">
             <!-- Why You Should Take the Test 部分 -->
             <div class="uno-mb-12 sm:uno-mb-16 md:uno-mb-120px lg:uno-mb-120px">
                 <div class="uno-max-w-[800px] uno-mx-auto uno-relative">
@@ -78,7 +78,7 @@
 
                 <!-- 主要介绍卡片 -->
                 <div
-                    class="uno-shadow-lg uno-mb-6 sm:uno-mb-8 md:uno-mb-24px lg:uno-mb-24px uno-w-full uno-bg-[#F8F8F8] uno-border-solid uno-border-[#E7E7E8] uno-border uno-rounded-[32px] uno-p-[24px]  uno-relative uno-overflow-hidden">
+                    class=" uno-mb-6 sm:uno-mb-8 md:uno-mb-24px lg:uno-mb-24px uno-w-full uno-bg-[#F8F8F8] uno-border-solid uno-border-[#E7E7E8] uno-border uno-rounded-[32px] uno-p-[24px]  uno-relative uno-overflow-hidden">
 
                     <div class="uno-flex uno-flex-col md:uno-flex-row uno-items-center uno-gap-8 md:uno-gap-12">
                         <!-- Left Content -->
@@ -107,8 +107,9 @@
                                 class="uno-relative uno-inline-flex uno-w-full uno-flex uno-justify-center md:uno-justify-start">
                                 <AppArrowButton class="uno-pl-6 uno-pr-2 uno-py-2 uno-gap-3" :icon-size="44"
                                     :to="localePath('/test')" hover-class="">
-                                    <span class="uno-font-Outfit uno-font-medium uno-text-[16px]">{{ $t('pages.home.cta') }}
-</span>
+                                    <span class="uno-font-Outfit uno-font-medium uno-text-[16px]">{{
+                                        $t('pages.home.cta') }}
+                                    </span>
                                 </AppArrowButton>
                             </div>
                         </div>
@@ -128,7 +129,7 @@
                         class="uno-bg-[#F8F8F8] uno-border-solid uno-border-[#E7E7E8] uno-border-1 uno-rounded-[12px] uno-p-18px sm:uno-p-24px md:uno-p-24px uno-relative uno-w-full md:uno-w-[384px] md:uno-h-[284px]">
                         <!-- 图标 -->
                         <NuxtImg v-if="!$device.isMobile" :src="card.icon" :alt="card.alt" width="32" height="32"
-                            class="sm:uno-w-[40px] sm:uno-h-[40px] md:uno-w-[56px] md:uno-h-[56px]" />
+                            class="sm:uno-w-[40px] sm:uno-h-[40px] md:uno-w-[56px] md:uno-h-[56px] uno-mb-12px" />
                         <NuxtImg v-else :src="card.icon" :alt="card.alt" width="56" height="56" class="uno-mb-12px" />
 
                         <h3
@@ -143,7 +144,7 @@
 
             <!-- How Does It Work 部分 -->
             <div
-                class="uno-flex uno-flex-col md:uno-flex-row uno-gap-48px sm:uno-gap-12 uno-items-center uno-pt-40px sm:uno-pt-120px">
+                class="uno-flex uno-flex-col md:uno-flex-row uno-gap-48px sm:uno-gap-12 uno-items-center uno-pb-120px uno-pt-40px sm:uno-pt-120px">
                 <!-- 左侧：标题、描述和按钮 -->
                 <div class="uno-w-full md:uno-w-1/2">
                     <div class="uno-flex uno-flex-col uno-items-center md:uno-items-start">
@@ -152,12 +153,12 @@
                             {{ $t('pages.home.how.title') }}
                         </h2>
                         <p class="uno-text-gray-600 uno-mb-8 sm:uno-mb-12 md:uno-text-left">{{ $t('pages.home.how.desc')
-                            }}</p>
+                        }}</p>
 
                         <AppArrowButton
                             class="uno-m-t-12px sm:uno-m-t-16px md:uno-m-t-24px uno-gap-[6px] sm:uno-gap-[8px] md:uno-gap-[12px] uno-py-2 sm:uno-py-2 uno-pr-[6px] sm:uno-pr-[4px] md:uno-pr-[6px] uno-pl-[12px] sm:uno-pl-[16px] md:uno-pl-[24px] uno-text-[16px] sm:uno-text-[14px] md:uno-text-[16px] uno-font-Outfit uno-font-medium"
                             :to="localePath('/test')" :icon-size="44" hover-class="">
-                {{ $t('pages.home.cta') }}
+                            {{ $t('pages.home.cta') }}
 
                         </AppArrowButton>
                     </div>
@@ -198,7 +199,7 @@
                 class="uno-w-full uno-h-[100%]  uno-absolute uno-top-0 uno-left-0 uno--z-10 uno-pointer-events-none uno-hidden md:uno-block"
                 uno-preload />
             <div
-                class="page-container uno-px-4 !uno-py-8 sm:uno-py-12 md:uno-py-16 lg:uno-py-20 xl:uno-py-24 relative z-10">
+                class="page-container uno-px-4 uno-py-8 sm:uno-py-12 md:uno-py-120px lg:uno-py-120px xl:uno-py-120px relative z-10">
                 <h2
                     class="uno-text-[32px] sm:uno-text-2xl md:uno-text-[48px] uno-font-Outfit uno-font-semibold uno-text-center uno-mb-2 sm:uno-mb-3 md:uno-mb-4">
                     {{ $t('pages.home.receive.title') }}</h2>
@@ -211,17 +212,17 @@
                 <div
                     class="uno-grid uno-grid-cols-1 md:uno-grid-cols-3 uno-gap-[24px] sm:uno-gap-[24px] md:uno-gap-[24px]">
                     <div v-for="(card, index) in receiveCards" :key="index"
-                        class="uno-bg-white sm:uno-w-full md:uno-w-full uno-rounded-[32px] uno-shadow-[0_2px_8px_rgba(0,0,0,0.04)] uno-p-[32px] uno-border uno-border-solid uno-border-[#E7E7E8] uno-flex uno-flex-col uno-items-center uno-justify-between uno-text-center uno-min-h-[256px]">
+                        class="uno-bg-white sm:uno-w-full md:uno-w-full uno-rounded-[32px] uno-shadow-[0_2px_8px_rgba(0,0,0,0.04)] uno-p-[32px] uno-border uno-border-solid uno-border-[#E7E7E8] uno-flex uno-flex-col uno-items-center uno-justify-start uno-text-center uno-min-h-[256px]">
                         <div
                             class="uno-w-64px uno-h-64px sm:uno-w-64px sm:uno-h-64px uno-flex uno-items-center uno-justify-center uno-bg-gray-50 uno-rounded-full uno-mb-8px">
                             <NuxtImg :src="card.icon" :alt="card.alt" width="64" height="64" />
                         </div>
                         <h3
-                            class=" uno-w-[250px]  uno-text-[20px] sm:uno-text-xl md:uno-text-[20px] uno-font-Outfit uno-font-medium uno-leading-tight uno-px-2 uno-mb-12px">
+                            class=" uno-max-[250px]  uno-text-[20px] sm:uno-text-xl md:uno-text-[20px] uno-font-Outfit uno-font-medium uno-leading-tight uno-px-2 uno-mb-12px">
                             {{ card.titleKey }}
                         </h3>
                         <p
-                            class=" uno-w-[250px]  uno-text-gray-500 uno-text-[16px] sm:uno-text-base uno-font-Outfit uno-leading-relaxed">
+                            class=" uno-max-[250px]  uno-text-[#4E5255] uno-text-[16px] sm:uno-text-base uno-font-Outfit uno-leading-relaxed">
                             {{ card.descKey }}
                         </p>
                     </div>
@@ -233,8 +234,7 @@
         <TestimonialsSection :title="$t('pages.home.testimonials.title')"
             :subtitle="$t('pages.home.testimonials.subtitle')" :rating="5" :reviews="reviews" />
 
-        <FAQSection :title="$t('common.faq.title')" :description="$t('common.faq.desc')"
-            :items="faqItems" />
+        <FAQSection :title="$t('common.faq.title')" :description="$t('common.faq.desc')" :items="faqItems" />
 
         <!-- <GradientCTASection @button-click="handleCTAClick" /> -->
     </div>
@@ -342,7 +342,7 @@ const howSteps = [
         step: 3,
         bgClass: 'uno-bg-[#F5EFFC]',
         textClass: 'uno-text-[#932EFA]',
-        titleKey: t('pages.home.how.step3.title'), 
+        titleKey: t('pages.home.how.step3.title'),
         descKey: t('pages.home.how.step3.desc')
     }
 ]

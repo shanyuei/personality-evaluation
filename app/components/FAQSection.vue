@@ -1,10 +1,10 @@
 <template>
-  <div class="page-container uno-faq-section uno-py-16 sm:uno-py-20 md:uno-py-24">
+  <div class="page-container uno-faq-section uno-pt-120px sm:uno-pt-120px md:uno-pt-120px">
     <div class=" uno-w-full md:uno-mx-auto md:uno-max-w-[80%] ">
-      <div class="uno-text-center uno-mb-8 sm:uno-mb-16 uno-max-w-3xl uno-mx-auto">
-        <h2 class="uno-text-[32px] md:uno-text-[48px] uno-font-Outfit uno-font-[600] uno-mb-3">{{ title }}</h2>
-        <p v-if="$device.isMobile" class="uno-text-[#4E5255] uno-text-sm uno-font-Outfit uno-px-[0px] sm:uno-px-[50px] sm:uno-hidden" style="white-space: pre-line;">{{ descriptionMobile||description }}</p>
-        <p v-else class="uno-text-[#4E5255] uno-text-sm uno-font-Outfit uno-px-[50px] uno-hidden sm:uno-block" style="white-space: pre-line;">{{ description }}</p>
+      <div class="uno-text-center uno-mb-8 sm:uno-mb-56px uno-max-w-3xl uno-mx-auto">
+        <h2 class="uno-text-[#011813] uno-text-[32px] md:uno-text-[48px] uno-font-Outfit uno-font-[600] uno-mb-3">{{ title }}</h2>
+        <p v-if="$device.isMobile" class="uno-text-[#4E5255] uno-text-16px uno-font-Outfit uno-px-[0px] sm:uno-px-[50px] sm:uno-hidden" style="white-space: pre-line;">{{ descriptionMobile||description }}</p>
+        <p v-else class="uno-text-[#4E5255] uno-text-16px uno-font-Outfit uno-px-[50px] uno-hidden sm:uno-block" style="white-space: pre-line;">{{ description }}</p>
       </div>
 
 

@@ -13,7 +13,7 @@
             "description": "Take our free personality test to uncover your unique traits and strengths. Get detailed insights into your personality type and learn how to unlock your full potential in life and career. Start your journey today with PersonalityTest101."
         },
         "analyzing": {
-            "title": "Title Analysis in Progress {separator} PersonalityTest101 – Decoding Your Unique Traits",
+            "title": "Analysis in Progress {separator} PersonalityTest101 – Decoding Your Unique Traits",
             "description": "Meta Description Our system is decoding your responses to generate a precise personality profile. Discover the science behind your behavior and unlock deep insights into your core traits and potential."
         },
         "report": {
@@ -26,7 +26,7 @@
         }
     },
     "about": {
-        "title": "Title About Us {separator} PersonalityTest101 – Our Mission for Self-Discovery",
+        "title": "About Us {separator} PersonalityTest101 – Our Mission for Self-Discovery",
         "description": "Discover the story behind PersonalityTest101. We combine psychological precision with data-driven insights to help individuals uncover their core traits, improve relationships, and achieve personal growth. Learn more about our mission and vision."
     },
     "auth.signIn": {
