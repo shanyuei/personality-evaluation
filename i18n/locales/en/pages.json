@@ -567,31 +567,31 @@
       }
     },
     "receive": {
-      "title": "What you'll get",
-      "desc": "Participation is always voluntary and flexible in time, focusing on positive experiences and genuine outcomes.",
+      "title": "What You'll Gain",
+      "desc": "Participate at your own pace, in a supportive and positive environment designed to deliver genuine self-insight and meaningful outcomes.",
       "card1": {
-        "title": "Comprehensive personality report",
-        "desc": "Structured and actionable report content."
+        "title": "Comprehensive Personality Report",
+        "desc": "Understand your strengths, preferences, and potential blind spots."
       },
       "card2": {
-        "title": "Daily practical challenges",
-        "desc": "Improve continuously through small daily exercises."
+        "title": "Tailored Growth Recommendations",
+        "desc": "Get personalized suggestions to support your personal development and decisions."
       },
       "card3": {
-        "title": "Personalized course recommendations",
-        "desc": "Recommendations for learning paths and courses that fit you better."
+        "title": "Skill & Behavior Insights",
+        "desc": "Explore your tendencies and track your growth over time."
       },
       "card4": {
-        "title": "Learning and development library",
-        "desc": "Systematic content to support continuous learning and growth."
+        "title": "Practical Self-Discovery Exercises",
+        "desc": "Apply insights through small, actionable exercises in daily life."
       },
       "card5": {
-        "title": "Skills assessment tests",
-        "desc": "Measure and track improvements in key skills."
+        "title": "Curated Knowledge Library",
+        "desc": "Access resources to deepen self-understanding and ongoing growth."
       },
       "card6": {
-        "title": "Certificate of achievement",
-        "desc": "Earn a certificate after learning to showcase your results."
+        "title": "Certificates of Self-Awareness",
+        "desc": "Celebrate your self-discovery journey with certificates of achievement."
       }
     },
     "testimonials": {

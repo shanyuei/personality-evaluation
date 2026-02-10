@@ -201,10 +201,10 @@
                 class="page-container uno-px-4 !uno-py-8 sm:uno-py-12 md:uno-py-16 lg:uno-py-20 xl:uno-py-24 relative z-10">
                 <h2
                     class="uno-text-[32px] sm:uno-text-2xl md:uno-text-[48px] uno-font-Outfit uno-font-semibold uno-text-center uno-mb-2 sm:uno-mb-3 md:uno-mb-4">
-                    What You'll Gain</h2>
+                    {{ $t('pages.home.receive.title') }}</h2>
                 <p
                     class="uno-text-center uno-text-gray-600 uno-text-[16px] sm:uno-text-sm md:uno-text-base uno-mb-6 sm:uno-mb-8 md:uno-mb-16 uno-max-w-3xl uno-mx-auto">
-                    Participate at your own pace, in a supportive and positive environment designed to deliver genuine self-insight and meaningful outcomes.</p>
+                    {{ $t('pages.home.receive.desc') }}</p>
 
                 <!-- 六个卡片布局 -->
                 <!-- 循环展示 receiveCards -->
@@ -350,39 +350,39 @@ const howSteps = [
 const receiveCards = [
     {
         icon: '/images/home/7.png',
-        alt: 'Comprehensive Personality Report',
-        titleKey: 'Comprehensive Personality Report',
-        descKey: 'Understand your strengths, preferences, and potential blind spots.'
+        alt: t('pages.home.receive.card1.title'),
+        titleKey: t('pages.home.receive.card1.title'),
+        descKey: t('pages.home.receive.card1.desc')
     },
     {
         icon: '/images/home/8.png',
-        alt: 'Tailored Growth Recommendations',
-        titleKey: 'Tailored Growth Recommendations',
-        descKey: 'Get personalized suggestions to support your personal development and decisions.'
+        alt: t('pages.home.receive.card2.title'),
+        titleKey: t('pages.home.receive.card2.title'),
+        descKey: t('pages.home.receive.card2.desc')
     },
     {
         icon: '/images/home/9.png',
-        alt: 'Skill & Behavior Insights',
-        titleKey: 'Skill & Behavior Insights',
-        descKey: 'Explore your tendencies and track your growth over time.'
+        alt: t('pages.home.receive.card3.title'),
+        titleKey: t('pages.home.receive.card3.title'),
+        descKey: t('pages.home.receive.card3.desc')
     },
     {
         icon: '/images/home/10.png',
-        alt: 'Practical Self-Discovery Exercises',
-        titleKey: 'Practical Self-Discovery Exercises',
-        descKey: 'Apply insights through small, actionable exercises in daily life.'
+        alt: t('pages.home.receive.card4.title'),
+        titleKey: t('pages.home.receive.card4.title'),
+        descKey: t('pages.home.receive.card4.desc')
     },
     {
         icon: '/images/home/11.png',
-        alt: 'Curated Knowledge Library',
-        titleKey: 'Curated Knowledge Library',
-        descKey: 'Access resources to deepen self-understanding and ongoing growth.'
+        alt: t('pages.home.receive.card5.title'),
+        titleKey: t('pages.home.receive.card5.title'),
+        descKey: t('pages.home.receive.card5.desc')
     },
     {
         icon: '/images/home/12.png',
-        alt: 'Certificates of Self-Awareness',
-        titleKey: 'Certificates of Self-Awareness',
-        descKey: 'Celebrate your self-discovery journey with certificates of achievement.'
+        alt: t('pages.home.receive.card6.title'),
+        titleKey: t('pages.home.receive.card6.title'),
+        descKey: t('pages.home.receive.card6.desc')
     }
 ]
 
