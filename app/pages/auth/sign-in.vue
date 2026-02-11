@@ -21,9 +21,9 @@
           </UFormField>
 
           <!-- Submit -->
-          <UButton :ui="UButtonTheme" color="primary" :disabled="!canSubmit" @click="handleSignIn">
+          <PrimaryButton :disabled="!canSubmit" @click="handleSignIn">
             {{ $t('pages.auth.signIn.submit') }}
-          </UButton>
+          </PrimaryButton>
         </UForm>
 
         <!-- Sign Up Link -->
@@ -47,6 +47,7 @@ import UFormFieldTheme from "~/theme/UFormField";
 import UInputTheme from "~/theme/UInput";
 import UButtonTheme from "~/theme/UButton";
 import { useUserStore } from '~/stores/modules/user';
+import PrimaryButton from '~/components/ui/PrimaryButton.vue';
 
 const { t } = useI18n()
 

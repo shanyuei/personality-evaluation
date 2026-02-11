@@ -30,9 +30,9 @@
             $t('pages.tests.hero.objective') }}</p>
           <div>
             <AppLink :to="'/test/step'">
-              <UButton
-                class="uno-w-full md:uno-w-[151px] uno-h-[44px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-1 uno-py-1 uno-px-[20px] uno-bg-[var(--ui-primary)] uno-rounded-lg uno-text-[var(--ui-primary-foreground)] uno-text-sm md:uno-text-lg uno-font-Outfit uno-font-[700] uno-leading-normal">
-                {{ $t('pages.tests.cta.startNow') }}</UButton>
+
+              <PrimaryButton width="151px" height="44px" >
+                {{ $t('pages.tests.cta.startNow') }}</PrimaryButton>
             </AppLink>
           </div>
         </div>
@@ -70,20 +70,17 @@
               {{ card.title }}</h3>
             <p class="uno-text-[#323233] uno-text-sm uno-font-Outfit uno-leading-normal">{{ card.desc }}</p>
             <div v-if="!card.completed" class="uno-mt-auto">
-              <UButton
-                class="uno-w-full md:uno-w-[151px] uno-h-[44px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-1 uno-py-1 uno-px-[20px] uno-bg-[var(--ui-primary)] uno-rounded-lg uno-text-[var(--ui-primary-foreground)] uno-text-sm md:uno-text-lg uno-font-Outfit uno-font-[700] uno-leading-normal">
-                {{ $t('pages.tests.cta.readMore') }}</UButton>
+              <PrimaryButton width="151px" height="44px" >
+                {{ $t('pages.tests.cta.readMore') }}</PrimaryButton>
             </div>
             <div v-else class="uno-flex uno-gap-3 uno-mt-auto">
               <AppLink :to="'/test/result'">
-                <UButton
-                  class="uno-w-full md:uno-w-[151px] uno-h-[44px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-1 uno-py-1 uno-px-[20px] uno-bg-[var(--ui-primary)] uno-rounded-lg uno-text-[var(--ui-primary-foreground)] uno-text-sm md:uno-text-lg uno-font-Outfit uno-font-[700] uno-leading-normal">
-                  {{ $t('pages.tests.cta.viewResults') }}</UButton>
+                <PrimaryButton width="151px" height="44px" >
+                  {{ $t('pages.tests.cta.viewResults') }}</PrimaryButton>
               </AppLink>
               <AppLink :to="'/test/step'">
-                <UButton variant="ghost"
-                  class="uno-w-full md:uno-w-[151px] uno-h-[44px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-1 uno-py-1 uno-px-[20px] uno-bg-white uno-border-solid uno-border-2 uno-border-[var(--ui-primary)] uno-rounded-lg uno-text-[var(--ui-primary)] uno-text-sm md:uno-text-lg uno-font-Outfit uno-font-[700] uno-leading-normal">
-                  {{ $t('pages.tests.cta.tryAgain') }}</UButton>
+                <OutlineButton width="151px" height="44px"  >
+                  {{ $t('pages.tests.cta.tryAgain') }}</OutlineButton>
               </AppLink>
             </div>
           </div>
@@ -100,6 +97,8 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
+import PrimaryButton from '~/components/ui/PrimaryButton.vue'
+import OutlineButton from '~/components/ui/OutlineButton.vue'
 
 
 
