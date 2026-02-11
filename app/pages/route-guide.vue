@@ -162,7 +162,7 @@ const filterRoutes = (allRoutes: any[]) => {
 onMounted(() => {
   // 获取所有路由信息
   const allRoutes = router.getRoutes()
-
+  console.log(allRoutes)
   // 过滤并设置路由列表
   routes.value = filterRoutes(allRoutes)
 

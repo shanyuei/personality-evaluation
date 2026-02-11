@@ -21,7 +21,7 @@
                 <!-- 测试按钮 -->
                 <AppArrowButton variant="primary"
                     class="uno-m-t-32px sm:uno-m-t-48px md:uno-m-t-72px uno-gap-[8px] sm:uno-gap-[12px] md:uno-gap-[18px] uno-py-2 sm:uno-py-3 md:uno-py-4 uno-pr-2 sm:uno-pr-3 md:uno-pr-3 uno-pl-[20px] sm:uno-pl-[24px] md:uno-pl-[48px] uno-text-[18px] sm:uno-text-[18px] md:uno-text-[32px] uno-font-Outfit uno-font-medium"
-                    :icon-size="$device.isMobile ? 44 : 72" :to="localePath('/test')">
+                    :icon-size="$device.isMobile ? 44 : 72" @click="handleCTAClick">
                     {{ $t('pages.home.cta') }}
                 </AppArrowButton>
             </div>
@@ -106,7 +106,7 @@
                             <div
                                 class="uno-relative uno-inline-flex uno-w-full uno-flex uno-justify-center md:uno-justify-start">
                                 <AppArrowButton class="uno-pl-6 uno-pr-2 uno-py-2 uno-gap-3" :icon-size="44"
-                                    :to="localePath('/test')" hover-class="">
+                                    @click="handleCTAClick" hover-class="">
                                     <span class="uno-font-Outfit uno-font-medium uno-text-[16px]">{{
                                         $t('pages.home.cta') }}
                                     </span>
@@ -157,7 +157,7 @@
 
                         <AppArrowButton
                             class="uno-m-t-12px sm:uno-m-t-16px md:uno-m-t-24px uno-gap-[6px] sm:uno-gap-[8px] md:uno-gap-[12px] uno-py-2 sm:uno-py-2 uno-pr-[6px] sm:uno-pr-[4px] md:uno-pr-[6px] uno-pl-[12px] sm:uno-pl-[16px] md:uno-pl-[24px] uno-text-[16px] sm:uno-text-[14px] md:uno-text-[16px] uno-font-Outfit uno-font-medium"
-                            :to="localePath('/test')" :icon-size="44" hover-class="">
+                            @click="handleCTAClick" :icon-size="44" hover-class="">
                             {{ $t('pages.home.cta') }}
 
                         </AppArrowButton>
@@ -242,6 +242,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
+import { navigateTo } from 'nuxt/app';
 import GradientCTASection from '../../components/AppCurious.vue';
 import TestimonialsSection from '../../components/TestimonialsSection.vue';
 import FAQSection from '../../components/FAQSection.vue';
@@ -261,14 +262,98 @@ token.value = 'el0wBwD18J9X6mcKWSOP3Z9QhHTpGKok9OVXkcBjIvUgHceyDQcGNGhlV44a'
 
 const baseText = 'An exceptional platform for career development. The current curriculum, skilled instructors, and hands-on learning are truly rewarding.'
 
-const reviews: Array<{ text: string; avatarUrl: string; name: string; role: string }> = Array.from({ length: 30 }, (_, i) => ({
-    text: baseText,
-    avatarUrl: `https://randomuser.me/api/portraits/${i % 2 === 0 ? 'men' : 'women'}/${(i % 99) + 1}.jpg`,
-    name: 'Brandon Michael',
-    role: 'UX/UI Designer'
-}))
+// Testimonials Data
+const reviews = computed(() => {
+  return [
+    {
+      text: t('pages.orders.create.testimonials.reviews.review1.review'),
+      avatarUrl: 'https://randomuser.me/api/portraits/women/32.jpg',
+      name: t('pages.orders.create.testimonials.reviews.review1.name'),
+      role: t('pages.orders.create.testimonials.reviews.review1.role')
+    },
+    {
+      text: t('pages.orders.create.testimonials.reviews.review2.review'),
+      avatarUrl: 'https://randomuser.me/api/portraits/men/45.jpg',
+      name: t('pages.orders.create.testimonials.reviews.review2.name'),
+      role: t('pages.orders.create.testimonials.reviews.review2.role')
+    },
+    {
+      text: t('pages.orders.create.testimonials.reviews.review3.review'),
+      avatarUrl: 'https://randomuser.me/api/portraits/women/67.jpg',
+      name: t('pages.orders.create.testimonials.reviews.review3.name'),
+      role: t('pages.orders.create.testimonials.reviews.review3.role')
+    },
+    {
+      text: t('pages.orders.create.testimonials.reviews.review4.review'),
+      avatarUrl: 'https://randomuser.me/api/portraits/men/78.jpg',
+      name: t('pages.orders.create.testimonials.reviews.review4.name'),
+      role: t('pages.orders.create.testimonials.reviews.review4.role')
+    },
+    {
+      text: t('pages.orders.create.testimonials.reviews.review5.review'),
+      avatarUrl: 'https://randomuser.me/api/portraits/women/23.jpg',
+      name: t('pages.orders.create.testimonials.reviews.review5.name'),
+      role: t('pages.orders.create.testimonials.reviews.review5.role')
+    },
+    {
+      text: t('pages.orders.create.testimonials.reviews.review6.review'),
+      avatarUrl: 'https://randomuser.me/api/portraits/men/56.jpg',
+      name: t('pages.orders.create.testimonials.reviews.review6.name'),
+      role: t('pages.orders.create.testimonials.reviews.review6.role')
+    },
+    {
+      text: t('pages.orders.create.testimonials.reviews.review7.review'),
+      avatarUrl: 'https://randomuser.me/api/portraits/women/89.jpg',
+      name: t('pages.orders.create.testimonials.reviews.review7.name'),
+      role: t('pages.orders.create.testimonials.reviews.review7.role')
+    },
+    {
+      text: t('pages.orders.create.testimonials.reviews.review8.review'),
+      avatarUrl: 'https://randomuser.me/api/portraits/men/92.jpg',
+      name: t('pages.orders.create.testimonials.reviews.review8.name'),
+      role: t('pages.orders.create.testimonials.reviews.review8.role')
+    },
+    {
+      text: t('pages.orders.create.testimonials.reviews.review9.review'),
+      avatarUrl: 'https://randomuser.me/api/portraits/women/44.jpg',
+      name: t('pages.orders.create.testimonials.reviews.review9.name'),
+      role: t('pages.orders.create.testimonials.reviews.review9.role')
+    },
+    {
+      text: t('pages.orders.create.testimonials.reviews.review10.review'),
+      avatarUrl: 'https://randomuser.me/api/portraits/men/63.jpg',
+      name: t('pages.orders.create.testimonials.reviews.review10.name'),
+      role: t('pages.orders.create.testimonials.reviews.review10.role')
+    },
+    {
+      text: t('pages.orders.create.testimonials.reviews.review11.review'),
+      avatarUrl: 'https://randomuser.me/api/portraits/women/75.jpg',
+      name: t('pages.orders.create.testimonials.reviews.review11.name'),
+      role: t('pages.orders.create.testimonials.reviews.review11.role')
+    },
+    {
+      text: t('pages.orders.create.testimonials.reviews.review12.review'),
+      avatarUrl: 'https://randomuser.me/api/portraits/men/87.jpg',
+      name: t('pages.orders.create.testimonials.reviews.review12.name'),
+      role: t('pages.orders.create.testimonials.reviews.review12.role')
+    },
+    {
+      text: t('pages.orders.create.testimonials.reviews.review13.review'),
+      avatarUrl: 'https://randomuser.me/api/portraits/women/51.jpg',
+      name: t('pages.orders.create.testimonials.reviews.review13.name'),
+      role: t('pages.orders.create.testimonials.reviews.review13.role')
+    },
+    {
+      text: t('pages.orders.create.testimonials.reviews.review14.review'),
+      avatarUrl: 'https://randomuser.me/api/portraits/men/39.jpg',
+      name: t('pages.orders.create.testimonials.reviews.review14.name'),
+      role: t('pages.orders.create.testimonials.reviews.review14.role')
+    }
+  ]
+})
 
 const handleCTAClick = () => {
+    navigateTo(localePath('/free-personality-test'))
 }
 
 const heroAvatars = Array.from({ length: 6 }, (_, i) => ({

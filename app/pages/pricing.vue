@@ -185,7 +185,7 @@ const handleCreateOrder = async (plan: any) => {
     const order_id = data.value?.data?.order_id;
     if (order_id) {
       navigateTo(localePath({
-        path: '/orders/create',
+        path: '/checkout',
         query: {
           order_id: order_id,
           plan_id: plan.id,

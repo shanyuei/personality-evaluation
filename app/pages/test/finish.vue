@@ -33,7 +33,8 @@
       </PrimaryButton>
 
       <!-- 编辑答案链接 -->
-      <a href="#" class="uno-font-Outfit uno-text-[16px] uno-leading-[150%] uno-text-[#4E5255] uno-underline uno-underline-solid hover:uno-text-[#009D77] uno-text-center"
+      <a href="#"
+        class="uno-font-Outfit uno-text-[16px] uno-leading-[150%] uno-text-[#4E5255] uno-underline uno-underline-solid hover:uno-text-[#009D77] uno-text-center"
         @click.prevent="editAnswers">
         {{ t('pages.test.finish.reviewAnswers') }}
       </a>
@@ -58,8 +59,26 @@ useSeoMeta({
   description: () => t('seo.test.finish.description')
 })
 
+const route = useRoute()
+const router = useRouter()
+const localePath = useLocalePath()
+
 const getResults = () => {
-  // 跳转到结果页面
+  // 获取路由上的 reportId 参数
+  const reportId = route.query.reportId
+
+  // 构建跳转路径，包含 reportId 参数和国际化地址
+  if (reportId) {
+    router.push(localePath({
+      path: '/unlock-report',
+      query: { reportId }
+    }))
+
+  } else {
+    router.push(localePath({
+      path: '/unlock-report',
+    }))
+  }
 }
 
 const editAnswers = () => {

@@ -77,7 +77,7 @@ onMounted(async () => {
 
     setTimeout(() => {
       router.push(localePath({
-        path: '/pricing',
+        path: '/my-results',
         query: { reportId }
       }))
     }, 500)

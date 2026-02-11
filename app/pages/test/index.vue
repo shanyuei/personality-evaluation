@@ -152,7 +152,7 @@ const router = useRouter()
 const localePath = useLocalePath()
 
 useSeoMeta({
-  title: () => t('seo.test.index.title', {separator: "|"}),
+  title: () => t('seo.test.index.title', { separator: "|" }),
   description: () => t('seo.test.index.description'),
 })
 const questions = ref<TestQuestion[]>([])
@@ -236,7 +236,8 @@ getTestQuestions().then(res => {
 const nextStart = () => {
   questionsStore.currentStep = 1;
   questionsStore.setQuestions(allQuestions.value)
-  router.push(localePath({ name: 'test-start' }))
+  // router.push(localePath({ name: 'test-start' }))
+  router.push(localePath('/test/step'))
 }
 
 </script>

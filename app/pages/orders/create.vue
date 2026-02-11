@@ -17,8 +17,9 @@
         <!-- Summary Card -->
         <div class="uno-bg-[#EAFBF6] uno-rounded-[24px] uno-p-6 md:uno-p-8">
           <div class="uno-flex uno-justify-between uno-items-baseline uno-mb-6">
-            <h3 class="uno-text-2xl uno-font-bold uno-text-[#009D77]">{{ $t('pages.orders.create.summary.trial', { day: 7 }) }}</h3>
-            <span class="uno-text-2xl uno-font-bold uno-text-[#009D77]">{{ $t("common.price") }} 1.99</span>
+            <h3 v-if="!planName" class="uno-text-2xl uno-font-bold uno-text-[#009D77]">{{ $t('pages.orders.create.summary.trial', { day: 7 }) }}</h3>
+            <h3 v-else class="uno-text-2xl uno-font-bold uno-text-[#009D77]">{{ planName }}</h3>
+            <span class="uno-text-2xl uno-font-bold uno-text-[#009D77]">{{ $t("common.price") }} {{ planPrice }}</span>
           </div>
 
           <ul class="uno-space-y-4 uno-mb-8">
@@ -39,11 +40,14 @@
             </li>
           </ul>
         </div>
-        
-          <p class="uno-text-xs uno-text-[#8D8E8F] uno-leading-relaxed uno-mt-12px">
-            {{ $t('pages.orders.create.summary.terms', { price1: $t("common.price") + "1.99", price2: $t("common.price") + "27.88", day: 7 }) }}
-            <a href="mailto:support@personalitytest101.com">support@personalitytest101.com</a>
-          </p>
+
+        <p class="uno-text-xs uno-text-[#8D8E8F] uno-leading-relaxed uno-mt-12px">
+          {{ $t('pages.orders.create.summary.terms', {
+            price1: $t("common.price") + "1.99", price2: $t("common.price") +
+              "27.88", day: 7
+          }) }}
+          <a href="mailto:support@personalitytest101.com">support@personalitytest101.com</a>
+        </p>
       </div>
 
       <!-- Right Column: Payment Form -->
@@ -80,8 +84,8 @@
               <div class="uno-space-y-2">
                 <label class="uno-block uno-text-sm uno-font-medium uno-text-[#011813]">{{
                   $t('pages.orders.create.form.expires') }}</label>
-                <UInput v-model="form.expires" :placeholder="$t('pages.orders.create.form.expiresPlaceholder')" size="xl"
-                  :ui="{ rounded: 'rounded-[12px]' }" class="uno-w-full" />
+                <UInput v-model="form.expires" :placeholder="$t('pages.orders.create.form.expiresPlaceholder')"
+                  size="xl" :ui="{ rounded: 'rounded-[12px]' }" class="uno-w-full" />
               </div>
               <div class="uno-space-y-2">
                 <label class="uno-block uno-text-sm uno-font-medium uno-text-[#011813]">{{
@@ -99,7 +103,8 @@
 
             <!-- Consent Checkbox -->
             <div class="uno-flex uno-items-start uno-gap-3">
-              <UCheckbox v-model="form.consent" :ui="{ base: 'uno-w-5 uno-h-5 uno-border uno-border-[#4E5255]', rounded: 'rounded' }" />
+              <UCheckbox v-model="form.consent"
+                :ui="{ base: 'uno-w-5 uno-h-5 uno-border uno-border-[#4E5255]', rounded: 'rounded' }" />
               <div class="uno-text-xs uno-text-[#4E5255] uno-leading-tight uno-mt-0.5">
                 <span>{{ $t('pages.orders.create.form.consentPart1') }}</span>
                 <span class="uno-text-[#009D77]">{{ $t('pages.orders.create.form.terms') }}</span>
@@ -111,14 +116,11 @@
 
             <!-- Buttons -->
             <div class="uno-space-y-3">
-              <button
-                class="uno-w-full uno-h-[56px] uno-bg-[#009D77] hover:uno-bg-[var(--color-green-2)] uno-text-white uno-rounded-[12px] uno-font-bold uno-transition-colors"
-                @click="handleSubmit">
-                {{ $t('pages.orders.create.form.subscribeBtn', { price: $t("common.price") + "1.99" }) }}
-              </button>
+              <PrimaryButton @click="handleSubmit">
+                {{ $t('pages.orders.create.form.subscribeBtn', { price: $t("common.price") + planPrice }) }}
+              </PrimaryButton>
 
-              <button type="button"
-                class="uno-w-full uno-h-[48px] uno-bg-[#191919] hover:uno-bg-black uno-text-white uno-rounded-[12px] uno-font-bold uno-transition-colors uno-flex uno-items-center uno-justify-center uno-gap-2">
+              <CustomButton  class="uno-h-[48px] uno-bg-[#191919] hover:uno-bg-black uno-text-white uno-rounded-[12px] uno-flex uno-items-center uno-justify-center uno-gap-2">
                 {{ $t('pages.orders.create.form.paypalBtn') }}
                 <svg width="78" height="21" viewBox="0 0 78 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -141,10 +143,9 @@
                     fill="white" />
                 </svg>
 
-              </button>
+              </CustomButton>
 
-              <button type="button"
-                class="uno-w-full uno-h-[48px] uno-bg-[#191919] hover:uno-bg-black uno-text-white uno-rounded-[12px] uno-font-bold uno-transition-colors uno-flex uno-items-center uno-justify-center uno-gap-2">
+              <CustomButton  class="uno-h-[48px] uno-bg-[#191919] hover:uno-bg-black uno-text-white uno-rounded-[12px] uno-flex uno-items-center uno-justify-center uno-gap-2">
                 {{ $t('pages.orders.create.form.gpayBtn') }}
                 <svg width="50" height="20" viewBox="0 0 50 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -164,7 +165,7 @@
                     fill="#EA4335" />
                 </svg>
 
-              </button>
+              </CustomButton>
             </div>
 
             <!-- Payment Icons -->
@@ -204,8 +205,13 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted, computed } from 'vue';
 import { payOrder } from '~/api/tests';
 import AppCheckIcon from '~/components/AppCheckIcon.vue';
+import PrimaryButton from '~/components/ui/PrimaryButton.vue'
+import CustomButton from '~/components/ui/CustomButton.vue'
+
+const { toast } = useToast()
 
 const { t } = useI18n()
 const route = useRoute()
@@ -232,6 +238,8 @@ const form = ref({
   zip: '',
   consent: false
 })
+const planName = ref('')
+const planPrice = ref('')
 
 const isLoading = ref(false)
 const emailError = ref(false)
@@ -243,6 +251,12 @@ onMounted(() => {
   } else if (route.query.order_sn) {
     form.value.order_id = route.query.order_sn as string
   }
+
+  // Get plan_name and plan_price from query params
+  planName.value = route.query.plan_name as string || ""
+  planPrice.value = route.query.plan_price as string || "1.99"
+
+  // You can use these values as needed
 })
 
 const validateEmail = () => {
@@ -262,7 +276,35 @@ const isFormValid = computed(() => {
 })
 
 const handleSubmit = async () => {
-  if (!isFormValid.value) return
+  if (!isFormValid.value) {
+    // Check specific validation errors and show toasts
+    if (!form.value.email) {
+      toast?.add({
+        title: t('common.api.error'),
+        color: 'warning',
+        description: t('pages.orders.create.form.emailRequired') || 'Email is required.',
+      })
+    } else if (emailError.value) {
+      toast?.add({
+        title: t('common.api.error'),
+        color: 'warning',
+        description: t('pages.orders.create.form.emailInvalid') || 'Please enter a valid email address.',
+      })
+    } else if (!form.value.order_id) {
+      toast?.add({
+        title: t('common.api.error'),
+        color: 'warning',
+        description: t('pages.orders.create.form.orderIdRequired') || 'Order ID is required.',
+      })
+    } else if (!form.value.consent) {
+      toast?.add({
+        title: t('common.api.error'),
+        color: 'warning',
+        description: t('pages.orders.create.form.consentRequired') || 'Please consent to the terms.',
+      })
+    }
+    return
+  }
 
   isLoading.value = true
   try {
@@ -284,7 +326,11 @@ const handleSubmit = async () => {
       // router.push({ path: '/orders/success' })
     } else {
       // 处理 token 缺失的情况
-      alert(t('pages.orders.create.form.paymentError') || 'Payment failed. Please try again.')
+      toast?.add({
+        title: t('common.api.error'),
+        color: 'warning',
+        description: t('pages.orders.create.form.paymentError') || 'Payment failed. Please try again.',
+      })
     }
 
 

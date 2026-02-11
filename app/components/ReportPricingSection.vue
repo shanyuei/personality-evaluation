@@ -9,7 +9,7 @@
           $t('pages.test.report.pricing.price') }}</span>
       </div>
 
-      <PrimaryButton class="uno-w-full uno-mb-8px">
+      <PrimaryButton class="uno-w-full uno-mb-8px" @click="handleCTAClick">
         {{ $t('pages.test.report.pricing.cta') }}
       </PrimaryButton>
 
@@ -41,9 +41,26 @@
 
 <script setup lang="ts">
 import PrimaryButton from '~/components/ui/PrimaryButton.vue'
+
 const props = defineProps<{
   digits: string[]
+  reportId?: string
 }>()
+const localePath = useLocalePath()
+
+const handleCTAClick = () => {
+  // 构建跳转路径，包含 report_id 参数
+  if (props.reportId) {
+    navigateTo(localePath({
+      path: '/checkout',
+      query: {
+        report_id: props.reportId
+      }
+    }))
+  } else {
+    navigateTo(localePath('/checkout'))
+  }
+}
 </script>
 
 <style scoped>
