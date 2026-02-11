@@ -26,9 +26,9 @@
           <p class="uno-text-[#323233] uno-text-xs uno-font-Outfit uno-leading-normal uno-min-h-[80px]">{{
             card.desc }}</p>
           <div class="uno-flex uno-gap-3">
-            <UButton :ui="UButtonTheme" class="uno-flex-1">{{ $t('pages.profile.readMore') }}</UButton>
-            <UButton v-if="card.try" :ui="UButtonTheme" variant="secondary" class="uno-flex-1">{{
-              $t('pages.profile.tryAgain') }}</UButton>
+            <PrimaryButton width="151px" >{{ $t('pages.profile.readMore') }}</PrimaryButton>
+            <OutlineButton v-if="card.try" >{{
+              $t('pages.profile.tryAgain') }}</OutlineButton>
           </div>
         </div>
       </div>
@@ -37,7 +37,8 @@
 </template>
 
 <script setup lang="ts">
-import UButtonTheme from '~/theme/UButton'
+import PrimaryButton from '~/components/ui/PrimaryButton.vue'
+import OutlineButton from '~/components/ui/OutlineButton.vue'
 
 defineProps<{
   testCards: Array<{

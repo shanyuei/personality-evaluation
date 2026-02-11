@@ -13,12 +13,12 @@
             <div class="uno-flex uno-items-center uno-justify-between">
               <div>
                 <span class="uno-text-xs uno-text-[var(--ui-muted-foreground)]">1/10 {{ $t('pages.profile.lessons')
-                }}</span>
+                  }}</span>
               </div>
             </div>
             <div class="uno-flex uno-items-center uno-justify-between uno-mt-3">
-              <UButton :ui="UButtonTheme" size="sm" class="uno-w-[180px] md:uno-w-[120px]">{{
-                $t('pages.profile.continueCourse.cta') }}</UButton>
+              <PrimaryButton width="180px">{{
+                $t('pages.profile.continueCourse.cta') }}</PrimaryButton>
               <div class="uno-relative uno-w-14 uno-h-14">
                 <div class="uno-absolute uno-inset-0 uno-flex uno-items-center uno-justify-center">
                   <span class="uno-text-sm uno-font-medium uno-text-[var(--ui-primary)]">10%</span>
@@ -38,7 +38,7 @@
 </template>
 
 <script setup lang="ts">
-import UButtonTheme from '~/theme/UButton'
+import PrimaryButton from '~/components/ui/PrimaryButton.vue'
 
 defineProps<{
   courseCards: Array<{

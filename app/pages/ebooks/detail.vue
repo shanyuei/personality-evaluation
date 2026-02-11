@@ -18,7 +18,7 @@
 
 
             <p class="uno-text-[#4E5255] uno-text-sm md:uno-text-base uno-mt-12px">{{ $t('pages.ebookDetail.intro')
-              }}</p>
+            }}</p>
           </div>
 
           <div class="uno-space-y-4">
@@ -46,7 +46,7 @@
           <div class="uno-space-y-3">
             <h3 class="uno-text-[24px] uno-font-600 uno-text-[var(--ui-foreground)]">{{
               $t('pages.ebookDetail.learn.title')
-              }}</h3>
+            }}</h3>
             <ul class="uno-space-y-2">
               <li v-for="(item, i) in learnList" :key="i" class="uno-text-[var(--ui-foreground)]">
                 <span class="uno-mr-2">{{ i + 1 }}.</span>
@@ -96,14 +96,16 @@
 
           <div
             class="uno-flex uno-flex-col md:uno-flex-row uno-items-center uno-justify-center uno-gap-3 uno-mx-auto uno-mt-6  uno-p-4 md:uno-p-5 uno-w-full md:uno-w-[440px] md:uno-h-[72px] uno-rounded-[12px] uno-bg-[var(--color-green-7)]">
-            <UButton
-              :ui="{ base: `w-full md:w-[calc(50%-12px)] h-[48px] flex justify-center items-center flex-row gap-1 py-1 px-[20px] bg-[var(--ui-primary)] rounded-lg text-white text-sm md:text-lg uno-font-Outfit font-bold leading-normal` }">
-              {{ $t('pages.ebookDetail.cta.download') }}</UButton>
-            <AppLink :to="'/ebooks'" class="uno-inline-block w-full md:w-[calc(50%-12px)]">
-              <UButton variant="ghost"
-                :ui="{ base: `w-full h-[48px] flex justify-center items-center flex-row gap-1 py-1 px-[20px] border-solid border-[var(--ui-primary)] border-2 rounded-lg text-[var(--ui-primary)] text-sm md:text-lg uno-font-Outfit font-bold leading-normal` }">
-                {{ $t('pages.ebookDetail.cta.close') }}</UButton>
-            </AppLink>
+            <div class="uno-flex-1">
+              <PrimaryButton width="full" height="48px">
+                {{ $t('pages.ebookDetail.cta.download') }}</PrimaryButton>
+            </div>
+            <div class="uno-flex-1">
+              <AppLink :to="'/ebooks'" class="uno-inline-block w-full">
+                <OutlineButton width="full" height="48px">
+                  {{ $t('pages.ebookDetail.cta.close') }}</OutlineButton>
+              </AppLink>
+            </div>
           </div>
         </div>
       </section>
@@ -112,7 +114,8 @@
 </template>
 
 <script setup lang="ts">
-
+import PrimaryButton from '~/components/ui/PrimaryButton.vue'
+import OutlineButton from '~/components/ui/OutlineButton.vue'
 
 const { t } = useI18n()
 definePageMeta({

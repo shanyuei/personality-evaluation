@@ -164,7 +164,7 @@ watch(
     questions.value = list
 
 
-    mockUserAnswers();
+    // mockUserAnswers();
 
   },
   { immediate: true }

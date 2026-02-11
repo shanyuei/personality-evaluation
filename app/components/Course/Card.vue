@@ -10,7 +10,7 @@
           {{ $t('common.courseCard.status.completed') }}
         </div>
         <AppArrowButton variant="dark"
-          class="uno-gap-3 uno-pl-5 uno-pr-1 uno-py-1 md:uno-gap-2 md:uno-pl-[14px] md:uno-pr-[6px] md:uno-justify-between uno-font-medium"
+          class="uno-gap-3 uno-py-4px md:uno-gap-2 md:uno-pl-[14px] md:uno-pr-[4px] md:uno-justify-between uno-font-medium"
           :icon-size="$device.isMobile ? 32 : 40" hover-class="">
           {{ $t('common.retakeTest') }}
         </AppArrowButton>
@@ -50,7 +50,7 @@
       </div>
       <div class="course-card__footer">
         <AppArrowButton variant="primary"
-          class="uno-gap-3 uno-pl-5 uno-pr-1 uno-py-1 md:uno-gap-2 md:uno-pl-[14px] md:uno-pr-[6px] md:uno-justify-between uno-font-medium"
+          class="uno-gap-3 uno-py-4px md:uno-gap-2 md:uno-pl-[14px] md:uno-pr-[4px] md:uno-justify-between uno-font-medium"
           :icon-size="$device.isMobile ? 32 : 40" hover-class="">
           {{ $t('common.getStarted') || 'Get Started' }}
         </AppArrowButton>
@@ -79,7 +79,7 @@
           </span>
         </div>
         <AppArrowButton variant="dark"
-          class="uno-gap-3 uno-pl-5 uno-pr-1 uno-py-1 md:uno-gap-2 md:uno-pl-[14px] md:uno-pr-[6px] md:uno-justify-between uno-font-medium"
+          class="uno-gap-3 uno-py-4px md:uno-gap-2 md:uno-pl-[14px] md:uno-pr-[4px] md:uno-justify-between uno-font-medium"
           :icon-size="$device.isMobile ? 32 : 40" hover-class="">
           {{ $t('common.getStarted') }}
         </AppArrowButton>
@@ -108,7 +108,7 @@
           <div class="course-card__footer__left">
             <div class="course-card__footer__actions">
               <AppArrowButton variant="primary"
-                class="uno-gap-3 uno-pl-5 uno-pr-1 uno-py-1 md:uno-gap-2 md:uno-pl-[14px] md:uno-pr-[6px] md:uno-justify-between uno-font-medium"
+                class="uno-gap-3 uno-py-4px md:uno-gap-2 md:uno-pl-[14px] md:uno-pr-[4px] md:uno-justify-between uno-font-medium"
                 :icon-size="$device.isMobile ? 32 : 40" hover-class="">
                 {{ $t('common.getStarted') }}
               </AppArrowButton>
@@ -350,7 +350,7 @@ const progressOffset = computed(() => {
       border-radius: 14px;
       background: #fff;
       box-shadow: 10px 30px 50px rgba(0, 157, 119, 0.08);
-      
+
       /* 移动端上下布局 */
       @media (max-width: 767px) {
         flex-direction: column;

@@ -6,8 +6,8 @@
     colorClasses,
     hoverClasses,
     disabledClasses,
-  ]" :style="{ width: width, height: height, fontSize: fontSize, fontWeight: fontWeight }" :disabled="disabled" @click="$emit('click')">
-    <slot></slot>
+  ]" :style="style" :disabled="disabled" @click="$emit('click')">
+    <slot/>
   </button>
 </template>
 
@@ -19,19 +19,15 @@ const props = defineProps({
   },
   width: {
     type: String,
-    default: 'full'
   },
   height: {
     type: String,
-    default: '56px'
   },
   fontSize: {
     type: String,
-    default: '18px'
   },
   fontWeight: {
     type: String,
-    default: 'bold'
   }
 });
 
@@ -54,4 +50,21 @@ const hoverClasses = 'hover:uno-bg-[#0AA17F] hover:uno-shadow-md hover:uno-trans
 
 // Disabled classes
 const disabledClasses = 'disabled:uno-opacity-50 disabled:uno-cursor-not-allowed disabled:uno-bg-[#009D77] disabled:hover:uno-bg-[#009D77] disabled:hover:uno-shadow-none'
+
+const style = computed(() => {
+  const temp = {}
+  if (props.width) {
+    temp.width = props.width
+  }
+  if (props.height) {
+    temp.height = props.height
+  }
+  if (props.fontSize) {
+    temp.fontSize = props.fontSize
+  }
+  if (props.fontWeight) {
+    temp.fontWeight = props.fontWeight
+  }
+  return temp
+})
 </script>

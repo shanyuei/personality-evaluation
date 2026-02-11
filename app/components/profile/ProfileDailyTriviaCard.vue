@@ -9,7 +9,7 @@
         {{ $t('pages.profile.triviaQuestion') }}</h3>
       <div class="uno-space-y-3">
         <URadioGroup v-model="triviaSelected" :items="radioItems" :ui="URadioTheme" />
-        <UButton :ui="UButtonTheme" class="uno-w-full md:uno-w-auto">{{ $t('pages.profile.viewResults') }}</UButton>
+        <PrimaryButton width="219px">{{ $t('pages.profile.viewResults') }}</PrimaryButton>
       </div>
     </div>
   </section>
@@ -17,7 +17,7 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import UButtonTheme from '~/theme/UButton'
+import PrimaryButton from '~/components/ui/PrimaryButton.vue'
 import URadioTheme from '~/theme/URadio'
 
 const triviaOptions = ['Avoidance', 'Guesswork', 'Practice', 'Analytical thinking']

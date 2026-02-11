@@ -24,8 +24,8 @@
           {{ $t('pages.profile.detailedDesc') }}
         </p>
         <div class="uno-w-full md:uno-w-200px">
-          <UButton :ui="UButtonTheme">{{
-            $t('pages.profile.readMore') }}</UButton>
+          <PrimaryButton>{{
+            $t('pages.profile.readMore') }}</PrimaryButton>
         </div>
       </div>
       <div class="uno-col-span-full md:uno-col-span-1">
@@ -59,7 +59,7 @@
 </template>
 
 <script setup lang="ts">
-import UButtonTheme from '~/theme/UButton'
+import PrimaryButton from '~/components/ui/PrimaryButton.vue'
 
 defineProps<{
   scoreBars: Array<{

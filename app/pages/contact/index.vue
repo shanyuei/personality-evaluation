@@ -3,7 +3,8 @@
     <!-- 页面内容 -->
     <div class="page-container">
 
-      <div class="uno-flex uno-flex-col md:uno-flex-row md:uno-justify-between uno-flex-wrap uno-gap-20px  uno-relative">
+      <div
+        class="uno-flex uno-flex-col md:uno-flex-row md:uno-justify-between uno-flex-wrap uno-gap-20px  uno-relative">
         <NuxtImg src="/images/about/icon-1.png" alt="decor"
           class="uno-absolute uno-left-1/2 uno--translate-x-1/2 uno-top-0 uno-w-47px uno-h-36px" />
         <!-- 左侧内容 -->
@@ -63,9 +64,10 @@
               {{ t('pages.contact.contactDesc2') }}
 
             </p>
-            <a href="mailto:support@personalitytest101.com"
-              class="uno-w-full uno-h-[56px] uno-px-[20px] uno-py-[6px] uno-gap-4 uno-bg-[var(--Color,#009D77)] uno-text-white uno-text-base uno-font-Outfit uno-font-semibold uno-rounded-[8px] uno-transition-colors hover:uno-bg-[#0A8165] uno-flex uno-items-center uno-justify-center">
-              {{ t('pages.contact.getSupport') }}
+            <a href="mailto:support@personalitytest101.com">
+              <PrimaryButton>
+                {{ t('pages.contact.getSupport') }}
+              </PrimaryButton>
             </a>
           </div>
         </div>
@@ -87,6 +89,7 @@ import MailIcon from '@/components/icons/MailIcon.vue'
 import BrainIcon from '@/components/icons/BrainIcon.vue'
 import MailLargeIcon from '@/components/icons/MailLargeIcon.vue'
 import { useCurious } from '@/composables/useCurious'
+import PrimaryButton from '~/components/ui/PrimaryButton.vue'
 
 const { t } = useI18n()
 

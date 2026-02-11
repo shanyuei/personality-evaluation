@@ -14,8 +14,8 @@
           $t('pages.profile.lessons') }}</span>
       </div>
       <div class="uno-flex uno-items-end uno-justify-between uno-gap-4">
-        <UButton :ui="UButtonTheme" class="uno-w-full md:uno-w-auto">{{ $t('pages.profile.continueCourse.cta') }}
-        </UButton>
+        <PrimaryButton width="173px" >{{ $t('pages.profile.continueCourse.cta') }}
+        </PrimaryButton>
         <div
           class="uno-w-[64px] uno-h-[64px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[14.55px] uno-p-[14.55px] uno-border-solid uno-border-[#E7E7E8] uno-border-4 uno-rounded-[145.45px] uno-overflow-hidden">
           <span class="uno-text-sm uno-text-[var(--ui-muted-foreground)]">0%</span>
@@ -26,5 +26,5 @@
 </template>
 
 <script setup lang="ts">
-import UButtonTheme from '~/theme/UButton'
+import PrimaryButton from '~/components/ui/PrimaryButton.vue'
 </script>
