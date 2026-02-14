@@ -18,10 +18,10 @@
             <NuxtImg src="/theme/logo.png" alt="logo" width="175px" height="40px" />
             <!-- 介绍 -->
             <p class="uno-text-[#4E5255] uno-font-Outfit uno-text-[16px] uno-m-t-12px">
-              Unlock knowledge with expert-led online courses.
+              {{ $t('common.footer.introduction') }}
             </p>
             <p class="uno-text-[#011813] uno-text-xl uno-font-Outfit uno-font-medium uno-m-t-24px">
-              Stay connected
+              {{ $t('common.footer.StayConnected') }}
             </p>
             <!-- 图标 -->
             <div class="uno-flex uno-gap-12px uno-m-t-16px">
@@ -42,32 +42,24 @@
           <!-- 导航 -->
           <div class="uno-grid uno-grid-cols-2 uno-gap-[64px] sm:uno-gap-80px uno-mb-32px">
             <div>
-              <h3 class="uno-text-[#011813] uno-text-2xl uno-font-Outfit uno-font-semibold uno-mb-16px">Pages
+              <h3 class="uno-text-[#011813] uno-text-2xl uno-font-Outfit uno-font-semibold uno-mb-16px">Product
               </h3>
               <ul class="uno-space-y-16px">
-                <li><a href="/" class="uno-text-[#011813] uno-font-Outfit hover:uno-text-[#4E5255]">Home 1</a></li>
-                <li><a href="/" class="uno-text-[#011813] uno-font-Outfit hover:uno-text-[#4E5255]">Home 2</a></li>
-                <li><a href="/" class="uno-text-[#011813] uno-font-Outfit hover:uno-text-[#4E5255]">Home 3</a></li>
-                <li><a href="/about" class="uno-text-[#011813] uno-font-Outfit hover:uno-text-[#4E5255]">About
-                    Us</a></li>
-                <li><a href="/courses"
-                    class="uno-text-[#011813] uno-font-Outfit hover:uno-text-[#4E5255]">Courses</a></li>
+                <li><a href="/" class="uno-text-[#011813] uno-font-Outfit hover:uno-text-[#4E5255]">Free Personality
+                    Test</a></li>
               </ul>
             </div>
             <div>
-              <h3 class="uno-text-[#011813] uno-text-2xl uno-font-Outfit uno-font-semibold uno-mb-16px">Others
+              <h3 class="uno-text-[#011813] uno-text-2xl uno-font-Outfit uno-font-semibold uno-mb-16px">Help
               </h3>
               <ul class="uno-space-y-16px">
-                <li><a href="/mentors"
-                    class="uno-text-[#011813] uno-font-Outfit hover:uno-text-[#4E5255]">Mentors</a></li>
-                <li><a href="#" class="uno-text-[#011813] uno-font-Outfit hover:uno-text-[#4E5255]">Contact Us</a>
+                <li><a href="/mentors" class="uno-text-[#011813] uno-font-Outfit hover:uno-text-[#4E5255]">Contact
+                    us</a></li>
+                <li><a href="#" class="uno-text-[#011813] uno-font-Outfit hover:uno-text-[#4E5255]">FAQ</a>
                 </li>
-                <li><a href="/blog" class="uno-text-[#011813] uno-font-Outfit hover:uno-text-[#4E5255]">Blog</a>
+                <li><a href="/blog" class="uno-text-[#011813] uno-font-Outfit hover:uno-text-[#4E5255]">Cancel
+                    Subscription</a>
                 </li>
-                <li><a href="#" class="uno-text-[#011813] uno-font-Outfit hover:uno-text-[#4E5255]">Privacy
-                    Policy</a></li>
-                <li><a href="#" class="uno-text-[#011813] uno-font-Outfit hover:uno-text-[#4E5255]">Terms &
-                    Conditions</a></li>
               </ul>
             </div>
           </div>
@@ -110,13 +102,11 @@
           </div>
           <div
             class="uno-w-full uno-max-w-[1440px] uno-mx-auto uno-px-0 sm:uno-px-40px xl:uno-px-0 uno-flex uno-items-center uno-justify-between max-md:uno-max-w-[80%] max-sm:uno-max-w-full max-sm:uno-flex-col max-sm:uno-items-start uno-gap-0 sm:uno-gap-16px max-xs:uno-gap-12px">
-            <div
-              class="uno-text-[#011813] uno-font-Outfit uno-text-center uno-text-16px">
+            <div class="uno-text-[#011813] uno-font-Outfit uno-text-center uno-text-16px">
               2024 ©Design Monks. All rights reserved.
             </div>
             <!-- 支付方式 -->
-            <div
-              class="uno-flex uno-items-center uno-gap-8px uno-flex-wrap uno-justify-center ">
+            <div class="uno-flex uno-items-center uno-gap-8px uno-flex-wrap uno-justify-center ">
               <span
                 class="uno-text-[#011813] uno-font-Outfit uno-mr-12px max-sm:uno-mr-8px max-xs:uno-mr-6px max-sm:uno-text-14px max-xs:uno-text-12px">
                 Payments:</span>

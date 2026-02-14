@@ -46,5 +46,9 @@
   "price": "$",
   "period": ".",
   "confirm": "Confirm",
-  "saveChanges": "Save Changes"
+  "saveChanges": "Save Changes",
+  "footer": {
+    "introduction": "Know yourself. Change everything",
+    "StayConnected": "Stay connected"
+  }
 }

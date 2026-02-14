@@ -126,6 +126,7 @@ const accountItems = ref<any[]>([
 
 
 const localePath = useLocalePath()
+
 const items = ref([
   {
     label: 'Home',
@@ -133,20 +134,16 @@ const items = ref([
     hasChildren: true
   },
   {
-    label: 'Tests',
-    to: '/tests',
+    label: 'FAQ',
+    to: '/faq',
   },
   {
-    label: 'Courses',
-    to: '/courses',
+    label: 'Sign in',
+    to: '/login',
   },
   {
-    label: 'Ebooks',
-    to: '/ebooks',
-  },
-  {
-    label: 'Profile',
-    to: '/profile',
+    label: 'Take the Test',
+    to: '/free-personality-test',
   },
 ]);
 const itemsLocalized = computed(() => items.value.map(i => ({ ...i, to: localePath(i.to) })))
