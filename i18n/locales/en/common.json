@@ -1,6 +1,12 @@
 {
   "getStarted": "Get Started",
   "siteDescription": "Unlock knowledge and growth with expert courses and tools.",
+  "nav": {
+    "home": "Home",
+    "faq": "FAQ",
+    "signIn": "Sign in",
+    "takeTheTest": "Take the Test"
+  },
   "courseCard": {
     "status": {
       "completed": "You've completed this test.",
@@ -49,6 +55,14 @@
   "saveChanges": "Save Changes",
   "footer": {
     "introduction": "Know yourself. Change everything",
-    "StayConnected": "Stay connected"
+    "StayConnected": "Stay connected",
+    "product": "Product",
+    "help": "Help",
+    "freePersonalityTest": "Free Personality Test",
+    "contactUs": "Contact Us",
+    "faq": "FAQ",
+    "cancelSubscription": "Cancel Subscription",
+    "payments": "Payments",
+    "copyright": "2024 © PersonalityTest101. All rights reserved."
   }
 }

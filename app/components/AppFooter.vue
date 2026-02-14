@@ -42,23 +42,39 @@
           <!-- 导航 -->
           <div class="uno-grid uno-grid-cols-2 uno-gap-[64px] sm:uno-gap-80px uno-mb-32px">
             <div>
-              <h3 class="uno-text-[#011813] uno-text-2xl uno-font-Outfit uno-font-semibold uno-mb-16px">Product
+              <h3 class="uno-text-[#011813] uno-text-2xl uno-font-Outfit uno-font-semibold uno-mb-16px">
+                {{ $t('common.footer.product') }}
               </h3>
               <ul class="uno-space-y-16px">
-                <li><a href="/" class="uno-text-[#011813] uno-font-Outfit hover:uno-text-[#4E5255]">Free Personality
-                    Test</a></li>
+                <li>
+                  <NuxtLink :to="localePath('/')" class="uno-text-[#011813] uno-font-Outfit hover:uno-text-[#4E5255]">
+                    {{ $t('common.footer.freePersonalityTest') }}
+                  </NuxtLink>
+                </li>
               </ul>
             </div>
             <div>
-              <h3 class="uno-text-[#011813] uno-text-2xl uno-font-Outfit uno-font-semibold uno-mb-16px">Help
+              <h3 class="uno-text-[#011813] uno-text-2xl uno-font-Outfit uno-font-semibold uno-mb-16px">
+                {{ $t('common.footer.help') }}
               </h3>
               <ul class="uno-space-y-16px">
-                <li><a href="/mentors" class="uno-text-[#011813] uno-font-Outfit hover:uno-text-[#4E5255]">Contact
-                    us</a></li>
-                <li><a href="#" class="uno-text-[#011813] uno-font-Outfit hover:uno-text-[#4E5255]">FAQ</a>
+                <li>
+                  <NuxtLink :to="localePath('/contact')"
+                    class="uno-text-[#011813] uno-font-Outfit hover:uno-text-[#4E5255]">
+                    {{ $t('common.footer.contactUs') }}
+                  </NuxtLink>
                 </li>
-                <li><a href="/blog" class="uno-text-[#011813] uno-font-Outfit hover:uno-text-[#4E5255]">Cancel
-                    Subscription</a>
+                <li>
+                  <NuxtLink :to="localePath('/faq')"
+                    class="uno-text-[#011813] uno-font-Outfit hover:uno-text-[#4E5255]">
+                    {{ $t('common.footer.faq') }}
+                  </NuxtLink>
+                </li>
+                <li>
+                  <NuxtLink :to="localePath('/orders/cancel-subscription')"
+                    class="uno-text-[#011813] uno-font-Outfit hover:uno-text-[#4E5255]">
+                    {{ $t('common.footer.cancelSubscription') }}
+                  </NuxtLink>
                 </li>
               </ul>
             </div>
@@ -66,26 +82,23 @@
         </template>
 
         <template #right>
-          <!-- 联系信息 -->
           <div>
-            <h3 class="uno-text-[#011813] uno-text-2xl uno-font-Outfit uno-font-semibold uno-mb-16px">Contact Us
+            <h3 class="uno-text-[#011813] uno-text-2xl uno-font-Outfit uno-font-semibold uno-mb-16px">
+              {{ $t('common.footer.contactUs') }}
             </h3>
             <div class="uno-space-y-16px">
-              <!-- 电话 -->
               <div class="uno-flex uno-items-center uno-gap-8px">
                 <NuxtImg src="/images/footer/tel.png" alt="tel" width="20px" height="20px" class="uno-text-[#4E5255]" />
                 <a href="tel:+8801798155521" class="uno-text-[#011813] uno-font-Outfit">+8801798155521</a>
               </div>
-              <!-- 邮箱 -->
               <div class="uno-flex uno-items-center uno-gap-8px">
                 <NuxtImg src="/images/footer/mailto.png" alt="mailto" width="20px" height="20px"
                   class="uno-text-[#4E5255]" />
-                <a href="mailto:hello@designmonks.co"
-                  class="uno-text-[#011813] uno-font-Outfit">hello@designmonks.co</a>
+                <a href="mailto:support@personalitytest101.com"
+                  class="uno-text-[#011813] uno-font-Outfit">support@personalitytest101.com</a>
               </div>
-              <!-- 地址 -->
               <div class="uno-flex uno-items-start uno-gap-8px">
-                <NuxtImg src="/images/footer/address.png" alt="mailto" width="20px" height="20px"
+                <NuxtImg src="/images/footer/address.png" alt="address" width="20px" height="20px"
                   class="uno-text-[#4E5255]" />
                 <div class="uno-text-[#011813] uno-font-Outfit uno-not-italic">4886 Stroman Drives,
                   California,<br>South
@@ -95,7 +108,6 @@
           </div>
         </template>
         <template #bottom>
-          <!-- 分割线 -->
           <div
             class="uno-w-full uno-flex uno-justify-center uno-max-w-[1440px] uno-m-b-24px sm:uno-m-b-32px uno-mx-auto uno-px-0 sm:uno-px-40px xl:uno-px-0 max-md:uno-max-w-[80%] sm:uno-w-full">
             <NuxtImg src="/images/footer/line.png" alt="line" width="100%" height="1px" object-fit="contain" />
@@ -103,13 +115,12 @@
           <div
             class="uno-w-full uno-max-w-[1440px] uno-mx-auto uno-px-0 sm:uno-px-40px xl:uno-px-0 uno-flex uno-items-center uno-justify-between max-md:uno-max-w-[80%] max-sm:uno-max-w-full max-sm:uno-flex-col max-sm:uno-items-start uno-gap-0 sm:uno-gap-16px max-xs:uno-gap-12px">
             <div class="uno-text-[#011813] uno-font-Outfit uno-text-center uno-text-16px">
-              2024 ©Design Monks. All rights reserved.
+              {{ $t('common.footer.copyright') }}
             </div>
-            <!-- 支付方式 -->
             <div class="uno-flex uno-items-center uno-gap-8px uno-flex-wrap uno-justify-center ">
               <span
                 class="uno-text-[#011813] uno-font-Outfit uno-mr-12px max-sm:uno-mr-8px max-xs:uno-mr-6px max-sm:uno-text-14px max-xs:uno-text-12px">
-                Payments:</span>
+                {{ $t('common.footer.payments') }}:</span>
               <NuxtImg src="/images/footer/payments-logo-1.png" alt="Visa" width="36px" height="24px" />
               <NuxtImg src="/images/footer/payments-logo-2.png" alt="Mastercard" width="36px" height="24px" />
               <NuxtImg src="/images/footer/payments-logo-3.png" alt="UnionPay" width="36px" height="24px" />
@@ -124,7 +135,8 @@
   </div>
 </template>
 <script setup lang="ts">
+import { useLocalePath } from '#i18n'
 
-
+const localePath = useLocalePath()
 </script>
 <style scoped></style>

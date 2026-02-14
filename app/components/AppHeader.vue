@@ -129,24 +129,24 @@ const localePath = useLocalePath()
 
 const items = ref([
   {
-    label: 'Home',
+    label: t('common.nav.home'),
     to: '/',
     hasChildren: true
   },
   {
-    label: 'FAQ',
+    label: t('common.nav.faq'),
     to: '/faq',
   },
   {
-    label: 'Sign in',
+    label: t('common.nav.signIn'),
     to: '/login',
   },
   {
-    label: 'Take the Test',
+    label: t('common.nav.takeTheTest'),
     to: '/free-personality-test',
   },
 ]);
-const itemsLocalized = computed(() => items.value.map(i => ({ ...i, to: localePath(i.to) })))
+const itemsLocalized = computed(() => items.value.map(i => ({ ...i, label: t(i.label), to: localePath(i.to) })))
 const onClick = (item: any) => {
   console.log(item)
   if (item.to) {
