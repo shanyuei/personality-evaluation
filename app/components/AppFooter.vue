@@ -40,14 +40,14 @@
 
         <template #default>
           <!-- 导航 -->
-          <div class="uno-grid uno-grid-cols-2 uno-gap-[64px] sm:uno-gap-80px uno-mb-32px">
+          <div class="uno-grid uno-grid-cols-3 uno-gap-[64px] sm:uno-gap-80px uno-mb-32px">
             <div>
               <h3 class="uno-text-[#011813] uno-text-2xl uno-font-Outfit uno-font-semibold uno-mb-16px">
                 {{ $t('common.footer.product') }}
               </h3>
               <ul class="uno-space-y-16px">
                 <li>
-                  <NuxtLink :to="localePath('/')" class="uno-text-[#011813] uno-font-Outfit hover:uno-text-[#4E5255]">
+                  <NuxtLink :to="localePath('/free-personality-test')" class="uno-text-[#011813] uno-font-Outfit hover:uno-text-[#4E5255]">
                     {{ $t('common.footer.freePersonalityTest') }}
                   </NuxtLink>
                 </li>
@@ -59,7 +59,7 @@
               </h3>
               <ul class="uno-space-y-16px">
                 <li>
-                  <NuxtLink :to="localePath('/contact')"
+                  <NuxtLink :to="localePath('/contact-us')"
                     class="uno-text-[#011813] uno-font-Outfit hover:uno-text-[#4E5255]">
                     {{ $t('common.footer.contactUs') }}
                   </NuxtLink>
@@ -71,13 +71,39 @@
                   </NuxtLink>
                 </li>
                 <li>
-                  <NuxtLink :to="localePath('/orders/cancel-subscription')"
+                  <NuxtLink :to="localePath('/cancel-subscription')"
                     class="uno-text-[#011813] uno-font-Outfit hover:uno-text-[#4E5255]">
                     {{ $t('common.footer.cancelSubscription') }}
                   </NuxtLink>
                 </li>
               </ul>
             </div>
+            <div>
+              <h3 class="uno-text-[#011813] uno-text-2xl uno-font-Outfit uno-font-semibold uno-mb-16px">
+                {{ $t('common.footer.legal') }}
+              </h3>
+              <ul class="uno-space-y-16px">
+                <!-- <li>
+                  <NuxtLink :to="localePath('/privacy')"
+                    class="uno-text-[#011813] uno-font-Outfit hover:uno-text-[#4E5255]">
+                    {{ $t('common.footer.privacyPolicy') }}
+                  </NuxtLink>
+                </li> -->
+                <li>
+                  <NuxtLink :to="localePath('/terms-of-use')"
+                    class="uno-text-[#011813] uno-font-Outfit hover:uno-text-[#4E5255]">
+                    {{ $t('common.footer.termsOfUse') }}
+                  </NuxtLink>
+                </li>
+                <li>
+                  <NuxtLink :to="localePath('/refund-policy')"
+                    class="uno-text-[#011813] uno-font-Outfit hover:uno-text-[#4E5255]">
+                    {{ $t('common.footer.refundPolicy') }}
+                  </NuxtLink>
+                </li>
+              </ul>
+            </div>
+
           </div>
         </template>
 

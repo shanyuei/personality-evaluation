@@ -11,12 +11,12 @@
     <template #left>
 
       <div class="uno-flex  uno-w-full">
-        <div class="uno-w-[249px] uno-flex uno-items-center  max-sm:uno-hidden">
+        <NuxtLink :to="localePath('/')" class="uno-w-[249px] uno-flex uno-items-center  max-sm:uno-hidden">
           <NuxtImg src="/theme/logo.png" width="249" height="40" alt="logo" />
-        </div>
-        <div class="uno-w-[152px]  uno-items-center uno-hidden max-sm:uno-flex">
+        </NuxtLink>
+        <NuxtLink :to="localePath('/')" class="uno-w-[152px]  uno-items-center uno-hidden max-sm:uno-flex">
           <NuxtImg src="/theme/logo-2.png" width="152" height="26" alt="logo" class="" />
-        </div>
+        </NuxtLink>
 
         <UNavigationMenu v-if="showMenu" :ui="{
           link: 'before:bg-transparent font-Outfit text-center font-medium text-[16px] text-[#001813] data-[active]:text-[var(--color-pink-1)] hover:text-[var(--color-pink-1)]',
@@ -75,7 +75,7 @@
         <div>
           <AppArrowButton variant="outline"
             class="uno-h-[48px] uno-gap-3 uno-py-1 uno-pr-1 uno-pl-[20px] uno-rounded-[100px] uno-w-full uno-font-Outfit uno-font-medium"
-            :icon-size="40" :to="localePath('/auth/sign-in')" icon-src="/images/header/go-icon-1.png">
+            :icon-size="40" :to="localePath('/free-personality-test')" icon-src="/images/header/go-icon-1.png">
             {{ $t('common.getStarted') }}
           </AppArrowButton>
         </div>

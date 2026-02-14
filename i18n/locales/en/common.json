@@ -58,10 +58,14 @@
     "StayConnected": "Stay connected",
     "product": "Product",
     "help": "Help",
+    "legal": "Legal",
     "freePersonalityTest": "Free Personality Test",
     "contactUs": "Contact Us",
     "faq": "FAQ",
     "cancelSubscription": "Cancel Subscription",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfUse": "Terms of Use",
+    "refundPolicy": "Refund Policy",
     "payments": "Payments",
     "copyright": "2024 © PersonalityTest101. All rights reserved."
   }
