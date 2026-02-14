@@ -55,10 +55,21 @@
         "title": "Affordable Pricing Plans {separator} PersonalityTest101 - Unlock Your Potential",
         "description": "Choose the perfect plan for your self-discovery journey. Get premium personality reports, career blueprints, and growth toolkits starting at just $14/mo. Secure and scientifically validated."
     },
-    "legal.privacy": {
-        "title": "Privacy Policy {separator} PersonalityTest101 - Your Data Security Matters",
-        "description": "Read our Privacy Policy to understand how PersonalityTest101 collects, protects, and manages your personal data and assessment results. Committed to your privacy and security."
+    "legal":{
+        "privacy":{
+            "title": "Privacy Policy {separator} PersonalityTest101 - Your Data Security Matters",
+            "description": "Read our Privacy Policy to understand how PersonalityTest101 collects, protects, and manages your personal data and assessment results. Committed to your privacy and security."
+        },
+        "terms":{
+            "title": "Personality Test 101 – Terms of Use, Subscription & Refund Policy",
+            "description": "Read the full Terms of Use and Purchase at Personality Test 101. Learn about subscriptions, digital content usage, AI tools, refunds, cancellations, and your rights as a user. Stay informed and enjoy our personality tests safely."
+        },
+        "refund":{
+            "title": "Refund & Cancellation Policy {separator} Personality Test 101",
+            "description": "Learn about our refund and cancellation policy at Personality Test 101. Understand subscription types, refund eligibility, and your right to cancel digital content within 14 days. Personalized reports are delivered instantly, and our friendly support team is here to help."
+        }
     },
+
     "account.settings": {
         "title": "Account Settings {separator} Manage Profile, Security & Language Preferences",
         "description": "Manage your account settings, update personal information, change your password, select your preferred language, or delete your account securely."
@@ -161,14 +172,7 @@
         "title": "Courses - Expert Learning Resources",
         "description": "Explore our collection of expert-led courses for personal and professional growth."
     },
-    "legal": {
-        "title": "Legal Information - Terms and Policies",
-        "description": "Review our terms of service and privacy policies."
-    },
-    "legal.terms": {
-        "title": "Terms of Service - Platform Rules",
-        "description": "Review our terms of service and platform guidelines."
-    },
+
     "mentors": {
         "title": "Mentors - Expert Guidance",
         "description": "Connect with expert mentors for personalized guidance and support."

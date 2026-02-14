@@ -25,10 +25,14 @@
             {{ card.title }}</h3>
           <p class="uno-text-[#323233] uno-text-xs uno-font-Outfit uno-leading-normal uno-min-h-[80px]">{{
             card.desc }}</p>
-          <div class="uno-flex uno-gap-3">
-            <PrimaryButton width="151px" >{{ $t('pages.profile.readMore') }}</PrimaryButton>
-            <OutlineButton v-if="card.try" >{{
+          <div class="uno-flex uno-gap-10px">
+            <div class="uno-w-[calc(50%-10px)]">
+                  <PrimaryButton >{{ $t('pages.profile.readMore') }}</PrimaryButton>
+            </div>
+            <div class="uno-w-[calc(50%-10px)]">
+              <OutlineButton v-if="card.try" >{{
               $t('pages.profile.tryAgain') }}</OutlineButton>
+            </div>
           </div>
         </div>
       </div>
