@@ -1052,85 +1052,196 @@
       "title": "Privacy Policy",
       "description": "We value your privacy. Here's how we collect, use, and protect information.",
       "nav": {
-        "general": "Overview",
-        "usage": "How We Use Information",
-        "sharing": "Sharing & Disclosure",
-        "cookies": "Cookies & Tracking",
-        "changes": "Policy Changes",
-        "contact": "Contact Us"
+        "privacyPolicy": "Privacy Policy",
+        "informationWeCollect": "Information We Collect",
+        "howWeUseYourInformation": "How We Use Your Information",
+        "anonymizationOfTestData": "Anonymization of Test Data",
+        "dataSharingAndDisclosure": "Data Sharing and Disclosure",
+        "cookiesAndTrackingTechnologies": "Cookies and Tracking Technologies",
+        "changesToThisPrivacyPolicy": "Changes to This Privacy Policy",
+        "informationalPurposeDisclaimer": "Informational Purpose Disclaimer",
+        "contactUs": "Contact Us"
       },
       "sections": {
-        "general": {
-          "title": "Overview",
-          "body": "We only collect and process data for lawful, necessary, and explicit purposes, and take reasonable security measures to protect your information."
+        "privacyPolicy": {
+          "title": "Privacy Policy",
+          "subtitle": "Last Updated: November 25, 2024",
+          "content": "<p>We respect your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, store, and protect your information when you use our website and personality testing services.</p><p>By accessing or using our services, you agree to the practices described in this Privacy Policy.</p>"
         },
-        "usage": {
-          "title": "How We Use Information",
-          "desc": "The following scenarios describe how information is used.",
-          "q1": "Provide and maintain services",
-          "a1": "Used for core functions such as account creation, course access, assessments, and report generation.",
-          "q2": "Communication and support",
-          "a2": "Used to send important notices, service updates, and support responses.",
-          "q3": "Improvement and analysis",
-          "a3": "Anonymous or aggregated data is analyzed to optimize product experience and performance."
+        "informationWeCollect": {
+          "title": "Information We Collect",
+          "content": "<p>We may collect the following types of information when you use our services:</p><ul style=\"padding-left: 20px;list-style: disc;\"><li><strong>Personal Information:</strong> Such as an email address or username if you voluntarily provide it.</li><li><strong>Assessment Data:</strong> Responses, results, and interactions related to personality tests, quizzes, or questionnaires.</li><li><strong>Usage Information:</strong> Pages visited, features used, test completion status, and interaction behavior.</li><li><strong>Technical Information:</strong> IP address, browser type, device type, operating system, and language preferences.</li></ul><p>We collect only information necessary to provide and improve our services.</p>"
         },
-        "sharing": {
-          "title": "Sharing & Disclosure",
-          "desc": "We do not sell your personal information. We share only when necessary:",
-          "q1": "Service providers",
-          "a1": "Shared with contracted third-party providers for infrastructure and customer support.",
-          "q2": "Legal compliance",
-          "a2": "Information may be disclosed to comply with law, protect users, or prevent fraud."
+        "howWeUseYourInformation": {
+          "title": "How We Use Your Information",
+          "content": "<p>We use the collected information to:</p><ul style=\"padding-left: 20px;list-style: disc;\"><li>Provide, operate, and maintain our personality testing services</li><li>Generate and display test results and personalized insights</li><li>Improve website performance, content, and overall user experience</li><li>Communicate service-related updates or respond to inquiries</li><li>Detect and prevent fraud, abuse, or unauthorized access</li><li>Comply with applicable legal and regulatory requirements</li></ul>"
         },
-        "cookies": {
-          "title": "Cookies & Tracking",
-          "body": "We use cookies to remember preferences and analyze the site. You can manage or disable cookies in your browser, but some functions may be affected."
+        "anonymizationOfTestData": {
+          "title": "Anonymization of Test Data",
+          "content": "<p>To enhance user privacy, personality test responses and results may be processed in an aggregated or anonymized manner. This means such data cannot be used to directly identify individual users. Anonymized data may be used for statistical analysis, service improvement, and research purposes.</p>"
         },
-        "changes": {
-          "title": "Policy Changes",
-          "body": "We may update this policy from time to time. Significant changes will be communicated via site notices or email."
+        "dataSharingAndDisclosure": {
+          "title": "Data Sharing and Disclosure",
+          "content": "<p>We do not sell, rent, or trade your personal information.</p><p>We may share your information only in the following circumstances:</p><ul style=\"padding-left: 20px;list-style: disc;\"><li>With trusted third-party service providers who assist in website hosting, analytics, customer support, or payment processing</li><li>When required by law, regulation, or legal process</li><li>To protect the rights, safety, or security of users or the platform</li><li>With your explicit consent</li></ul><p>All third parties are required to handle data securely and only for authorized purposes.</p>"
         },
-        "contact": {
+        "cookiesAndTrackingTechnologies": {
+          "title": "Cookies and Tracking Technologies",
+          "content": "<p>We use cookies and similar tracking technologies to:</p><ul style=\"padding-left: 20px;list-style: disc;\"><li>Remember user preferences and settings</li><li>Analyze website usage and traffic</li><li>Improve functionality and user experience</li></ul><p>You can manage or disable cookies through your browser settings. Please note that disabling cookies may limit certain features of the website.</p>"
+        },
+        "changesToThisPrivacyPolicy": {
+          "title": "Changes to This Privacy Policy",
+          "content": "<p>We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. Any updates will be posted on this page with a revised \"Last Updated\" date. Continued use of the website after such changes constitutes acceptance of the updated policy.</p>"
+        },
+        "informationalPurposeDisclaimer": {
+          "title": "Informational Purpose Disclaimer",
+          "content": "<p>All personality test results and related content provided on this website are for <strong>informational and educational purposes only</strong>. They are not intended to diagnose, treat, or replace professional psychological, medical, or mental health advice. Users are encouraged to seek qualified professionals for personalized guidance when appropriate.</p>"
+        },
+        "contactUs": {
           "title": "Contact Us",
-          "body": "For privacy questions or requests, please reach out using the contact information on the page."
+          "content": "<p>If you have any questions, concerns, or requests regarding this Privacy Policy or how we handle your information, please contact us at:</p><p><strong>Email:</strong> support@personalitytest101.com</p><p>We will make reasonable efforts to respond to your inquiry in a timely manner.</p>"
+        }
+      }
+    },
+    "refund": {
+      "title": "Refund and Cancellation Policy",
+      "description": "Our refund policy is clear and fair. Learn about refund eligibility and cancellation rights.",
+      "nav": {
+        "refundPolicy": "Refund and Cancellation Policy",
+        "subscriptionPlans": "Subscription Plans & Refunds",
+        "refundConditions": "When Refunds Are Possible",
+        "cancellationRights": "Subscription Cancellation & Right to Cancel",
+        "refundRequest": "How to Request a Refund",
+        "friendlyNotes": "A Few Friendly Notes",
+        "whySimple": "Why We Keep It Simple"
+      },
+      "sections": {
+        "refundPolicy": {
+          "title": "Refund and Cancellation Policy",
+          "subtitle": "Last Updated: February 2, 2026",
+          "content": "<p>We want every subscription to bring you meaningful insights into your personality. While our tests are designed to provide valuable results, we understand that sometimes things don't go as expected. Here's our refund and cancellation policy — clear, fair, and user-friendly.</p>"
+        },
+        "subscriptionPlans": {
+          "title": "1. Subscription Plans & Refunds",
+          "content": "<table style=\"width: 100%; border-collapse: collapse; margin-bottom: 20px; border: 1px solid #000;\"><thead><tr style=\"background-color: #fff;\"><th style=\"padding: 12px; text-align: left; border: 1px solid #000;\">Plan</th><th style=\"padding: 12px; text-align: left; border: 1px solid #000;\">Refund Window</th><th style=\"padding: 12px; text-align: left; border: 1px solid #000;\">Refund Amount</th></tr></thead><tbody><tr><td style=\"padding: 12px; border: 1px solid #000;\"><strong>7-Day Trial</strong></td><td style=\"padding: 12px; border: 1px solid #000;\">Not refundable</td><td style=\"padding: 12px; border: 1px solid #000;\">N/A</td></tr><tr><td style=\"padding: 12px; border: 1px solid #000;\"><strong>Monthly Subscription</strong></td><td style=\"padding: 12px; border: 1px solid #000;\">Within 7 days of purchase</td><td style=\"padding: 12px; border: 1px solid #000;\">50% of the subscription fee</td></tr><tr><td style=\"padding: 12px; border: 1px solid #000;\"><strong>Annual Subscription</strong></td><td style=\"padding: 12px; border: 1px solid #000;\">Within 14 days of purchase</td><td style=\"padding: 12px; border: 1px solid #000;\">50% of the subscription fee</td></tr></tbody></table><p><strong>💡 Tip:</strong> Personalized reports are considered delivered once accessed, so full refunds are not available.</p>"
+        },
+        "refundConditions": {
+          "title": "2. When Refunds Are Possible",
+          "content": "<p>Refunds will not be granted for:</p><ul style=\"padding-left: 20px;list-style: disc;\"><li>Changing your mind or personal preference</li><li>Not liking your report results</li><li>Waiting time expectations</li><li>Personalized reports that have already been accessed</li></ul>"
+        },
+        "cancellationRights": {
+          "title": "3. Subscription Cancellation & Right to Cancel",
+          "content": "<p>You may cancel your subscription at any time to stop future payments. After cancellation, you can continue to use your subscription until the end of your current billing period.</p><p>In addition, your statutory rights under applicable consumer laws remain valid:</p><ul style=\"padding-left: 20px;list-style: disc;\"><li>You have the right to cancel a contract for digital content within 14 days without giving any reason.</li><li>If you start accessing or downloading your digital content during this period, you acknowledge that your right to cancel will be lost once the content is accessed.</li><li>The 14-day period begins on the day your subscription is confirmed via email.</li><li>To exercise this right, notify us via email: support@personalitytest101.com with a clear statement that you wish to cancel.</li><li>To meet the deadline, it is sufficient to send your cancellation notice before the 14-day period ends.</li></ul>"
+        },
+        "refundRequest": {
+          "title": "4. How to Request a Refund",
+          "content": "<p>To request a refund within our policy:</p><ul style=\"padding-left: 20px;list-style: disc;\"><li>Email: support@personalitytest101.com</li><li>Include your account email, order details, and reason for the refund.</li></ul><p>Refunds are processed to the original payment method, usually within 30 business days after approval.</p>"
+        },
+        "friendlyNotes": {
+          "title": "5. A Few Friendly Notes",
+          "content": "<ul style=\"padding-left: 20px;list-style: disc;\"><li>Personalized reports are created just for you and cannot be returned.</li><li>Refunds apply only to the most recent payment.</li><li>Each request is reviewed personally to ensure fairness and transparency.</li></ul><p>Our goal is that every test brings value and helps you understand yourself better.</p>"
+        },
+        "whySimple": {
+          "title": "Why We Keep It Simple",
+          "content": "<p>We know your time and trust are valuable. By providing clear refund windows, explaining partial refunds, and including your legal cancellation rights, we hope you feel confident subscribing, knowing that:</p><ol style=\"padding-left: 20px;list-style: decimal;\"><li>We deliver meaningful, personalized reports.</li><li>You have a clear path if technical problems occur.</li><li>You're supported every step of the way.</li></ol>"
         }
       }
     },
     "terms": {
-      "title": "Terms of Service",
+      "title": "Terms of Use & Purchase",
       "description": "By using this service, you agree to the following terms and conditions.",
+      "nav": {
+        "termsOfUse": "Terms of Use & Purchase",
+        "introduction": "1. Introduction",
+        "registration": "2. Registration",
+        "personalityTest": "3. Personality Test & AI Tools",
+        "purchase": "4. Purchase of Digital Content & Subscriptions",
+        "refunds": "5. Refunds & Cancellation",
+        "license": "6. License to Use Website & Products",
+        "acceptableUse": "7. Acceptable Use",
+        "userContent": "8. User Generated Content",
+        "noticeTakedown": "9. Notice and Takedown",
+        "unsolicitedIdeas": "10. Unsolicited Idea Submissions",
+        "warranties": "11. Warranties & Disclaimers",
+        "liability": "12. Liability Limitations",
+        "indemnity": "13. Indemnity",
+        "breaches": "14. Breaches & Enforcement",
+        "changes": "15. Changes & Variation",
+        "entireAgreement": "16. Entire Agreement",
+        "contact": "17. Contact"
+      },
       "sections": {
-        "accept": {
-          "title": "Acceptance of Terms",
-          "body": "Registering or using the service means you have read and agree to this agreement."
+        "termsOfUse": {
+          "title": "Terms of Use & Purchase",
+          "subtitle": "Last Updated: February 2, 2026",
+          "content": "<p>Welcome to PersonalityTest101.com. These Terms of Use & Purchase govern your access to our website and your purchase of digital content, subscriptions, and services (collectively, \"Products\"). By using our website, you agree to these terms in full. If you do not agree, please do not use the website or purchase any Products.</p>"
         },
-        "use": {
-          "title": "Use of Service",
-          "body": "Use the service according to applicable laws and this agreement. Do not abuse or disrupt the platform."
+        "introduction": {
+          "title": "1. Introduction",
+          "content": "<ul style=\"padding-left: 20px;list-style: disc;\"><li>Our Products are designed for information and entertainment purposes only. They are not medical, psychological, or professional advice.</li><li>Personalized reports and AI outputs are for personal use only, not for assessing others or business/recruitment purposes.</li><li>Users must be 16 years or older (or the legal age of consent in their country).</li><li>AI Mentor (Elina) outputs are informational only, and you should avoid sharing sensitive personal data.</li><li>The English version of the website is the official version. Other language versions are provided for convenience.</li><li>Use of cookies and personal data is governed by our Privacy Policy.</li></ul>"
         },
-        "account": {
-          "title": "Account & Security",
-          "body": "Keep your credentials safe and are responsible for activity under your account. Notify us immediately if you notice abnormalities."
+        "registration": {
+          "title": "2. Registration",
+          "content": "<ul style=\"padding-left: 20px;list-style: disc;\"><li>Some website areas are free to access. Certain Products require registration.</li><li>You must provide accurate and up-to-date information.</li><li>Keep your password confidential and report any suspected account breaches to support@personalitytest101.com.</li><li>Only one account per user is allowed. We reserve the right to suspend or cancel accounts that violate these terms.</li></ul>"
         },
-        "payments": {
-          "title": "Fees & Payments",
-          "body": "For paid courses or subscriptions, fees, billing, and refund policies follow the explanations on the pages."
+        "personalityTest": {
+          "title": "3. Personality Test & AI Tools",
+          "content": "<ul style=\"padding-left: 20px;list-style: disc;\"><li>Free Personality Test results assign one of 16 personality types and two variants.</li><li>Premium Profiles and Specialized Tests are paid Products.</li><li>AI tools (e.g., Elina) supplement guidance but do not constitute professional advice.</li></ul>"
         },
-        "content": {
-          "title": "User Content",
-          "body": "You retain ownership of your content, but authorize us to process and display it as needed to provide the service."
+        "purchase": {
+          "title": "4. Purchase of Digital Content & Subscriptions",
+          "content": "<ul style=\"padding-left: 20px;list-style: disc;\"><li>Products are licensed, not sold, and remain our property.</li><li>Payment is authorized at purchase. Your order is confirmed upon successful payment.</li><li>Prices are in USD, include VAT where applicable, and are subject to change.</li><li>E-books require a PDF reader. Digital rights management (DRM) must not be removed.</li></ul>"
         },
-        "prohibited": {
-          "title": "Prohibited Conduct",
-          "body": "Includes but is not limited to illegal content, rights infringement, attacks, or interference with platform operations."
+        "refunds": {
+          "title": "5. Refunds & Cancellation",
+          "content": "<p>Refund eligibility depends on the Product type:</p><ul style=\"padding-left: 20px;list-style: disc;\"><li>7-Day Trial: Non-refundable</li><li>Monthly Subscription: Refundable within 7 days at 50% of fee</li><li>Annual Subscription: Refundable within 14 days at 50% of fee</li></ul><p>Refunds are only for technical issues, not personal preference or report dissatisfaction.</p><p>Statutory rights under consumer law remain valid: You can cancel digital content contracts within 14 days, but once accessed, this right is lost.</p><p>Refund requests must be sent to support@personalitytest101.com.</p>"
         },
-        "termination": {
-          "title": "Termination",
-          "body": "We may suspend or terminate the service if you violate the terms. You may stop using the service at any time and request data export."
+        "license": {
+          "title": "6. License to Use Website & Products",
+          "content": "<ul style=\"padding-left: 20px;list-style: disc;\"><li>Intellectual property (copyright, trademarks, software, content) belongs to us or our licensors.</li><li>You may view, download, or print for personal use only.</li><li>You must not copy, sell, modify, or distribute any material without permission.</li></ul>"
         },
-        "disclaimer": {
-          "title": "Disclaimer",
-          "body": "The service is provided as-is. We make no guarantees of suitability or uninterrupted availability. Liability is limited to the extent permitted by law."
+        "acceptableUse": {
+          "title": "7. Acceptable Use",
+          "content": "<p>You may not use the Website or Products to:</p><ul style=\"padding-left: 20px;list-style: disc;\"><li>Transmit malware, spam, or illegal content</li><li>Conduct business or employment assessments without permission</li><li>Violate laws, harass, or impersonate others</li><li>Share confidential or copyrighted content unlawfully</li></ul>"
+        },
+        "userContent": {
+          "title": "8. User Generated Content",
+          "content": "<ul style=\"padding-left: 20px;list-style: disc;\"><li>You are responsible for any content you post.</li><li>By posting, you grant us a worldwide, royalty-free license to use your content.</li><li>Offensive, illegal, or misleading content is prohibited.</li></ul>"
+        },
+        "noticeTakedown": {
+          "title": "9. Notice and Takedown",
+          "content": "<ul style=\"padding-left: 20px;list-style: disc;\"><li>If you believe content infringes your rights, email support@personalitytest101.com with full details.</li><li>We will investigate and remove infringing content as appropriate.</li></ul>"
+        },
+        "unsolicitedIdeas": {
+          "title": "10. Unsolicited Idea Submissions",
+          "content": "<ul style=\"padding-left: 20px;list-style: disc;\"><li>Do not submit ideas or creative works. Any submissions become our sole property without obligation. Feedback can be sent via email excluding ideas.</li></ul>"
+        },
+        "warranties": {
+          "title": "11. Warranties & Disclaimers",
+          "content": "<ul style=\"padding-left: 20px;list-style: disc;\"><li>Products are provided \"as is\" without warranties.</li><li>We do not guarantee accuracy, completeness, or availability of Products or AI outputs.</li><li>Our content is informational only and not a substitute for professional advice.</li></ul>"
+        },
+        "liability": {
+          "title": "12. Liability Limitations",
+          "content": "<ul style=\"padding-left: 20px;list-style: disc;\"><li>Liability is limited to the extent allowed by law.</li><li>We are not liable for:</li><ul style=\"padding-left: 20px;list-style: disc;\"><li>Business, employment, or recruitment losses</li><li>Emotional or mental distress except due to our negligence</li><li>Loss of data or unforeseeable damages</li></ul><li>AI outputs are used at your own risk.</li></ul>"
+        },
+        "indemnity": {
+          "title": "13. Indemnity",
+          "content": "<p>You agree to compensate us for any losses or claims arising from your breach of these terms.</p>"
+        },
+        "breaches": {
+          "title": "14. Breaches & Enforcement",
+          "content": "<ul style=\"padding-left: 20px;list-style: disc;\"><li>We may suspend or block access for breaches of these terms.</li><li>Delay in enforcement does not waive our rights.</li></ul>"
+        },
+        "changes": {
+          "title": "15. Changes & Variation",
+          "content": "<p>We may revise these terms at any time. Continued use of the website constitutes acceptance.</p>"
+        },
+        "entireAgreement": {
+          "title": "16. Entire Agreement",
+          "content": "<p>These terms, together with Privacy Policy and Refund Policy, constitute the complete agreement.</p>"
+        },
+        "contact": {
+          "title": "17. Contact",
+          "content": "<p>For support, complaints, or questions: support@personalitytest101.com</p>"
         }
       }
     }

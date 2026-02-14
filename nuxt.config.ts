@@ -42,7 +42,7 @@ export default defineNuxtConfig({
     types: 'composition',  // 或 'legacy'
     bundle: {
       optimizeTranslationDirective: false
-    }
+    },
   },
   unocss: {
     nuxtLayers: true,

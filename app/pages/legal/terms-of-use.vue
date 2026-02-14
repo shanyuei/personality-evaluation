@@ -25,10 +25,8 @@
         <div class="uno-col-span-1 md:uno-col-span-3">
           <div class="uno-space-y-8">
             <section v-for="section in sections" :key="section.id" :id="section.id">
-              <h2 class="uno-text-[24px] uno-font-[Outfit] uno-font-[600] uno-text-gray-900 uno-mb-4">{{
-                section.title }}</h2>
-              <p v-if="section.subtitle" class="uno-text-[16px] uno-font-[500] uno-text-[#011813] uno-mb-6">{{
-                section.subtitle }}</p>
+                <h2 class="uno-text-[24px] uno-font-[Outfit] uno-font-[600] uno-text-gray-900 uno-mb-4" v-html="section.title"></h2>
+              <p v-if="section.subtitle" class="uno-text-[16px] uno-font-[500] uno-text-[#011813] uno-mb-6" v-html="section.subtitle" ></p>
               <div class="uno-text-gray-700 uno-mb-4" v-html="section.content"></div>
             </section>
           </div>
@@ -39,7 +37,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 
 const { t } = useI18n()
 
@@ -57,220 +55,120 @@ useSeoMeta({
 const activeSection = ref('terms-of-use')
 const isClicking = ref(false)
 
-const navItems = [
-  { id: 'terms-of-use', label: 'Terms of Use & Purchase' },
-  { id: 'introduction', label: '1. Introduction' },
-  { id: 'registration', label: '2. Registration' },
-  { id: 'personality-test', label: '3. Personality Test & AI Tools' },
-  { id: 'purchase', label: '4. Purchase of Digital Content & Subscriptions' },
-  { id: 'refunds', label: '5. Refunds & Cancellation' },
-  { id: 'license', label: '6. License to Use Website & Products' },
-  { id: 'acceptable-use', label: '7. Acceptable Use' },
-  { id: 'user-content', label: '8. User Generated Content' },
-  { id: 'notice-takedown', label: '9. Notice and Takedown' },
-  { id: 'unsolicited-ideas', label: '10. Unsolicited Idea Submissions' },
-  { id: 'warranties', label: '11. Warranties & Disclaimers' },
-  { id: 'liability', label: '12. Liability Limitations' },
-  { id: 'indemnity', label: '13. Indemnity' },
-  { id: 'breaches', label: '14. Breaches & Enforcement' },
-  { id: 'changes', label: '15. Changes & Variation' },
-  { id: 'entire-agreement', label: '16. Entire Agreement' },
-  { id: 'contact', label: '17. Contact' }
-]
+const navItems = computed(() => [
+  { id: 'terms-of-use', label: t('pages.legal.terms.nav.termsOfUse') },
+  { id: 'introduction', label: t('pages.legal.terms.nav.introduction') },
+  { id: 'registration', label: t('pages.legal.terms.nav.registration') },
+  { id: 'personality-test', label: t('pages.legal.terms.nav.personalityTest') },
+  { id: 'purchase', label: t('pages.legal.terms.nav.purchase') },
+  { id: 'refunds', label: t('pages.legal.terms.nav.refunds') },
+  { id: 'license', label: t('pages.legal.terms.nav.license') },
+  { id: 'acceptable-use', label: t('pages.legal.terms.nav.acceptableUse') },
+  { id: 'user-content', label: t('pages.legal.terms.nav.userContent') },
+  { id: 'notice-takedown', label: t('pages.legal.terms.nav.noticeTakedown') },
+  { id: 'unsolicited-ideas', label: t('pages.legal.terms.nav.unsolicitedIdeas') },
+  { id: 'warranties', label: t('pages.legal.terms.nav.warranties') },
+  { id: 'liability', label: t('pages.legal.terms.nav.liability') },
+  { id: 'indemnity', label: t('pages.legal.terms.nav.indemnity') },
+  { id: 'breaches', label: t('pages.legal.terms.nav.breaches') },
+  { id: 'changes', label: t('pages.legal.terms.nav.changes') },
+  { id: 'entire-agreement', label: t('pages.legal.terms.nav.entireAgreement') },
+  { id: 'contact', label: t('pages.legal.terms.nav.contact') }
+])
 
-const sections = [
+const sections = computed(() => [
   {
     id: 'terms-of-use',
-    title: 'Terms of Use & Purchase',
-    subtitle: 'Last Updated: February 2, 2026',
-    content: `
-      <p>Welcome to PersonalityTest101.com. These Terms of Use & Purchase govern your access to our website and your purchase of digital content, subscriptions, and services (collectively, "Products"). By using our website, you agree to these terms in full. If you do not agree, please do not use the website or purchase any Products.</p>
-    `
+    title: t('pages.legal.terms.sections.termsOfUse.title'),
+    subtitle: t('pages.legal.terms.sections.termsOfUse.subtitle'),
+    content: t('pages.legal.terms.sections.termsOfUse.content')
   },
   {
     id: 'introduction',
-    title: '1. Introduction',
-    content: `
-      <ul style="padding-left: 20px;list-style: disc;">
-        <li>Our Products are designed for information and entertainment purposes only. They are not medical, psychological, or professional advice.</li>
-        <li>Personalized reports and AI outputs are for personal use only, not for assessing others or business/recruitment purposes.</li>
-        <li>Users must be 16 years or older (or the legal age of consent in their country).</li>
-        <li>AI Mentor (Elina) outputs are informational only, and you should avoid sharing sensitive personal data.</li>
-        <li>The English version of the website is the official version. Other language versions are provided for convenience.</li>
-        <li>Use of cookies and personal data is governed by our Privacy Policy.</li>
-      </ul>
-    `
+    title: t('pages.legal.terms.sections.introduction.title'),
+    content: t('pages.legal.terms.sections.introduction.content')
   },
   {
     id: 'registration',
-    title: '2. Registration',
-    content: `
-      <ul style="padding-left: 20px;list-style: disc;">
-        <li>Some website areas are free to access. Certain Products require registration.</li>
-        <li>You must provide accurate and up-to-date information.</li>
-        <li>Keep your password confidential and report any suspected account breaches to support@personalitytest101.com.</li>
-        <li>Only one account per user is allowed. We reserve the right to suspend or cancel accounts that violate these terms.</li>
-      </ul>
-    `
+    title: t('pages.legal.terms.sections.registration.title'),
+    content: t('pages.legal.terms.sections.registration.content')
   },
   {
     id: 'personality-test',
-    title: '3. Personality Test & AI Tools',
-    content: `
-      <ul style="padding-left: 20px;list-style: disc;">
-        <li>Free Personality Test results assign one of 16 personality types and two variants.</li>
-        <li>Premium Profiles and Specialized Tests are paid Products.</li>
-        <li>AI tools (e.g., Elina) supplement guidance but do not constitute professional advice.</li>
-      </ul>
-    `
+    title: t('pages.legal.terms.sections.personalityTest.title'),
+    content: t('pages.legal.terms.sections.personalityTest.content')
   },
   {
     id: 'purchase',
-    title: '4. Purchase of Digital Content & Subscriptions',
-    content: `
-      <ul style="padding-left: 20px;list-style: disc;">
-        <li>Products are licensed, not sold, and remain our property.</li>
-        <li>Payment is authorized at purchase. Your order is confirmed upon successful payment.</li>
-        <li>Prices are in USD, include VAT where applicable, and are subject to change.</li>
-        <li>E-books require a PDF reader. Digital rights management (DRM) must not be removed.</li>
-      </ul>
-    `
+    title: t('pages.legal.terms.sections.purchase.title'),
+    content: t('pages.legal.terms.sections.purchase.content')
   },
   {
     id: 'refunds',
-    title: '5. Refunds & Cancellation',
-    content: `
-      <p>Refund eligibility depends on the Product type:</p>
-      <ul style="padding-left: 20px;list-style: disc;">
-        <li>7-Day Trial: Non-refundable</li>
-        <li>Monthly Subscription: Refundable within 7 days at 50% of fee</li>
-        <li>Annual Subscription: Refundable within 14 days at 50% of fee</li>
-      </ul>
-      <p>Refunds are only for technical issues, not personal preference or report dissatisfaction.</p>
-      <p>Statutory rights under consumer law remain valid: You can cancel digital content contracts within 14 days, but once accessed, this right is lost.</p>
-      <p>Refund requests must be sent to support@personalitytest101.com.</p>
-    `
+    title: t('pages.legal.terms.sections.refunds.title'),
+    content: t('pages.legal.terms.sections.refunds.content')
   },
   {
     id: 'license',
-    title: '6. License to Use Website & Products',
-    content: `
-      <ul style="padding-left: 20px;list-style: disc;">
-        <li>Intellectual property (copyright, trademarks, software, content) belongs to us or our licensors.</li>
-        <li>You may view, download, or print for personal use only.</li>
-        <li>You must not copy, sell, modify, or distribute any material without permission.</li>
-      </ul>
-    `
+    title: t('pages.legal.terms.sections.license.title'),
+    content: t('pages.legal.terms.sections.license.content')
   },
   {
     id: 'acceptable-use',
-    title: '7. Acceptable Use',
-    content: `
-      <p>You may not use the Website or Products to:</p>
-      <ul style="padding-left: 20px;list-style: disc;">
-        <li>Transmit malware, spam, or illegal content</li>
-        <li>Conduct business or employment assessments without permission</li>
-        <li>Violate laws, harass, or impersonate others</li>
-        <li>Share confidential or copyrighted content unlawfully</li>
-      </ul>
-    `
+    title: t('pages.legal.terms.sections.acceptableUse.title'),
+    content: t('pages.legal.terms.sections.acceptableUse.content')
   },
   {
     id: 'user-content',
-    title: '8. User Generated Content',
-    content: `
-      <ul style="padding-left: 20px;list-style: disc;">
-        <li>You are responsible for any content you post.</li>
-        <li>By posting, you grant us a worldwide, royalty-free license to use your content.</li>
-        <li>Offensive, illegal, or misleading content is prohibited.</li>
-      </ul>
-    `
+    title: t('pages.legal.terms.sections.userContent.title'),
+    content: t('pages.legal.terms.sections.userContent.content')
   },
   {
     id: 'notice-takedown',
-    title: '9. Notice and Takedown',
-    content: `
-      <ul style="padding-left: 20px;list-style: disc;">
-        <li>If you believe content infringes your rights, email support@personalitytest101.com with full details.</li>
-        <li>We will investigate and remove infringing content as appropriate.</li>
-      </ul>
-    `
+    title: t('pages.legal.terms.sections.noticeTakedown.title'),
+    content: t('pages.legal.terms.sections.noticeTakedown.content')
   },
   {
     id: 'unsolicited-ideas',
-    title: '10. Unsolicited Idea Submissions',
-    content: `
-      <ul style="padding-left: 20px;list-style: disc;">
-        <li>Do not submit ideas or creative works. Any submissions become our sole property without obligation. Feedback can be sent via email excluding ideas.</li>
-      </ul>
-    `
+    title: t('pages.legal.terms.sections.unsolicitedIdeas.title'),
+    content: t('pages.legal.terms.sections.unsolicitedIdeas.content')
   },
   {
     id: 'warranties',
-    title: '11. Warranties & Disclaimers',
-    content: `
-      <ul style="padding-left: 20px;list-style: disc;">
-        <li>Products are provided "as is" without warranties.</li>
-        <li>We do not guarantee accuracy, completeness, or availability of Products or AI outputs.</li>
-        <li>Our content is informational only and not a substitute for professional advice.</li>
-      </ul>
-    `
+    title: t('pages.legal.terms.sections.warranties.title'),
+    content: t('pages.legal.terms.sections.warranties.content')
   },
   {
     id: 'liability',
-    title: '12. Liability Limitations',
-    content: `
-      <ul style="padding-left: 20px;list-style: disc;">
-        <li>Liability is limited to the extent allowed by law.</li>
-        <li>We are not liable for:</li>
-        <ul style="padding-left: 20px;list-style: disc;">
-          <li>Business, employment, or recruitment losses</li>
-          <li>Emotional or mental distress except due to our negligence</li>
-          <li>Loss of data or unforeseeable damages</li>
-        </ul>
-        <li>AI outputs are used at your own risk.</li>
-      </ul>
-    `
+    title: t('pages.legal.terms.sections.liability.title'),
+    content: t('pages.legal.terms.sections.liability.content')
   },
   {
     id: 'indemnity',
-    title: '13. Indemnity',
-    content: `
-      <p>You agree to compensate us for any losses or claims arising from your breach of these terms.</p>
-    `
+    title: t('pages.legal.terms.sections.indemnity.title'),
+    content: t('pages.legal.terms.sections.indemnity.content')
   },
   {
     id: 'breaches',
-    title: '14. Breaches & Enforcement',
-    content: `
-      <ul style="padding-left: 20px;list-style: disc;">
-        <li>We may suspend or block access for breaches of these terms.</li>
-        <li>Delay in enforcement does not waive our rights.</li>
-      </ul>
-    `
+    title: t('pages.legal.terms.sections.breaches.title'),
+    content: t('pages.legal.terms.sections.breaches.content')
   },
   {
     id: 'changes',
-    title: '15. Changes & Variation',
-    content: `
-      <p>We may revise these terms at any time. Continued use of the website constitutes acceptance.</p>
-    `
+    title: t('pages.legal.terms.sections.changes.title'),
+    content: t('pages.legal.terms.sections.changes.content')
   },
   {
     id: 'entire-agreement',
-    title: '16. Entire Agreement',
-    content: `
-      <p>These terms, together with Privacy Policy and Refund Policy, constitute the complete agreement.</p>
-    `
+    title: t('pages.legal.terms.sections.entireAgreement.title'),
+    content: t('pages.legal.terms.sections.entireAgreement.content')
   },
   {
     id: 'contact',
-    title: '17. Contact',
-    content: `
-      <p>For support, complaints, or questions: support@personalitytest101.com</p>
-    `
+    title: t('pages.legal.terms.sections.contact.title'),
+    content: t('pages.legal.terms.sections.contact.content')
   }
-]
+])
 
 const handleScroll = () => {
   if (isClicking.value) return
