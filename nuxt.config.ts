@@ -40,6 +40,12 @@ export default defineNuxtConfig({
     detectBrowserLanguage: false,
     baseUrl: 'https://example.com',
     types: 'composition',  // 或 'legacy'
+    // vueI18n: './i18n/i18n.config.ts',
+    // 关键：禁用严格消息编译，允许 HTML
+    compilation: {
+      strictMessage: false,
+      escapeHtml: false,
+    },
     bundle: {
       optimizeTranslationDirective: false
     },

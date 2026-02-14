@@ -1098,7 +1098,7 @@
         },
         "contactUs": {
           "title": "Contact Us",
-          "content": "<p>If you have any questions, concerns, or requests regarding this Privacy Policy or how we handle your information, please contact us at:</p><p><strong>Email:</strong> support@personalitytest101.com</p><p>We will make reasonable efforts to respond to your inquiry in a timely manner.</p>"
+          "content": "<p>If you have any questions, concerns, or requests regarding this Privacy Policy or how we handle your information, please contact us at:</p><p><strong>Email:</strong> support{'@'}personalitytest101.com</p><p>We will make reasonable efforts to respond to your inquiry in a timely manner.</p>"
         }
       }
     },
@@ -1130,11 +1130,11 @@
         },
         "cancellationRights": {
           "title": "3. Subscription Cancellation & Right to Cancel",
-          "content": "<p>You may cancel your subscription at any time to stop future payments. After cancellation, you can continue to use your subscription until the end of your current billing period.</p><p>In addition, your statutory rights under applicable consumer laws remain valid:</p><ul style=\"padding-left: 20px;list-style: disc;\"><li>You have the right to cancel a contract for digital content within 14 days without giving any reason.</li><li>If you start accessing or downloading your digital content during this period, you acknowledge that your right to cancel will be lost once the content is accessed.</li><li>The 14-day period begins on the day your subscription is confirmed via email.</li><li>To exercise this right, notify us via email: support@personalitytest101.com with a clear statement that you wish to cancel.</li><li>To meet the deadline, it is sufficient to send your cancellation notice before the 14-day period ends.</li></ul>"
+          "content": "<p>You may cancel your subscription at any time to stop future payments. After cancellation, you can continue to use your subscription until the end of your current billing period.</p><p>In addition, your statutory rights under applicable consumer laws remain valid:</p><ul style=\"padding-left: 20px;list-style: disc;\"><li>You have the right to cancel a contract for digital content within 14 days without giving any reason.</li><li>If you start accessing or downloading your digital content during this period, you acknowledge that your right to cancel will be lost once the content is accessed.</li><li>The 14-day period begins on the day your subscription is confirmed via email.</li><li>To exercise this right, notify us via email: support{'@'}personalitytest101.com with a clear statement that you wish to cancel.</li><li>To meet the deadline, it is sufficient to send your cancellation notice before the 14-day period ends.</li></ul>"
         },
         "refundRequest": {
           "title": "4. How to Request a Refund",
-          "content": "<p>To request a refund within our policy:</p><ul style=\"padding-left: 20px;list-style: disc;\"><li>Email: support@personalitytest101.com</li><li>Include your account email, order details, and reason for the refund.</li></ul><p>Refunds are processed to the original payment method, usually within 30 business days after approval.</p>"
+          "content": "<p>To request a refund within our policy:</p><ul style=\"padding-left: 20px;list-style: disc;\"><li>Email: support{'@'}personalitytest101.com</li><li>Include your account email, order details, and reason for the refund.</li></ul><p>Refunds are processed to the original payment method, usually within 30 business days after approval.</p>"
         },
         "friendlyNotes": {
           "title": "5. A Few Friendly Notes",
@@ -1181,7 +1181,7 @@
         },
         "registration": {
           "title": "2. Registration",
-          "content": "<ul style=\"padding-left: 20px;list-style: disc;\"><li>Some website areas are free to access. Certain Products require registration.</li><li>You must provide accurate and up-to-date information.</li><li>Keep your password confidential and report any suspected account breaches to support@personalitytest101.com.</li><li>Only one account per user is allowed. We reserve the right to suspend or cancel accounts that violate these terms.</li></ul>"
+          "content": "<ul style=\"padding-left: 20px;list-style: disc;\"><li>Some website areas are free to access. Certain Products require registration.</li><li>You must provide accurate and up-to-date information.</li><li>Keep your password confidential and report any suspected account breaches to support{'@'}personalitytest101.com.</li><li>Only one account per user is allowed. We reserve the right to suspend or cancel accounts that violate these terms.</li></ul>"
         },
         "personalityTest": {
           "title": "3. Personality Test & AI Tools",
@@ -1193,7 +1193,7 @@
         },
         "refunds": {
           "title": "5. Refunds & Cancellation",
-          "content": "<p>Refund eligibility depends on the Product type:</p><ul style=\"padding-left: 20px;list-style: disc;\"><li>7-Day Trial: Non-refundable</li><li>Monthly Subscription: Refundable within 7 days at 50% of fee</li><li>Annual Subscription: Refundable within 14 days at 50% of fee</li></ul><p>Refunds are only for technical issues, not personal preference or report dissatisfaction.</p><p>Statutory rights under consumer law remain valid: You can cancel digital content contracts within 14 days, but once accessed, this right is lost.</p><p>Refund requests must be sent to support@personalitytest101.com.</p>"
+          "content": "<p>Refund eligibility depends on the Product type:</p><ul style=\"padding-left: 20px;list-style: disc;\"><li>7-Day Trial: Non-refundable</li><li>Monthly Subscription: Refundable within 7 days at 50% of fee</li><li>Annual Subscription: Refundable within 14 days at 50% of fee</li></ul><p>Refunds are only for technical issues, not personal preference or report dissatisfaction.</p><p>Statutory rights under consumer law remain valid: You can cancel digital content contracts within 14 days, but once accessed, this right is lost.</p><p>Refund requests must be sent to support{'@'}personalitytest101.com.</p>"
         },
         "license": {
           "title": "6. License to Use Website & Products",
@@ -1209,7 +1209,7 @@
         },
         "noticeTakedown": {
           "title": "9. Notice and Takedown",
-          "content": "<ul style=\"padding-left: 20px;list-style: disc;\"><li>If you believe content infringes your rights, email support@personalitytest101.com with full details.</li><li>We will investigate and remove infringing content as appropriate.</li></ul>"
+          "content": "<ul style=\"padding-left: 20px;list-style: disc;\"><li>If you believe content infringes your rights, email support{'@'}personalitytest101.com with full details.</li><li>We will investigate and remove infringing content as appropriate.</li></ul>"
         },
         "unsolicitedIdeas": {
           "title": "10. Unsolicited Idea Submissions",
@@ -1241,7 +1241,7 @@
         },
         "contact": {
           "title": "17. Contact",
-          "content": "<p>For support, complaints, or questions: support@personalitytest101.com</p>"
+          "content": "<p>For support, complaints, or questions: support{'@'}personalitytest101.com</p>"
         }
       }
     }
