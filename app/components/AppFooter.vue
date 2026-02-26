@@ -7,9 +7,9 @@
     <div class="page-container uno-w-full uno-bottom-0 uno-left-0 uno-z-[2] uno-relative">
       <UFooter :ui="{
         container: 'md:uno-pt-80px px-0 gap-0 z-[2] relative max-w-[1440px] mx-auto items-start max-md:max-w-[80%] max-sm:max-w-full max-sm:flex-col-reverse max-sm:flex max-sm:gap-32px max-sm:py-0  uno-items-start',
-        left: 'flex-none',
-        right: 'flex-none',
-        center: 'flex-none ',
+        left: 'flex-1',
+        right: 'flex-1 hidden',
+        center: 'flex-2',
         bottom: 'p-t-0 uno-pb-32px uno-pt-22px',
       }">
         <template #left>
@@ -40,14 +40,15 @@
 
         <template #default>
           <!-- 导航 -->
-          <div class="uno-grid uno-grid-cols-3 uno-gap-[64px] sm:uno-gap-80px uno-mb-32px">
+          <div class="uno-grid uno-grid-cols-3 uno-gap-[64px] sm:uno-gap-80px uno-mb-32px w-full">
             <div>
               <h3 class="uno-text-[#011813] uno-text-2xl uno-font-Outfit uno-font-semibold uno-mb-16px">
                 {{ $t('common.footer.product') }}
               </h3>
               <ul class="uno-space-y-16px">
                 <li>
-                  <NuxtLink :to="localePath('/free-personality-test')" class="uno-text-[#011813] uno-font-Outfit hover:uno-text-[#4E5255]">
+                  <NuxtLink :to="localePath('/free-personality-test')"
+                    class="uno-text-[#011813] uno-font-Outfit hover:uno-text-[#4E5255]">
                     {{ $t('common.footer.freePersonalityTest') }}
                   </NuxtLink>
                 </li>
@@ -103,12 +104,38 @@
                 </li>
               </ul>
             </div>
-
           </div>
         </template>
 
         <template #right>
-          <div>
+          <div class="">
+            <div>
+              <h3 class="uno-text-[#011813] uno-text-2xl uno-font-Outfit uno-font-semibold uno-mb-16px">
+                {{ $t('common.footer.legal') }}
+              </h3>
+              <ul class="uno-space-y-16px">
+                <!-- <li>
+                  <NuxtLink :to="localePath('/privacy')"
+                    class="uno-text-[#011813] uno-font-Outfit hover:uno-text-[#4E5255]">
+                    {{ $t('common.footer.privacyPolicy') }}
+                  </NuxtLink>
+                </li> -->
+                <li>
+                  <NuxtLink :to="localePath('/terms-of-use')"
+                    class="uno-text-[#011813] uno-font-Outfit hover:uno-text-[#4E5255]">
+                    {{ $t('common.footer.termsOfUse') }}
+                  </NuxtLink>
+                </li>
+                <li>
+                  <NuxtLink :to="localePath('/refund-policy')"
+                    class="uno-text-[#011813] uno-font-Outfit hover:uno-text-[#4E5255]">
+                    {{ $t('common.footer.refundPolicy') }}
+                  </NuxtLink>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- <div>
             <h3 class="uno-text-[#011813] uno-text-2xl uno-font-Outfit uno-font-semibold uno-mb-16px">
               {{ $t('common.footer.contactUs') }}
             </h3>
@@ -131,7 +158,7 @@
                   Stanton, USA</div>
               </div>
             </div>
-          </div>
+          </div> -->
         </template>
         <template #bottom>
           <div
