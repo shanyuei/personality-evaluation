@@ -1,11 +1,26 @@
 import { ref } from 'vue';
+import { useI18n } from 'vue-i18n';
+
+// 单例状态，确保所有组件共享同一个状态
+let title = ref<string>('');
+let description = ref<string>('');
+let buttonText = ref<string>('');
+let buttonDisabled = ref<boolean>(false);
+
+// 初始化函数，仅在首次使用时调用
+function initialize() {
+  const { t } = useI18n();
+  title.value = t('pages.contact.curiousTitle');
+  description.value = t('pages.contact.curiousDesc');
+  buttonText.value = t('pages.contact.curiousButtonText');
+  buttonDisabled.value = false;
+}
 
 export function useCurious() {
-  const { t } = useI18n()
-  const title = ref<string>(t('pages.contact.curiousTitle'));
-  const description = ref<string>(t('pages.contact.curiousDesc'));
-  const buttonText = ref<string>(t('pages.contact.curiousButtonText'));
-  const buttonDisabled = ref<boolean>(false);
+  // 确保状态已初始化
+  if (!title.value) {
+    initialize();
+  }
 
   const setTitle = (newTitle: string) => {
     title.value = newTitle;

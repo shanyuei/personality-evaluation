@@ -246,8 +246,12 @@ import { navigateTo } from 'nuxt/app';
 import GradientCTASection from '../../components/AppCurious.vue';
 import TestimonialsSection from '../../components/TestimonialsSection.vue';
 import FAQSection from '../../components/FAQSection.vue';
+import { useCurious } from '../../composables/useCurious';
 const { t } = useI18n()
 const localePath = useLocalePath()
+
+// 引入 useCurious composable
+const { setButtonText,  } = useCurious()
 
 definePageMeta({
     title: "seo.home.title",
@@ -257,6 +261,11 @@ useSeoMeta({
     title: () => t('seo.home.title') as string,
     description: () => t('seo.home.description') as string,
 })
+
+// 配置 useCurious 数据
+// setTitle(t('pages.home.curious.title'))
+// setDescription(t('pages.home.curious.description'))
+setButtonText(t('pages.home.curious.buttonText'))
 // const token = useCookie('token')
 // token.value = 'el0wBwD18J9X6mcKWSOP3Z9QhHTpGKok9OVXkcBjIvUgHceyDQcGNGhlV44a'
 
