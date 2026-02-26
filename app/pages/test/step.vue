@@ -80,7 +80,7 @@
           </div>
           <!-- 错误提示 -->
           <p v-if="showError" class="uno-mt-2 uno-text-sm uno-text-[#EA4C89] uno-text-center">
-            {{ $t('pages.test.index.notice') }}
+            {{ $t('pages.test.index.notice1') }}
           </p>
           <!-- 提示文本 -->
           <p v-else

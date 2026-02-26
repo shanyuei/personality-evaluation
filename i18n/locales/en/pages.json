@@ -230,7 +230,8 @@
         "a": "Agree",
         "sa": "Strongly Agree"
       },
-      "notice": "Please respond to all statements to view your results."
+      "notice": "Please respond to all statements to view your results.",
+      "notice1": "Please answer all questions to continue."
     },
     "analyzing": {
       "title": "Core Trait Analysis",
