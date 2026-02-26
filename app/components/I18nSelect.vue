@@ -1,6 +1,6 @@
 <template>
     <UDropdownMenu :items="languageItems" :ui="{
-      item: 'uno-px-15px uno-py-6px uno-text-sm uno-font-Outfit uno-text-left uno-leading-[22px] hover:uno-bg-transparent',
+      item: 'uno-px-15px uno-py-6px uno-text-sm uno-font-Outfit uno-text-left uno-leading-[22px] hover:uno-bg-transparent before:hidden',
       content: 'uno-py-4px uno-bg-white uno-ring-1 uno-ring-gray-200 uno-rounded-xl uno-shadow-lg uno-min-w-[137px]'
     }" :content="{ align: 'end', side: 'bottom', sideOffset: 8 }" @select="changeLanguage">
         <div
@@ -18,7 +18,7 @@
         </div>
 
         <template #item="{ item }">
-            <div class="uno-w-full uno-flex uno-items-center uno-justify-start uno-cursor-pointer uno-transition-all"
+            <div class="uno-w-full uno-flex uno-items-center uno-justify-center uno-cursor-pointer uno-transition-all"
                 :class="language === item.value 
                     ? 'uno-text-[#009D77] uno-underline uno-decoration-[#009D77] uno-decoration-2 uno-underline-offset-4' 
                     : 'uno-text-[#000000] hover:uno-text-[#009D77] hover:uno-underline hover:uno-decoration-[#009D77] hover:uno-decoration-2 hover:uno-underline-offset-4'">
