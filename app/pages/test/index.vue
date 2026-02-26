@@ -63,7 +63,7 @@
         <div class="course-header md:!uno-w-[720px] md:!uno-max-w-[720px] uno-mx-auto ">
           <div class="course-nav">
             <div class="progress-percent">{{ 0 }}{{ $t('common.percentIcon') }}</div>
-            <div class="question-count">{{ $t('common.stepTotal', { current, total }) }}</div>
+            <div class="question-count">{{ $t('common.stepTotal', { current:currentStep, total:totalSteps }) }}</div>
 
           </div>
           <div class="course-progress">
@@ -145,7 +145,7 @@ import type { TestQuestion } from '~/types/TestQuestion'
 import { useQuestionsStore } from '~/stores/modules/questions'
 import Sad from '~/components/icons/Sad.vue'
 const questionsStore = useQuestionsStore()
-
+const { totalSteps, currentStep} = storeToRefs(questionsStore)
 definePageMeta({
   layoutShowFooter: false,
   title: () => 'seo.test.index.title',

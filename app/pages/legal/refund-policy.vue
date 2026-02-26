@@ -44,7 +44,8 @@ const { t } = useI18n()
 definePageMeta({
   layoutShowCurious: true,
   title: () => 'seo.legal.refund.title',
-  path: "/refund-policy"
+  path: "/refund-policy",
+    layoutShowPageTopIcons: false,
 })
 
 useSeoMeta({
