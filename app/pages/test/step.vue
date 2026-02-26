@@ -78,10 +78,14 @@
               </div>
             </div>
           </div>
-
-          <p
+          <!-- 错误提示 -->
+          <p v-if="showError" class="uno-mt-2 uno-text-sm uno-text-[#EA4C89] uno-text-center">
+            {{ $t('pages.test.index.notice') }}
+          </p>
+          <!-- 提示文本 -->
+          <p v-else
             class="uno-text-[#8D8E8F] uno-font-Outfit uno-text-sm uno-text-center uno-leading-[1.2] uno-mt-16px md:uno-mt-6">
-            {{
+            {{ 
               $t('pages.test.index.notice') }}</p>
         </div>
 
@@ -119,6 +123,7 @@ useSeoMeta({
   description: () => t('seo.test.index.description'),
 })
 const questions = ref<TestQuestion[]>([])
+const showError = ref(false)
 const prevStep = () => {
   if (questionsStore.currentStep > 1) {
     router.push(localePath({ name: 'test-step', query: { step: questionsStore.currentStep - 1 } }))
@@ -127,6 +132,14 @@ const prevStep = () => {
   }
 }
 const nextStep = () => {
+  // 验证是否所有问题都已回答
+  const allAnswered = questions.value.every(q => userAnswers.value[q.id] !== undefined)
+  if (!allAnswered) {
+    showError.value = true
+    return
+  }
+  
+  showError.value = false
   if (questionsStore.currentStep < totalSteps.value) {
     router.push(localePath({ name: 'test-step', query: { step: questionsStore.currentStep + 1 } }))
   } else {
@@ -135,6 +148,7 @@ const nextStep = () => {
 }
 const useAnswers = (q: TestQuestion, i: number) => {
   userAnswers.value[q.id] = i
+  showError.value = false
   // questionsStore.userAnswers[q.id] = i
 }
 

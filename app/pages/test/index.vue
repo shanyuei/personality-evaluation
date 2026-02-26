@@ -117,11 +117,14 @@
               </div>
             </div>
           </div>
-
+          <!-- 错误提示 -->
+          <p v-if="showError" class="uno-mt-2 uno-text-sm uno-text-[#EA4C89] uno-text-center">
+            {{ $t('pages.test.index.notice') }}
+          </p>
           <!-- 提示文本 -->
-          <p
+          <p v-else
             class="uno-text-[#8D8E8F] uno-font-Outfit uno-text-sm md:uno-text-16px uno-text-center uno-leading-[1.2] uno-mt-16px md:uno-mt-6">
-            {{
+            {{ 
               $t('pages.test.index.notice') }}</p>
         </div>
 
@@ -161,6 +164,7 @@ const questions = ref<TestQuestion[]>([])
 const allQuestions = ref<TestQuestion[]>([])
 const current = 0, total = ref(0)
 const selectedRatings = ref<Record<number, number>>({})
+const showError = ref(false)
 
 // 步骤数据
 const steps = ref([
@@ -237,6 +241,14 @@ getTestQuestions().then(res => {
   allQuestions.value = data.list
 })
 const nextStart = () => {
+  // 验证是否所有问题都已回答
+  const allAnswered = questions.value.every((_, index) => selectedRatings.value[index] !== undefined)
+  if (!allAnswered) {
+    showError.value = true
+    return
+  }
+  
+  showError.value = false
   questionsStore.currentStep = 2;
   questionsStore.setQuestions(allQuestions.value)
   // 保存用户的评分选择到 store
@@ -247,6 +259,7 @@ const nextStart = () => {
 
 const selectRating = (questionIndex: number, rating: number) => {
   selectedRatings.value[questionIndex] = rating;
+  showError.value = false
 }
 
 const selectStep = (stepId: number) => {
