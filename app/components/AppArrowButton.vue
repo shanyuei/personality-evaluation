@@ -1,5 +1,6 @@
 <template>
-  <component
+
+  <AppLink
     :is="to ? 'AppLink' : 'button'"
     :to="to"
     class="uno-group uno-inline-flex uno-items-center uno-justify-center uno-rounded-full uno-transition-all uno-duration-200 disabled:uno-opacity-50 disabled:uno-cursor-not-allowed"
@@ -19,7 +20,7 @@
       :style="{ width: typeof finalIconSize === 'number' ? finalIconSize + 'px' : finalIconSize, height: typeof finalIconSize === 'number' ? finalIconSize + 'px' : finalIconSize }"
       :class="['uno-transform uno-transition-transform group-hover:uno-rotate-45', 'uno-shrink-0', imgClass]"
     />
-  </component>
+  </AppLink>
 </template>
 
 <script setup lang="ts">
