@@ -12,18 +12,21 @@
 
       <div class="uno-flex  uno-w-full">
         <NuxtLink :to="localePath('/')" class="uno-w-[249px] uno-flex uno-items-center  max-sm:uno-hidden">
-          <NuxtImg src="/theme/logo.png" width="249" height="40" alt="logo" />
+          <img src="/theme/logo.png" alt="logo" width="249" height="60" />
         </NuxtLink>
         <NuxtLink :to="localePath('/')" class="uno-w-[152px]  uno-items-center uno-hidden max-sm:uno-flex">
           <NuxtImg src="/theme/logo-2.png" width="152" height="26" alt="logo" class="" />
         </NuxtLink>
 
-        <UNavigationMenu v-if="showMenu" :ui="{
-          link: 'before:bg-transparent font-Outfit text-center font-medium text-[16px] text-[#001813] data-[active]:text-[var(--color-pink-1)] hover:text-[var(--color-pink-1)]',
-          item: 'ml-[18px] mr-[18px]'
-        }" :items="itemsLocalized" class="uno-w-full uno-justify-center max-sm:uno-hidden" />
+
       </div>
 
+    </template>
+    <template #default>
+      <UNavigationMenu v-if="showMenu" :ui="{
+        link: 'before:bg-transparent font-Outfit text-center font-medium text-[16px] text-[#001813] data-[active]:text-[var(--color-pink-1)] hover:text-[var(--color-pink-1)]',
+        item: 'ml-[18px] mr-[18px]'
+      }" :items="itemsLocalized" class="uno-w-full uno-justify-center max-sm:uno-hidden" />
     </template>
 
     <template #right>

@@ -1,6 +1,6 @@
 <template>
     <!-- 首页 -->
-    <div class="uno-py-80px sm:uno-py-80px md:uno-py-80px lg:uno-py-80px">
+    <div class="uno-py-80px sm:uno-py-80px md:uno-py-128px">
         <!-- 第一块区域 -->
         <div
             class="page-container uno-relative uno-rounded-xl uno-border uno-border-transparent uno-px-4 sm:uno-px-6 md:uno-px-8">
@@ -27,7 +27,7 @@
             </div>
         </div>
         <!-- 第二块区域 hero -->
-        <div class="page-container uno-hero-section uno-w-full uno-my-40px sm:uno-my-12 ">
+        <div class="page-container uno-hero-section uno-w-full uno-my-40px sm:uno-my-12 md:uno-mt-128px">
             <div
                 class="uno-flex uno-justify-between uno-items-center uno-gap-2 sm:uno-gap-3 md:uno-gap-4 lg:uno-gap-6 xl:uno-gap-6">
                 <!-- 六个卡通人物头像 -->
@@ -106,7 +106,7 @@
                             <div
                                 class="uno-relative uno-inline-flex uno-w-full uno-flex uno-justify-center md:uno-justify-start">
                                 <AppArrowButton class="uno-pl-6 uno-pr-2 uno-py-2 uno-gap-3" :icon-size="44"
-                                    @click="handleCTAClick" hover-class="">
+                                    hover-class="" @click="handleCTAClick">
                                     <span class="uno-font-Outfit uno-font-medium uno-text-[16px]">{{
                                         $t('pages.home.cta') }}
                                     </span>
@@ -144,7 +144,7 @@
 
             <!-- How Does It Work 部分 -->
             <div
-                class="uno-flex uno-flex-col md:uno-flex-row uno-gap-48px sm:uno-gap-12 uno-items-center uno-pb-120px uno-pt-40px sm:uno-pt-120px">
+                class="uno-flex uno-flex-col md:uno-flex-row uno-gap-48px sm:uno-gap-12 uno-items-center uno-pb-120px uno-pt-40px sm:uno-pt-120px uno-pr-80px">
                 <!-- 左侧：标题、描述和按钮 -->
                 <div class="uno-w-full md:uno-w-1/2">
                     <div class="uno-flex uno-flex-col uno-items-center md:uno-items-start">
@@ -156,8 +156,8 @@
                         }}</p>
 
                         <AppArrowButton
-                            class="uno-m-t-12px sm:uno-m-t-16px md:uno-m-t-24px uno-gap-[6px] sm:uno-gap-[8px] md:uno-gap-[12px] uno-py-2 sm:uno-py-2 uno-pr-[6px] sm:uno-pr-[4px] md:uno-pr-[6px] uno-pl-[12px] sm:uno-pl-[16px] md:uno-pl-[24px] uno-text-[16px] sm:uno-text-[14px] md:uno-text-[16px] uno-font-Outfit uno-font-medium"
-                            @click="handleCTAClick" :icon-size="44" hover-class="">
+                            class="uno-m-t-12px sm:uno-m-t-16px md:uno-m-t-24px uno-gap-[6px] sm:uno-gap-[8px] md:uno-gap-[12px] uno-py-2 sm:uno-py-6px uno-pr-[6px] sm:uno-pr-[4px] md:uno-pr-[6px] uno-pl-[12px] sm:uno-pl-[16px] md:uno-pl-[24px] uno-text-[16px] sm:uno-text-[14px] md:uno-text-[16px] uno-font-Outfit uno-font-medium"
+                            :icon-size="44" hover-class="" @click="handleCTAClick">
                             {{ $t('pages.home.cta') }}
 
                         </AppArrowButton>

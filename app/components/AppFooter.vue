@@ -13,9 +13,10 @@
         bottom: 'p-t-0 uno-pb-32px uno-pt-22px',
       }">
         <template #left>
-          <div class="uno-flex uno-flex-col uno-w-[260px] sm:uno-w-210px">
+          <div class="uno-flex uno-flex-col uno-w-[260px] ">
             <!-- logo -->
-            <NuxtImg src="/theme/logo.png" alt="logo" width="175px" height="40px" />
+            <!-- <NuxtImg src="/theme/logo.png" alt="logo" width="249" height="60" /> -->
+             <img src="/theme/logo.png" alt="logo" width="249" height="60" />
             <!-- 介绍 -->
             <p class="uno-text-[#4E5255] uno-font-Outfit uno-text-[16px] uno-m-t-12px">
               {{ $t('common.footer.introduction') }}
