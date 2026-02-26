@@ -33,6 +33,9 @@ export const useQuestionsStore = defineStore('questions', () => {
         return questions.value.slice(start, end);
     }
 
+    const setUserAnswers = (value: Record<number, number>) => {
+        userAnswers.value = value;
+    }
 
 
     return {
@@ -44,6 +47,7 @@ export const useQuestionsStore = defineStore('questions', () => {
         userAnswers,
         setQuestions,
         getQuestionsByStep,
+        setUserAnswers,
     };
 }, {
      persist: {

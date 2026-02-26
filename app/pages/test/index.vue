@@ -105,9 +105,10 @@
 
                       <div class="uno-flex-1 uno-flex uno-justify-center uno-items-center">
                         <div
-                          class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px]   uno-border-solid  uno-border-2"
-                          :class="[i === 1 ? 'uno-bg-[#F4D0CB] uno-border-[#F6BAB2]' : i === 2 ? 'uno-bg-[#F1DACE] uno-border-[#F5CEB6]' : i === 3 ? 'uno-bg-[#F0F0F0] uno-border-[#D8D8D8]' : i === 4 ? 'uno-bg-[#C6EAD8] uno-border-[#9FE2AA]' : 'uno-bg-[#B3E1D6] uno-border-[#88D9BA]']">
-                          <IconsSad v-if="qi === 2" />
+                          class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px]   uno-border-solid  uno-border-2 uno-cursor-pointer hover:uno-transform hover:uno-scale-105 transition-transform"
+                          :class="[i === 1 ? 'uno-bg-[#F4D0CB] uno-border-[#F6BAB2]' : i === 2 ? 'uno-bg-[#F1DACE] uno-border-[#F5CEB6]' : i === 3 ? 'uno-bg-[#F0F0F0] uno-border-[#D8D8D8]' : i === 4 ? 'uno-bg-[#C6EAD8] uno-border-[#9FE2AA]' : 'uno-bg-[#B3E1D6] uno-border-[#88D9BA]']"
+                          @click="selectRating(qi, i)">
+                          <Sad v-if="selectedRatings[qi] === i" />
                         </div>
                       </div>
                     </div>
@@ -139,6 +140,7 @@ import PrimaryButton from '~/components/ui/PrimaryButton.vue'
 import { getTestQuestions } from '~/api/tests'
 import type { TestQuestion } from '~/types/TestQuestion'
 import { useQuestionsStore } from '~/stores/modules/questions'
+import Sad from '~/components/icons/Sad.vue'
 const questionsStore = useQuestionsStore()
 
 definePageMeta({
@@ -158,6 +160,7 @@ useSeoMeta({
 const questions = ref<TestQuestion[]>([])
 const allQuestions = ref<TestQuestion[]>([])
 const current = 0, total = ref(0)
+const selectedRatings = ref<Record<number, number>>({})
 
 // 步骤数据
 const steps = ref([
@@ -234,10 +237,23 @@ getTestQuestions().then(res => {
   allQuestions.value = data.list
 })
 const nextStart = () => {
-  questionsStore.currentStep = 1;
+  questionsStore.currentStep = 2;
   questionsStore.setQuestions(allQuestions.value)
-  // router.push(localePath({ name: 'test-start' }))
-  router.push(localePath('/test/step'))
+  // 保存用户的评分选择到 store
+  questionsStore.setUserAnswers(selectedRatings.value)
+  // 参考 step.vue 的跳转逻辑，使用命名路由
+  router.push(localePath({ name: 'test-step', query: { step: 2 } }))
+}
+
+const selectRating = (questionIndex: number, rating: number) => {
+  selectedRatings.value[questionIndex] = rating;
+}
+
+const selectStep = (stepId: number) => {
+  questionsStore.currentStep = stepId;
+  questionsStore.setQuestions(allQuestions.value)
+  // 参考 step.vue 的跳转逻辑，使用命名路由
+  router.push(localePath({ name: 'test-step', query: { step: stepId.toString() } }))
 }
 
 </script>

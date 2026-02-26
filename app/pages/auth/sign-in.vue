@@ -21,7 +21,7 @@
           </UFormField>
 
           <!-- Submit -->
-          <PrimaryButton :disabled="!canSubmit" @click="handleSignIn">
+          <PrimaryButton @click="handleSignIn">
             {{ $t('pages.auth.signIn.submit') }}
           </PrimaryButton>
         </UForm>
