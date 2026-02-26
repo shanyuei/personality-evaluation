@@ -39,10 +39,11 @@
             $t('pages.profile.totalScore') }}</h3>
           <div class="uno-mt-3 uno-space-y-3">
             <div v-for="bar in typeScores" :key="bar.label" class="uno-flex uno-items-center uno-gap-3">
+
               <span
                 class="uno-w-[28px] uno-h-[28px] uno-flex uno-justify-center uno-items-center uno-flex-col uno-gap-[8.75px] uno-py-[3.5px] uno-px-[11.37px] uno-bg-[#F0F0F0] uno-rounded-[14px] uno-overflow-hidden uno-text-[#4E5255] uno-text-[14px] uno-font-Outfit uno-font-medium uno-leading-normal">{{
                   bar.key }}</span>
-              <span class="uno-w-28 uno-text-sm uno-text-[#4E5255] uno-font-Outfit uno-leading-normal">{{ bar.value
+              <span class="uno-w-28 uno-text-sm uno-text-[#4E5255] uno-font-Outfit uno-leading-normal">{{ bar.name
               }}</span>
               <div class="uno-flex-1 uno-h-2 uno-rounded-full uno-bg-[var(--ui-input)]">
                 <div class="uno-h-2 uno-rounded-full"
@@ -50,6 +51,7 @@
               </div>
               <span class="uno-text-[#4E5255] uno-text-sm uno-font-Outfit uno-leading-normal">{{ bar.value
               }}%</span>
+
             </div>
             <!-- <div class="uno-h-[2px] uno-bg-[#4E5255]"></div> -->
           </div>
@@ -74,8 +76,7 @@
       <section
         class="uno-mt-4 uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)]">
         <div class="uno-p-6 md:uno-p-8">
-          <h2
-            class="uno-text-[#011813] uno-text-2xl uno-font-Outfit uno-font-semibold uno-leading-[1.2] uno-mb-24px">
+          <h2 class="uno-text-[#011813] uno-text-2xl uno-font-Outfit uno-font-semibold uno-leading-[1.2] uno-mb-24px">
             {{
               profile?.characteristics?.core?.title }}</h2>
           <div class="uno-grid uno-gap-6 md:uno-grid-cols-2">
@@ -114,8 +115,8 @@
         class="uno-mt-6 uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)]">
         <div class="uno-p-6 md:uno-p-8 uno-space-y-4">
           <h2 class="uno-text-[#011813] uno-text-2xl uno-font-Outfit uno-font-semibold uno-leading-[1.2]">{{
-            profile.conclusion.title }}</h2>
-          <p class="uno-text-[#4E5255] uno-text-sm uno-font-Outfit uno-leading-normal">{{ profile.conclusion.text }}
+            profile?.conclusion?.title }}</h2>
+          <p class="uno-text-[#4E5255] uno-text-sm uno-font-Outfit uno-leading-normal">{{ profile?.conclusion?.text }}
           </p>
         </div>
       </section>
@@ -179,7 +180,8 @@ definePageMeta({
 })
 const name = 'liyangzhi'
 const { t } = useI18n()
-
+const token = useCookie('token')
+token.value = 'el0wBwD18J9X6mcKWSOP3Z9QhHTpGKok9OVXkcBjIvUgHceyDQcGNGhlV44a'
 useSeoMeta({
   title: () => t('seo.profile.detail.title'),
   description: () => t('seo.profile.detail.description'),
@@ -246,15 +248,16 @@ const faqItems = [
 ]
 getUserTestInfo().then(res => {
   console.log(res.data.value.data)
-  profile.value = res.data.value.data.profile;
-  const percentages = res.data.value.data.percentages
-  typeScores.value = Object.entries(res.data.value.data.type_scores).map(([key, value]) => ({
-    label: key,
-    key: Number(key),
-    value,
-    percentage: percentages[key]
-  })).sort((a, b) => b.percentage - a.percentage);
-  console.log(typeScores.value)
+  profile.value = res.data.value.data.profile || {};
+  const percentages = res.data.value.data.percentages || {}
+  // const typeScoresData = res.data.value.data.type_scores || {}
+  typeScores.value = percentages.map((item) => {
+    return {
+      ...item,
+      key: Number(item.type),
+      value: Number(item.percent)
+    }
+  }).sort((a, b) => b.percent - a.percent);
 })
 </script>
 

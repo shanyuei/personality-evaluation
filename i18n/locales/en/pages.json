@@ -109,6 +109,7 @@
       "description": "Securely access your account.",
       "passwordLabel": "Password",
       "passwordPlaceholder": "Enter your password",
+      "emailPlaceholder": "Enter your email address",
       "submit": "Continue",
       "noAccount": "Don't have an account?",
       "signUp": "Sign Up"

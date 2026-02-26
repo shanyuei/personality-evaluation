@@ -27,7 +27,7 @@
       </p>
       <AppArrowButton
         class="uno-relative uno-z-10 uno-min-w-175px md:uno-min-w-190px uno-h-66px uno-justify-start uno-gap-[6px] sm:uno-gap-[8px] md:uno-gap-[12px] uno-py-2 sm:uno-py-2 uno-pr-[6px]  md:uno-pr-[6px] uno-pl-[12px] sm:uno-pl-[16px] md:uno-pl-[16px] uno-text-[12px] sm:uno-text-[14px] md:uno-text-[18px] uno-font-Outfit uno-font-medium"
-        :icon-size="44" hover-class="">
+        :icon-size="44" hover-class="" :to="localePath('/free-personality-test')">
         <div class="w-[calc(100%-44px)] text-center uno-text-16px">
           {{ props.buttonText || curious.buttonText }}
         </div>
@@ -39,6 +39,9 @@
 
 <script setup lang="ts">
 import { useCurious } from '~/composables/useCurious';
+import { useLocalePath } from '#i18n';
+
+const localePath = useLocalePath();
 
 interface Props {
   title?: string;

@@ -33,7 +33,7 @@
       <template v-if="showMenu">
         <!-- 未登录状态 -->
         <AppArrowButton v-if="!token" preset="header" class="max-sm:uno-hidden uno-font-Outfit uno-font-medium"
-          :to="localePath('/auth/sign-in')">
+          :to="localePath('/free-personality-test')">
           {{ $t('common.getStarted') }}
         </AppArrowButton>
 

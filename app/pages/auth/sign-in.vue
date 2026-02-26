@@ -10,7 +10,7 @@
         <UForm :state="{ email, password }" class="uno-space-y-6">
           <!-- Email -->
           <UFormField :label="$t('pages.account.settings.profile.email')" :ui="UFormFieldTheme">
-            <UInput v-model="email" type="email" placeholder=" e.g., alex@example.com"
+            <UInput v-model="email" type="email" :placeholder="$t('pages.auth.signIn.emailPlaceholder')"
               :ui="UInputTheme" />
           </UFormField>
 
@@ -27,12 +27,12 @@
         </UForm>
 
         <!-- Sign Up Link -->
-        <div class="uno-flex uno-items-center uno-justify-between uno-mt-6">
+        <!-- <div class="uno-flex uno-items-center uno-justify-between uno-mt-6">
           <p class="uno-text-[#323233] uno-text-sm uno-font-Outfit">{{ $t('pages.auth.signIn.noAccount') }}</p>
           <AppLink :to="'/auth/sign-up'"
             class="uno-text-[#323233] hover:uno-text-[#4E5255] uno-text-sm uno-font-Outfit uno-underline uno-underline-offset-4">
             {{ $t('pages.auth.signIn.signUp') }}</AppLink>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
