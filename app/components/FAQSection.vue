@@ -8,13 +8,13 @@
       </div>
 
 
-      <div class="uno-max-w-3xl uno-w-full uno-mx-auto">
+      <div class="uno-max-w-3xl uno-w-full uno-mx-auto uno-flex uno-flex-col uno-gap-6">
         <div v-for="(item, idx) in localItems" :key="idx"
-          class="uno-w-full uno-rounded-lg uno-mb-4 uno-overflow-hidden uno-transition-shadow uno-relative"
+          class="uno-w-full uno-rounded-lg  uno-overflow-hidden uno-transition-shadow uno-relative"
           :class="isExpanded(idx) ? 'item-expanded' : 'item-collapsed'">
           <div v-if="isExpanded(idx)" aria-hidden="true"
-            style="flex: none; background: linear-gradient(90deg, rgba(234,76,137,0.12) 0%, rgba(0,157,119,0.38) 49%, rgba(147,46,250,0.12) 100%); left: 0; right: 0; margin: 0 auto; pointer-events: none;"
-            class="uno-hidden md:uno-block uno-w-full uno-h-[160px] uno-rounded-[48px] uno-shadow-[blur(48px)] uno-absolute" />
+            style="flex: none; background-image: url('/images/footer/faq-bg.png');background-repeat: round; width: 100%; height: 100%;top:-10px; left: 0; right: 0; margin: 0 auto; pointer-events: none;"
+            class=" uno-absolute" />
           <div v-if="isExpanded(idx)">
             <!-- background: linear-gradient(90deg, rgba(234,76,137,0.12) 0%, rgba(0,157,119,0.38) 49%, rgba(147,46,250,0.12) 100%); -->
             <div class="uno-flex uno-justify-start uno-items-start uno-flex-col uno-relative">
