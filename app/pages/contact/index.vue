@@ -4,11 +4,11 @@
     <div class="page-container">
 
       <div
-        class="uno-flex uno-flex-col md:uno-flex-row md:uno-justify-between uno-flex-wrap uno-gap-20px  uno-relative">
+        class="uno-flex uno-flex-col md:uno-flex-row md:uno-justify-between uno-flex-wrap uno-gap-20px uno-pt-60px md:uno-pt-0 uno-relative">
         <NuxtImg src="/images/about/icon-1.png" alt="decor"
           class="uno-absolute uno-left-1/2 uno--translate-x-1/2 uno-top-0 uno-w-47px uno-h-36px" />
         <!-- 左侧内容 -->
-        <div class="uno-w-[740px]">
+        <div class="uno-w-full sm:uno-w-[740px]">
           <h1
             class="uno-text-[#011813] uno-text-5xl sm:uno-text-6xl md:uno-text-[72px] uno-font-Outfit uno-font-[600] uno-mb-6 uno-leading-[1.2]">
             <!-- Contact Us -->
@@ -74,7 +74,7 @@
       </div>
 
       <!-- FAQ Section -->
-      <div class="uno-mt-24">
+      <div >
         <FAQSection :title="t('pages.contact.faqTitle')" :description="t('pages.contact.faqDesc')" :items="faqItems"
           :accordion="true" :default-expanded-index="0" />
       </div>

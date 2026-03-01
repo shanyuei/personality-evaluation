@@ -1,0 +1,197 @@
+{
+    "404": {
+        "title": "页面未找到 {separator} PersonalityTest101 – 让我们回到正轨",
+        "description": "看起来这条自我发现的道路出现了意外的转折。无论您是迷路了还是在寻找您的九型人格结果，让 PersonalityTest101 团队引导您回到个人成长之旅。"
+    },
+    "contact": {
+        "title": "联系我们 {separator} PersonalityTest101 – 我们随时为您提供帮助",
+        "description": "对我们的性格测试有疑问或需要帮助？联系 PersonalityTest101 团队以获取协助、反馈或合作机会。我们很高兴听到您的声音。"
+    },
+    "test": {
+        "index": {
+            "title": "免费性格测试 {separator} PersonalityTest101 – 发现您的真实自我",
+            "description": "参加我们的免费性格测试，以发现您的独特特质和优势。深入了解您的性格类型，并了解如何在生活和职业中释放您的全部潜力。今天就开始您的 PersonalityTest101 之旅。"
+        },
+        "analyzing": {
+            "title": "分析进行中 {separator} PersonalityTest101 – 解码您的独特特质",
+            "description": "元描述我们的系统正在解码您的回复，以生成精确的性格档案。发现您行为背后的科学，并深入了解您的核心特质和潜力。"
+        },
+        "report": {
+            "title": "您的性格报告 {separator} PersonalityTest101 – 专家洞察",
+            "description": "您的性格档案已准备就绪。探索您特质背后的科学，解锁深入的行为洞察，并获得针对您个人和职业成长的量身定制的路线图。"
+        },
+        "finish": {
+            "title": "分析进行中 {separator} PersonalityTest101 – 解码您的特质",
+            "description": "我们的系统正在解码您的回复，以生成精确的性格档案。发现您行为背后的科学，并深入了解您的核心潜力。"
+        }
+    },
+    "about": {
+        "title": "关于我们 {separator} PersonalityTest101 – 我们的自我发现使命",
+        "description": "发现 PersonalityTest101 背后的故事。我们将心理精准度与数据驱动的洞察相结合，帮助个人发现他们的核心特质、改善人际关系并实现个人成长。了解更多关于我们的使命和愿景。"
+    },
+    "auth.signIn": {
+        "title": "登录 - 访问您的账户",
+        "description": "登录您的账户以访问个性化功能。"
+    },
+    "orders": {
+        "cancelSubscription": {
+            "title": "取消订阅 {separator} PersonalityTest101 – 管理您的账户",
+            "description": "轻松管理或取消您的 PersonalityTest101 订阅。我们很遗憾看到您离开，但您可以随时通过我们的安全门户停用您的账户或更改您的计划。"
+        },
+        "purchaseComplete": {
+            "title": "付款成功 {separator} PersonalityTest101 - 开始您的成长之旅",
+            "description": "感谢您的购买！您的优质性格分析和自尊指南已准备就绪。现在就在 PersonalityTest101 上访问您的洞察。"
+        },
+        "create": {
+            "title": "安全结账 {separator} PersonalityTest101 – 开始您的 7 天试用",
+            "description": "仅需 1.99 美元即可解锁无限性格报告。今天就开始您的 7 天试用，并深入了解您的优势和行为模式。由 SSL 支持的安全付款。"
+        }
+    },
+    "faq": {
+        "title": "隐私与帮助中心 {separator} PersonalityTest101 - 您的数据安全",
+        "description": "找到关于 PersonalityTest101 的常见问题的答案。了解我们如何使用您的评估数据、我们的数据共享政策，以及如何管理您的 cookie 以获得安全的体验。"
+    },
+    "pricing": {
+        "title": "实惠的定价计划 {separator} PersonalityTest101 - 释放您的潜力",
+        "description": "为您的自我发现之旅选择完美的计划。从仅需 14 美元/月起获得优质性格报告、职业蓝图和成长工具包。安全且经过科学验证。"
+    },
+    "legal":{
+        "privacy":{
+            "title": "隐私政策 {separator} PersonalityTest101 - 您的数据安全很重要",
+            "description": "阅读我们的隐私政策，了解 PersonalityTest101 如何收集、保护和管理您的个人数据和评估结果。致力于您的隐私和安全。"
+        },
+        "terms":{
+            "title": "性格测试 101 – 使用条款、订阅和退款政策",
+            "description": "阅读性格测试 101 的完整使用条款和购买。了解订阅、数字内容使用、AI 工具、退款、取消以及您作为用户的权利。保持知情并安全地享受我们的性格测试。"
+        },
+        "refund":{
+            "title": "退款与取消政策 {separator} 性格测试 101",
+            "description": "了解性格测试 101 的退款和取消政策。了解订阅类型、退款资格，以及您在 14 天内取消数字内容的权利。个性化报告即时交付，我们友好的支持团队随时为您提供帮助。"
+        }
+    },
+
+    "account.settings": {
+        "title": "账户设置 {separator} 管理个人资料、安全和语言偏好",
+        "description": "管理您的账户设置、更新个人信息、更改密码、选择您的首选语言或安全地删除您的账户。"
+    },
+
+
+    "home": {
+        "title": "通过专家课程和工具解锁知识和成长。",
+        "description": "一个卓越的职业发展平台。当前的课程、熟练的讲师和实践学习确实令人满意。"
+    },
+    "test.start": {
+        "title": "开始性格测试 - 开始您的旅程",
+        "description": "准备好发现您的真实自我了吗？现在就开始您的性格测试。"
+    },
+    "test.step": {
+        "title": "性格测试 - 问题",
+        "description": "回答问题以揭示您的性格特质。"
+    },
+    "test.analyzing": {
+        "title": "分析您的性格 - 请稍候",
+        "description": "我们正在分析您的回复以生成您的个性化报告。"
+    },
+    "test.result": {
+        "title": "您的性格结果 - 洞察和成长",
+        "description": "查看您的详细性格分析和个性化洞察。"
+    },
+    "ebooks": {
+        "title": "电子书 - 专家知识和资源",
+        "description": "探索我们关于个人发展和职业成长的专家制作电子书收藏。"
+    },
+    "ebooks.detail": {
+        "title": "电子书详情 - 深入学习资源",
+        "description": "访问关于此专家电子书的详细信息。"
+    },
+    "profile": {
+        "title": "您的个人资料 - 个人仪表板",
+        "description": "管理您的个人资料并访问您的测试结果和学习材料。"
+    },
+    "profile.detail": {
+        "title": "个人资料详情 - 更新您的信息",
+        "description": "查看和更新您的个人信息和偏好。"
+    },
+    "tests": {
+        "title": "测试 - 探索可用评估",
+        "description": "浏览我们的性格和职业评估选择。"
+    },
+    "blog": {
+        "title": "博客 - 最新洞察和文章",
+        "description": "阅读我们关于个人发展、职业成长和行业趋势的最新文章。"
+    },
+    "blog.category": {
+        "title": "博客类别 - 按主题分类的文章",
+        "description": "查看此博客类别中的文章。"
+    },
+    "blog.slug": {
+        "title": "博客文章 - 详细文章",
+        "description": "阅读这篇关于个人发展的深入文章。"
+    },
+    "userCourse": {
+        "title": "用户课程 - 个性化学习",
+        "description": "访问您注册的课程并跟踪您的学习进度。"
+    },
+    "userCourse.chapters": {
+        "title": "课程章节 - 学习模块",
+        "description": "浏览课程章节和课程。"
+    },
+    "userCourse.lesson": {
+        "title": "课程课程 - 互动学习",
+        "description": "参与课程内容并完成课程活动。"
+    },
+    "userCourse.lessonComplete": {
+        "title": "课程完成 - 恭喜！",
+        "description": "您已成功完成此课程。"
+    },
+    "userCourse.chapterComplete": {
+        "title": "章节完成 - 做得好！",
+        "description": "您已完成此章节。继续下一个。"
+    },
+    "userCourse.test": {
+        "title": "课程测试 - 评估您的知识",
+        "description": "参加此测试以评估您对课程材料的理解。"
+    },
+    "userCourse.testComplete": {
+        "title": "课程测试完成 - 结果",
+        "description": "查看您的测试结果和反馈。"
+    },
+    "userCourse.lessonGuide": {
+        "title": "课程指南 - 学习目标",
+        "description": "回顾此课程的学习目标。"
+    },
+    "orders.cancelSubscription": {
+        "title": "取消订阅 - 管理会员资格",
+        "description": "取消您的订阅并管理您的会员资格设置。"
+    },
+    "orders.purchaseComplete": {
+        "title": "购买完成 - 谢谢！",
+        "description": "您的购买已成功处理。"
+    },
+    "courses": {
+        "title": "课程 - 专家学习资源",
+        "description": "探索我们为个人和职业成长提供的专家主导课程收藏。"
+    },
+
+    "mentors": {
+        "title": "导师 - 专家指导",
+        "description": "与专家导师联系，获取个性化指导和支持。"
+    },
+    "routeGuide": {
+        "title": "路线指南 - 平台导航",
+        "description": "了解如何导航我们的平台并访问所有功能。"
+    },
+    "auth": {
+        "title": "身份验证 - 安全访问",
+        "description": "通过我们的身份验证系统安全地访问您的账户。",
+        "signIn": {
+            "title": "登录 | PersonalityTest101 - 访问您的报告",
+            "description": "登录 PersonalityTest101 以访问您的专业性格报告、跟踪您的成长并解锁职业洞察。安全且轻松访问。"
+        }
+    },
+    "account": {
+        "title": "账户管理 - 设置和偏好",
+        "description": "管理您的账户设置和偏好。"
+    }
+    
+}

@@ -66,8 +66,8 @@
 
                       <div class="uno-flex-1 uno-flex uno-justify-center uno-items-center">
                         <div
-                          class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px]   uno-border-solid  uno-border-2"
-                          :class="[i === 1 ? 'uno-bg-[#F4D0CB] uno-border-[#F6BAB2]' : i === 2 ? 'uno-bg-[#F1DACE] uno-border-[#F5CEB6]' : i === 3 ? 'uno-bg-[#F0F0F0] uno-border-[#D8D8D8]' : i === 4 ? 'uno-bg-[#C6EAD8] uno-border-[#9FE2AA]' : 'uno-bg-[#B3E1D6] uno-border-[#88D9BA]']"
+                          class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px]"
+                          :class="[i === 1 ? 'uno-bg-[#F4D0CB]' : i === 2 ? 'uno-bg-[#F1DACE]' : i === 3 ? 'uno-bg-[#F0F0F0]' : i === 4 ? 'uno-bg-[#C6EAD8]' : 'uno-bg-[#B3E1D6]', userAnswers[q.id] === i ? '' : 'uno-border-solid uno-border-2' , userAnswers[q.id] === i ? '' : i === 1 ? 'uno-border-[#F6BAB2]' : i === 2 ? 'uno-border-[#F5CEB6]' : i === 3 ? 'uno-border-[#D8D8D8]' : i === 4 ? 'uno-border-[#9FE2AA]' : 'uno-border-[#88D9BA]']"
                           @click="useAnswers(q, i)">
                           <IconsSad v-if="userAnswers[q.id] === i" />
                         </div>

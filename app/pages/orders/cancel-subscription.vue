@@ -102,7 +102,7 @@
             <!-- Are you sure you want to cancel your subscription? You will lose access to your data and this action
             <span class="uno-font-Outfit uno-font-bold uno-text-[16px] uno-leading-[150%]">can't be undone!</span> -->
           </p>
-          <div class="uno-flex uno-flex-col sm:uno-flex-row uno-gap-4 uno-justify-center">
+          <div class="uno-flex uno-flex-col-reverse sm:uno-flex-row uno-gap-4 uno-justify-center">
             <button
               class="uno-w-full uno-h-[40px] uno-gap-2 uno-pt-2 uno-pr-6 uno-pb-2 uno-pl-6 uno-rounded-[8px] uno-bg-gray-300 uno-text-[#0F172A] uno-font-Outfit uno-font-medium uno-text-[16px] uno-leading-[150%] uno-transition-colors hover:uno-bg-gray-400 focus-visible:uno-outline-none focus-visible:uno-ring-0 sm:uno-w-[160px] sm:uno-h-[40px] uno-order-2 sm:uno-order-1"
               @click="showConfirmModal = false">

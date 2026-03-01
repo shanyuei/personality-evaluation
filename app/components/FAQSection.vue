@@ -1,5 +1,5 @@
 <template>
-  <div class="page-container uno-faq-section uno-pt-120px sm:uno-pt-120px md:uno-pt-120px">
+  <div class="page-container uno-faq-section uno-pt-60px sm:uno-pt-120px md:uno-pt-120px">
     <div class=" uno-w-full md:uno-mx-auto md:uno-max-w-[80%] ">
       <div class="uno-text-center uno-mb-8 sm:uno-mb-56px uno-max-w-3xl uno-mx-auto">
         <h2 class="uno-text-[#011813] uno-text-[32px] md:uno-text-[48px] uno-font-Outfit uno-font-[600] uno-mb-3">{{ title }}</h2>

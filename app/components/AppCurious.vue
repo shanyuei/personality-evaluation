@@ -1,10 +1,10 @@
 <template>
   <div
-    class="uno-max-w-[100vw] uno-overflow-hidden uno-gradient-cta-section uno-relative uno-w-full uno-flex uno-items-center uno-justify-center uno-mb-60px uno-relative uno-whitespace-pre-line">
+    class="uno-max-w-[100vw] uno-overflow-hidden uno-gradient-cta-section uno-relative uno-w-full uno-flex uno-items-center uno-justify-center uno-mb-40px sm:uno-mb-60px uno-relative uno-whitespace-pre-line uno-h-[538px] sm:uno-h-auto">
     <!-- 内容 -->
     <!-- 背景 -->
     <div v-if="$device.isMobile" class="uno-w-438px uno-h-534px uno-absolute  uno--z-10 "
-      style="background-image: url(/images/footer/curious-h5-bg.png);"></div>
+      style="background-image: url(/images/footer/curious-h5-bg.png); background-size: 110% 100%; background-position-x: center;"></div>
     <div v-else class="uno-w-1300px uno-h-483px uno-absolute  uno--z-10 "
       style="background-image: url(/images/footer/curious-pc-bg.png); background-size: cover;"></div>
     <!-- <NuxtImg src="/images/footer/curious-h5-bg.png" alt="" aria-hidden="true" width="438px" height="534px"
@@ -14,7 +14,7 @@
       class="uno-absolute  uno--z-10 uno-pointer-events-none uno-object-cover uno-object-center uno-hidden md:uno-block"
       uno-preload /> -->
     <div
-      class="page-container uno-relative uno-z-10 uno-flex uno-flex-col uno-items-center uno-justify-center uno-rounded-[32px] sm:uno-rounded-[48px] uno-w-[342px] sm:uno-w-full md:uno-max-w-[1200px] uno-h-[438px] sm:uno-h-auto md:uno-h-auto uno-px-0 sm:uno-px-8 md:uno-px-12 lg:uno-px-24 uno-py-12 sm:uno-py-16 md:uno-py-20">
+      class="page-container uno-relative uno-z-10 uno-flex uno-flex-col uno-items-center uno-justify-center uno-rounded-[32px] sm:uno-rounded-[48px] uno-w-full sm:uno-w-full md:uno-max-w-[1200px] uno-h-[auto] sm:uno-h-auto md:uno-h-auto uno-px-0 sm:uno-px-8 md:uno-px-12 lg:uno-px-24 uno-py-12 sm:uno-py-16 md:uno-py-20">
 
       <h2
         class="uno-w-80% uno-text-[#0F172A] uno-relative uno-z-10 uno-font-Outfit uno-font-[600] uno-text-[32px] sm:uno-text-[48px] uno-mb-12px uno-text-center">
@@ -26,7 +26,7 @@
         {{ props.description || curious.description }}
       </p>
       <AppArrowButton
-        class="uno-relative uno-z-10 uno-min-w-175px md:uno-min-w-190px uno-h-66px uno-justify-start uno-gap-[6px] sm:uno-gap-[8px] md:uno-gap-[12px] uno-py-2 sm:uno-py-2 uno-pr-[6px]  md:uno-pr-[6px] uno-pl-[12px] sm:uno-pl-[16px] md:uno-pl-[16px] uno-text-[12px] sm:uno-text-[14px] md:uno-text-[18px] uno-font-Outfit uno-font-medium"
+        class="uno-relative uno-z-10 uno-min-w-175px md:uno-min-w-190px uno-h-[56px] sm:uno-h-66px uno-justify-start uno-gap-[6px] sm:uno-gap-[8px] md:uno-gap-[12px] uno-py-2 sm:uno-py-2 uno-pr-[6px]  md:uno-pr-[6px] uno-pl-[12px] sm:uno-pl-[16px] md:uno-pl-[16px] uno-text-[12px] sm:uno-text-[14px] md:uno-text-[18px] uno-font-Outfit uno-font-medium"
         :icon-size="44" hover-class="" :to="localePath('/free-personality-test')">
         <div class="w-[calc(100%-44px)] text-center uno-text-16px">
           {{ props.buttonText || curious.buttonText }}

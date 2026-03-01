@@ -41,7 +41,7 @@
 
         <template #default>
           <!-- 导航 -->
-          <div class="uno-grid uno-grid-cols-3 uno-gap-[64px] sm:uno-gap-80px uno-mb-32px w-full">
+          <div class="uno-grid uno-grid-cols-2 sm:uno-grid-cols-3 uno-gap-y-32px uno-gap-x-[64px] sm:uno-gap-80px uno-mb-32px w-full">
             <div>
               <h3 class="uno-text-[#011813] uno-text-2xl uno-font-Outfit uno-font-semibold uno-mb-16px">
                 {{ $t('common.footer.product') }}

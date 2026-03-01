@@ -238,7 +238,7 @@
       "desc": "Generating your comprehensive personality profile based on your unique responses..."
     },
     "report": {
-      "title": "Your Full Personality Report is Ready!",
+      "title": "Discover Your Personality Report",
       "subtitle": "Our analysis has successfully decoded your unique behavioral patterns. Gain the clarity you need to navigate your career and personal life with confidence.",
       "features": {
         "identity": {
@@ -263,7 +263,7 @@
       },
       "receive": {
         "title": " Pathways to Personal Excellence",
-        "subtitle": "Be always were to from of volunteers range times to mildcastingoppositehe its nor attribute how solitary saw more on his not",
+        "subtitle": "Access a science-based breakdown of your core traits and actionable strategies for personal growth.",
         "card1": {
           "title": "Comprehensive Personality Report ",
           "desc": "An in-depth analysis that decodes your unique personality architecture and behavioral drivers."
@@ -311,6 +311,11 @@
         }
       },
       "cta_full": {
+        "title": "Unlock Your Full Potential",
+        "access": "7-day full access",
+        "price": "HK$14.95",
+        "btn": "Get My Results",
+        "note": "7-day trial for $1.99, auto-renews at $27.88/mo. Cancel anytime.",
         "list": {
           "1": "Unlock 50+ Premium Personality Assessments",
           "2": "Deep Evidence-Based Psychological Insights",
@@ -340,13 +345,13 @@
   "orders": {
     "cancel": {
       "subscription": {
-        "title": "Cancel Subscription",
+        "title": "Cancel My Subscription",
         "description": " To initiate the cancellation process, please enter the email address associated with your account.",
         "emailLabel": "Email",
         "emailPlaceholder": "Email Address",
-        "emailError": "Please enter your email address to continue",
+        "emailError": "Please enter your email address to continue.",
         "reasonDifficult": "The insights did not meet my personal expectations.",
-        "reasonTitle": "Why did you decide to cancel your subscription?",
+        "reasonTitle": "What’s the main reason for cancelling?",
         "reasonMissing": "I have achieved my current self-discovery goals.",
         "reasonTechnical": "The reporting depth was insufficient for my needs.",
         "reasonSwitching": "I encountered technical issues during the assessment.",
@@ -366,13 +371,13 @@
     },
     "purchaseComplete": {
       "title": "Unlock Your Potential",
-      "description": "Your assessment results are prepared.",
+      "description": "Your assessment results are prepared!",
       "accessReport": "Open Report",
       "downloadGuidebook": "Download Guidebook",
-      "accessNote": "Click below to download your guidebook!",
-      "btn2": "Self-Esteem Blueprint ",
+      "accessNote": "Your guidebook is ready. Download it below!",
+      "btn2": "Download my Report",
       "goHome": "Back to Home",
-      "btn1": "Reveal My Profile"
+      "btn1": "Open My Report"
     },
     "create": {
       "title": "Unlock All Reports",
@@ -770,8 +775,8 @@
         "body": "Start with techniques like NPV and ROE to understand how to evaluate opportunities."
       }
     },
-    "ctaPrimary": "Get Started",
-    "ctaSecondary": "Get Started",
+    "ctaPrimary": "Take another test",
+    "ctaSecondary": "View Courses",
     "disclaimer": "Taking our test should not be viewed as a comprehensive or precise evaluation of your personality and mental well-being."
   },
   "userCourseChapters": {

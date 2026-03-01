@@ -1,6 +1,6 @@
 <template>
     <!-- 首页 -->
-    <div class="uno-py-80px sm:uno-py-80px md:uno-py-128px">
+    <div class="uno-py-80px uno-pb-0 sm:uno-py-80px md:uno-py-128px">
         <!-- 第一块区域 -->
         <div
             class="page-container uno-relative uno-rounded-xl uno-border uno-border-transparent uno-px-4 sm:uno-px-6 md:uno-px-8">
@@ -133,7 +133,7 @@
                         <NuxtImg v-else :src="card.icon" :alt="card.alt" width="56" height="56" class="uno-mb-12px" />
 
                         <h3
-                            class="uno-font-Outfit uno-font-semibold uno-text-[26px] uno-leading-[124%] uno-tracking-[0%] sm:uno-text-lg md:uno-text-[32px] uno-mb-2 sm:uno-mb-3">
+                            class="uno-font-Outfit uno-font-700 uno-text-[26px] uno-leading-[124%] uno-tracking-[0%] sm:uno-text-lg md:uno-text-[32px] uno-mb-2 sm:uno-mb-3">
                             {{ card.titleKey }}</h3>
                         <p
                             class="uno-text-gray-600 uno-font-Outfit uno-font-normal uno-text-[16px] uno-leading-[150%] uno-tracking-[0%] sm:uno-text-sm md:uno-text-base">
@@ -144,16 +144,17 @@
 
             <!-- How Does It Work 部分 -->
             <div
-                class="uno-flex uno-flex-col md:uno-flex-row uno-gap-48px sm:uno-gap-12 uno-items-center uno-pb-120px uno-pt-40px sm:uno-pt-120px uno-pr-80px">
+                class="uno-flex uno-flex-col md:uno-flex-row uno-gap-48px sm:uno-gap-12 uno-items-center uno-pb-120px uno-pt-40px sm:uno-pt-120px md:uno-pr-80px">
                 <!-- 左侧：标题、描述和按钮 -->
                 <div class="uno-w-full md:uno-w-1/2">
                     <div class="uno-flex uno-flex-col uno-items-center md:uno-items-start">
                         <h2
-                            class="uno-text-[32px] sm:uno-text-[48px] md:uno-text-[48px] uno-font-Outfit uno-font-semibold uno-mb-6 sm:uno-mb-8">
+                            class="uno-text-[32px] sm:uno-text-[48px] md:uno-text-[48px] uno-font-Outfit uno-font-semibold uno-mb-6 sm:uno-mb-8 uno-text-center md:uno-text-left">
                             {{ $t('pages.home.how.title') }}
                         </h2>
-                        <p class="uno-text-gray-600 uno-mb-8 sm:uno-mb-12 md:uno-text-left">{{ $t('pages.home.how.desc')
-                        }}</p>
+                        <p class="uno-text-gray-600 uno-mb-8 sm:uno-mb-12 uno-text-center md:uno-text-left">{{
+                            $t('pages.home.how.desc')
+                            }}</p>
 
                         <AppArrowButton
                             class="uno-m-t-12px sm:uno-m-t-16px md:uno-m-t-24px uno-gap-[6px] sm:uno-gap-[8px] md:uno-gap-[12px] uno-py-2 sm:uno-py-6px uno-pr-[6px] sm:uno-pr-[4px] md:uno-pr-[6px] uno-pl-[12px] sm:uno-pl-[16px] md:uno-pl-[24px] uno-text-[16px] sm:uno-text-[14px] md:uno-text-[16px] uno-font-Outfit uno-font-medium"
@@ -171,7 +172,7 @@
                         <div v-for="(item, index) in howSteps" :key="index" style="flex-shrink: 0"
                             class="uno-w-full uno-flex uno-justify-start uno-items-center uno-flex-row uno-gap-[12px] sm:uno-gap-[12px] uno-py-16px sm:uno-py-24px uno-px-16px sm:uno-px-24px uno-bg-[#FFFFFF] uno-rounded-2xl uno-shadow-[0_20px_40px_0_rgba(0,157,119,0.08)] uno-border uno-border-solid uno-border-[#F0F0F0]">
                             <div style="flex: none"
-                                class="uno-w-[64px] uno-h-[64px] sm:uno-w-[64px] sm:uno-h-[64px] uno-flex uno-justify-center uno-items-center  uno-rounded-[24px] sm:uno-rounded-[50px] uno-flex uno-items-center uno-justify-center"
+                                class="uno-w-[64px] uno-h-[64px] sm:uno-w-[64px] sm:uno-h-[64px] uno-flex uno-justify-center uno-items-center  uno-rounded-[50px] sm:uno-rounded-[50px] uno-flex uno-items-center uno-justify-center"
                                 :class="item.bgClass">
                                 <span
                                     class="uno-text-3xl sm:uno-text-[36px] uno-font-Outfit uno-font-semibold uno-mb-[6px]"
@@ -179,7 +180,7 @@
                             </div>
                             <div class="uno-flex uno-justify-start uno-items-start uno-flex-col uno-gap-1 sm:uno-gap-2">
                                 <p
-                                    class="uno-text-[#011813] uno-text-[24px] uno-font-medium sm:uno-text-2xl uno-font-Outfit  sm:uno-font-semibold">
+                                    class="uno-text-[#011813] uno-text-[24px] uno-font-medium sm:uno-text-2xl uno-font-Outfit  sm:uno-font-500">
                                     {{ item.titleKey }}</p>
                                 <p class="uno-w-full uno-text-[#4E5255] uno-font-Outfit">{{
                                     item.descKey }}</p>
@@ -192,9 +193,8 @@
 
         <!-- 第五块 What You Will Receive 区域 -->
         <div class="uno-receive-section  uno-bg-gray-5 uno-relative">
-            <NuxtImg src="/theme/home/receive-box-bg-h5.png" alt="" aria-hidden="true" width="375" height="1920"
-                class="uno-absolute uno-inset-0 uno--z-10 uno-pointer-events-none uno-object-cover uno-object-center uno-block md:uno-hidden"
-                uno-preload />
+            <img src="/theme/home/receive-box-bg-h5.png" alt="" aria-hidden="true"
+                class="uno-absolute uno-inset-0 uno--z-10 uno-pointer-events-none uno-object-cover uno-object-center uno-block md:uno-hidden uno-w-full">
             <NuxtImg src="/theme/home/receive-box-bg-pc.png" alt="" aria-hidden="true" width="100vw" height="100%"
                 class="uno-w-full uno-h-[100%]  uno-absolute uno-top-0 uno-left-0 uno--z-10 uno-pointer-events-none uno-hidden md:uno-block"
                 uno-preload />
@@ -231,8 +231,10 @@
         </div>
 
         <!-- 第六块 客户评价模块 -->
-        <TestimonialsSection :title="$t('pages.home.testimonials.title')"
-            :subtitle="$t('pages.home.testimonials.subtitle')" :rating="5" :reviews="reviews" />
+        <div class="uno-relative">
+            <TestimonialsSection :title="$t('pages.home.testimonials.title')"
+                :subtitle="$t('pages.home.testimonials.subtitle')" :rating="5" :reviews="reviews" />
+        </div>
 
         <FAQSection :title="$t('common.faq.title')" :description="$t('common.faq.desc')" :items="faqItems" />
 
@@ -251,7 +253,7 @@ const { t } = useI18n()
 const localePath = useLocalePath()
 
 // 引入 useCurious composable
-const { setButtonText,  } = useCurious()
+const { setButtonText, } = useCurious()
 
 definePageMeta({
     title: "seo.home.title",
@@ -272,93 +274,95 @@ setButtonText(t('pages.home.curious.buttonText'))
 const baseText = 'An exceptional platform for career development. The current curriculum, skilled instructors, and hands-on learning are truly rewarding.'
 
 // Testimonials Data
-const reviews = computed(() => {
-  return [
+const { isMobile } = useDevice()
+const allReviews = [
     {
-      text: t('pages.orders.create.testimonials.reviews.review1.review'),
-      avatarUrl: 'https://randomuser.me/api/portraits/women/32.jpg',
-      name: t('pages.orders.create.testimonials.reviews.review1.name'),
-      role: t('pages.orders.create.testimonials.reviews.review1.role')
+        text: t('pages.orders.create.testimonials.reviews.review1.review'),
+        avatarUrl: 'https://randomuser.me/api/portraits/women/32.jpg',
+        name: t('pages.orders.create.testimonials.reviews.review1.name'),
+        role: t('pages.orders.create.testimonials.reviews.review1.role')
     },
     {
-      text: t('pages.orders.create.testimonials.reviews.review2.review'),
-      avatarUrl: 'https://randomuser.me/api/portraits/men/45.jpg',
-      name: t('pages.orders.create.testimonials.reviews.review2.name'),
-      role: t('pages.orders.create.testimonials.reviews.review2.role')
+        text: t('pages.orders.create.testimonials.reviews.review2.review'),
+        avatarUrl: 'https://randomuser.me/api/portraits/men/45.jpg',
+        name: t('pages.orders.create.testimonials.reviews.review2.name'),
+        role: t('pages.orders.create.testimonials.reviews.review2.role')
     },
     {
-      text: t('pages.orders.create.testimonials.reviews.review3.review'),
-      avatarUrl: 'https://randomuser.me/api/portraits/women/67.jpg',
-      name: t('pages.orders.create.testimonials.reviews.review3.name'),
-      role: t('pages.orders.create.testimonials.reviews.review3.role')
+        text: t('pages.orders.create.testimonials.reviews.review3.review'),
+        avatarUrl: 'https://randomuser.me/api/portraits/women/67.jpg',
+        name: t('pages.orders.create.testimonials.reviews.review3.name'),
+        role: t('pages.orders.create.testimonials.reviews.review3.role')
     },
     {
-      text: t('pages.orders.create.testimonials.reviews.review4.review'),
-      avatarUrl: 'https://randomuser.me/api/portraits/men/78.jpg',
-      name: t('pages.orders.create.testimonials.reviews.review4.name'),
-      role: t('pages.orders.create.testimonials.reviews.review4.role')
+        text: t('pages.orders.create.testimonials.reviews.review4.review'),
+        avatarUrl: 'https://randomuser.me/api/portraits/men/78.jpg',
+        name: t('pages.orders.create.testimonials.reviews.review4.name'),
+        role: t('pages.orders.create.testimonials.reviews.review4.role')
     },
     {
-      text: t('pages.orders.create.testimonials.reviews.review5.review'),
-      avatarUrl: 'https://randomuser.me/api/portraits/women/23.jpg',
-      name: t('pages.orders.create.testimonials.reviews.review5.name'),
-      role: t('pages.orders.create.testimonials.reviews.review5.role')
+        text: t('pages.orders.create.testimonials.reviews.review5.review'),
+        avatarUrl: 'https://randomuser.me/api/portraits/women/23.jpg',
+        name: t('pages.orders.create.testimonials.reviews.review5.name'),
+        role: t('pages.orders.create.testimonials.reviews.review5.role')
     },
     {
-      text: t('pages.orders.create.testimonials.reviews.review6.review'),
-      avatarUrl: 'https://randomuser.me/api/portraits/men/56.jpg',
-      name: t('pages.orders.create.testimonials.reviews.review6.name'),
-      role: t('pages.orders.create.testimonials.reviews.review6.role')
+        text: t('pages.orders.create.testimonials.reviews.review6.review'),
+        avatarUrl: 'https://randomuser.me/api/portraits/men/56.jpg',
+        name: t('pages.orders.create.testimonials.reviews.review6.name'),
+        role: t('pages.orders.create.testimonials.reviews.review6.role')
     },
     {
-      text: t('pages.orders.create.testimonials.reviews.review7.review'),
-      avatarUrl: 'https://randomuser.me/api/portraits/women/89.jpg',
-      name: t('pages.orders.create.testimonials.reviews.review7.name'),
-      role: t('pages.orders.create.testimonials.reviews.review7.role')
+        text: t('pages.orders.create.testimonials.reviews.review7.review'),
+        avatarUrl: 'https://randomuser.me/api/portraits/women/89.jpg',
+        name: t('pages.orders.create.testimonials.reviews.review7.name'),
+        role: t('pages.orders.create.testimonials.reviews.review7.role')
     },
     {
-      text: t('pages.orders.create.testimonials.reviews.review8.review'),
-      avatarUrl: 'https://randomuser.me/api/portraits/men/92.jpg',
-      name: t('pages.orders.create.testimonials.reviews.review8.name'),
-      role: t('pages.orders.create.testimonials.reviews.review8.role')
+        text: t('pages.orders.create.testimonials.reviews.review8.review'),
+        avatarUrl: 'https://randomuser.me/api/portraits/men/92.jpg',
+        name: t('pages.orders.create.testimonials.reviews.review8.name'),
+        role: t('pages.orders.create.testimonials.reviews.review8.role')
     },
     {
-      text: t('pages.orders.create.testimonials.reviews.review9.review'),
-      avatarUrl: 'https://randomuser.me/api/portraits/women/44.jpg',
-      name: t('pages.orders.create.testimonials.reviews.review9.name'),
-      role: t('pages.orders.create.testimonials.reviews.review9.role')
+        text: t('pages.orders.create.testimonials.reviews.review9.review'),
+        avatarUrl: 'https://randomuser.me/api/portraits/women/44.jpg',
+        name: t('pages.orders.create.testimonials.reviews.review9.name'),
+        role: t('pages.orders.create.testimonials.reviews.review9.role')
     },
     {
-      text: t('pages.orders.create.testimonials.reviews.review10.review'),
-      avatarUrl: 'https://randomuser.me/api/portraits/men/63.jpg',
-      name: t('pages.orders.create.testimonials.reviews.review10.name'),
-      role: t('pages.orders.create.testimonials.reviews.review10.role')
+        text: t('pages.orders.create.testimonials.reviews.review10.review'),
+        avatarUrl: 'https://randomuser.me/api/portraits/men/63.jpg',
+        name: t('pages.orders.create.testimonials.reviews.review10.name'),
+        role: t('pages.orders.create.testimonials.reviews.review10.role')
     },
     {
-      text: t('pages.orders.create.testimonials.reviews.review11.review'),
-      avatarUrl: 'https://randomuser.me/api/portraits/women/75.jpg',
-      name: t('pages.orders.create.testimonials.reviews.review11.name'),
-      role: t('pages.orders.create.testimonials.reviews.review11.role')
+        text: t('pages.orders.create.testimonials.reviews.review11.review'),
+        avatarUrl: 'https://randomuser.me/api/portraits/women/75.jpg',
+        name: t('pages.orders.create.testimonials.reviews.review11.name'),
+        role: t('pages.orders.create.testimonials.reviews.review11.role')
     },
     {
-      text: t('pages.orders.create.testimonials.reviews.review12.review'),
-      avatarUrl: 'https://randomuser.me/api/portraits/men/87.jpg',
-      name: t('pages.orders.create.testimonials.reviews.review12.name'),
-      role: t('pages.orders.create.testimonials.reviews.review12.role')
+        text: t('pages.orders.create.testimonials.reviews.review12.review'),
+        avatarUrl: 'https://randomuser.me/api/portraits/men/87.jpg',
+        name: t('pages.orders.create.testimonials.reviews.review12.name'),
+        role: t('pages.orders.create.testimonials.reviews.review12.role')
     },
     {
-      text: t('pages.orders.create.testimonials.reviews.review13.review'),
-      avatarUrl: 'https://randomuser.me/api/portraits/women/51.jpg',
-      name: t('pages.orders.create.testimonials.reviews.review13.name'),
-      role: t('pages.orders.create.testimonials.reviews.review13.role')
+        text: t('pages.orders.create.testimonials.reviews.review13.review'),
+        avatarUrl: 'https://randomuser.me/api/portraits/women/51.jpg',
+        name: t('pages.orders.create.testimonials.reviews.review13.name'),
+        role: t('pages.orders.create.testimonials.reviews.review13.role')
     },
     {
-      text: t('pages.orders.create.testimonials.reviews.review14.review'),
-      avatarUrl: 'https://randomuser.me/api/portraits/men/39.jpg',
-      name: t('pages.orders.create.testimonials.reviews.review14.name'),
-      role: t('pages.orders.create.testimonials.reviews.review14.role')
+        text: t('pages.orders.create.testimonials.reviews.review14.review'),
+        avatarUrl: 'https://randomuser.me/api/portraits/men/39.jpg',
+        name: t('pages.orders.create.testimonials.reviews.review14.name'),
+        role: t('pages.orders.create.testimonials.reviews.review14.role')
     }
-  ]
+]
+const reviews = computed(() => {
+    return isMobile ? allReviews.slice(0, 10) : allReviews
 })
 
 const handleCTAClick = () => {

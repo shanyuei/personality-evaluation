@@ -21,17 +21,17 @@
                 <div class="uno-hidden md:uno-block"><IconsCheck :size="30" background-color="none" check-color="var(--ui-primary)" class="uno-mt-1" /></div>
                 <!-- 移动端展示 -->
                 <div class="uno-block md:uno-hidden"><IconsCheck :size="24" background-color="none" check-color="var(--ui-primary)" class="uno-mt-1" /></div>
-                <p class="uno-text-sm"><span class="uno-font-semibold">{{ item.title }}</span> {{ item.body }}</p>
+                <p class="uno-text-sm"><span class="uno-font-semibold">{{ item.title }}：</span> {{ item.body }}</p>
               </div>
             </div>
           </div>
 
           <div class="uno-flex uno-flex-col md:uno-flex-row uno-items-center uno-justify-center uno-gap-3 uno-mt-6 md:uno-mt-8">
             <AppLink :to="'/courses'" class="uno-inline-block uno-w-full md:uno-w-auto">
-              <UButton :ui="UButtonTheme">{{ $t('pages.testEnd.ctaPrimary') }}</UButton>
+              <PrimaryButton>{{ $t('pages.testEnd.ctaPrimary') }}</PrimaryButton>
             </AppLink>
             <AppLink :to="'/tests'" class="uno-inline-block uno-w-full md:uno-w-auto">
-              <UButton :ui="UButtonThemeDark" >{{ $t('pages.testEnd.ctaSecondary') }}</UButton>
+              <OutlineButton fontSize="18px">{{ $t('pages.testEnd.ctaSecondary') }}</OutlineButton>
             </AppLink>
           </div>
 
@@ -46,10 +46,12 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import IconsCheck from '~/components/icons/Check.vue'
-import UButtonTheme, {UButtonThemeDark} from '~/theme/UButton'
+import PrimaryButton from '~/components/ui/PrimaryButton.vue'
+import OutlineButton from '~/components/ui/OutlineButton.vue'
 const { t } = useI18n()
 definePageMeta({
   layoutShowFooter: false,
+    layoutShowPageTopIcons: false,
   title: () => 'seo.test.result.title'
 })
 

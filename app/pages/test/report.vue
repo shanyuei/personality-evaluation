@@ -5,7 +5,8 @@
 
     <div class="page-container">
       <!-- Header Section -->
-      <h1 class="uno-font-Outfit uno-font-semibold uno-text-[40px] uno-leading-[120%] uno-mb-12px uno-text-[#011813] uno-text-center">
+      <h1
+        class="uno-font-Outfit uno-font-semibold uno-text-[40px] uno-leading-[120%] uno-mb-12px uno-text-[#011813] uno-text-center">
         {{ $t('pages.test.report.title') }}
       </h1>
       <p
@@ -15,9 +16,12 @@
       <!-- Features Grid -->
       <div class="uno-grid uno-grid-cols-1 md:uno-grid-cols-3 uno-gap-x-8 uno-gap-y-12 uno-mb-24px">
         <div v-for="feature in features" :key="feature.id" class="uno-flex uno-flex-col uno-items-center">
-          <NuxtImg :src="feature.icon" class="uno-w-[64px] uno-h-[64px] uno-rounded-[88px] uno-mb-6 uno-object-contain" />
-          <h3 class="uno-font-Outfit uno-font-semibold uno-text-[16px] uno-leading-[136%] uno-mb-3 uno-text-[#323233] uno-text-center">{{
-            feature.titleKey}}</h3>
+          <NuxtImg :src="feature.icon"
+            class="uno-w-[64px] uno-h-[64px] uno-rounded-[88px] uno-mb-6 uno-object-contain" />
+          <h3
+            class="uno-font-Outfit uno-font-semibold uno-text-[16px] uno-leading-[136%] uno-mb-3 uno-text-[#323233] uno-text-center">
+            {{
+              feature.titleKey }}</h3>
           <p class="uno-font-Outfit uno-text-[12px] uno-leading-[136%] uno-text-[#4E5255] uno-px-4 uno-text-center">{{
             feature.descKey }}</p>
         </div>
@@ -26,15 +30,14 @@
       <ReportPricingSection :digits="digits" :access-text="$t('pages.test.report.pricing.access')"
         :price-text="$t('pages.test.report.pricing.price')" :cta-text="$t('pages.test.report.pricing.cta')"
         :trial-text="$t('pages.test.report.pricing.trial')" :ordered-text="$t('pages.test.report.pricing.ordered')" />
-      <div class="uno-h-56px"/>
+      <div class="uno-h-56px" />
     </div>
 
 
     <!--What You Will Receive 区域 -->
     <div class="uno-receive-section  uno-bg-gray-5 uno-relative">
-      <NuxtImg src="/theme/home/receive-box-bg-h5.png" alt="" aria-hidden="true" width="375" height="1920"
-        class="uno-absolute uno-inset-0 uno--z-10 uno-pointer-events-none uno-object-cover uno-object-center uno-block md:uno-hidden"
-        uno-preload />
+      <img src="/theme/home/receive-box-bg-h5.png" alt="" aria-hidden="true"
+        class="uno-absolute uno-inset-0 uno--z-10 uno-pointer-events-none uno-object-cover uno-object-center uno-block md:uno-hidden uno-w-full" />
       <NuxtImg src="/theme/home/receive-box-bg-pc.png" alt="" aria-hidden="true" width="100vw" height="100%"
         class="uno-w-full uno-h-[100%]  uno-absolute uno-top-0 uno-left-0 uno--z-10 uno-pointer-events-none uno-hidden md:uno-block"
         uno-preload />
@@ -44,7 +47,7 @@
           {{ $t('pages.test.report.receive.title') }}</h2>
         <p
           class="uno-text-center uno-text-gray-600 uno-text-[16px] sm:uno-text-sm md:uno-text-base uno-mb-6 sm:uno-mb-8 md:uno-mb-16 uno-max-w-3xl uno-mx-auto">
-          {{ $t('pages.test.report.receive.desc') }}</p>
+          {{ $t('pages.test.report.receive.subtitle') }}</p>
 
         <!-- 六个卡片布局 -->
         <!-- 循环展示 receiveCards -->
@@ -70,19 +73,21 @@
 
 
     <!-- Pricing & CTA Card Section (Bottom) -->
-    <div
-      class="uno-w-[719px] uno-h-[316px] uno-bg-[#F0FDF9] uno-rounded-[32px] uno-mx-auto uno-flex uno-flex-col uno-justify-center uno-my-32px">
-      <ReportPricingSection :digits="digits" :access-text="$t('pages.test.report.pricing.access')"
-        :price-text="$t('pages.test.report.pricing.price')" :cta-text="$t('pages.test.report.pricing.cta')"
-        :trial-text="$t('pages.test.report.pricing.trial')" :ordered-text="$t('pages.test.report.pricing.ordered')" />
+    <div class="uno-relative uno-bg-[#FFF] uno-flex uno-flex-col uno-items-center">
+      <div
+        class="uno-w-[calc(100%-48px)] sm:uno-w-[719px] uno-min-h-[316px] uno-bg-[#F0FDF9] uno-rounded-[32px] uno-mx-auto uno-flex uno-flex-col uno-justify-center uno-my-32px  uno-px-[24px]">
+        <ReportPricingSection :digits="digits" :access-text="$t('pages.test.report.pricing.access')"
+          :price-text="$t('pages.test.report.pricing.price')" :cta-text="$t('pages.test.report.pricing.cta')"
+          :trial-text="$t('pages.test.report.pricing.trial')" :ordered-text="$t('pages.test.report.pricing.ordered')" />
+      </div>
     </div>
 
     <div
-      class="uno-w-[100vw] uno-h-[692px] uno-gap-[10px] uno-opacity-100 uno-pt-[64px] uno-pr-[120px] uno-pb-[64px] uno-pl-[120px] uno-bg-[#F8F8F8]">
+      class="uno-w-full uno-py-[64px] uno-px-[24px] sm:uno-px-[120px] uno-bg-[#F8F8F8]">
       <!-- Trusted Section -->
       <div class="uno-mb-24 uno-text-center">
         <h2
-          class="uno-font-Outfit uno-font-semibold uno-text-[32px] uno-leading-[120%] uno-mb-4 uno-text-[#011813] uno-text-center">
+          class="uno-font-Outfit uno-font-semibold uno-text-[24px] sm:uno-text-[32px] uno-leading-[120%] uno-mb-4 uno-text-[#011813] uno-text-center">
           {{ $t('pages.test.report.trusted.title') }}
         </h2>
         <p
@@ -91,7 +96,7 @@
         </p>
         <div class="uno-grid uno-grid-cols-1 md:uno-grid-cols-3 uno-gap-[24px] uno-mb-56px">
           <div v-for="testimonial in testimonials" :key="testimonial.id"
-            class="uno-w-[384px] uno-h-[232px] uno-bg-white uno-p-[32px] uno-rounded-[16px] uno-border uno-border-[#F0F0F0] uno-text-left">
+            class="uno-w-full md:uno-w-[384px] uno-min-h-[232px] uno-bg-white uno-p-[24px] sm:uno-p-[32px] uno-rounded-[16px] uno-border uno-border-[#F0F0F0] uno-text-left">
             <div class="uno-flex uno-gap-1 uno-mb-4">
               <svg v-for="s in 5" :key="s" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
@@ -108,14 +113,14 @@
 
         <!-- Worldwide Section -->
         <h2
-          class="uno-font-Outfit uno-font-semibold uno-text-[32px] uno-leading-[120%] uno-mb-12px uno-text-[#011813] uno-text-center">
+          class="uno-font-Outfit uno-font-semibold uno-text-[24px] sm:uno-text-[32px] uno-leading-[120%] uno-mb-12px uno-text-[#011813] uno-text-center">
           {{ $t('pages.test.report.worldwide.title') }}
         </h2>
         <p class="uno-font-Outfit uno-text-[14px] uno-leading-[150%] uno-text-[#4E5255] uno-mb-24px uno-text-center">{{
           $t('pages.test.report.worldwide.subtitle') }}</p>
         <div class="uno-grid uno-grid-cols-1 md:uno-grid-cols-3 uno-gap-[24px]">
           <div v-for="order in orders" :key="order.id"
-            class="uno-w-[384px] uno-h-[65px] uno-bg-white uno-p-[10px] uno-rounded-[4px] uno-border uno-border-[#F0F0F0] uno-flex uno-items-center uno-gap-[10px] uno-text-left">
+            class="uno-w-full md:uno-w-[384px] uno-h-[65px] uno-bg-white uno-p-[10px] uno-rounded-[4px] uno-border uno-border-[#F0F0F0] uno-flex uno-items-center uno-gap-[10px] uno-text-left">
             <NuxtImg :src="order.icon" class="uno-w-[32px] uno-h-[32px] uno-object-contain" />
             <div>
               <span class="uno-font-Outfit uno-text-[14px] uno-leading-[150%] uno-text-[#323233]">{{ $t(order.orderKey)
@@ -131,29 +136,26 @@
 
     <!-- Final CTA Section -->
     <div
-      class="uno-w-[1200px] uno-h-[418px] uno-bg-[#E8FAF5] uno-rounded-[32px] uno-p-[32px] uno-flex uno-flex-col lg:uno-flex-row uno-gap-[32px] uno-items-center uno-mt-32px uno-mx-auto">
-      <NuxtImg src="/images/report/14.png" class="uno-w-[400px] uno-h-[331px] uno-object-cover uno-rounded-[32px]" />
-      <div class="uno-flex-1">
-        <h2 class="uno-font-Outfit uno-font-semibold uno-text-[32px] uno-leading-[124%] uno-mb-16px uno-text-[#011813]">
+      class="uno-w-[calc(100%-48px)] md:uno-w-[1200px] uno-min-h-auto md:uno-h-[418px] uno-bg-[#E8FAF5] uno-rounded-[32px] uno-p-[24px] md:uno-p-[32px] uno-flex uno-flex-col lg:uno-flex-row uno-gap-[24px] lg:uno-gap-[32px] uno-items-center uno-mt-32px uno-mb-[32px] md:uno-mb-0 uno-mx-auto">
+      <NuxtImg src="/images/report/14.png" class="uno-w-full lg:uno-w-[400px] uno-h-auto lg:uno-h-[331px] uno-object-cover uno-rounded-[32px]" />
+      <div class="uno-w-full lg:uno-flex-1 uno-overflow-hidden">
+        <h2 class="uno-font-Outfit uno-font-semibold uno-text-[24px] md:uno-text-[32px] uno-leading-[124%] uno-mb-16px uno-text-[#011813]">
           {{ $t('pages.test.report.cta_full.title') }}
         </h2>
         <ul class="uno-space-y-8px uno-mb-16px">
           <li v-for="item in ctaList" :key="item.id" class="uno-flex uno-items-start uno-gap-3 uno-text-left">
             <NuxtImg src="/images/report/13.png" class="uno-w-5 uno-h-5 uno-mt-1 uno-shrink-0 uno-object-contain" />
-            <span class="uno-font-Outfit uno-text-[18px] uno-leading-[150%] uno-text-[#323233]">{{
+            <span class="uno-font-Outfit uno-text-[16px] md:uno-text-[18px] uno-leading-[150%] uno-text-[#323233] uno-break-words">{{
               item.text }}</span>
           </li>
         </ul>
-        <div class="uno-flex uno-items-center uno-justify-between ">
-          <span class="uno-font-Outfit uno-font-semibold uno-text-[16px] uno-leading-[150%] uno-text-[#4E5255]">{{
+        <div class="uno-flex uno-items-center uno-justify-between uno-mb-[16px] md:uno-mb-0">
+          <span class="uno-font-Outfit uno-font-semibold uno-text-[16px] uno-leading-[150%] uno-text-[#4E5255] uno-truncate">{{
             $t('pages.test.report.cta_full.access') }}</span>
-          <span class="uno-font-Outfit uno-font-semibold uno-text-[#009D77] uno-text-[28px] uno-leading-[150%]">{{
+          <span class="uno-font-Outfit uno-font-semibold uno-text-[24px] md:uno-text-[28px] uno-leading-[150%] uno-text-[#009D77]">{{
             $t('pages.test.report.cta_full.price') }}</span>
         </div>
-        <button
-          class="uno-w-full uno-h-[56px] uno-gap-4 uno-pt-6 uno-pr-6 uno-pb-6 uno-pl-20 uno-bg-[#009D77] hover:uno-bg-[#0AA17F] uno-text-white uno-font-Outfit uno-font-bold uno-text-[18px] uno-leading-[150%] uno-rounded-[8px] uno-shadow-lg hover:uno-shadow-xl uno-transition-all uno-mb-8px active:uno-scale-[0.98]">
-          {{ $t('pages.test.report.cta_full.btn') }}
-        </button>
+        <PrimaryButton class="uno-mb-[12px] md:uno-mb-0">{{ $t('pages.test.report.cta_full.btn') }}</PrimaryButton>
         <p
           class="uno-flex uno-items-center uno-justify-center uno-font-Outfit uno-text-[12px] uno-leading-[150%] uno-text-[#4E5255] uno-underline uno-underline-solid">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -170,6 +172,8 @@
 </template>
 
 <script setup lang="ts">
+import PrimaryButton from '~/components/ui/PrimaryButton.vue'
+
 const { t } = useI18n()
 
 definePageMeta({
@@ -180,7 +184,7 @@ definePageMeta({
 })
 
 useSeoMeta({
-  title: () => t('seo.test.report.title', {separator: "|"}),
+  title: () => t('seo.test.report.title', { separator: "|" }),
   description: () => t('seo.test.report.description'),
 })
 // Mock counter data

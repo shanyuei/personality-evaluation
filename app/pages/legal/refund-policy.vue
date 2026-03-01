@@ -25,8 +25,10 @@
         <div class="uno-col-span-1 md:uno-col-span-3">
           <div class="uno-space-y-8">
             <section v-for="section in sections" :key="section.id" :id="section.id">
-                 <h2 class="uno-text-[24px] uno-font-[Outfit] uno-font-[600] uno-text-gray-900 uno-mb-4" v-html="section.title"></h2>
-              <p v-if="section.subtitle" class="uno-text-[16px] uno-font-[500] uno-text-[#011813] uno-mb-6" v-html="section.subtitle" ></p>
+              <h2 class="uno-text-[24px] uno-font-[Outfit] uno-font-[600] uno-text-gray-900 uno-mb-4"
+                v-html="section.title"></h2>
+              <p v-if="section.subtitle" class="uno-text-[16px] uno-font-[500] uno-text-[#011813] uno-mb-6"
+                v-html="section.subtitle"></p>
               <div class="uno-text-gray-700 uno-mb-4" v-html="section.content"></div>
             </section>
           </div>
@@ -45,7 +47,7 @@ definePageMeta({
   layoutShowCurious: true,
   title: () => 'seo.legal.refund.title',
   path: "/refund-policy",
-    layoutShowPageTopIcons: false,
+  layoutShowPageTopIcons: false,
 })
 
 useSeoMeta({

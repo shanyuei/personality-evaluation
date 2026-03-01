@@ -6,8 +6,7 @@
     colorClasses,
     hoverClasses,
     disabledClasses
-  ]" :style="style" :disabled="disabled"
-    @click="$emit('click')">
+  ]" :style="style" :disabled="disabled" @click="$emit('click')">
     <slot></slot>
   </button>
 </template>

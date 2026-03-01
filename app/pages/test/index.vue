@@ -21,7 +21,7 @@
     <div class="page-container ">
       <div class="uno-flex uno-flex-col md:uno-flex-row uno-justify-center uno-gap-6 md:uno-gap-24px">
         <div v-for="step in steps" :key="step.id"
-          class="uno-w-[342px] uno-h-[60px] md:uno-w-[384px] md:uno-h-100% uno-rounded-[24px] uno-gap-[13.36px]"
+          class="uno-w-full uno-h-[60px] md:uno-w-[384px] md:uno-h-100% uno-rounded-[24px] uno-gap-[13.36px]"
           :class="step.bgClass">
           <div class=" uno-inline-block uno-w-full uno-p-12px sm:uno-p-6 uno-space-y-2 uno-rounded-2xl"
             :class="step.innerBgClass">
@@ -54,8 +54,8 @@
     </div>
 
     <!-- 背景图容器 -->
-    <div class="uno-relative uno-w-full uno-min-h-[600px] uno-bg-cover uno-bg-center uno-bg-no-repeat uno-mt-32px"
-      style="background-image: url('/images/test/7.png')">
+    <div class="uno-relative uno-w-full uno-min-h-[600px] md:uno-bg-cover md:uno-bg-center md:uno-bg-no-repeat uno-mt-32px"
+      :style="$device.isMobile ? {} : { backgroundImage: 'url(\'/images/test/7.png\')' }">
 
       <div class="page-container  uno-relative uno-z-10 uno-pb-12">
 
@@ -105,8 +105,8 @@
 
                       <div class="uno-flex-1 uno-flex uno-justify-center uno-items-center">
                         <div
-                          class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px]   uno-border-solid  uno-border-2 uno-cursor-pointer hover:uno-transform hover:uno-scale-105 transition-transform"
-                          :class="[i === 1 ? 'uno-bg-[#F4D0CB] uno-border-[#F6BAB2]' : i === 2 ? 'uno-bg-[#F1DACE] uno-border-[#F5CEB6]' : i === 3 ? 'uno-bg-[#F0F0F0] uno-border-[#D8D8D8]' : i === 4 ? 'uno-bg-[#C6EAD8] uno-border-[#9FE2AA]' : 'uno-bg-[#B3E1D6] uno-border-[#88D9BA]']"
+                          class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px] uno-cursor-pointer hover:uno-transform hover:uno-scale-105 transition-transform"
+                          :class="[i === 1 ? 'uno-bg-[#F4D0CB]' : i === 2 ? 'uno-bg-[#F1DACE]' : i === 3 ? 'uno-bg-[#F0F0F0]' : i === 4 ? 'uno-bg-[#C6EAD8]' : 'uno-bg-[#B3E1D6]', selectedRatings[qi] === i ? '' : 'uno-border-solid uno-border-2' , selectedRatings[qi] === i ? '' : i === 1 ? 'uno-border-[#F6BAB2]' : i === 2 ? 'uno-border-[#F5CEB6]' : i === 3 ? 'uno-border-[#D8D8D8]' : i === 4 ? 'uno-border-[#9FE2AA]' : 'uno-border-[#88D9BA]']"
                           @click="selectRating(qi, i)">
                           <Sad v-if="selectedRatings[qi] === i" />
                         </div>

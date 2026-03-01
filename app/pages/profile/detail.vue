@@ -176,7 +176,8 @@ import { getUserTestInfo } from '~/api/user'
 import UButtonTheme from '~/theme/UButton'
 definePageMeta({
   layoutShowFooter: false,
-  title: () => 'seo.profile.detail.title'
+  title: () => 'seo.profile.detail.title',
+   layoutShowPageTopIcons: false,
 })
 const name = 'liyangzhi'
 const { t } = useI18n()

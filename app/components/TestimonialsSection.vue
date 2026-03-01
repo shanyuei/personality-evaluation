@@ -4,7 +4,7 @@
     <div class="uno-px-4">
       <div class="uno-text-center uno-mb-0 sm:uno-mb-56px">
         <h2
-          class="uno-text-[32px] sm:uno-text-[48px] uno-font-Outfit uno-font-bold uno-mb-4 uno-text-[var(--ui-foreground)]">
+          class="uno-text-[32px] sm:uno-text-[48px] uno-font-Outfit uno-font-600 uno-mb-4 uno-text-[var(--ui-foreground)]">
           {{ title
           }}</h2>
         <p class="uno-text-[var(--ui-muted-foreground)] uno-max-w-2xl uno-mx-auto" style="white-space: pre-line;">{{

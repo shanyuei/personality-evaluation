@@ -1,0 +1,72 @@
+{
+  "getStarted": "开始",
+  "siteDescription": "通过专家课程和工具解锁知识和成长。",
+  "nav": {
+    "home": "首页",
+    "faq": "常见问题",
+    "signIn": "登录",
+    "takeTheTest": "参加测试"
+  },
+  "courseCard": {
+    "status": {
+      "completed": "您已完成此测试。",
+      "of": "/",
+      "lessons": "课程"
+    },
+    "link": {
+      "viewResults": "查看测试结果"
+    },
+    "badge": {
+      "points": "积分"
+    },
+    "meta": {
+      "certificate": "证书"
+    },
+    "people": {
+      "finished": "人已完成"
+    }
+  },
+  "api": {
+    "error": "错误"
+  },
+  "faq": {
+    "title": "常见问题",
+    "desc": "快速找到关于我们的评估流程、\n 报告洞察和平台功能的常见问题的答案。"
+  },
+  "receive": {
+    "title": "我们的测试有何不同",
+    "desc": "基于经过验证的心理测量框架，我们的评估超越了表面特质。我们利用高级算法来解码塑造您专业和个人身份的复杂心理驱动因素。"
+  },
+  "viewResults": "查看测试结果",
+  "retakeTest": "重新参加测试",
+  "points": "积分",
+  "of": "/",
+  "lessons": "课程",
+  "finished": "已完成",
+  "certificate": "证书",
+  "viewAllBlogs": "查看所有博客",
+  "step": "步骤",
+  "stepTotal": "第 {current} 步，共 {total} 步",
+  "percentIcon": "%",
+  "continue": "继续",
+  "price": "¥",
+  "period": ".",
+  "confirm": "确认",
+  "saveChanges": "保存更改",
+  "footer": {
+    "introduction": "了解自己。改变一切",
+    "StayConnected": "保持联系",
+    "product": "产品",
+    "help": "帮助",
+    "legal": "法律",
+    "freePersonalityTest": "免费性格测试",
+    "contactUs": "联系我们",
+    "faq": "常见问题",
+    "cancelSubscription": "取消订阅",
+    "privacyPolicy": "隐私政策",
+    "termsOfUse": "使用条款",
+    "refundPolicy": "退款政策",
+    "payments": "付款",
+    "copyright": "2026 © PersonalityTest101。保留所有权利。"
+  }
+}
