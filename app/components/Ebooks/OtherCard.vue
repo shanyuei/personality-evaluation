@@ -1,5 +1,5 @@
 <template>
-  <div class="uno-p-6 md:uno-p-8 uno-flex uno-flex-col uno-gap-8 md:uno-gap-12">
+  <div class="uno-p-6 md:uno-p-8 uno-flex uno-flex-col uno-gap-8 md:uno-gap-24px">
 
     <NuxtImg :src="image" :alt="title" width="320" height="209" class="uno-rounded-[16px] " />
 

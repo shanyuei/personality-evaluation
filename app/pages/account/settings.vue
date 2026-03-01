@@ -22,7 +22,8 @@
           <div>
             <PrimaryButton class="!uno-w-[217px]" :loading="profileLoading"
               @click="onSaveProfile">
-              {{ $t('common.saveChanges') }}
+              <!-- {{ $t('common.saveChanges') }} -->
+                 {{ $t('common.confirm') }}
             </PrimaryButton>
           </div>
         </div>
@@ -100,7 +101,7 @@ const localePath = useLocalePath()
 const toast = useToast()
 
 useSeoMeta({
-  title: () => t('seo.account.settings.title') as string,
+  title: () => t('seo.account.settings.title', { separator: '|' }) as string,
   description: () => t('seo.account.settings.description') as string,
 })
 

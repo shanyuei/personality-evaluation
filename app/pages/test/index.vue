@@ -99,7 +99,7 @@
                   class="uno-text-[#011813] uno-font-Outfit uno-text-base md:uno-text-16px uno-text-center uno-leading-[1.2] uno-mb-8">
                   {{ q }}</p>
                 <div
-                  class="uno-flex uno-flex-row uno-items-center uno-justify-center uno-gap-2 md:uno-gap-[20px] uno-mt-4 uno-px-[5%]">
+                  class="uno-flex uno-flex-row uno-items-center uno-justify-center uno-gap-2 md:uno-gap-[20px] uno-mt-4">
                   <template v-for="i in [1, 2, 3, 4, 5]" :key="i">
                     <div class="uno-flex-1 uno-flex uno-justify-center uno-items-center">
 

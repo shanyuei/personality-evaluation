@@ -29,7 +29,7 @@
           class="uno-text-[var(--ui-foreground)] uno-text-[32px] md:uno-text-[48px] uno-font-Outfit uno-text-center uno-font-semibold uno-leading-[1.2]">
           {{ $t('pages.userCourseChapterComplete.title') }}</h1>
         <p
-          class="uno-text-[14px] md:uno-text-[16px] uno-text-[var(--ui-muted-foreground)] uno-font-Outfit uno-text-center uno-w-full uno-mx-auto uno-leading-relaxed uno-mb-2">
+          class="uno-text-[14px] md:uno-text-[16px] uno-text-[var(--ui-muted-foreground)] uno-font-Outfit uno-text-center uno-w-[90%] md:uno-w-[80%] uno-mx-auto uno-leading-relaxed uno-mb-2">
           {{ $t('pages.userCourseChapterComplete.desc1', { courseName }) }}</p>
         <p
           class="uno-text-[14px] md:uno-text-[16px] uno-text-[var(--ui-muted-foreground)] uno-font-Outfit uno-text-center uno-w-full uno-mx-auto uno-leading-relaxed">

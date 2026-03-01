@@ -29,10 +29,6 @@
         "title": "About Us {separator} PersonalityTest101 – Our Mission for Self-Discovery",
         "description": "Discover the story behind PersonalityTest101. We combine psychological precision with data-driven insights to help individuals uncover their core traits, improve relationships, and achieve personal growth. Learn more about our mission and vision."
     },
-    "auth.signIn": {
-        "title": "Sign In - Access Your Account",
-        "description": "Log in to your account to access personalized features."
-    },
     "orders": {
         "cancelSubscription": {
             "title": "Cancel Subscription {separator} PersonalityTest101 – Manage Your Account",
@@ -55,30 +51,41 @@
         "title": "Affordable Pricing Plans {separator} PersonalityTest101 - Unlock Your Potential",
         "description": "Choose the perfect plan for your self-discovery journey. Get premium personality reports, career blueprints, and growth toolkits starting at just $14/mo. Secure and scientifically validated."
     },
-    "legal":{
-        "privacy":{
+    "legal": {
+        "privacy": {
             "title": "Privacy Policy {separator} PersonalityTest101 - Your Data Security Matters",
             "description": "Read our Privacy Policy to understand how PersonalityTest101 collects, protects, and manages your personal data and assessment results. Committed to your privacy and security."
         },
-        "terms":{
+        "terms": {
             "title": "Personality Test 101 – Terms of Use, Subscription & Refund Policy",
             "description": "Read the full Terms of Use and Purchase at Personality Test 101. Learn about subscriptions, digital content usage, AI tools, refunds, cancellations, and your rights as a user. Stay informed and enjoy our personality tests safely."
         },
-        "refund":{
+        "refund": {
             "title": "Refund & Cancellation Policy {separator} Personality Test 101",
             "description": "Learn about our refund and cancellation policy at Personality Test 101. Understand subscription types, refund eligibility, and your right to cancel digital content within 14 days. Personalized reports are delivered instantly, and our friendly support team is here to help."
         }
     },
-
-    "account.settings": {
-        "title": "Account Settings {separator} Manage Profile, Security & Language Preferences",
-        "description": "Manage your account settings, update personal information, change your password, select your preferred language, or delete your account securely."
+    "account": {
+        "settings": {
+            "title": "Account Settings {separator} Manage Profile, Security & Language Preferences",
+            "description": "Manage your account settings, update personal information, change your password, select your preferred language, or delete your account securely."
+        }
     },
-
-
+    "auth": {
+        "signIn": {
+            "title": "Sign In {separator} PersonalityTest101 - Access Your Reports",
+            "description": "Sign in to PersonalityTest101 to access your professional personality reports, track your growth, and unlock career insights. Secure and easy access."
+        }
+    },
     "home": {
         "title": "Unlock knowledge and growth with expert courses and tools.",
         "description": "An exceptional platform for career development. The current curriculum, skilled instructors, and hands-on learning are truly rewarding."
+    },
+    "userCourse": {
+        "lessonComplete": {
+            "title": "Analysis in Progress | PersonalityTest101 – Decoding Your Traits",
+            "description": "Our system is decoding your responses to generate a precise personality profile. Discover the science behind your behavior and unlock deep insights into your core potential."
+        }
     },
     "test.start": {
         "title": "Start Personality Test - Begin Your Journey",
@@ -128,38 +135,6 @@
         "title": "Blog Post - Detailed Article",
         "description": "Read this in-depth article on personal development."
     },
-    "userCourse": {
-        "title": "User Courses - Personalized Learning",
-        "description": "Access your enrolled courses and track your learning progress."
-    },
-    "userCourse.chapters": {
-        "title": "Course Chapters - Learning Modules",
-        "description": "Navigate through course chapters and lessons."
-    },
-    "userCourse.lesson": {
-        "title": "Course Lesson - Interactive Learning",
-        "description": "Engage with course content and complete lesson activities."
-    },
-    "userCourse.lessonComplete": {
-        "title": "Lesson Complete - Congratulations!",
-        "description": "You've successfully completed this lesson."
-    },
-    "userCourse.chapterComplete": {
-        "title": "Chapter Complete - Well Done!",
-        "description": "You've finished this chapter. Move on to the next one."
-    },
-    "userCourse.test": {
-        "title": "Course Test - Assess Your Knowledge",
-        "description": "Take this test to evaluate your understanding of the course material."
-    },
-    "userCourse.testComplete": {
-        "title": "Course Test Complete - Results",
-        "description": "View your test results and feedback."
-    },
-    "userCourse.lessonGuide": {
-        "title": "Lesson Guide - Learning Objectives",
-        "description": "Review the learning objectives for this lesson."
-    },
     "orders.cancelSubscription": {
         "title": "Cancel Subscription - Manage Membership",
         "description": "Cancel your subscription and manage your membership settings."
@@ -172,7 +147,6 @@
         "title": "Courses - Expert Learning Resources",
         "description": "Explore our collection of expert-led courses for personal and professional growth."
     },
-
     "mentors": {
         "title": "Mentors - Expert Guidance",
         "description": "Connect with expert mentors for personalized guidance and support."
@@ -180,18 +154,5 @@
     "routeGuide": {
         "title": "Route Guide - Platform Navigation",
         "description": "Learn how to navigate our platform and access all features."
-    },
-    "auth": {
-        "title": "Authentication - Secure Access",
-        "description": "Securely access your account with our authentication system.",
-        "signIn": {
-            "title": "Sign In | PersonalityTest101 - Access Your Reports",
-            "description": "Sign in to PersonalityTest101 to access your professional personality reports, track your growth, and unlock career insights. Secure and easy access."
-        }
-    },
-    "account": {
-        "title": "Account Management - Settings and Preferences",
-        "description": "Manage your account settings and preferences."
     }
-    
 }

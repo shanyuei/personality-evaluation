@@ -48,7 +48,7 @@ definePageMeta({
 })
 
 useSeoMeta({
-  title: () => t('seo.userCourse.lessonComplete.title'),
+  title: () => t('seo.userCourse.lessonComplete.title',{separator:'|'}),
   description: () => t('seo.userCourse.lessonComplete.description')
 })
 </script>

@@ -99,10 +99,10 @@
             </p>
             <div class="uno-mt-6 uno-space-y-8px">
               <div v-for="(listItem, listIndex) in item.list" :key="listIndex"
-                class="uno-flex uno-items-center uno-gap-3">
+                class="uno-flex uno-items-center uno-gap-8px">
                 <NuxtImg src="/images/about/icon-2.png" alt="check" width="20" height="20"
                   class="uno-w-[20px] uno-h-[20px] uno-shrink-0" />
-                <span class="uno-text-[#4E5255]">{{ listItem }}</span>
+                <span class="uno-text-[#4E5255] uno-font-600">{{ listItem }}</span>
               </div>
             </div>
           </div>
@@ -170,7 +170,7 @@
             </div>
           </div>
 
-          <NuxtImg src="/images/about/4.png" alt="Vision" width="600px" height="540px"
+          <NuxtImg src="/images/about/4.png" alt="Vision" width="613px" height="526px"
             class="uno-position-relative uno-top-[10px]" />
         </div>
       </div>

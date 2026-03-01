@@ -5,14 +5,14 @@
         class="uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-1 uno-py-2 uno-px-[16px] uno-h-[48px] uno-text-sm uno-font-Outfit uno-font-medium"
         :class="activeFilter === f.id
           ? 'uno-bg-[var(--ui-primary)] uno-text-[var(--ui-primary-foreground)] uno-rounded-[100px]'
-          : 'uno-bg-transparent uno-text-[var(--ui-muted-foreground)] uno-border uno-border-solid uno-border-[var(--ui-border)] uno-rounded-[100px]'"
+          : 'uno-bg-transparent uno-text-[var(--ui-muted-foreground)] uno-border uno-border-solid uno-border-[#B1B2B2] uno-rounded-[100px]'"
         @click="activeFilter = f.id">{{ f.label }}</button>
     </div>
 
     <section class="uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_0px_#0000000D] ">
       <div class="uno-flex uno-p-6 md:uno-p-8 uno-flex-col md:uno-flex-row uno-gap-6 md:uno-gap-18">
-        <NuxtImg src="/images/blog/2.png" alt="hero"
-          class="uno-w-full md:uno-w-[425px] uno-h-[270px] uno-object-cover uno-rounded-[24px]" />
+        <img src="/images/blog/2.png" alt="hero"
+          class="uno-w-full md:uno-w-[425px] uno-h-[270px] uno-object-cover uno-rounded-[24px] uno-flex-shrink-0" />
 
         <div class="uno-flex-grow uno-flex uno-flex-col uno-justify-center uno-space-y-3">
           <h1
@@ -31,7 +31,7 @@
           <div>
             <AppLink :to="'/test/step'">
 
-              <PrimaryButton width="151px" height="44px" >
+              <PrimaryButton width="151px" height="44px">
                 {{ $t('pages.tests.cta.startNow') }}</PrimaryButton>
             </AppLink>
           </div>
@@ -70,16 +70,16 @@
               {{ card.title }}</h3>
             <p class="uno-text-[#323233] uno-text-sm uno-font-Outfit uno-leading-normal">{{ card.desc }}</p>
             <div v-if="!card.completed" class="uno-mt-auto">
-              <PrimaryButton width="151px" height="44px" >
+              <PrimaryButton width="151px" height="44px">
                 {{ $t('pages.tests.cta.readMore') }}</PrimaryButton>
             </div>
             <div v-else class="uno-flex uno-gap-3 uno-mt-auto">
               <AppLink :to="'/test/result'">
-                <PrimaryButton width="151px" height="44px" >
+                <PrimaryButton width="151px" height="44px">
                   {{ $t('pages.tests.cta.viewResults') }}</PrimaryButton>
               </AppLink>
               <AppLink :to="'/test/step'">
-                <OutlineButton width="151px" height="44px"  >
+                <OutlineButton width="151px" height="44px">
                   {{ $t('pages.tests.cta.tryAgain') }}</OutlineButton>
               </AppLink>
             </div>

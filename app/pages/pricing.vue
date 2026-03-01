@@ -3,7 +3,7 @@
 
     <!-- Pricing Section -->
     <section class="page-container uno-pt-12 sm:uno-pt-16 md:uno-pt-20 uno-pb-12 sm:uno-pb-16 md:uno-pb-24">
-      <div class="uno-text-center uno-mb-12 sm:uno-mb-23px">
+      <div class="uno-text-center uno-mb-12 sm:uno-mb-32px">
         <h1 class="uno-text-[#011813] uno-text-[40px] uno-font-Outfit uno-font-[600] uno-mb-12px">
           {{ $t('pages.pricing.title') }}
         </h1>
@@ -21,7 +21,7 @@
               : 'uno-bg-white uno-border-1 uno-border-solid uno-border-[#E7E7E8]'
           ]" @click="selectedPlan = plan.key">
           <div v-if="plan.badge"
-            class="uno-absolute uno-top-24px uno-right-24px uno-w-[96px] uno-h-[33px] uno-px-[16px] uno-py-[6px] uno-gap-8px uno-bg-[#39EDC1] uno-text-[#011813] uno-text-[14px] uno-font-Outfit uno-font-[300] uno-leading-[1.5] uno-rounded-[8px]">
+            class="uno-absolute uno-top-24px uno-right-24px uno-w-[96px] uno-h-[33px] uno-px-[16px] uno-py-[6px] uno-gap-8px uno-bg-[#39EDC1] uno-text-[#011813] uno-text-[14px] uno-font-Outfit uno-font-[500] uno-leading-[1.5] uno-rounded-[8px]">
             {{ $t(plan.badge) }}
           </div>
 
@@ -37,9 +37,9 @@
               class="uno-text-[#4E5255] uno-text-[20px] md:uno-text-[28px] uno-font-Outfit uno-font-[500] uno-leading-[1.5] uno-text-center">/{{
                 plan.currency }}</span>
           </div>
-          <!-- <div class="uno-text-xs uno-text-[#4E5255] uno-mb-6 uno-h-[20px]">
-            {{ plan.billingFallback ? ($t('pages.ebooks.oneTime') || 'Auto-renews after 7 Days') : $t(`pages.pricing.plans.${plan.key}.billing`) }}
-          </div> -->
+          <div class="uno-text-xs uno-text-[#4E5255] uno-mb-6 uno-h-[20px]">
+            <!-- {{ plan.billingFallback ? ($t('pages.ebooks.oneTime') || 'Auto-renews after 7 Days') : $t(`pages.pricing.plans.${plan.key}.billing`) }} -->
+          </div>
 
           <button :class="[
             selectedPlan === plan.key
@@ -93,7 +93,7 @@
         <!-- 循环展示 receiveCards -->
         <div class="uno-grid uno-grid-cols-1 md:uno-grid-cols-3 uno-gap-[24px] sm:uno-gap-[24px] md:uno-gap-[24px]">
           <div v-for="(card, index) in receiveCards" :key="index"
-            class="uno-bg-white uno-rounded-[32px] uno-shadow-[0_2px_8px_rgba(0,0,0,0.04)] uno-p-[32px] uno-border uno-border-solid uno-border-[#E7E7E8] uno-flex uno-flex-col uno-items-center uno-justify-between uno-text-center uno-min-h-[256px]">
+            class="uno-bg-white uno-rounded-[32px] uno-shadow-[0_2px_8px_rgba(0,0,0,0.04)] uno-p-[32px] uno-border uno-border-solid uno-border-[#E7E7E8] uno-flex uno-flex-col uno-items-center  uno-text-center uno-min-h-[256px]">
             <div
               class="uno-w-64px uno-h-64px sm:uno-w-64px sm:uno-h-64px uno-flex uno-items-center uno-justify-center uno-bg-gray-50 uno-rounded-full uno-mb-8px">
               <NuxtImg :src="card.icon" :alt="card.alt" width="64" height="64" />
@@ -102,7 +102,7 @@
               class="uno-text-lg sm:uno-text-xl md:uno-text-[20px] uno-font-Outfit uno-font-[500] uno-leading-tight uno-px-2 uno-mb-12px">
               {{ $t(card.titleKey) }}
             </h3>
-            <p class="uno-text-gray-500 uno-text-sm sm:uno-text-base uno-font-Outfit uno-leading-relaxed">
+            <p class="uno-text-gray-500 uno-text-sm sm:uno-text-base uno-font-Outfit uno-leading-relaxed uno-mt-auto">
               {{ $t(card.descKey) }}
             </p>
           </div>
@@ -111,7 +111,7 @@
     </div>
 
     <!-- FAQ Section -->
-    <FAQSection :title="$t('common.faq.title')" :description="$t('common.faq.subtitle')"
+    <FAQSection :title="$t('common.faq.title')" :description="$t('common.faq.desc')"
       :items="faqItems" />
 
   </div>
@@ -213,39 +213,39 @@ const features = computed(() => [
 const receiveCards = [
   {
     icon: '/images/home/7.png',
-    alt: t('datas.receives.archetypeAnalysis.title'),
-    titleKey: t('datas.receives.archetypeAnalysis.title'),
-    descKey: t('datas.receives.archetypeAnalysis.desc')
+    alt: t('datas.pricingCards.personalityReport.title'),
+    titleKey: t('datas.pricingCards.personalityReport.title'),
+    descKey: t('datas.pricingCards.personalityReport.desc')
   },
   {
     icon: '/images/home/8.png',
-    alt: t('datas.receives.courseRecommendations.title'),
-    titleKey: t('datas.receives.courseRecommendations.title'),
-    descKey: t('datas.receives.courseRecommendations.desc')
+    alt: t('datas.pricingCards.courseRecommendations.title'),
+    titleKey: t('datas.pricingCards.courseRecommendations.title'),
+    descKey: t('datas.pricingCards.courseRecommendations.desc')
   },
   {
     icon: '/images/home/9.png',
-    alt: t('datas.receives.skillAssessment.title'),
-    titleKey: t('datas.receives.skillAssessment.title'),
-    descKey: t('datas.receives.skillAssessment.desc')
+    alt: t('datas.pricingCards.skillAssessment.title'),
+    titleKey: t('datas.pricingCards.skillAssessment.title'),
+    descKey: t('datas.pricingCards.skillAssessment.desc')
   },
   {
     icon: '/images/home/10.png',
-    alt: t('datas.receives.dailyChallenges.title'),
-    titleKey: t('datas.receives.dailyChallenges.title'),
-    descKey: t('datas.receives.dailyChallenges.desc')
+    alt: t('datas.pricingCards.dailyChallenges.title'),
+    titleKey: t('datas.pricingCards.dailyChallenges.title'),
+    descKey: t('datas.pricingCards.dailyChallenges.desc')
   },
   {
     icon: '/images/home/11.png',
-    alt: t('datas.receives.learningLibrary.title'),
-    titleKey: t('datas.receives.learningLibrary.title'),
-    descKey: t('datas.receives.learningLibrary.desc')
+    alt: t('datas.pricingCards.learningLibrary.title'),
+    titleKey: t('datas.pricingCards.learningLibrary.title'),
+    descKey: t('datas.pricingCards.learningLibrary.desc')
   },
   {
     icon: '/images/home/12.png',
-    alt: t('datas.receives.transparency.title'),
-    titleKey: t('datas.receives.transparency.title'),
-    descKey: t('datas.receives.transparency.desc')
+    alt: t('datas.pricingCards.transparency.title'),
+    titleKey: t('datas.pricingCards.transparency.title'),
+    descKey: t('datas.pricingCards.transparency.desc')
   }
 ]
 

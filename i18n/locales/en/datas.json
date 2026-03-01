@@ -62,5 +62,31 @@
             "title": "Transparency and Value",
             "desc": "Clear, measurable insights prioritizing data integrity and delivering exceptional value without complexity."
         }
+    },
+    "pricingCards": {
+        "personalityReport": {
+            "title": "Comprehensive Personality Report",
+            "desc": "Explore data-driven insights into your core traits, behavioral patterns, and hidden potential."
+        },
+        "courseRecommendations": {
+            "title": "Personalized Course Recommendations",
+            "desc": "Customized learning paths tailored to your personality archetype to accelerate professional growth."
+        },
+        "skillAssessment": {
+            "title": "Skill Assessment Tests",
+            "desc": "Validate your competencies with targeted evaluations aligned to your specific career ambitions."
+        },
+        "dailyChallenges": {
+            "title": "Practical Daily Challenges",
+            "desc": "Actionable daily tasks designed to turn psychological insights into lasting personal habits."
+        },
+        "learningLibrary": {
+            "title": "Learning and Development Library",
+            "desc": "Explore a comprehensive digital archive designed to fuel your personal growth."
+        },
+        "transparency": {
+            "title": "Transparency and Value",
+            "desc": "Clear, measurable insights prioritizing data integrity and delivering exceptional value without complexity."
+        }
     }
 }

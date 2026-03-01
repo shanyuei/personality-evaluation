@@ -3,7 +3,7 @@
     <div
       class="uno-w-full md:uno-w-[720px] uno-mx-auto uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)]">
       <div class="uno-w-full uno-h-[220px] md:uno-h-[260px] uno-overflow-hidden uno-rounded-t-[24px]">
-        <NuxtImg src="/images/home/1.png" alt="cover" class="uno-w-full uno-h-full uno-object-cover" />
+        <NuxtImg src="/images/user-course/2.png" alt="cover" class="uno-w-full uno-h-full uno-object-cover" />
       </div>
       <div class="uno-p-6 md:uno-p-8">
         <h1

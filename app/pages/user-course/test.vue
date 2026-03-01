@@ -21,9 +21,9 @@
       </div>
 
       <!-- 题卡 -->
-      <div class="uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_0px_#0000000D] uno-p-24px uno-mt-24px uno-mb-24px">
+      <div class="uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_0px_#0000000D] uno-p-24px uno-mt-24px uno-mb-24px md:!uno-w-[720px] md:!uno-max-w-[720px] uno-mx-auto">
         <div
-          class="uno-w-full md:uno-w-[720px] uno-mx-auto uno-mt-4 uno-bg-white uno-rounded-[16px] md:uno-rounded-[20px] ">
+          class="uno-w-full uno-mx-auto uno-mt-4 uno-bg-white uno-rounded-[16px] md:uno-rounded-[20px] ">
           <div class="uno-space-y-4">
               <p
                 class="uno-text-[#011813] uno-font-Outfit uno-text-base md:uno-text-16px uno-text-center uno-leading-[1.2] uno-mb-8">
@@ -33,8 +33,8 @@
 
 
           <!-- 提交按钮 -->
-          <div class="uno-w-auto md:uno-w-[720px] uno-mx-auto uno-mt-24px uno-flex uno-justify-center ">
-            <AppLink :to="'/user-course/test-complete'" class="uno-block uno-w-[672px]">
+          <div class="uno-w-full uno-mx-auto uno-mt-24px uno-flex uno-justify-center ">
+            <AppLink :to="'/user-course/test-complete'" class="uno-block uno-w-full">
               <PrimaryButton>{{ $t('pages.userCourseTest.cta') }}</PrimaryButton>
             </AppLink>
           </div>

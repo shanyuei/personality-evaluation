@@ -54,7 +54,7 @@ definePageMeta({
 })
 
 useSeoMeta({
-  title: () => t('seo.legal.privacy.title'),
+  title: () => t('seo.legal.privacy.title', {separator: '|'}),
   description: () => t('seo.legal.privacy.description'),
 })
 const activeSection = ref('privacy-policy')

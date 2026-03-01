@@ -2,7 +2,7 @@
   <main class=" uno-py-10 uno-px-6 md:uno-px-10">
     <div class="page-container px-6 md:px-10">
       <div
-        class="uno-bg-[var(--ui-primary)] uno-text-white uno-rounded-[20px] uno-px-6 uno-py-8 md:uno-px-10 md:uno-py-12 uno-shadow-[0_8px_24px_rgba(0,0,0,0.12)]">
+        class="uno-bg-[var(--ui-primary)] uno-text-white uno-rounded-[20px] uno-px-6 uno-py-8 md:uno-px-10 md:uno-py-12 uno-shadow-[0_8px_24px_rgba(0,0,0,0.12)] uno-h-[196px] uno-flex uno-flex-col uno-justify-center">
         <h1 class="uno-text-2xl md:uno-text-4xl uno-font-Outfit uno-font-extrabold uno-text-center">{{
           $t('pages.ebookDetail.hero.title') }}</h1>
         <p class="uno-text-center uno-mt-3 uno-text-sm md:uno-text-base">{{ $t('pages.ebookDetail.hero.subtitle') }}</p>
@@ -50,8 +50,8 @@
             <ul class="uno-space-y-2">
               <li v-for="(item, i) in learnList" :key="i" class="uno-text-[var(--ui-foreground)]">
                 <span class="uno-mr-2">{{ i + 1 }}.</span>
-                <span class="uno-text-[#011813]">{{ item.split(':')[0] }}:</span>
-                <span class="uno-text-[#4E5255]">{{ item.split(':')[1] }}</span>
+                <span class="uno-text-[#011813] uno-font-500">{{ item.split(':')[0] }}:</span>
+                <span class="uno-text-[#4E5255] uno-font-400">{{ item.split(':')[1] }}</span>
               </li>
             </ul>
           </div>
@@ -62,8 +62,8 @@
             <ul class="uno-space-y-2 uno-pl-5">
               <li v-for="(item, i) in requireList" :key="i"
                 class="uno-text-[var(--ui-foreground)] uno-list-disc  uno-m-0">
-                <span class="uno-text-[#011813]">{{ item.split(':')[0] }}:</span>
-                <span class="uno-text-[#4E5255]">{{ item.split(':')[1] }}</span>
+                <span class="uno-text-[#011813] uno-font-500">{{ item.split(':')[0] }}:</span>
+                <span class="uno-text-[#4E5255] uno-font-400">{{ item.split(':')[1] }}</span>
               </li>
             </ul>
           </div>
@@ -136,7 +136,8 @@ const learnList = [
 const requireList = [
   t('pages.ebookDetail.require.i1'),
   t('pages.ebookDetail.require.i2'),
-  t('pages.ebookDetail.require.i3')
+  t('pages.ebookDetail.require.i3'),
+  t('pages.ebookDetail.require.i4')
 ]
 </script>
 

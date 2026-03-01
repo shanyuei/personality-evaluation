@@ -359,8 +359,8 @@
         "reasonBudget": "The subscription cost does not fit my budget.",
         "reasonOther": "Other.",
         "submitButton": "NEXT",
-        "contactSupport": "If you cannot recall the email address used for registration, please check your inbox for messages from \"PersonalityTest101.\" Alternatively, feel free to contact our dedicated support team for assistance.",
-        "cancelSubscription": "You may also cancel your subscription by logging into your account, navigating to the \"Membership\" tab, and selecting \"Cancel Subscription.\"",
+        "contactSupport": "If you cannot recall the email address used for registration, please check your inbox for messages from \"PersonalityTest101\". Alternatively, feel free to contact our dedicated support team for assistance.",
+        "cancelSubscription": "You may also cancel your subscription by logging into your account, navigating to the \"Membership\" tab, and selecting \"Cancel Subscription\".",
         "confirmTitle": "Cancel Subscription",
         "confirmDesc": "This action cannot be undone. All premium insights will be deleted.",
         "confirmCancel": "Keep My Plan",
@@ -920,8 +920,9 @@
     "require": {
       "title": "Requirements",
       "i1": "Computer & Internet Access: A laptop or desktop with a stable internet connection.",
-      "i2": "Basic Computer Skills: Familiarity with using a computer, installing software, and navigating the internet.",
-      "i3": "No Prior Coding Knowledge Required: This course is designed for absolute beginners."
+      "i2": "Code Editor: Install a code editor like Visual Studio Code (recommended) or any editor of your choice.",
+      "i3": "Basic Computer Skills: Familiarity with using a computer, installing software, and navigating the internet.",
+      "i4": "No Prior Coding Knowledge Required: This course is designed for absolute beginners."
     },
     "cta": {
       "download": "Download",

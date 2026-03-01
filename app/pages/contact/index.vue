@@ -1,5 +1,5 @@
 <template>
-  <main class="uno-pt-12 sm:uno-pt-16 md:uno-pt-24">
+  <main class="uno-pt-12 sm:uno-pt-16 md:uno-pt-56px">
     <!-- 页面内容 -->
     <div class="page-container">
 
@@ -14,7 +14,7 @@
             <!-- Contact Us -->
             {{ t('pages.contact.title') }}
           </h1>
-          <p class="uno-text-[#4E5255] uno-text-[18px] uno-font-Outfit uno-mb-12px uno-leading-[1.5]">
+          <p class="uno-text-[#4E5255] uno-text-[18px] uno-font-Outfit uno-mb-24px uno-leading-[1.5]">
             {{ t('pages.contact.desc1') }}
             <br>
             {{ t('pages.contact.desc2') }}

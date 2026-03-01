@@ -1,6 +1,6 @@
 <template>
     <!-- 首页 -->
-    <div class="uno-py-80px uno-pb-0 sm:uno-py-80px md:uno-py-128px">
+    <div class="uno-py-80px uno-pb-0 sm:uno-py-80px md:uno-py-120px">
         <!-- 第一块区域 -->
         <div
             class="page-container uno-relative uno-rounded-xl uno-border uno-border-transparent uno-px-4 sm:uno-px-6 md:uno-px-8">
@@ -222,7 +222,7 @@
                             {{ card.titleKey }}
                         </h3>
                         <p
-                            class=" uno-max-[250px]  uno-text-[#4E5255] uno-text-[16px] sm:uno-text-base uno-font-Outfit uno-leading-relaxed">
+                            class=" uno-max-[250px]  uno-text-[#4E5255] uno-text-[16px] sm:uno-text-base uno-font-Outfit uno-leading-relaxed uno-mt-auto">
                             {{ card.descKey }}
                         </p>
                     </div>
