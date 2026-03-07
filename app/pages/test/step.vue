@@ -54,7 +54,8 @@
         <div class="uno-w-full md:uno-w-[80%] uno-mx-auto uno-mt-4">
           <div class="uno-space-y-4">
             <div v-for="(q, qi) in questions" :key="qi"
-              class="uno-bg-white uno-rounded-[16px] md:uno-rounded-[20px] uno-border uno-border-[var(--ui-border)] uno-shadow-[0px_2px_8px_rgba(0,0,0,0.06)]">
+              class="uno-bg-white uno-rounded-[16px] md:uno-rounded-[20px] uno-border uno-shadow-[0px_2px_8px_rgba(0,0,0,0.06)]"
+              :class="unansweredQuestions.includes(qi) ? 'uno-border-[#EA4C89]' : 'uno-border-[var(--ui-border)]'">
               <div class="uno-p-4 md:uno-p-6">
                 <p
                   class="uno-text-[#011813] uno-font-Outfit uno-text-base md:uno-text-16px uno-text-center uno-leading-[1.2] uno-mb-8">

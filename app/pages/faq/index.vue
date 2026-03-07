@@ -42,6 +42,62 @@
             <h2 class="uno-text-2xl md:uno-text-24px uno-font-Outfit uno-font-600 uno-text-black uno-mb-4">
               {{ $t('pages.faq.general.faqs') }}
             </h2>
+            
+            <!-- 固定显示的 FAQ 内容 -->
+            <div class="uno-space-y-8">
+              <!-- Personality & Science -->
+              <div>
+                <h3 class="uno-text-xl uno-font-Outfit uno-font-medium uno-mb-4">
+                  {{ $t('pages.faq.faqs.personalityScience') }}
+                </h3>
+                <div class="uno-space-y-4">
+                  <div v-for="(item, i) in [1, 2, 3]" :key="'personality-' + i"
+                    class="uno-border-t uno-border-t-[var(--ui-border)] uno-rounded-[12px]">
+                    <div class="uno-flex uno-justify-between uno-items-center uno-py-[20px] "
+                      @click="toggle('fixed-personality', item)">
+                      <p class="uno-text-[var(--ui-foreground)] uno-text-18px uno-font-Outfit uno-font-medium">
+                        {{ $t('pages.faq.faqs.list.' + item + '.q') }}
+                      </p>
+                      <div class="uno-w-[24px] uno-h-[24px] uno-flex uno-items-center uno-justify-center uno-mr-4">
+                        <IconsFaqToggle :expanded="isExpanded('fixed-personality', item)" />
+                      </div>
+                    </div>
+                    <div v-if="isExpanded('fixed-personality', item)" class=" uno-pb-[20px]">
+                      <p class="uno-text-[#4E5255] uno-text-14px">
+                        {{ $t('pages.faq.faqs.list.' + item + '.desc') }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Membership & Billing -->
+              <div>
+                <h3 class="uno-text-xl uno-font-Outfit uno-font-medium uno-mb-4">
+                  {{ $t('pages.faq.faqs.membershipBilling') }}
+                </h3>
+                <div class="uno-space-y-4">
+                  <div v-for="(item, i) in [4, 5, 6]" :key="'billing-' + i"
+                    class="uno-border-t uno-border-t-[var(--ui-border)] uno-rounded-[12px]">
+                    <div class="uno-flex uno-justify-between uno-items-center uno-py-[20px] "
+                      @click="toggle('fixed-billing', item - 3)">
+                      <p class="uno-text-[var(--ui-foreground)] uno-text-18px uno-font-Outfit uno-font-medium">
+                        {{ $t('pages.faq.faqs.list.' + item + '.q') }}
+                      </p>
+                      <div class="uno-w-[24px] uno-h-[24px] uno-flex uno-items-center uno-justify-center uno-mr-4">
+                        <IconsFaqToggle :expanded="isExpanded('fixed-billing', item - 3)" />
+                      </div>
+                    </div>
+                    <div v-if="isExpanded('fixed-billing', item - 3)" class=" uno-pb-[20px]">
+                      <p class="uno-text-[#4E5255] uno-text-14px">
+                        {{ $t('pages.faq.faqs.list.' + item + '.desc') }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
             <!-- 内容 faqs -->
             <div v-show="false" class="uno-space-y-5">
               <div v-for="(faq, i) in faqs" :key="i"
@@ -95,15 +151,15 @@
                     <div v-for="(text, i) in item.list" :key="i"
                       class="uno-border-t uno-border-t-[var(--ui-border)] uno-rounded-[12px]">
                       <div class="uno-flex uno-justify-between uno-items-center uno-py-[20px] "
-                        @click="toggle('general', i)">
+                        @click="toggle(entry.id + '-' + item.id, i)">
                         <p class="uno-text-[var(--ui-foreground)] uno-text-18px uno-font-Outfit uno-font-medium">
                           {{ text.question }}
                         </p>
                         <div class="uno-w-[24px] uno-h-[24px] uno-flex uno-items-center uno-justify-center uno-mr-4">
-                          <IconsFaqToggle :expanded="isExpanded('general', i)" />
+                          <IconsFaqToggle :expanded="isExpanded(entry.id + '-' + item.id, i)" />
                         </div>
                       </div>
-                      <div v-if="isExpanded('general', i)" class=" uno-pb-[20px]">
+                      <div v-if="isExpanded(entry.id + '-' + item.id, i)" class=" uno-pb-[20px]">
                         <p class="uno-text-[#4E5255] uno-text-14px">
                           {{ text.answer }}
                         </p>
@@ -141,21 +197,29 @@ useSeoMeta({
 
 
 const currentCategory = ref<string>('all') // 默认展示全部分类
-const expanded = reactive<{ [key: string]: number | null }>({
-  general: 0,
-  integration: null,
-  account: null,
-  billing: null
+const expanded = reactive<{ [key: string]: boolean[] }>({
+  general: [],
+  integration: [],
+  account: [],
+  billing: []
 })
 
-const isExpanded = (section: string, i: number) => expanded[section] === i
+const isExpanded = (section: string, i: number) => {
+  if (!expanded[section]) {
+    expanded[section] = []
+  }
+  return expanded[section][i] || false
+}
 const toggle = (section: string, i: number) => {
-  expanded[section] = expanded[section] === i ? null : i
+  if (!expanded[section]) {
+    expanded[section] = []
+  }
+  expanded[section][i] = !expanded[section][i]
 }
 
 // 切换分类
 const switchCategory = (id: string) => {
-  currentCategory.value = id
+  currentCategory.value = currentCategory.value === id ? 'all' : id
 }
 const faqs = [
   {

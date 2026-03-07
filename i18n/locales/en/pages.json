@@ -145,7 +145,7 @@
       },
       "list5": {
         "question1": "How can I reach support regarding privacy or billing?",
-        "answer1": "Our dedicated support team is available 24/7. You can use the \"Contact Us\" form located at the bottom of the page or email us directly at {email}. We strive to respond to all inquiries within 24 hours."
+        "answer1": "Our dedicated support team is available 24/7. You can use the \"Contact Us\" form located at the bottom of the page or email us directly at <a href=\"mailto:{email}\">{email}</a>. We strive to respond to all inquiries within 24 hours."
       },
       "list": {
         "1": {
@@ -1109,7 +1109,7 @@
         },
         "contactUs": {
           "title": "Contact Us",
-          "content": "<p>If you have any questions, concerns, or requests regarding this Privacy Policy or how we handle your information, please contact us at:</p><p><strong>Email:</strong> support{'@'}personalitytest101.com</p><p>We will make reasonable efforts to respond to your inquiry in a timely manner.</p>"
+          "content": "<p>If you have any questions, concerns, or requests regarding this Privacy Policy or how we handle your information, please contact us at:</p><p><strong>Email:</strong> <a href=\"mailto:support{'@'}personalitytest101.com\">support{'@'}personalitytest101.com</a></p><p>We will make reasonable efforts to respond to your inquiry in a timely manner.</p>"
         }
       }
     },

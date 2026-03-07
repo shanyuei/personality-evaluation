@@ -16,7 +16,7 @@
           <div class="uno-flex uno-flex-col uno-w-[260px] ">
             <!-- logo -->
             <!-- <NuxtImg src="/theme/logo.png" alt="logo" width="249" height="60" /> -->
-             <img src="/theme/logo.png" alt="logo" width="249" height="60" />
+            <img src="/theme/logo.png" alt="logo" width="249" height="60" />
             <!-- 介绍 -->
             <p class="uno-text-[#4E5255] uno-font-Outfit uno-text-[16px] uno-m-t-12px">
               {{ $t('common.footer.introduction') }}
@@ -41,7 +41,8 @@
 
         <template #default>
           <!-- 导航 -->
-          <div class="uno-grid uno-grid-cols-2 sm:uno-grid-cols-3 uno-gap-y-32px uno-gap-x-[64px] sm:uno-gap-80px uno-mb-32px w-full">
+          <div
+            class="uno-grid uno-grid-cols-2 sm:uno-grid-cols-3 uno-gap-y-32px uno-gap-x-[64px] sm:uno-gap-80px uno-mb-32px w-full">
             <div>
               <h3 class="uno-text-[#011813] uno-text-2xl uno-font-Outfit uno-font-semibold uno-mb-16px">
                 {{ $t('common.footer.product') }}
@@ -60,12 +61,7 @@
                 {{ $t('common.footer.help') }}
               </h3>
               <ul class="uno-space-y-16px">
-                <li>
-                  <NuxtLink :to="localePath('/contact-us')"
-                    class="uno-text-[#011813] uno-font-Outfit uno-cursor-pointer hover:uno-text-[#009D77] hover:uno-underline hover:uno-decoration-[#009D77] hover:uno-decoration-2 hover:uno-underline-offset-4">
-                    {{ $t('common.footer.contactUs') }}
-                  </NuxtLink>
-                </li>
+
                 <li>
                   <NuxtLink :to="localePath('/faq')"
                     class="uno-text-[#011813] uno-font-Outfit uno-cursor-pointer hover:uno-text-[#009D77] hover:uno-underline hover:uno-decoration-[#009D77] hover:uno-decoration-2 hover:uno-underline-offset-4">
@@ -76,6 +72,18 @@
                   <NuxtLink :to="localePath('/cancel-subscription')"
                     class="uno-text-[#011813] uno-font-Outfit uno-cursor-pointer hover:uno-text-[#009D77] hover:uno-underline hover:uno-decoration-[#009D77] hover:uno-decoration-2 hover:uno-underline-offset-4">
                     {{ $t('common.footer.cancelSubscription') }}
+                  </NuxtLink>
+                </li>
+                <li>
+                  <NuxtLink :to="localePath('/about-us')"
+                    class="uno-text-[#011813] uno-font-Outfit uno-cursor-pointer hover:uno-text-[#009D77] hover:uno-underline hover:uno-decoration-[#009D77] hover:uno-decoration-2 hover:uno-underline-offset-4">
+                    {{ $t('common.footer.aboutUs') }}
+                  </NuxtLink>
+                </li>
+                <li>
+                  <NuxtLink :to="localePath('/contact-us')"
+                    class="uno-text-[#011813] uno-font-Outfit uno-cursor-pointer hover:uno-text-[#009D77] hover:uno-underline hover:uno-decoration-[#009D77] hover:uno-decoration-2 hover:uno-underline-offset-4">
+                    {{ $t('common.footer.contactUs') }}
                   </NuxtLink>
                 </li>
               </ul>
@@ -95,6 +103,12 @@
                   <NuxtLink :to="localePath('/terms-of-use')"
                     class="uno-text-[#011813] uno-font-Outfit uno-cursor-pointer hover:uno-text-[#009D77] hover:uno-underline hover:uno-decoration-[#009D77] hover:uno-decoration-2 hover:uno-underline-offset-4">
                     {{ $t('common.footer.termsOfUse') }}
+                  </NuxtLink>
+                </li>
+                <li>
+                  <NuxtLink :to="localePath('/privacy')"
+                    class="uno-text-[#011813] uno-font-Outfit uno-cursor-pointer hover:uno-text-[#009D77] hover:uno-underline hover:uno-decoration-[#009D77] hover:uno-decoration-2 hover:uno-underline-offset-4">
+                    {{ $t('common.footer.privacyPolicy') }}
                   </NuxtLink>
                 </li>
                 <li>
@@ -115,16 +129,16 @@
                 {{ $t('common.footer.legal') }}
               </h3>
               <ul class="uno-space-y-16px">
-                <!-- <li>
-                  <NuxtLink :to="localePath('/privacy')"
-                    class="uno-text-[#011813] uno-font-Outfit uno-cursor-pointer hover:uno-text-[#009D77] hover:uno-underline hover:uno-decoration-[#009D77] hover:uno-decoration-2 hover:uno-underline-offset-4">
-                    {{ $t('common.footer.privacyPolicy') }}
-                  </NuxtLink>
-                </li> -->
                 <li>
                   <NuxtLink :to="localePath('/terms-of-use')"
                     class="uno-text-[#011813] uno-font-Outfit uno-cursor-pointer hover:uno-text-[#009D77] hover:uno-underline hover:uno-decoration-[#009D77] hover:uno-decoration-2 hover:uno-underline-offset-4">
                     {{ $t('common.footer.termsOfUse') }}
+                  </NuxtLink>
+                </li>
+                <li>
+                  <NuxtLink :to="localePath('/privacy')"
+                    class="uno-text-[#011813] uno-font-Outfit uno-cursor-pointer hover:uno-text-[#009D77] hover:uno-underline hover:uno-decoration-[#009D77] hover:uno-decoration-2 hover:uno-underline-offset-4">
+                    {{ $t('common.footer.privacyPolicy') }}
                   </NuxtLink>
                 </li>
                 <li>

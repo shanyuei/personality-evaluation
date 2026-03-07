@@ -54,7 +54,8 @@
     </div>
 
     <!-- 背景图容器 -->
-    <div class="uno-relative uno-w-full uno-min-h-[600px] md:uno-bg-cover md:uno-bg-center md:uno-bg-no-repeat uno-mt-32px"
+    <div
+      class="uno-relative uno-w-full uno-min-h-[600px] md:uno-bg-cover md:uno-bg-center md:uno-bg-no-repeat uno-mt-32px"
       :style="$device.isMobile ? {} : { backgroundImage: 'url(\'/images/test/7.png\')' }">
 
       <div class="page-container  uno-relative uno-z-10 uno-pb-12">
@@ -63,7 +64,7 @@
         <div class="course-header md:!uno-w-[720px] md:!uno-max-w-[720px] uno-mx-auto ">
           <div class="course-nav">
             <div class="progress-percent">{{ 0 }}{{ $t('common.percentIcon') }}</div>
-            <div class="question-count">{{ $t('common.stepTotal', { current:currentStep, total:totalSteps }) }}</div>
+            <div class="question-count">{{ $t('common.stepTotal', { current: currentStep, total: totalSteps }) }}</div>
 
           </div>
           <div class="course-progress">
@@ -93,7 +94,8 @@
         <div class="uno-w-full md:uno-w-[720px] uno-mx-auto uno-mt-4">
           <div class="uno-space-y-4">
             <div v-for="(q, qi) in questions" :key="qi"
-              class="uno-bg-white uno-rounded-[16px] md:uno-rounded-[20px] uno-border uno-border-[var(--ui-border)] uno-shadow-[0px_2px_8px_rgba(0,0,0,0.06)]">
+              class="uno-bg-white uno-rounded-[16px] md:uno-rounded-[20px] uno-border uno-shadow-[0px_2px_8px_rgba(0,0,0,0.06)]"
+              :class="unansweredQuestions.includes(qi) ? 'uno-border-[#EA4C89]' : 'uno-border-[var(--ui-border)]'">
               <div class="uno-p-4 md:uno-p-6">
                 <p
                   class="uno-text-[#011813] uno-font-Outfit uno-text-base md:uno-text-16px uno-text-center uno-leading-[1.2] uno-mb-8">
@@ -106,7 +108,7 @@
                       <div class="uno-flex-1 uno-flex uno-justify-center uno-items-center">
                         <div
                           class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px] uno-cursor-pointer hover:uno-transform hover:uno-scale-105 transition-transform"
-                          :class="[i === 1 ? 'uno-bg-[#F4D0CB]' : i === 2 ? 'uno-bg-[#F1DACE]' : i === 3 ? 'uno-bg-[#F0F0F0]' : i === 4 ? 'uno-bg-[#C6EAD8]' : 'uno-bg-[#B3E1D6]', selectedRatings[qi] === i ? '' : 'uno-border-solid uno-border-2' , selectedRatings[qi] === i ? '' : i === 1 ? 'uno-border-[#F6BAB2]' : i === 2 ? 'uno-border-[#F5CEB6]' : i === 3 ? 'uno-border-[#D8D8D8]' : i === 4 ? 'uno-border-[#9FE2AA]' : 'uno-border-[#88D9BA]']"
+                          :class="[i === 1 ? 'uno-bg-[#F4D0CB]' : i === 2 ? 'uno-bg-[#F1DACE]' : i === 3 ? 'uno-bg-[#F0F0F0]' : i === 4 ? 'uno-bg-[#C6EAD8]' : 'uno-bg-[#B3E1D6]', selectedRatings[qi] === i ? '' : 'uno-border-solid uno-border-2', selectedRatings[qi] === i ? '' : i === 1 ? 'uno-border-[#F6BAB2]' : i === 2 ? 'uno-border-[#F5CEB6]' : i === 3 ? 'uno-border-[#D8D8D8]' : i === 4 ? 'uno-border-[#9FE2AA]' : 'uno-border-[#88D9BA]']"
                           @click="selectRating(qi, i)">
                           <Sad v-if="selectedRatings[qi] === i" />
                         </div>
@@ -124,7 +126,7 @@
           <!-- 提示文本 -->
           <p v-else
             class="uno-text-[#8D8E8F] uno-font-Outfit uno-text-sm md:uno-text-16px uno-text-center uno-leading-[1.2] uno-mt-16px md:uno-mt-6">
-            {{ 
+            {{
               $t('pages.test.index.notice') }}</p>
         </div>
 
@@ -145,7 +147,7 @@ import type { TestQuestion } from '~/types/TestQuestion'
 import { useQuestionsStore } from '~/stores/modules/questions'
 import Sad from '~/components/icons/Sad.vue'
 const questionsStore = useQuestionsStore()
-const { totalSteps, currentStep} = storeToRefs(questionsStore)
+const { totalSteps, currentStep } = storeToRefs(questionsStore)
 definePageMeta({
   layoutShowFooter: false,
   title: () => 'seo.test.index.title',
@@ -165,6 +167,7 @@ const allQuestions = ref<TestQuestion[]>([])
 const current = 0, total = ref(0)
 const selectedRatings = ref<Record<number, number>>({})
 const showError = ref(false)
+const unansweredQuestions = ref<number[]>([])
 
 // 步骤数据
 const steps = ref([
@@ -238,17 +241,22 @@ getTestQuestions().then(res => {
   const { data } = res.data.value;
   questions.value = data.list.map(q => q.text).slice(0, 5)
   total.value = data.list.length
+  questionsStore.currentStep = 1;
   allQuestions.value = data.list
-    questionsStore.setQuestions(allQuestions.value)
+  questionsStore.setQuestions(allQuestions.value)
 })
 const nextStart = () => {
   // 验证是否所有问题都已回答
-  const allAnswered = questions.value.every((_, index) => selectedRatings.value[index] !== undefined)
-  if (!allAnswered) {
+  const unanswered = questions.value
+    .map((_, index) => index)
+    .filter(index => selectedRatings.value[index] === undefined)
+  unansweredQuestions.value = unanswered
+  
+  if (unanswered.length > 0) {
     showError.value = true
     return
   }
-  
+
   showError.value = false
   questionsStore.currentStep = 2;
   questionsStore.setQuestions(allQuestions.value)
@@ -261,6 +269,8 @@ const nextStart = () => {
 const selectRating = (questionIndex: number, rating: number) => {
   selectedRatings.value[questionIndex] = rating;
   showError.value = false
+  // 从未回答问题列表中移除
+  unansweredQuestions.value = unansweredQuestions.value.filter(i => i !== questionIndex)
 }
 
 const selectStep = (stepId: number) => {
