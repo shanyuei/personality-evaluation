@@ -1,6 +1,6 @@
 <template>
     <!-- 首页 -->
-    <div class="uno-py-80px uno-pb-0 sm:uno-py-80px md:uno-py-120px">
+    <div class="uno-py-80px uno-pb-0 sm:uno-py-80px md:uno-py-80px">
         <!-- 第一块区域 -->
         <div
             class="page-container uno-relative uno-rounded-xl uno-border uno-border-transparent uno-px-4 sm:uno-px-6 md:uno-px-8">
@@ -40,19 +40,23 @@
         <!-- 第三块 数据统计区域 -->
         <div class="uno-data-stats uno-bg-[#F5F8FF] uno-mt-40px ">
             <div class="page-container ">
-                <div class="uno-flex uno-flex-wrap uno-gap-3 sm:uno-gap-4 md:uno-gap-6">
+                <div class="uno-flex uno-flex-wrap uno-gap-3 sm:uno-gap-4 md:uno-gap-6 md:uno-justify-between">
                     <!-- 统计项循环 -->
                     <div v-for="(item, index) in statsItems" :key="index"
-                        class="uno-w-[calc(50%-0.375rem)] md:uno-w-[calc(25%-1.125rem)] uno-text-center uno-py-3 sm:uno-py-4 md:uno-py-53px uno-flex uno-flex-col uno-justify-start uno-items-center sm:uno-justify-center md:uno-justify-center lg:uno-justify-center">
-                        <div :style="{ color: item.color }"
-                            class="uno-text-[20.75px] sm:uno-text-2xl md:uno-text-4xl lg:uno-text-5xl uno-font-Outfit uno-font-semibold uno-m-b-1px sm:uno-m-b-2px md:uno-m-b-4px">
-                            {{ item.value }}
-                        </div>
+                        class="uno-w-[calc(50%-0.375rem)] md:uno-w-auto md:uno-max-w-[270px] ">
                         <div
-                            class="uno-text-[#4E5255] uno-text-xs sm:uno-text-sm md:uno-text-base lg:uno-text-lg uno-font-Outfit">
-                            {{ item.labelKey }}
+                            class=" uno-text-center uno-py-3 sm:uno-py-4 md:uno-py-53px uno-flex uno-flex-col uno-justify-start uno-items-center sm:uno-justify-center md:uno-justify-center lg:uno-justify-center">
+                            <div :style="{ color: item.color }"
+                                class="uno-text-[20.75px] sm:uno-text-2xl md:uno-text-4xl lg:uno-text-5xl uno-font-Outfit uno-font-semibold uno-m-b-1px sm:uno-m-b-2px md:uno-m-b-4px">
+                                {{ item.value }}
+                            </div>
+                            <div
+                                class="uno-text-[#4E5255] uno-text-xs sm:uno-text-sm md:uno-text-base lg:uno-text-lg uno-font-Outfit">
+                                {{ item.labelKey }}
+                            </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -144,17 +148,17 @@
 
             <!-- How Does It Work 部分 -->
             <div
-                class="uno-flex uno-flex-col md:uno-flex-row uno-gap-48px sm:uno-gap-12 uno-items-center uno-pb-120px uno-pt-40px sm:uno-pt-120px md:uno-pr-80px">
+                class="uno-flex uno-flex-col md:uno-flex-row uno-gap-48px sm:uno-gap-66px uno-items-center uno-pb-120px uno-pt-40px sm:uno-pt-120px md:uno-pr-80px">
                 <!-- 左侧：标题、描述和按钮 -->
                 <div class="uno-w-full md:uno-w-1/2">
                     <div class="uno-flex uno-flex-col uno-items-center md:uno-items-start">
                         <h2
-                            class="uno-text-[32px] sm:uno-text-[48px] md:uno-text-[48px] uno-font-Outfit uno-font-semibold uno-mb-6 sm:uno-mb-8 uno-text-center md:uno-text-left">
+                            class="uno-text-[32px] sm:uno-text-[48px] md:uno-text-[48px] uno-font-Outfit uno-font-semibold uno-mb-6 sm:uno-mb-24px uno-text-center md:uno-text-left">
                             {{ $t('pages.home.how.title') }}
                         </h2>
-                        <p class="uno-text-gray-600 uno-mb-8 sm:uno-mb-12 uno-text-center md:uno-text-left">{{
+                        <p class="uno-text-gray-600 uno-mb-8 sm:uno-mb-32px uno-text-center md:uno-text-left">{{
                             $t('pages.home.how.desc')
-                            }}</p>
+                        }}</p>
 
                         <AppArrowButton
                             class="uno-m-t-12px sm:uno-m-t-16px md:uno-m-t-24px uno-gap-[6px] sm:uno-gap-[8px] md:uno-gap-[12px] uno-py-2 sm:uno-py-6px uno-pr-[6px] sm:uno-pr-[4px] md:uno-pr-[6px] uno-pl-[12px] sm:uno-pl-[16px] md:uno-pl-[24px] uno-text-[16px] sm:uno-text-[14px] md:uno-text-[16px] uno-font-Outfit uno-font-medium"

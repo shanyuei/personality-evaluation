@@ -201,7 +201,7 @@
     <div
       class="page-container uno-flex uno-flex-wrap uno-justify-between uno-gap-8 uno-mb-24 uno-mx-auto">
       <div v-for="(item, index) in trustItems" :key="index"
-        class="uno-flex uno-flex-col uno-items-center uno-text-center uno-flex-1">
+        class="uno-flex uno-flex-col uno-items-center uno-text-center">
         <NuxtImg :src="item.image" width="64" height="64" class="uno-w-16 uno-h-16 uno-mb-4" />
         <h4 class="uno-text-[#4E5255] uno-font-[500] uno-font-Outfit">{{ item.text }}</h4>
       </div>

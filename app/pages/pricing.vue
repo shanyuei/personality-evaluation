@@ -14,7 +14,7 @@
 
       <div class="uno-grid uno-grid-cols-1 lg:uno-grid-cols-3 uno-gap-6 md:uno-gap-8 uno-items-start">
         <div v-for="plan in plans" :key="plan.key"
-          class="uno-rounded-[16px] uno-p-24px  uno-border uno-shadow-none hover:uno-shadow-md uno-transition-all uno-cursor-pointer uno-relative uno-overflow-hidden"
+          class="uno-rounded-[16px] uno-p-24px uno-border uno-shadow-none hover:uno-shadow-[0_4px_12px_0px_#E7E7E8] uno-transition-all uno-cursor-pointer uno-relative uno-overflow-hidden"
           :class="[
             selectedPlan === plan.key
               ? 'uno-bg-[#E8FAF5] uno-border-1 uno-border-solid uno-border-[#E7E7E8] '
@@ -41,15 +41,12 @@
             <!-- {{ plan.billingFallback ? ($t('pages.ebooks.oneTime') || 'Auto-renews after 7 Days') : $t(`pages.pricing.plans.${plan.key}.billing`) }} -->
           </div>
 
-          <button :class="[
-            selectedPlan === plan.key
-              ? 'uno-bg-[#009D77] hover:uno-bg-[var(--color-green-2)] uno-text-white'
-              : 'uno-bg-[#009D77] hover:uno-bg-[var(--color-green-2)] uno-text-white'
-          ]"
-            class="uno-w-full uno-mt-6 uno-h-[48px] uno-rounded-[12px] uno-font-Outfit uno-font-bold uno-text-[18px]  uno-transition-colors"
-            @click.stop="handleCreateOrder(plan)">
+          <PrimaryButton
+            class="uno-w-full uno-mt-6"
+            height="48px"
+            @click="handleCreateOrder(plan)">
             {{ $t(`pages.pricing.plans.${plan.key}.button`) }}
-          </button>
+          </PrimaryButton>
           <!-- 分割线 -->
           <div class="uno-w-full uno-h-[1px] uno-bg-[#E7E7E8] uno-mt-24px uno-mb-12px"></div>
           <div class="uno-space-y-4">
@@ -121,6 +118,7 @@
 import { computed, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import FAQSection from '~/components/FAQSection.vue';
+import PrimaryButton from '~/components/ui/PrimaryButton.vue';
 import { getPlanList, createOrder } from '~/api/tests';
 
 const { t } = useI18n();

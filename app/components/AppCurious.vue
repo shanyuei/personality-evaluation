@@ -5,7 +5,7 @@
     <!-- 背景 -->
     <div v-if="$device.isMobile" class="uno-w-438px uno-h-534px uno-absolute  uno--z-10 "
       style="background-image: url(/images/footer/curious-h5-bg.png); background-size: 110% 100%; background-position-x: center;"></div>
-    <div v-else class="uno-w-1300px uno-h-483px uno-absolute  uno--z-10 "
+    <div v-else class="uno-w-1300px uno-h-500px uno-absolute  uno--z-10 "
       style="background-image: url(/images/footer/curious-pc-bg.png); background-size: cover;"></div>
     <!-- <NuxtImg src="/images/footer/curious-h5-bg.png" alt="" aria-hidden="true" width="438px" height="534px"
       class="uno-absolute  uno--z-10 uno-pointer-events-none uno-object-cover uno-object-center uno-block md:uno-hidden"
@@ -22,11 +22,11 @@
       </h2>
 
       <p
-        class="uno-w-80% uno-text-[#4E5255] uno-relative uno-z-10 uno-font-Outfit uno-max-w-[720px] uno-mx-auto uno-mb-4 sm:uno-mb-6 md:uno-mb-8 lg:uno-mb-10 uno-text-center uno-px-4 uno-text-[16px] sm:uno-text-base md:uno-text-[16px] uno-leading-[1.5] sm:uno-leading-normal">
+        class="uno-w-80% uno-text-[#4E5255] uno-relative uno-z-10 uno-font-Outfit uno-max-w-[720px] uno-mx-auto uno-mb-4 sm:uno-mb-6 md:uno-mb-40px lg:uno-mb-40px uno-text-center uno-px-4 uno-text-[16px] sm:uno-text-base md:uno-text-[16px] uno-leading-[1.5] sm:uno-leading-normal">
         {{ props.description || curious.description }}
       </p>
       <AppArrowButton
-        class="uno-relative uno-z-10 uno-min-w-175px md:uno-min-w-190px uno-h-[56px] sm:uno-h-66px uno-justify-start uno-gap-[6px] sm:uno-gap-[8px] md:uno-gap-[12px] uno-py-2 sm:uno-py-2 uno-pr-[6px]  md:uno-pr-[6px] uno-pl-[12px] sm:uno-pl-[16px] md:uno-pl-[16px] uno-text-[12px] sm:uno-text-[14px] md:uno-text-[18px] uno-font-Outfit uno-font-medium"
+        class="uno-relative uno-z-10 uno-min-w-175px md:uno-min-w-190px uno-h-[56px]  uno-justify-start uno-gap-[6px] sm:uno-gap-[8px] md:uno-gap-[12px] uno-py-2 sm:uno-py-2 uno-pr-[6px]  md:uno-pr-[6px] uno-pl-[12px] sm:uno-pl-[16px] md:uno-pl-[16px] uno-text-[12px] sm:uno-text-[14px] md:uno-text-[18px] uno-font-Outfit uno-font-medium"
         :icon-size="44" hover-class="" :to="localePath('/free-personality-test')">
         <div class="w-[calc(100%-44px)] text-center uno-text-16px">
           {{ props.buttonText || curious.buttonText }}

@@ -25,7 +25,7 @@
           </a>
 
           <!-- 联系选项卡片 -->
-          <div class="uno-grid uno-grid-cols-1 sm:uno-grid-cols-3 uno-gap-[20px]">
+          <div class="uno-grid uno-grid-cols-1 sm:uno-grid-cols-3 uno-gap-[36px]">
             <div v-for="option in contactOptions" :key="option.id" class="uno-gap-16 ">
               <div class="uno-w-64px uno-h-64px uno-rounded-full uno-flex uno-items-center uno-justify-center uno-mb-4">
                 <HeartIcon v-if="option.id === 'feedback'" />
@@ -64,8 +64,8 @@
               {{ t('pages.contact.contactDesc2') }}
 
             </p>
-            <a href="mailto:support@personalitytest101.com">
-              <PrimaryButton>
+            <a href="mailto:support@personalitytest101.com" class="uno-block uno-w-full">
+              <PrimaryButton width="full">
                 {{ t('pages.contact.getSupport') }}
               </PrimaryButton>
             </a>

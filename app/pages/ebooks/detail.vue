@@ -49,7 +49,7 @@
             }}</h3>
             <ul class="uno-space-y-2">
               <li v-for="(item, i) in learnList" :key="i" class="uno-text-[var(--ui-foreground)]">
-                <span class="uno-mr-2">{{ i + 1 }}.</span>
+                <span class="uno-mr-0">{{ i + 1 }}.</span>
                 <span class="uno-text-[#011813] uno-font-500">{{ item.split(':')[0] }}:</span>
                 <span class="uno-text-[#4E5255] uno-font-400">{{ item.split(':')[1] }}</span>
               </li>

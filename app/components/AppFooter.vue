@@ -167,11 +167,11 @@
             <NuxtImg src="/images/footer/line.png" alt="line" width="100%" height="1px" object-fit="contain" />
           </div>
           <div
-            class="uno-w-full uno-max-w-[1440px] uno-mx-auto uno-px-0 sm:uno-px-40px xl:uno-px-0 uno-flex uno-items-center uno-justify-between max-md:uno-max-w-[80%] max-sm:uno-max-w-full max-sm:uno-flex-col max-sm:uno-items-start uno-gap-0 sm:uno-gap-16px max-xs:uno-gap-12px">
+            class="uno-w-full uno-max-w-[1440px] uno-mx-auto uno-px-0 sm:uno-px-40px xl:uno-px-0 uno-flex uno-items-center uno-justify-center max-md:uno-max-w-[80%] max-sm:uno-max-w-full max-sm:uno-flex-col max-sm:uno-items-center uno-gap-0 sm:uno-gap-16px max-xs:uno-gap-12px">
             <div class="uno-text-[#011813] uno-font-Outfit uno-cursor-pointer uno-text-center uno-text-16px">
               {{ $t('common.footer.copyright') }}
             </div>
-            <div class="uno-flex uno-items-center uno-gap-8px uno-flex-wrap uno-justify-center ">
+            <!-- <div class="uno-flex uno-items-center uno-gap-8px uno-flex-wrap uno-justify-center ">
               <span
                 class="uno-text-[#011813] uno-font-Outfit uno-cursor-pointer uno-mr-12px max-sm:uno-mr-8px max-xs:uno-mr-6px max-sm:uno-text-14px max-xs:uno-text-12px">
                 {{ $t('common.footer.payments') }}:</span>
@@ -180,7 +180,7 @@
               <NuxtImg src="/images/footer/payments-logo-3.png" alt="UnionPay" width="36px" height="24px" />
               <NuxtImg src="/images/footer/payments-logo-4.png" alt="American Express" width="36px" height="24px" />
               <NuxtImg src="/images/footer/payments-logo-5.png" alt="PayPal" width="36px" height="24px" />
-            </div>
+            </div> -->
           </div>
         </template>
 

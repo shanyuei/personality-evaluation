@@ -15,9 +15,9 @@
     "feedback": "General Inquiries",
     "feedbackDesc": "Have questions about PersonalityTest101 or our services? Reach out and we'll get back to you as soon as possible.",
     "contactUs": "Get in Touch",
-    "contactDesc1": "If you have questions about our personality tests, need assistance, or want to share feedback, feel free to reach out anytime. We’re always happy to hear from our users and provide clear, thoughtful support.",
-    "contactDesc2": "Click the button below to email the PersonalityTest101 team directly. Get in touch today — we’re here to support you every step of the way.",
-    "getSupport": "Get Support",
+    "contactDesc1": "Your feedback is greatly appreciated. If you have questions about our personality tests, need assistance, or want to share feedback, feel free to reach out anytime. We're always happy to hear from our users and provide clear, thoughtful support.",
+    "contactDesc2": "You may also find helpful information in our FAQ section, where we provide a comprehensive overview of our services and operations. If you cannot find a satisfactory answer, please email us and our support team will respond within 24 hours.",
+    "getSupport": "Contact Support",
     "faqTitle": "Frequently Asked Questions",
     "faqDesc": "Have questions about our personality tests or how PersonalityTest101 works?\n Here are some of the most common questions we get — with clear, \n easy-to-understand answers to help you get started.",
     "curiousTitle": "Ready to Uncover Your True Personality?",
@@ -1037,7 +1037,7 @@
       "profile": {
         "title": "Profile Information",
         "namePlaceholder": "First and last name",
-        "emailPlaceholder": "First and last name",
+        "emailPlaceholder": "Enter your email address",
         "name": "Name",
         "email": "Email Address"
       },
