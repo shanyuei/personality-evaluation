@@ -29,11 +29,10 @@
         </div>
 
         <div class="uno-flex uno-items-center uno-justify-center uno-mt-8">
-            <UButton
-              :ui="UButtonTheme"
+            <PrimaryButton
               @click="nextStep"
->
-              {{ $t('pages.testStart.cta.getStarted') }}</UButton>
+            >
+              {{ $t('pages.testStart.cta.getStarted') }}</PrimaryButton>
         </div>
 
         <p
@@ -45,7 +44,7 @@
 </template>
 
 <script setup lang="ts">
-import UButtonTheme from '~/theme/UButton'
+import PrimaryButton from '~/components/ui/PrimaryButton.vue'
 
 const { t } = useI18n()
 const router = useRouter()

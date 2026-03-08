@@ -12,7 +12,7 @@
     <section class="uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_0px_#0000000D] ">
       <div class="uno-flex uno-p-6 md:uno-p-8 uno-flex-col md:uno-flex-row uno-gap-6 md:uno-gap-18">
         <img src="/images/blog/2.png" alt="hero"
-          class="uno-w-full md:uno-w-[425px] uno-h-[270px] uno-object-cover uno-rounded-[24px] uno-flex-shrink-0" />
+          class="uno-w-full md:uno-w-[425px] uno-h-[270px] uno-object-cover uno-rounded-[24px] uno-flex-shrink-0">
 
         <div class="uno-flex-grow uno-flex uno-flex-col uno-justify-center uno-space-y-3">
           <h1
@@ -42,7 +42,7 @@
     <section class="uno-mt-4 md:uno-mt-16px">
       <div class="uno-grid uno-gap-32px md:uno-gap-[16px_24px] md:uno-grid-cols-2">
         <div v-for="card in filteredTests" :key="card.id"
-          class="uno-bg-white uno-h-[297px] uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[1px] uno-border-[var(--ui-border)]">
+          class="uno-bg-white uno-h-[297px] uno-w-full md:uno-w-auto uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[1px] uno-border-[var(--ui-border)]">
           <div class="uno-p-32px uno-flex uno-flex-col uno-h-full uno-space-y-3">
             <div class="uno-flex uno-items-center uno-justify-between">
               <span
@@ -70,26 +70,38 @@
               {{ card.title }}</h3>
             <p class="uno-text-[#323233] uno-text-sm uno-font-Outfit uno-leading-normal">{{ card.desc }}</p>
             <div v-if="!card.completed" class="uno-mt-auto">
-              <PrimaryButton width="151px" height="44px">
+              <PrimaryButton v-if="!$device.isMobile" width="151px" height="44px">
+                {{ $t('pages.tests.cta.readMore') }}</PrimaryButton>
+              <PrimaryButton v-else width="100%" height="44px">
                 {{ $t('pages.tests.cta.readMore') }}</PrimaryButton>
             </div>
             <div v-else class="uno-flex uno-gap-3 uno-mt-auto">
-              <AppLink :to="'/test/result'">
-                <PrimaryButton width="151px" height="44px">
-                  {{ $t('pages.tests.cta.viewResults') }}</PrimaryButton>
-              </AppLink>
-              <AppLink :to="'/test/step'">
-                <OutlineButton width="151px" height="44px">
-                  {{ $t('pages.tests.cta.tryAgain') }}</OutlineButton>
-              </AppLink>
+              <template v-if="!$device.isMobile">
+                <AppLink :to="'/test/result'">
+                  <PrimaryButton width="151px" height="44px">{{ $t('pages.tests.cta.viewResults') }}</PrimaryButton>
+                </AppLink>
+                <AppLink :to="'/test/step'">
+                  <OutlineButton width="151px" height="44px">
+                    {{ $t('pages.tests.cta.tryAgain') }}</OutlineButton>
+                </AppLink>
+              </template>
+              <template v-else>
+                <AppLink :to="'/test/result'" class="uno-w-[calc(100%/2)]">
+                  <PrimaryButton width="100%" height="44px">{{ $t('pages.tests.cta.viewResults') }}</PrimaryButton>
+                </AppLink>
+                <AppLink :to="'/test/step'" class="uno-w-[calc(100%/2)]">
+                  <OutlineButton width="100%" height="44px">
+                    {{ $t('pages.tests.cta.tryAgain') }}</OutlineButton>
+                </AppLink>
+              </template>
             </div>
           </div>
         </div>
       </div>
       <div class="uno-flex uno-justify-center uno-mt-5">
-        <UButton variant="ghost"
+        <OutlineButton
           class="uno-w-full uno-h-[44px] uno-text-sm md:uno-h-[48px] md:uno-text-lg uno-rounded-[8px] uno-bg-white uno-border uno-border-[#8D8E8F] uno-text-[#8D8E8F] uno-font-Outfit uno-font-[700] uno-leading-normal uno-flex uno-items-center uno-justify-center uno-text-center">
-          {{ $t('pages.tests.cta.loadMore') }}</UButton>
+          {{ $t('pages.tests.cta.loadMore') }}</OutlineButton>
       </div>
     </section>
   </div>

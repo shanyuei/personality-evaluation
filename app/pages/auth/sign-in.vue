@@ -45,7 +45,6 @@ import { ref, computed } from 'vue'
 
 import UFormFieldTheme from "~/theme/UFormField";
 import UInputTheme from "~/theme/UInput";
-import UButtonTheme from "~/theme/UButton";
 import { useUserStore } from '~/stores/modules/user';
 import PrimaryButton from '~/components/ui/PrimaryButton.vue';
 

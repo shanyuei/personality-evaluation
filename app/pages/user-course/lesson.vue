@@ -123,7 +123,6 @@ import { ref, computed } from 'vue'
 
 import PrimaryButton from '@/components/ui/PrimaryButton.vue'
 import OutlineButton from '@/components/ui/OutlineButton.vue'
-import UButtonTheme, { UButtonThemeDark } from '~/theme/UButton'
 
 const { t } = useI18n()
 const current = ref(3)

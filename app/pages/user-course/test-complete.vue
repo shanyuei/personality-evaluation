@@ -13,7 +13,7 @@
           <p class="uno-w-full uno-text-[#4E5255] uno-text-sm uno-font-Outfit uno-leading-normal">{{ $t('pages.userCourseTestComplete.description') }}</p>
 
           <AppLink :is-link="false" class="uno-w-full md:uno-w-[520px]">
-            <UButton :ui="UButtonTheme"  class="uno-font-Outfit">{{ $t('pages.userCourseTestComplete.cta') }}</UButton>
+            <PrimaryButton height="44px" class="uno-w-full">{{ $t('pages.userCourseTestComplete.cta') }}</PrimaryButton>
           </AppLink>
         </div>
     </div>
@@ -23,7 +23,7 @@
 <script setup lang="ts">
 
 
-import UButtonTheme from '~/theme/UButton'
+import PrimaryButton from '~/components/ui/PrimaryButton.vue'
 
 const { t } = useI18n()
 const score = 0

@@ -185,7 +185,6 @@ import { ref, computed } from 'vue'
 import { getUserTestInfo } from '~/api/user'
 
 
-import UButtonTheme from '~/theme/UButton'
 import PrimaryButton from '~/components/ui/PrimaryButton.vue'
 import OutlineButton from '~/components/ui/OutlineButton.vue'
 definePageMeta({
