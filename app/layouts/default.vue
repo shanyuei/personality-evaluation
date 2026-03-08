@@ -24,9 +24,9 @@
             class="uno-absolute uno-top-431px uno-left-133px uno-z-1" />
         </template>
         <template v-if="showPageTopIcons && $device.isMobile">
-          <NuxtImg src="/theme/layout/page-top-icon-1.png" width="42" height="47"
+          <NuxtImg src="/theme/layout/page-top-icon-1.png" width="55" height="61"
             class="uno-absolute uno-top-50px uno-right-13px uno-z-1" />
-          <NuxtImg src="/theme/layout/page-top-icon-2.png" width="38" height="43"
+          <NuxtImg src="/theme/layout/page-top-icon-2.png" width="50" height="56"
             class="uno-absolute uno-top-361px uno-left-8px uno-z-1" />
         </template>
         <div v-if="showPageTopIcons3" class="page-container relative">

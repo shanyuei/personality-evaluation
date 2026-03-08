@@ -1,6 +1,6 @@
 <template>
     <!-- 首页 -->
-    <div class="uno-py-80px uno-pb-0 sm:uno-py-80px md:uno-py-80px">
+    <div class="uno-py-60px uno-pb-0 sm:uno-py-80px md:uno-py-80px">
         <!-- 第一块区域 -->
         <div
             class="page-container uno-relative uno-rounded-xl uno-border uno-border-transparent uno-px-4 sm:uno-px-6 md:uno-px-8">
@@ -20,7 +20,7 @@
 
                 <!-- 测试按钮 -->
                 <AppArrowButton variant="primary"
-                    class="uno-m-t-32px sm:uno-m-t-48px md:uno-m-t-72px uno-gap-[8px] sm:uno-gap-[12px] md:uno-gap-[18px] uno-py-2 sm:uno-py-3 md:uno-py-4 uno-pr-2 sm:uno-pr-3 md:uno-pr-3 uno-pl-[20px] sm:uno-pl-[24px] md:uno-pl-[48px] uno-text-[18px] sm:uno-text-[18px] md:uno-text-[32px] uno-font-Outfit uno-font-medium"
+                    class="uno-h-[64px] sm:uno-h-auto md:uno-h-auto uno-m-t-32px sm:uno-m-t-48px md:uno-m-t-72px uno-gap-[8px] sm:uno-gap-[12px] md:uno-gap-[18px] uno-py-2 sm:uno-py-3 md:uno-py-4 uno-pr-2 sm:uno-pr-3 md:uno-pr-3 uno-pl-[20px] sm:uno-pl-[24px] md:uno-pl-[48px] uno-text-[18px] sm:uno-text-[18px] md:uno-text-[32px] uno-font-Outfit uno-font-medium"
                     :icon-size="$device.isMobile ? 44 : 72" @click="handleCTAClick">
                     {{ $t('pages.home.cta') }}
                 </AppArrowButton>
@@ -158,7 +158,7 @@
                         </h2>
                         <p class="uno-text-gray-600 uno-mb-8 sm:uno-mb-32px uno-text-center md:uno-text-left">{{
                             $t('pages.home.how.desc')
-                        }}</p>
+                            }}</p>
 
                         <AppArrowButton
                             class="uno-m-t-12px sm:uno-m-t-16px md:uno-m-t-24px uno-gap-[6px] sm:uno-gap-[8px] md:uno-gap-[12px] uno-py-2 sm:uno-py-6px uno-pr-[6px] sm:uno-pr-[4px] md:uno-pr-[6px] uno-pl-[12px] sm:uno-pl-[16px] md:uno-pl-[24px] uno-text-[16px] sm:uno-text-[14px] md:uno-text-[16px] uno-font-Outfit uno-font-medium"
@@ -240,7 +240,9 @@
                 :subtitle="$t('pages.home.testimonials.subtitle')" :rating="5" :reviews="reviews" />
         </div>
 
-        <FAQSection :title="$t('common.faq.title')" :description="$t('common.faq.desc')" :items="faqItems" />
+        <div class="uno-relative uno-bg-#FFF">
+            <FAQSection :title="$t('common.faq.title')" :description="$t('common.faq.desc')" :items="faqItems" />
+        </div>
 
         <!-- <GradientCTASection @button-click="handleCTAClick" /> -->
     </div>
