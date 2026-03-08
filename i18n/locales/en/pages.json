@@ -359,8 +359,8 @@
         "reasonBudget": "The subscription cost does not fit my budget.",
         "reasonOther": "Other.",
         "submitButton": "NEXT",
-        "contactSupport": "If you cannot recall the email address used for registration, please check your inbox for messages from \"PersonalityTest101\". Alternatively, feel free to contact our dedicated support team for assistance.",
-        "cancelSubscription": "You may also cancel your subscription by logging into your account, navigating to the \"Membership\" tab, and selecting \"Cancel Subscription\".",
+        "contactSupport": "If you cannot recall the email address used for registration, please check your inbox for messages from \"PersonalityTest101\". Alternatively, feel free to contact our dedicated support team for <a href=\"mailto:support{'@'}personalitytest101.com\">{email}</a>",
+        "cancelSubscription": "You may also cancel your subscription by logging into your by logging into your account, navigating to the \"Membership\" tab, and selecting \"Cancel Subscription\".",
         "confirmTitle": "Cancel Subscription",
         "confirmDesc": "This action cannot be undone. All premium insights will be deleted.",
         "confirmCancel": "Keep My Plan",
@@ -608,7 +608,7 @@
     },
     "testimonials": {
       "title": "Trusted by 20,000+ customers",
-      "subtitle": "Be always were in form of volunteers range time is mediatingappositive the in our affidavit how solitary saw more in his not"
+      "subtitle": "Be always were in form of volunteers range\n time is mediatingappositive the in our\n affidavit how solitary saw more in his not"
     },
     "faq": {
       "title": "Frequently Asked Questions",

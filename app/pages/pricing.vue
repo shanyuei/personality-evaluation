@@ -70,9 +70,8 @@
 
     <!-- What You Will Receive -->
     <div class="uno-receive-section  uno-bg-gray-5 uno-relative uno-h-[1920px] md:uno-h-auto">
-      <NuxtImg src="/theme/home/receive-box-bg-h5.png" alt="" aria-hidden="true" width="375" height="1920"
-        class="uno-absolute uno-inset-0 uno--z-10 uno-pointer-events-none uno-object-cover uno-object-center uno-block md:uno-hidden"
-        uno-preload />
+      <img src="/theme/home/receive-box-bg-h5.png" alt="" aria-hidden="true"
+        class="uno-absolute uno-inset-0 uno--z-10 uno-pointer-events-none uno-object-cover uno-object-center uno-block md:uno-hidden uno-w-full">
       <NuxtImg src="/theme/home/receive-box-bg-pc.png" alt="" aria-hidden="true" width="100vw" height="100%"
         class="uno-w-full uno-h-[100%]  uno-absolute uno-top-0 uno-left-0 uno--z-10 uno-pointer-events-none uno-hidden md:uno-block"
         uno-preload />
@@ -108,8 +107,10 @@
     </div>
 
     <!-- FAQ Section -->
-    <FAQSection :title="$t('common.faq.title')" :description="$t('common.faq.desc')"
+    <div class="uno-relative uno-z-10 uno-bg-#FFF">
+      <FAQSection :title="$t('common.faq.title')" :description="$t('common.faq.desc')"
       :items="faqItems" />
+    </div>
 
   </div>
 </template>

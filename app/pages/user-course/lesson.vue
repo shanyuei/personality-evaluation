@@ -20,7 +20,7 @@
 
     <!-- 内容卡片 -->
     <div
-      class="uno-mt-4 uno-w-full md:uno-w-[860px] uno-mx-auto uno-bg-white uno-rounded-[20px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)]">
+      class="uno-mt-4 uno-w-full md:uno-w-[860px] uno-mx-auto uno-bg-white uno-rounded-[20px] ">
       <div class="uno-p-6 md:uno-p-8">
         <h1
           class="uno-text-[#011813] uno-text-2xl md:uno-text-[32px] uno-font-Outfit uno-font-semibold uno-leading-[1.2] uno-mb-4">
@@ -32,13 +32,13 @@
             $t('pages.userCourseLesson.sections.activeListening.title') }}:</p>
           <div class="">
             <span class="uno-text-[#4E5255] uno-text-sm uno-font-Outfit uno-font-bold uno-leading-normal">{{
-              $t('pages.userCourseLesson.sections.activeListening.descriptionTitle') }}:</span>
+              $t('pages.userCourseLesson.sections.activeListening.descriptionTitle') }}: &nbsp;</span>
             <span class="uno-text-[#4E5255] uno-text-sm uno-font-Outfit uno-leading-normal">{{
               $t('pages.userCourseLesson.sections.activeListening.descriptionBody') }}</span>
           </div>
           <div class="">
             <span class="uno-text-[#4E5255] uno-text-sm uno-font-Outfit uno-font-bold uno-leading-normal">{{
-              $t('pages.userCourseLesson.sections.activeListening.applicationTitle') }}:</span>
+              $t('pages.userCourseLesson.sections.activeListening.applicationTitle') }}:&nbsp;</span>
             <span class="uno-text-[#4E5255] uno-text-sm uno-font-Outfit uno-leading-normal">{{
               $t('pages.userCourseLesson.sections.activeListening.applicationBody') }}</span>
           </div>
@@ -58,35 +58,43 @@
             {{ $t('pages.userCourseLesson.sections.takeaways.title') }}</p>
           <div class="uno-space-y-3">
             <div class="uno-flex uno-items-start uno-gap-3">
-              <span
+              <!-- <span
                 class="uno-inline-flex uno-items-center uno-justify-center uno-w-6 uno-h-6 uno-aspect-square uno-rounded-full uno-bg-white uno-border-2 uno-border-[var(--ui-primary)]">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
                   <path d="M20 6L9 17l-5-5" stroke="var(--ui-primary)" stroke-width="2" fill="none"
                     stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
-              </span>
+              </span> -->
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.50316 11.0001L9.26658 12.9997L14.0688 6.49995" stroke="#009D77" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                  d="M9.9974 18.3332C14.5998 18.3332 18.3307 14.6022 18.3307 9.99984C18.3307 5.39746 14.5998 1.6665 9.9974 1.6665C5.39502 1.6665 1.66406 5.39746 1.66406 9.99984C1.66406 14.6022 5.39502 18.3332 9.9974 18.3332Z"
+                  stroke="#009D77" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+
               <span class="uno-w-full uno-text-[#4E5255] uno-text-sm uno-font-Outfit uno-leading-normal">{{
                 $t('pages.userCourseLesson.sections.takeaways.i1') }}</span>
             </div>
             <div class="uno-flex uno-items-start uno-gap-3">
-              <span
-                class="uno-inline-flex uno-items-center uno-justify-center uno-w-6 uno-h-6 uno-aspect-square uno-rounded-full uno-bg-white uno-border-2 uno-border-[var(--ui-primary)]">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
-                  <path d="M20 6L9 17l-5-5" stroke="var(--ui-primary)" stroke-width="2" fill="none"
-                    stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </span>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.50316 11.0001L9.26658 12.9997L14.0688 6.49995" stroke="#009D77" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                  d="M9.9974 18.3332C14.5998 18.3332 18.3307 14.6022 18.3307 9.99984C18.3307 5.39746 14.5998 1.6665 9.9974 1.6665C5.39502 1.6665 1.66406 5.39746 1.66406 9.99984C1.66406 14.6022 5.39502 18.3332 9.9974 18.3332Z"
+                  stroke="#009D77" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
               <span class="uno-w-full uno-text-[#4E5255] uno-text-sm uno-font-Outfit uno-leading-normal">{{
                 $t('pages.userCourseLesson.sections.takeaways.i2') }}</span>
             </div>
             <div class="uno-flex uno-items-start uno-gap-3">
-              <span
-                class="uno-inline-flex uno-items-center uno-justify-center uno-w-6 uno-h-6 uno-aspect-square uno-rounded-full uno-bg-white uno-border-2 uno-border-[var(--ui-primary)]">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
-                  <path d="M20 6L9 17l-5-5" stroke="var(--ui-primary)" stroke-width="2" fill="none"
-                    stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </span>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.50316 11.0001L9.26658 12.9997L14.0688 6.49995" stroke="#009D77" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                  d="M9.9974 18.3332C14.5998 18.3332 18.3307 14.6022 18.3307 9.99984C18.3307 5.39746 14.5998 1.6665 9.9974 1.6665C5.39502 1.6665 1.66406 5.39746 1.66406 9.99984C1.66406 14.6022 5.39502 18.3332 9.9974 18.3332Z"
+                  stroke="#009D77" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
               <span class="uno-w-full uno-text-[#4E5255] uno-text-sm uno-font-Outfit uno-leading-normal">{{
                 $t('pages.userCourseLesson.sections.takeaways.i3') }}</span>
             </div>
@@ -123,7 +131,8 @@ const total = ref(10)
 const progress = computed(() => Math.round((current.value / total.value) * 100))
 
 definePageMeta({
-  title: () => 'seo.userCourse.lesson.title'
+  title: () => 'seo.userCourse.lesson.title',
+  layoutShowPageTopIcons: false
 })
 
 useSeoMeta({

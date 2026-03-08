@@ -89,10 +89,10 @@
 
 
     <UModal v-model:open="showConfirmModal" :closeable="true" :ui="{
-      content: 'uno-rounded-16px uno-border-0 uno-shadow-none '
+      content: 'uno-rounded-16px uno-border-0 uno-shadow-none uno-max-w-[480px]'
     }">
       <template #content>
-        <div class="uno-p-6 sm:uno-p-8">
+        <div class="uno-p-6 sm:uno-p-24px">
           <h2 class="uno-font-Outfit uno-font-semibold uno-text-[24px] uno-leading-[150%] uno-text-center uno-mb-4">
             {{ t('pages.orders.cancel.subscription.confirmTitle') }}
           </h2>
@@ -123,10 +123,10 @@
 
     <!-- Confirmation Success Modal -->
     <UModal v-model:open="showSuccessModal" :closeable="true" :ui="{
-      content: 'uno-rounded-16px uno-border-0 uno-shadow-none'
+      content: 'uno-rounded-16px uno-border-0 uno-shadow-none uno-max-w-[480px]'
     }">
       <template #content>
-        <div class="uno-p-6 sm:uno-p-8 uno-flex uno-flex-col uno-items-center">
+        <div class="uno-p-6 sm:uno-p-24px uno-flex uno-flex-col uno-items-center">
           <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M27.9993 51.3327C40.886 51.3327 51.3327 40.886 51.3327 27.9993C51.3327 15.1127 40.886 4.66602 27.9993 4.66602C15.1127 4.66602 4.66602 15.1127 4.66602 27.9993C4.66602 40.886 15.1127 51.3327 27.9993 51.3327Z"

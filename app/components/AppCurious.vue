@@ -3,7 +3,7 @@
     class="uno-max-w-[100vw] uno-overflow-hidden uno-gradient-cta-section uno-relative uno-w-full uno-flex uno-items-center uno-justify-center uno-mb-40px sm:uno-mb-60px uno-relative uno-whitespace-pre-line uno-h-[538px] sm:uno-h-auto">
     <!-- 内容 -->
     <!-- 背景 -->
-    <div v-if="$device.isMobile" class="uno-w-438px uno-h-534px uno-absolute  uno--z-10 "
+    <div v-if="$device.isMobile" class="uno-w-100% uno-h-534px uno-absolute  uno--z-10 "
       style="background-image: url(/images/footer/curious-h5-bg.png); background-size: 110% 100%; background-position-x: center;"></div>
     <div v-else class="uno-w-1300px uno-h-500px uno-absolute  uno--z-10 "
       style="background-image: url(/images/footer/curious-pc-bg.png); background-size: cover;"></div>

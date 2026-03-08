@@ -15,7 +15,7 @@
           <img src="/theme/logo.png" alt="logo" width="249" height="60" />
         </NuxtLink>
         <NuxtLink :to="localePath('/')" class="uno-w-[152px]  uno-items-center uno-hidden max-sm:uno-flex">
-          <NuxtImg src="/theme/logo-2.png" width="152" height="26" alt="logo" class="" />
+          <NuxtImg src="/theme/logo-2.png" width="149" height="23" alt="logo" class="" />
         </NuxtLink>
 
 

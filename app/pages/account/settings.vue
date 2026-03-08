@@ -22,7 +22,6 @@
           <div>
             <PrimaryButton class="!uno-w-[217px]" :loading="profileLoading"
               @click="onSaveProfile">
-              <!-- {{ $t('common.saveChanges') }} -->
                  {{ $t('common.confirm') }}
             </PrimaryButton>
           </div>
@@ -93,7 +92,8 @@ import PrimaryButton from '~/components/ui/PrimaryButton.vue';
 definePageMeta({
   layoutShowFooter: false,
   title: () => 'seo.account.settings.title',
-  path: '/settings'
+  path: '/settings',
+  layoutShowPageTopIcons:false
 })
 
 const { t } = useI18n()

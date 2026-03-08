@@ -43,7 +43,8 @@ const { t } = useI18n()
 
 // 设置页面SEO元数据
 definePageMeta({
-  title: () => 'seo.userCourse.chapters.title'
+  title: () => 'seo.userCourse.chapters.title',
+  layoutShowPageTopIcons:false
 })
 
 useSeoMeta({

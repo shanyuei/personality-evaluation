@@ -1,11 +1,11 @@
 <template>
   <main class="page-container uno-py-40px">
-      <div class="uno-w-full uno-max-w-860px  uno-mx-auto uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)]">
+      <div class="uno-w-full uno-max-w-860px  uno-mx-auto uno-bg-white uno-rounded-[24px] ">
         <div class="uno-p-8 md:uno-p-10 uno-flex uno-flex-col uno-items-center uno-text-center uno-gap-6">
-          <div class="uno-w-96px uno-h-96px uno-aspect-square uno-rounded-full uno-border-2 uno-border-[var(--color-pink-2)] uno-flex uno-items-center uno-justify-center uno-bg-[#F9F0F4]">
+          <div class="uno-w-96px uno-h-96px uno-aspect-square uno-rounded-full uno-border-2 uno-border-[#F6998D] uno-flex uno-items-center uno-justify-center uno-bg-[rgba(255, 211, 204, 0.5)]">
             <div class="uno-flex uno-items-center uno-flex-col">
-              <span class="uno-text-[var(--color-pink-1)] uno-text-2xl md:uno-text-3xl uno-font-Outfit uno-font-semibold">{{ score }}/{{ total }}</span>
-              <span class="uno-text-[var(--color-pink-1)] uno-text-sm uno-font-Outfit uno-font-normal">points</span>
+              <span class="uno-text-[#D73875] uno-text-2xl md:uno-text-3xl uno-font-Outfit uno-font-semibold">{{ score }}/{{ total }}</span>
+              <span class="uno-text-[#D73875] uno-text-sm uno-font-Outfit uno-font-normal">points</span>
             </div>
           </div>
 
