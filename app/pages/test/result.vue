@@ -5,8 +5,8 @@
       <section class="uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)]">
         <div class="uno-p-6 md:uno-p-10">
           <div class="uno-flex uno-items-center uno-justify-center uno-mb-6">
-            <div class="uno-w-20 uno-h-20 uno-rounded-full uno-bg-[var(--ui-input)] uno-flex uno-items-center uno-justify-center uno-font-Outfit uno-text-[var(--ui-foreground)] uno-text-sm md:uno-text-base text-center">
-              {{ $t('pages.testEnd.score', { value: scoreValue, total: scoreTotal }) }}
+            <div class="uno-w-96px uno-h-96px uno-rounded-full uno-bg-[rgba(221,221,221,0.5)] uno-flex uno-flex-col uno-items-center uno-justify-center uno-font-Outfit uno-text-[#4E5255] uno-text-16px md:uno-text-16px text-center" style="white-space: pre-line;" v-html=" $t('pages.testEnd.score', { value: scoreValue, total: scoreTotal })">
+
             </div>
           </div>
 
@@ -21,7 +21,7 @@
                 <div class="uno-hidden md:uno-block"><IconsCheck :size="30" background-color="none" check-color="var(--ui-primary)" class="uno-mt-1" /></div>
                 <!-- 移动端展示 -->
                 <div class="uno-block md:uno-hidden"><IconsCheck :size="24" background-color="none" check-color="var(--ui-primary)" class="uno-mt-1" /></div>
-                <p class="uno-text-sm"><span class="uno-font-semibold">{{ item.title }}：</span> {{ item.body }}</p>
+                <p class="uno-text-sm"><span class="uno-font-semibold">{{ item.title }}:</span> {{ item.body }}</p>
               </div>
             </div>
           </div>

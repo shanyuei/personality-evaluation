@@ -68,7 +68,7 @@
             <NuxtImg src="/images/common/email-icon-1.png" alt="Email Icon" width="50" height="50"
               class="uno-mt-0.5 uno-block md:uno-hidden" />
             <div class="uno-text-xs">
-              {{ t('pages.orders.cancel.subscription.contactSupport') }}
+              <div v-html="t('pages.orders.cancel.subscription.contactSupport')"></div>
               <!-- <span
                 class="uno-underline uno-text-[#009D77]">here</span> -->
 
@@ -93,14 +93,11 @@
     }">
       <template #content>
         <div class="uno-p-6 sm:uno-p-24px">
-          <h2 class="uno-font-Outfit uno-font-semibold uno-text-[24px] uno-leading-[150%] uno-text-center uno-mb-4">
+          <h2 class="uno-font-Outfit uno-font-semibold uno-text-[24px] uno-leading-[150%] uno-text-center uno-mb-8px">
             {{ t('pages.orders.cancel.subscription.confirmTitle') }}
           </h2>
           <p
-            class="uno-text-[#4E5255] uno-font-Outfit uno-font-normal uno-text-[16px] uno-leading-[150%] uno-text-center uno-mb-6">
-            {{ t('pages.orders.cancel.subscription.confirmDesc') }}
-            <!-- Are you sure you want to cancel your subscription? You will lose access to your data and this action
-            <span class="uno-font-Outfit uno-font-bold uno-text-[16px] uno-leading-[150%]">can't be undone!</span> -->
+            class="uno-text-[#4E5255] uno-font-Outfit uno-font-normal uno-text-[16px] uno-leading-[150%] uno-text-center uno-mb-12px" v-html="t('pages.orders.cancel.subscription.confirmDesc')">
           </p>
           <div class="uno-flex uno-flex-col-reverse sm:uno-flex-row uno-gap-4 uno-justify-center">
             <button

@@ -106,7 +106,7 @@
                   </NuxtLink>
                 </li>
                 <li>
-                  <NuxtLink :to="localePath('/privacy')"
+                  <NuxtLink :to="localePath('/privacy-policy')"
                     class="uno-text-[#011813] uno-font-Outfit uno-cursor-pointer hover:uno-text-[#009D77] hover:uno-underline hover:uno-decoration-[#009D77] hover:uno-decoration-2 hover:uno-underline-offset-4">
                     {{ $t('common.footer.privacyPolicy') }}
                   </NuxtLink>

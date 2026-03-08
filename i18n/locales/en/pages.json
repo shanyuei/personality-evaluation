@@ -359,10 +359,10 @@
         "reasonBudget": "The subscription cost does not fit my budget.",
         "reasonOther": "Other.",
         "submitButton": "NEXT",
-        "contactSupport": "If you cannot recall the email address used for registration, please check your inbox for messages from \"PersonalityTest101\". Alternatively, feel free to contact our dedicated support team for <a href=\"mailto:support{'@'}personalitytest101.com\">{email}</a>",
+        "contactSupport": "If you cannot recall the email address used for registration, please check your inbox for messages from \"PersonalityTest101\". Alternatively, feel free to contact our dedicated support team for <a href=\"mailto:support{'@'}personalitytest101.com\">assistance</a>.",
         "cancelSubscription": "You may also cancel your subscription by logging into your by logging into your account, navigating to the \"Membership\" tab, and selecting \"Cancel Subscription\".",
         "confirmTitle": "Cancel Subscription",
-        "confirmDesc": "This action cannot be undone. All premium insights will be deleted.",
+        "confirmDesc": "This action <strong>cannot be undone</strong>. All premium insights will be deleted.",
         "confirmCancel": "Keep My Plan",
         "confirmSubmit": "Cancel Anyway",
         "successTitle": "Subscription Cancelled",
@@ -375,7 +375,7 @@
       "accessReport": "Open Report",
       "downloadGuidebook": "Download Guidebook",
       "accessNote": "Your guidebook is ready. Download it below!",
-      "btn2": "Download my Report",
+      "btn2": "Download My Report",
       "goHome": "Back to Home",
       "btn1": "Open My Report"
     },
@@ -753,7 +753,7 @@
     "disclaimer": "Taking our test should not be viewed as a comprehensive or precise evaluation of your personality and mental well-being."
   },
   "testEnd": {
-    "score": "{value}/{total} points",
+    "score": "<strong style='font-size: 24px;'>{value}/{total}</strong> points",
     "title": "Developing Financial Analysis Skills",
     "description": "Your score suggests that you are in the early stages of developing your financial analysis skills. You may find basic concepts and calculations challenging and might not be familiar with many of the tools and techniques used in financial analysis.",
     "areasTitle": "Areas for Improvement:",

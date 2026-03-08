@@ -85,7 +85,7 @@
     <div
       class="uno-w-full uno-py-[64px] uno-px-[24px] sm:uno-px-[120px] uno-bg-[#F8F8F8]">
       <!-- Trusted Section -->
-      <div class="uno-mb-24 uno-text-center">
+      <div class="uno-mb-0 md:uno-mb-24 uno-text-center">
         <h2
           class="uno-font-Outfit uno-font-semibold uno-text-[24px] sm:uno-text-[32px] uno-leading-[120%] uno-mb-4 uno-text-[#011813] uno-text-center">
           {{ $t('pages.test.report.trusted.title') }}

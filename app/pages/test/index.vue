@@ -2,7 +2,7 @@
   <div class="uno-pt-6">
 
     <div class="page-container  uno-flex uno-flex-col uno-items-center uno-gap-32px">
-      <div class="uno-w-[80px] uno-h-[80px] uno-flex uno-items-center uno-justify-center">
+      <div class="uno-w-[80px] uno-h-[80px] uno-flex uno-items-center uno-justify-center uno-hidden md:uno-block">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" version="1.1"
           width="80" height="80" viewBox="0 0 80 80">
           <g>
