@@ -53,7 +53,7 @@ export const getCourseChapters = (data: { course_id: string | number }) => {
  * - 返回: { code, message, data: { list } }
  */
 export const getCourseLessons = (data: CourseLessonsRequest) => {
-  return useGetFetch<ApiResponse<CourseLessonListData>>(`/course/lessons`, data)
+  return useGetFetch<ApiResponse<CourseLessonListData>>(`/course/lesson`, data)
 }
 
 

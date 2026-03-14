@@ -31,14 +31,14 @@
       </p>
 
       <!-- 主按钮 -->
-      <AppLink :to="'/user-course/chapters'" class="uno-w-full md:uno-w-[520px]">
+      <AppLink :to="primaryTo" class="uno-w-full md:uno-w-[520px]">
         <PrimaryButton>
           {{ $t('pages.userCourseLessonComplete.cta') }}
         </PrimaryButton>
       </AppLink>
 
       <!-- 次链接 -->
-      <AppLink :to="'/'"
+      <AppLink :to="'/courses'"
         class="uno-text-[#4E5255] uno-font-Outfit uno-text-center hover:uno-text-[var(--ui-foreground)] uno-underline">
         {{ $t('pages.userCourseLessonComplete.toDashboard') }}</AppLink>
     </div>
@@ -46,14 +46,60 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-
+import { computed } from 'vue'
 
 import PrimaryButton from '@/components/ui/PrimaryButton.vue'
+import { getNextLesson } from '~/api/courses'
+import { useCourseChaptersStore } from '~/stores/modules/course-chapters'
+import { storeToRefs } from 'pinia'
 
 const { t } = useI18n()
-const current = ref(3)
-const courseName = 'People Leadership vs. Management'
+const route = useRoute()
+const courseChaptersStore = useCourseChaptersStore()
+const { course } = storeToRefs(courseChaptersStore)
+
+const getQueryString = (v: unknown) => {
+  if (Array.isArray(v)) return String(v[0] ?? '')
+  return v == null ? '' : String(v)
+}
+
+const courseId = computed(() => getQueryString(route.query.course_id) || courseChaptersStore.courseId)
+const position = computed(() => getQueryString(route.query.position) || courseChaptersStore.position)
+const total = computed(() => getQueryString(route.query.total) || courseChaptersStore.total)
+
+const current = computed(() => {
+  const raw = Number(position.value)
+  return Number.isFinite(raw) && raw > 0 ? raw : 1
+})
+const totalNum = computed(() => {
+  const raw = Number(total.value)
+  return Number.isFinite(raw) && raw > 0 ? raw : 10
+})
+
+const courseName = computed(() => {
+  const name = (course.value as any)?.title
+  return name || 'People Leadership vs. Management'
+})
+
+
+const primaryTo = computed(() => {
+  if (!courseId.value) return '/user-course/chapters'
+  return {
+    path: '/user-course/lesson-guide',
+    query: {
+      course_id: courseId.value,
+      position: String(Math.min(current.value + 1, totalNum.value)),
+      total: String(totalNum.value),
+    }
+  }
+})
+
+if (courseId.value) {
+  const { error } = await getNextLesson({ course_id: Number(courseId.value), position: current.value })
+  if (error.value) {
+    // toast 已由 useApi 统一处理，这里不额外处理
+  }
+}
 
 definePageMeta({
   title: () => 'seo.userCourse.lessonComplete.title',

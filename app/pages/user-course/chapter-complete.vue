@@ -77,7 +77,7 @@
             {{ $t('pages.userCourseChapterComplete.cta') }}
           </PrimaryButton>
         </AppLink>
-        <AppLink :to="'/user-course'"
+        <AppLink :to="'/profile'"
           class="uno-text-[var(--ui-muted-foreground)] uno-font-Outfit uno-text-center hover:uno-text-[var(--ui-foreground)] uno-underline">
           {{ $t('pages.userCourseChapterComplete.later') }}</AppLink>
       </div>

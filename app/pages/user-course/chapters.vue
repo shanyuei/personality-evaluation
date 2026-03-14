@@ -26,7 +26,8 @@
         </div>
 
         <AppLink :to="lessonGuideTo" class="uno-block" @click.prevent="onStartCourse">
-          <PrimaryButton class="uno-font-Outfit" :disabled="starting">{{ $t('pages.userCourseChapters.cta') }}</PrimaryButton>
+          <PrimaryButton class="uno-font-Outfit" :disabled="starting">{{ $t('pages.userCourseChapters.cta') }}
+          </PrimaryButton>
         </AppLink>
       </div>
     </div>
@@ -39,12 +40,15 @@ import { computed, ref } from 'vue'
 import PrimaryButton from '~/components/ui/PrimaryButton.vue'
 import { getCourseDetail, startCourse } from '~/api/courses'
 import type { CourseDetailData } from '~/types/Course'
+import { useCourseChaptersStore } from '~/stores/modules/course-chapters'
 
 
 
 const { t } = useI18n()
 const route = useRoute()
 const localePath = useLocalePath()
+const courseChaptersStore = useCourseChaptersStore()
+courseChaptersStore.clear();
 
 // 设置页面SEO元数据
 definePageMeta({
@@ -109,13 +113,21 @@ const onStartCourse = async () => {
       const { error } = await startCourse({ course_id: Number(courseId.value) })
       if (error.value) return
     }
+    if (course.value) {
+      courseChaptersStore.setCourse(course.value)
+    }
     navigateTo({
       path: lessonGuideTo.value,
       query: {
         course_id: courseId.value,
-        position: course.value?.lesson_progress ? String(course.value.lesson_progress + 1) : '1',
+        position: course.value?.lesson_progress ? String(Math.min(course.value.lesson_progress + 1, course.value?.lesson_count || 1)) : '1',
         total: course.value?.lesson_count ? String(course.value.lesson_count) : '10',
       }
+    })
+    courseChaptersStore.setProgressContext({
+      course_id: String(courseId.value || ''),
+      position: course.value?.lesson_progress ? String(Math.min(course.value.lesson_progress + 1, course.value?.lesson_count || 1)) : '1',
+      total: course.value?.lesson_count ? String(course.value.lesson_count) : '10',
     })
   } finally {
     starting.value = false
