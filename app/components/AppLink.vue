@@ -1,8 +1,8 @@
 <template>
-    <NuxtLink v-if="isLink" :to="finalTo">
+    <NuxtLink v-if="isLink" :to="finalTo" v-bind="$attrs">
         <slot/>
     </NuxtLink>
-    <div v-else>
+    <div v-else v-bind="$attrs">
         <slot/>
     </div>
 </template>

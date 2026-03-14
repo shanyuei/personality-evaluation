@@ -11,7 +11,7 @@
         </div>
         <AppArrowButton variant="dark"
           class="uno-gap-3 uno-py-4px md:uno-gap-2 md:uno-pl-[14px] md:uno-pr-[4px] md:uno-justify-between uno-font-medium"
-          :icon-size="$device.isMobile ? 32 : 40" hover-class="">
+          :icon-size="$device.isMobile ? 32 : 40" hover-class="" :to="courseDetailTo">
           {{ $t('common.retakeTest') }}
         </AppArrowButton>
         <div class="course-card__footer__link">
@@ -51,7 +51,7 @@
       <div class="course-card__footer">
         <AppArrowButton variant="primary"
           class="uno-gap-3 uno-py-4px md:uno-gap-2 md:uno-pl-[14px] md:uno-pr-[4px] md:uno-justify-between uno-font-medium"
-          :icon-size="$device.isMobile ? 32 : 40" hover-class="">
+          :icon-size="$device.isMobile ? 32 : 40" hover-class="" :to="courseDetailTo">
           {{ $t('common.getStarted') || 'Get Started' }}
         </AppArrowButton>
         <div class="course-card__footer__progress uno-relative" role="progressbar"
@@ -80,7 +80,7 @@
         </div>
         <AppArrowButton variant="dark"
           class="uno-gap-3 uno-py-4px md:uno-gap-2 md:uno-pl-[14px] md:uno-pr-[4px] md:uno-justify-between uno-font-medium"
-          :icon-size="$device.isMobile ? 32 : 40" hover-class="">
+          :icon-size="$device.isMobile ? 32 : 40" hover-class="" :to="courseDetailTo">
           {{ $t('common.getStarted') }}
         </AppArrowButton>
         <div class="course-card__footer__link">
@@ -109,7 +109,7 @@
             <div class="course-card__footer__actions">
               <AppArrowButton variant="primary"
                 class="uno-gap-3 uno-py-4px md:uno-gap-2 md:uno-pl-[14px] md:uno-pr-[4px] md:uno-justify-between uno-font-medium"
-                :icon-size="$device.isMobile ? 32 : 40" hover-class="">
+                :icon-size="$device.isMobile ? 32 : 40" hover-class="" :to="courseDetailTo">
                 {{ $t('common.getStarted') }}
               </AppArrowButton>
               <div class="course-card__footer__people">
@@ -135,7 +135,7 @@
 import { computed } from 'vue'
 
 interface Course {
-  id: number
+  id: number | string
   title: string
   description: string
   image: string
@@ -155,6 +155,8 @@ interface Course {
 const props = defineProps<{
   course: Course
 }>()
+
+const courseDetailTo = computed(() => `/user-course/chapters?course_id=${props.course.id}`)
 
 const formatPercent = (p?: number) => {
   const v = Math.round(p ?? 10)

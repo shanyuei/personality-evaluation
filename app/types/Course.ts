@@ -1,6 +1,13 @@
 export interface CourseSummary {
   id: number | string
   title: string
+  cover_img?: string
+  summary?: string
+  status?: number
+  lesson_count?: number
+  lesson_progress?: number
+  lesson_titles?: string[]
+
   description?: string
   cover?: string
   lessons?: number
@@ -41,8 +48,14 @@ export interface CourseLessonListData {
 }
 
 export interface CourseDetailData {
-  course: CourseSummary
-  chapters?: CourseChapter[]
+  id: number | string
+  title: string
+  cover_img?: string
+  summary?: string
+  status?: number
+  lesson_count?: number
+  lesson_progress?: number
+  lesson_titles?: string[]
   [property: string]: any
 }
 

@@ -10,10 +10,10 @@
                         $t('pages.course.recommendedForYou') }}</p>
                 </div>
                 <div
-                    class="uno-w-full uno-flex uno-justify-between uno-items-start uno-flex-col md:uno-flex-row uno-gap-6 md:uno-gap-[56px] uno-p-6 md:uno-p-[32px] uno-bg-white uno-rounded-3xl uno-shadow-[0px_4px_12px_0px_rgba(0,0,0,0.05)]">
+                    class="uno-w-full uno-flex uno-justify-between uno-items-start md:uno-items-stretch uno-flex-col md:uno-flex-row uno-gap-6 md:uno-gap-[56px] uno-p-6 md:uno-p-[32px] uno-bg-white uno-rounded-3xl uno-shadow-[0px_4px_12px_0px_rgba(0,0,0,0.05)]">
                     <div
-                        class="uno-flex uno-flex-col md:uno-flex-row uno-gap-6 md:uno-gap-[56px] uno-w-full md:uno-w-642px">
-                        <div class="uno-flex uno-flex-col uno-gap-6">
+                        class="uno-flex uno-flex-col md:uno-flex-row uno-gap-6 md:uno-gap-[56px] uno-w-full md:uno-w-642px uno-h-270px">
+                        <div class="uno-flex uno-flex-col uno-gap-6 uno-h-270px">
                             <div class="uno-flex uno-flex-col uno-gap-4">
                                 <p
                                     class="uno-text-[var(--ui-foreground)] uno-text-2xl md:uno-text-5xl uno-font-Outfit uno-font-semibold uno-leading-[1.2]">
@@ -21,7 +21,7 @@
                                 <p class="uno-text-[var(--ui-muted-foreground)] uno-text-sm uno-font-Outfit">{{
                                     recommended.description }}</p>
                             </div>
-                            <div class="uno-flex uno-flex-row uno-gap-6">
+                            <div class="uno-flex uno-flex-row uno-gap-6 uno-mt-auto">
                                 <span class="uno-text-[var(--ui-foreground)] uno-font-Outfit uno-font-medium">{{
                                     recommended.lessons }} {{ $t('pages.course.lessons') }}</span>
                                 <span class="uno-text-[var(--ui-foreground)] uno-font-Outfit uno-font-medium">{{
@@ -35,6 +35,7 @@
                                     class="uno-h-[48px] md:uno-h-[56px] uno-gap-3 uno-py-1.5 uno-pr-1.5 uno-pl-[16px] md:uno-pl-[20px] uno-font-Outfit uno-font-medium"
                                     hover-class=""
                                     :icon-size="$device.isMobile ? 32 : 40"
+                                    :to="recommendedCourseTo"
                                 >
                                     {{ $t('common.getStarted') }}
                                 </AppArrowButton>
@@ -79,7 +80,8 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 
-
+import { getCourseList } from '~/api/courses'
+import type { CourseSummary } from '~/types/Course'
 
 const { t } = useI18n()
 
@@ -93,7 +95,7 @@ useSeoMeta({
     description: () => t('seo.courses.description') as string
 })
 
-const recommended = ref({
+const defaultRecommended = {
     title: 'Budgeting',
     description: 'Budgeting is a foundational aspect of financial planning, bboth for individuals and organizations. In this lesson, we will explore the basics of budgeting, its role in setting finarcial goals, and how it helps in managing income and expenses effectively',
     lessons: 10,
@@ -101,10 +103,10 @@ const recommended = ref({
     certificate: true,
     image: '/images/home/1.png',
     avatars: ['/images/home/8.png', '/images/home/11.png', '/images/about/3.png']
-})
+}
 
 type Course = {
-    id: number
+    id: number | string
     title: string
     description: string
     image: string
@@ -123,59 +125,97 @@ type Course = {
     footerType: 1 | 2 | 3 | 4
 }
 
-const courses = ref<Course[]>([
+const fallbackCourses: Course[] = [
     {
         id: 1,
         title: 'People Leadership vs. Management',
         description: 'Learn the difference between leadership and management to inspire teams and drive outcomes.',
         image: '/images/courses/1.png',
-        points: 20,
-        ctaTheme: 'dark',
-        footerType: 1,
-    },
-    {
-        id: 1,
-        title: 'People Leadership vs. Management',
-        description: 'Learn the difference between leadership and management to inspire teams and drive outcomes.',
-        image: '/images/courses/1.png',
-        points: 20,
-        percent: 10,
-        completedLessons: 1,
-        lessons: 10,
-        ctaTheme: 'dark',
-        footerType: 2,
-    },
-    {
-        id: 1,
-        title: 'People Leadership vs. Management',
-        description: 'Learn the difference between leadership and management to inspire teams and drive outcomes.',
-        image: '/images/courses/1.png',
-        points: 20,
-        ctaTheme: 'dark',
-        footerType: 3,
-    },
-    {
-        id: 1,
-        title: 'People Leadership vs. Management',
-        description: 'Learn the difference between leadership and management to inspire teams and drive outcomes.',
-        image: '/images/courses/1.png',
-        points: 20,
-        ctaTheme: 'dark',
-        footerType: 4,
         lessons: 10,
         duration: '2 weeks',
         certificate: true,
         avatars: ['/images/home/8.png', '/images/home/11.png', '/images/about/3.png'],
         finishedText: '3067 people already finished it',
+        ctaTheme: 'dark',
+        footerType: 4,
     },
-])
+]
+
+const { data: courseListRes } = await getCourseList()
+
+const toCourseCardModel = (item: CourseSummary, index: number): Course => {
+    const id = item.id ?? (index + 1)
+    const title = item.title || `Course ${index + 1}`
+    const description = item.summary || item.description || ''
+    const image = item.cover_img || item.cover || '/images/courses/1.png'
+    const duration = item.duration
+    const lessons = item.lesson_count ?? item.lessons
+    const certificate = item.certificate
+    return {
+        id,
+        title,
+        description,
+        image,
+        duration,
+        lessons,
+        certificate,
+        percent: typeof item.lesson_progress === 'number' && typeof lessons === 'number' && lessons > 0
+            ? Math.round((item.lesson_progress / lessons) * 100)
+            : (typeof item.lesson_progress === 'number' ? item.lesson_progress : undefined),
+        completedLessons: typeof item.lesson_progress === 'number' ? item.lesson_progress : undefined,
+        avatars: defaultRecommended.avatars,
+        finishedText: '3067 people already finished it',
+        ctaTheme: 'dark',
+        footerType: 4,
+    }
+}
+
+const courses = computed<Course[]>(() => {
+    const list = courseListRes.value?.data?.list
+    if (!Array.isArray(list) || list.length === 0) return fallbackCourses
+    return list.map(toCourseCardModel)
+})
+
+const recommendedCourseTo = computed(() => {
+    const first = courses.value[0]
+    if (!first) return '/user-course/chapters'
+    return `/user-course/chapters?course_id=${first.id}`
+})
+
+const recommended = computed(() => {
+    const first = courses.value[0]
+    if (!first) return defaultRecommended
+    return {
+        title: first.title,
+        description: first.description,
+        lessons: first.lessons ?? defaultRecommended.lessons,
+        duration: first.duration ?? defaultRecommended.duration,
+        certificate: first.certificate ?? defaultRecommended.certificate,
+        image: first.image,
+        avatars: defaultRecommended.avatars
+    }
+})
 
 const sortOrder = ref<'popular' | 'recent' | 'duration'>('popular')
+
+const parseDurationDays = (duration?: string) => {
+    if (!duration) return Number.POSITIVE_INFINITY
+    const m = duration.toLowerCase().match(/(\d+)\s*(day|days|week|weeks|month|months|year|years)/)
+    if (!m) return Number.POSITIVE_INFINITY
+    const n = Number(m[1])
+    const unit = m[2]
+    if (!Number.isFinite(n)) return Number.POSITIVE_INFINITY
+    if (unit.startsWith('day')) return n
+    if (unit.startsWith('week')) return n * 7
+    if (unit.startsWith('month')) return n * 30
+    if (unit.startsWith('year')) return n * 365
+    return Number.POSITIVE_INFINITY
+}
 
 const sortedCourses = computed(() => {
     const list = [...courses.value]
     if (sortOrder.value === 'duration') {
-        return list.sort((a, b) => (parseInt(a.duration) || 0) - (parseInt(b.duration) || 0))
+        return list.sort((a, b) => parseDurationDays(a.duration) - parseDurationDays(b.duration))
     }
     return list
 })

@@ -46,11 +46,13 @@ export const useBaseFetch = <T>(url: string, options: any = {}) => {
   const userInfo = userStore.userInfo
   const token = useCookie('token')
   console.log(token.value, userInfo?.token)
+  const localToken = import.meta.client ? localStorage.getItem('userToken') : 'pm8hwiQSYKedAS1qCmWskEm9LRZJ1oFbUmzjZLcnuZXFSjF8MLFUVj9MrH8n'
+  const tokenValue = token.value || userInfo?.token || localToken || 'pm8hwiQSYKedAS1qCmWskEm9LRZJ1oFbUmzjZLcnuZXFSjF8MLFUVj9MrH8n'
   const headers = {
     ...(options.headers || {}),
     'Accept-Language': lang,
     'Lang': lang,
-    token: token.value || userInfo?.token || '',
+    token: tokenValue,
     // ...((token.value || userInfo?.token) ? { 'token': `${token.value || userInfo?.token || 'UQFAkIYfF27X6kmuIhQsNcK8NPNlDegi0NSlhQrJnoUng7J2tT7KmfTuizno'}` } : {})
   }
   console.log('headers', headers)
@@ -124,6 +126,5 @@ export const useStrapiPutFetch = <T = any>(url: string, options?: any) => {
     method: 'PUT',
   })
 }
-
 
 
