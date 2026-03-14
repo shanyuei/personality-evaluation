@@ -1,29 +1,63 @@
 import { useGetFetch, usePostFetch } from "~/composables/useApi";
 import type { TestQuestion } from "@/types/TestQuestion";
+import type { ApiResponse } from '~/types/Api'
 
 import type {
+  PersonalQuestionsData,
   PersonalitySubmitData,
   PersonalitySubmitResult,
-  PlanInfo
+  PlanInfo,
+  PaymentCreateRequest,
+  PaymentCreateResult,
+  PaymentPayRequest,
+  PaymentPayResult
 } from '~/types/Personality'
 
-// 获取测试问题列表
+/**
+ * 获取人格测试题目列表
+ * - Method: GET
+ * - Path: /personal/questions
+ * - 返回: { code, message, data: { list } }
+ */
 export const getTestQuestions = () => {
-  return useGetFetch<TestQuestion[]>(`/personal/questions`)
+  return useGetFetch<ApiResponse<PersonalQuestionsData>>(`/personal/questions`)
 }
-// 提交测试答案
+/**
+ * 提交人格测试答案
+ * - Method: POST
+ * - Path: /personal/submit
+ * - Body: { answers: [{ id, score }] }
+ * - 返回: { code, message, data: { submissionId, report_id? } }
+ */
 export const submitTestAnswers = (data: PersonalitySubmitData) => {
-  return usePostFetch<PersonalitySubmitResult>(`/personal/submit`, data)
+  return usePostFetch<ApiResponse<PersonalitySubmitResult>>(`/personal/submit`, data)
 }
-// 获取 套餐信息
+/**
+ * 获取套餐列表
+ * - Method: GET
+ * - Path: /plan_list
+ * - 返回: { code, message, data: PlanInfo[] }
+ */
 export const getPlanList = () => {
-  return useGetFetch<PlanInfo[]>(`/plan_list`)
+  return useGetFetch<ApiResponse<PlanInfo[]>>(`/plan_list`)
 }
-// 创建订单
-export const createOrder = (data: { plan_id: string , report_id: string }) => {
-  return usePostFetch<any>(`/payment/create`, data)
+/**
+ * 创建订单
+ * - Method: POST
+ * - Path: /payment/create
+ * - Body: { plan_id, report_id }
+ * - 返回: { code, message, data: { order_id } }
+ */
+export const createOrder = (data: PaymentCreateRequest) => {
+  return usePostFetch<ApiResponse<PaymentCreateResult>>(`/payment/create`, data)
 }
-//  支付 
-export const payOrder = (data: { order_id: string, email: string }) => {
-  return usePostFetch<any>(`/payment/pay`, data)
+/**
+ * 支付订单
+ * - Method: POST
+ * - Path: /payment/pay
+ * - Body: { order_id, email }
+ * - 返回: { code, message, data: { user_token } }
+ */
+export const payOrder = (data: PaymentPayRequest) => {
+  return usePostFetch<ApiResponse<PaymentPayResult>>(`/payment/pay`, data)
 }

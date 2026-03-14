@@ -1,10 +1,3 @@
-export interface LoginResponse {
-    email: string;
-    id: number;
-    token: string;
-    [property: string]: any;
-}
-
 export interface UserInfo {
     email: string;
     id: number;
@@ -23,6 +16,15 @@ export interface UserInfo {
     vip_time: string;
     [property: string]: any;
 }
+
+export type LoginResponse = UserInfo
+
+export type UserTestPercentage = {
+    type: number | string;
+    percent: number;
+    [property: string]: any;
+}
+
 export interface UserTestInfo {
     /**
      * 主人格类型
@@ -33,11 +35,11 @@ export interface UserTestInfo {
     /**
      * 分数百分比
      */
-    percentages: Record<string, number>;
+    percentages: UserTestPercentage[];
     /**
      * 测试各个人格分数
      */
-    type_scores: Record<string, number>;
+    type_scores: UserTestPercentage[];
     [property: string]: any;
 }
 
