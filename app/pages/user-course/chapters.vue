@@ -105,11 +105,18 @@ const onStartCourse = async () => {
   if (starting.value) return
   starting.value = true
   try {
-    if (courseId.value) {
+    if (courseId.value && course.value.status === 1) {
       const { error } = await startCourse({ course_id: Number(courseId.value) })
       if (error.value) return
     }
-    await navigateTo(localePath(lessonGuideTo.value))
+    navigateTo({
+      path: lessonGuideTo.value,
+      query: {
+        course_id: courseId.value,
+        position: course.value?.lesson_progress ? String(course.value.lesson_progress + 1) : '1',
+        total: course.value?.lesson_count ? String(course.value.lesson_count) : '10',
+      }
+    })
   } finally {
     starting.value = false
   }

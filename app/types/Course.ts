@@ -47,6 +47,11 @@ export interface CourseLessonListData {
   list: CourseLesson[]
 }
 
+export interface CourseLessonsRequest {
+  course_id: string
+  position: string
+}
+
 export interface CourseDetailData {
   id: number | string
   title: string
@@ -78,3 +83,17 @@ export interface CourseMarkLessonResult {
   [property: string]: any
 }
 
+export interface CourseStartResult {
+  success: boolean
+  [property: string]: any
+}
+
+export interface CourseNextLessonRequest {
+  course_id: number | string
+  position: number
+}
+
+export interface CourseNextLessonResult {
+  success: boolean
+  [property: string]: any
+}

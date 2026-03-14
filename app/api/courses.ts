@@ -4,11 +4,11 @@ import type {
   CourseChapterListData,
   CourseDetailData,
   CourseLessonListData,
+  CourseLessonsRequest,
   CourseListData,
-  CourseMarkLessonRequest,
-  CourseMarkLessonResult,
   CourseProgressData,
-  CourseStartRequest,
+  CourseNextLessonRequest,
+  CourseNextLessonResult,
   CourseStartResult,
 } from '~/types/Course'
 
@@ -49,23 +49,23 @@ export const getCourseChapters = (data: { course_id: string | number }) => {
  * 获取课程课时列表
  * - Method: GET
  * - Path: /course/lessons
- * - Query: { course_id, chapter_id? }
+ * - Query: { course_id, position }
  * - 返回: { code, message, data: { list } }
  */
-export const getCourseLessons = (data: { course_id: string | number, chapter_id?: string | number }) => {
+export const getCourseLessons = (data: CourseLessonsRequest) => {
   return useGetFetch<ApiResponse<CourseLessonListData>>(`/course/lessons`, data)
 }
 
 
 /**
- * 标记课时完成
+ * 获取下一课时
  * - Method: POST
- * - Path: /course/lesson/complete
- * - Body: { course_id, lesson_id }
- * - 返回: { code, message, data: { success, progress? } }
+ * - Path: /course/next_lesson
+ * - Body: { course_id, position }
+ * - 返回: { code, message, data: CourseNextLessonResult }
  */
-export const markCourseLessonCompleted = (data: CourseMarkLessonRequest) => {
-  return usePostFetch<ApiResponse<CourseMarkLessonResult>>(`/course/lesson/complete`, data)
+export const getNextLesson = (data: CourseNextLessonRequest) => {
+  return usePostFetch<ApiResponse<CourseNextLessonResult>>(`/course/next_lesson`, data)
 }
 
 /**
