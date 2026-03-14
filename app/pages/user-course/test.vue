@@ -110,6 +110,12 @@ const answers = ref<{ id: number | string; value: string | number }[]>([])
 
 // 处理提交
 const handleSubmit = async () => {
+  // 检查是否已选择答案
+  if (selected.value === '' || selected.value === undefined || selected.value === null) {
+    // 未选择答案，显示提示
+    return
+  }
+
   // 保存当前答案
   if (currentQuestion.value) {
     const existingIndex = answers.value.findIndex(a => a.id === currentIndex.value)

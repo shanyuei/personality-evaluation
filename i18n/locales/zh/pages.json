@@ -346,7 +346,8 @@
     "questionCount": "问题 {current}/{total}",
     "next": "下一题",
     "finish": "完成测试",
-    "cta": "提交"
+    "cta": "提交",
+    "pleaseSelect": "请选择一个答案"
   },
   "orders": {
     "cancel": {

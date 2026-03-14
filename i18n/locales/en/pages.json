@@ -852,7 +852,8 @@
     "o4": "Establish strict rules to control team dynamics.",
     "next": "Next",
     "finish": "Finish",
-    "cta": "Submit"
+    "cta": "Submit",
+    "pleaseSelect": "Please select an answer"
   },
   "userCourseTestComplete": {
     "scoreLabel": "{score}/{total}",
