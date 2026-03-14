@@ -342,6 +342,12 @@
       "description": "查看您的报告和后续操作。"
     }
   },
+  "userCourseTest": {
+    "questionCount": "问题 {current}/{total}",
+    "next": "下一题",
+    "finish": "完成测试",
+    "cta": "提交"
+  },
   "orders": {
     "cancel": {
       "subscription": {

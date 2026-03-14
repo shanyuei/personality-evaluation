@@ -61,7 +61,7 @@ export const useBaseFetch = <T>(url: string, options: any = {}) => {
     ...options,
     baseURL: apiBaseUrl,
     headers,
-    query,
+    // query,
     key: options.key ?? `api:${url}`,
     // transform: (res: any) => {
     //   return res

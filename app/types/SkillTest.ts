@@ -44,8 +44,8 @@ export interface SkillTestSubmitAnswer {
 }
 
 export interface SkillTestSubmitRequest {
-  test_id: number | string
-  answers: SkillTestSubmitAnswer[]
+  id: number | string
+  answer: string
 }
 
 export interface SkillTestSubmitResult {
@@ -54,5 +54,14 @@ export interface SkillTestSubmitResult {
   total?: number
   report_id?: number | string
   [property: string]: any
+}
+
+export interface SkillTestResultData {
+  test_id: number
+  score: number
+  total_score: number
+  title: string
+  summary: string
+  improvement: string
 }
 
