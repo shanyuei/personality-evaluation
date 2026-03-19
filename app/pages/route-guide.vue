@@ -102,8 +102,8 @@ useSeoMeta({
 
 const router = useRouter()
 const routes = ref<any[]>([])
-// const token = useCookie('token')
-// token.value = 'el0wBwD18J9X6mcKWSOP3Z9QhHTpGKok9OVXkcBjIvUgHceyDQcGNGhlV44a'
+const token = useCookie('token')
+token.value = 'el0wBwD18J9X6mcKWSOP3Z9QhHTpGKok9OVXkcBjIvUgHceyDQcGNGhlV44a'
 // 格式化路由名称
 const formatRouteName = (path: string) => {
   if (path === '/') return '首页'
