@@ -5,7 +5,8 @@
     "home": "Home",
     "faq": "FAQ",
     "signIn": "Sign in",
-    "takeTheTest": "Take the Test"
+    "takeTheTest": "Take the Test",
+    "account": "Account"
   },
   "courseCard": {
     "status": {
@@ -31,7 +32,7 @@
   },
   "faq": {
     "title": "Frequently Asked Questions",
-    "desc": "Find quick answers to common inquiries garding our  \n re assessment process,  report insights, \n and platform features."
+    "desc": "Find quick answers to common inquiries garding our re assessment process,  report insights, and platform features."
   },
   "receive": {
     "title": "What Makes Our Test Different",

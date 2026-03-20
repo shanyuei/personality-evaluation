@@ -1,7 +1,7 @@
 <template>
   <div class="page-container my-10">
     <div
-      class="uno-w-full md:uno-w-[720px] uno-mx-auto uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)]">
+      class="uno-w-full md:uno-w-[720px] uno-mx-auto uno-bg-white uno-rounded-[24px] ">
       <div class="uno-w-full uno-h-[220px] md:uno-h-[260px] uno-overflow-hidden uno-rounded-t-[24px]">
         <NuxtImg :src="cover" alt="cover" class="uno-w-full uno-h-full uno-object-cover" />
       </div>

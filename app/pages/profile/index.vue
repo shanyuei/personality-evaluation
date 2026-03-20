@@ -25,9 +25,9 @@ import { ref } from 'vue'
 import { getUserTestInfo } from '~/api/user'
 
 definePageMeta({
- layoutShowFooter:false,
- title: () => 'seo.profile.title',
-   path: '/user-course'
+  layoutShowFooter: false,
+  title: () => 'seo.profile.title',
+  path: '/user-course'
 })
 const { t } = useI18n()
 

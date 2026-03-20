@@ -19,7 +19,7 @@
     "contactDesc2": "You may also find helpful information in our FAQ section, where we provide a comprehensive overview of our services and operations. If you cannot find a satisfactory answer, please email us and our support team will respond within 24 hours.",
     "getSupport": "Contact Support",
     "faqTitle": "Frequently Asked Questions",
-    "faqDesc": "Have questions about our personality tests or how PersonalityTest101 works?\n Here are some of the most common questions we get — with clear, \n easy-to-understand answers to help you get started.",
+    "faqDesc": "Have questions about our personality tests or how PersonalityTest101 works? Here are some of the most common questions we get — with clear,  easy-to-understand answers to help you get started.",
     "curiousTitle": "Ready to Uncover Your True Personality?",
     "curiousDesc": "Find out your personality type, preferences, and hidden strengths in just a few minutes. Quick, fun, and insightful — your journey of self-discovery starts here!",
     "curiousButtonText": "Reveal Your Personality"
@@ -359,7 +359,7 @@
         "reasonBudget": "The subscription cost does not fit my budget.",
         "reasonOther": "Other.",
         "submitButton": "NEXT",
-        "contactSupport": "If you cannot recall the email address used for registration, please check your inbox for messages from \"PersonalityTest101\". Alternatively, feel free to contact our dedicated support team for <a href=\"mailto:support{'@'}personalitytest101.com\">assistance</a>.",
+        "contactSupport": "If you cannot recall the email address used for registration, please check your inbox for messages from \"PersonalityTest101\". Alternatively, feel free to contact our dedicated support team for <a href=\"mailto:support{'@'}personalitytest101.com\" style=\"text-decoration: underline;\">assistance</a>.",
         "cancelSubscription": "You may also cancel your subscription by logging into your by logging into your account, navigating to the \"Membership\" tab, and selecting \"Cancel Subscription\".",
         "confirmTitle": "Cancel Subscription",
         "confirmDesc": "This action <strong>cannot be undone</strong>. All premium insights will be deleted.",
@@ -560,7 +560,7 @@
         "title": "Professional Alignment",
         "desc": "Align your career path with your natural strengths to achieve sustainable success and genuine fulfillment."
       },
-      "desc-mobile": "Gain guidance from expert mentors who offer fresh perspectives,\n innovative insights, and proven strategies to help you\n understand yourself better."
+      "desc-mobile": "Gain guidance from expert mentors who offer fresh perspectives, innovative insights, and proven strategies to help you understand yourself better."
     },
     "how": {
       "title": "How Our Analysis Works",
@@ -608,12 +608,12 @@
     },
     "testimonials": {
       "title": "Trusted by 20,000+ customers",
-      "subtitle": "Be always were in form of volunteers range\n time is mediatingappositive the in our\n affidavit how solitary saw more in his not"
+      "subtitle": "Be always were in form of volunteers range time is mediatingappositive the in our affidavit how solitary saw more in his not"
     },
     "faq": {
       "title": "Frequently Asked Questions",
-      "description": "Frequently Asked Questions offers a quick answers to common queries, guiding users \n through features and functionalities efficiently.",
-      "description-mobile": "Frequently Asked Questions offers quick\n answers to common queries, guiding users\n through features and functionalities effortlessly."
+      "description": "Frequently Asked Questions offers a quick answers to common queries, guiding users  through features and functionalities efficiently.",
+      "description-mobile": "Frequently Asked Questions offers quick answers to common queries, guiding users through features and functionalities effortlessly."
     },
     "curious": {
       "buttonText": "Take the Test"
@@ -994,7 +994,7 @@
     "title": "Blog",
     "description": "Read team articles and latest updates.",
     "hero": {
-      "title": "Empower Your Journey \nwith Expert Career Insights"
+      "title": "Empower Your Journey \n with Expert Career Insights"
     },
     "exploreTitle": "Explore All Insights",
     "breadcrumb": {
@@ -1112,7 +1112,7 @@
         },
         "contactUs": {
           "title": "Contact Us",
-          "content": "<p>If you have any questions, concerns, or requests regarding this Privacy Policy or how we handle your information, please contact us at:</p><p><strong>Email:</strong> <a href=\"mailto:support{'@'}personalitytest101.com\">support{'@'}personalitytest101.com</a></p><p>We will make reasonable efforts to respond to your inquiry in a timely manner.</p>"
+          "content": "<p>If you have any questions, concerns, or requests regarding this Privacy Policy or how we handle your information, please contact us at:</p><p><strong>Email:</strong> <a href=\"mailto:support{'@'}personalitytest101.com\" style=\"text-decoration: underline;\">support{'@'}personalitytest101.com</a></p><p>We will make reasonable efforts to respond to your inquiry in a timely manner.</p>"
         }
       }
     },

@@ -148,7 +148,7 @@
 
             <!-- How Does It Work 部分 -->
             <div
-                class="uno-flex uno-flex-col md:uno-flex-row uno-gap-48px sm:uno-gap-66px uno-items-center uno-pb-120px uno-pt-40px sm:uno-pt-120px md:uno-pr-80px">
+                class="uno-flex uno-flex-col md:uno-flex-row uno-gap-48px sm:uno-gap-66px md:uno-gap-161px uno-items-center uno-pb-120px uno-pt-40px sm:uno-pt-120px ">
                 <!-- 左侧：标题、描述和按钮 -->
                 <div class="uno-w-full md:uno-w-1/2">
                     <div class="uno-flex uno-flex-col uno-items-center md:uno-items-start">

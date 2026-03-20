@@ -26,12 +26,12 @@
 
             <div
               class="uno-flex uno-flex-col md:uno-flex-row uno-items-center uno-justify-center uno-gap-24px uno-mt-6 md:uno-mt-8">
-              <div class="uno-w-[calc((100%-24px)/2)]">
-                <AppLink :to="'/tests'" >
+              <div class="uno-w-full md:uno-w-[calc((100%-24px)/2)]">
+                <AppLink :to="testStartLink" >
                   <PrimaryButton>{{ $t('pages.testEnd.ctaPrimary') }}</PrimaryButton>
                 </AppLink>
               </div>
-              <div class="uno-w-[calc((100%-24px)/2)]">
+              <div class="uno-w-full md:uno-w-[calc((100%-24px)/2)]">
                 <AppLink :to="'/profile'" >
                   <OutlineButton fontSize="18px">{{ $t('pages.testEnd.ctaSecondary') }}</OutlineButton>
                 </AppLink>
@@ -82,6 +82,17 @@ const scoreTotal = computed(() => resultData.value?.data?.total_score ?? 0)
 const resultTitle = computed(() => resultData.value?.data?.title ?? '')
 const resultSummary = computed(() => resultData.value?.data?.summary ?? '')
 const resultImprovement = computed(() => resultData.value?.data?.improvement ?? '')
+
+// 获取随机测试ID
+const randTestId = computed(() => resultData.value?.data?.rand_test_id ?? '')
+
+// 生成测试开始页面链接
+const testStartLink = computed(() => {
+  if (randTestId.value) {
+    return `/test/start?test_id=${randTestId.value}`
+  }
+  return '/test/start'
+})
 </script>
 
 <style scoped></style>

@@ -232,6 +232,7 @@ const route = useRoute()
 
 definePageMeta({
   title: () => 'pages.orders.create.title',
+    layoutShowPageTopIcons: false,
   path: '/checkout'
 })
 useSeoMeta({

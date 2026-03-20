@@ -63,7 +63,7 @@
                       </div>
                     </div>
                     <div v-if="isExpanded('fixed-personality', item)" class=" uno-pb-[20px]">
-                      <p class="uno-text-[#4E5255] uno-text-14px">
+                      <p class="uno-text-[#4E5255] uno-text-14px uno-px-10">
                         {{ $t('pages.faq.faqs.list.' + item + '.desc') }}
                       </p>
                     </div>
@@ -89,7 +89,7 @@
                       </div>
                     </div>
                     <div v-if="isExpanded('fixed-billing', item - 3)" class=" uno-pb-[20px]">
-                      <p class="uno-text-[#4E5255] uno-text-14px">
+                      <p class="uno-text-[#4E5255] uno-text-14px uno-px-10">
                         {{ $t('pages.faq.faqs.list.' + item + '.desc') }}
                       </p>
                     </div>
@@ -111,7 +111,7 @@
                   </div>
                 </div>
                 <div v-if="isExpanded('general', i)" class=" uno-pb-[20px]">
-                  <p class="uno-text-[#4E5255] uno-text-14px">
+                  <p class="uno-text-[#4E5255] uno-text-14px uno-px-10">
                     {{ faq.desc }}
                   </p>
                 </div>
@@ -137,7 +137,7 @@
                       </div>
                     </div>
                     <div v-if="isExpanded('integration', i)" class=" uno-pb-[20px]">
-                      <p class="uno-text-[#4E5255] uno-text-14px">
+                      <p class="uno-text-[#4E5255] uno-text-14px uno-px-10">
                         {{ integration.desc }}
                       </p>
                     </div>
@@ -160,7 +160,7 @@
                         </div>
                       </div>
                       <div v-if="isExpanded(entry.id + '-' + item.id, i)" class=" uno-pb-[20px]">
-                        <p class="uno-text-[#4E5255] uno-text-14px">
+                        <p class="uno-text-[#4E5255] uno-text-14px uno-px-10 uno-px-10">
                           {{ text.answer }}
                         </p>
                       </div>

@@ -19,7 +19,7 @@
           class="uno-w-full uno-h-auto uno-max-h-100vh uno-absolute uno-top-0 uno-left-0 uno-z-0" />
         <template v-if="showPageTopIcons && !$device.isMobile">
           <NuxtImg src="/theme/layout/page-top-icon-1.png" 
-            class="uno-absolute uno-top-331px uno-right-67px uno-z-1" width="109px" height="121px" />
+            class="uno-absolute uno-top-311px uno-right-67px uno-z-1" width="109px" height="121px" />
           <NuxtImg src="/theme/layout/page-top-icon-2.png"  width="82px" height="96px"
             class="uno-absolute uno-top-431px uno-left-133px uno-z-1" />
         </template>

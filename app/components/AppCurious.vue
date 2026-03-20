@@ -14,10 +14,10 @@
       class="uno-absolute  uno--z-10 uno-pointer-events-none uno-object-cover uno-object-center uno-hidden md:uno-block"
       uno-preload /> -->
     <div
-      class="page-container uno-relative uno-z-10 uno-flex uno-flex-col uno-items-center uno-justify-center uno-rounded-[32px] sm:uno-rounded-[48px] uno-w-full sm:uno-w-full md:uno-max-w-[1200px] uno-h-[auto] sm:uno-h-auto md:uno-h-auto uno-px-0 sm:uno-px-8 md:uno-px-12 lg:uno-px-24 uno-py-12 sm:uno-py-16 md:uno-py-22">
+      class="page-container uno-relative uno-z-10 uno-flex uno-flex-col uno-items-center uno-justify-center uno-rounded-[32px] sm:uno-rounded-[48px] uno-w-full sm:uno-w-full md:uno-max-w-[1200px] uno-h-[auto] sm:uno-h-auto md:uno-h-auto uno-px-0 sm:uno-px-8 md:uno-px-12 lg:uno-px-24 uno-py-12 sm:uno-py-16 md:uno-py-28">
 
       <h2
-        class="uno-w-80% uno-text-[#0F172A] uno-relative uno-z-10 uno-font-Outfit uno-font-[600] uno-text-[32px] sm:uno-text-[48px] uno-mb-12px uno-text-center">
+        class="uno-w-80% uno-text-[#0F172A] uno-relative uno-z-10 uno-font-Outfit uno-font-[600] uno-line-height-[120%] uno-text-[32px] sm:uno-text-[48px] uno-mb-12px uno-text-center">
         {{ props.title || curious.title }}
       </h2>
 

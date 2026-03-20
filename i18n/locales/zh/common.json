@@ -5,7 +5,8 @@
     "home": "首页",
     "faq": "常见问题",
     "signIn": "登录",
-    "takeTheTest": "参加测试"
+    "takeTheTest": "参加测试",
+    "account": "账户"
   },
   "courseCard": {
     "status": {

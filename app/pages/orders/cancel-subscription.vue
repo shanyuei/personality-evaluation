@@ -89,7 +89,8 @@
 
 
     <UModal v-model:open="showConfirmModal" :closeable="true" :ui="{
-      content: 'uno-rounded-16px uno-border-0 uno-shadow-none uno-max-w-[480px]'
+      content: 'uno-rounded-16px uno-border-0 uno-shadow-none uno-max-w-[480px]',
+      overlay: 'uno-bg-[rgba(0,0,0,0.6)]'
     }">
       <template #content>
         <div class="uno-p-6 sm:uno-p-24px">
@@ -120,7 +121,8 @@
 
     <!-- Confirmation Success Modal -->
     <UModal v-model:open="showSuccessModal" :closeable="true" :ui="{
-      content: 'uno-rounded-16px uno-border-0 uno-shadow-none uno-max-w-[480px]'
+      content: 'uno-rounded-16px uno-border-0 uno-shadow-none uno-max-w-[480px]',
+      overlay: 'uno-bg-[rgba(0,0,0,0.6)]'
     }">
       <template #content>
         <div class="uno-p-6 sm:uno-p-24px uno-flex uno-flex-col uno-items-center">

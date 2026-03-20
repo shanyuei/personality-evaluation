@@ -107,7 +107,8 @@ useSeoMeta({
   description: () => t('seo.contact.description') as string
 })
 const curious = useCurious()
-curious.setButtonText(t('pages.contact.curiousButtonText'))
+// curious.setButtonText(t('pages.contact.curiousButtonText'))
+curious.setButtonText(t('pages.home.curious.buttonText'))
 curious.setDescription(t('pages.contact.curiousDesc'))
 curious.setTitle(t('pages.contact.curiousTitle'))
 

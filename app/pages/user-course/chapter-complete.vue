@@ -72,7 +72,7 @@
           </div>
         </div>
 
-        <AppLink :to="'/user-course/test'" class="uno-w-full">
+        <AppLink :to="testStartLink" class="uno-w-full">
           <PrimaryButton class="uno-w-full">
             {{ $t('pages.userCourseChapterComplete.cta') }}
           </PrimaryButton>
@@ -86,12 +86,31 @@
 </template>
 
 <script setup lang="ts">
-
+import { computed } from 'vue'
+import { useCourseChaptersStore } from "@/stores/modules/course-chapters"
+import { storeToRefs } from 'pinia'
 
 import PrimaryButton from '@/components/ui/PrimaryButton.vue'
 
+const courseChaptersStore = useCourseChaptersStore()
+
+const { course } = storeToRefs(courseChaptersStore)
+
 const { t } = useI18n()
+const route = useRoute()
 const courseName = 'People Leadership vs. Management'
+
+// 获取 test_id 参数
+const testId = computed(() => course.value?.test_id || '' as string)
+console.log(testId.value,course)
+
+// 生成测试开始页面链接
+const testStartLink = computed(() => {
+  if (testId.value) {
+    return `/test/start?test_id=${testId.value}`
+  }
+  return '/test/start'
+})
 
 definePageMeta({
   title: () => 'seo.userCourse.chapterComplete.title',

@@ -6,7 +6,7 @@
     </div>
     <div class="page-container uno-w-full uno-bottom-0 uno-left-0 uno-z-[2] uno-relative">
       <UFooter :ui="{
-        container: 'md:uno-pt-80px px-0 gap-0 z-[2] relative max-w-[1440px] mx-auto items-start max-md:max-w-[80%] max-sm:max-w-full max-sm:flex-col-reverse max-sm:flex max-sm:gap-32px max-sm:py-0  uno-items-start',
+        container: 'md:uno-pt-80px !px-0 gap-0 z-[2] relative max-w-[1440px] mx-auto items-start max-md:max-w-[80%] max-sm:max-w-full max-sm:flex-col-reverse max-sm:flex max-sm:gap-32px max-sm:py-0  uno-items-start',
         left: 'flex-1',
         right: 'flex-1 hidden',
         center: 'flex-2',
@@ -25,7 +25,7 @@
               {{ $t('common.footer.StayConnected') }}
             </p>
             <!-- 图标 -->
-            <div class="uno-flex uno-gap-12px uno-m-t-16px">
+            <div class="uno-flex uno-gap-12px uno-mt-16px md:uno-mb-0 uno-mb-32px">
               <!-- 推特 -->
               <NuxtImg src="/images/footer/twitter.png" alt="twitter" width="40px" height="40px" />
               <!-- 脸书 -->

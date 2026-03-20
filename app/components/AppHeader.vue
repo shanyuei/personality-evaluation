@@ -5,28 +5,27 @@
     header: ' page-container h-[96px] border-none max-sm:h-[53px]',
     overlay: 'bg-transparent',
     root: 'h-[96px] border-none bg-transparent max-sm:h-[53px] justify-center flex',
-    container: ''
+    container: 'max-w-[1440px] mx-auto w-full px-4 md:px-6 lg:px-8 '
   }" :class="[!showMenu ? 'hiddenMenu' : '']">
     <!-- 导航栏 -->
     <template #left>
 
-      <div class="uno-flex  uno-w-full">
+      <div class="uno-flex  uno-w-full uno-mr-101px">
         <NuxtLink :to="localePath('/')" class="uno-w-[249px] uno-flex uno-items-center  max-sm:uno-hidden">
-          <img src="/theme/logo.png" alt="logo" width="249" height="60" />
+          <img src="/theme/logo.png" alt="logo" width="249" height="60">
         </NuxtLink>
         <NuxtLink :to="localePath('/')" class="uno-w-[152px]  uno-items-center uno-hidden max-sm:uno-flex">
           <NuxtImg src="/theme/logo-2.png" width="149" height="23" alt="logo" class="" />
         </NuxtLink>
-
-
       </div>
 
-    </template>
-    <template #default>
       <UNavigationMenu v-if="showMenu" :ui="{
         link: 'before:bg-transparent font-Outfit text-center font-medium text-[16px] text-[#001813] data-[active]:text-[var(--color-pink-1)] hover:text-[var(--color-pink-1)]',
         item: 'ml-[18px] mr-[18px]'
       }" :items="itemsLocalized" class="uno-w-full uno-justify-center max-sm:uno-hidden" />
+    </template>
+    <template #default>
+
     </template>
 
     <template #right>
@@ -34,7 +33,8 @@
         <!-- 未登录状态 -->
         <AppArrowButton v-if="!token" preset="header" class="max-sm:uno-hidden uno-font-Outfit uno-font-medium"
           :to="localePath('/free-personality-test')">
-          {{ $t('common.getStarted') }}
+          <!-- {{ $t('common.getStarted') }} -->
+            {{ t('common.nav.takeTheTest') }}
         </AppArrowButton>
 
         <!-- 登录状态 -->
@@ -70,7 +70,7 @@
 
     <template #body>
       <div
-        class="uno-flex uno-flex-col uno-items-start uno-gap-4 uno-p-24px uno-bg-[#FFFFFF] uno-border-[1px] uno-border-[#F0F0F0] uno-rounded-[16px] uno-w-[374px]">
+        class="uno-flex uno-flex-col uno-items-start uno-gap-4 uno-p-24px uno-bg-[#FFFFFF] uno-border-[1px] uno-border-[#F0F0F0] uno-rounded-[16px] uno-w-[374px] uno-mx-auto">
         <UNavigationMenu orientation="vertical" :ui="{
           link: 'before:bg-transparent font-Outfit text-center !uno-text-[16px] text-[#011813] data-[active]:text-[var(--color-pink-1)] hover:text-[var(--color-pink-1)]',
           item: 'line-height-[42px] min-h-[42px]'
@@ -130,25 +130,33 @@ const accountItems = ref<any[]>([
 
 const localePath = useLocalePath()
 
-const items = ref([
-  {
-    label: t('common.nav.home'),
-    to: '/',
-    hasChildren: true
-  },
-  {
-    label: t('common.nav.faq'),
-    to: '/faq',
-  },
-  {
-    label: t('common.nav.signIn'),
-    to: '/login',
-  },
-  {
-    label: t('common.nav.takeTheTest'),
-    to: '/free-personality-test',
-  },
-]);
+const items = computed(() => {
+  const baseItems = [
+    {
+      label: t('common.nav.home'),
+      to: '/',
+      hasChildren: true
+    },
+    {
+      label: t('common.nav.faq'),
+      to: '/faq',
+    }
+  ]
+  
+  if (!token.value) {
+    baseItems.push({
+      label: t('common.nav.signIn'),
+      to: '/login',
+    })
+  } else {
+    baseItems.push({
+      label: t('common.nav.account'),
+      to: '/account/settings',
+    })
+  }
+  
+  return baseItems
+});
 const itemsLocalized = computed(() => items.value.map(i => ({ ...i, label: t(i.label), to: localePath(i.to) })))
 const onClick = (item: any) => {
   console.log(item)

@@ -107,11 +107,11 @@
         <div class="course-card__footer__row">
           <div class="course-card__footer__left">
             <div class="course-card__footer__actions">
-              <AppArrowButton variant="primary"
-                class="uno-gap-3 uno-py-4px md:uno-gap-2 md:uno-pl-[14px] md:uno-pr-[4px] md:uno-justify-between uno-font-medium"
-                :icon-size="$device.isMobile ? 32 : 40" hover-class="" :to="courseDetailTo">
-                {{ $t('common.getStarted') }}
-              </AppArrowButton>
+                <AppArrowButton variant="primary"
+                  class="uno-py-4px uno-gap-2 uno-pl-[14px] uno-pr-[4px] uno-justify-between uno-font-medium"
+                  :icon-size="$device.isMobile ? 32 : 40" hover-class="" :to="courseDetailTo">
+                  {{ $t('common.getStarted') }}
+                </AppArrowButton>
               <div class="course-card__footer__people">
                 <div class="course-card__footer__avatars">
                   <div
@@ -281,6 +281,10 @@ const progressOffset = computed(() => {
       display: flex;
       align-items: center;
       gap: 12px;
+
+      @media (max-width: 767px) {
+        flex-wrap: wrap;
+      }
     }
 
 
