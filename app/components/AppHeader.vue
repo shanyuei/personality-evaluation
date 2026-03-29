@@ -1,16 +1,15 @@
 <template>
-  <UHeader :ui="{
+  <UHeader v-model:open="open" :ui="{
     body: 'bg-transparent p-0',
     content: 'bg-transparent',
     header: ' page-container h-[96px] border-none max-sm:h-[53px]',
-    overlay: 'bg-transparent',
+    overlay: 'bg-[#444444]/80',
     root: 'h-[96px] border-none bg-transparent max-sm:h-[53px] justify-center flex',
     container: 'max-w-[1440px] mx-auto w-full px-4 md:px-6 lg:px-8 '
-  }" :class="[!showMenu ? 'hiddenMenu' : '']">
+  }" :class="[!showMenu ? 'hiddenMenu' : '', open ? 'openMenu' : '']">
     <!-- 导航栏 -->
     <template #left>
-
-      <div class="uno-flex  uno-w-full uno-mr-101px">
+      <div  class="uno-flex  uno-w-full uno-mr-101px max-sm:uno-mr-auto">
         <NuxtLink :to="localePath('/')" class="uno-w-[249px] uno-flex uno-items-center  max-sm:uno-hidden">
           <img src="/theme/logo.png" alt="logo" width="249" height="60">
         </NuxtLink>
@@ -18,15 +17,13 @@
           <NuxtImg src="/theme/logo-2.png" width="149" height="23" alt="logo" class="" />
         </NuxtLink>
       </div>
-
+     
       <UNavigationMenu v-if="showMenu" :ui="{
         link: 'before:bg-transparent font-Outfit text-center font-medium text-[16px] text-[#001813] data-[active]:text-[var(--color-pink-1)] hover:text-[var(--color-pink-1)]',
         item: 'ml-[18px] mr-[18px]'
       }" :items="itemsLocalized" class="uno-w-full uno-justify-center max-sm:uno-hidden" />
     </template>
-    <template #default>
-
-    </template>
+    <template #default/>
 
     <template #right>
       <template v-if="showMenu">
@@ -64,13 +61,13 @@
         </UDropdownMenu>
 
         <!-- 多语言 -->
-        <I18nSelect />
+        <I18nSelect  />
       </template>
     </template>
 
     <template #body>
       <div
-        class="uno-flex uno-flex-col uno-items-start uno-gap-4 uno-p-24px uno-bg-[#FFFFFF] uno-border-[1px] uno-border-[#F0F0F0] uno-rounded-[16px] uno-w-[374px] uno-mx-auto">
+        class="uno-flex uno-flex-col uno-items-start uno-gap-4 uno-p-24px uno-bg-[#FFFFFF] uno-border-[1px] uno-border-[#F0F0F0] uno-rounded-[16px] uno-w-[374px] uno-max-w-[100vw] uno-mx-auto">
         <UNavigationMenu orientation="vertical" :ui="{
           link: 'before:bg-transparent font-Outfit text-center !uno-text-[16px] text-[#011813] data-[active]:text-[var(--color-pink-1)] hover:text-[var(--color-pink-1)]',
           item: 'line-height-[42px] min-h-[42px]'
@@ -104,6 +101,7 @@ const props = defineProps({
     default: true,
   },
 })
+const open = ref(false)
 
 const handleLogout = () => {
   userStore.logout();
@@ -171,6 +169,12 @@ const onClick = (item: any) => {
 <style lang="less">
 .hiddenMenu {
   [data-slot="base"] {
+    display: none;
+  }
+}
+
+.openMenu {
+  [data-slot="container"] {
     display: none;
   }
 }
