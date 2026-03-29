@@ -99,18 +99,17 @@
               <div class="uno-p-4 md:uno-p-6">
                 <p
                   class="uno-text-[#011813] uno-font-Outfit uno-text-base md:uno-text-16px uno-text-center uno-leading-[1.2] uno-mb-8">
-                  {{ q }}</p>
+                  {{ q.text }}</p>
                 <div
                   class="uno-flex uno-flex-row uno-items-center uno-justify-center uno-gap-2 md:uno-gap-[20px] uno-mt-4">
                   <template v-for="i in [1, 2, 3, 4, 5]" :key="i">
                     <div class="uno-flex-1 uno-flex uno-justify-center uno-items-center">
-
                       <div class="uno-flex-1 uno-flex uno-justify-center uno-items-center">
                         <div
                           class="uno-w-[40px] uno-h-[40px] uno-rounded-[20px] uno-flex uno-justify-center uno-items-center uno-flex-row uno-gap-[5px] uno-cursor-pointer hover:uno-transform hover:uno-scale-105 transition-transform"
-                          :class="[i === 1 ? 'uno-bg-[#F4D0CB]' : i === 2 ? 'uno-bg-[#F1DACE]' : i === 3 ? 'uno-bg-[#F0F0F0]' : i === 4 ? 'uno-bg-[#C6EAD8]' : 'uno-bg-[#B3E1D6]', selectedRatings[qi] === i ? '' : 'uno-border-solid uno-border-2', selectedRatings[qi] === i ? '' : i === 1 ? 'uno-border-[#F6BAB2]' : i === 2 ? 'uno-border-[#F5CEB6]' : i === 3 ? 'uno-border-[#D8D8D8]' : i === 4 ? 'uno-border-[#9FE2AA]' : 'uno-border-[#88D9BA]']"
-                          @click="selectRating(qi, i)">
-                          <Sad v-if="selectedRatings[qi] === i" />
+                          :class="[i === 1 ? 'uno-bg-[#F4D0CB]' : i === 2 ? 'uno-bg-[#F1DACE]' : i === 3 ? 'uno-bg-[#F0F0F0]' : i === 4 ? 'uno-bg-[#C6EAD8]' : 'uno-bg-[#B3E1D6]', selectedRatings[q.id] === i ? '' : 'uno-border-solid uno-border-2', selectedRatings[q.id] === i ? '' : i === 1 ? 'uno-border-[#F6BAB2]' : i === 2 ? 'uno-border-[#F5CEB6]' : i === 3 ? 'uno-border-[#D8D8D8]' : i === 4 ? 'uno-border-[#9FE2AA]' : 'uno-border-[#88D9BA]']"
+                          @click="selectRating(q.id, i)">
+                          <Sad v-if="selectedRatings[q.id] === i" />
                         </div>
                       </div>
                     </div>
@@ -239,7 +238,7 @@ const scales = ref([
 
 getTestQuestions().then(res => {
   const { data } = res.data.value;
-  questions.value = data.list.map(q => q.text).slice(0, 5)
+  questions.value = data.list.map(q => q).slice(0, 5)
   total.value = data.list.length
   questionsStore.currentStep = 1;
   allQuestions.value = data.list
@@ -248,10 +247,10 @@ getTestQuestions().then(res => {
 const nextStart = () => {
   // 验证是否所有问题都已回答
   const unanswered = questions.value
-    .map((_, index) => index)
-    .filter(index => selectedRatings.value[index] === undefined)
+    .map(q => q.id)
+    .filter(id => selectedRatings.value[id] === undefined)
   unansweredQuestions.value = unanswered
-  
+
   if (unanswered.length > 0) {
     showError.value = true
     return

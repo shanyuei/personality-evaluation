@@ -125,6 +125,14 @@ useSeoMeta({
 })
 const questions = ref<TestQuestion[]>([])
 const showError = ref(false)
+
+// 计算未回答的问题索引
+const unansweredQuestions = computed(() => {
+  return questions.value
+    .filter(q => userAnswers.value[q.id] === undefined)
+    .map(q => questions.value.indexOf(q))
+})
+
 const prevStep = () => {
   if (questionsStore.currentStep > 1) {
     router.push(localePath({ name: 'test-step', query: { step: questionsStore.currentStep - 1 } }))
@@ -159,7 +167,7 @@ const mockUserAnswers = () => {
   });
   setTimeout(() => {
     nextStep();
-  }, 3000)
+  }, 20)
 }
 
 // 评分等级数据
@@ -179,7 +187,7 @@ watch(
     questions.value = list
 
 
-    // mockUserAnswers();
+    mockUserAnswers();
 
   },
   { immediate: true }

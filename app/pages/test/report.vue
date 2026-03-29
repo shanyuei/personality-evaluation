@@ -27,7 +27,7 @@
         </div>
       </div>
       <!-- Pricing & CTA Section with Counter -->
-      <ReportPricingSection :digits="digits" :access-text="$t('pages.test.report.pricing.access')"
+      <ReportPricingSection :report-id="reportId" :digits="digits" :access-text="$t('pages.test.report.pricing.access')"
         :price-text="$t('pages.test.report.pricing.price')" :cta-text="$t('pages.test.report.pricing.cta')"
         :trial-text="$t('pages.test.report.pricing.trial')" :ordered-text="$t('pages.test.report.pricing.ordered')" />
       <div class="uno-h-56px" />
@@ -37,7 +37,7 @@
     <!--What You Will Receive 区域 -->
     <div class="uno-receive-section  uno-bg-gray-5 uno-relative">
       <img src="/theme/home/receive-box-bg-h5.png" alt="" aria-hidden="true"
-        class="uno-absolute uno-inset-0 uno--z-10 uno-pointer-events-none uno-object-cover uno-object-center uno-block md:uno-hidden uno-w-full" />
+        class="uno-absolute uno-inset-0 uno--z-10 uno-pointer-events-none uno-object-cover uno-object-center uno-block md:uno-hidden uno-w-full" >
       <NuxtImg src="/theme/home/receive-box-bg-pc.png" alt="" aria-hidden="true" width="100vw" height="100%"
         class="uno-w-full uno-h-[100%]  uno-absolute uno-top-0 uno-left-0 uno--z-10 uno-pointer-events-none uno-hidden md:uno-block"
         uno-preload />
@@ -76,7 +76,7 @@
     <div class="uno-relative uno-bg-[#FFF] uno-flex uno-flex-col uno-items-center">
       <div
         class="uno-w-[calc(100%-48px)] sm:uno-w-[719px] uno-min-h-[316px] uno-bg-[#F0FDF9] uno-rounded-[32px] uno-mx-auto uno-flex uno-flex-col uno-justify-center uno-my-32px  uno-px-[24px]">
-        <ReportPricingSection :digits="digits" :access-text="$t('pages.test.report.pricing.access')"
+        <ReportPricingSection :report-id="reportId" :digits="digits" :access-text="$t('pages.test.report.pricing.access')"
           :price-text="$t('pages.test.report.pricing.price')" :cta-text="$t('pages.test.report.pricing.cta')"
           :trial-text="$t('pages.test.report.pricing.trial')" :ordered-text="$t('pages.test.report.pricing.ordered')" />
       </div>
@@ -175,6 +175,7 @@
 import PrimaryButton from '~/components/ui/PrimaryButton.vue'
 
 const { t } = useI18n()
+const route = useRoute()
 
 definePageMeta({
   title: 'pages.test.report.title',
@@ -187,6 +188,15 @@ useSeoMeta({
   title: () => t('seo.test.report.title', { separator: "|" }),
   description: () => t('seo.test.report.description'),
 })
+
+const reportId = computed(() => {
+  const rawId = route.query.reportId
+  if (rawId === undefined || rawId === null || rawId === '') {
+    return undefined
+  }
+  return Number(rawId)
+})
+
 // Mock counter data
 const count = ref(103267)
 const digits = computed(() => count.value.toString().split(''))

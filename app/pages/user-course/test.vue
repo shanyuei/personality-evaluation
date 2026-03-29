@@ -158,6 +158,8 @@ const submitAnswers = async () => {
     await navigateTo(`/test/result?test_id=${testId.value}`)
   } catch (error) {
     console.error('Error submitting test:', error)
+    // 错误已经在 useApi.ts 中处理，这里不需要重复处理
+    // 不执行导航，因为错误已经被抛出
   }
 }
 

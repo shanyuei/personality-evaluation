@@ -44,7 +44,7 @@ import PrimaryButton from '~/components/ui/PrimaryButton.vue'
 
 const props = defineProps<{
   digits: string[]
-  reportId?: string
+  reportId?: number
 }>()
 const localePath = useLocalePath()
 

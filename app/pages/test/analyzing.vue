@@ -68,11 +68,14 @@ onMounted(async () => {
   }, 120)
   try {
     const { data } = await submitTestAnswers({ answers })
+    console.log(data)
     // 请求完成后进度拉满并跳转
     clearInterval(incre)
     progress.value = 100
     currentImage.value = 9 // 确保显示最后一张图片
-
+    if (!data.value) {
+      throw new Error('Report response')
+    }
     const reportId = data.value?.data?.report_id
 
     setTimeout(() => {

@@ -2,24 +2,27 @@ import { useRuntimeConfig } from '#app'
 
 // 统一的响应处理逻辑
 const handleResponse = (response: any, i18n: any) => {
-  let toast = null;
-  if (import.meta.client) {
-    toast = useToast()
-  }
   if (response.status !== 200) {
-    throw new Error(response.statusText)
+    const error = new Error(response.statusText)
+    throw error
   }
-  const code = response._data.code;
-  const message = response._data.message;
-  const data = response._data.data;
-  if (code !== 0 && toast) {
-    toast?.add({
-      title: i18n.t('common.api.error'),
-      color: 'warning',
-      description: message,
-    })
-    throw new Error(message)
+  const code = response._data.code
+  const message = response._data.message
+  const data = response._data.data
+  
+  if (code !== 0) {
+    if (import.meta.client) {
+      const toast = useToast()
+      toast?.add({
+        title: i18n.t('common.api.error'),
+        color: 'warning',
+        description: message,
+      })
+    }
+    const error = new Error(message)
+    throw error
   }
+  
   response._data = {
     code: code,
     message: message,
@@ -30,7 +33,8 @@ const handleResponse = (response: any, i18n: any) => {
 // 统一的 Strapi 响应处理逻辑
 const handleStrapiResponse = (response: any) => {
   if (response.status !== 200) {
-    throw new Error(response.statusText)
+    const error = new Error(response.statusText)
+    throw error
   }
   // if (response._data?.data) {
   //   response._data = response._data.data
@@ -53,23 +57,64 @@ export const useBaseFetch = <T>(url: string, options: any = {}) => {
     'Accept-Language': lang,
     'Lang': lang,
     token: tokenValue,
-    // ...((token.value || userInfo?.token) ? { 'token': `${token.value || userInfo?.token || 'UQFAkIYfF27X6kmuIhQsNcK8NPNlDegi0NSlhQrJnoUng7J2tT7KmfTuizno'}` } : {})
   }
   console.log('headers', headers)
   const query = { ...(options.query as any || {}) }
-  return useFetch<T>(url, {
+  
+  // 默认立即执行，保持向后兼容
+  const immediate = options.immediate !== false
+  
+  const result = useFetch<T>(url, {
     ...options,
     baseURL: apiBaseUrl,
     headers,
-    // query,
     key: options.key ?? `api:${url}`,
-    // transform: (res: any) => {
-    //   return res
-    // },
+    lazy: !immediate,
+    immediate,
+    // 使用 ofetch 的 throwHttpErrors 选项，确保 HTTP 错误时抛出
+    $fetch: globalThis.$fetch.create({
+      onResponseError({ response }) {
+        const message = response?._data?.message || 'Request failed'
+        if (import.meta.client) {
+          const toast = useToast()
+          toast?.add({
+            title: nuxtApp.$i18n.t('common.api.error'),
+            color: 'warning',
+            description: message,
+          })
+        }
+        
+        // 抛出错误，阻止导航
+        const error = new Error(message)
+        throw error
+      }
+    }),
     onResponse({ response }) {
       handleResponse(response, nuxtApp.$i18n)
     },
+    onResponseError({ response }) {
+      const message = response?._data?.message || 'Request failed'
+      if (import.meta.client) {
+        const toast = useToast()
+        toast?.add({
+          title: nuxtApp.$i18n.t('common.api.error'),
+          color: 'warning',
+          description: message,
+        })
+      }
+      
+      // 抛出错误，阻止导航
+      const error = new Error(message)
+      throw error
+    },
   })
+  
+  // 如果是立即执行，检查是否有错误并在服务端阻止导航
+  if (immediate && process.server && result.error.value) {
+    throw result.error.value
+  }
+  
+  return result
 }
 
 
@@ -92,6 +137,11 @@ export const useStrapiFetch = <T>(url: string, options: any = {}) => {
     },
     onResponse({ response }) {
       handleStrapiResponse(response)
+    },
+    onResponseError({ response }) {
+      const message = response?._data?.message || 'Request failed'
+      const error = new Error(message)
+      throw error
     },
   })
 }
@@ -126,5 +176,3 @@ export const useStrapiPutFetch = <T = any>(url: string, options?: any) => {
     method: 'PUT',
   })
 }
-
-
