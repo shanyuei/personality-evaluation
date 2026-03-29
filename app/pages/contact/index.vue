@@ -20,7 +20,7 @@
             {{ t('pages.contact.desc2') }}
           </p>
           <a href="mailto:support@personalitytest101.com"
-            class="uno-text-[var(--ui-primary)] uno-text-18px uno-font-Outfit uno-mb-24px inline-block uno-underline">
+            class="uno-text-[var(--ui-primary)] uno-text-18px uno-font-Outfit uno-mb-36px inline-block uno-underline">
             support@personalitytest101.com
           </a>
 

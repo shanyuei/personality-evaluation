@@ -9,7 +9,8 @@
                 <div
                     class="uno-flex uno-justify-start uno-items-center uno-flex-col uno-gap-12px sm:uno-gap-16px md:uno-gap-24px">
                     <h1
-                        class="uno-text-[#011813] uno-font-Outfit uno-font-semibold uno-text-[40px] uno-leading-[120%] uno-tracking-[0%] uno-text-center sm:uno-text-2xl md:uno-text-5xl lg:uno-text-7xl">
+                        class="uno-text-[#011813] uno-font-Outfit uno-font-semibold uno-text-[40px] uno-leading-[120%] uno-tracking-[0%] uno-text-center sm:uno-text-2xl md:uno-text-5xl lg:uno-text-7xl"
+                        style="white-space: pre-line;">
                         {{ $t('pages.home.title') }}
                     </h1>
                     <h2
@@ -74,7 +75,7 @@
                         {{ $t('pages.home.why.desc') }}
                     </p>
                     <p v-else
-                        class="uno-relative uno-left-[50%] translate-x-[-50%] uno-w-100vw uno-text-[#4E5255] uno-font-Outfit uno-font-normal uno-text-[16px] uno-leading-[150%] uno-tracking-[0%] uno-text-center uno-vertical-align-middle sm:uno-text-base uno-mb-[56px] sm:uno-mb-[80px] "
+                        class="uno-relative uno-left-[50%] translate-x-[-50%]  uno-text-[#4E5255] uno-font-Outfit uno-font-normal uno-text-[16px] uno-leading-[150%] uno-tracking-[0%] uno-text-center uno-vertical-align-middle sm:uno-text-base uno-mb-[56px] sm:uno-mb-[80px] "
                         style="white-space: pre-line;">
                         {{ $t('pages.home.why.desc-mobile') }}
                     </p>

@@ -11,16 +11,17 @@
         <p class="uno-text-[#4E5255] uno-text-sm md:uno-text-base uno-font-Outfit uno-leading-[1.6]">{{
           $t('pages.profile.begin') }}</p>
       </div>
-      <div class="uno-flex uno-gap-2 uno-mt-2 uno-flex-wrap">
+      <div class="uno-flex uno-gap-[15px] uno-mt-2 uno-flex-wrap">
         <span v-for="(d, idx) in weekdays" :key="d.text" :class="[
+          'uno-w-[48px] uno-h-[48px] uno-flex uno-justify-center uno-items-center uno-pt-[6px] uno-px-[19.5px] uno-pb-[6px] uno-rounded-[24px] uno-border-[1px] uno-font-Outfit uno-font-medium uno-text-[24px] uno-leading-[150%] uno-tracking-[0%]',
           idx === 2
-            ? 'uno-w-[48px] uno-h-[48px] uno-flex uno-justify-center uno-items-end uno-pb-0 uno-px-[19.5px] uno-bg-[#DCFBF2] uno-border-solid uno-border-[#009D77] uno-border-[4.2px] uno-rounded-[24px] uno-overflow-hidden'
-            : 'uno-w-[46px] uno-h-[46px] uno-flex uno-justify-center uno-items-end uno-pb-0 uno-px-[19.5px] uno-bg-[#F0F0F0] uno-border-solid uno-border-[#DDDDDD] uno-border-[4.2px] uno-rounded-[24px] uno-overflow-hidden',
+            ? 'uno-bg-[#DCFBF2] uno-border-[#009D77]'
+            : 'uno-bg-[#F0F0F0] uno-border-[#DDDDDD]',
           d.active
-            ? 'uno-bg-[var(--ui-primary)] uno-text-white uno-font-bold'
+            ? 'uno-bg-[var(--ui-primary)] uno-text-white'
             : idx === 2
               ? 'uno-text-[#009D77]'
-              : 'uno-bg-[#F0F0F0] uno-text-black uno-font-bold'
+              : 'uno-text-black'
         ]">{{ d.text }}</span>
       </div>
     </div>

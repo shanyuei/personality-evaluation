@@ -31,7 +31,7 @@ export function useCurious() {
   };
 
   const setButtonText = (newButtonText: string) => {
-    buttonText.value = newButtonText;
+    // buttonText.value = newButtonText;
   };
 
   const setButtonDisabled = (newButtonDisabled: boolean) => {

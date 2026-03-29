@@ -27,7 +27,8 @@ import { getUserTestInfo } from '~/api/user'
 definePageMeta({
   layoutShowFooter: false,
   title: () => 'seo.profile.title',
-  path: '/user-course'
+  path: '/user-course',
+  layoutShowPageTopIcons: false,
 })
 const { t } = useI18n()
 

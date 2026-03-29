@@ -22,7 +22,7 @@
     "faqDesc": "Have questions about our personality tests or how PersonalityTest101 works? Here are some of the most common questions we get — with clear,  easy-to-understand answers to help you get started.",
     "curiousTitle": "Ready to Uncover Your True Personality?",
     "curiousDesc": "Find out your personality type, preferences, and hidden strengths in just a few minutes. Quick, fun, and insightful — your journey of self-discovery starts here!",
-    "curiousButtonText": "Reveal Your Personality"
+    "curiousButtonText": "Take the Test"
   },
   "about": {
     "hero": {
@@ -359,7 +359,7 @@
         "reasonBudget": "The subscription cost does not fit my budget.",
         "reasonOther": "Other.",
         "submitButton": "NEXT",
-        "contactSupport": "If you cannot recall the email address used for registration, please check your inbox for messages from \"PersonalityTest101\". Alternatively, feel free to contact our dedicated support team for <a href=\"mailto:support{'@'}personalitytest101.com\" style=\"text-decoration: underline;\">assistance</a>.",
+        "contactSupport": "If you cannot recall the email address used for registration, please check your inbox for messages from \"PersonalityTest101\". Alternatively, feel free to contact our dedicated support team for assistance <a href=\"mailto:support{'@'}personalitytest101.com\" style=\"text-decoration: underline;\">here</a>.",
         "cancelSubscription": "You may also cancel your subscription by logging into your by logging into your account, navigating to the \"Membership\" tab, and selecting \"Cancel Subscription\".",
         "confirmTitle": "Cancel Subscription",
         "confirmDesc": "This action <strong>cannot be undone</strong>. All premium insights will be deleted.",
@@ -524,7 +524,7 @@
     }
   },
   "home": {
-    "title": "Uncover your authentic personality",
+    "title": "Uncover your  \nauthentic personality",
     "description": "Learn what makes you unique with our accurate personality assessment",
     "cta": "Take the Test",
     "accuracy": {
