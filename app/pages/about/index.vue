@@ -4,10 +4,10 @@
     <section class="uno-relative uno-py-80px ">
       <div class="page-container">
         <div
-          class="uno-flex uno-relative uno-flex-col md:uno-flex-row uno-items-start md:uno-justify-between uno-gap-72px">
+          class="uno-flex uno-relative uno-flex-col lg:uno-flex-row uno-items-center lg:uno-justify-between uno-gap-72px">
           <NuxtImg src="/images/about/icon-1.png" alt="decor"
             class="uno-absolute uno-left-1/2 uno--translate-x-1/2 uno-top--28px sm:uno-top-0 uno-w-47px uno-h-36px" />
-          <div class="uno-text-center md:uno-text-left md:uno-w-1/2">
+          <div class="uno-text-center lg:uno-text-left lg:uno-w-1/2">
             <h1
               class="uno-font-semibold uno-text-[36px] md:uno-text-[72px] uno-text-[#011813] uno-leading-[42px] md:uno-leading-[86px] uno-text-left">
               {{ $t('pages.about.hero.title') }}</h1>
@@ -17,7 +17,7 @@
                 $t('pages.about.hero.desc') }}
             </p>
           </div>
-          <div class="uno-relative uno-w-[320px] sm:uno-w-[342px] md:uno-w-[486px] uno-mx-auto md:uno-mx-0">
+          <div class="uno-relative uno-w-[320px] md:mx-auto lg:uno-w-[486px] sm:uno-w-[342px] md:uno-w-[486px] uno-mx-auto md:uno-mx-0">
             <NuxtImg src="/images/about/1.png" alt="About hero" width="486" height="428"
               uno-sizes="(min-width:768px) 486px, 320px" class="uno-w-full uno-h-auto" />
           </div>
@@ -26,7 +26,7 @@
         <div class="uno-mt-12 md:uno-mt-120px">
           <div class="">
             <p
-              class="md:uno-max-w-[74%] uno-mx-auto uno-font-normal uno-text-[18px] md:uno-text-[24px] uno-text-[#011813] md:uno-leading-[34px] uno-text-center md:uno-w-80% uno-mx-auto">
+              class="lg:uno-max-w-[74%] uno-mx-auto uno-font-normal uno-text-[18px] md:uno-text-[24px] uno-text-[#011813] md:uno-leading-[34px] uno-text-center lg:uno-w-80% uno-mx-auto">
               {{ $t('pages.about.content.desc') }}
             </p>
             <div
@@ -69,7 +69,7 @@
     <section class="uno-py-12 md:uno-py-120px uno-bg-#f8f8f8">
       <div class="page-container uno-px-6 ">
         <div v-for="(item, index) in missionItems" :key="index"
-          class="uno-flex uno-flex-col md:uno-flex-row uno-gap-10 uno-items-center"
+          class="uno-flex uno-flex-col lg:uno-flex-row uno-gap-10 uno-items-center"
           :class="{ 'uno-mt-80px': index > 0 }">
 
           <!-- Image Column -->
@@ -113,7 +113,7 @@
 
     <section class="uno-py-12 md:uno-py-20">
       <div class="page-container uno-px-6 ">
-        <div class="uno-flex uno-flex-col md:uno-flex-row uno-gap-10 uno-items-end">
+        <div class="uno-flex uno-flex-col lg:uno-flex-row uno-gap-10 uno-items-center lg:uno-items-end">
           <div>
             <h2
               class="uno-text-3xl md:uno-text-5xl uno-leading-[60px] uno-font-Outfit uno-font-extrabold uno-text-[var(--ui-foreground)]">

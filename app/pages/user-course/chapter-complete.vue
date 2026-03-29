@@ -1,6 +1,6 @@
 <template>
-  <div class="page-container uno-py-6 md:uno-py-8 uno-px-6 md:uno-px-10">
-    <div class="uno-w-full md:uno-w-[520px] uno-mx-auto">
+  <div class="page-container uno-py-6 lg:uno-py-8 uno-px-6 lg:uno-px-10">
+    <div class="uno-w-full lg:uno-w-[520px] uno-mx-auto">
       <div class="uno-flex uno-flex-col uno-items-center uno-text-center uno-gap-4 md:uno-gap-4">
         <div
           class="uno-w-14 md:uno-w-20 uno-h-14 md:uno-h-20 uno-rounded-full uno-bg-[var(--color-green-3)] uno-flex uno-items-center uno-justify-center">

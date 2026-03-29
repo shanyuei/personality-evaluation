@@ -21,9 +21,9 @@
     <div class="page-container ">
       <div class="uno-flex uno-flex-col md:uno-flex-row uno-justify-center uno-gap-6 md:uno-gap-24px">
         <div v-for="step in steps" :key="step.id"
-          class="uno-w-full uno-h-[60px] md:uno-w-[384px] md:uno-h-100% uno-rounded-[24px] uno-gap-[13.36px]"
+          class="uno-w-full md:uno-flex-1 md:uno-w-[384px] md:uno-h-345px lg:uno-h-100% uno-rounded-[24px] uno-gap-[13.36px]"
           :class="step.bgClass">
-          <div class=" uno-inline-block uno-w-full uno-p-12px sm:uno-p-6 uno-space-y-2 uno-rounded-2xl"
+          <div class=" uno-inline-block uno-w-full uno-p-12px sm:uno-p-6 uno-space-y-2 uno-rounded-2xl md:uno-h-full"
             :class="step.innerBgClass">
             <div class="uno-flex uno-flex-row md:uno-flex-col md:uno-items-center uno-gap-3">
               <span
@@ -44,7 +44,7 @@
                   {{
                     step.titleKey }}</div>
                 <p
-                  class="uno-text-[12px] md:uno-text-16px uno-text-[#4E5255] uno-font-Outfit uno-font-normal uno-leading-[150%] uno-text-left">
+                  class="uno-text-[12px] md:uno-text-16px uno-text-[#4E5255] uno-font-Outfit uno-font-normal uno-leading-[150%] uno-text-left md:uno-mt-top">
                   {{ step.descKey }}</p>
               </div>
             </div>

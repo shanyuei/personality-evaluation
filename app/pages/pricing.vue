@@ -69,36 +69,39 @@
     </section>
 
     <!-- What You Will Receive -->
-    <div class="uno-receive-section  uno-bg-gray-5 uno-relative uno-h-[1920px] md:uno-h-auto">
+    <div class="uno-receive-section  uno-bg-gray-5 uno-relative">
       <img src="/theme/home/receive-box-bg-h5.png" alt="" aria-hidden="true"
         class="uno-absolute uno-inset-0 uno--z-10 uno-pointer-events-none uno-object-cover uno-object-center uno-block md:uno-hidden uno-w-full">
       <NuxtImg src="/theme/home/receive-box-bg-pc.png" alt="" aria-hidden="true" width="100vw" height="100%"
         class="uno-w-full uno-h-[100%]  uno-absolute uno-top-0 uno-left-0 uno--z-10 uno-pointer-events-none uno-hidden md:uno-block"
         uno-preload />
-      <div class="page-container uno-px-4 uno-py-8 sm:uno-py-12 md:uno-py-16 lg:uno-py-20 xl:uno-py-24 relative z-10">
+      <div
+        class="page-container lg:uno-px-4 uno-py-8 sm:uno-py-12 md:uno-py-120px lg:uno-py-120px xl:uno-py-120px relative z-10">
         <h2
-          class="uno-text-xl sm:uno-text-2xl md:uno-text-[48px] uno-font-Outfit uno-font-600 uno-text-center uno-mb-2 sm:uno-mb-3 md:uno-mb-4">
+          class="uno-text-[32px] sm:uno-text-2xl md:uno-text-[48px] uno-font-Outfit uno-font-semibold uno-text-center uno-mb-2 sm:uno-mb-3 md:uno-mb-4">
           {{ $t('common.receive.title') }}
         </h2>
         <p
-          class="uno-text-center uno-text-gray-600 uno-text-xs sm:uno-text-sm md:uno-text-base uno-mb-6 sm:uno-mb-8 md:uno-mb-16 uno-max-w-3xl uno-mx-auto">
+          class="uno-text-center uno-text-gray-600 uno-text-[16px] sm:uno-text-sm md:uno-text-base uno-mb-6 sm:uno-mb-8 md:uno-mb-16 uno-max-w-3xl uno-mx-auto">
           {{ $t('common.receive.desc') }}
         </p>
 
         <!-- 六个卡片布局 -->
         <!-- 循环展示 receiveCards -->
-        <div class="uno-grid uno-grid-cols-1 md:uno-grid-cols-3 uno-gap-[24px] sm:uno-gap-[24px] md:uno-gap-[24px]">
+        <div
+          class="uno-grid uno-grid-cols-1 md:uno-grid-cols-3 uno-gap-[24px] sm:uno-gap-[24px] md:uno-gap-[12px] lg:uno-gap-[24px]">
           <div v-for="(card, index) in receiveCards" :key="index"
-            class="uno-bg-white uno-rounded-[32px] uno-shadow-[0_2px_8px_rgba(0,0,0,0.04)] uno-p-[32px] uno-border uno-border-solid uno-border-[#E7E7E8] uno-flex uno-flex-col uno-items-center  uno-text-center uno-min-h-[256px]">
+            class="uno-bg-white sm:uno-w-full md:uno-w-full uno-rounded-[32px] uno-shadow-[0_2px_8px_rgba(0,0,0,0.04)] uno-p-[32px_8px] lg:uno-p-[32px] uno-border uno-border-solid uno-border-[#E7E7E8] uno-flex uno-flex-col uno-items-center uno-justify-start uno-text-center uno-min-h-[256px]">
             <div
               class="uno-w-64px uno-h-64px sm:uno-w-64px sm:uno-h-64px uno-flex uno-items-center uno-justify-center uno-bg-gray-50 uno-rounded-full uno-mb-8px">
               <NuxtImg :src="card.icon" :alt="card.alt" width="64" height="64" />
             </div>
             <h3
-              class="uno-text-lg sm:uno-text-xl md:uno-text-[20px] uno-font-Outfit uno-font-[500] uno-leading-tight uno-px-2 uno-mb-12px">
+              class=" uno-max-[250px]  uno-text-[20px] sm:uno-text-xl md:uno-text-[20px] uno-font-Outfit uno-font-medium uno-leading-tight uno-px-2 uno-mb-12px">
               {{ $t(card.titleKey) }}
             </h3>
-            <p class="uno-text-gray-500 uno-text-sm sm:uno-text-base uno-font-Outfit uno-leading-relaxed uno-mt-auto">
+            <p
+              class=" uno-max-[250px]  uno-text-[#4E5255] uno-text-[16px] sm:uno-text-base uno-font-Outfit uno-leading-relaxed uno-mt-auto">
               {{ $t(card.descKey) }}
             </p>
           </div>
@@ -152,8 +155,8 @@ const plans = computed(() => {
     };
   });
 
-  // 在移动端，将携带 badge 的计划排在前面
-  if (typeof window !== 'undefined' && window.innerWidth < 768) {
+  // 在移动端和pad端，将携带 badge 的计划排在前面
+  if (typeof window !== 'undefined' && window.innerWidth < 1024) {
     return processedList.sort((a: any, b: any) => {
       if (a.badge && !b.badge) return -1;
       if (!a.badge && b.badge) return 1;

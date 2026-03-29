@@ -1,7 +1,8 @@
 <template>
   <div class="uno-p-6 md:uno-p-8 uno-flex uno-flex-col uno-gap-8 md:uno-gap-24px">
 
-    <NuxtImg :src="image" :alt="title" width="320" height="209" class="uno-rounded-[16px] " />
+    <NuxtImg :src="image" :alt="title" width="320" height="209"
+      class="uno-rounded-[16px] md:w-full md:uno-h-[209px] uno-object-cover uno-flex-shrink-0" />
 
     <div class="uno-flex-1 uno-flex uno-flex-col uno-gap-3">
       <h3 class="uno-text-[24px] uno-font-Outfit uno-font-[600] uno-text-[var(--ui-foreground)]">

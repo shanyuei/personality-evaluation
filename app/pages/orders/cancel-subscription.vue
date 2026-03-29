@@ -1,5 +1,5 @@
 <template>
-  <section class="uno-relative uno-flex uno-items-center uno-justify-center uno-py-12 sm:uno-py-24 md:uno-py-32">
+  <section class="uno-relative uno-flex uno-items-center uno-justify-center uno-py-12 sm:uno-py-12 lg:uno-py-32">
     <div class="uno-w-full uno-max-w-[720px] uno-px-4 sm:uno-px-6 md:uno-px-10">
       <div class="uno-p-4 sm:uno-p-6 md:uno-p-8">
         <h1

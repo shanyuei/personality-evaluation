@@ -1,7 +1,7 @@
 <template>
   <div class="page-container uno-py-6">
     <main class="uno-py-8 md:uno-py-16 uno-px-0 md:uno-px-10">
-      <div class="uno-max-w-full md:uno-max-w-[64%] uno-mx-auto uno-text-center">
+      <div class="uno-max-w-full lg:uno-max-w-[64%] uno-mx-auto uno-text-center">
         <div class="uno-flex uno-items-center uno-justify-center uno-mb-6">
           <NuxtImg src="/images/test/6.png" class="uno-w-24 uno-h-24 uno-rounded-full" alt="Test icon" />
         </div>

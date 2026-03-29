@@ -1,8 +1,8 @@
 <template>
   <main class="uno-py-10 uno-px-4 sm:uno-px-6">
     <div class="page-container uno-mx-auto">
-      <div class="uno-flex uno-flex-col md:uno-flex-row uno-gap-6 uno-w-full uno-mx-auto">
-        <section class="uno-w-full md:uno-w-[790px] md:uno-shrink-0">
+      <div class="uno-flex uno-flex-col lg:uno-flex-row uno-gap-6 uno-w-full uno-mx-auto">
+        <section class="uno-w-full lg:uno-w-[790px] lg:uno-shrink-0">
           <h2 class="uno-text-[32px] uno-font-Outfit uno-font-[700] uno-text-[var(--ui-foreground)] uno-mb-4">
             {{ $t('pages.ebooks.myTitle') }}</h2>
           <div class="uno-space-y-6">
@@ -13,7 +13,7 @@
           </div>
         </section>
 
-        <section class="uno-w-full md:uno-flex-grow">
+        <section class="uno-w-full lg:uno-flex-grow">
           <h2 class="uno-text-[32px] uno-font-Outfit uno-font-[700] uno-text-[var(--ui-foreground)] uno-mb-4">
             {{ $t('pages.ebooks.otherTitle') }}</h2>
           <div class="uno-space-y-6">

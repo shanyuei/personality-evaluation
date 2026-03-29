@@ -41,7 +41,8 @@
       <NuxtImg src="/theme/home/receive-box-bg-pc.png" alt="" aria-hidden="true" width="100vw" height="100%"
         class="uno-w-full uno-h-[100%]  uno-absolute uno-top-0 uno-left-0 uno--z-10 uno-pointer-events-none uno-hidden md:uno-block"
         uno-preload />
-      <div class="page-container uno-px-4 !uno-py-8 sm:uno-py-12 md:uno-py-16 lg:uno-py-20 xl:uno-py-24 relative z-10">
+      <div
+        class="page-container lg:uno-px-4 uno-py-8 sm:uno-py-12 md:uno-py-120px lg:uno-py-120px xl:uno-py-120px relative z-10">
         <h2
           class="uno-text-[32px] sm:uno-text-2xl md:uno-text-[48px] uno-font-Outfit uno-font-semibold uno-text-center uno-mb-2 sm:uno-mb-3 md:uno-mb-4">
           {{ $t('pages.test.report.receive.title') }}</h2>
@@ -51,19 +52,20 @@
 
         <!-- 六个卡片布局 -->
         <!-- 循环展示 receiveCards -->
-        <div class="uno-grid uno-grid-cols-1 md:uno-grid-cols-3 uno-gap-[24px] sm:uno-gap-[24px] md:uno-gap-[24px]">
+        <div
+          class="uno-grid uno-grid-cols-1 md:uno-grid-cols-3 uno-gap-[24px] sm:uno-gap-[24px] md:uno-gap-[12px] lg:uno-gap-[24px]">
           <div v-for="(card, index) in receiveCards" :key="index"
-            class="uno-bg-white sm:uno-w-full md:uno-w-full uno-rounded-[32px] uno-shadow-[0_2px_8px_rgba(0,0,0,0.04)] uno-p-[32px] uno-border uno-border-solid uno-border-[#E7E7E8] uno-flex uno-flex-col uno-items-center uno-justify-between uno-text-center uno-min-h-[256px]">
+            class="uno-bg-white sm:uno-w-full md:uno-w-full uno-rounded-[32px] uno-shadow-[0_2px_8px_rgba(0,0,0,0.04)] uno-p-[32px_8px] lg:uno-p-[32px] uno-border uno-border-solid uno-border-[#E7E7E8] uno-flex uno-flex-col uno-items-center uno-justify-start uno-text-center uno-min-h-[256px]">
             <div
               class="uno-w-64px uno-h-64px sm:uno-w-64px sm:uno-h-64px uno-flex uno-items-center uno-justify-center uno-bg-gray-50 uno-rounded-full uno-mb-8px">
               <NuxtImg :src="card.icon" :alt="card.alt" width="64" height="64" />
             </div>
             <h3
-              class=" uno-w-[250px]  uno-text-[20px] sm:uno-text-xl md:uno-text-[20px] uno-font-Outfit uno-font-medium uno-leading-tight uno-px-2 uno-mb-12px">
+              class=" uno-max-[250px]  uno-text-[20px] sm:uno-text-xl md:uno-text-[20px] uno-font-Outfit uno-font-medium uno-leading-tight uno-px-2 uno-mb-12px">
               {{ $t(card.titleKey) }}
             </h3>
             <p
-              class=" uno-w-[250px]  uno-text-gray-500 uno-text-[16px] sm:uno-text-base uno-font-Outfit uno-leading-relaxed">
+              class=" uno-max-[250px]  uno-text-[#4E5255] uno-text-[16px] sm:uno-text-base uno-font-Outfit uno-leading-relaxed uno-mt-auto">
               {{ $t(card.descKey) }}
             </p>
           </div>
@@ -83,7 +85,7 @@
     </div>
 
     <div
-      class="uno-w-full uno-py-[64px] uno-px-[24px] sm:uno-px-[120px] uno-bg-[#F8F8F8]">
+      class="uno-w-full uno-py-[64px] uno-px-[24px] sm:uno-px-[120px] md:uno-px-[30px] uno-bg-[#F8F8F8]">
       <!-- Trusted Section -->
       <div class="uno-mb-0 md:uno-mb-24 uno-text-center">
         <h2
@@ -96,7 +98,7 @@
         </p>
         <div class="uno-grid uno-grid-cols-1 md:uno-grid-cols-3 uno-gap-[24px] uno-mb-56px">
           <div v-for="testimonial in testimonials" :key="testimonial.id"
-            class="uno-w-full md:uno-w-[384px] uno-min-h-[232px] uno-bg-white uno-p-[24px] sm:uno-p-[32px] uno-rounded-[16px] uno-border uno-border-[#F0F0F0] uno-text-left">
+            class="uno-w-full lg:uno-w-[384px] uno-min-h-[232px] uno-bg-white uno-p-[24px] sm:uno-p-[32px] uno-rounded-[16px] uno-border uno-border-[#F0F0F0] uno-text-left">
             <div class="uno-flex uno-gap-1 uno-mb-4">
               <svg v-for="s in 5" :key="s" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
@@ -120,7 +122,7 @@
           $t('pages.test.report.worldwide.subtitle') }}</p>
         <div class="uno-grid uno-grid-cols-1 md:uno-grid-cols-3 uno-gap-[24px]">
           <div v-for="order in orders" :key="order.id"
-            class="uno-w-full md:uno-w-[384px] uno-h-[65px] uno-bg-white uno-p-[10px] uno-rounded-[4px] uno-border uno-border-[#F0F0F0] uno-flex uno-items-center uno-gap-[10px] uno-text-left">
+            class="uno-w-full lg:uno-w-[384px] uno-min-h-[65px] uno-bg-white uno-p-[10px] uno-rounded-[4px] uno-border uno-border-[#F0F0F0] uno-flex uno-items-center uno-gap-[10px] uno-text-left">
             <NuxtImg :src="order.icon" class="uno-w-[32px] uno-h-[32px] uno-object-contain" />
             <div>
               <span class="uno-font-Outfit uno-text-[14px] uno-leading-[150%] uno-text-[#323233]">{{ $t(order.orderKey)
@@ -136,7 +138,7 @@
 
     <!-- Final CTA Section -->
     <div
-      class="uno-w-[calc(100%-48px)] md:uno-w-[1200px] uno-min-h-auto md:uno-h-[418px] uno-bg-[#E8FAF5] uno-rounded-[32px] uno-p-[24px] md:uno-p-[32px] uno-flex uno-flex-col lg:uno-flex-row uno-gap-[24px] lg:uno-gap-[32px] uno-items-center uno-mt-32px uno-mb-[32px] md:uno-mb-0 uno-mx-auto">
+      class="uno-w-[calc(100%-48px)] lg:uno-w-[1200px] uno-min-h-auto lg:uno-h-[418px] uno-bg-[#E8FAF5] uno-rounded-[32px] uno-p-[24px] md:uno-p-[32px] uno-flex uno-flex-col lg:uno-flex-row uno-gap-[24px] lg:uno-gap-[32px] uno-items-center uno-mt-32px uno-mb-[32px] md:uno-mb-0 uno-mx-auto">
       <NuxtImg src="/images/report/14.png" class="uno-w-full lg:uno-w-[400px] uno-h-auto lg:uno-h-[331px] uno-object-cover uno-rounded-[32px]" />
       <div class="uno-w-full lg:uno-flex-1 uno-overflow-hidden">
         <h2 class="uno-font-Outfit uno-font-semibold uno-text-[24px] md:uno-text-[32px] uno-leading-[124%] uno-mb-16px uno-text-[#011813]">

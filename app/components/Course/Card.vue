@@ -357,8 +357,8 @@ const progressOffset = computed(() => {
       background: #fff;
       box-shadow: 10px 30px 50px rgba(0, 157, 119, 0.08);
 
-      /* 移动端上下布局 */
-      @media (max-width: 767px) {
+      /* 移动端和pad上下布局 */
+      @media (max-width: 1024px) {
         flex-direction: column;
         gap: 4px;
         padding: 8px 6px;

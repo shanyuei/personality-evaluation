@@ -8,8 +8,7 @@
             <div class="uno-flex uno-justify-start uno-items-center uno-flex-col">
                 <div
                     class="uno-flex uno-justify-start uno-items-center uno-flex-col uno-gap-12px sm:uno-gap-16px md:uno-gap-24px">
-                    <h1
-                        class="uno-text-[#011813] uno-font-Outfit uno-font-semibold uno-text-[40px] uno-leading-[120%] uno-tracking-[0%] uno-text-center sm:uno-text-2xl md:uno-text-5xl lg:uno-text-7xl"
+                    <h1 class="uno-text-[#011813] uno-font-Outfit uno-font-semibold uno-text-[40px] uno-leading-[120%] uno-tracking-[0%] uno-text-center sm:uno-text-2xl md:uno-text-5xl lg:uno-text-7xl"
                         style="white-space: pre-line;">
                         {{ $t('pages.home.title') }}
                     </h1>
@@ -28,7 +27,7 @@
             </div>
         </div>
         <!-- 第二块区域 hero -->
-        <div class="page-container uno-hero-section uno-w-full uno-my-40px sm:uno-my-12 md:uno-mt-128px">
+        <div class="page-container uno-hero-section  uno-my-40px sm:uno-my-12 md:uno-mt-128px">
             <div
                 class="uno-flex uno-justify-between uno-items-center uno-gap-2 sm:uno-gap-3 md:uno-gap-4 lg:uno-gap-6 xl:uno-gap-6">
                 <!-- 六个卡通人物头像 -->
@@ -62,9 +61,9 @@
             </div>
         </div>
         <!-- 第四块 介绍区域 -->
-        <div class="page-container uno-intro-section uno-mt-120px">
+        <div class="page-container uno-intro-section uno-mt-120px md:uno-mt-60px lg:uno-mt-120px">
             <!-- Why You Should Take the Test 部分 -->
-            <div class="uno-mb-12 sm:uno-mb-16 md:uno-mb-120px lg:uno-mb-120px">
+            <div class="uno-mb-12 sm:uno-mb-16 md:uno-mb-40px lg:uno-mb-120px">
                 <div class="uno-max-w-[800px] uno-mx-auto uno-relative">
                     <h2
                         class="uno-text-[#011813] uno-text-[32px] sm:uno-text-3xl md:uno-text-4xl lg:uno-text-5xl uno-font-Outfit uno-text-center uno-font-semibold uno-m-b-6px sm:uno-m-b-8px md:uno-m-b-12px">
@@ -128,10 +127,10 @@
                 </div>
 
                 <!-- 三个小介绍卡片 -->
-                <div class="uno-grid uno-grid-cols-1 md:uno-grid-cols-3 uno-gap-[20px] sm:uno-px-0">
+                <div class="uno-flex uno-flex-wrap uno-gap-[20px] sm:uno-px-0">
                     <!-- 卡片循环 -->
                     <div v-for="(card, index) in whyCards" :key="index"
-                        class="uno-bg-[#F8F8F8] uno-border-solid uno-border-[#E7E7E8] uno-border-1 uno-rounded-[12px] uno-p-18px sm:uno-p-24px md:uno-p-24px uno-relative uno-w-full md:uno-w-[384px] md:uno-h-[284px]">
+                        class="uno-bg-[#F8F8F8] uno-border-solid uno-border-[#E7E7E8] uno-border-1 uno-rounded-[12px] uno-p-18px sm:uno-p-24px md:uno-p-24px uno-relative uno-w-full uno-max-w-full md:uno-max-w-[calc((100%-40px)/3)] uno-h-auto sm:uno-h-auto md:uno-h-auto lg:uno-w-[384px] lg:uno-h-[284px]">
                         <!-- 图标 -->
                         <NuxtImg v-if="!$device.isMobile" :src="card.icon" :alt="card.alt" width="32" height="32"
                             class="sm:uno-w-[40px] sm:uno-h-[40px] md:uno-w-[56px] md:uno-h-[56px] uno-mb-12px" />
@@ -149,9 +148,9 @@
 
             <!-- How Does It Work 部分 -->
             <div
-                class="uno-flex uno-flex-col md:uno-flex-row uno-gap-48px sm:uno-gap-66px md:uno-gap-161px uno-items-center uno-pb-120px uno-pt-40px sm:uno-pt-120px ">
+                class="uno-flex uno-flex-col lg:uno-flex-row uno-gap-24px sm:uno-gap-32px md:uno-gap-48px lg:uno-gap-161px uno-items-center uno-pb-60px uno-pt-40px sm:uno-pt-80px md:uno-pt-60px ">
                 <!-- 左侧：标题、描述和按钮 -->
-                <div class="uno-w-full md:uno-w-1/2">
+                <div class="uno-w-full lg:uno-w-1/2">
                     <div class="uno-flex uno-flex-col uno-items-center md:uno-items-start">
                         <h2
                             class="uno-text-[32px] sm:uno-text-[48px] md:uno-text-[48px] uno-font-Outfit uno-font-semibold uno-mb-6 sm:uno-mb-24px uno-text-center md:uno-text-left">
@@ -159,7 +158,7 @@
                         </h2>
                         <p class="uno-text-gray-600 uno-mb-8 sm:uno-mb-32px uno-text-center md:uno-text-left">{{
                             $t('pages.home.how.desc')
-                            }}</p>
+                        }}</p>
 
                         <AppArrowButton
                             class="uno-m-t-12px sm:uno-m-t-16px md:uno-m-t-24px uno-gap-[6px] sm:uno-gap-[8px] md:uno-gap-[12px] uno-py-2 sm:uno-py-6px uno-pr-[6px] sm:uno-pr-[4px] md:uno-pr-[6px] uno-pl-[12px] sm:uno-pl-[16px] md:uno-pl-[24px] uno-text-[16px] sm:uno-text-[14px] md:uno-text-[16px] uno-font-Outfit uno-font-medium"
@@ -171,7 +170,7 @@
                 </div>
 
                 <!-- 右侧：三个步骤卡片 -->
-                <div class="uno-w-full md:uno-w-1/2">
+                <div class="uno-w-full lg:uno-w-1/2">
                     <div class="uno-flex uno-justify-start uno-items-end uno-flex-col uno-gap-24px sm:uno-gap-6">
                         <!-- 步骤循环 -->
                         <div v-for="(item, index) in howSteps" :key="index" style="flex-shrink: 0"
@@ -204,7 +203,7 @@
                 class="uno-w-full uno-h-[100%]  uno-absolute uno-top-0 uno-left-0 uno--z-10 uno-pointer-events-none uno-hidden md:uno-block"
                 uno-preload />
             <div
-                class="page-container uno-px-4 uno-py-8 sm:uno-py-12 md:uno-py-120px lg:uno-py-120px xl:uno-py-120px relative z-10">
+                class="page-container lg:uno-px-4 uno-py-8 sm:uno-py-12 md:uno-py-120px lg:uno-py-120px xl:uno-py-120px relative z-10">
                 <h2
                     class="uno-text-[32px] sm:uno-text-2xl md:uno-text-[48px] uno-font-Outfit uno-font-semibold uno-text-center uno-mb-2 sm:uno-mb-3 md:uno-mb-4">
                     {{ $t('pages.home.receive.title') }}</h2>
@@ -215,9 +214,9 @@
                 <!-- 六个卡片布局 -->
                 <!-- 循环展示 receiveCards -->
                 <div
-                    class="uno-grid uno-grid-cols-1 md:uno-grid-cols-3 uno-gap-[24px] sm:uno-gap-[24px] md:uno-gap-[24px]">
+                    class="uno-grid uno-grid-cols-1 md:uno-grid-cols-3 uno-gap-[24px] sm:uno-gap-[24px] md:uno-gap-[12px] lg:uno-gap-[24px]">
                     <div v-for="(card, index) in receiveCards" :key="index"
-                        class="uno-bg-white sm:uno-w-full md:uno-w-full uno-rounded-[32px] uno-shadow-[0_2px_8px_rgba(0,0,0,0.04)] uno-p-[32px] uno-border uno-border-solid uno-border-[#E7E7E8] uno-flex uno-flex-col uno-items-center uno-justify-start uno-text-center uno-min-h-[256px]">
+                        class="uno-bg-white sm:uno-w-full md:uno-w-full uno-rounded-[32px] uno-shadow-[0_2px_8px_rgba(0,0,0,0.04)] uno-p-[32px_8px] lg:uno-p-[32px] uno-border uno-border-solid uno-border-[#E7E7E8] uno-flex uno-flex-col uno-items-center uno-justify-start uno-text-center uno-min-h-[256px]">
                         <div
                             class="uno-w-64px uno-h-64px sm:uno-w-64px sm:uno-h-64px uno-flex uno-items-center uno-justify-center uno-bg-gray-50 uno-rounded-full uno-mb-8px">
                             <NuxtImg :src="card.icon" :alt="card.alt" width="64" height="64" />

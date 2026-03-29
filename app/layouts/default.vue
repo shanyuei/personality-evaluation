@@ -18,10 +18,15 @@
         <NuxtImg src="/theme/layout/bg-top.png" alt="bg-top" width="100%" height="100vh"
           class="uno-w-full uno-h-auto uno-max-h-100vh uno-absolute uno-top-0 uno-left-0 uno-z-0" />
         <template v-if="showPageTopIcons && !$device.isMobile">
-          <NuxtImg src="/theme/layout/page-top-icon-1.png" 
+          <!-- <NuxtImg src="/theme/layout/page-top-icon-1.png" 
             class="uno-absolute uno-top-311px uno-right-67px uno-z-1" width="109px" height="121px" />
           <NuxtImg src="/theme/layout/page-top-icon-2.png"  width="82px" height="96px"
-            class="uno-absolute uno-top-431px uno-left-133px uno-z-1" />
+            class="uno-absolute uno-top-431px uno-left-133px uno-z-1" /> -->
+          <NuxtImg src="/theme/layout/page-top-icon-1.png"
+            class="uno-absolute uno-top-311px uno-right-13px md:uno-right-10px lg:uno-right-67px uno-z-1" width="109px"
+            height="121px" />
+          <NuxtImg src="/theme/layout/page-top-icon-2.png" width="82px" height="96px"
+            class="uno-absolute uno-top-431px uno-left-8px md:uno-left-60px lg:uno-left-133px uno-z-1" />
         </template>
         <template v-if="showPageTopIcons && $device.isMobile">
           <NuxtImg src="/theme/layout/page-top-icon-1.png" width="55" height="61"
@@ -30,8 +35,8 @@
             class="uno-absolute uno-top-361px uno-left-8px uno-z-1" />
         </template>
         <div v-if="showPageTopIcons3" class="page-container relative">
-          <NuxtImg  src="/theme/layout/page-top-icon-3.png" width="104" height="44"
-            class="uno-absolute uno-z-1" :class="pageTopIcon3Class" />
+          <NuxtImg src="/theme/layout/page-top-icon-3.png" width="104" height="44" class="uno-absolute uno-z-1"
+            :class="pageTopIcon3Class" />
         </div>
 
 
@@ -46,7 +51,7 @@
           </slot>
         </main>
         <!--  curious -->
-        <app-curious v-if="showCurious"  />
+        <app-curious v-if="showCurious" />
         <!-- 底部 -->
         <app-footer v-if="showFooter" />
       </div>

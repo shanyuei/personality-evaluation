@@ -2,14 +2,14 @@
   <UHeader v-model:open="open" :ui="{
     body: 'bg-transparent p-0',
     content: 'bg-transparent',
-    header: ' page-container h-[96px] border-none max-sm:h-[53px]',
+    header: ' h-[96px] border-none max-sm:h-[53px]',
     overlay: 'bg-[#444444]/80',
     root: 'h-[96px] border-none bg-transparent max-sm:h-[53px] justify-center flex',
     container: 'max-w-[1440px] mx-auto w-full px-4 md:px-6 lg:px-8 '
   }" :class="[!showMenu ? 'hiddenMenu' : '', open ? 'openMenu' : '']">
     <!-- 导航栏 -->
     <template #left>
-      <div  class="uno-flex  uno-w-full uno-mr-101px max-sm:uno-mr-auto">
+      <div class="uno-flex  uno-w-full uno-mr-101px max-sm:uno-mr-auto">
         <NuxtLink :to="localePath('/')" class="uno-w-[249px] uno-flex uno-items-center  max-sm:uno-hidden">
           <img src="/theme/logo.png" alt="logo" width="249" height="60">
         </NuxtLink>
@@ -17,21 +17,24 @@
           <NuxtImg src="/theme/logo-2.png" width="149" height="23" alt="logo" class="" />
         </NuxtLink>
       </div>
-     
-      <UNavigationMenu v-if="showMenu" :ui="{
-        link: 'before:bg-transparent font-Outfit text-center font-medium text-[16px] text-[#001813] data-[active]:text-[var(--color-pink-1)] hover:text-[var(--color-pink-1)]',
-        item: 'ml-[18px] mr-[18px]'
-      }" :items="itemsLocalized" class="uno-w-full uno-justify-center max-sm:uno-hidden" />
+
+      <div v-if="!$device.isMobileOrTablet">
+        <UNavigationMenu v-if="showMenu" :ui="{
+          link: 'before:bg-transparent font-Outfit text-center font-medium text-[16px] text-[#001813] data-[active]:text-[var(--color-pink-1)] hover:text-[var(--color-pink-1)]',
+          item: 'ml-[18px] mr-[18px]'
+        }" :items="itemsLocalized" class="uno-w-full uno-justify-center max-md:uno-hidden" />
+      </div>
+
     </template>
-    <template #default/>
+    <template #default />
 
     <template #right>
-      <template v-if="showMenu">
+      <template v-if="showMenu || !$device.isMobileOrTablet">
         <!-- 未登录状态 -->
         <AppArrowButton v-if="!token" preset="header" class="max-sm:uno-hidden uno-font-Outfit uno-font-medium"
           :to="localePath('/free-personality-test')">
           <!-- {{ $t('common.getStarted') }} -->
-            {{ t('common.nav.takeTheTest') }}
+          {{ t('common.nav.takeTheTest') }}
         </AppArrowButton>
 
         <!-- 登录状态 -->
@@ -61,7 +64,7 @@
         </UDropdownMenu>
 
         <!-- 多语言 -->
-        <I18nSelect  />
+        <I18nSelect />
       </template>
     </template>
 
@@ -140,7 +143,7 @@ const items = computed(() => {
       to: '/faq',
     }
   ]
-  
+
   if (!token.value) {
     baseItems.push({
       label: t('common.nav.signIn'),
@@ -152,7 +155,7 @@ const items = computed(() => {
       to: '/account/settings',
     })
   }
-  
+
   return baseItems
 });
 const itemsLocalized = computed(() => items.value.map(i => ({ ...i, label: t(i.label), to: localePath(i.to) })))

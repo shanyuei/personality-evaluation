@@ -8,9 +8,9 @@
         </h1>
       </div>
 
-      <div class="uno-grid uno-grid-cols-1 md:uno-grid-cols-3 uno-gap-8">
+      <div class="uno-grid uno-grid-cols-1 lg:uno-grid-cols-3 uno-gap-8">
         <!-- 分类 -->
-        <aside class="uno-hidden md:uno-block md:uno-col-span-1">
+        <aside class="uno-hidden lg:uno-block lg:uno-col-span-1">
           <div class=" uno-rounded-2xl  uno-p-6">
             <div class="uno-flex uno-justify-start uno-items-start uno-flex-col uno-gap-4">
               <span
@@ -37,7 +37,7 @@
           </div>
         </aside>
         <!-- 内容 -->
-        <section class="md:uno-col-span-2 uno-space-y-10">
+        <section class="lg:uno-col-span-2 uno-space-y-10">
           <div class="uno-space-y-4">
             <h2 class="uno-text-2xl md:uno-text-24px uno-font-Outfit uno-font-600 uno-text-black uno-mb-4">
               {{ $t('pages.faq.general.faqs') }}
@@ -192,7 +192,7 @@ definePageMeta({
   title: () => 'seo.faq.title',
   layoutShowPageTopIcons: false,
   layoutShowPageTopIcons3: true,
-  layoutPageTopIcon3Class: 'uno-top-160px uno-right-0'
+  layoutPageTopIcon3Class: 'uno-top-160px uno-right-0 md:uno-top-100px md:uno-right-30px lg:uno-top-160px'
 })
 
 useSeoMeta({

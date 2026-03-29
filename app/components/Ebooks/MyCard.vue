@@ -1,6 +1,6 @@
 <template>
   <div
-    class="uno-p-6 md:uno-p-8 uno-flex uno-flex-col-reverse md:uno-flex-row uno-items-start md:uno-items-center uno-gap-10 md:uno-gap-16">
+    class="uno-p-6 md:uno-p-8 uno-flex uno-flex-col-reverse lg:uno-flex-row uno-items-start lg:uno-items-center uno-gap-10 lg:uno-gap-16">
     <div class="uno-flex-1 uno-space-y-3">
       <h3 class="uno-text-[24px] uno-font-Outfit uno-font-[600] uno-text-[var(--ui-foreground)]">{{ title
       }}</h3>
@@ -18,7 +18,7 @@
         </div>
       </div>
     </div>
-    <NuxtImg :src="image" alt="ebook" width="268" height="209" class="uno-rounded-[24px] uno-m-auto" />
+    <NuxtImg :src="image" alt="ebook" width="268" height="209" class="uno-rounded-[24px] uno-m-auto md:w-full md:uno-h-[209px] lg:uno-w-[268px] lg:uno-h-[209px] uno-object-cover uno-flex-shrink-0" />
   </div>
 </template>
 

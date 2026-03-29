@@ -219,7 +219,8 @@ definePageMeta({
   layoutShowCurious: true,
   layoutShowPageTopIcons3: true,
   layoutShowPageTopIcons: false,
-  title: () => 'seo.blog.title'
+  title: () => 'seo.blog.title',
+  layoutPageTopIcon3Class: 'uno-top-160px uno-right-0 md:uno-top-100px md:uno-right-0px lg:uno-top-160px'
 })
 
 useSeoMeta({

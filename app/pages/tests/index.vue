@@ -10,9 +10,9 @@
     </div>
 
     <section v-if="hero" class="uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_0px_#0000000D] ">
-      <div class="uno-flex uno-p-6 md:uno-p-8 uno-flex-col md:uno-flex-row uno-gap-6 md:uno-gap-18">
+      <div class="uno-flex uno-p-6 md:uno-p-8 lg:unp-p-8 uno-flex-col lg:uno-flex-row uno-gap-6 md:uno-gap-6 lg:uno-gap-12">
         <img :src="hero.cover" alt="hero"
-          class="uno-w-full md:uno-w-[425px] uno-h-[270px] uno-object-cover uno-rounded-[24px] uno-flex-shrink-0">
+          class="uno-w-full lg:uno-w-[425px] uno-h-[270px] uno-object-cover uno-rounded-[24px] uno-flex-shrink-0">
 
         <div class="uno-flex-grow uno-flex uno-flex-col uno-justify-center uno-space-y-3">
           <h1
@@ -93,7 +93,7 @@
               </AppLink>
             </div>
             <div v-else class="uno-flex uno-gap-3 uno-mt-auto">
-              <template v-if="!$device.isMobile">
+              <template v-if="!$device.isMobile && !$device.isDesktopOrTablet">
                 <AppLink :to="`/test/result?test_id=${card.id}`">
                   <PrimaryButton width="151px" height="44px">{{ $t('pages.tests.cta.viewResults') }}</PrimaryButton>
                 </AppLink>

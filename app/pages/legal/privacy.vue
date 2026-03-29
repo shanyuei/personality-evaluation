@@ -1,5 +1,5 @@
 <template>
-  <main class="uno-py-12 uno-px-6 md:uno-px-10 ">
+  <main class="uno-py-12 uno-px-6 lg:uno-px-10 ">
     <div class="page-container  uno-mx-auto">
       <!-- 面包屑导航 -->
       <div class="uno-text-sm  uno-mb-6">
@@ -10,9 +10,9 @@
         <h1 class="uno-text-4xl md:uno-text-5xl uno-font-Outfit uno-font-bold uno-text-gray-900">Privacy Policy</h1>
       </div>
 
-      <div class="uno-grid uno-grid-cols-1 md:uno-grid-cols-4 uno-gap-8">
+      <div class="uno-grid uno-grid-cols-1 lg:uno-grid-cols-4 uno-gap-8">
         <!-- 侧边栏菜单 -->
-        <div class="uno-col-span-1">
+        <div class="uno-hidden lg:uno-block lg:uno-col-span-1">
           <nav>
             <ul class="uno-space-y-3 md:uno-space-y-4">
               <li v-for="item in navItems" :key="item.id">
@@ -25,7 +25,7 @@
         </div>
 
         <!-- 主内容区域 -->
-        <div class="uno-col-span-1 md:uno-col-span-3">
+        <div class="uno-col-span-1 lg:uno-col-span-3">
           <div class="uno-space-y-8">
             <section v-for="section in sections" :key="section.id" :id="section.id">
               <h2 class="uno-text-[24px] uno-font-[Outfit] uno-font-[600] uno-text-gray-900 uno-mb-4"

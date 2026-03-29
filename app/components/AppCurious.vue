@@ -4,9 +4,10 @@
     <!-- 内容 -->
     <!-- 背景 -->
     <div v-if="$device.isMobile" class="uno-w-100% uno-h-534px uno-absolute  uno--z-10 "
-      style="background-image: url(/images/footer/curious-h5-bg.png); background-size: 110% 100%; background-position-x: center;"></div>
-    <div v-else class="uno-w-1300px uno-h-500px uno-absolute  uno--z-10 "
-      style="background-image: url(/images/footer/curious-pc-bg.png); background-size: cover;"></div>
+      style="background-image: url(/images/footer/curious-h5-bg.png); background-size: 110% 100%; background-position-x: center;">
+    </div>
+    <div v-else class="curious-bg lg:uno-w-1300px lg:uno-h-500px md:uno-w-102% md:uno-h-435px uno-absolute  uno--z-10 "
+      style="background-image: url(/images/footer/curious-pc-bg.png);"></div>
     <!-- <NuxtImg src="/images/footer/curious-h5-bg.png" alt="" aria-hidden="true" width="438px" height="534px"
       class="uno-absolute  uno--z-10 uno-pointer-events-none uno-object-cover uno-object-center uno-block md:uno-hidden"
       uno-preload /> -->
@@ -69,4 +70,15 @@ defineEmits<{
 
 <style scoped>
 .gradient-cta-section {}
+
+.curious-bg {
+  background-size: cover;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .curious-bg {
+    background-size: cover;
+    background-repeat: round;
+  }
+}
 </style>
