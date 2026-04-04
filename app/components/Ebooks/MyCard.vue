@@ -5,14 +5,14 @@
       <h3 class="uno-text-[24px] uno-font-Outfit uno-font-[600] uno-text-[var(--ui-foreground)]">{{ title
       }}</h3>
       <p class="uno-text-sm uno-text-[#4E5255]">{{ description }}</p>
-      <div class="uno-flex uno-gap-3 uno-pt-2 uno-justify-between md:uno-justify-start uno-flex-wrap">
-        <div class="uno-w-full md:uno-w-[153px]">
-          <PrimaryButton height="48px">
+      <div class="uno-flex uno-gap-3 uno-pt-2 uno-flex-wrap">
+        <div class="uno-flex-1 lg:uno-w-[153px]">
+          <PrimaryButton width="full" height="48px">
             {{ $t('pages.ebooks.primary.download') }}</PrimaryButton>
         </div>
-        <div class="uno-w-full md:uno-w-[153px]">
+        <div class="uno-flex-1 lg:uno-w-[153px]">
           <AppLink :to="'/ebooks/detail'">
-            <OutlineButton height="48px">
+            <OutlineButton width="full" height="48px">
               {{ $t('pages.ebooks.primary.readOnline') }}</OutlineButton>
           </AppLink>
         </div>

@@ -25,7 +25,7 @@
           :class="step.bgClass">
           <div class=" uno-inline-block uno-w-full uno-p-12px sm:uno-p-6 uno-space-y-2 uno-rounded-2xl md:uno-h-full"
             :class="step.innerBgClass">
-            <div class="uno-flex uno-flex-row md:uno-flex-col md:uno-items-center uno-gap-3">
+            <div class="uno-flex uno-flex-row md:uno-flex-col md:uno-items-center uno-gap-3 uno-h-full">
               <span
                 class="uno-w-8 md:uno-w-24 uno-h-8 md:uno-h-24 uno-rounded-[18.19px] md:uno-rounded-full uno-flex uno-items-center uno-justify-center"
                 :class="step.iconBgClass">
@@ -33,18 +33,18 @@
                 <NuxtImg v-else :src="step.icon" :alt="'step' + step.id" width="32" height="32" />
 
               </span>
-              <div class="uno-flex uno-flex-col uno-flex-1 uno-text-left md:uno-text-left !uno-gap-12px">
+              <div class="uno-flex-1 uno-text-left md:uno-text-left uno-h-full uno-flex uno-flex-col">
                 <span
                   class="uno-hidden md:uno-inline-flex uno-justify-start uno-items-center uno-flex-row uno-gap-2.5 uno-py-1 uno-px-4 uno-rounded-3xl uno-self-start uno-text-[#011813] uno-text-center uno-text-base uno-font-Outfit uno-font-medium uno-leading-[1.36]"
                   :class="step.badgeBgClass">
                   {{ $t('common.step') }} {{ step.id }}
                 </span>
                 <div
-                  class="uno-hidden md:uno-block uno-text-[#011813] uno-text-2xl md:uno-text-24px uno-font-Outfit uno-font-semibold">
+                  class="uno-hidden md:uno-block uno-text-[#011813] uno-text-2xl md:uno-text-24px uno-font-Outfit uno-font-semibold md:uno-mt-3">
                   {{
                     step.titleKey }}</div>
                 <p
-                  class="uno-text-[12px] md:uno-text-16px uno-text-[#4E5255] uno-font-Outfit uno-font-normal uno-leading-[150%] uno-text-left md:uno-mt-top">
+                  class="uno-text-[12px] md:uno-text-16px uno-text-[#4E5255] uno-font-Outfit uno-font-normal uno-leading-[150%] uno-text-left uno-mt-3 md:uno-mt-auto">
                   {{ step.descKey }}</p>
               </div>
             </div>

@@ -119,7 +119,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue';
+import { computed, ref, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
 import FAQSection from '~/components/FAQSection.vue';
 import PrimaryButton from '~/components/ui/PrimaryButton.vue';
@@ -144,11 +144,11 @@ const planConfig: Record<number, { key: string; badge?: string; billingFallback?
 };
 
 const { data: plansData } = await getPlanList();
-
+const { $device } = useNuxtApp();
 const plans = computed(() => {
   const list = plansData.value?.data || [];
   const processedList = list.map((item: any) => {
-    const config = planConfig[item.id] || { key: 'monthly' }; // Fallback to monthly key if unknown
+    const config = planConfig[item.id] || { key: 'monthly' };
     return {
       ...item,
       ...config
@@ -156,7 +156,7 @@ const plans = computed(() => {
   });
 
   // 在移动端和pad端，将携带 badge 的计划排在前面
-  if (typeof window !== 'undefined' && window.innerWidth < 1024) {
+  if ($device.isMobile || $device.isTablet) {
     return processedList.sort((a: any, b: any) => {
       if (a.badge && !b.badge) return -1;
       if (!a.badge && b.badge) return 1;
@@ -168,6 +168,13 @@ const plans = computed(() => {
 });
 
 const selectedPlan = ref('yearly');
+
+watch(plans, () => {
+  if (plans.value.length > 0 && ($device.isMobile || $device.isTablet)) {
+    const firstPlan = plans.value[0];
+    selectedPlan.value = firstPlan.key;
+  }
+}, { immediate: true });
 
 const handleCreateOrder = async (plan: any) => {
   const reportId = route.query.report_id as string || '';
