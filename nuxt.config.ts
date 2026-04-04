@@ -81,6 +81,8 @@ export default defineNuxtConfig({
       strapiUrl: process.env.NUXT_PUBLIC_STRAPI_URL || 'http://localhost:1337',
       // 通用API配置
       apiBaseUrl: process.env.NUXT_PUBLIC_API_BASE_URL || 'https://api.example.com',
+      // Stripe 配置
+      stripePublishableKey: process.env.NUXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || '',
 
     }
   }

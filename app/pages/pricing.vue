@@ -170,7 +170,7 @@ const plans = computed(() => {
 const selectedPlan = ref('yearly');
 
 const handleCreateOrder = async (plan: any) => {
-  const reportId = route.query.reportId as string || '';
+  const reportId = route.query.report_id as string || '';
   console.log('reportId', reportId, route);
 
   try {

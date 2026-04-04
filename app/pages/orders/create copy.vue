@@ -72,13 +72,34 @@
                 :ui="{ rounded: 'rounded-[12px]' }" class="uno-w-full" />
             </div>
 
-            <!-- Stripe Card Element -->
+            <!-- Card Number -->
             <div class="uno-space-y-2">
               <label class="uno-block uno-text-sm uno-font-medium uno-text-[#011813]">{{
                 $t('pages.orders.create.form.cardNumber') }}</label>
-              <div class="uno-rounded-[12px] uno-border uno-border-[#E7E7E8] uno-p-4" ref="cardElementContainer">
+              <UInput v-model="form.cardNumber" :placeholder="$t('pages.orders.create.form.cardNumberPlaceholder')"
+                size="xl" icon="i-lucide-credit-card" :ui="{ rounded: 'rounded-[12px]' }" class="uno-w-full" />
+            </div>
+
+            <!-- Expires, CVV, Zip -->
+            <div class="uno-grid uno-grid-cols-3 uno-gap-4">
+              <div class="uno-space-y-2">
+                <label class="uno-block uno-text-sm uno-font-medium uno-text-[#011813]">{{
+                  $t('pages.orders.create.form.expires') }}</label>
+                <UInput v-model="form.expires" :placeholder="$t('pages.orders.create.form.expiresPlaceholder')"
+                  size="xl" :ui="{ rounded: 'rounded-[12px]' }" class="uno-w-full" />
               </div>
-              <div v-if="cardError" class="uno-text-red-500 uno-text-sm">{{ cardError }}</div>
+              <div class="uno-space-y-2">
+                <label class="uno-block uno-text-sm uno-font-medium uno-text-[#011813]">{{
+                  $t('pages.orders.create.form.cvv') }}</label>
+                <UInput v-model="form.cvv" :placeholder="$t('pages.orders.create.form.cvvPlaceholder')" size="xl"
+                  :ui="{ rounded: 'rounded-[12px]' }" class="uno-w-full" />
+              </div>
+              <div class="uno-space-y-2">
+                <label class="uno-block uno-text-sm uno-font-medium uno-text-[#011813]">{{
+                  $t('pages.orders.create.form.zip') }}</label>
+                <UInput v-model="form.zip" :placeholder="$t('pages.orders.create.form.zipPlaceholder')" size="xl"
+                  :ui="{ rounded: 'rounded-[12px]' }" class="uno-w-full" />
+              </div>
             </div>
 
             <!-- Consent Checkbox -->
@@ -96,7 +117,7 @@
 
             <!-- Buttons -->
             <div class="uno-space-y-3">
-              <PrimaryButton height="56px" @click="handleSubmit" :loading="isLoading">
+              <PrimaryButton height="56px" @click="handleSubmit">
                 {{ $t('pages.orders.create.form.subscribeBtn', { price: $t("common.price") + planPrice }) }}
               </PrimaryButton>
 
@@ -185,24 +206,22 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, computed, ref } from 'vue';
-import { loadStripe } from '@stripe/stripe-js';
+import { onMounted, computed } from 'vue';
+import { payOrder } from '~/api/tests';
 import AppCheckIcon from '~/components/AppCheckIcon.vue';
-import PrimaryButton from '~/components/ui/PrimaryButton.vue';
-import CustomButton from '~/components/ui/CustomButton.vue';
+import PrimaryButton from '~/components/ui/PrimaryButton.vue'
+import CustomButton from '~/components/ui/CustomButton.vue'
 
 const { toast } = useToast()
 
 const { t } = useI18n()
 const route = useRoute()
-const { apiBaseUrl } = useRuntimeConfig().public
 
-const stripePublishableKey = useRuntimeConfig().public.stripePublishableKey
-const stripePromise = loadStripe(stripePublishableKey)
+
 
 definePageMeta({
   title: () => 'pages.orders.create.title',
-  layoutShowPageTopIcons: false,
+    layoutShowPageTopIcons: false,
   path: '/checkout'
 })
 useSeoMeta({
@@ -210,13 +229,15 @@ useSeoMeta({
   description: () => t('seo.orders.create.description') as string
 })
 
-const cardElementContainer = ref<HTMLElement | null>(null)
-let cardElement: any = null
-
+// Form State
 const form = ref({
   order_id: '',
   email: '',
   name: '',
+  cardNumber: '',
+  expires: '',
+  cvv: '',
+  zip: '',
   consent: false
 })
 const planName = ref('')
@@ -224,8 +245,8 @@ const planPrice = ref('')
 
 const isLoading = ref(false)
 const emailError = ref(false)
-const cardError = ref<string | null>(null)
 
+// Initialize form data from route query
 onMounted(() => {
   if (route.query.order_id) {
     form.value.order_id = route.query.order_id as string
@@ -233,34 +254,11 @@ onMounted(() => {
     form.value.order_id = route.query.order_sn as string
   }
 
+  // Get plan_name and plan_price from query params
   planName.value = route.query.plan_name as string || ""
   planPrice.value = route.query.plan_price as string || "1.99"
 
-  if (cardElementContainer.value && stripePromise) {
-    stripePromise.then(stripe => {
-      if (stripe && cardElementContainer.value) {
-        const elements = stripe.elements()
-        cardElement = elements.create('card', {
-          style: {
-            base: {
-              fontSize: '16px',
-              color: '#011813',
-              '::placeholder': {
-                color: '#8D8E8F',
-              },
-            },
-            invalid: {
-              color: '#dc2626',
-            },
-          },
-        })
-        cardElement.mount(cardElementContainer.value)
-        cardElement.on('change', (event: any) => {
-          cardError.value = event.error ? event.error.message : null
-        })
-      }
-    })
-  }
+  // You can use these values as needed
 })
 
 const validateEmail = () => {
@@ -276,12 +274,12 @@ const isFormValid = computed(() => {
   const emailValid = !!form.value.email && !emailError.value
   const orderIdValid = !!form.value.order_id
   const consentValid = form.value.consent
-  const cardValid = !cardError.value
-  return emailValid && orderIdValid && consentValid && cardValid
+  return emailValid && orderIdValid && consentValid
 })
 
 const handleSubmit = async () => {
   if (!isFormValid.value) {
+    // Check specific validation errors and show toasts
     if (!form.value.email) {
       toast?.add({
         title: t('common.api.error'),
@@ -306,86 +304,53 @@ const handleSubmit = async () => {
         color: 'warning',
         description: t('pages.orders.create.form.consentRequired') || 'Please consent to the terms.',
       })
-    } else if (cardError.value) {
-      toast?.add({
-        title: t('common.api.error'),
-        color: 'warning',
-        description: cardError.value,
-      })
     }
     return
   }
 
   isLoading.value = true
   try {
-    const orderIdInt = parseInt(form.value.order_id)
-    const response = await $fetch<{
-      code: number
-      message: string
-      data: { client_secret: string }
-    }>(`${apiBaseUrl}/payment/pay-info`, {
-      method: 'POST',
-      body: {
-        order_id: orderIdInt
-      }
+    const { data, error } = await payOrder({
+      order_id: form.value.order_id,
+      email: form.value.email
     })
 
-    if (response.code !== 0 || !response.data?.client_secret) {
-      throw new Error(response.message || t('pages.orders.create.form.paymentError') || 'Failed to get payment info')
+    if (error.value) {
+      // Using alert for simplicity, could be replaced with a toast
+      return
     }
 
-    const clientSecret = response.data.client_secret
-
-    const stripeInstance = await stripePromise
-    if (!stripeInstance) {
-      throw new Error('Stripe not initialized')
-    }
-
-    if (!cardElement) {
-      throw new Error('Card element not found')
-    }
-
-    const result = await stripeInstance.confirmCardPayment(clientSecret, {
-      payment_method: {
-        card: cardElement,
-        billing_details: {
-          name: form.value.name,
-          email: form.value.email
-        }
-      }
-    })
-
-    if (result.error) {
-      throw new Error(result.error.message || t('pages.orders.create.form.paymentError') || 'Payment failed')
-    }
-
-    if (result.paymentIntent && result.paymentIntent.status === 'succeeded') {
+    const token = data.value?.data?.user_token
+    if (token) {
+      // 存储 token 到 localStorage 或 sessionStorage
+      localStorage.setItem('userToken', token)
+      // 跳转到成功页面
+      // router.push({ path: '/orders/success' })
+    } else {
+      // 处理 token 缺失的情况
       toast?.add({
-        title: t('common.success'),
-        color: 'success',
-        description: t('pages.orders.create.form.paymentSuccess') || 'Payment successful!',
+        title: t('common.api.error'),
+        color: 'warning',
+        description: t('pages.orders.create.form.paymentError') || 'Payment failed. Please try again.',
       })
-      navigateTo(localePath('/orders/purchase-complete'))
     }
+
+
 
   } catch (err) {
-    toast?.add({
-      title: t('common.api.error'),
-      color: 'warning',
-      description: (err as Error).message || t('pages.orders.create.form.paymentError') || 'Payment failed. Please try again.',
-    })
   } finally {
     isLoading.value = false
   }
 }
 
+// Trust Badges Data
 const trustItems = computed(() => [
   { text: t('pages.orders.create.trust.us'), image: '/images/orders/create/5.png' },
   { text: t('pages.orders.create.trust.noCharge'), image: '/images/orders/create/6.png' },
   { text: t('pages.orders.create.trust.refund'), image: '/images/orders/create/7.png' },
   { text: t('pages.orders.create.trust.cancel'), image: '/images/orders/create/8.png' },
 ])
-
+// Testimonials Data
 const reviews = computed(() => {
   return [
     {
@@ -475,6 +440,7 @@ const reviews = computed(() => {
   ]
 })
 
+
 const faqItems = computed(() => [
   {
     question: t('datas.faq.question1'),
@@ -507,6 +473,6 @@ const faqItems = computed(() => [
   {
     question: t('datas.faq.question8'),
     answer: t('datas.faq.answer8')
-  },
+  }
 ])
 </script>

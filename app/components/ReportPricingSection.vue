@@ -49,16 +49,16 @@ const props = defineProps<{
 const localePath = useLocalePath()
 
 const handleCTAClick = () => {
-  // 构建跳转路径，包含 report_id 参数
+  // 先跳转到定价页选择套餐，带上 report_id 参数
   if (props.reportId) {
     navigateTo(localePath({
-      path: '/checkout',
+      path: '/pricing',
       query: {
         report_id: props.reportId
       }
     }))
   } else {
-    navigateTo(localePath('/checkout'))
+    navigateTo(localePath('/pricing'))
   }
 }
 </script>
