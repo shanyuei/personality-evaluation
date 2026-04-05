@@ -32,6 +32,8 @@ export const useUserStore = defineStore('user', () => {
         userInfo.value = {
           ...res.data.value.data
         };
+        console.log(userInfo.value)
+
         resolve(userInfo.value!)
       }).catch(err => {
         reject(err)
@@ -63,7 +65,7 @@ export const useUserStore = defineStore('user', () => {
     userInfo.value = undefined;
 
     console.log('退出登录')
-    
+
     // 如果需要调用后端登出接口，可以在这里添加
     // await userApi.logout();
   };

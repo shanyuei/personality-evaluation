@@ -26,7 +26,7 @@
       <OutlineButton @click="downloadGuidebook" class="uno-w-full">
         {{ $t('pages.orders.purchaseComplete.btn2') }}
       </OutlineButton>
-
+      {{ paymentResult }}
     </div>
   </div>
 </template>
@@ -35,11 +35,15 @@
 import PrimaryButton from '@/components/ui/PrimaryButton.vue'
 import OutlineButton from '@/components/ui/OutlineButton.vue'
 import { getPaymentResult } from '~/api/payment'
-
+import { useUserStore } from '@/stores/modules/user'
+    const token = useCookie('token')
 const { t } = useI18n()
 const localePath = useLocalePath()
 const route = useRoute()
+
 const { toast } = useToast()
+
+const userStore = useUserStore()
 
 const loading = ref(true)
 const paymentResult = ref<{
@@ -49,6 +53,7 @@ const paymentResult = ref<{
   customer_name?: string
   amount_total?: number
   currency?: string
+  token?: string
 } | null>(null)
 
 definePageMeta({
@@ -66,8 +71,14 @@ useSeoMeta({
 const getPaymentResultAsync = async (order_sn: string) => {
   try {
     const { data } = await getPaymentResult({ order_sn })
+    console.log(data)
+    
     if (data.value?.code === 0 && data.value.data) {
       paymentResult.value = data.value.data
+      if (paymentResult.value.token) {
+       token.value = paymentResult.value.token
+       await userStore.fetchUserInfo()
+      }
     } else {
       toast?.add({
         title: t('common.api.error'),
@@ -106,6 +117,9 @@ const goToReport = () => {
 }
 
 const downloadGuidebook = () => {
+  if (paymentResult.value?.download_url) {
+    window.open(paymentResult.value.download_url, '_blank')
+  }
 }
 </script>
 
