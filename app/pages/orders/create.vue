@@ -336,14 +336,68 @@ const isFormValid = computed(() => {
 })
 
 const handleSubmit = async () => {
-
-  const { error } = await actions.value.confirm({
-    email: form.value.email,
-    billingAddress:{
-      name: form.value.name,
+  if (!isFormValid.value) {
+    if (!form.value.email) {
+      toast?.add({
+        title: t('common.api.error'),
+        color: 'warning',
+        description: t('pages.orders.create.form.emailRequired') || 'Email is required.',
+      });
+    } else if (emailError.value) {
+      toast?.add({
+        title: t('common.api.error'),
+        color: 'warning',
+        description: t('pages.orders.create.form.emailInvalid') || 'Please enter a valid email address.',
+      });
+    } else if (!form.value.order_id) {
+      toast?.add({
+        title: t('common.api.error'),
+        color: 'warning',
+        description: t('pages.orders.create.form.orderIdRequired') || 'Order ID is required.',
+      });
+    } else if (!form.value.name) {
+      toast?.add({
+        title: t('common.api.error'),
+        color: 'warning',
+        description: t('pages.orders.create.form.nameRequired') || 'Name is required.',
+      });
+    } else if (!form.value.consent) {
+      toast?.add({
+        title: t('common.api.error'),
+        color: 'warning',
+        description: t('pages.orders.create.form.consentRequired') || 'Please consent to the terms.',
+      });
     }
-  });
-}
+    return;
+  }
+
+  isLoading.value = true;
+
+  try {
+    const { error } = await actions.value.confirm({
+      email: form.value.email,
+      billingAddress: {
+        name: form.value.name,
+      },
+    });
+
+    if (error) {
+      toast?.add({
+        title: t('common.api.error'),
+        color: 'warning',
+        description: error.message || t('pages.orders.create.form.paymentError') || 'Payment failed. Please try again.',
+      });
+    }
+  } catch (err) {
+    toast?.add({
+      title: t('common.api.error'),
+      color: 'warning',
+      description: err.message,
+    });
+  } finally {
+    isLoading.value = false;
+  }
+};
 
 // Trust Badges Data
 const trustItems = computed(() => [
