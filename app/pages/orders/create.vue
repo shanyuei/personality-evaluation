@@ -331,8 +331,9 @@ const validateEmail = () => {
 const isFormValid = computed(() => {
   const emailValid = !!form.value.email && !emailError.value
   const orderIdValid = !!form.value.order_id
+  const nameValid = !!form.value.name
   const consentValid = form.value.consent
-  return emailValid && orderIdValid && consentValid
+  return emailValid && orderIdValid && nameValid && consentValid
 })
 
 const handleSubmit = async () => {
@@ -376,9 +377,15 @@ const handleSubmit = async () => {
   try {
     const { error } = await actions.value.confirm({
       email: form.value.email,
-      billingAddress: {
-        name: form.value.name,
-      },
+      // billingAddress: {
+      //   name: form.value.name,
+      //   address: {
+      //     line1: form.value.address,
+      //     city: form.value.city,
+      //     state: form.value.state,
+      //     zip: form.value.zip,
+      //   },
+      // },
     });
 
     if (error) {
