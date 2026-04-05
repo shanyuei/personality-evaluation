@@ -302,28 +302,6 @@ onMounted(() => {
           borderWidth: '1px',
           borderColor: '#E7E7E8',
         },
-
-        // 精确修改组件样式
-        rules: {
-          ".AccordionItem":{
-            border: '0',
-            boxShadow: 'none',
-            padding: '0',
-          },
-          '.Input': {
-            padding: '16px',
-            minHeight: '56px',
-          },
-          '.Input:focus': {
-            borderColor: '#009D77',
-            boxShadow: '0 0 0 1px #009D77',
-          },
-          '.Label': {
-            fontSize: '14px',
-            marginBottom: '4px',
-          },
-       
-        },
       };
       const checkout = Stripe.value.initCheckoutElementsSdk({
         clientSecret: client_secret.value,
