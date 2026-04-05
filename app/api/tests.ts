@@ -52,12 +52,12 @@ export const createOrder = (data: PaymentCreateRequest) => {
   return usePostFetch<ApiResponse<PaymentCreateResult>>(`/payment/create`, data)
 }
 /**
- * 支付订单
+ * 获取支付信息
  * - Method: POST
- * - Path: /payment/pay
+ * - Path: /payment/pay-info
  * - Body: { order_id, email }
- * - 返回: { code, message, data: { user_token } }
+ * - 返回: { code, message, data: { client_secret } }
  */
-export const payOrder = (data: PaymentPayRequest) => {
-  return usePostFetch<ApiResponse<PaymentPayResult>>(`/payment/pay`, data)
+export const payOrder = (data: { order_id: number, email: string }) => {
+  return usePostFetch<ApiResponse<PaymentPayResult>>(`/payment/pay-info`, data)
 }
