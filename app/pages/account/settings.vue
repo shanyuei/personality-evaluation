@@ -135,9 +135,31 @@ const languageStore = useLanguageStore()
 const { languageOptions, language } = storeToRefs(languageStore)
 
 const onSaveProfile = async () => {
+  const n = name.value.trim()
+  const e = email.value.trim()
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+  if (!n || !e) {
+    toast.add({
+      title: t('pages.account.settings.profile.emptyError') as string,
+      color: 'warning',
+      icon: 'i-heroicons-x-circle'
+    })
+    return
+  }
+
+  if (!emailRegex.test(e)) {
+    toast.add({
+      title: t('pages.account.settings.profile.emailInvalid') as string,
+      color: 'warning',
+      icon: 'i-heroicons-x-circle'
+    })
+    return
+  }
+
   profileLoading.value = true
   try {
-    const { data, error } = await userStore.updateUserInfo({ name: name.value, email: email.value })
+    const { data, error } = await userStore.updateUserInfo({ name: n, email: e })
     if (error.value) throw error.value
     toast.add({
       title: t('pages.account.settings.profile.success') as string,

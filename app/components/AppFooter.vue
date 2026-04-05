@@ -7,13 +7,13 @@
     <div class="page-container uno-w-full uno-bottom-0 uno-left-0 uno-z-[2] uno-relative">
       <UFooter :ui="{
         container: 'md:uno-pt-80px !px-0 gap-0 z-[2] relative max-w-[1440px] mx-auto items-start max-md:max-w-[80%] max-md:flex max-md:flex-col-reverse max-md:gap-32px max-sm:max-w-full max-sm:flex-col-reverse max-sm:flex max-sm:gap-32px max-sm:py-0  uno-items-start',
-        left: 'flex-1 md:uno-items-start md:uno-justify-start',
+        left: 'flex-1 md:uno-items-start md:uno-justify-center',
         right: 'flex-1 hidden',
         center: 'flex-2 md:w-full',
         bottom: 'p-t-0 uno-pb-32px uno-pt-22px',
       }">
         <template #left>
-          <div class="uno-flex uno-flex-col uno-w-[260px] md:uno-pl-30px md:uno-mb-32px">
+          <div class="uno-flex uno-flex-col md:uno-pl-30px md:uno-mb-32px">
             <!-- logo -->
             <!-- <NuxtImg src="/theme/logo.png" alt="logo" width="249" height="60" /> -->
             <img src="/theme/logo.png" alt="logo" width="249" height="60" />

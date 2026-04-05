@@ -1,10 +1,10 @@
 <template>
   <UHeader v-model:open="open" :ui="{
-    body: 'bg-transparent p-0',
+    body: 'bg-transparent sm:p-0',
     content: 'bg-transparent',
-    header: ' h-[96px] border-none max-sm:h-[53px]',
+    header: ' lg:h-[96px] border-none max-sm:h-[53px]',
     overlay: 'bg-[#444444]/80',
-    root: 'h-[96px] border-none bg-transparent max-sm:h-[53px] justify-center flex',
+    root: ' lg:h-[96px] border-none bg-transparent max-sm:h-[53px] justify-center flex',
     container: 'max-w-[1440px] mx-auto w-full px-4 md:px-6 lg:px-8 '
   }" :class="[!showMenu ? 'hiddenMenu' : '', open ? 'openMenu' : '']">
     <!-- 导航栏 -->
@@ -71,7 +71,7 @@
 
     <template #body>
       <div
-        class="uno-flex uno-flex-col uno-items-start uno-gap-4 uno-p-24px uno-bg-[#FFFFFF] uno-border-[1px] uno-border-[#F0F0F0] uno-rounded-[16px] uno-w-[374px] uno-max-w-[100vw] uno-mx-auto">
+        class="uno-flex uno-flex-col uno-items-start uno-gap-4 uno-p-24px uno-bg-[#FFFFFF] uno-border-[1px] uno-border-[#F0F0F0] uno-rounded-[16px]  uno-max-w-[100vw] uno-mx-auto">
         <UNavigationMenu orientation="vertical" :ui="{
           link: 'before:bg-transparent font-Outfit text-center !uno-text-[16px] text-[#011813] data-[active]:text-[var(--color-pink-1)] hover:text-[var(--color-pink-1)]',
           item: 'line-height-[42px] min-h-[42px]'
@@ -115,7 +115,7 @@ const handleLogout = () => {
 const accountItems = ref<any[]>([
   [{
     label: 'Settings',
-    to: '/account/settings'
+    to: '/settings'
   }, {
     label: 'Subscription',
     to: '/subscription'
