@@ -136,7 +136,7 @@
                             class="sm:uno-w-[40px] sm:uno-h-[40px] md:uno-w-[56px] md:uno-h-[56px] uno-mb-12px" />
                         <NuxtImg v-else :src="card.icon" :alt="card.alt" width="56" height="56" class="uno-mb-12px" />
 
-                        <h3
+                        <h3 style="white-space: pre-line;"
                             class="uno-font-Outfit uno-font-700 uno-text-[26px] uno-leading-[124%] uno-tracking-[0%] sm:uno-text-lg md:uno-text-[32px] uno-mb-2 sm:uno-mb-3">
                             {{ card.titleKey }}</h3>
                         <p
