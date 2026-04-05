@@ -14,9 +14,13 @@
           <div class=" uno-rounded-2xl  uno-p-6">
             <div class="uno-flex uno-justify-start uno-items-start uno-flex-col uno-gap-4">
               <div v-for="cat in asideCategories" :key="cat.id"
-                class="uno-flex uno-justify-start uno-items-start uno-flex-col uno-gap-3 uno-cursor-pointer">
+                class="uno-flex uno-justify-start uno-items-start uno-flex-col uno-gap-3 uno-cursor-pointer"
+                @click="scrollToCategory(cat.id)">
                 <h2
-                  class="uno-text-[var(--ui-foreground)] uno-text-2xl uno-font-Outfit uno-font-medium uno-leading-normal">
+                  :class="[
+                    'uno-text-2xl uno-font-Outfit uno-font-medium uno-leading-normal',
+                    currentCategory === cat.id ? 'uno-text-[var(--ui-primary)]' : 'uno-text-[var(--ui-foreground)]'
+                  ]">
                   {{ cat.title }}
                 </h2>
               </div>
@@ -29,7 +33,7 @@
 
             <div class="uno-space-y-5">
               <template v-for="(entry, i) in asideCategories" :key="entry.id">
-                <h2 class="uno-text-2xl md:uno-text-24px uno-font-Outfit uno-font-600 uno-text-black uno-mb-4">
+                <h2 :id="entry.id" class="uno-text-2xl md:uno-text-24px uno-font-Outfit uno-font-600 uno-text-black uno-mb-4">
                   {{ entry.title }}
                 </h2>
 
@@ -69,7 +73,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 
 
 const { t } = useI18n()
@@ -102,6 +106,64 @@ const toggle = (section: string, i: number) => {
     expandedItem.value = key
   }
 }
+
+// 滚动到指定分类
+const scrollToCategory = (id: string) => {
+  currentCategory.value = id
+  const element = document.getElementById(id)
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+}
+
+let observer: IntersectionObserver | null = null
+
+// 监听滚动更新当前分类
+const updateCurrentCategory = () => {
+  const entries = observer?.takeRecords?.() || []
+  const visibleEntries = entries
+    .filter(entry => entry.isIntersecting)
+    .sort((a, b) => b.intersectionRatio - a.intersectionRatio)
+
+  if (visibleEntries.length > 0) {
+    const id = visibleEntries[0].target.id
+    if (id !== currentCategory.value) {
+      currentCategory.value = id
+    }
+  }
+}
+
+onMounted(() => {
+  observer = new IntersectionObserver((entries) => {
+    const visibleEntries = entries
+      .filter(entry => entry.isIntersecting)
+      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)
+
+    if (visibleEntries.length > 0) {
+      const id = visibleEntries[0].target.id
+      if (id !== currentCategory.value) {
+        currentCategory.value = id
+      }
+    }
+  }, {
+    rootMargin: '-20% 0px -70% 0px',
+    threshold: [0, 0.1, 0.2, 0.5]
+  })
+
+  asideCategories.forEach((cat: any) => {
+    const element = document.getElementById(cat.id)
+    if (element) {
+      observer?.observe(element)
+    }
+  })
+})
+
+onUnmounted(() => {
+  if (observer) {
+    observer.disconnect()
+    observer = null
+  }
+})
 
 
 
