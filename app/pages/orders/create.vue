@@ -338,7 +338,10 @@ const isFormValid = computed(() => {
 const handleSubmit = async () => {
 
   const { error } = await actions.value.confirm({
-    email: "test@example.com",
+    email: form.value.email,
+    billingAddress:{
+      name: form.value.name,
+    }
   });
 }
 
