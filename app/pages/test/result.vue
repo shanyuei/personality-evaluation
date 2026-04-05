@@ -3,7 +3,7 @@
     <main class="uno-py-8 md:uno-py-16 uno-px-0 md:uno-px-10">
       <div class="uno-max-w-full md:uno-max-w-[880px] uno-mx-auto">
         <section
-          class="uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] uno-border uno-border-[var(--ui-border)]">
+          class="uno-bg-white uno-rounded-[24px] uno-shadow-[0px_4px_12px_rgba(0,0,0,0.08)] ">
           <div class="uno-p-6 md:uno-p-10">
             <div class="uno-flex uno-items-center uno-justify-center uno-mb-6">
               <div

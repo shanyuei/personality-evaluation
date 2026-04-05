@@ -19,8 +19,8 @@
     </div>
 
     <!-- 内容卡片 -->
-    <div class="uno-mt-4 uno-w-full lg:uno-w-[860px] uno-mx-auto uno-bg-white uno-rounded-[20px] ">
-      <div class="uno-p-6 md:uno-p-8">
+    <div class="uno-mt-4 uno-w-full lg:uno-w-[860px] uno-mx-auto uno-bg-white uno-rounded-[20px] overflow-hidden uno-shadow-[0_4px_12px_rgba(0,0,0,0.05)]">
+      <div class="uno-p-6 md:uno-p-8 ">
         <h1
           class="uno-text-[#011813] uno-text-2xl md:uno-text-[32px] uno-font-Outfit uno-font-semibold uno-leading-[1.2] uno-mb-4">
           {{ $t('pages.userCourseLesson.title') }}</h1>

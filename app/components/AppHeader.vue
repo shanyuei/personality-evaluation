@@ -39,8 +39,9 @@
 
         <!-- 登录状态 -->
         <UDropdownMenu v-else :items="accountItems" :ui="{
-          item: 'data-[disabled]:cursor-text data-[disabled]:select-text uno-px-3 uno-py-2',
-          content: 'uno-p-1 uno-bg-white uno-ring-1 uno-ring-gray-200 uno-rounded-xl uno-shadow-lg uno-min-w-[200px]'
+
+          item: 'uno-px-15px uno-py-6px uno-text-sm uno-font-Outfit uno-text-left uno-leading-[22px] hover:uno-bg-transparent before:hidden data-[disabled]:cursor-text data-[disabled]:select-text',
+          content: 'uno-py-4px uno-bg-white uno-ring-1 uno-ring-gray-200 uno-rounded-xl uno-shadow-lg uno-min-w-[200px]'
         }" :content="{ align: 'end', side: 'bottom', sideOffset: 8 }">
           <div class="uno-flex uno-items-center uno-gap-2 uno-cursor-pointer max-sm:uno-hidden">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -55,10 +56,10 @@
           </div>
 
 
-          <template #profile="{ item }">
-            <div class="uno-flex uno-items-center uno-gap-2 uno-w-full" @click="onClick(item)">
-              <UIcon :name="item.icon" class="uno-w-5 uno-h-5 uno-text-[var(--ui-muted-foreground)]" />
-              <span class="uno-truncate uno-font-Outfit uno-text-[var(--ui-foreground)]">{{ item.label }}</span>
+          <template #item="{ item }">
+            <div
+              class="uno-w-full uno-flex uno-items-center uno-justify-start uno-cursor-pointer uno-transition-all uno-text-[#000000] hover:uno-text-[#009D77] hover:uno-underline hover:uno-decoration-[#009D77] hover:uno-decoration-2 hover:uno-underline-offset-4">
+              {{ item.label }}
             </div>
           </template>
         </UDropdownMenu>
