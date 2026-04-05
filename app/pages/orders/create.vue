@@ -101,7 +101,9 @@
                   :ui="{ rounded: 'rounded-[12px]' }" class="uno-w-full" />
               </div>
             </div>
-
+            <div id="payment-element">
+              <!--Stripe.js injects the Payment Element-->
+            </div>
             <!-- Consent Checkbox -->
             <div class="uno-flex uno-items-start uno-gap-3">
               <UCheckbox v-model="form.consent"
@@ -187,8 +189,7 @@
     </div>
 
     <!-- Trust Badges Section -->
-    <div
-      class="page-container uno-flex uno-flex-wrap uno-justify-between uno-gap-8 uno-mb-24 uno-mx-auto">
+    <div class="page-container uno-flex uno-flex-wrap uno-justify-between uno-gap-8 uno-mb-24 uno-mx-auto">
       <div v-for="(item, index) in trustItems" :key="index"
         class="uno-flex uno-flex-col uno-items-center uno-text-center">
         <NuxtImg :src="item.image" width="64" height="64" class="uno-w-16 uno-h-16 uno-mb-4" />
@@ -205,7 +206,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { onMounted, computed } from 'vue';
 import { payOrder } from '~/api/tests';
 import AppCheckIcon from '~/components/AppCheckIcon.vue';
@@ -221,13 +222,24 @@ const route = useRoute()
 
 definePageMeta({
   title: () => 'pages.orders.create.title',
-    layoutShowPageTopIcons: false,
+  layoutShowPageTopIcons: false,
   path: '/checkout'
 })
 useSeoMeta({
-  title: () => t('seo.orders.create.title', { separator: '|' }) as string,
-  description: () => t('seo.orders.create.description') as string
+  title: () => t('seo.orders.create.title', { separator: '|' }),
+  description: () => t('seo.orders.create.description')
 })
+useHead({
+  script: [
+    {
+      src: 'https://js.stripe.com/dahlia/stripe.js',
+      defer: true,           // 可选：延迟加载
+      // 或 async: true      // 可选：异步加载
+    }
+  ]
+})
+
+
 
 // Form State
 const form = ref({
@@ -245,20 +257,87 @@ const planPrice = ref('')
 
 const isLoading = ref(false)
 const emailError = ref(false)
+const Stripe = ref(null)
+const actions = ref(null)
 
+const client_secret = ref('')
+const pk = ref('')
 // Initialize form data from route query
 onMounted(() => {
   if (route.query.order_id) {
-    form.value.order_id = route.query.order_id as string
+    form.value.order_id = route.query.order_id
   } else if (route.query.order_sn) {
-    form.value.order_id = route.query.order_sn as string
+    form.value.order_id = route.query.order_sn
   }
 
   // Get plan_name and plan_price from query params
-  planName.value = route.query.plan_name as string || ""
-  planPrice.value = route.query.plan_price as string || "1.99"
+  planName.value = route.query.plan_name || ""
+  planPrice.value = route.query.plan_price || "1.99"
 
   // You can use these values as needed
+  if (form.value.order_id && import.meta.client) {
+    nextTick(async () => {
+      const { data, error } = await payOrder({
+        order_id: form.value.order_id,
+      })
+      client_secret.value = data.value.data?.client_secret || ''
+      pk.value = data.value.data?.pk || ''
+      Stripe.value = window.Stripe(pk.value)
+      console.log(Stripe.value)
+      const appearance = {
+        theme: 'stripe',
+        variables: {
+          // 全局颜色
+          colorPrimary: '#009D77', // 你的主题色
+          colorBackground: '#ffffff',
+          colorText: '#011813',
+          colorDanger: '#dc2626',
+
+          // 字体
+          fontFamily: 'Outfit, sans-serif',
+          fontSizeBase: '16px',
+
+          // 边框、圆角
+          borderRadius: '12px',
+          borderWidth: '1px',
+          borderColor: '#E7E7E8',
+        },
+
+        // 精确修改组件样式
+        rules: {
+          ".AccordionItem":{
+            border: '0',
+            boxShadow: 'none',
+          },
+          '.Input': {
+            padding: '16px',
+            minHeight: '56px',
+          },
+          '.Input:focus': {
+            borderColor: '#009D77',
+            boxShadow: '0 0 0 1px #009D77',
+          },
+          '.Label': {
+            fontSize: '14px',
+            marginBottom: '4px',
+          },
+       
+        },
+      };
+      const checkout = Stripe.value.initCheckoutElementsSdk({
+        clientSecret: client_secret.value,
+        elementsOptions: { appearance },
+      });
+      const loadActionsResult = await checkout.loadActions();
+      if (loadActionsResult.type === 'success') {
+        actions.value = loadActionsResult.actions;
+      }
+      const paymentElement = checkout.createPaymentElement();
+      paymentElement.mount("#payment-element");
+    })
+
+  }
+  // 
 })
 
 const validateEmail = () => {
@@ -278,69 +357,10 @@ const isFormValid = computed(() => {
 })
 
 const handleSubmit = async () => {
-  if (!isFormValid.value) {
-    // Check specific validation errors and show toasts
-    if (!form.value.email) {
-      toast?.add({
-        title: t('common.api.error'),
-        color: 'warning',
-        description: t('pages.orders.create.form.emailRequired') || 'Email is required.',
-      })
-    } else if (emailError.value) {
-      toast?.add({
-        title: t('common.api.error'),
-        color: 'warning',
-        description: t('pages.orders.create.form.emailInvalid') || 'Please enter a valid email address.',
-      })
-    } else if (!form.value.order_id) {
-      toast?.add({
-        title: t('common.api.error'),
-        color: 'warning',
-        description: t('pages.orders.create.form.orderIdRequired') || 'Order ID is required.',
-      })
-    } else if (!form.value.consent) {
-      toast?.add({
-        title: t('common.api.error'),
-        color: 'warning',
-        description: t('pages.orders.create.form.consentRequired') || 'Please consent to the terms.',
-      })
-    }
-    return
-  }
 
-  isLoading.value = true
-  try {
-    const { data, error } = await payOrder({
-      order_id: form.value.order_id,
-      email: form.value.email
-    })
-
-    if (error.value) {
-      // Using alert for simplicity, could be replaced with a toast
-      return
-    }
-
-    const token = data.value?.data?.user_token
-    if (token) {
-      // 存储 token 到 localStorage 或 sessionStorage
-      localStorage.setItem('userToken', token)
-      // 跳转到成功页面
-      // router.push({ path: '/orders/success' })
-    } else {
-      // 处理 token 缺失的情况
-      toast?.add({
-        title: t('common.api.error'),
-        color: 'warning',
-        description: t('pages.orders.create.form.paymentError') || 'Payment failed. Please try again.',
-      })
-    }
-
-
-
-  } catch (err) {
-  } finally {
-    isLoading.value = false
-  }
+  const { error } = await actions.value.confirm({
+    email: "test@example.com",
+  });
 }
 
 // Trust Badges Data
@@ -476,3 +496,10 @@ const faqItems = computed(() => [
   }
 ])
 </script>
+<style lang="less">
+.payment-element {
+  :deep(.TermsText) {
+    display: none;
+  }
+}
+</style>

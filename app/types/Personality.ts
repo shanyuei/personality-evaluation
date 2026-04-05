@@ -61,4 +61,5 @@ export interface PaymentPayRequest {
 
 export interface PaymentPayResult {
   user_token: string
+  client_secret: string
 }
