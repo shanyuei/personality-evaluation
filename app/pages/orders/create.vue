@@ -73,15 +73,15 @@
             </div>
 
             <!-- Card Number -->
-            <div class="uno-space-y-2">
+            <!-- <div class="uno-space-y-2">
               <label class="uno-block uno-text-sm uno-font-medium uno-text-[#011813]">{{
                 $t('pages.orders.create.form.cardNumber') }}</label>
               <UInput v-model="form.cardNumber" :placeholder="$t('pages.orders.create.form.cardNumberPlaceholder')"
                 size="xl" icon="i-lucide-credit-card" :ui="{ rounded: 'rounded-[12px]' }" class="uno-w-full" />
-            </div>
+            </div> -->
 
             <!-- Expires, CVV, Zip -->
-            <div class="uno-grid uno-grid-cols-3 uno-gap-4">
+            <!-- <div class="uno-grid uno-grid-cols-3 uno-gap-4">
               <div class="uno-space-y-2">
                 <label class="uno-block uno-text-sm uno-font-medium uno-text-[#011813]">{{
                   $t('pages.orders.create.form.expires') }}</label>
@@ -100,7 +100,7 @@
                 <UInput v-model="form.zip" :placeholder="$t('pages.orders.create.form.zipPlaceholder')" size="xl"
                   :ui="{ rounded: 'rounded-[12px]' }" class="uno-w-full" />
               </div>
-            </div>
+            </div> -->
             <div id="payment-element">
               <!--Stripe.js injects the Payment Element-->
             </div>
@@ -308,6 +308,7 @@ onMounted(() => {
           ".AccordionItem":{
             border: '0',
             boxShadow: 'none',
+            padding: '0',
           },
           '.Input': {
             padding: '16px',
