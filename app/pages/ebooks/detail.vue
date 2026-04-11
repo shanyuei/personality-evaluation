@@ -87,9 +87,8 @@
               {{ $t('pages.ebookDetail.sections.copywriting.body') }}
             </p>
             <p class="uno-text-[#4E5255]">
-              <span class="uno-font-bold uno-text-[var(--ui-foreground)]">Ready to boost your brand's reach?</span>
-              Start by applying one or two of these skills today and watch your engagement grow! Let us know in the
-              comments which strategies have worked best for your brand.
+              <span class="uno-font-bold uno-text-[var(--ui-foreground)]">{{ $t('pages.ebookDetail.sections.copywriting.closing.question') }}</span>
+              {{ $t('pages.ebookDetail.sections.copywriting.closing.callToAction') }}
             </p>
           </div>
 

@@ -50,6 +50,7 @@
   "step": "STEP",
   "stepTotal": "Step {current} of {total}",
   "percentIcon": "%",
+  "defaultDuration": "2 weeks",
   "continue": "CONTINUE",
   "price": "$",
   "period": ".",

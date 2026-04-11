@@ -385,6 +385,7 @@
       }
     },
     "purchaseComplete": {
+      "loading": "Loading...",
       "title": "Unlock Your Potential",
       "description": "Your assessment results are prepared!",
       "accessReport": "Open Report",
@@ -418,9 +419,15 @@
         "zip": "Postal code",
         "zipPlaceholder": "Zip / Postal code",
         "orderId": "Order ID",
+        "emailRequired": "Email is required",
+        "emailInvalid": "Please enter a valid email address",
         "emailError": "Please enter a valid email address",
-        "paymentError": "Payment failed. Please try again.",
+        "orderIdRequired": "Order ID is required",
+        "nameRequired": "Name is required",
+        "consentRequired": "Please consent to the terms",
+        "paymentError": "Payment failed. Please try again",
         "paymentSuccess": "Payment initiated successfully!",
+        "processing": "Processing...",
         "consentPart1": "By clicking \"Subscribe\", I electronically authorize PersonalityTest101 to charge my card per the Billing Terms, including automatic renewal, until cancellation. I agree to the",
         "consentPart2": "and",
         "terms": "Terms of Service",
@@ -878,6 +885,7 @@
   },
   "userCourseTestComplete": {
     "scoreLabel": "{score}/{total}",
+    "points": "points",
     "description": "Great job! You’ve completed the test. Review your score and continue learning.",
     "cta": "Try again"
   },
@@ -931,6 +939,10 @@
       "copywriting": {
         "title": "Copywriting and Persuasive Communication",
         "body": "Copywriting is the art of using words to inspire action. From website copy to social media captions, well-crafted copy can attract readers, encourage readers, and drive conversions. Learn to write with your audience in mind and focus on clear, persuasive messaging."
+      },
+      "closing": {
+        "question": "Ready to boost your brand's reach?",
+        "callToAction": "Start by applying one or two of these skills today and watch your engagement grow! Let us know in the comments which strategies have worked best for your brand."
       }
     },
     "learn": {
@@ -1026,7 +1038,9 @@
       "categories": "Categories",
       "recent": "Recent Blogs",
       "tags": "Tags",
-      "follow": "Follow us:"
+      "follow": "Follow us:",
+      "postCount": "({count})",
+      "tagPrefix": "#{tag}"
     },
     "detail": {
       "breadcrumb": "Home / Blog / Blog Details",
@@ -1063,17 +1077,26 @@
         "namePlaceholder": "First and last name",
         "emailPlaceholder": "Enter your email address",
         "name": "Name",
-        "email": "Email Address"
+        "email": "Email Address",
+        "success": "Profile updated successfully",
+        "fail": "Failed to update profile",
+        "emptyError": "Name and email cannot be empty",
+        "emailInvalid": "Please enter a valid email address"
       },
       "password": {
         "title": "Change Password",
         "current": "Current password",
         "new": "New password",
-        "repeat": "Confirm new password"
+        "repeat": "Confirm new password",
+        "mismatch": "Passwords do not match",
+        "success": "Password updated successfully",
+        "fail": "Failed to update password"
       },
       "language": {
         "title": "Language Preferences",
-        "placeholder": "Select your preferred language"
+        "placeholder": "Select your preferred language",
+        "success": "Language updated successfully",
+        "fail": "Failed to update language"
       },
       "delete": {
         "title": "Delete My Account",
@@ -1083,6 +1106,9 @@
     }
   },
   "legal": {
+    "breadcrumb": {
+      "home": "Home"
+    },
     "privacy": {
       "title": "Privacy Policy",
       "description": "We value your privacy. Here's how we collect, use, and protect information.",

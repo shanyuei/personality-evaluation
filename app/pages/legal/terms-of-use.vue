@@ -2,11 +2,11 @@
   <main class="uno-py-12 uno-px-6 lg:uno-px-10 ">
     <div class="page-container  uno-mx-auto">
       <div class="uno-text-sm  uno-mb-6">
-        <a href="/">Home</a> / <span>Terms of Use</span>
+        <a href="/">{{ $t('pages.legal.breadcrumb.home') }}</a> / <span>{{ $t('pages.legal.termsOfUse.title') }}</span>
       </div>
 
       <div class="uno-mb-20">
-        <h1 class="uno-text-4xl md:uno-text-5xl uno-font-Outfit uno-font-bold uno-text-gray-900">Terms of Use</h1>
+        <h1 class="uno-text-4xl md:uno-text-5xl uno-font-Outfit uno-font-bold uno-text-gray-900">{{ $t('pages.legal.termsOfUse.title') }}</h1>
       </div>
 
       <div class="uno-grid uno-grid-cols-1 lg:uno-grid-cols-4 uno-gap-8">

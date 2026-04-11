@@ -3,11 +3,11 @@
     <div class="page-container  uno-mx-auto">
       <!-- 面包屑导航 -->
       <div class="uno-text-sm  uno-mb-6">
-        <a href="/">Home</a> / <span>Privacy Policy</span>
+        <a href="/">{{ $t('pages.legal.breadcrumb.home') }}</a> / <span>{{ $t('pages.legal.privacy.title') }}</span>
       </div>
 
       <div class="uno-mb-20">
-        <h1 class="uno-text-4xl md:uno-text-5xl uno-font-Outfit uno-font-bold uno-text-gray-900">Privacy Policy</h1>
+        <h1 class="uno-text-4xl md:uno-text-5xl uno-font-Outfit uno-font-bold uno-text-gray-900">{{ $t('pages.legal.privacy.title') }}</h1>
       </div>
 
       <div class="uno-grid uno-grid-cols-1 lg:uno-grid-cols-4 uno-gap-8">

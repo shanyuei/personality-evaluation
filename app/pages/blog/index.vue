@@ -126,7 +126,7 @@
                 }">
                   <div class="uno-flex uno-items-center hover:uno-text-[var(--color-pink-1)]">
                     <span class="uno-text-[16px] uno-font-400 uno-font-Outfit">{{ c.name }}</span>
-                    <span class="uno-text-[16px] uno-font-400 uno-ml-2">({{ c.posts.count }})</span>
+                    <span class="uno-text-[16px] uno-font-400 uno-ml-2">{{ $t('pages.blog.sidebar.postCount', { count: c.posts.count }) }}</span>
                   </div>
                 </AppLink>
               </li>
@@ -172,7 +172,7 @@
               <span v-for="tag in tags" :key="tag.documentId" role="button" :class="[
                 'uno-text-[16px] uno-font-400 uno-px-3 uno-py-1 uno-rounded-[999px] uno-border uno-bg-transparent uno-text-[#4E5255] uno-cursor-pointer hover:uno-border-[var(--color-pink-1)] hover:uno-text-[#011813]',
                 activeTagSlug === tag.slug ? 'uno-border-[var(--color-pink-1)] !uno-text-[#011813]' : 'uno-border-[var(--ui-border)]'
-              ]" @click="onTagClick(tag)">#{{ tag.name }}</span>
+              ]" @click="onTagClick(tag)">{{ $t('pages.blog.sidebar.tagPrefix', { tag: tag.name }) }}</span>
             </div>
           </div>
 

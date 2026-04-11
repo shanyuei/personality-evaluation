@@ -99,7 +99,7 @@
       <div class="course-card__footer__meta">
         <span class="course-card__footer__meta-item">{{ course.lessons ?? 10 }} {{ $t('common.lessons')
         }}</span>
-        <span class="course-card__footer__meta-item">{{ course.duration ?? '2 weeks' }}</span>
+        <span class="course-card__footer__meta-item">{{ course.duration ?? $t('common.defaultDuration') }}</span>
         <span v-if="course.certificate !== false" class="course-card__footer__meta-item">{{
           $t('common.certificate') }}</span>
       </div>
