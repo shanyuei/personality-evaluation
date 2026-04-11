@@ -349,6 +349,37 @@
     "cta": "提交",
     "pleaseSelect": "请选择一个答案"
   },
+  "pricing": {
+    "subtitle": "利用心理测量数据导航您的职业生涯，增强人际关系，掌握您的个人成长策略。",
+    "title": "用专家洞察赋能您的未来",
+    "includedFeatures": "包含功能",
+    "badge": "热门推荐",
+    "plans": {
+      "weekly": {
+        "desc": "基础分析，帮助您快速实现自我认知和核心特质探索。",
+        "billingFallback": "7 天后自动续费",
+        "button": "开始试用"
+      },
+      "monthly": {
+        "desc": "持续跟踪和深度报告，支持您进行长期个人发展。",
+        "billingFallback": "按月计费",
+        "button": "开启月度计划"
+      },
+      "yearly": {
+        "desc": "我们最全面的套餐，助力长期转型和战略掌控。",
+        "billingFallback": "按年计费",
+        "button": "获取全年访问"
+      }
+    },
+    "features": {
+      "priorityAccess": "优先访问新评估",
+      "archetypeAnalysis": "全面原型分析",
+      "careerMapping": "职业匹配地图",
+      "interpersonalGuide": "人际互动指南",
+      "aiGrowthCoach": "个性化 AI 成长教练",
+      "selfEsteemBlueprint": "自尊成长蓝图"
+    }
+  },
   "orders": {
     "cancel": {
       "subscription": {

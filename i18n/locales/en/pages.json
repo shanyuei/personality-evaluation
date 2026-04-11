@@ -26,7 +26,7 @@
   },
   "about": {
     "hero": {
-      "title": "Empowering Self-Discovery Through Precision",
+      "title": "Precision, Depth, Clarity in Personality Insights",
       "desc": "PersonalityTest101 delivers science-backed assessments to decode your unique traits. We translate complex behavioral data into actionable insights, helping you navigate your personal and professional growth with confidence."
     },
     "sections": {
@@ -520,12 +520,18 @@
     "badge": "POPULAR",
     "plans": {
       "weekly": {
+        "desc": "Essential analysis for immediate self-awareness and core trait discovery.",
+        "billingFallback": "Auto renew after 7 Days",
         "button": "Begin Trial"
       },
       "monthly": {
+        "desc": "Continuous tracking and deep-dive reports for ongoing personal development.",
+        "billingFallback": "Billed monthly",
         "button": "Start Monthly Plan"
       },
       "yearly": {
+        "desc": "Our most comprehensive suite for long-term transformation and strategic mastery.",
+        "billingFallback": "Billed yearly",
         "button": "Get Yearly Access"
       }
     },
@@ -539,7 +545,7 @@
     }
   },
   "home": {
-    "title": "Uncover your  \nauthentic personality",
+    "title": "Unlock the Real You with the Ultimate Personality Test",
     "description": "Learn what makes you unique with our accurate personality assessment",
     "cta": "Take the Test",
     "accuracy": {
@@ -564,11 +570,11 @@
         "desc": "Gain deep psychological insights through data-driven analysis, with personalized guidance to master your core traits and behaviors."
       },
       "small1": {
-        "title": "Smarter Life Choices",
+        "title": "Smarter Everyday Life Choices",
         "desc": "Leverage psychological clarity to navigate complex choices with confidence and reduce cognitive bias."
       },
       "small2": {
-        "title": "Healthier Connections",
+        "title": "Healthier Meaningful Connections",
         "desc": "Decode your social dynamics to foster deeper empathy and build more authentic interpersonal bonds."
       },
       "small3": {

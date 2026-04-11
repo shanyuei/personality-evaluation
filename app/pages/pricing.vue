@@ -27,7 +27,9 @@
 
           <h3 class="uno-text-[20px] md:uno-text-[24px] uno-font-Outfit uno-font-[600] uno-text-[#011813] uno-mb-2">{{
             plan.name }}</h3>
-          <p class="uno-text-[#4E5255] uno-text-sm uno-mb-6 uno-min-h-[40px] uno-hidden md:uno-block"></p>
+          <p class="uno-text-[#4E5255] uno-text-sm uno-mb-6 uno-min-h-[40px] uno-hidden md:uno-block">
+            {{ plan.desc }}
+          </p>
 
           <div class="uno-flex uno-items-baseline uno-gap-1 uno-mb-1">
             <span class="uno-text-[32px] md:uno-text-[40px] uno-font-Outfit uno-font-bold uno-text-[#011813]">{{
@@ -38,13 +40,11 @@
                 plan.currency }}</span>
           </div>
           <div class="uno-text-xs uno-text-[#4E5255] uno-mb-6 uno-h-[20px]">
+            {{ plan.billingFallback }}
             <!-- {{ plan.billingFallback ? ($t('pages.ebooks.oneTime') || 'Auto-renews after 7 Days') : $t(`pages.pricing.plans.${plan.key}.billing`) }} -->
           </div>
 
-          <PrimaryButton
-            class="uno-w-full uno-mt-6"
-            height="48px"
-            @click="handleCreateOrder(plan)">
+          <PrimaryButton class="uno-w-full uno-mt-6" height="48px" @click="handleCreateOrder(plan)">
             {{ $t(`pages.pricing.plans.${plan.key}.button`) }}
           </PrimaryButton>
           <!-- 分割线 -->
@@ -111,8 +111,7 @@
 
     <!-- FAQ Section -->
     <div class="uno-relative uno-z-10 uno-bg-#FFF">
-      <FAQSection :title="$t('common.faq.title')" :description="$t('common.faq.desc')"
-      :items="faqItems" />
+      <FAQSection :title="$t('common.faq.title')" :description="$t('common.faq.desc')" :items="faqItems" />
     </div>
 
   </div>
@@ -137,10 +136,23 @@ useSeoMeta({
   description: () => t('seo.pricing.description') as string
 })
 // Base config to preserve UI logic (keys for i18n, badges)
-const planConfig: Record<number, { key: string; badge?: string; billingFallback?: boolean }> = {
-  1: { key: 'weekly', },
-  2: { key: 'monthly' },
-  3: { key: 'yearly', badge: t("pages.pricing.badge") }
+const planConfig: Record<number, { key: string; desc?: string; billingFallback?: string; badge?: string | undefined }> = {
+  1: {
+    key: 'weekly',
+    desc: t("pages.pricing.plans.weekly.desc"),
+    billingFallback: t("pages.pricing.plans.weekly.billingFallback")
+  },
+  2: {
+    key: 'monthly',
+    desc: t("pages.pricing.plans.monthly.desc"),
+    billingFallback: t("pages.pricing.plans.monthly.billingFallback")
+  },
+  3: {
+    key: 'yearly',
+    desc: t("pages.pricing.plans.yearly.desc"),
+    billingFallback: t("pages.pricing.plans.yearly.billingFallback"),
+    badge: t("pages.pricing.badge")
+  }
 };
 
 const { data: plansData } = await getPlanList();
