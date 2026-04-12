@@ -112,6 +112,7 @@
             </div>
             <!-- Consent Checkbox -->
             <div class="uno-flex uno-items-start uno-gap-3">
+              {{ form.consent }}
               <UCheckbox v-model="form.consent"
                 :ui="{ base: 'uno-w-5 uno-h-5 uno-border uno-border-[#4E5255]', rounded: 'rounded' }" />
               <div class="uno-text-xs uno-text-[#4E5255] uno-leading-tight uno-mt-0.5">
@@ -320,7 +321,26 @@ onMounted(() => {
           // 边框、圆角
           borderRadius: '12px',
           borderWidth: '1px',
-          borderColor: '#E7E7E8',
+          borderColor: '#009D77',
+        },
+        rules: {
+          ".AccordionItem":{
+            "margin-bottom":"12px",
+          },
+          ".AccordionItem":{
+            padding:"0",
+            border:"none",
+          },
+          ".Label":{
+            marginBottom:"8px",
+          },
+          ".Input":{
+           
+          },
+          ".Input:focus":{
+            boxShadow:"none",
+             border:"2px solid #009D77",
+          }
         },
       };
       const checkout = Stripe.value.initCheckoutElementsSdk({
