@@ -103,16 +103,18 @@
             </div> -->
             <div id="payment-element">
               <!--Stripe.js injects the Payment Element-->
-              <div v-if="stripeLoading" class="uno-flex uno-items-center uno-justify-center uno-py-8">
-                <svg class="uno-w-6 uno-h-6 uno-animate-spin uno-text-[var(--ui-primary)]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <!-- <div v-if="stripeLoading" class="uno-flex uno-items-center uno-justify-center uno-py-8">
+                <svg class="uno-w-6 uno-h-6 uno-animate-spin uno-text-[var(--ui-primary)]"
+                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                   <circle class="uno-opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                  <path class="uno-opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  <path class="uno-opacity-75" fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                  </path>
                 </svg>
-              </div>
+              </div> -->
             </div>
             <!-- Consent Checkbox -->
             <div class="uno-flex uno-items-start uno-gap-3">
-              {{ form.consent }}
               <UCheckbox v-model="form.consent"
                 :ui="{ base: 'uno-w-5 uno-h-5 uno-border uno-border-[#4E5255]', rounded: 'rounded' }" />
               <div class="uno-text-xs uno-text-[#4E5255] uno-leading-tight uno-mt-0.5">
@@ -324,22 +326,22 @@ onMounted(() => {
           borderColor: '#009D77',
         },
         rules: {
-          ".AccordionItem":{
-            "margin-bottom":"12px",
+          ".AccordionItem": {
+            "margin-bottom": "12px",
           },
-          ".AccordionItem":{
-            padding:"0",
-            border:"none",
+          ".AccordionItem": {
+            padding: "0",
+            border: "none",
           },
-          ".Label":{
-            marginBottom:"8px",
+          ".Label": {
+            marginBottom: "8px",
           },
-          ".Input":{
-           
+          ".Input": {
+
           },
-          ".Input:focus":{
-            boxShadow:"none",
-             border:"2px solid #009D77",
+          ".Input:focus": {
+            boxShadow: "none",
+            border: "2px solid #009D77",
           }
         },
       };
@@ -351,8 +353,12 @@ onMounted(() => {
       if (loadActionsResult.type === 'success') {
         actions.value = loadActionsResult.actions;
       }
-      const paymentElement = checkout.createPaymentElement();
-      paymentElement.mount("#payment-element");
+      try {
+        const paymentElement = checkout.createPaymentElement();
+        paymentElement.mount("#payment-element");
+      } catch (error) {
+        console.error('Error mounting actions:', error);
+      }
       stripeLoading.value = false;
     })
 
