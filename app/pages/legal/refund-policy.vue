@@ -11,7 +11,7 @@
 
       <div class="uno-grid uno-grid-cols-1 lg:uno-grid-cols-4 uno-gap-8">
         <div class="uno-hidden lg:uno-block uno-h-full uno-col-span-1">
-          <nav>
+          <nav class="uno-sticky uno-top-24 uno-self-start">
             <ul class="uno-space-y-3 md:uno-space-y-4">
               <li v-for="item in navItems" :key="item.id">
                 <a :href="`#${item.id}`"

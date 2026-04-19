@@ -8,27 +8,21 @@
         </h1>
       </div>
 
-      <div class="uno-grid uno-grid-cols-1 lg:uno-grid-cols-3 uno-gap-8">
+      <div class="uno-grid uno-grid-cols-1 lg:uno-grid-cols-4 uno-gap-8">
         <!-- 分类 -->
-        <aside class="uno-hidden lg:uno-block lg:uno-col-span-1">
-          <div class=" uno-rounded-2xl  uno-p-6">
-            <div class="uno-flex uno-justify-start uno-items-start uno-flex-col uno-gap-4">
-              <div v-for="cat in asideCategories" :key="cat.id"
-                class="uno-flex uno-justify-start uno-items-start uno-flex-col uno-gap-3 uno-cursor-pointer"
-                @click="scrollToCategory(cat.id)">
-                <h2
-                  :class="[
-                    'uno-text-2xl uno-font-Outfit uno-font-medium uno-leading-normal',
-                    currentCategory === cat.id ? 'uno-text-[var(--ui-primary)]' : 'uno-text-[var(--ui-foreground)]'
-                  ]">
-                  {{ cat.title }}
-                </h2>
-              </div>
-            </div>
-          </div>
+        <aside class="uno-hidden lg:uno-block uno-h-full uno-col-span-1">
+          <nav class="uno-sticky uno-top-24 uno-self-start">
+            <ul class="uno-space-y-3 lg:uno-space-y-4">
+              <li v-for="cat in asideCategories" :key="cat.id">
+                <a
+                  :class="['uno-block uno-text-[16px] md:uno-text-[20px] uno-font-medium hover:text-[var(--color-pink-1)]', currentCategory === cat.id ? 'text-[var(--color-pink-1)]' : '']"
+                  @click="scrollToCategory(cat.id)">{{ cat.title }}</a>
+              </li>
+            </ul>
+          </nav>
         </aside>
         <!-- 内容 -->
-        <section class="lg:uno-col-span-2 uno-space-y-10">
+        <section class="lg:uno-col-span-3 uno-space-y-10">
           <div class="uno-space-y-4">
 
             <div class="uno-space-y-5">
@@ -82,7 +76,8 @@ definePageMeta({
   title: () => 'seo.faq.title',
   layoutShowPageTopIcons: false,
   layoutShowPageTopIcons3: true,
-  layoutPageTopIcon3Class: 'uno-top-160px uno-right-0 md:uno-top-100px md:uno-right-30px lg:uno-top-160px'
+  layoutPageTopIcon3Class: 'uno-top-160px uno-right-0 md:uno-top-100px md:uno-right-30px lg:uno-top-160px',
+  path: '/faq',
 })
 
 useSeoMeta({

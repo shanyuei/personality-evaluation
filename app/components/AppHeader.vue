@@ -151,10 +151,10 @@ const items = computed(() => {
       to: '/login',
     })
   } else {
-    baseItems.push({
-      label: t('common.nav.account'),
-      to: '/account/settings',
-    })
+    // baseItems.push({
+    //   label: t('common.nav.account'),
+    //   to: '/account/settings',
+    // })
   }
 
   return baseItems

@@ -2,16 +2,16 @@
   <main class="uno-py-12 uno-px-6 lg:uno-px-10 ">
     <div class="page-container  uno-mx-auto">
       <div class="uno-text-sm  uno-mb-6">
-        <a href="/">{{ $t('pages.legal.breadcrumb.home') }}</a> / <span>{{ $t('pages.legal.termsOfUse.title') }}</span>
+        <a href="/">{{ $t('pages.legal.breadcrumb.home') }}</a> / <span>{{ $t('pages.legal.terms.title') }}</span>
       </div>
 
       <div class="uno-mb-20">
-        <h1 class="uno-text-4xl md:uno-text-5xl uno-font-Outfit uno-font-bold uno-text-gray-900">{{ $t('pages.legal.termsOfUse.title') }}</h1>
+        <h1 class="uno-text-4xl md:uno-text-5xl uno-font-Outfit uno-font-bold uno-text-gray-900">{{ $t('pages.legal.terms.title') }}</h1>
       </div>
 
       <div class="uno-grid uno-grid-cols-1 lg:uno-grid-cols-4 uno-gap-8">
         <div class="uno-hidden lg:uno-block uno-h-full uno-col-span-1">
-          <nav>
+          <nav class="uno-sticky uno-top-24 uno-self-start">
             <ul class="uno-space-y-3 lg:uno-space-y-4">
               <li v-for="item in navItems" :key="item.id">
                 <a :href="`#${item.id}`"

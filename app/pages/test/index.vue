@@ -44,7 +44,7 @@
                   {{
                     step.titleKey }}</div>
                 <p
-                  class="uno-text-[12px] md:uno-text-16px uno-text-[#4E5255] uno-font-Outfit uno-font-normal uno-leading-[150%] uno-text-left uno-mt-3 md:uno-mt-auto">
+                  class="uno-text-[12px] md:uno-text-16px uno-text-[#4E5255] uno-font-Outfit uno-font-normal uno-leading-[150%] uno-text-left uno-mt-3 md:uno-mt-auto lg:uno-mt-2">
                   {{ step.descKey }}</p>
               </div>
             </div>
