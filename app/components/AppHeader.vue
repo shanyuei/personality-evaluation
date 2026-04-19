@@ -1,6 +1,6 @@
 <template>
   <UHeader v-model:open="open" :ui="{
-    body: 'bg-transparent sm:p-0',
+    body: 'bg-transparent p-0 sm:p-0',
     content: 'bg-transparent',
     header: ' lg:h-[96px] border-none max-sm:h-[53px]',
     overlay: 'bg-[#444444]/80',

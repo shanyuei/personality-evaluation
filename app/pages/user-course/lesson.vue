@@ -64,7 +64,7 @@
                     stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </span> -->
-              <div class="uno-flex-0">
+              <div class="uno-flex-0 uno-mt-1 md:uno-mt-0">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M6.50316 11.0001L9.26658 12.9997L14.0688 6.49995" stroke="#009D77" stroke-width="1.5"
                     stroke-linecap="round" stroke-linejoin="round" />
@@ -78,7 +78,7 @@
                 $t('pages.userCourseLesson.sections.takeaways.i1') }}</span>
             </div>
             <div class="uno-flex uno-items-start uno-gap-3">
-              <div class="uno-flex-0">
+              <div class="uno-flex-0 uno-mt-1 md:uno-mt-0">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M6.50316 11.0001L9.26658 12.9997L14.0688 6.49995" stroke="#009D77" stroke-width="1.5"
                     stroke-linecap="round" stroke-linejoin="round" />
@@ -92,7 +92,7 @@
                 $t('pages.userCourseLesson.sections.takeaways.i2') }}</span>
             </div>
             <div class="uno-flex uno-items-start uno-gap-3">
-              <div class="uno-flex-0">
+              <div class="uno-flex-0 uno-mt-1 md:uno-mt-0">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M6.50316 11.0001L9.26658 12.9997L14.0688 6.49995" stroke="#009D77" stroke-width="1.5"
                     stroke-linecap="round" stroke-linejoin="round" />

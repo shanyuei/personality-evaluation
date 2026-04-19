@@ -35,16 +35,16 @@
               </span>
               <div class="uno-flex-1 uno-text-left md:uno-text-left uno-h-full uno-flex uno-flex-col">
                 <span
-                  class="uno-hidden md:uno-inline-flex uno-justify-start uno-items-center uno-flex-row uno-gap-2.5 uno-py-1 uno-px-4 uno-rounded-3xl uno-self-start uno-text-[#011813] uno-text-center uno-text-base uno-font-Outfit uno-font-medium uno-leading-[1.36]"
+                  class="uno-inline-flex uno-justify-start uno-items-center uno-flex-row uno-gap-2.5 uno-py-1 uno-px-4 uno-rounded-3xl uno-self-start uno-text-[#011813] uno-text-center uno-text-xs sm:uno-text-sm md:uno-text-base uno-font-Outfit uno-font-medium uno-leading-[1.36]"
                   :class="step.badgeBgClass">
                   {{ $t('common.step') }} {{ step.id }}
                 </span>
                 <div
-                  class="uno-hidden md:uno-block uno-text-[#011813] uno-text-2xl md:uno-text-24px uno-font-Outfit uno-font-semibold md:uno-mt-3">
+                  class="md:uno-block uno-text-[#011813] uno-text-xl sm:uno-text-2xl md:uno-text-24px uno-font-Outfit uno-font-semibold md:uno-mt-3">
                   {{
                     step.titleKey }}</div>
                 <p
-                  class="uno-text-[12px] md:uno-text-16px uno-text-[#4E5255] uno-font-Outfit uno-font-normal uno-leading-[150%] uno-text-left uno-mt-3 md:uno-mt-auto lg:uno-mt-2">
+                  class="uno-text-[12px] md:uno-text-16px uno-text-[#4E5255] uno-font-Outfit uno-font-normal uno-leading-[150%] uno-text-left uno-mt-0 md:uno-mt-auto lg:uno-mt-2">
                   {{ step.descKey }}</p>
               </div>
             </div>
