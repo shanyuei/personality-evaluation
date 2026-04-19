@@ -168,10 +168,10 @@
     </template>
 
 
-    <section v-if="activeTab === 'motivation'" class="uno-mt-6 md:uno-mt-8">
+    <section v-if="activeTab === 'motivation'" class="uno-mt-6 md:uno-mt-8 uno-space-y-6 md:uno-space-y-24px">
       <div class="uno-grid uno-gap-5 md:uno-gap-6 md:uno-grid-cols-2">
         <div
-          class="uno-bg-white uno-rounded-[24px] uno-border uno-border-[var(--ui-border)] uno-shadow-[0_12px_32px_rgba(1,24,19,0.08)] uno-p-32px ">
+          class="uno-bg-white uno-rounded-[24px] uno-border uno-border-[rgba(231,231,232,1)] uno-shadow-[0px_4px_12px_0px_rgba(0,0,0,0.05)] uno-p-32px">
           <div
             class="uno-w-[64px] uno-h-[64px] uno-rounded-full uno-bg-[var(--color-green-2)] uno-flex uno-items-center uno-justify-center uno-mb-8">
             <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -183,15 +183,15 @@
 
           </div>
           <h2
-            class="uno-text-[var(--ui-foreground)] uno-text-[32px] uno-font-Outfit uno-font-bold uno-leading-[1.2] uno-mb-5">
+            class="uno-text-[#011813] uno-text-[32px] uno-font-Outfit uno-font-semibold uno-leading-[120%] uno-mb-24px">
             {{ motivationsSection?.motivations?.title || detailLocaleText.motivation.primary }}
           </h2>
           <div
-            class="uno-text-[var(--ui-muted-foreground)] uno-text-16px uno-font-Outfit uno-leading-[1.5] uno-space-y-3 [&_ul]:uno-list-disc [&_ul]:uno-pl-5 [&_li]:uno-mb-2"
+            class="uno-text-[#4E5255] uno-text-[16px] uno-font-Outfit uno-font-normal uno-leading-[150%] uno-space-y-3 [&_ul]:uno-list-disc [&_ul]:uno-pl-5 [&_li]:uno-mb-2"
             v-html="renderRichText(motivationsSection?.motivations?.text)" />
         </div>
         <div
-          class="uno-bg-white uno-rounded-[24px] uno-border uno-border-[var(--ui-border)] uno-shadow-[0_12px_32px_rgba(1,24,19,0.08)] uno-p-32px ">
+          class="uno-bg-white uno-rounded-[24px] uno-border uno-border-[rgba(231,231,232,1)] uno-shadow-[0px_4px_12px_0px_rgba(0,0,0,0.05)] uno-p-32px">
           <div
             class="uno-w-[64px] uno-h-[64px] uno-rounded-full uno-bg-[var(--color-pink-1)] uno-flex uno-items-center uno-justify-center uno-mb-24px">
             <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -203,43 +203,43 @@
 
           </div>
           <h2
-            class="uno-text-[var(--ui-foreground)] uno-text-[32px] uno-font-Outfit uno-font-bold uno-leading-[1.2] uno-mb-24px">
+            class="uno-text-[#011813] uno-text-[32px] uno-font-Outfit uno-font-semibold uno-leading-[120%] uno-mb-24px">
             {{ motivationsSection?.fears?.title || detailLocaleText.motivation.fear }}
           </h2>
           <div
-            class="uno-text-[var(--ui-muted-foreground)] uno-text-16px uno-font-Outfit uno-leading-[1.5] uno-space-y-3 [&_ul]:uno-list-disc [&_ul]:uno-pl-5 [&_li]:uno-mb-2"
+            class="uno-text-[#4E5255] uno-text-[16px] uno-font-Outfit uno-font-normal uno-leading-[150%] uno-space-y-3 [&_ul]:uno-list-disc [&_ul]:uno-pl-5 [&_li]:uno-mb-2"
             v-html="renderRichText(motivationsSection?.fears?.text)" />
         </div>
       </div>
     </section>
 
-    <section v-if="activeTab === 'relationships'" class="uno-mt-6 md:uno-mt-8">
+    <section v-if="activeTab === 'relationships'" class="uno-mt-6 md:uno-mt-8 uno-space-y-6 md:uno-space-y-24px">
       <div
-        class="uno-bg-white uno-rounded-[32px] uno-border uno-border-[var(--ui-border)] uno-shadow-[0_16px_40px_rgba(1,24,19,0.08)] uno-p-32px ">
+        class="uno-bg-white uno-rounded-[24px] uno-border uno-border-[rgba(231,231,232,1)] uno-shadow-[0px_4px_12px_0px_rgba(0,0,0,0.05)] uno-p-32px">
         <h2
-          class="uno-text-[var(--ui-foreground)] uno-text-[32px] uno-font-Outfit uno-font-bold uno-leading-[1.2] uno-mb-24px">
+          class="uno-text-[#011813] uno-text-[32px] uno-font-Outfit uno-font-semibold uno-leading-[120%] uno-mb-24px">
           {{ relationshipsSection?.title || detailLocaleText.relationships.title }}
         </h2>
         <div v-if="relationshipsSection?.text"
-          class="uno-max-w-[1280px] uno-text-[var(--ui-muted-foreground)] uno-text-16px uno-space-y-3 [&_ul]:uno-list-disc [&_ul]:uno-pl-5 [&_li]:uno-mb-2"
+          class="uno-max-w-[1180px] uno-text-[#4E5255] uno-text-[16px] uno-font-Outfit uno-font-normal uno-leading-[150%] uno-space-y-3 [&_ul]:uno-list-disc [&_ul]:uno-pl-5 [&_li]:uno-mb-2"
           v-html="renderRichText(relationshipsSection?.text)" />
-        <div class="uno-grid uno-gap-8 md:uno-gap-12 md:uno-grid-cols-2">
+        <div class="uno-grid uno-gap-8 md:uno-gap-12 md:uno-grid-cols-2 uno-mt-24px">
           <div class="uno-space-y-12px">
             <h3
-              class="uno-text-[var(--ui-foreground)] uno-text-[28px] md:uno-text-[32px] uno-font-Outfit uno-font-bold uno-leading-[1.2]">
+              class="uno-text-[#011813] uno-text-[18px] uno-font-Outfit uno-font-semibold uno-leading-[120%]">
               {{ relationshipsSection?.left_content?.title || detailLocaleText.relationships.strengths }}
             </h3>
             <div
-              class="uno-text-[var(--ui-muted-foreground)] uno-text-base md:uno-text-[18px] uno-font-Outfit uno-leading-[1.8] uno-space-y-3 [&_ul]:uno-list-disc [&_ul]:uno-pl-5 [&_li]:uno-mb-2"
+              class="uno-text-[#4E5255] uno-text-[14px] uno-font-Outfit uno-font-normal uno-leading-[150%] uno-space-y-3 [&_ul]:uno-list-disc [&_ul]:uno-pl-5 [&_li]:uno-mb-2"
               v-html="renderRichText(relationshipsSection?.left_content?.text)" />
           </div>
           <div class="uno-space-y-12px">
             <h3
-              class="uno-text-[var(--ui-foreground)] uno-text-[28px] md:uno-text-[32px] uno-font-Outfit uno-font-bold uno-leading-[1.2]">
+              class="uno-text-[#011813] uno-text-[18px] uno-font-Outfit uno-font-semibold uno-leading-[120%]">
               {{ relationshipsSection?.right_content?.title || detailLocaleText.relationships.tips }}
             </h3>
             <div
-              class="uno-text-[var(--ui-muted-foreground)] uno-text-base md:uno-text-[18px] uno-font-Outfit uno-leading-[1.8] uno-space-y-3 [&_ul]:uno-list-disc [&_ul]:uno-pl-5 [&_li]:uno-mb-2"
+              class="uno-text-[#4E5255] uno-text-[14px] uno-font-Outfit uno-font-normal uno-leading-[150%] uno-space-y-3 [&_ul]:uno-list-disc [&_ul]:uno-pl-5 [&_li]:uno-mb-2"
               v-html="renderRichText(relationshipsSection?.right_content?.text)" />
             <div class="uno-pt-24px">
               <AppLink :is-link="true" :to="'/courses'" class="uno-inline-block">
@@ -252,24 +252,24 @@
         </div>
       </div>
     </section>
-    <section v-if="activeTab === 'work'" class="uno-mt-6 md:uno-mt-8">
+    <section v-if="activeTab === 'work'" class="uno-mt-6 md:uno-mt-8 uno-space-y-6 md:uno-space-y-24px">
       <div
-        class="uno-bg-white uno-rounded-[32px] uno-border uno-border-[var(--ui-border)] uno-shadow-[0_16px_40px_rgba(1,24,19,0.08)] uno-p-32px ">
+        class="uno-bg-white uno-rounded-[24px] uno-border uno-border-[rgba(231,231,232,1)] uno-shadow-[0px_4px_12px_0px_rgba(0,0,0,0.05)] uno-p-32px">
         <h2
-          class="uno-text-[var(--ui-foreground)] uno-text-[32px] md:uno-text-[44px] uno-font-Outfit uno-font-bold uno-leading-[1.15] uno-mb-24px">
+          class="uno-text-[#011813] uno-text-[32px] uno-font-Outfit uno-font-semibold uno-leading-[120%] uno-mb-24px">
           {{ workSection?.title || detailLocaleText.work.title }}
         </h2>
         <div v-if="workSection?.text"
-          class="uno-max-w-[1280px] uno-text-[var(--ui-muted-foreground)] uno-text-16px uno-space-y-3 [&_ul]:uno-list-disc [&_ul]:uno-pl-5 [&_li]:uno-mb-2"
+          class="uno-max-w-[1180px] uno-text-[#4E5255] uno-text-[16px] uno-font-Outfit uno-font-normal uno-leading-[150%] uno-space-y-3 [&_ul]:uno-list-disc [&_ul]:uno-pl-5 [&_li]:uno-mb-2"
           v-html="renderRichText(workSection?.text)" />
-        <div class="uno-grid uno-gap-8 md:uno-gap-12 md:uno-grid-cols-2">
+        <div class="uno-grid uno-gap-8 md:uno-gap-12 md:uno-grid-cols-2 uno-mt-24px">
           <div class="uno-space-y-12px">
             <h3
-              class="uno-text-[var(--ui-foreground)] uno-text-[28px] md:uno-text-[32px] uno-font-Outfit uno-font-bold uno-leading-[1.2]">
+              class="uno-text-[#011813] uno-text-[18px] uno-font-Outfit uno-font-semibold uno-leading-[120%]">
               {{ workSection?.left_content?.title || detailLocaleText.work.challenges }}
             </h3>
             <div
-              class="uno-text-[var(--ui-muted-foreground)] uno-text-base md:uno-text-[18px] uno-font-Outfit uno-leading-[1.8] uno-space-y-3 [&_ul]:uno-list-disc [&_ul]:uno-pl-5 [&_li]:uno-mb-2"
+              class="uno-text-[#4E5255] uno-text-[14px] uno-font-Outfit uno-font-normal uno-leading-[150%] uno-space-y-3 [&_ul]:uno-list-disc [&_ul]:uno-pl-5 [&_li]:uno-mb-2"
               v-html="renderRichText(workSection?.left_content?.text)" />
             <div class="uno-pt-24px">
               <AppLink :is-link="true" :to="'/courses'" class="uno-inline-block">
@@ -280,34 +280,34 @@
           </div>
           <div class="uno-space-y-12px">
             <h3
-              class="uno-text-[var(--ui-foreground)] uno-text-[28px] md:uno-text-[32px] uno-font-Outfit uno-font-bold uno-leading-[1.2]">
+              class="uno-text-[#011813] uno-text-[18px] uno-font-Outfit uno-font-semibold uno-leading-[120%]">
               {{ workSection?.right_content?.title || detailLocaleText.work.strategies }}
             </h3>
             <div
-              class="uno-text-[var(--ui-muted-foreground)] uno-text-base md:uno-text-[18px] uno-font-Outfit uno-leading-[1.8] uno-space-y-3 [&_ul]:uno-list-disc [&_ul]:uno-pl-5 [&_li]:uno-mb-2"
+              class="uno-text-[#4E5255] uno-text-[14px] uno-font-Outfit uno-font-normal uno-leading-[150%] uno-space-y-3 [&_ul]:uno-list-disc [&_ul]:uno-pl-5 [&_li]:uno-mb-2"
               v-html="renderRichText(workSection?.right_content?.text)" />
           </div>
         </div>
       </div>
     </section>
-    <section v-if="activeTab === 'stress'" class="uno-mt-6 md:uno-mt-8">
+    <section v-if="activeTab === 'stress'" class="uno-mt-6 md:uno-mt-8 uno-space-y-6 md:uno-space-y-24px">
       <div
-        class="uno-bg-white uno-rounded-[32px] uno-border uno-border-[var(--ui-border)] uno-shadow-[0_16px_40px_rgba(1,24,19,0.08)] uno-p-6 md:uno-px-10 md:uno-py-8">
+        class="uno-bg-white uno-rounded-[24px] uno-border uno-border-[rgba(231,231,232,1)] uno-shadow-[0px_4px_12px_0px_rgba(0,0,0,0.05)] uno-p-32px">
         <h2
-          class="uno-text-[var(--ui-foreground)] uno-text-[32px] md:uno-text-[44px] uno-font-Outfit uno-font-bold uno-leading-[1.15] uno-mb-8 md:uno-mb-8">
+          class="uno-text-[#011813] uno-text-[32px] uno-font-Outfit uno-font-semibold uno-leading-[120%] uno-mb-24px">
           {{ stressSection?.title || detailLocaleText.stress.title }}
         </h2>
         <div v-if="stressSection?.text"
-          class="uno-max-w-[1280px] uno-text-[var(--ui-muted-foreground)] uno-text-base md:uno-text-[18px] uno-font-Outfit uno-leading-[1.8] uno-mb-10 md:uno-mb-12 uno-space-y-3 [&_ul]:uno-list-disc [&_ul]:uno-pl-5 [&_li]:uno-mb-2"
+          class="uno-max-w-[1180px] uno-text-[#4E5255] uno-text-[16px] uno-font-Outfit uno-font-normal uno-leading-[150%] uno-mb-24px uno-space-y-3 [&_ul]:uno-list-disc [&_ul]:uno-pl-5 [&_li]:uno-mb-2"
           v-html="renderRichText(stressSection?.text)" />
         <div class="uno-grid uno-gap-8 md:uno-gap-12 md:uno-grid-cols-3 md:uno-items-start">
-          <div class="uno-space-y-4">
+          <div class="uno-space-y-12px">
             <h3
-              class="uno-text-[var(--ui-foreground)] uno-text-[24px] md:uno-text-[32px] uno-font-Outfit uno-font-bold uno-leading-[1.2]">
+              class="uno-text-[#011813] uno-text-[18px] uno-font-Outfit uno-font-semibold uno-leading-[120%]">
               {{ stressSection?.left_content?.title || detailLocaleText.stress.manifestations }}
             </h3>
             <div
-              class="uno-text-[var(--ui-muted-foreground)] uno-text-base md:uno-text-[18px] uno-font-Outfit uno-leading-[1.8] uno-space-y-3 [&_ul]:uno-list-disc [&_ul]:uno-pl-5 [&_li]:uno-mb-2"
+              class="uno-text-[#4E5255] uno-text-[14px] uno-font-Outfit uno-font-normal uno-leading-[150%] uno-space-y-3 [&_ul]:uno-list-disc [&_ul]:uno-pl-5 [&_li]:uno-mb-2"
               v-html="renderRichText(stressSection?.left_content?.text)" />
             <div class="uno-pt-2 md:uno-pt-4">
               <AppLink :is-link="true" :to="'/courses'" class="uno-inline-block">
@@ -316,22 +316,22 @@
               </AppLink>
             </div>
           </div>
-          <div class="uno-space-y-4">
+          <div class="uno-space-y-12px">
             <h3
-              class="uno-text-[var(--ui-foreground)] uno-text-[24px] md:uno-text-[32px] uno-font-Outfit uno-font-bold uno-leading-[1.2]">
+              class="uno-text-[#011813] uno-text-[18px] uno-font-Outfit uno-font-semibold uno-leading-[120%]">
               {{ stressSection?.middle_content?.title || detailLocaleText.stress.coping }}
             </h3>
             <div
-              class="uno-text-[var(--ui-muted-foreground)] uno-text-base md:uno-text-[18px] uno-font-Outfit uno-leading-[1.8] uno-space-y-3 [&_ul]:uno-list-disc [&_ul]:uno-pl-5 [&_li]:uno-mb-2"
+              class="uno-text-[#4E5255] uno-text-[14px] uno-font-Outfit uno-font-normal uno-leading-[150%] uno-space-y-3 [&_ul]:uno-list-disc [&_ul]:uno-pl-5 [&_li]:uno-mb-2"
               v-html="renderRichText(stressSection?.middle_content?.text)" />
           </div>
-          <div class="uno-space-y-4">
+          <div class="uno-space-y-12px">
             <h3
-              class="uno-text-[var(--ui-foreground)] uno-text-[24px] md:uno-text-[32px] uno-font-Outfit uno-font-bold uno-leading-[1.2]">
+              class="uno-text-[#011813] uno-text-[18px] uno-font-Outfit uno-font-semibold uno-leading-[120%]">
               {{ stressSection?.right_content?.title || detailLocaleText.stress.practices }}
             </h3>
             <div
-              class="uno-text-[var(--ui-muted-foreground)] uno-text-base md:uno-text-[18px] uno-font-Outfit uno-leading-[1.8] uno-space-y-3 [&_ul]:uno-list-disc [&_ul]:uno-pl-5 [&_li]:uno-mb-2"
+              class="uno-text-[#4E5255] uno-text-[14px] uno-font-Outfit uno-font-normal uno-leading-[150%] uno-space-y-3 [&_ul]:uno-list-disc [&_ul]:uno-pl-5 [&_li]:uno-mb-2"
               v-html="renderRichText(stressSection?.right_content?.text)" />
           </div>
         </div>
