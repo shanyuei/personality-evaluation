@@ -109,9 +109,9 @@
               :loop="true" :speed="800" :pagination="{
                 clickable: true,
               }" :autoplay="{ delay: 2500, disableOnInteraction: false }" class="diy-swiper" :breakpoints="{
-                375: { slidesPerView: $device.isMobileOrTablet ? 2 : 1, spaceBetween: 16 },
-                640: { slidesPerView: $device.isMobileOrTablet ? 2 : 1, spaceBetween: 20 },
-                768: { slidesPerView: $device.isMobileOrTablet ? 2 : 1, spaceBetween: 20 },
+                375: { slidesPerView: 1, spaceBetween: 16 },
+                640: { slidesPerView: 1, spaceBetween: 20 },
+                768: { slidesPerView: 2, spaceBetween: 20 },
                 1024: { slidesPerView: $device.isMobileOrTablet ? 2 : 1, spaceBetween: 24 },
                 1280: { slidesPerView: 3, spaceBetween: 24 },
                 1440: { slidesPerView: 4, spaceBetween: 24 },

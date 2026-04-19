@@ -76,7 +76,7 @@ definePageMeta({
   title: () => 'seo.faq.title',
   layoutShowPageTopIcons: false,
   layoutShowPageTopIcons3: true,
-  layoutPageTopIcon3Class: 'uno-top-160px uno-right-0 md:uno-top-100px md:uno-right-30px lg:uno-top-160px',
+  layoutPageTopIcon3Class: 'uno-top-160px uno-right-30px md:uno-top-100px md:uno-right-30px lg:uno-top-160px',
   path: '/faq',
 })
 
