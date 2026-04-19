@@ -1,0 +1,236 @@
+{
+    "code": 0,
+    "message": "ok",
+    "data": {
+        "percentages": [
+            {
+                "type": 1,
+                "name": "Helper",
+                "percent": 10.82
+            },
+            {
+                "type": 2,
+                "name": "Achiever",
+                "percent": 7.87
+            },
+            {
+                "type": 3,
+                "name": "Individualist",
+                "percent": 9.84
+            },
+            {
+                "type": 4,
+                "name": "Loyalist",
+                "percent": 14.1
+            },
+            {
+                "type": 5,
+                "name": "Peacemaker",
+                "percent": 13.44
+            },
+            {
+                "type": 6,
+                "name": "Enthusiast",
+                "percent": 11.48
+            },
+            {
+                "type": 7,
+                "name": "Reformer",
+                "percent": 11.48
+            },
+            {
+                "type": 8,
+                "name": "Challenger",
+                "percent": 9.84
+            },
+            {
+                "type": 9,
+                "name": "Investigator",
+                "percent": 11.15
+            }
+        ],
+        "dominant_type": 4,
+        "dominant_types": [
+            4
+        ],
+        "max_score": 43,
+        "profile": {
+            "type": 2,
+            "type_name": "Helper",
+            "type_text": "Type 2s on the Enneagram are often called The Helpers due to their focus on generosity, empathy, and their innate drive to be needed by others. They are the nurturers of the Enneagram, guided by a strong sense of compassion and a desire to create deep, meaningful connections. This type is driven by the fundamental belief that they are worthy only as long as they are helpful, striving to provide support and love to everyone in their environment.\/nCharacterized by a warm and outgoing nature, Type 2s are demonstrative, people-oriented, and often put the needs of others before their own. They are perceptive of others' feelings, skilled at building bridges, and have a keen eye for where help is required. However, their giving nature can sometimes lead to \"self-sacrifice\" that masks a need for validation, or manifest as intrusiveness when their help is not requested.",
+            "characteristics": {
+                "core": {
+                    "title": "Core Characteristics of The Helper",
+                    "list": [
+                        {
+                            "title": "Innate Sense of Empathy",
+                            "text": "Type 2s possess an inherent ability to \"read the room\" and sense the emotional states of those around them. This emotional compass allows them to offer support exactly when it is needed, making them excellent friends and mediators."
+                        },
+                        {
+                            "title": "High Relational Attention",
+                            "text": "A hallmark of Type 2s is their meticulous attention to the needs of others. They have an uncanny ability to notice emotional cues or needs that others might overlook. This quality drives them to strive for excellence in their relationships and caretaking."
+                        },
+                        {
+                            "title": "Generosity and Nurturing",
+                            "text": "Type 2s set high standards for their own generosity, driven by a desire to make everyone feel as supported as they can possibly be. They often go out of their way to do favors, give gifts, or provide emotional labor."
+                        },
+                        {
+                            "title": "Emotional Expression and Warmth",
+                            "text": "While some types restrain their feelings, Type 2s embody emotional expression naturally. They use their feelings to maintain a sense of connection and rapport with those around them, often acting as the \"heart\" of their social circles."
+                        },
+                        {
+                            "title": "Perceptive Nature",
+                            "text": "Type 2s have a keen eye, not only for where they can help but also for how others are responding to them. This stems from their desire for connection and fear of being unwanted. They often work on balancing their insights with healthy boundaries."
+                        },
+                        {
+                            "title": "Loyalty and Supportiveness",
+                            "text": "A sense of dedication to others is deeply ingrained in Type 2s. They take their relationships seriously and are reliable partners and friends. They often go above and beyond to ensure people feel cared for and valued."
+                        },
+                        {
+                            "title": "Community-Minded",
+                            "text": "Driven by a vision of a more connected world, Type 2s are community-minded. They are constantly seeking ways to improve their social environment, be it through personal support or influencing groups. Their efforts are fueled by a belief in the power of love and connection."
+                        },
+                        {
+                            "title": "Struggle with Repressed Needs and Resentment",
+                            "text": "Underneath their giving exterior, Type 2s may struggle with feelings of resentment, particularly when their help is not acknowledged or reciprocated. This often stems from a sense of frustration that their own needs are being ignored. Learning to acknowledge and express these personal needs is a crucial aspect of growth."
+                        }
+                    ]
+                },
+                "motivations_fears": {
+                    "motivations": {
+                        "title": "Primary Motivations",
+                        "text": "Type 2s are driven by a deep-seated desire to be loved and to express their feelings for others, striving to align their actions with their values of compassion and connection. Their motivation extends beyond simple kindness; they aim to be indispensable in the lives of others. They believe that through hard work and dedication to service, they can achieve a sense of inner peace and satisfaction."
+                    },
+                    "fears": {
+                        "title": "Fears",
+                        "text": "At the core of a Type 2's fears is the dread of being unwanted, unworthy of being loved, or being deemed \"disposable\". This fear can manifest as a relentless drive to please, where the possibility of rejection becomes a source of intense anxiety. They fear being lonely or unneeded, which can lead to a tendency to over-extend themselves as they strive to uphold their role as the \"helper\"."
+                    }
+                },
+                "relationships": {
+                    "title": "Approach to Relationships",
+                    "text": "Type 2s bring a sense of loyalty, responsibility, and warmth to their relationships. They value intimacy and often seek partners who share their dedication to mutual support and emotional growth. They are willing to work diligently to build a stable and loving foundation for their connections.",
+                    "left_content": {
+                        "title": "Strengths and Challenges",
+                        "text": "<ul><li><strong>Strengths<\/strong>: In relationships, Type 2s are dependable and earnest, often striving to support their partners' growth and well-being. Their high emotional intelligence provides a strong moral and emotional compass for the relationship.<\/li><li><strong>Challenges<\/strong>: Their \"helper\" nature can lead to conflict if they become overly focused on \"fixing\" their partner rather than accepting them as they are. Learning to balance their desire to help with acceptance and unconditional love is crucial.<\/li><\/ul>"
+                    },
+                    "right_content": {
+                        "title": "Tips for Healthy Relationships",
+                        "text": "<ul><li><strong>Practice Self-Validation<\/strong>: Recognize that perfection in helping is unattainable and that you are worthy of love regardless of what you do for others.<\/li><li><strong>Communicate Needs Directly:<\/strong>: Open communication about your own expectations and fears can enhance mutual understanding.<\/li><li><strong>Ask Before Helping:<\/strong>: Practice patience and check if your partner actually wants help before jumping in to provide it.<\/li><\/ul>"
+                    }
+                },
+                "work": {
+                    "title": "Ideal Work Environments and Roles",
+                    "text": "Type 2s thrive in environments where they can apply their strong sense of empathy and dedication to service. They excel in roles that require high emotional intelligence and interpersonal skills, such as: Human Resources & Counseling, Healthcare & Nursing, Teaching & Education, Non-Profit Leadership & Social Causes.",
+                    "left_content": {
+                        "title": "Challenges Faced in the Workplace",
+                        "text": "The tendency to put others first can lead to stress and burnout, especially in roles where they feel their efforts are unappreciated. Their desire to be liked can also create tension if they struggle to deliver \"tough\" feedback or maintain professional boundaries."
+                    },
+                    "right_content": {
+                        "title": "Strategies for Career Growth and Satisfaction",
+                        "text": "For Type 2s to achieve career growth and satisfaction, it is beneficial to seek roles that align with their values and offer opportunities for making a tangible difference.\/n<ul><li><strong>Set Realistic Boundaries:<\/strong>: Develop strategies to manage your workload by setting realistic goals and learning to prioritize your own tasks before helping others.<\/li><li><strong>Cultivate Direct Communication:<\/strong>: Developing open and constructive communication skills can help mitigate potential conflicts and foster positive workplace relationships.<\/li><li><strong>Embrace Professional Detachment:<\/strong>: Learning to view professional challenges as learning opportunities rather than personal rejections can significantly contribute to both personal and professional development.<\/li><li><strong>Acknowledge Personal Achievements:<\/strong>: Regularly reflect on your own contributions to build a sense of internal satisfaction that doesn't rely solely on external praise.<\/li><\/ul>"
+                    },
+                    "growth": {
+                        "title": "Growth Path for The Helper",
+                        "list": [
+                            {
+                                "title": "Recognizing the Limits of Helping",
+                                "text": "A crucial aspect of growth involves recognizing that you cannot help everyone and that your worth is not tied to your utility. Embracing your own needs allows for greater flexibility and true satisfaction."
+                            },
+                            {
+                                "title": "Learning to Receive Support",
+                                "text": "Acceptance plays a pivotal role in development. This includes accepting help from others and acknowledging that you have needs of your own. By allowing yourself to be supported, you can foster more meaningful and balanced relationships."
+                            },
+                            {
+                                "title": "Strategies for Well-Being",
+                                "text": "Type 2s benefit from strategies that promote emotional release and self-care. Activities like journaling or therapy can be particularly beneficial for identifying repressed emotions. Engaging in hobbies that are just for you can help reduce the tendency toward over-extending yourself for others."
+                            }
+                        ]
+                    }
+                },
+                "growth": {
+                    "title": "Growth Path for The Helper",
+                    "list": [
+                        {
+                            "title": "Recognizing the Limits of Helping",
+                            "text": "A crucial aspect of growth involves recognizing that you cannot help everyone and that your worth is not tied to your utility. Embracing your own needs allows for greater flexibility and true satisfaction."
+                        },
+                        {
+                            "title": "Learning to Receive Support",
+                            "text": "Acceptance plays a pivotal role in development. This includes accepting help from others and acknowledging that you have needs of your own. By allowing yourself to be supported, you can foster more meaningful and balanced relationships."
+                        },
+                        {
+                            "title": "Strategies for Well-Being",
+                            "text": "Type 2s benefit from strategies that promote emotional release and self-care. Activities like journaling or therapy can be particularly beneficial for identifying repressed emotions. Engaging in hobbies that are just for you can help reduce the tendency toward over-extending yourself for others."
+                        }
+                    ]
+                }
+            },
+            "stress_relaxation": {
+                "title": "The Helper in Stress and Relaxation",
+                "left_content": {
+                    "title": "How Stress Manifests",
+                    "text": "For Type 2s, stress often arises when they feel their efforts to help are being ignored, or when they fear a loss of connection with those they value. Under significant pressure, Type 2s may experience \"disintegration,\" where they adopt the less healthy traits of Type 8.\/nIncreased Aggression and Bluntness: Normally warm and accommodating, a stressed Type 2 can become unusually demanding, confrontational, or even vindictive if they feel taken for granted.\/nThe \"Helper's Resentment\": They may lash out emotionally, reminding others of everything they have done for them in an attempt to regain control or attention.\/nEmotional Volatility: As their internal sense of being \"lovable\" is threatened, they may cycle rapidly between tearful vulnerability and harsh outbursts."
+                },
+                "middle_content": {
+                    "title": "Healthy Coping Mechanisms",
+                    "text": "Developing healthy coping mechanisms is essential for Type 2s to manage their emotional intensity and maintain balance.\/nPhysical Activity for Tension Release: Engaging in regular physical exercise helps release the pent-up emotional energy and physical tension that accumulates from constantly monitoring others' needs.\/nPracticing \"Healthy Selfishness\": Learning to identify and satisfy their own needs—such as getting enough sleep or taking a lunch break—without waiting for someone else to grant them permission.\/nDirect Communication: Instead of hoping others will notice their exhaustion, healthy Type 2s learn to state their needs and limits clearly and early, preventing the buildup of resentment."
+                },
+                "right_content": {
+                    "title": "Strategies for Emotional and Mental Well-Being",
+                    "text": "Type 2s benefit from strategies that promote internal self-validation and emotional clarity.\/nCreative Self-Expression: Activities such as journaling, art, or therapy provide a private \"judgment-free zone\" where they can explore their true feelings without the need to be \"pleasant\" for anyone else.\/nSolitude and Nature: Spending time alone in nature helps quiet the mind and reduces the constant scanning of the social environment for emotional cues.\/nMeditation and Mindfulness: These practices help Type 2s develop an \"internal observer,\" allowing them to recognize the urge to over-help as it arises and choose more balanced responses."
+                }
+            },
+            "compatibility": {
+                "title": "Interactions with Other Enneagram Types",
+                "text": "Type 2s bring warmth and empathy to their relationships, creating distinct dynamics with each type.",
+                "type_2": "These types often form supportive teams; the 2 provides the emotional warmth that softens the 1’s critical nature. Challenges arise if the 1’s focus on \"right and wrong\" feels like a rejection of the 2’s emotional efforts.",
+                "type_3": "This is a highly effective \"power couple\" pairing. Type 2 supports Type 3’s goals, but may feel neglected if the 3 prioritizes professional success over personal connection.",
+                "type_4": "Both are in the Heart Center. Type 2 offers the steady support the 4 craves, while the 4 offers a depth of authenticity that the 2 finds fascinating. Friction occurs if the 2 feels overwhelmed by the 4's withdrawal.",
+                "type_5": "Type 2 can help the 5 engage socially, but must be careful not to intrude on the 5’s need for privacy and intellectual independence.",
+                "type_6": "This duo builds deep security and trust. However, the 2’s optimistic \"helping\" may be met with the 6’s characteristic skepticism or anxiety.",
+                "type_7": "A joyful, high-energy relationship. Type 7 brings excitement, but the 2 may feel unappreciated if the 7 is too focused on their own pursuit of pleasure.",
+                "type_8": "A powerful \"Protector-Nurturer\" dynamic. The 2 is often the only type that can soften the 8 with kindness, though power struggles can occur if the 2 uses emotional leverage.",
+                "type_9": "A peaceful and harmonious pairing. However, both may avoid conflict for so long that underlying issues never get resolved."
+            },
+            "subtypes": {
+                "title": "Helper Subtypes",
+                "summary": "The Enneagram outlines three distinct subtypes based on how Type 2s focus their attention:",
+                "list": [
+                    {
+                        "title": "Self-Preservation Type 2:",
+                        "text": "This subtype appears more playful or \"cute\" to ensure they are taken care of. They focus on their own well-being by attracting others to care for them through charm."
+                    },
+                    {
+                        "title": "Social Type 2:",
+                        "text": "Focused on being influential within groups or organizations. They act as the \"ambassador\" or power-behind-the-throne, gaining love by being indispensable to many."
+                    },
+                    {
+                        "title": "One-to-One Type 2:",
+                        "text": "Intensely focused on deep, intimate connections with specific individuals. They seek to be the most important person in their partner's life through total devotion."
+                    }
+                ]
+            },
+            "faq": {
+                "title": "FAQs About The Helper",
+                "list": [
+                    {
+                        "title": "Can Type 2s ever give without expecting anything in return?",
+                        "text": "Yes. Through growth and self-awareness, Type 2s learn to give from a state of abundance rather than a need for validation, allowing for true altruism."
+                    },
+                    {
+                        "title": "How can a Type 2 stop feeling responsible for everyone else's happiness?",
+                        "text": "Developing the understanding that everyone has their own journey and that \"helping\" can sometimes hinder others' growth is key."
+                    },
+                    {
+                        "title": "Do Type 2s realize when they are being intrusive?",
+                        "text": "Not always. Because their intent is to be helpful, they may not notice when they are crossing boundaries. Feedback and self-reflection are necessary to develop this awareness."
+                    }
+                ]
+            },
+            "conclusion": {
+                "title": "Conclusion",
+                "text": "Type 2s, with their compassionate approach to life, strive for connection, generosity, and mutual support. Their interactions with others are the cornerstone of their existence, offering both profound fulfillment and unique challenges for personal growth. Understanding their subtypes—Self-Preservation, Social, and One-to-One—provides deep insight into the diverse ways Type 2s navigate their social worlds and express their care.\/nBy acknowledging their core motivations, hidden fears, and the nuances of their personality, Type 2s can embark on a path of growth that embraces self-care as a prerequisite for true altruism. This journey not only enhances their personal well-being by reducing burnout and resentment but also enriches their relationships and contributions to the world around them.\/nThrough self-awareness, the establishment of healthy boundaries, and the courage to acknowledge their own needs, Type 2s can find a sustainable balance and lasting fulfillment. By learning that they are lovable for who they are rather than just for what they give, they leverage their strengths in constructive, meaningful, and truly transformative ways."
+            }
+        }
+    }
+}
