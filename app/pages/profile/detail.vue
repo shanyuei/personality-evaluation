@@ -169,11 +169,11 @@
 
 
     <section v-if="activeTab === 'motivation'" class="uno-mt-6 md:uno-mt-8 uno-space-y-6 md:uno-space-y-24px">
-      <div class="uno-grid uno-gap-5 md:uno-gap-6 md:uno-grid-cols-2">
+      <div class="uno-grid uno-gap-4 md:uno-gap-6 md:uno-grid-cols-2">
         <div
-          class="uno-bg-white uno-rounded-[24px] uno-border uno-border-[rgba(231,231,232,1)] uno-shadow-[0px_4px_12px_0px_rgba(0,0,0,0.05)] uno-p-32px">
+          class="uno-bg-white uno-rounded-[24px] uno-border uno-border-[rgba(231,231,232,1)] uno-shadow-[0px_4px_12px_0px_rgba(0,0,0,0.05)] uno-p-6 md:uno-p-32px">
           <div
-            class="uno-w-[64px] uno-h-[64px] uno-rounded-full uno-bg-[var(--color-green-2)] uno-flex uno-items-center uno-justify-center uno-mb-8">
+            class="uno-w-[56px] uno-h-[56px] md:uno-w-[64px] md:uno-h-[64px] uno-rounded-full uno-bg-[var(--color-green-2)] uno-flex uno-items-center uno-justify-center uno-mb-6 md:uno-mb-8">
             <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect width="64" height="64" rx="32" fill="#009D77" />
               <path
@@ -183,7 +183,7 @@
 
           </div>
           <h2
-            class="uno-text-[#011813] uno-text-[32px] uno-font-Outfit uno-font-semibold uno-leading-[120%] uno-mb-24px">
+            class="uno-text-[#011813] uno-text-[28px] md:uno-text-[32px] uno-font-Outfit uno-font-semibold uno-leading-[120%] uno-mb-6 md:uno-mb-24px">
             {{ motivationsSection?.motivations?.title || detailLocaleText.motivation.primary }}
           </h2>
           <div
@@ -191,9 +191,9 @@
             v-html="renderRichText(motivationsSection?.motivations?.text)" />
         </div>
         <div
-          class="uno-bg-white uno-rounded-[24px] uno-border uno-border-[rgba(231,231,232,1)] uno-shadow-[0px_4px_12px_0px_rgba(0,0,0,0.05)] uno-p-32px">
+          class="uno-bg-white uno-rounded-[24px] uno-border uno-border-[rgba(231,231,232,1)] uno-shadow-[0px_4px_12px_0px_rgba(0,0,0,0.05)] uno-p-6 md:uno-p-32px">
           <div
-            class="uno-w-[64px] uno-h-[64px] uno-rounded-full uno-bg-[var(--color-pink-1)] uno-flex uno-items-center uno-justify-center uno-mb-24px">
+            class="uno-w-[56px] uno-h-[56px] md:uno-w-[64px] md:uno-h-[64px] uno-rounded-full uno-bg-[var(--color-pink-1)] uno-flex uno-items-center uno-justify-center uno-mb-6 md:uno-mb-24px">
             <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect width="64" height="64" rx="32" fill="#EA4C89" />
               <path
@@ -215,15 +215,15 @@
 
     <section v-if="activeTab === 'relationships'" class="uno-mt-6 md:uno-mt-8 uno-space-y-6 md:uno-space-y-24px">
       <div
-        class="uno-bg-white uno-rounded-[24px] uno-border uno-border-[rgba(231,231,232,1)] uno-shadow-[0px_4px_12px_0px_rgba(0,0,0,0.05)] uno-p-32px">
+        class="uno-bg-white uno-rounded-[24px] uno-border uno-border-[rgba(231,231,232,1)] uno-shadow-[0px_4px_12px_0px_rgba(0,0,0,0.05)] uno-p-6 md:uno-p-32px">
         <h2
-          class="uno-text-[#011813] uno-text-[32px] uno-font-Outfit uno-font-semibold uno-leading-[120%] uno-mb-24px">
+          class="uno-text-[#011813] uno-text-[28px] md:uno-text-[32px] uno-font-Outfit uno-font-semibold uno-leading-[120%] uno-mb-6 md:uno-mb-24px">
           {{ relationshipsSection?.title || detailLocaleText.relationships.title }}
         </h2>
         <div v-if="relationshipsSection?.text"
           class="uno-max-w-[1180px] uno-text-[#4E5255] uno-text-[16px] uno-font-Outfit uno-font-normal uno-leading-[150%] uno-space-y-3 [&_ul]:uno-list-disc [&_ul]:uno-pl-5 [&_li]:uno-mb-2"
           v-html="renderRichText(relationshipsSection?.text)" />
-        <div class="uno-grid uno-gap-8 md:uno-gap-12 md:uno-grid-cols-2 uno-mt-24px">
+        <div class="uno-grid uno-gap-6 md:uno-gap-12 md:uno-grid-cols-2 uno-mt-6 md:uno-mt-24px">
           <div class="uno-space-y-12px">
             <h3
               class="uno-text-[#011813] uno-text-[18px] uno-font-Outfit uno-font-semibold uno-leading-[120%]">
@@ -241,7 +241,7 @@
             <div
               class="uno-text-[#4E5255] uno-text-[14px] uno-font-Outfit uno-font-normal uno-leading-[150%] uno-space-y-3 [&_ul]:uno-list-disc [&_ul]:uno-pl-5 [&_li]:uno-mb-2"
               v-html="renderRichText(relationshipsSection?.right_content?.text)" />
-            <div class="uno-pt-24px">
+            <div class="uno-pt-6 md:uno-pt-24px">
               <AppLink :is-link="true" :to="'/courses'" class="uno-inline-block">
                 <PrimaryButton class="uno-w-full md:uno-w-[186px] md:uno-h-[60px]">{{ detailLocaleText.relationships.cta
                 }}
@@ -254,15 +254,15 @@
     </section>
     <section v-if="activeTab === 'work'" class="uno-mt-6 md:uno-mt-8 uno-space-y-6 md:uno-space-y-24px">
       <div
-        class="uno-bg-white uno-rounded-[24px] uno-border uno-border-[rgba(231,231,232,1)] uno-shadow-[0px_4px_12px_0px_rgba(0,0,0,0.05)] uno-p-32px">
+        class="uno-bg-white uno-rounded-[24px] uno-border uno-border-[rgba(231,231,232,1)] uno-shadow-[0px_4px_12px_0px_rgba(0,0,0,0.05)] uno-p-6 md:uno-p-32px">
         <h2
-          class="uno-text-[#011813] uno-text-[32px] uno-font-Outfit uno-font-semibold uno-leading-[120%] uno-mb-24px">
+          class="uno-text-[#011813] uno-text-[28px] md:uno-text-[32px] uno-font-Outfit uno-font-semibold uno-leading-[120%] uno-mb-6 md:uno-mb-24px">
           {{ workSection?.title || detailLocaleText.work.title }}
         </h2>
         <div v-if="workSection?.text"
           class="uno-max-w-[1180px] uno-text-[#4E5255] uno-text-[16px] uno-font-Outfit uno-font-normal uno-leading-[150%] uno-space-y-3 [&_ul]:uno-list-disc [&_ul]:uno-pl-5 [&_li]:uno-mb-2"
           v-html="renderRichText(workSection?.text)" />
-        <div class="uno-grid uno-gap-8 md:uno-gap-12 md:uno-grid-cols-2 uno-mt-24px">
+        <div class="uno-grid uno-gap-6 md:uno-gap-12 md:uno-grid-cols-2 uno-mt-6 md:uno-mt-24px">
           <div class="uno-space-y-12px">
             <h3
               class="uno-text-[#011813] uno-text-[18px] uno-font-Outfit uno-font-semibold uno-leading-[120%]">
@@ -271,7 +271,7 @@
             <div
               class="uno-text-[#4E5255] uno-text-[14px] uno-font-Outfit uno-font-normal uno-leading-[150%] uno-space-y-3 [&_ul]:uno-list-disc [&_ul]:uno-pl-5 [&_li]:uno-mb-2"
               v-html="renderRichText(workSection?.left_content?.text)" />
-            <div class="uno-pt-24px">
+            <div class="uno-pt-6 md:uno-pt-24px">
               <AppLink :is-link="true" :to="'/courses'" class="uno-inline-block">
                 <PrimaryButton class="uno-w-full md:uno-w-[186px] md:uno-h-[60px]">{{ detailLocaleText.work.cta }}
                 </PrimaryButton>
@@ -292,15 +292,15 @@
     </section>
     <section v-if="activeTab === 'stress'" class="uno-mt-6 md:uno-mt-8 uno-space-y-6 md:uno-space-y-24px">
       <div
-        class="uno-bg-white uno-rounded-[24px] uno-border uno-border-[rgba(231,231,232,1)] uno-shadow-[0px_4px_12px_0px_rgba(0,0,0,0.05)] uno-p-32px">
+        class="uno-bg-white uno-rounded-[24px] uno-border uno-border-[rgba(231,231,232,1)] uno-shadow-[0px_4px_12px_0px_rgba(0,0,0,0.05)] uno-p-6 md:uno-p-32px">
         <h2
-          class="uno-text-[#011813] uno-text-[32px] uno-font-Outfit uno-font-semibold uno-leading-[120%] uno-mb-24px">
+          class="uno-text-[#011813] uno-text-[28px] md:uno-text-[32px] uno-font-Outfit uno-font-semibold uno-leading-[120%] uno-mb-6 md:uno-mb-24px">
           {{ stressSection?.title || detailLocaleText.stress.title }}
         </h2>
         <div v-if="stressSection?.text"
-          class="uno-max-w-[1180px] uno-text-[#4E5255] uno-text-[16px] uno-font-Outfit uno-font-normal uno-leading-[150%] uno-mb-24px uno-space-y-3 [&_ul]:uno-list-disc [&_ul]:uno-pl-5 [&_li]:uno-mb-2"
+          class="uno-max-w-[1180px] uno-text-[#4E5255] uno-text-[16px] uno-font-Outfit uno-font-normal uno-leading-[150%] uno-mb-6 md:uno-mb-24px uno-space-y-3 [&_ul]:uno-list-disc [&_ul]:uno-pl-5 [&_li]:uno-mb-2"
           v-html="renderRichText(stressSection?.text)" />
-        <div class="uno-grid uno-gap-8 md:uno-gap-12 md:uno-grid-cols-3 md:uno-items-start">
+        <div class="uno-grid uno-gap-6 md:uno-gap-12 md:uno-grid-cols-3 md:uno-items-start">
           <div class="uno-space-y-12px">
             <h3
               class="uno-text-[#011813] uno-text-[18px] uno-font-Outfit uno-font-semibold uno-leading-[120%]">
@@ -309,7 +309,7 @@
             <div
               class="uno-text-[#4E5255] uno-text-[14px] uno-font-Outfit uno-font-normal uno-leading-[150%] uno-space-y-3 [&_ul]:uno-list-disc [&_ul]:uno-pl-5 [&_li]:uno-mb-2"
               v-html="renderRichText(stressSection?.left_content?.text)" />
-            <div class="uno-pt-2 md:uno-pt-4">
+            <div class="uno-pt-6 md:uno-pt-24px">
               <AppLink :is-link="true" :to="'/courses'" class="uno-inline-block">
                 <PrimaryButton class="uno-w-full md:uno-w-[186px] md:uno-h-[60px]">{{ detailLocaleText.stress.cta }}
                 </PrimaryButton>
@@ -350,13 +350,42 @@
       </div>
 
 
-      <div ref="compatibilityDesktopScrollRef" class="compatibility-scroll uno-hidden md:uno-block uno-overflow-x-auto uno-pb-6 md:uno-pb-8">
-        <div class="uno-flex uno-gap-5 xl:uno-gap-6 uno-w-max uno-px-1 md:uno-px-2">
+      <div class="uno-flex uno-flex-col uno-gap-4 md:uno-hidden">
+        <div v-for="item in compatibilityItems" :key="`${item.key}-mobile`"
+          class="uno-w-full uno-bg-white uno-rounded-[24px] uno-border uno-border-[rgba(231,231,232,1)] uno-shadow-[0px_4px_12px_0px_rgba(0,0,0,0.05)] uno-p-6 uno-space-y-4">
+          <div class="uno-flex uno-items-start uno-justify-between uno-gap-4">
+            <div class="uno-min-w-0 uno-space-y-0">
+              <div class="uno-text-[12px] uno-font-Outfit uno-font-semibold uno-text-[#4E5255] uno-leading-[120%] uno-mb-12px">
+                {{ item.eyebrow }}
+              </div>
+              <h3 class="uno-text-[#011813] uno-text-[18px] uno-font-Outfit uno-font-semibold uno-leading-[120%]">
+                {{ item.title }}
+              </h3>
+              <p class="uno-text-[#011813] uno-text-[18px] uno-font-Outfit uno-font-semibold uno-leading-[120%]">
+                {{ item.subtitle }}
+              </p>
+            </div>
+            <div class="uno-w-[56px] uno-h-[56px] uno-shrink-0">
+              <NuxtImg
+                :src="`/images/profile/types/${((item.typeNumber - 1) % 6) + 1}.png`"
+                class="uno-w-full uno-h-full uno-object-contain"
+                :alt="String(item.typeNumber)"
+              />
+            </div>
+          </div>
+          <div
+            class="uno-text-[#4E5255] uno-text-[14px] uno-font-Outfit uno-font-normal uno-leading-[150%] uno-space-y-3 [&_ul]:uno-list-disc [&_ul]:uno-pl-5 [&_li]:uno-mb-2"
+            v-html="renderRichText(item.text)" />
+        </div>
+      </div>
+
+      <div ref="compatibilityDesktopScrollRef" class="compatibility-scroll uno-hidden md:uno-block uno-overflow-x-auto uno-pb-8">
+        <div class="uno-flex uno-gap-5 xl:uno-gap-6 uno-w-max uno-px-2">
           <div v-for="(item, index) in compatibilityMarqueeItems" :key="`${item.key}-desktop-${index}`"
             class="uno-w-[320px] xl:uno-w-[340px] uno-shrink-0 uno-bg-white uno-rounded-[24px] uno-border uno-border-[rgba(231,231,232,1)] uno-shadow-[0px_4px_12px_0px_rgba(0,0,0,0.05)] uno-p-32px uno-space-y-4">
             <div class="uno-flex uno-items-start uno-justify-between uno-gap-4">
-              <div class="uno-min-w-0 uno-space-y-12px">
-                <div class="uno-text-[12px] uno-font-Outfit uno-font-semibold uno-text-[#4E5255] uno-leading-[120%]">
+              <div class="uno-min-w-0 uno-space-y-0">
+                <div class="uno-text-[12px] uno-font-Outfit uno-font-semibold uno-text-[#4E5255] uno-leading-[120%] uno-mb-12px">
                   {{ item.eyebrow }}
                 </div>
                 <h3 class="uno-text-[#011813] uno-text-[18px] uno-font-Outfit uno-font-semibold uno-leading-[120%]">
@@ -366,8 +395,12 @@
                   {{ item.subtitle }}
                 </p>
               </div>
-              <div class="uno-w-[56px] uno-h-[56px] uno-shrink-0 uno-rounded-full uno-bg-[var(--color-pink-1)]/15 uno-flex uno-items-center uno-justify-center uno-text-[var(--color-pink-1)] uno-text-[18px] uno-font-Outfit uno-font-bold">
-                {{ item.typeNumber }}
+              <div class="uno-w-[56px] uno-h-[56px] uno-shrink-0">
+                <NuxtImg
+                  :src="`/images/profile/types/${((item.typeNumber - 1) % 6) + 1}.png`"
+                  class="uno-w-full uno-h-full uno-object-contain"
+                  :alt="String(item.typeNumber)"
+                />
               </div>
             </div>
             <div
@@ -607,8 +640,8 @@ const stopCompatibilityAutoScroll = () => {
   }
 }
 
-const startAutoScrollForContainer = (container: HTMLElement | null, setTimer: (timer: ReturnType<typeof window.setInterval>) => void) => {
-  if (!container || compatibilityItems.value.length <= 1)
+const startAutoScrollForContainer = (container: HTMLElement | null, itemCount: number, setTimer: (timer: ReturnType<typeof window.setInterval>) => void) => {
+  if (!container || itemCount <= 1)
     return
 
   const scrollLimit = container.scrollWidth / 2
@@ -633,11 +666,11 @@ const startCompatibilityAutoScroll = async () => {
 
   await nextTick()
 
-  startAutoScrollForContainer(compatibilityScrollRef.value, (timer) => {
+  startAutoScrollForContainer(compatibilityScrollRef.value, compatibilityMarqueeItems.value.length, (timer) => {
     compatibilityAutoScrollTimer = timer
   })
 
-  startAutoScrollForContainer(compatibilityDesktopScrollRef.value, (timer) => {
+  startAutoScrollForContainer(compatibilityDesktopScrollRef.value, compatibilityMarqueeItems.value.length, (timer) => {
     compatibilityDesktopAutoScrollTimer = timer
   })
 }
