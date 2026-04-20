@@ -73,15 +73,15 @@
             </div>
 
             <!-- Card Number -->
-            <div class="uno-space-y-2">
+            <!-- <div class="uno-space-y-2">
               <label class="uno-block uno-text-sm uno-font-medium uno-text-[#011813]">{{
                 $t('pages.orders.create.form.cardNumber') }}</label>
               <UInput v-model="form.cardNumber" :placeholder="$t('pages.orders.create.form.cardNumberPlaceholder')"
                 size="xl" icon="i-lucide-credit-card" :ui="{ rounded: 'rounded-[12px]' }" class="uno-w-full" />
-            </div>
+            </div> -->
 
             <!-- Expires, CVV, Zip -->
-            <div class="uno-grid uno-grid-cols-3 uno-gap-4">
+            <!-- <div class="uno-grid uno-grid-cols-3 uno-gap-4">
               <div class="uno-space-y-2">
                 <label class="uno-block uno-text-sm uno-font-medium uno-text-[#011813]">{{
                   $t('pages.orders.create.form.expires') }}</label>
@@ -100,8 +100,19 @@
                 <UInput v-model="form.zip" :placeholder="$t('pages.orders.create.form.zipPlaceholder')" size="xl"
                   :ui="{ rounded: 'rounded-[12px]' }" class="uno-w-full" />
               </div>
+            </div> -->
+            <div id="payment-element">
+              <!--Stripe.js injects the Payment Element-->
+              <!-- <div v-if="stripeLoading" class="uno-flex uno-items-center uno-justify-center uno-py-8">
+                <svg class="uno-w-6 uno-h-6 uno-animate-spin uno-text-[var(--ui-primary)]"
+                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle class="uno-opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="uno-opacity-75" fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                  </path>
+                </svg>
+              </div> -->
             </div>
-
             <!-- Consent Checkbox -->
             <div class="uno-flex uno-items-start uno-gap-3">
               <UCheckbox v-model="form.consent"
@@ -117,8 +128,21 @@
 
             <!-- Buttons -->
             <div class="uno-space-y-3">
-              <PrimaryButton height="56px" @click="handleSubmit">
-                {{ $t('pages.orders.create.form.subscribeBtn', { price: $t("common.price") + planPrice }) }}
+              <PrimaryButton height="56px" @click="handleSubmit" :disabled="isLoading">
+                <span v-if="isLoading" class="uno-flex uno-items-center uno-gap-2 uno-justify-center">
+                  <svg class="uno-w-5 uno-h-5 uno-animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24">
+                    <circle class="uno-opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4">
+                    </circle>
+                    <path class="uno-opacity-75" fill="currentColor"
+                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                    </path>
+                  </svg>
+                  {{ $t('pages.orders.create.form.processing') }}
+                </span>
+                <span v-else>
+                  {{ $t('pages.orders.create.form.subscribeBtn', { price: $t("common.price") + planPrice }) }}
+                </span>
               </PrimaryButton>
 
               <CustomButton height="43px" variant="dark">
@@ -187,8 +211,7 @@
     </div>
 
     <!-- Trust Badges Section -->
-    <div
-      class="page-container uno-flex uno-flex-wrap uno-justify-between uno-gap-8 uno-mb-24 uno-mx-auto">
+    <div class="page-container uno-flex uno-flex-wrap uno-justify-between uno-gap-8 uno-mb-24 uno-mx-auto">
       <div v-for="(item, index) in trustItems" :key="index"
         class="uno-flex uno-flex-col uno-items-center uno-text-center">
         <NuxtImg :src="item.image" width="64" height="64" class="uno-w-16 uno-h-16 uno-mb-4" />
@@ -205,7 +228,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { onMounted, computed } from 'vue';
 import { payOrder } from '~/api/tests';
 import AppCheckIcon from '~/components/AppCheckIcon.vue';
@@ -221,13 +244,24 @@ const route = useRoute()
 
 definePageMeta({
   title: () => 'pages.orders.create.title',
-    layoutShowPageTopIcons: false,
+  layoutShowPageTopIcons: false,
   path: '/checkout'
 })
 useSeoMeta({
-  title: () => t('seo.orders.create.title', { separator: '|' }) as string,
-  description: () => t('seo.orders.create.description') as string
+  title: () => t('seo.orders.create.title', { separator: '|' }),
+  description: () => t('seo.orders.create.description')
 })
+useHead({
+  script: [
+    {
+      src: 'https://js.stripe.com/dahlia/stripe.js',
+      defer: true,           // 可选：延迟加载
+      // 或 async: true      // 可选：异步加载
+    }
+  ]
+})
+
+
 
 // Form State
 const form = ref({
@@ -245,20 +279,93 @@ const planPrice = ref('')
 
 const isLoading = ref(false)
 const emailError = ref(false)
+const Stripe = ref(null)
+const actions = ref(null)
+const stripeLoading = ref(true)
 
+const client_secret = ref('')
+const pk = ref('')
 // Initialize form data from route query
 onMounted(() => {
   if (route.query.order_id) {
-    form.value.order_id = route.query.order_id as string
+    form.value.order_id = route.query.order_id
   } else if (route.query.order_sn) {
-    form.value.order_id = route.query.order_sn as string
+    form.value.order_id = route.query.order_sn
   }
 
   // Get plan_name and plan_price from query params
-  planName.value = route.query.plan_name as string || ""
-  planPrice.value = route.query.plan_price as string || "1.99"
+  planName.value = route.query.plan_name || ""
+  planPrice.value = route.query.plan_price || "1.99"
 
   // You can use these values as needed
+  if (form.value.order_id && import.meta.client) {
+    nextTick(async () => {
+      const { data, error } = await payOrder({
+        order_id: form.value.order_id,
+      })
+      client_secret.value = data.value.data?.client_secret || ''
+      pk.value = data.value.data?.pk || ''
+      Stripe.value = window.Stripe(pk.value)
+      console.log(Stripe.value)
+      const appearance = {
+        theme: 'stripe',
+        variables: {
+          // 全局颜色
+          colorPrimary: '#009D77', // 你的主题色
+          colorBackground: '#ffffff',
+          colorText: '#011813',
+          colorDanger: '#dc2626',
+
+          // 字体
+          fontFamily: 'Outfit, sans-serif',
+          fontSizeBase: '16px',
+
+          // 边框、圆角
+          borderRadius: '12px',
+          borderWidth: '1px',
+          borderColor: '#009D77',
+        },
+        rules: {
+          ".AccordionItem": {
+            "margin-bottom": "12px",
+          },
+          ".AccordionItem": {
+            padding: "0",
+            border: "none",
+          },
+          ".Label": {
+            marginBottom: "8px",
+          },
+          ".Input": {
+
+          },
+          ".Input:focus": {
+            boxShadow: "none",
+            border: "2px solid #009D77",
+          }
+        },
+      };
+      const checkout = Stripe.value.initCheckoutElementsSdk({
+        clientSecret: client_secret.value,
+        elementsOptions: { appearance },
+      });
+      const loadActionsResult = await checkout.loadActions();
+      if (loadActionsResult.type === 'success') {
+        actions.value = loadActionsResult.actions;
+      }
+      try {
+        const paymentElement = checkout.createPaymentElement();
+        paymentElement.mount("#payment-element");
+      } catch (error) {
+        console.error('Error mounting actions:', error);
+      }
+      stripeLoading.value = false;
+    })
+
+  } else {
+    stripeLoading.value = false;
+  }
+  // 
 })
 
 const validateEmail = () => {
@@ -273,75 +380,80 @@ const validateEmail = () => {
 const isFormValid = computed(() => {
   const emailValid = !!form.value.email && !emailError.value
   const orderIdValid = !!form.value.order_id
+  const nameValid = !!form.value.name
   const consentValid = form.value.consent
-  return emailValid && orderIdValid && consentValid
+  return emailValid && orderIdValid && nameValid && consentValid
 })
 
 const handleSubmit = async () => {
   if (!isFormValid.value) {
-    // Check specific validation errors and show toasts
     if (!form.value.email) {
       toast?.add({
         title: t('common.api.error'),
         color: 'warning',
         description: t('pages.orders.create.form.emailRequired') || 'Email is required.',
-      })
+      });
     } else if (emailError.value) {
       toast?.add({
         title: t('common.api.error'),
         color: 'warning',
         description: t('pages.orders.create.form.emailInvalid') || 'Please enter a valid email address.',
-      })
+      });
     } else if (!form.value.order_id) {
       toast?.add({
         title: t('common.api.error'),
         color: 'warning',
         description: t('pages.orders.create.form.orderIdRequired') || 'Order ID is required.',
-      })
+      });
+    } else if (!form.value.name) {
+      toast?.add({
+        title: t('common.api.error'),
+        color: 'warning',
+        description: t('pages.orders.create.form.nameRequired') || 'Name is required.',
+      });
     } else if (!form.value.consent) {
       toast?.add({
         title: t('common.api.error'),
         color: 'warning',
         description: t('pages.orders.create.form.consentRequired') || 'Please consent to the terms.',
-      })
+      });
     }
-    return
+    return;
   }
 
-  isLoading.value = true
+  isLoading.value = true;
+
   try {
-    const { data, error } = await payOrder({
-      order_id: form.value.order_id,
-      email: form.value.email
-    })
+    const { error } = await actions.value.confirm({
+      email: form.value.email,
+      // billingAddress: {
+      //   name: form.value.name,
+      //   address: {
+      //     line1: form.value.address,
+      //     city: form.value.city,
+      //     state: form.value.state,
+      //     zip: form.value.zip,
+      //   },
+      // },
+    });
 
-    if (error.value) {
-      // Using alert for simplicity, could be replaced with a toast
-      return
-    }
-
-    const token = data.value?.data?.user_token
-    if (token) {
-      // 存储 token 到 localStorage 或 sessionStorage
-      localStorage.setItem('userToken', token)
-      // 跳转到成功页面
-      // router.push({ path: '/orders/success' })
-    } else {
-      // 处理 token 缺失的情况
+    if (error) {
       toast?.add({
         title: t('common.api.error'),
         color: 'warning',
-        description: t('pages.orders.create.form.paymentError') || 'Payment failed. Please try again.',
-      })
+        description: error.message || t('pages.orders.create.form.paymentError') || 'Payment failed. Please try again.',
+      });
     }
-
-
-
   } catch (err) {
+    toast?.add({
+      title: t('common.api.error'),
+      color: 'warning',
+      description: err.message,
+    });
   } finally {
-    isLoading.value = false
+    isLoading.value = false;
   }
-}
+};
 
 // Trust Badges Data
 const trustItems = computed(() => [
@@ -476,3 +588,10 @@ const faqItems = computed(() => [
   }
 ])
 </script>
+<style lang="less">
+.payment-element {
+  :deep(.TermsText) {
+    display: none;
+  }
+}
+</style>

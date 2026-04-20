@@ -1,134 +1,226 @@
-<script>
-    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-
-    function check(planName) {
-        if ($('#needLoginModal').length > 0) {
-            if (!logintoken) {
-                $('#needLoginModal').modal('show')
-            } else {
-                let planSection = $('.' + planName);
-                if (planSection.length > 0) {
-                    let checkedRadio = planSection.find('input[type="radio"]:checked');
-                    if (checkedRadio.length > 0) {
-
-                        let data = checkedRadio.data('json');
-
-
-                        let payParams = {
-                            name: planName,
-                            order_price: data.del_price,
-                            pay_price: data.price,
-                            package_price_id: data.id,
-                            pay_type: 6
-                        };
-                        // if (window.location.href.indexOf('24.222.9.162') > -1) {
-                        // 	$.ajax({
-                        // 		url: 'https://api.yeespy.com/api/Vip/addToCart',
-                        // 		type: 'POST',
-                        // 		headers: {
-                        // 			'token': logintoken
-                        // 		},
-                        // 		data: {
-                        // 			package_price_id: payParams.package_price_id
-                        // 		},
-                        // 		success: function(response) {
-                        // 			console.log(response);
-                        // 			if (window.location.href.indexOf('24.222.9.162') > -1) {
-                        // 				window.location.href =
-                        // 				'http://124.222.9.162:9090/page/preview/id/2115';
-                        // 			} else {
-                        // 				window.location.href = './payment.html';
-                        // 			}
-                        // 		},
-                        // 		error: function(xhr, status, error) {
-                        // 			console.log('请求失败：', error);
-                        // 		}
-                        // 	});
-                        // } else {
-                        $.ajax({
-                            url: 'https://api.yeespy.com/api/Vip/createOrder',
-                            type: 'POST',
-                            headers: {
-                                'token': logintoken
-                            },
-                            data: payParams,
-                            success: function (response) {
-                                if (response.code === 1) {
-                                    console.log('订单创建成功：', response);
-
-
-                                    window.location.href = './checkout.html?order_sn=' + response.data.order_sn + '&token=' + logintoken;
-                                    // if (window.location.href.indexOf('24.222.9.162') > -1) {
-                                    //     window.location.href =
-                                    //         'http://124.222.9.162:8080/page/preview/id/2097?order_sn=' +
-                                    //         response.data.order_sn;
-                                    // } else {
-                                    //     window.location.href = './payment.html?order_sn=' + response.data
-                                    //         .order_sn;
-                                    // }
-                                } else {
-                                    console.log('订单创建失败：', response.message);
-                                }
-                            },
-                            error: function (xhr, status, error) {
-                                console.log('请求失败：', error);
-                            }
-                        });
-                        // }
-
-
-
-                        console.log('完整数据：', data);
-                    } else {
-                        console.log('请选择一个套餐选项');
-                    }
-                }
-            }
-        }
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <title>Paddle Payment</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+      box-sizing: border-box;
     }
-    $(function () {
-        function handleData(data) {
-            let num = 0;
-            $('.u-row').each((i, item) => {
-                let name = $(item).find(".fs-5.fw-700").text();
-                $(item).addClass(name);
-                data.map((obj, j) => {
-                    if (name == obj.name) {
-                        console.log(obj.package_prices)
-                        $(item).find(".plan-checklist").empty();
-                        num++;
-                        obj.package_prices.forEach((bd, x) => {
-                            let jsonString = JSON.stringify(bd).replace(/"/g, '&quot;');
-                            $(item).find(".plan-checklist").append(`<label class="form-check form-check-lg py-2 my-2" for="flexCheckDefault${bd.id}${num}">
-                                <input class="form-check-input form-check-input-hook" type="radio" data-mouth="${bd.length}"
-                                    data-money="US$" value="${bd.price}/${bd.del_price}" data-buyurl="#flexCheckDefault${bd.id}"
-                                    name="flexRadioDefault${num}" id="flexCheckDefault${bd.id}${num}" data-json="${jsonString}">
-                                <div class="form-check-label d-flex align-items-center justify-content-between">
-                                    <div> ${bd.length}-Month Plan </div>
-                                    <div> <b class="fs-6 fw-600">$${bd.price}</b> <del class="text-muted">$${bd.del_price}</del></div>
-                                </div>
-                            </label>`);
-                        });
-                        if (name == 'Premium') {
-                            $(item).find('input[type="radio"]').eq(2).attr('checked', 'checked');
-                        } else {
-                            $(item).find('input[type="radio"]').eq(0).attr('checked', 'checked');
-                        }
-                    }
-                });
-            });
-        }
-        let cachedData = localStorage.getItem('packageListData');
-        if (cachedData) {
-            handleData(JSON.parse(cachedData));
-        }
-        $.get("https://api.yeespy.com/api/Ability/get_package_list_pc?type=2", function (res) {
-            localStorage.setItem('packageListData', JSON.stringify(res.data));
-            if (cachedData != JSON.stringify(res.data)) {
-                handleData(res.data);
-            }
-        });
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      max-width: 480px;
+      margin: 40px auto;
+      padding: 24px;
+      background: #f9fafb;
+    }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    h2 {
+      margin: 0 0 20px;
+      font-size: 20px;
+      color: #111827;
+    }
+    .plan-info {
+      background: #f3f4f6;
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .plan-info h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      color: #111827;
+    }
+    .plan-info p {
+      margin: 4px 0;
+      color: #6b7280;
+      font-size: 14px;
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 500;
+      color: #374151;
+      font-size: 14px;
+    }
+    input {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      font-size: 14px;
+      transition: border-color 0.2s;
+    }
+    input:focus {
+      outline: none;
+      border-color: #0065ff;
+      box-shadow: 0 0 0 3px rgba(0,101,255,0.1);
+    }
+    input.error {
+      border-color: #ef4444;
+    }
+    #submit {
+      width: 100%;
+      padding: 12px;
+      background: #0065ff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    #submit:hover {
+      background: #0052d4;
+    }
+    #submit:disabled {
+      background: #9ca3af;
+      cursor: not-allowed;
+    }
+    .error-message {
+      color: #ef4444;
+      font-size: 13px;
+      margin-top: 4px;
+    }
+    .success-message {
+      color: #10b981;
+      font-size: 13px;
+      margin-top: 4px;
+    }
+    .hidden {
+      display: none;
+    }
+    .checkout-container {
+      margin-bottom: 20px;
+      display: none;
+    }
+    .checkout-container.visible {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Complete Your Purchase</h2>
 
+    <form id="payment-form">
+      <div class="checkout-container visible" id="checkout-container"></div>
+
+      <button type="submit" id="submit">
+        <span id="button-text">Start Trial</span>
+      </button>
+
+      <div id="payment-message" class="hidden"></div>
+    </form>
+  </div>
+
+  <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+
+  <script>
+    let orderInfo = { order_id: null, order_sn: null };
+
+    async function createOrder() {
+      // Step 1: 创建订单
+      const createRes = await fetch('/api/payment/create', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ plan_id: 1, report_id: 1, pay_type: 2 })
+      });
+      const createResult = await createRes.json();
+      if (createResult.code != 0) {
+        console.error('Create order failed:', createResult.message);
+        document.getElementById('submit').disabled = false;
+        document.getElementById('submit').textContent = 'Start Trial';
+        showMessage('Failed to create order: ' + createResult.message, 'error');
+        return;
+      }
+
+      // Step 2: 获取支付信息（创建 Transaction）
+      const payRes = await fetch('/api/payment/pay-info', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ order_id: createResult.data.order_id })
+      });
+      const payResult = await payRes.json();
+      if (payResult.code != 0) {
+        console.error('Get pay info failed:', payResult.message);
+        document.getElementById('submit').disabled = false;
+        document.getElementById('submit').textContent = 'Start Trial';
+        showMessage('Failed to load payment: ' + payResult.message, 'error');
+        return;
+      }
+
+      orderInfo = {
+        order_id: createResult.data.order_id,
+        order_sn: createResult.data.order_sn
+      };
+
+      // 初始化 Paddle
+      initPaddle(payResult.data);
+
+      if (payResult.data.transaction_id) {
+        Paddle.Checkout.open({ transactionId: payResult.data.transaction_id });
+        document.getElementById('submit').style.display = 'none';
+      }
+    }
+
+    function initPaddle(data) {
+      Paddle.Environment.set(data.environment);
+      Paddle.Initialize({
+        token: data.token,
+        checkout: {
+          settings: {
+            displayMode: 'inline',
+            theme: 'light',
+            locale: 'en',
+            variant: 'one-page',
+            frameTarget: 'checkout-container',
+            frameInitialHeight: '450',
+            frameStyle: 'width: 100%; min-width: 312px; background-color: transparent; border: none;',
+          }
+        },
+        eventCallback: function(data) {
+          if (data.name === 'checkout.completed') {
+            handleCheckoutComplete(data.data);
+          }
+        }
+      });
+    }
+
+    function handleCheckoutComplete(checkoutData) {
+      showMessage('Payment completed! Redirecting...', 'success');
+      setTimeout(function() {
+        window.location.href = '/api/payment-result?order_sn=' + orderInfo.order_sn;
+      }, 2000);
+    }
+
+    document.getElementById('payment-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submit');
+      btn.disabled = true;
+      btn.textContent = 'Loading...';
+      await createOrder();
     });
-</script>
+
+    function showMessage(message, type = 'error') {
+      const msgContainer = document.getElementById('payment-message');
+      msgContainer.textContent = message;
+      msgContainer.className = type === 'success' ? 'success-message' : 'error-message';
+      msgContainer.classList.remove('hidden');
+      setTimeout(function() {
+        msgContainer.classList.add('hidden');
+        msgContainer.textContent = '';
+      }, 5000);
+    }
+  </script>
+
+
+<div id="autoglm-main-content" class="autoglm-main-content" data-version="0.0.8"></div></body></html>
