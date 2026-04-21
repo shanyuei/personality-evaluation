@@ -287,7 +287,6 @@ async function initializePayment() {
     orderInfo.value.order_id = Number(form.value.order_id)
 
     if (!window.Paddle) {
-      message.value = { text: t('pages.orders.create.errors.paddleLoadFailed'), type: 'error' }
       initializing.value = false
       return
     }
@@ -296,7 +295,6 @@ async function initializePayment() {
     initializing.value = false
   } catch (err) {
     console.error('Initialize payment error:', err)
-    message.value = { text: t('pages.orders.create.errors.networkError'), type: 'error' }
     initializing.value = false
   }
 }
@@ -339,7 +337,10 @@ function initPaddle(data: { environment: string; token: string; transaction_id: 
         frameTarget: 'checkout-container',
         frameInitialHeight: '450',
         frameStyle: 'width: 100%; min-width: 312px; background-color: transparent; border: none; border-radius: 12px;',
-        showAddDiscounts: false //隐藏折扣
+        allowedPaymentMethods: ['card'],
+        showAddDiscounts: false,
+        showAddTaxId: false,
+    
       }
     },
     eventCallback: function (eventData: { name: string; data: any }) {
@@ -357,10 +358,10 @@ function initPaddle(data: { environment: string; token: string; transaction_id: 
 }
 
 function handleCheckoutComplete(checkoutData: any) {
-  message.value = { text: t('pages.orders.create.paymentCompleted'), type: 'success' }
   isLoading.value = false
+  const orderSn = route.query.order_sn || String(orderInfo.value.order_id)
   setTimeout(() => {
-    window.location.href = `/orders/purchase-complete?order_sn=${orderInfo.value.order_sn}`
+    navigateTo(`/payment-success?order_sn=${orderSn}`)
   }, 2000)
 }
 
@@ -410,5 +411,7 @@ watch(() => route.query.order_id, () => {
   color: #10b981;
   font-size: 14px;
   margin-top: 8px;
+}
+.paddle-frame {
 }
 </style>

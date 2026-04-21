@@ -26,7 +26,6 @@
       <OutlineButton @click="downloadGuidebook" class="uno-w-full">
         {{ $t('pages.orders.purchaseComplete.btn2') }}
       </OutlineButton>
-      {{ paymentResult }}
     </div>
   </div>
 </template>

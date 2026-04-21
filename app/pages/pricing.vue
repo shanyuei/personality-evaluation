@@ -205,6 +205,7 @@ const handleCreateOrder = async (plan: any) => {
     }
 
     const order_id = data.value?.data?.order_id;
+    const order_sn = data.value?.data?.order_sn;
     if (order_id) {
       let path = '';
       if (pay_type === 1) {
@@ -218,6 +219,7 @@ const handleCreateOrder = async (plan: any) => {
         path: path,
         query: {
           order_id: order_id,
+          order_sn: order_sn,
           plan_id: plan.id,
           plan_name: plan.name,
           plan_price: plan.price
