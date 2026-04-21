@@ -35,7 +35,7 @@ import PrimaryButton from '@/components/ui/PrimaryButton.vue'
 import OutlineButton from '@/components/ui/OutlineButton.vue'
 import { getPaymentResult } from '~/api/payment'
 import { useUserStore } from '@/stores/modules/user'
-    const token = useCookie('token')
+const token = useCookie('token')
 const { t } = useI18n()
 const localePath = useLocalePath()
 const route = useRoute()
@@ -71,12 +71,12 @@ const getPaymentResultAsync = async (order_sn: string) => {
   try {
     const { data } = await getPaymentResult({ order_sn })
     console.log(data)
-    
+
     if (data.value?.code === 0 && data.value.data) {
       paymentResult.value = data.value.data
-      if (paymentResult.value.token) {
-       token.value = paymentResult.value.token
-       await userStore.fetchUserInfo()
+      if (paymentResult.value.user_token || paymentResult.value.token) {
+        token.value = paymentResult.value.user_token || paymentResult.value.token
+        await userStore.fetchUserInfo()
       }
     } else {
       toast?.add({

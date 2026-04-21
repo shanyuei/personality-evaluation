@@ -30,7 +30,7 @@
     <template #right>
       <template v-if="showMenu || !$device.isMobileOrTablet">
         <!-- 未登录状态 -->
-        <AppArrowButton v-if="!token" preset="header" class="max-sm:uno-hidden uno-font-Outfit uno-font-medium"
+        <AppArrowButton v-if="!hasToken" preset="header" class="max-sm:uno-hidden uno-font-Outfit uno-font-medium"
           :to="localePath('/free-personality-test')">
           <!-- {{ $t('common.getStarted') }} -->
           {{ t('common.nav.takeTheTest') }}
@@ -89,6 +89,7 @@
 </template>
 <script setup lang="ts">
 import { ref, computed } from "vue";
+import { storeToRefs } from 'pinia';
 import { useUserStore } from '~/stores/modules/user';
 import { navigateTo, useCookie } from '#app';
 import { useLocalePath, useI18n } from '#i18n';
@@ -97,6 +98,9 @@ const userStore = useUserStore();
 const token = useCookie('token');
 const { t } = useI18n();
 
+const hasToken = computed(() => !!token.value);
+
+console.log('token', token);
 // import I18nSelect from "~/components/I18nSelect.vue";
 const props = defineProps({
   showMenu: {
@@ -144,7 +148,7 @@ const items = computed(() => {
     }
   ]
 
-  if (!token.value) {
+  if (!hasToken.value) {
     baseItems.push({
       label: t('common.nav.signIn'),
       to: '/login',
