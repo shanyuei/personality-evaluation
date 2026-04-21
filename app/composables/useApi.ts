@@ -49,7 +49,6 @@ export const useBaseFetch = <T>(url: string, options: any = {}) => {
   const userStore = useUserStore()
   const userInfo = userStore.userInfo
   const token = useCookie('token')
-  console.log(token.value, userInfo?.token)
   const localToken = import.meta.client ? localStorage.getItem('userToken') : 'pm8hwiQSYKedAS1qCmWskEm9LRZJ1oFbUmzjZLcnuZXFSjF8MLFUVj9MrH8n'
   const tokenValue = token.value || userInfo?.token || localToken || 'pm8hwiQSYKedAS1qCmWskEm9LRZJ1oFbUmzjZLcnuZXFSjF8MLFUVj9MrH8n'
   const headers = {
@@ -63,7 +62,7 @@ export const useBaseFetch = <T>(url: string, options: any = {}) => {
   
   // 默认立即执行，保持向后兼容
   const immediate = options.immediate !== false
-  
+  console.log('options', options)
   const result = useFetch<T>(url, {
     ...options,
     baseURL: apiBaseUrl,
@@ -157,6 +156,7 @@ export const useGetFetch = <T = any>(url: string, data?: { query: { submissionId
   })
 }
 export const usePostFetch = <T = any>(url: string, data?: any, options?: any) => {
+  console.log('data', data);
   return useBaseFetch<T>(url, {
     ...options,
     method: 'POST',

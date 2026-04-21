@@ -48,6 +48,7 @@ export interface PersonalQuestionsData {
 export interface PaymentCreateRequest {
   plan_id: string
   report_id: string
+  pay_type: number
 }
 
 export interface PaymentCreateResult {

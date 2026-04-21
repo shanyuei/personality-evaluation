@@ -58,6 +58,7 @@ export const createOrder = (data: PaymentCreateRequest) => {
  * - Body: { order_id, email }
  * - 返回: { code, message, data: { client_secret } }
  */
-export const payOrder = (data: { order_id: number, email: string }) => {
+export const payOrder = (data: { order_id: number, email?: string }) => {
+  console.log('data', data);
   return usePostFetch<ApiResponse<PaymentPayResult>>(`/payment/pay-info`, data)
 }

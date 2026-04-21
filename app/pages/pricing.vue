@@ -191,11 +191,12 @@ watch(plans, () => {
 const handleCreateOrder = async (plan: any) => {
   const reportId = route.query.report_id as string || '';
   console.log('reportId', reportId, route);
-
+  const pay_type = 2;
   try {
     const { data, error } = await createOrder({
       plan_id: String(plan.id),
-      report_id: reportId
+      report_id: reportId,
+      pay_type: pay_type
     });
 
     if (error.value) {
@@ -205,8 +206,16 @@ const handleCreateOrder = async (plan: any) => {
 
     const order_id = data.value?.data?.order_id;
     if (order_id) {
+      let path = '';
+      if (pay_type === 1) {
+        path = '/checkout';
+      } else {
+        path = '/payment';
+      }
+
       navigateTo(localePath({
-        path: '/checkout',
+        // path: '/checkout',
+        path: path,
         query: {
           order_id: order_id,
           plan_id: plan.id,
