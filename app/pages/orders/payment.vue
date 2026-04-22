@@ -332,12 +332,12 @@ function initPaddle(data: { environment: string; token: string; transaction_id: 
       settings: {
         displayMode: 'inline',
         theme: 'light',
-        locale: t('locale'),
+        // locale: t('locale'),
         variant: 'one-page',
         frameTarget: 'checkout-container',
         frameInitialHeight: '450',
         frameStyle: 'width: 100%; min-width: 312px; background-color: transparent; border: none; border-radius: 12px;',
-        allowedPaymentMethods: ['card'],
+        // allowedPaymentMethods: ['card'],
         showAddDiscounts: false,
         showAddTaxId: false,
     
