@@ -670,6 +670,7 @@
     }
   },
   "legal": {
+    "directory": "目录",
     "breadcrumb": {
       "home": "首页"
     }

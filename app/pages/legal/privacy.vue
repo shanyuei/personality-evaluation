@@ -1,5 +1,5 @@
 <template>
-  <main class="uno-py-12 uno-px-6 lg:uno-px-10 ">
+  <main class="uno-py-12 uno-px-2 lg:uno-px-10 ">
     <div class="page-container  uno-mx-auto">
       <!-- 面包屑导航 -->
       <div class="uno-text-sm  uno-mb-6">
@@ -9,6 +9,13 @@
       <div class="uno-mb-20">
         <h1 class="uno-text-4xl md:uno-text-5xl uno-font-Outfit uno-font-bold uno-text-gray-900">{{ $t('pages.legal.privacy.title') }}</h1>
       </div>
+
+      <LegalMobileDirectory
+        :title="$t('pages.legal.directory')"
+        :items="navItems"
+        :active-id="activeSection"
+        @select="handleMobileNavClick"
+      />
 
       <div class="uno-grid uno-grid-cols-1 lg:uno-grid-cols-4 uno-gap-8">
         <!-- 侧边栏菜单 -->
@@ -43,6 +50,7 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue'
+import LegalMobileDirectory from '~/components/legal/LegalMobileDirectory.vue'
 
 const { t } = useI18n()
 
@@ -138,10 +146,13 @@ const handleClick = (sectionId) => {
   isClicking.value = true
   activeSection.value = sectionId
 
-  // Reset clicking state after a delay to allow scroll to complete
   setTimeout(() => {
     isClicking.value = false
   }, 1000)
+}
+
+const handleMobileNavClick = (sectionId) => {
+  handleClick(sectionId)
 }
 
 onMounted(() => {

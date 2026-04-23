@@ -1,13 +1,17 @@
 <template>
-  <main class="uno-py-12 uno-px-6 lg:uno-px-10 ">
+  <main class="uno-py-12 uno-px-2 lg:uno-px-10 ">
     <div class="page-container  uno-mx-auto">
       <div class="uno-text-sm  uno-mb-6">
-        <a href="/">{{ $t('pages.legal.breadcrumb.home') }}</a> / <span>{{ $t('pages.legal.refundPolicy.title') }}</span>
+        <a href="/">{{ $t('pages.legal.breadcrumb.home') }}</a> / <span>{{ $t('pages.legal.refund.title') }}</span>
       </div>
 
       <div class="uno-mb-20">
-        <h1 class="uno-text-4xl md:uno-text-5xl uno-font-Outfit uno-font-bold uno-text-gray-900">{{ $t('pages.legal.refundPolicy.title') }}</h1>
+        <h1 class="uno-text-4xl md:uno-text-5xl uno-font-Outfit uno-font-bold uno-text-gray-900">{{
+          $t('pages.legal.refund.title') }}</h1>
       </div>
+
+      <LegalMobileDirectory :title="$t('pages.legal.directory')" :items="navItems" :active-id="activeSection"
+        @select="handleMobileNavClick" />
 
       <div class="uno-grid uno-grid-cols-1 lg:uno-grid-cols-4 uno-gap-8">
         <div class="uno-hidden lg:uno-block uno-h-full uno-col-span-1">
@@ -40,6 +44,7 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue'
+import LegalMobileDirectory from '~/components/legal/LegalMobileDirectory.vue'
 
 const { t } = useI18n()
 
@@ -127,6 +132,10 @@ const handleClick = (sectionId) => {
   setTimeout(() => {
     isClicking.value = false
   }, 1000)
+}
+
+const handleMobileNavClick = (sectionId) => {
+  handleClick(sectionId)
 }
 
 onMounted(() => {

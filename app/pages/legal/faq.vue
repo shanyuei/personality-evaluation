@@ -1,5 +1,5 @@
 <template>
-  <main class="uno-py-12 uno-px-6 md:uno-px-10">
+  <main class="uno-py-12 uno-px-2 md:uno-px-10">
     <div class="page-container">
       <div class="uno-mb-8">
         <h1
@@ -8,14 +8,16 @@
         </h1>
       </div>
 
+      <LegalMobileDirectory :title="$t('pages.legal.directory')" :items="asideCategories" :active-id="currentCategory"
+        @select="handleMobileCategoryClick" />
+
       <div class="uno-grid uno-grid-cols-1 lg:uno-grid-cols-4 uno-gap-8">
         <!-- 分类 -->
         <aside class="uno-hidden lg:uno-block uno-h-full uno-col-span-1">
           <nav class="uno-sticky uno-top-24 uno-self-start">
             <ul class="uno-space-y-3 lg:uno-space-y-4">
               <li v-for="cat in asideCategories" :key="cat.id">
-                <a
-                  :class="['uno-block uno-text-[16px] md:uno-text-[20px] uno-font-medium hover:text-[var(--color-pink-1)]', currentCategory === cat.id ? 'text-[var(--color-pink-1)]' : '']"
+                <a :class="['uno-block uno-text-[16px] md:uno-text-[20px] uno-font-medium hover:text-[var(--color-pink-1)]', currentCategory === cat.id ? 'text-[var(--color-pink-1)]' : '']"
                   @click="scrollToCategory(cat.id)">{{ cat.title }}</a>
               </li>
             </ul>
@@ -27,7 +29,8 @@
 
             <div class="uno-space-y-5">
               <template v-for="(entry, i) in asideCategories" :key="entry.id">
-                <h2 :id="entry.id" class="uno-text-2xl md:uno-text-24px uno-font-Outfit uno-font-600 uno-text-black uno-mb-4">
+                <h2 :id="entry.id"
+                  class="uno-text-2xl md:uno-text-24px uno-font-Outfit uno-font-600 uno-text-black uno-mb-4">
                   {{ entry.title }}
                 </h2>
 
@@ -68,7 +71,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
-
+import LegalMobileDirectory from '~/components/legal/LegalMobileDirectory.vue'
 
 const { t } = useI18n()
 definePageMeta({
@@ -109,6 +112,10 @@ const scrollToCategory = (id: string) => {
   if (element) {
     element.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
+}
+
+const handleMobileCategoryClick = (id: string) => {
+  scrollToCategory(id)
 }
 
 let observer: IntersectionObserver | null = null

@@ -137,16 +137,8 @@
     },
     "blog": {
         "index": {
-            "title": "Blog - Latest Insights and Articles",
-            "description": "Read our latest articles on personal development, career growth, and industry trends."
-        },
-        "category": {
-            "title": "Blog Category - Articles by Topic",
-            "description": "View articles in this blog category."
-        },
-        "slug": {
-            "title": "Blog Post - Detailed Article",
-            "description": "Read this in-depth article on personal development."
+            "title": "Personality Insights & Growth Blog | PersonalityTest101",
+            "description": "Discover how your traits shape your world. Read the latest articles on personality dynamics, relationship tips, and career success strategies."
         }
     },
     "courses": {
