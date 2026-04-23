@@ -202,7 +202,7 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-import { getRecommendArticles, getAllTags, getAllArticles, getLatestArticles } from '~/api/blog'
+import { getRecommendArticles, getAllTags, getAllArticles, getLatestArticles, getCategoryBySlug } from '~/api/blog'
 
 import type { Category } from '~/types/Category'
 import type { Post } from '~/types/Post';
@@ -217,10 +217,7 @@ definePageMeta({
   title: () => 'seo.blog.title'
 })
 
-useSeoMeta({
-  title: () => t('seo.blog.title'),
-  description: () => t('seo.blog.description'),
-})
+
 const route = useRoute();
 
 const hasMoreOther = ref(false);
@@ -245,6 +242,14 @@ getRecommendArticles(route.params.slug).then(({ data }) => {
 getLatestArticles(route.params.slug).then(({ data }) => {
   const list = data.value?.data;
   previewArticles.value = Array.isArray(list) ? list : [];
+})
+getCategoryBySlug(route.params.slug).then(({ data }) => {
+  const category = data.value?.data[0];
+  useSeoMeta({
+    title: () => category?.seoTitle || '',
+    description: () => category?.seoDesc || '',
+  })
+
 })
 const getPageData = async (page: number = 1, append: boolean = false) => {
   const { data } = await getAllArticles(page, activeTagSlug.value ?? undefined, route.params.slug);

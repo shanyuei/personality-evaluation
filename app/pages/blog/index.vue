@@ -224,8 +224,8 @@ definePageMeta({
 })
 
 useSeoMeta({
-  title: () => t('seo.blog.title'),
-  description: () => t('seo.blog.description'),
+  title: () => t('seo.blog.index.title'),
+  description: () => t('seo.blog.index.description'),
 })
 const hasMoreOther = ref(false);
 const tags = ref<Tag[]>([])
@@ -239,6 +239,7 @@ const categories = ref<Category[]>([])
 const activeTagSlug = ref<string | null>(null)
 
 getCategories().then(({ data }) => {
+  console.log('data', data);
   categories.value = data.value?.data || [];
 })
 getAllTags().then(({ data }) => {

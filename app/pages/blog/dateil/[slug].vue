@@ -110,6 +110,10 @@ const recentArticles = ref<Post[]>([])
 
 getArticleBySlug(slug.value).then(res => {
   article.value = res.data.value.data[0]
+  useSeoMeta({
+  title: () => article.value ? `${article.value.title}` : '',
+   description: () => article.value ? article.value.excerpt : ''
+})  
 })
 getLatestArticles().then(res => {
   recentArticles.value = res.data.value.data
@@ -123,10 +127,7 @@ definePageMeta({
   layoutPageTopIcon3Class: 'uno-top-150px uno-right-150px',
 })
 
-useSeoMeta({
-  title: () => article.value ? `${article.value.title} - ${t('seo.blog.slug.title')}` : t('seo.blog.title'),
-  description: () => article.value ? article.value.excerpt : t('seo.blog.slug.description')
-})
+
 </script>
 
 <style scoped></style>

@@ -1,5 +1,6 @@
 import { useStrapiGetFetch, useStrapiPutFetch } from '~/composables/useApi'
 import { buildStrapiQuery } from '~/utils/queryBuilder'
+import type { Category } from '~/types/Category'
 
 /**
  * 获取所有分类（Strapi）
@@ -8,6 +9,24 @@ import { buildStrapiQuery } from '~/utils/queryBuilder'
  */
 export const getCategories = async () => {
   return useStrapiGetFetch('/categories/with-count')
+}
+
+/**
+ * 根据 slug 获取分类详情（Strapi）
+ * - Method: GET
+ * - Path: /categories
+ * - Query: filters/populate 由 buildStrapiQuery 生成
+ */
+export const getCategoryBySlug = async (slug?: string | string[] | undefined) => {
+  const str = buildStrapiQuery({
+    filters: {
+      slug: { $eq: slug }
+    },
+    populate: {
+      posts: true
+    }
+  })
+  return useStrapiGetFetch<{ data: Category[] }>(`/categories` + str)
 }
 /**
  * 获取所有标签（Strapi）
