@@ -17,7 +17,10 @@
           <NuxtImg src="/theme/h5-logo.png" width="149" height="23" alt="logo" class="" />
         </NuxtLink>
       </div>
-      <div v-if="!$device.isDesktopOrTablet &&  !$device.isMobileOrTablet">
+      <div v-if="!$device.isMobileOrTablet">
+        <!-- v-if="!$device.isDesktopOrTablet &&  !$device.isMobileOrTablet" -->
+         <!-- {{ $device.isDesktopOrTablet }} -->
+         <!-- {{  }} -->
         <UNavigationMenu v-if="showMenu" :ui="{
           link: 'before:bg-transparent font-Outfit text-center font-medium text-[16px] text-[#001813] data-[active]:text-[var(--color-pink-1)] hover:text-[var(--color-pink-1)]',
           item: 'ml-[18px] mr-[18px]'

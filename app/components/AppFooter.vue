@@ -1,8 +1,8 @@
 <template>
-  <div class="uno-w-full uno-relative uno-min-h-[471px]">
+  <div class="uno-w-full uno-relative uno-min-h-[471px] md:uno-min-h-[400px]">
     <div class="uno-w-full uno-absolute uno-bottom-0 uno-left-0 uno-z-[1] ">
       <NuxtImg src="/theme/layout/footer-bg-1920.png" alt="uno-footer" width="1920" height="471"
-        class="uno-w-full uno-h-[471px] uno-object-cover uno-object-center" />
+        class="uno-w-full uno-h-760px lg:uno-h-[471px] md:uno-h-[620px] uno-object-cover uno-object-center" />
     </div>
     <div class="page-container uno-w-full uno-bottom-0 uno-left-0 uno-z-[2] uno-relative">
       <UFooter :ui="{
