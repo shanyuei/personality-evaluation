@@ -19,7 +19,7 @@
             selectedPlan === plan.key
               ? 'uno-bg-[#E8FAF5] uno-border-1 uno-border-solid uno-border-[#E7E7E8] '
               : 'uno-bg-white uno-border-1 uno-border-solid uno-border-[#E7E7E8]'
-          ]" @click="selectedPlan = plan.key">
+          ]" >
           <div v-if="plan.badge"
             class="uno-absolute uno-top-24px uno-right-24px uno-w-[96px] uno-h-[33px] uno-px-[16px] uno-py-[6px] uno-gap-8px uno-bg-[#39EDC1] uno-text-[#011813] uno-text-[14px] uno-font-Outfit uno-font-[500] uno-leading-[1.5] uno-rounded-[8px]">
             {{ $t(plan.badge) }}
@@ -59,8 +59,8 @@
                 class="uno-flex uno-items-center uno-justify-between uno-gap-3">
                 <span class="uno-text-[#4E5255] uno-text-sm uno-font-Outfit"
                   :class="{ 'uno-text-[#011813]': selectedPlan === plan.key }">{{ feat }}</span>
-                <NuxtImg src="/images/pricing/1.png" alt="Feature Included" class="uno-w-5 uno-h-5 uno-object-contain"
-                  loading="lazy" format="webp" />
+                <!-- <NuxtImg src="/images/pricing/1.png" alt="Feature Included" class="uno-w-5 uno-h-5 uno-object-contain"
+                  loading="lazy" format="webp" /> -->
               </li>
             </ul>
           </div>
@@ -145,13 +145,14 @@ const planConfig: Record<number, { key: string; desc?: string; billingFallback?:
   2: {
     key: 'monthly',
     desc: t("pages.pricing.plans.monthly.desc"),
-    billingFallback: t("pages.pricing.plans.monthly.billingFallback")
+    billingFallback: t("pages.pricing.plans.monthly.billingFallback"),
+    badge: t("pages.pricing.badge")
   },
   3: {
     key: 'yearly',
     desc: t("pages.pricing.plans.yearly.desc"),
     billingFallback: t("pages.pricing.plans.yearly.billingFallback"),
-    badge: t("pages.pricing.badge")
+
   }
 };
 
@@ -179,7 +180,7 @@ const plans = computed(() => {
   return processedList;
 });
 
-const selectedPlan = ref('yearly');
+const selectedPlan = ref('monthly');
 
 watch(plans, () => {
   if (plans.value.length > 0 && ($device.isMobile || $device.isTablet)) {
