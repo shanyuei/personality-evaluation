@@ -14,13 +14,13 @@
           <img src="/theme/logo.png" alt="logo" width="249" height="60">
         </NuxtLink>
         <NuxtLink :to="localePath('/')" class="uno-w-[152px]  uno-items-center uno-hidden max-sm:uno-flex">
-          <NuxtImg src="/theme/h5-logo.png" width="149" height="23" alt="logo" class="" />
+          <img src="/theme/h5-logo.png" width="187" height="32" alt="logo" class="" />
         </NuxtLink>
       </div>
       <div v-if="!$device.isMobileOrTablet">
         <!-- v-if="!$device.isDesktopOrTablet &&  !$device.isMobileOrTablet" -->
-         <!-- {{ $device.isDesktopOrTablet }} -->
-         <!-- {{  }} -->
+        <!-- {{ $device.isDesktopOrTablet }} -->
+        <!-- {{  }} -->
         <UNavigationMenu v-if="showMenu" :ui="{
           link: 'before:bg-transparent font-Outfit text-center font-medium text-[16px] text-[#001813] data-[active]:text-[var(--color-pink-1)] hover:text-[var(--color-pink-1)]',
           item: 'ml-[18px] mr-[18px]'

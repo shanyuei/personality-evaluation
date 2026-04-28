@@ -147,8 +147,8 @@ definePageMeta({
 })
 
 useSeoMeta({
-  title: () => t('seo.tests.title'),
-  description: () => t('seo.tests.description'),
+  title: () => t('seo.tests.index.title'),
+  description: () => t('seo.tests.index.description'),
 })
 const filters = [
   { id: 'all', label: t('pages.tests.filters.all') },
