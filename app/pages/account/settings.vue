@@ -181,6 +181,7 @@ const onChangePassword = async () => {
   if (!newPassword.value || newPassword.value !== repeatNewPassword.value) {
     toast.add({
       title: t('pages.account.settings.password.mismatch') as string,
+      color: 'warning',
       icon: 'i-heroicons-x-circle'
     })
     return
