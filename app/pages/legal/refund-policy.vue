@@ -62,6 +62,7 @@ useSeoMeta({
 
 const activeSection = ref('refund-policy')
 const isClicking = ref(false)
+const scrollOffset = 140
 
 const navItems = computed(() => [
   { id: 'refund-policy', label: t('pages.legal.refund.nav.refundPolicy') },
@@ -115,23 +116,39 @@ const sections = computed(() => [
 const handleScroll = () => {
   if (isClicking.value) return
 
-  const sections = document.querySelectorAll('section[id]')
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 100
-    const sectionId = section.getAttribute('id')
-    if (window.scrollY >= sectionTop) {
-      activeSection.value = sectionId
+  const sectionElements = Array.from(document.querySelectorAll<HTMLElement>('section[id]'))
+  if (!sectionElements.length) return
+
+  const currentY = window.scrollY + scrollOffset
+  let currentId = sectionElements[0].id
+
+  for (const section of sectionElements) {
+    if (currentY >= section.offsetTop) {
+      currentId = section.id
+    } else {
+      break
     }
-  })
+  }
+
+  if (activeSection.value !== currentId) {
+    activeSection.value = currentId
+  }
 }
 
-const handleClick = (sectionId) => {
+const handleClick = (sectionId: string) => {
   isClicking.value = true
   activeSection.value = sectionId
 
-  setTimeout(() => {
+  const target = document.getElementById(sectionId)
+  if (target) {
+    const top = target.getBoundingClientRect().top + window.scrollY - (scrollOffset - 8)
+    window.scrollTo({ top, behavior: 'smooth' })
+  }
+
+  window.setTimeout(() => {
     isClicking.value = false
-  }, 1000)
+    handleScroll()
+  }, 450)
 }
 
 const handleMobileNavClick = (sectionId) => {

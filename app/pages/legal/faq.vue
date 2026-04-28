@@ -8,7 +8,7 @@
         </h1>
       </div>
 
-      <LegalMobileDirectory :title="$t('pages.legal.directory')" :items="asideCategories" :active-id="currentCategory"
+      <LegalMobileDirectory :title="$t('pages.legal.directory')" :items="mobileDirectoryItems" :active-id="currentCategory"
         @select="handleMobileCategoryClick" />
 
       <div class="uno-grid uno-grid-cols-1 lg:uno-grid-cols-4 uno-gap-8">
@@ -70,7 +70,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 import LegalMobileDirectory from '~/components/legal/LegalMobileDirectory.vue'
 
 const { t } = useI18n()
@@ -89,8 +89,10 @@ useSeoMeta({
 })
 
 
-const currentCategory = ref<string>('all')
+const currentCategory = ref<string>('general')
 const expandedItem = ref<string | null>(null)
+const isClicking = ref(false)
+const scrollOffset = 140
 
 const isExpanded = (section: string, i: number) => {
   return expandedItem.value === `${section}-${i}`
@@ -105,66 +107,58 @@ const toggle = (section: string, i: number) => {
   }
 }
 
+const handleScroll = () => {
+  if (isClicking.value) return
+
+  const sectionElements = asideCategories
+    .map((cat: any) => document.getElementById(String(cat.id)))
+    .filter((el): el is HTMLElement => !!el)
+
+  if (!sectionElements.length) return
+
+  const currentY = window.scrollY + scrollOffset
+  let currentId = sectionElements[0].id
+
+  for (const section of sectionElements) {
+    if (currentY >= section.offsetTop) {
+      currentId = section.id
+    } else {
+      break
+    }
+  }
+
+  if (currentCategory.value !== currentId) {
+    currentCategory.value = currentId
+  }
+}
+
 // 滚动到指定分类
 const scrollToCategory = (id: string) => {
+  isClicking.value = true
   currentCategory.value = id
   const element = document.getElementById(id)
   if (element) {
-    element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    const top = element.getBoundingClientRect().top + window.scrollY - (scrollOffset - 8)
+    window.scrollTo({ top, behavior: 'smooth' })
   }
+
+  window.setTimeout(() => {
+    isClicking.value = false
+    handleScroll()
+  }, 450)
 }
 
 const handleMobileCategoryClick = (id: string) => {
   scrollToCategory(id)
 }
 
-let observer: IntersectionObserver | null = null
-
-// 监听滚动更新当前分类
-const updateCurrentCategory = () => {
-  const entries = observer?.takeRecords?.() || []
-  const visibleEntries = entries
-    .filter(entry => entry.isIntersecting)
-    .sort((a, b) => b.intersectionRatio - a.intersectionRatio)
-
-  if (visibleEntries.length > 0) {
-    const id = visibleEntries[0].target.id
-    if (id !== currentCategory.value) {
-      currentCategory.value = id
-    }
-  }
-}
-
 onMounted(() => {
-  observer = new IntersectionObserver((entries) => {
-    const visibleEntries = entries
-      .filter(entry => entry.isIntersecting)
-      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)
-
-    if (visibleEntries.length > 0) {
-      const id = visibleEntries[0].target.id
-      if (id !== currentCategory.value) {
-        currentCategory.value = id
-      }
-    }
-  }, {
-    rootMargin: '-20% 0px -70% 0px',
-    threshold: [0, 0.1, 0.2, 0.5]
-  })
-
-  asideCategories.forEach((cat: any) => {
-    const element = document.getElementById(cat.id)
-    if (element) {
-      observer?.observe(element)
-    }
-  })
+  window.addEventListener('scroll', handleScroll, { passive: true })
+  handleScroll()
 })
 
 onUnmounted(() => {
-  if (observer) {
-    observer.disconnect()
-    observer = null
-  }
+  window.removeEventListener('scroll', handleScroll)
 })
 
 
@@ -282,8 +276,12 @@ const asideCategories: any = [
   }
 ]
 
-
-
+const mobileDirectoryItems = computed(() => {
+  return asideCategories.map((item: any) => ({
+    id: String(item.id),
+    label: String(item.title)
+  }))
+})
 
 </script>
 

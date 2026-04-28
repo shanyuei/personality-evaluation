@@ -19,6 +19,9 @@ export default defineNuxtConfig({
 
   modules: ['@nuxt/ui', '@unocss/nuxt', 'pinia-plugin-persistedstate/nuxt', '@pinia/nuxt', // Vue 3兼容版本
     '@nuxtjs/i18n', '@nuxt/image', '@nuxt/eslint', "@nuxt/devtools", '@nuxtjs/device'],
+  devServer: {
+    port: 12230,
+  },
   css: ['~/assets/css/main.css', '~/assets/css/common.less'],
   pinia: {
 
