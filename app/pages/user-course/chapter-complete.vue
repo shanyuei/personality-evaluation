@@ -86,11 +86,12 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { useCourseChaptersStore } from "@/stores/modules/course-chapters"
 import { storeToRefs } from 'pinia'
 
 import PrimaryButton from '@/components/ui/PrimaryButton.vue'
+import { getCourseDetail } from '~/api/courses'
 
 const courseChaptersStore = useCourseChaptersStore()
 
@@ -100,9 +101,21 @@ const { t } = useI18n()
 const route = useRoute()
 const courseName = 'People Leadership vs. Management'
 
+const getQueryString = (v: unknown) => {
+  if (Array.isArray(v)) return String(v[0] ?? '')
+  return v == null ? '' : String(v)
+}
+
+const courseId = computed(() => getQueryString(route.query.course_id) || String(course.value?.id || ''))
+
+const { data: detailReq } = courseId.value
+  ? await getCourseDetail({ id: courseId.value })
+  : { data: ref(null) }
+
+const courseDetail = computed(() => (detailReq.value?.data as any) || null)
+
 // 获取 test_id 参数
-const testId = computed(() => course.value?.test_id || '' as string)
-console.log(testId.value,course)
+const testId = computed(() => String(course.value?.test_id || courseDetail.value?.test_id || ''))
 
 // 生成测试开始页面链接
 const testStartLink = computed(() => {
@@ -118,8 +131,8 @@ definePageMeta({
 })
 
 useSeoMeta({
-  title: () => t('seo.userCourse.chapterComplete.title'),
-  description: () => t('seo.userCourse.chapterComplete.description')
+  title: () => (courseDetail.value as any)?.meta_title || (courseDetail.value as any)?.seo_title || courseDetail.value?.title || t('seo.userCourse.chapterComplete.title'),
+  description: () => (courseDetail.value as any)?.meta_description || (courseDetail.value as any)?.seo_description || courseDetail.value?.summary || t('seo.userCourse.chapterComplete.description')
 })
 </script>
 

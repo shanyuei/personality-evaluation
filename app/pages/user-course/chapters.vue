@@ -56,10 +56,6 @@ definePageMeta({
   layoutShowPageTopIcons: false
 })
 
-useSeoMeta({
-  title: () => t('seo.userCourse.chapters.title'),
-  description: () => t('seo.userCourse.chapters.description')
-})
 
 const getQueryString = (v: unknown) => {
   if (Array.isArray(v)) return String(v[0] ?? '')
@@ -76,6 +72,12 @@ const { data: detailReq } = courseId.value
 const course = computed<CourseDetailData | null>(() => {
   return (detailReq.value?.data as CourseDetailData | undefined) || null
 })
+
+useSeoMeta({
+  title: () => (course.value as any)?.meta_title || (course.value as any)?.seo_title || course.value?.title || t('seo.userCourse.chapters.title'),
+  description: () => (course.value as any)?.meta_description || (course.value as any)?.seo_description || course.value?.summary || t('seo.userCourse.chapters.description')
+})
+
 const cover = computed(() => course.value?.cover_img || '/images/user-course/2.png')
 const courseTitle = computed(() => course.value?.title || (t('pages.userCourseChapters.title') as string))
 const courseDescription = computed(() => course.value?.summary || (t('pages.userCourseChapters.description') as string))

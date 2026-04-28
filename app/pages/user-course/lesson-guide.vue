@@ -57,8 +57,8 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
-import { getCourseLessons, getNextLesson } from '@/api/courses'
+import { computed, ref } from 'vue'
+import { getCourseLessons, getNextLesson, getCourseDetail } from '@/api/courses'
 
 import PrimaryButton from '@/components/ui/PrimaryButton.vue'
 import OutlineButton from '@/components/ui/OutlineButton.vue'
@@ -78,6 +78,12 @@ const getQueryString = (v: unknown) => {
 }
 
 const courseId = computed(() => getQueryString(route.query.course_id))
+const { data: detailReq } = courseId.value
+  ? await getCourseDetail({ id: courseId.value })
+  : { data: ref(null) }
+
+const courseDetail = computed(() => (detailReq.value?.data as any) || null)
+
 const position = computed(() => getQueryString(route.query.position))
 const positionValue = computed(() => position.value || '1')
 const total = computed(() => {
@@ -166,8 +172,8 @@ definePageMeta({
 })
 
 useSeoMeta({
-  title: () => t('seo.userCourse.lessonGuide.title'),
-  description: () => t('seo.userCourse.lessonGuide.description')
+  title: () => (courseDetail.value as any)?.meta_title || (courseDetail.value as any)?.seo_title || courseDetail.value?.title || t('seo.userCourse.lessonGuide.title'),
+  description: () => (courseDetail.value as any)?.meta_description || (courseDetail.value as any)?.seo_description || courseDetail.value?.summary || t('seo.userCourse.lessonGuide.description')
 })
 </script>
 
