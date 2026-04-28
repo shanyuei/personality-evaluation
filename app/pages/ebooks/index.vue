@@ -38,8 +38,8 @@ definePageMeta({
   layoutShowPageTopIcons: false
 })
 useSeoMeta({
-  title: () => t('seo.ebooks.list.title') as string,
-  description: () => t('seo.ebooks.list.description') as string
+  title: () => t('seo.ebooks.index.title') as string,
+  description: () => t('seo.ebooks.index.description') as string
 })
 const primaryBooks = [
   {

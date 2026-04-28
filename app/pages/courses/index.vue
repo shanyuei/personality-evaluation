@@ -85,8 +85,8 @@ definePageMeta({
 })
 
 useSeoMeta({
-    title: () => t('seo.courses.title') as string,
-    description: () => t('seo.courses.description') as string
+    title: () => t('seo.courses.index.title') as string,
+    description: () => t('seo.courses.index.description') as string
 })
 
 const defaultRecommended = {

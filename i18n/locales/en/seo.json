@@ -33,6 +33,12 @@
             "description": "See the initial breakdown of your personality test results. Get a snapshot of your unique profile and start understanding the traits that make you who you are."
         }
     },
+    "tests": {
+        "index": {
+            "title": "Hard & Soft Skills Assessment Hub | PersonalityTest101",
+            "description": "Master your career with PersonalityTest101. Evaluate key hard skills like Marketing and Finance alongside soft skills like Time Mastery and Stress Management."
+        }
+    },
     "about": {
         "title": "About Us {separator} PersonalityTest101 – Our Mission for Self-Discovery",
         "description": "Discover the story behind PersonalityTest101. We combine psychological precision with data-driven insights to help individuals uncover their core traits, improve relationships, and achieve personal growth. Learn more about our mission and vision."
@@ -120,9 +126,9 @@
             "title": "Personality & Self-Growth eBooks | Expert Guides",
             "description": "Enhance your personal development with our expert-written eBooks. Detailed guides on mastering your personality type, improving EQ, and achieving your life goals."
         },
-        "list": {
-            "title": "Expert Personality Guides & Ebooks | PersonalityTest101 Library",
-            "description": "Master the fundamentals of personality theory. Our expert-written ebooks provide in-depth analysis and research-backed insights into human behavior and temperament."
+        "index": {
+            "title": "Self-Growth eBooks & Guides | PersonalityTest101 Library",
+            "description": "Deepen your knowledge with our self-growth eBook collection. Expert guides on mastering time, leadership, and business acumen to help you reach your full potential."
         }
     },
     "profile": {
