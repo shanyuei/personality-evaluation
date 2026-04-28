@@ -30,7 +30,7 @@
             <div class="uno-space-y-5">
               <template v-for="(entry, i) in asideCategories" :key="entry.id">
                 <h2 :id="entry.id"
-                  class="uno-text-2xl md:uno-text-24px uno-font-Outfit uno-font-600 uno-text-black uno-mb-4">
+                  class="uno-scroll-mt-[180px] uno-text-2xl md:uno-text-24px uno-font-Outfit uno-font-600 uno-text-black uno-mb-4">
                   {{ entry.title }}
                 </h2>
 

@@ -12,7 +12,7 @@
 
       <LegalMobileDirectory
         :title="$t('pages.legal.directory')"
-        :items="navItems"
+        :items="directoryItems"
         :active-id="activeSection"
         @select="handleMobileNavClick"
       />
@@ -22,10 +22,16 @@
         <div class="uno-hidden lg:uno-block lg:uno-col-span-1">
           <nav class="uno-sticky uno-top-24 uno-self-start">
             <ul class="uno-space-y-3 md:uno-space-y-4">
-              <li v-for="item in navItems" :key="item.id">
-                <a :href="`#${item.id}`"
-                  :class="['uno-block uno-text-[16px] md:uno-text-[20px] uno-font-medium hover:text-[var(--color-pink-1)]', activeSection === item.id ? 'text-[var(--color-pink-1)]' : '']"
-                  @click="handleClick(item.id)">{{ item.label }}</a>
+              <li v-for="(item, index) in navItems" :key="item.id">
+                <a :href="index === 0 ? undefined : `#${item.id}`"
+                  :class="[
+                    'uno-block uno-text-[16px] md:uno-text-[20px] uno-font-medium',
+                    index === 0
+                      ? 'uno-cursor-default uno-text-[var(--ui-muted-foreground)]'
+                      : 'hover:text-[var(--color-pink-1)]',
+                    activeSection === item.id && index !== 0 ? 'text-[var(--color-pink-1)]' : ''
+                  ]"
+                  @click.prevent="index === 0 ? undefined : handleClick(item.id)">{{ item.label }}</a>
               </li>
             </ul>
           </nav>
@@ -34,7 +40,7 @@
         <!-- 主内容区域 -->
         <div class="uno-col-span-1 lg:uno-col-span-3">
           <div class="uno-space-y-8">
-            <section v-for="section in sections" :key="section.id" :id="section.id">
+            <section v-for="section in sections" :key="section.id" :id="section.id" class="uno-scroll-mt-[180px]">
               <h2 class="uno-text-[24px] uno-font-[Outfit] uno-font-[600] uno-text-gray-900 uno-mb-4"
                 v-html="section.title"></h2>
               <p v-if="section.subtitle" class="uno-text-[16px] uno-font-[500] uno-text-[#011813] uno-mb-6"
@@ -80,6 +86,8 @@ const navItems = computed(() => [
   { id: 'informational-purpose-disclaimer', label: t('pages.legal.privacy.nav.informationalPurposeDisclaimer') },
   { id: 'contact-us', label: t('pages.legal.privacy.nav.contactUs') }
 ])
+
+const directoryItems = computed(() => navItems.value.slice(1))
 
 const sections = computed(() => [
   {
@@ -168,7 +176,10 @@ const handleClick = (sectionId: string) => {
   }, 450)
 }
 
-const handleMobileNavClick = (sectionId) => {
+const handleMobileNavClick = (sectionId: string) => {
+  if (sectionId === 'privacy-policy')
+    return
+
   handleClick(sectionId)
 }
 
