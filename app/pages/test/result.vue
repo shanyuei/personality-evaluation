@@ -52,7 +52,7 @@
 import { ref, computed } from 'vue'
 import PrimaryButton from '~/components/ui/PrimaryButton.vue'
 import OutlineButton from '~/components/ui/OutlineButton.vue'
-import { getSkillTestResult } from '~/api/skill-tests'
+import { getSkillTestResult, getSkillTestQuestions } from '~/api/skill-tests'
 
 const { t } = useI18n()
 const route = useRoute()
@@ -63,17 +63,24 @@ definePageMeta({
   title: () => 'seo.test.result.title'
 })
 
-useSeoMeta({
-  title: () => t('seo.test.result.title'),
-  description: () => t('seo.test.result.description'),
-})
-
 // 获取 test_id 参数
 const testId = computed(() => route.query.test_id as string | number)
 
 // 获取测试结果数据
 const { data: resultData } = await getSkillTestResult({
   id: testId.value
+})
+
+// 获取测试题详情
+const { data: testDetailData } = await getSkillTestQuestions({
+  id: testId.value
+})
+
+const testDetailInfo = computed(() => testDetailData.value?.data || {})
+
+useSeoMeta({
+  title: () => (testDetailInfo.value as any)?.meta_title || (testDetailInfo.value as any)?.title || (resultData.value?.data as any)?.meta_title || (resultData.value?.data as any)?.title || t('seo.test.result.title'),
+  description: () => (testDetailInfo.value as any)?.meta_description || (testDetailInfo.value as any)?.summary || (resultData.value?.data as any)?.meta_description || (resultData.value?.data as any)?.summary || t('seo.test.result.description'),
 })
 
 // 计算属性

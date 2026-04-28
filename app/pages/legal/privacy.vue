@@ -67,7 +67,7 @@ useSeoMeta({
 })
 const activeSection = ref('privacy-policy')
 const isClicking = ref(false)
-const scrollOffset = 140
+const scrollOffset = 180
 
 const navItems = computed(() => [
   { id: 'privacy-policy', label: t('pages.legal.privacy.nav.privacyPolicy') },

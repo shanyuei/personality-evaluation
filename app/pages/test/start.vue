@@ -40,6 +40,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import PrimaryButton from '~/components/ui/PrimaryButton.vue'
+import { getSkillTestQuestions } from '~/api/skill-tests'
 
 const { t } = useI18n()
 const router = useRouter()
@@ -52,9 +53,16 @@ definePageMeta({
   layoutShowPageTopIcons: false,
 })
 
+const testId = computed(() => route.query.test_id as string | number)
+
+const { data: testDetailData } = await getSkillTestQuestions({
+  id: testId.value
+})
+
+const testInfo = computed(() => testDetailData.value?.data || {})
 useSeoMeta({
-  title: () => t('seo.test.start.title'),
-  description: () => t('seo.test.start.description'),
+  title: () => (testInfo.value as any)?.meta_title || (testInfo.value as any)?.title || t('seo.test.start.title'),
+  description: () => (testInfo.value as any)?.meta_description || (testInfo.value as any)?.summary || t('seo.test.start.description'),
 })
 
 const steps = [
@@ -67,8 +75,6 @@ const steps = [
     body: t('pages.testStart.scoring.body')
   }
 ]
-
-const testId = computed(() => route.query.test_id as string | number)
 
 const nextStep = () => {
   if (testId.value) {

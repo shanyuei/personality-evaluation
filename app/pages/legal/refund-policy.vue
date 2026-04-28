@@ -62,7 +62,7 @@ useSeoMeta({
 
 const activeSection = ref('refund-policy')
 const isClicking = ref(false)
-const scrollOffset = 140
+const scrollOffset = 180
 
 const navItems = computed(() => [
   { id: 'refund-policy', label: t('pages.legal.refund.nav.refundPolicy') },

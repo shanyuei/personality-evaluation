@@ -169,8 +169,8 @@ definePageMeta({
 })
 
 useSeoMeta({
-  title: () => t('seo.userCourse.test.title'),
-  description: () => t('seo.userCourse.test.description')
+  title: () => (testInfo.value as any)?.meta_title || (testInfo.value as any)?.title || t('seo.userCourse.test.title'),
+  description: () => (testInfo.value as any)?.meta_description || (testInfo.value as any)?.summary || t('seo.userCourse.test.description')
 })
 </script>
 

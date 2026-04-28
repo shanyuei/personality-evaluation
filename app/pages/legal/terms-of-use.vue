@@ -65,7 +65,7 @@ useSeoMeta({
 
 const activeSection = ref('terms-of-use')
 const isClicking = ref(false)
-const scrollOffset = 140
+const scrollOffset = 180
 
 const navItems = computed(() => [
   { id: 'terms-of-use', label: t('pages.legal.terms.nav.termsOfUse') },

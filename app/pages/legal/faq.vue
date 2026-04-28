@@ -92,7 +92,7 @@ useSeoMeta({
 const currentCategory = ref<string>('general')
 const expandedItem = ref<string | null>(null)
 const isClicking = ref(false)
-const scrollOffset = 140
+const scrollOffset = 180
 
 const isExpanded = (section: string, i: number) => {
   return expandedItem.value === `${section}-${i}`
