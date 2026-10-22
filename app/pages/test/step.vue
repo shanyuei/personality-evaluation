@@ -126,8 +126,9 @@ useSeoMeta({
 const questions = ref<TestQuestion[]>([])
 const showError = ref(false)
 
-// 计算未回答的问题索引
+// 计算未回答的问题索引（仅在校验失败时高亮）
 const unansweredQuestions = computed(() => {
+  if (!showError.value) return []
   return questions.value
     .filter(q => userAnswers.value[q.id] === undefined)
     .map(q => questions.value.indexOf(q))
@@ -187,7 +188,7 @@ watch(
     questions.value = list
 
 
-    mockUserAnswers();
+    // mockUserAnswers();
 
   },
   { immediate: true }
