@@ -19,3 +19,5 @@ logs
 .output/*
 
 # Local env files
+.output/*
+pnpm-lock.yaml

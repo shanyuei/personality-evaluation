@@ -63,12 +63,12 @@
         <!-- 进度条 -->
         <div class="course-header md:!uno-w-[720px] md:!uno-max-w-[720px] uno-mx-auto ">
           <div class="course-nav">
-            <div class="progress-percent">{{ 0 }}{{ $t('common.percentIcon') }}</div>
+            <div class="progress-percent">{{ progress }}{{ $t('common.percentIcon') }}</div>
             <div class="question-count">{{ $t('common.stepTotal', { current: currentStep, total: totalSteps }) }}</div>
 
           </div>
           <div class="course-progress">
-            <div class="progress-bar" :style="{ width: 0 + '%' }" />
+            <div class="progress-bar" :style="{ width: progress + '%' }" />
           </div>
         </div>
 
@@ -139,7 +139,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import PrimaryButton from '~/components/ui/PrimaryButton.vue'
 import { getTestQuestions } from '~/api/tests'
 import type { TestQuestion } from '~/types/TestQuestion'
@@ -167,6 +167,12 @@ const current = 0, total = ref(0)
 const selectedRatings = ref<Record<number, number>>({})
 const showError = ref(false)
 const unansweredQuestions = ref<number[]>([])
+
+// 答题进度（已答 / 总题数）
+const progress = computed(() => {
+  if (!total.value) return 0
+  return Math.round((Object.keys(selectedRatings.value).length / total.value) * 100)
+})
 
 // 步骤数据
 const steps = ref([

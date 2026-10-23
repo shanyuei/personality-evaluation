@@ -17,6 +17,7 @@ export const useQuestionsStore = defineStore('questions', () => {
     const totalSteps = computed(() => Math.ceil(questions.value.length / 5));
     // 答题进度
     const progress = computed(() => {
+        if (questions.value.length === 0) return 0;
         return Math.round((currentAnswerCount.value / questions.value.length) * 100);
     })
     // 用户选择答案

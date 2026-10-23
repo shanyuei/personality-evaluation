@@ -18,7 +18,7 @@
 
           </div>
           <div class="course-progress">
-            <div class="progress-bar" :style="{ width: 0 + '%' }" />
+            <div class="progress-bar" :style="{ width: progress + '%' }" />
           </div>
         </div>
 
