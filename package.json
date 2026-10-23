@@ -10,7 +10,10 @@
     "postinstall": "nuxt prepare",
     "lint": "eslint . --ext .ts,.js,.vue",
     "lint:fix": "eslint . --ext .ts,.js,.vue --fix",
-    "typecheck": "vue-tsc --noEmit"
+    "typecheck": "vue-tsc --noEmit",
+    "backup": "bash scripts/backup.sh",
+    "restore": "bash scripts/restore.sh",
+    "deploy": "bash scripts/deploy.sh"
   },
   "dependencies": {
     "@iconify-json/lucide": "^1.2.73",
